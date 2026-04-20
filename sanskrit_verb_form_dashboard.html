@@ -1,0 +1,123 @@
+
+<h2 class="sr-only">Sanskrit verb form frequency dashboard: distribution of tenses, moods, and participles across 781,616 examples</h2>
+
+<div style="padding: 1rem 0;">
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 1.5rem;">
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem;">
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 4px;">Total examples</p>
+    <p style="font-size: 24px; font-weight: 500; margin: 0;">781,616</p>
+  </div>
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem;">
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 4px;">Unique lemmas</p>
+    <p style="font-size: 24px; font-weight: 500; margin: 0;">55,032</p>
+  </div>
+  <div style="background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 1rem;">
+    <p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 4px;">Tense/mood categories</p>
+    <p style="font-size: 24px; font-weight: 500; margin: 0;">38</p>
+  </div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; font-size: 12px; color: var(--color-text-secondary);">
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#3266ad;"></span>Examples (bars)</span>
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:4px;border-radius:2px;background:#e24b4a;"></span>Pareto % (line)</span>
+</div>
+
+<div style="position: relative; width: 100%; height: 340px; margin-bottom: 1.5rem;">
+  <canvas id="mainChart" role="img" aria-label="Bar chart of Sanskrit verb form frequencies with Pareto curve. Past Passive Participle leads with 233,079 examples (29.8%), followed by Present Indicative with 157,003 (20.1%).">Top categories: PPP 233,079; Pres.Ind. 157,003; Absolutive 81,507; Pres.Pot. 72,826; Perfect Ind. 61,986</canvas>
+</div>
+
+<p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 1rem;">Pareto detail — cumulative coverage</p>
+<div style="position: relative; width: 100%; height: 180px; margin-bottom: 1.5rem;">
+  <canvas id="paretoDetail" role="img" aria-label="Line chart showing cumulative Pareto percentage. Top 5 forms cover 77.6%, top 11 cover 94.9%.">Cumulative: 5 forms = 77.6%, 11 forms = 94.9%, 38 forms = 100%</canvas>
+</div>
+
+<p style="font-size: 13px; color: var(--color-text-secondary); margin: 0 0 1rem;">Lemma density — unique lemmas per form (breadth of vocabulary)</p>
+<div style="position: relative; width: 100%; height: 300px;">
+  <canvas id="densityChart" role="img" aria-label="Horizontal bar chart of unique lemma count per verb form category. Present Indicative has the highest lemma count at 14,333.">Present Ind. leads with 14,333 unique lemmas; PPP has 5,212; Imperfect 4,631.</canvas>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const labels = [
+  'Past Pass. Part.','Present Ind.','Absolutive','Pres. Potential','Perfect Ind.',
+  'Imperfect Ind.','Pres. Imp.','Present Passive','Future Pass. Part.','Future Ind.',
+  'Infinitive','Aorist Root','Perf. Periph.','Pres.Imp.Pass.','Aorist Them.',
+  'Aorist Jus.','Past Act. Part.','Future Periph.','Pres. Sub.','Impf. Passive'
+];
+const examples = [233079,157003,81507,72826,61986,35921,32750,24949,23942,18004,10379,4442,3668,2948,2440,2366,2350,1290,1265,1083];
+const pareto   = [29.82,49.91,60.34,69.65,77.58,82.18,86.37,89.56,92.62,94.93,96.26,96.82,97.29,97.67,97.98,98.28,98.59,98.75,98.91,99.05];
+const lemmas   = [5212,14333,3464,4808,3015,4631,4386,2636,1873,2874,1470,399,674,518,302,577,364,260,531,300];
+
+const blue = '#3266ad', red = '#e24b4a', teal = '#1d9e75';
+
+new Chart(document.getElementById('mainChart'), {
+  data: {
+    labels,
+    datasets: [
+      { type: 'bar', label: 'Examples', data: examples, backgroundColor: blue + 'cc', yAxisID: 'y1', order: 2 },
+      { type: 'line', label: 'Pareto %', data: pareto, borderColor: red, backgroundColor: 'transparent', borderWidth: 2, pointRadius: 3, pointBackgroundColor: red, yAxisID: 'y2', order: 1 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { font: { size: 11 }, maxRotation: 50, autoSkip: false } },
+      y1: { position: 'left', title: { display: true, text: 'Examples', font: { size: 11 } }, ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(0)+'k' : v, font: { size: 11 } } },
+      y2: { position: 'right', max: 100, title: { display: true, text: 'Cumulative %', font: { size: 11 } }, grid: { drawOnChartArea: false }, ticks: { callback: v => v+'%', font: { size: 11 } } }
+    }
+  }
+});
+
+const allPareto = [29.82,49.91,60.34,69.65,77.58,82.18,86.37,89.56,92.62,94.93,96.26,96.82,97.29,97.67,97.98,98.28,98.59,98.75,98.91,99.05,99.14,99.19,99.31,99.43,99.52,99.62,99.69,99.75,99.81,99.84,99.88,99.91,99.93,99.95,99.97,99.98,99.99,100.00];
+const allLabels = labels.concat(['Imp.Ind.S','Aorist Imp','Pres. Jus.','Aorist Sub.','Aorist Is.','Aorist Red.','Pres.Opt.Pass.','Aorist Pass.','Aor.Jus/Sub','Future Cond.','Aorist Prec.','Perfect Sub','Perfect Imp','Plpf. Ind.','Perfect Opt.','Aorist Sa.','Perfect Jus.','Aorist Sis.']);
+
+new Chart(document.getElementById('paretoDetail'), {
+  type: 'line',
+  data: {
+    labels: allLabels.map((_, i) => i + 1),
+    datasets: [{
+      label: 'Cumulative %',
+      data: allPareto,
+      borderColor: teal,
+      backgroundColor: teal + '22',
+      fill: true,
+      borderWidth: 2,
+      pointRadius: 2,
+      pointBackgroundColor: teal
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { title: { display: true, text: 'Form rank', font: { size: 11 } }, ticks: { font: { size: 10 } } },
+      y: { min: 0, max: 100, title: { display: true, text: 'Cumulative %', font: { size: 11 } }, ticks: { callback: v => v+'%', font: { size: 10 } } }
+    }
+  }
+});
+
+new Chart(document.getElementById('densityChart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [{
+      label: 'Unique lemmas',
+      data: lemmas,
+      backgroundColor: '#1d9e75cc'
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { title: { display: true, text: 'Unique lemmas', font: { size: 11 } }, ticks: { font: { size: 10 } } },
+      y: { ticks: { font: { size: 11 } } }
+    }
+  }
+});
+</script>
