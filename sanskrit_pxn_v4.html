@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+body{font-family:system-ui,sans-serif;padding:1rem;max-width:900px;margin:0 auto;color:#1a1a1a;background:#fff}
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e8e8e8}}
+input[type=range]{width:100%;accent-color:#3266ad;cursor:pointer}
+.ri{display:flex;align-items:center;gap:0;padding:4px 0;border-bottom:0.5px solid #e0e0e0;font-size:12px;line-height:1.4;cursor:pointer}
+.ri:hover{background:#f5f5f5}
+.ri.hid{opacity:0;max-height:0;padding:0;overflow:hidden;border:none}
+.ri.act{background:#e8f0fb;border-left:2px solid #3266ad;padding-left:6px}
+a.d{color:inherit;text-decoration:underline;text-decoration-color:rgba(100,130,180,.35);text-underline-offset:2px}
+a.d:hover{text-decoration-color:#3266ad}
+.rb{padding:4px 9px;font-size:12px;border-radius:6px;border:0.5px solid #ccc;background:#fff;cursor:pointer;color:#555}
+.rb.on{background:#3266ad22;border-color:#3266ad;color:#3266ad;font-weight:500}
+th,td{box-sizing:border-box}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1rem}
+.cg{display:flex;flex-direction:column;gap:3px}
+.cl{font-size:11px;color:#888;margin:0}
+.cr{display:flex;gap:3px;flex-wrap:wrap}
+</style>
+</head><body>
+<div style="background:#f5f5f5;border-radius:8px;padding:8px 14px;margin-bottom:1rem;font-size:12px;color:#555">
+  <strong style="color:#1a1a1a">DCS 10.csv · 745 394 употребления.</strong> P. = parasmaipada · Ā. = ātmanepada
+</div>
+
+<div class="ctrl">
+  <div class="cg"><p class="cl">Корень</p><div class="cr" id="rb"></div></div>
+  <div class="cg"><p class="cl">Окраска</p><div class="cr"><button class="rb on" id="ma" onclick="setMode('abs',this)">Абс.</button><button class="rb" id="mr" onclick="setMode('rel',this)">% в времени</button></div></div>
+  <div class="cg"><p class="cl">Основа+оконч.</p>
+  <div class="cr"><button class="rb on" id="st0" onclick="setStem(false,this)">Выкл.</button><button class="rb" id="st1" onclick="setStem(true,this)">Окончания</button></div></div>
+  <div class="cg"><p class="cl">Основа / оконч.</p>
+<div class="cr"><button class="rb on" id="sp0" onclick="setSplit(false,this)">Целиком</button><button class="rb" id="sp1" onclick="setSplit(true,this)">Основа + -оконч.</button></div></div>
+<div class="cg"><p class="cl">Голос</p><div class="cr"><button class="rb on" id="vb" onclick="setVoice('b',this)">U.</button><button class="rb" id="vp" onclick="setVoice('p',this)">P.</button><button class="rb" id="va" onclick="setVoice('a',this)">Ā.</button></div></div>
+  <div class="cg"><p class="cl">Нули</p>
+<div class="cr"><button class="rb on" id="z0" onclick="setZeros(true,this)">Показать</button><button class="rb" id="z1" onclick="setZeros(false,this)">Скрыть</button></div></div>
+<div class="cg"><p class="cl">Сравнить с √</p>
+<div class="cr" id="cmp-btns">
+  <button class="rb" onclick="setCmp('bhū',this)">bhū</button>
+  <button class="rb" onclick="setCmp('as',this)">as</button>
+  <button class="rb" onclick="setCmp('gam',this)">gam</button>
+  <button class="rb" onclick="setCmp('vac',this)">vac</button>
+  <button class="rb" onclick="setCmp('dā',this)">dā</button>
+  <button class="rb" onclick="setCmp('kṛ',this)">kṛ</button>
+</div></div>
+<div class="cg"><p class="cl">Панини</p><div class="cr"><button class="rb on" id="pn0" onclick="setPan(false,this)">Скрыть</button><button class="rb" id="pn1" onclick="setPan(true,this)">lakaras</button></div></div>
+</div>
+
+<div style="max-width:440px;margin-bottom:.75rem">
+  <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+    <span style="font-size:13px;font-weight:500">Охват: <span id="pl" style="color:#3266ad">80%</span></span>
+    <span style="font-size:12px;color:#666">топ-<span id="rl">8</span> из 87</span>
+  </div>
+  <input type="range" id="sl" min="31" max="100" value="80" oninput="upd()">
+  <div style="display:flex;justify-content:space-between;font-size:10px;color:#aaa;margin-top:1px"><span>31%</span><span>50%</span><span>70%</span><span>85%</span><span>100%</span></div>
+</div>
+<div id="route-hint" style="font-size:12px;color:#555;margin-top:4px;min-height:18px"></div>
+
+<div style="display:flex;gap:5px;margin-bottom:.75rem;flex-wrap:wrap;align-items:center;font-size:10px">
+  <span style="color:#888" id="ll">Употреблений:</span>
+  <span style="display:flex;align-items:center;gap:2px"><span style="width:11px;height:11px;border-radius:2px;background:#0d2b5e;display:inline-block"></span><span id="s6">&gt;40k</span></span>
+  <span style="display:flex;align-items:center;gap:2px"><span style="width:11px;height:11px;border-radius:2px;background:#1e4d9c;display:inline-block"></span><span id="s5">10–40k</span></span>
+  <span style="display:flex;align-items:center;gap:2px"><span style="width:11px;height:11px;border-radius:2px;background:#4a7ec7;display:inline-block"></span><span id="s4">3–10k</span></span>
+  <span style="display:flex;align-items:center;gap:2px"><span style="width:11px;height:11px;border-radius:2px;background:#93b8e5;display:inline-block"></span><span id="s3">0.5–3k</span></span>
+  <span style="display:flex;align-items:center;gap:2px"><span style="width:11px;height:11px;border-radius:2px;background:#cfe0f5;display:inline-block"></span><span id="s2">50–500</span></span>
+  <span style="display:flex;align-items:center;gap:2px"><span style="width:11px;height:11px;border-radius:2px;background:#eef5fc;display:inline-block;border:0.5px solid #ddd"></span><span id="s1">&lt;50</span></span>
+</div>
+
+<div style="overflow-x:auto;margin-bottom:1.5rem"><table id="tbl" style="border-collapse:collapse;font-size:11px;white-space:nowrap"></table></div>
+
+<div id="ctx-panel" style="display:none;margin-bottom:1rem;padding:10px 14px;border:0.5px solid #3266ad55;border-radius:8px;background:#f0f5ff">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+    <span style="font-size:13px;font-weight:500" id="ctx-title"></span>
+    <button onclick="document.getElementById('ctx-panel').style.display='none';cAct=null;bT();bL();" style="margin-left:auto;font-size:11px;padding:2px 7px;border:0.5px solid #ccc;border-radius:4px;background:#f5f5f5;cursor:pointer;color:#888">✕</button>
+  </div>
+  <div id="ctx-examples" style="font-size:12px;color:#333;line-height:1.7"></div>
+</div>
+<div id="ctx-panel" style="display:none;border:0.5px solid #3266ad44;border-radius:8px;padding:12px 14px;margin-bottom:1.5rem;background:#f8faff;font-family:inherit"></div>
+
+<!-- FLASHCARD PANEL -->
+<div id="flash-panel" style="display:none;border-top:1px solid #e0e0e0;padding-top:1rem;margin-top:.5rem">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:1rem;flex-wrap:wrap">
+    <span style="font-size:13px;font-weight:500">Карточки — √<span id="fc-root"></span></span>
+    <span style="font-size:12px;color:#888">Охват ползунка · <span id="fc-count"></span> форм</span>
+    <span style="flex:1"></span>
+    <button onclick="fcPrev()" style="font-size:18px;padding:2px 10px;border:0.5px solid #ccc;border-radius:6px;background:#f5f5f5;cursor:pointer">‹</button>
+    <span id="fc-pos" style="font-size:12px;color:#aaa;min-width:40px;text-align:center"></span>
+    <button onclick="fcNext()" style="font-size:18px;padding:2px 10px;border:0.5px solid #ccc;border-radius:6px;background:#f5f5f5;cursor:pointer">›</button>
+    <button onclick="fcShuffle()" style="font-size:11px;padding:4px 10px;border:0.5px solid #888;border-radius:6px;background:#f5f5f5;cursor:pointer">⇌ Перемешать</button>
+    <button onclick="toggleFlash()" style="font-size:11px;padding:4px 10px;border:0.5px solid #e24b4a55;border-radius:6px;background:#e24b4a11;cursor:pointer;color:#e24b4a">✕ Закрыть</button>
+  </div>
+  <!-- Card -->
+  <div id="fc-card" onclick="fcReveal()" style="cursor:pointer;border:1px solid #ddd;border-radius:12px;min-height:160px;padding:28px;text-align:center;background:#fafbfc;user-select:none;transition:background .15s">
+    <div id="fc-q" style="font-size:20px;font-weight:500;margin-bottom:8px"></div>
+    <div id="fc-hint" style="font-size:12px;color:#aaa;margin-bottom:16px"></div>
+    <div id="fc-a" style="display:none">
+      <div id="fc-ans" style="font-size:24px;font-style:italic;color:#3266ad;margin-bottom:8px"></div>
+      <div id="fc-ans2" style="font-size:14px;color:#888;margin-bottom:12px"></div>
+      <div id="fc-ctx" style="font-size:12px;color:#555;max-width:480px;margin:0 auto;text-align:left;padding:8px;background:#f0f4ff;border-radius:6px;border-left:2px solid #3266ad55"></div>
+    </div>
+    <div id="fc-tap" style="font-size:12px;color:#bbb;margin-top:12px">нажмите чтобы показать ответ</div>
+  </div>
+  <!-- Self-rating -->
+  <div id="fc-rating" style="display:none;display:flex;gap:8px;justify-content:center;margin-top:10px">
+    <button onclick="fcRate(1)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #e24b4a;background:#e24b4a18;cursor:pointer;color:#e24b4a;font-size:12px">✗ Не знал</button>
+    <button onclick="fcRate(2)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #ba7517;background:#ba751718;cursor:pointer;color:#ba7517;font-size:12px">~ Вспомнил</button>
+    <button onclick="fcRate(3)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #1d9e75;background:#1d9e7518;cursor:pointer;color:#1d9e75;font-size:12px">✓ Знал</button>
+  </div>
+  <div id="fc-stats" style="text-align:center;font-size:11px;color:#aaa;margin-top:6px"></div>
+</div>
+<div style="border-top:1px solid #e0e0e0;padding-top:.75rem">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+  <input type="text" id="srch" placeholder="Поиск: kuryāt, 3sg, Perfect…" oninput="bL()"
+    style="font-size:12px;padding:4px 8px;border:0.5px solid #ccc;border-radius:6px;width:220px;outline:none">
+  <button onclick="document.getElementById('srch').value='';bL()" style="font-size:11px;padding:3px 7px;border:0.5px solid #ccc;border-radius:4px;background:#f5f5f5;cursor:pointer;color:#888">✕</button>
+  <span style="flex:1"></span>
+  <button id="copy-btn" onclick="copyList()" style="font-size:11px;padding:3px 9px;border:0.5px solid #888;border-radius:4px;background:#f5f5f5;cursor:pointer;color:#555">⎘ Копировать</button> <button onclick="dlMD()" style="font-size:11px;padding:3px 9px;border:0.5px solid #3266ad;border-radius:4px;background:#3266ad18;cursor:pointer;color:#3266ad">↓ .md</button>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap">
+  <span style="font-size:12px;color:#555">Список (клик ↔ таблица):</span>
+  <span style="font-size:11px;color:#aaa">Сортировка:</span>
+  <button class="rb on" id="srt-n" onclick="setSrt('n',this)">По частоте</button>
+  <button class="rb" id="srt-t" onclick="setSrt('t',this)">По времени</button>
+  <button class="rb" id="srt-p" onclick="setSrt('p',this)">По лицу</button>
+  <button class="rb" id="srt-num" onclick="setSrt('num',this)">По числу</button>
+</div>
+  <div id="lst"></div>
+</div>
+
+<script>
+const TOT=745394;
+
+const CTX={"karoti":[1130,[["PABh zu PāśupSūtra, 1","pārthivīdhāraṇāmudrāṁ yaḥ karoti ca nityaśaḥ /"],["PABh zu PāśupSūtra, 1","prāṇaṁ tatra vinīya pañcaghaṭikāś cittānvitaṁ dhārayed eṣā khe gamanaṁ karoti yamināṁ syād"],["Comm. on the Kāvyālaṃkāravṛtti zu Kāvyāl","tasya saṁvatsarātmano bhagavān ādityo gativiśeṣeṇa nimeṣakāṣṭhākalāmuhūrtāhorātrapakṣamāsa"]]],"kurute":[914,[["PABh zu PāśupSūtra, 1","uḍḍīnaṁ kurute yasmād aviśrāntaṁ mahākhagaḥ /"],["PABh zu PāśupSūtra, 1","pratyahaṁ kurute yas tu sa yogī yogavittamaḥ //"],["SBhedaV","yaḥ karma kurute vaidyaḥ sa vaidyo \\'nye tu taskarāḥ //"]]],"karomi":[139,[["VNSūtraV zu VNSūtra, 11.","kāryakāraṇabhāve \\'pi asyā eva vyāpāraḥ tena kalāta eva etac catuṣkaṁ jātam idam eva kiṁci"],["Rām, 2","tyakte karomi saṁhāraṁ tasmādyatnena rakṣaya //"],["PABh zu PāśupSūtra, 2","na śaknomi tadā deva kiṁ karomi vada prabho //"]]],"kuryāt":[1080,[["KādSvīSComm zu KādSvīS, 12.","nityaṁ kuryāt prabhāte ca dantarakṣāya yogavit /"],["KādSvīSComm zu KādSvīS, 12.","nityaṁ kuryāt prayatnena raver udayake \\'stake /"],["KādSvīSComm zu KādSvīS, 12.","bhālabhātiṁ tridhā kuryāt kaphadoṣaṁ nivārayet //"]]],"kurvīta":[419,[["Ṭikanikayātrā","yogārambhaṁ na kurvīta kṛtaś cet siddhihā bhavet //"],["Ṭikanikayātrā","yogārambhaṁ na kurvīta kṛte yogo hi rogadaḥ //"],["RCūM","mūḍhagarbhodarārśo\\'śmarībhagaṁdaramukharogeṣv abhuktavataḥ karma kurvīta //"]]],"kuru":[748,[["MṛgṬīkā zu MṛgT, Vidyāpāda, 1, 5.","khamadhye kuru cātmānam ātmamadhye ca khaṁ kuru /"],["MuA zu RHT, 4, 11.","alarkajuṣṭametanme nirviṣaṁ kuru mācirāt /"],["ṚtuS","tenāhaṁ tvāṁ khaniṣyāmi siddhiṁ kuru mahauṣadha //"]]],"kuruṣva":[151,[["Rām, 1","evaṁ kuruṣva tiṣṭhaivaṁ na kartavyamidaṁ tvayā /"],["SarvSund zu AHS, Sū., 9, 10.","kuruṣva rājaśārdūla bhava satyapratiśravaḥ //"],["SarvSund zu AHS, Sū., 9, 10.","tathā kuruṣva bhadraṁ te mā ca śoke manaḥ kṛthāḥ //"]]],"karotu":[50,[["TantraS","kaṇṭhe satāṁ sakalanivṛtidhāmanāmacintāmaṇiprakaradāma karotu kelim //"],["LiPur, 1","atha carakavihīnaḥ prakriyāyām aklinnaḥ kim iva khalu karotu vyādhitānāṁ varākaḥ //"],["AHS, 1","sphuṭatu hṛdayaṁ kāmaṁ kāmaṁ karotu tanuṁ tanuṁ na sakhi caṭulapremṇā kāryaṁ punardayitena"]]],"akarot":[137,[["BhāgPur, 11","kiṁ cākalayya bhagavān idam akarot //"],["VNSūtraV zu VNSūtra, 10.","vasurasapauṣe kṛṣṇadaśamyām abhinavaguptaḥ stavam imam akarot /"],["MṛgṬīkā zu MṛgT, Vidyāpāda, 3, 3.","mamākṣigocaraṁ rūpam akarot sa dayāparaḥ //"]]],"akuruta":[5,[["ĀpGṛSū","akuruta japahomamaṅgalādyāḥ paramabhavāya sutasya devatejyāḥ //"],["ch","sā yad dakṣiṇena padā samagṛbhṇāt tat prātaḥsavanam abhavat tad gāyatrī svam āyatanam akur"],["ch","sa triḥśreṇir bhūtvā tryanīko \\'surān yuddham upaprāyad vijayāya triḥśreṇir iti chandāṁsy "]]],"cakāra":[596,[["KhGṛS, 2","medhābalotsāhamatipradaṁ ca cakāra caitadbhagavānagastyaḥ //"],["Bhairavastava","vahniyogena girije lājarūpaṁ cakāra ha //"],["PABh zu PāśupSūtra, 1","hatvā suretaravarau madhukaiṭabhākhyau nastaś cakāra viśrutīḥ śrutibhir vimṛgyaḥ //"]]],"cakre":[711,[["RAdhyṬ zu RAdhy, 320.","harṣaṇe sārase kāmī cakre pārāvate tathā /"],["MṛgṬīkā zu MṛgT, Vidyāpāda, 4, 2.","tatra sadodite prāṇacārasaṁkhyayaiva udayasaṁkhyā vyākhyātā taddviguṇite tadardham ityādik"],["ŚSūtraV zu ŚSūtra, 1, 12.","ābhyantaraṁ yathā tattaddharādirūpadhāraṇayā tatra tatra pārthivādau cakre tanmayībhāvaḥ /"]]],"kariṣyati":[283,[["PABh zu PāśupSūtra, 2","uḍḍīśaṁ yo na jānāti sa ruṣṭaḥ kiṁ kariṣyati //"],["RAdhy","āha atra prapannaḥ kiṁ kariṣyati //"],["Rām, 2","āha kāmitvāt kṛpayā bhagavatā duḥkhānto dattaḥ svecchayaiva na punaraduḥkhāntaṁ kariṣyati "]]],"kariṣyate":[8,[["ĀVDīp zu Ca, Sū., 27","ihāpi yoge tadeva kariṣyate paraṁ tatra pātanāyehaiva pātitasyotthāpanāyeti viśeṣaḥ //"],["LiPur, 2","tathā kariṣyate sītā daivataṁ hi patiḥ striyāḥ //"],["YSBhā zu YS, 1, 39.","droṇaḥ kariṣyate yatnaṁ sarvathā mama vāraṇe /"]]],"akārṣīt":[12,[["ĀVDīp zu Ca, Śār., 1, 44.","sahānujaiḥ pratyavaruddhabhojanaḥ kathaṁ pravṛttaḥ kim akārṣīt tataḥ //"],["MBh, 12","tanme dahati gātrāṇi tad akārṣīt prajāgaram //"],["MBh, 14","ācakṣe te mahārāja yad akārṣīt pitāmahaḥ /"]]],"akṛta":[9,[["ṚV, 1","pratyutthānābhivādārhe vācāpy akṛta nocitam //"],["RAdhyṬ zu RAdhy, 35.","niḥkṣatriyām akṛta gāṁ ca triḥsaptakṛtvo rāmas tu haihayakulāpyayabhārgavāgniḥ /"],["AVŚ, 7","upo adarśi śundhyuvo na vakṣo nodhā ivāvir akṛta priyāṇi /"]]],"kṛta":[26,[["Ca, 1","tato \\'smābhir etaddūṣaṇārambhaḥ kṛta iti na naḥ kopaḥ kāryo \\'trabhavadbhir upadeśanibhāl"],["Su, 6","kathaṁ tvayā sahānena saṁvādaḥ kṛta ityuta //"],["MṛgṬīkā zu MṛgT, Vidyāpāda, 11, 1.","abhīṣṭadevatānamaskārastu granthādau śiṣṭācāraprāptaḥ paramaśiṣṭenāgniveśena kṛta eva anya"]]],"kṛtvā":[4374,[["KādSvīSComm zu KādSvīS, 12.","ūrdhvadṛṣṭiṁ kṣaṇaṁ kṛtvā taj jalaṁ vamayet punaḥ /"],["KādSvīSComm zu KādSvīS, 12.","pūrakaṁ recakaṁ kṛtvā vegena na tu cālayet /"],["KādSvīSComm zu KādSvīS, 16.","meḍhropary atha saṁnidhāya cibukaṁ kṛtvā hṛdi sthāpitam /"]]],"kartavya":[27,[["MBh, 3","upayogavikalpa iti upayujyate ityupayogo gavyakṣīrādirāhāro vihāraśca upayogavikalpa upayo"],["RRĀ, 2","tuśabdaḥ samastasūtrasūtrāvayavānām upodghātādiniścayadvāreṇa navagaṇā vijñeyās tān vijñāy"],["ĀVDīp zu Ca, Vim., 1, 22.","yastvevaṁ na śraddadhātyaparīkṣitebhyo vā dadāti tasya brahmahatyādibhyo \\'pi garīyaḥ pāta"]]],"kartum":[394,[["MPur","brāhmaṇas trayāṇāṁ varṇānām upanayanaṁ kartum arhati rājanyo dvayasya vaiśyo vaiśyasyaivet"],["SBhedaV","anyaśāstropapannānāṁ cārthānāmihopanītānām arthavaśāt teṣāṁ tadvidyebhya eva vyākhyānam an"],["SarvSund zu AHS, Sū., 9, 26.","ahitair dūṣaṇaṁ bhūyo na vidvān kartum arhati //"]]],"bhavati":[4844,[["KādSvīSComm zu KādSvīS, 16.","harati sakalarogān āśu gulmajvarādīn bhavati vigatadoṣaṁ hy āsanaṁ śrīmayūram //"],["PABh zu PāśupSūtra, 1","bhruvor madhye gatā dṛṣṭir mudrā bhavati khecarī //"],["PABh zu PāśupSūtra, 1","tathāpi sakalā siddhis tasya bhavati niścitam //"]]],"bhavate":[41,[["RArṇ","bhavate \\'pi varaṁ dadmi vṛṇītāṁ bhagavān api //"],["ASaṃ, 1","yauvanaṁ bhavate dattvā cariṣyāmi yathāttha mām //"],["ŚdhSaṃh, 2","sarve pradāya bhavate gantāro narakaṁ vayam //"]]],"bhavet":[3571,[["KādSvīSComm zu KādSvīS, 12.","ārogyaṁ balapuṣṭiś ca bhavet tasya dine dine //"],["KādSvīSComm zu KādSvīS, 12.","bhavet svacchandadehaś ca kāmadevasamo bhavet //"],["KādSvīSComm zu KādSvīS, 12.","evam abhyāsayogena kāmadevasamo bhavet //"]]],"bhavatu":[233,[["BhāgPur, 11","sa tu tadabhyarthitaṁ jñānopadeśaṁ dātuṁ tān prativacanaṁ śrūyatām ity āha kiṁ tu mamaika "],["PABh zu PāśupSūtra, 4","yadvā bījam ivāṅkurādīnāṁ kalādikāryāṇām upādānaṁ māyaivānyānapekṣiṇī sṛṣṭyādikṛd bhavatu "],["MPur","tataśca bhinnārthameva śrotradṛgādi pāṇipādādi ca yuṣmaddṛśā bhavatu puṁbhogakāryahetutve "]]],"abhavat":[244,[["PABh zu PāśupSūtra, 1","tyaktvā vanasthavratavān abhavat tato vai gandharvakoṭimathanaṁ viharaṁś cakāra //"],["Rām, 2","vidyudbhir iva vikṣiptair ākāśam abhavat tadā //"],["Rām, 2","triśaṅkor abhavat putro dhundhumāro mahāyaśāḥ //"]]],"babhūva":[934,[["PABh zu PāśupSūtra, 1","sākṣād babhūva bhagavān paripātum īśo vedān yugādisamaye hayaśīrṣanāmā /"],["ĀVDīp zu Ca, Śār., 1, 44.","niveśayitvā nijarājya īśvaro yudhiṣṭhiraṁ prītamanā babhūva ha //"],["SkPur","yasyopamāno na babhūva so \\'cyuto mamāstu māṅgalyavivṛddhaye hariḥ //"]]],"bhaviṣyati":[1476,[["KāvyAl","saviṁśam adhyāyaśatamasya vyākhyā bhaviṣyati //"],["ŚGDīp zu ŚdhSaṃh, 2, 11, 101.","tattu na samyak bhūtaguṇādāmāccānyo \\'mlo vipāko nāsti pittaṁ hi vidagdham amlatām upaitya"],["MuA zu RHT, 6, 3.","tadyuṣmākaṁ śubhā vṛttirbāleṣveva bhaviṣyati /"]]],"abhūt":[246,[["YS","atha teṣāṁ bharadvājo bhagavān agraṇīr abhūt /"],["Rām, 2","kuta etad abhivyajyata ityāha yatastadā paramapadapraveśasamaye sarvam īpsitamiti yadyaj j"],["PABh zu PāśupSūtra, 1","dviprakāram abhūt satyaṁ sattābhūtvā svayaṁ svayam /"]]],"bhūta":[12,[["ŚSDīp zu ŚdhSaṃh, 2, 12, 153.","yadi dharmo bhaved bhūta adharmo vā paraṁtapa /"],["Rām, 5","eko bhūtvā dvidhā bhūta iti vādaḥ pradṛśyate //"],["GautDhS, 3","candramāśca sanakṣatro jyotir bhūta ivāvṛtaḥ //"]]],"bhūtvā":[984,[["PABh zu PāśupSūtra, 1","ūrdhvajihvaḥ sthiro bhūtvā dhārayet pavanaṁ sadā /"],["PABh zu PāśupSūtra, 1","virale sugupto bhūtvā mudrām etāṁ samabhyaset //"],["PABh zu PāśupSūtra, 1","ūrdhvapādaḥ sthiro bhūtvā viparītakarī matā //"]]],"asti":[807,[["MPur","asti sravet //"],["MPur","āśritatvam svaguṇotkarṣāt śālākyaśāstrābhihitā tadeva ādhibhautikatvaṁ svaguṇotkarṣāt śālā"],["MPur","ṣaḍdhātutvaṁ asti //"]]],"asmi":[290,[["ŚSūtra","jissa daḍhapasiddhighaḍie vavahāre soi asmi ṇīsaṁko /"],["SpandaKārNir zu SpandaKār, 1, 16.","indro \\'haṁ sarvadevānāṁ vasūnām asmi havyavāṭ /"],["SpandaKārNir zu SpandaKār, 1, 16.","devarṣīṇāṁ nārado \\'haṁ havirdhāny asmi dhenuṣu //"]]],"syāt":[2124,[["PABh zu PāśupSūtra, 1","prakāśāt siddhihāniḥ syāt satyaṁ vacmi ca tattvataḥ //"],["PABh zu PāśupSūtra, 1","datte ca siddhihāniḥ syāt satyaṁ vacmi ca caṇḍa te //"],["MṛgṬīkā zu MṛgT, Vidyāpāda, 1, 5.","evaṁvidhiḥ samādhiḥ syāt sarvasaṁkalpavarjitaḥ /"]]],"astu":[483,[["Ca, 6, 3","sudhevottamanāgānāṁ bhaiṣajyam idam astu te //"],["LiPur, 1","kṛtvā yacchubham āptaṁ śubham astu paraṁ tato jagataḥ //"],["ĀVDīp zu Ca, 2, Cik., 4, 14.","astu bhedād asaṁkhyātvam aikyaṁ vāsvādalakṣaṇāt /"]]],"āsīt":[397,[["MuA zu RHT, 2, 2.","yaṁ lehaṁ prāśya cyavanasaṁjño munirjarākrānto\\'pi taruṇīlocanarañjana āsīt //"],["Ca, 1","asad evedam agra āsīt //"],["Su, 6","bhraśyati tu kṛtayuge keṣāṁcid atyādānāt sāṁpannikānāṁ sattvānāṁ śarīragauravam āsīt śarīr"]]],"āsa":[61,[["PABh zu PāśupSūtra, 1","bhūmer adho dharaṇimaṇḍalam aprameyaḥ śeṣākhya āsa jagataḥ sthitaye nitāntam /"],["PABh zu PāśupSūtra, 1","tasmād adhaḥ kamaṭha āsa viśālarūpī brahmāṇḍabhāṇḍaparivistṛtādivyakāyaḥ /"],["PABh zu PāśupSūtra, 1","yogeśvaro \\'tritanayo bhagavān ananto dattākhya āsa samatāvavadat svacaryām /"]]],"gacchati":[671,[["Ṭikanikayātrā","malākulāsu nāḍīṣu māruto naiva gacchati /"],["MPālNigh","yathāhi puṣpamukulastho gandho na śakyamihāstīti vaktumatho naiva nāstīti atha cāsti satāṁ"],["MBh, 1","sukhamevaṁ vraṇī śete sukhaṁ gacchati tiṣṭhati /"]]],"gacchet":[227,[["PABh zu PāśupSūtra, 1","yāvad gacchet suṣumṇāyāṁ vāyuḥ prakāśayeddhaṭhāt //"],["MBh, 1","māṁsodakābhaṁ rudhiraṁ ca gacchet sarvendriyārthoparamastathaiva /"],["ŚSDīp zu ŚdhSaṃh, 2, 12, 171.","alpīyaḥkhāṁ yadā harṣādbālāṁ gacchet striyaṁ naraḥ //"]]],"gaccha":[535,[["BhāgPur, 3","taṁ gaccha śaraṇaṁ devadevādiṁ bhuvaneśvaram /"],["Rām, 2","gaccha tvaṁ paścimadvāre tatrāsti divyakanyakā /"],["AHS, 6","gaccha kāmaṁ mayāpṛṣṭo mayi saṁnyastakarmaṇā /"]]],"agacchat":[36,[["ĀVDīp zu Ca, Cik., 1, 8.","agacchat tvām upādāya devarājasya sāhyakṛt //"],["SkPur Rkh, 1","agacchat sahasā dhyānam āsīd bāṣpapariplutaḥ //"],["Rām, 4","praviśya ca nāgalokaṁ svabhavanam agacchat /"]]],"jagāma":[836,[["Rām, 1","jagāma lokaṁ svam akhaṇḍitotsavaṁ samīḍitaḥ puṣkaraviṣṭarādibhiḥ //"],["RRĀ, 2","jagāma bindusarasaḥ sarasvatyā pariśritāt //"],["AHS, 6","dakṣiṇīkṛtya taṁ prīto vanam eva jagāma ha //"]]],"gamiṣyati":[116,[["VārGṛSū","na tāvad gataḥ gamiṣyati kiṁtu gamayatītyarthaḥ //"],["SpandaKārNir zu SpandaKār, 1, 4.","asamprajanyakleśo\\'pi vṛddhiṁ caivaṁ gamiṣyati //"],["SarvSund zu AHS, Sū., 9, 1.","tasmātpitāmahatvaṁ te loke khyātiṁ gamiṣyati //"]]],"agamat":[81,[["MṛgT, 1","iti śrīmahārājarṣivaryeṇa purūravasā viracitaṁ kāmijanānāṁ vinodāya rativilāsāṅgabhūtaṁ kā"],["Rām, 2","sabandhur agamat tatra janako yatra vartate //"],["Ayurvedarasāyana zu AHS, Sū., 9, 24.","kasyacit tv atha kālasya sāṁkāśyād agamat purāt /"]]],"gata":[32,[["Rām, 2","śeṣaṁ pibet klamāpāye sthiratāṁ gata ojasi //"],["NiSaṃ zu Su, Sū., 14, 23.1_-","nanu yadi pratyayodbhavo \\'pyasya parāmṛtarasāpāyaḥ tatkatham uktaṁ śaktivargasya bhogyatā"],["ch","jugopa kukṣiṁ gata āttacakro mātuśca me yaḥ śaraṇaṁ gatāyāḥ //"]]],"gatvā":[1505,[["KādSvīSComm zu KādSvīS, 12.","ekadā caṇḍakāpālir gatvā gheraṇḍakuṭṭiram /"],["MuA zu RHT, 4, 16.","tataḥ pādaśataṁ gatvā vāmapārśvena saṁviśet //"],["ŚSDīp zu ŚdhSaṃh, 2, 12, 96.","tatrānātmavatāṁ yathoktaiḥ prakopaṇair viruddhādhyaśanastrīprasaṅgotkaṭukāsanapṛṣṭhayānave"]]],"vakti":[47,[["YS","yathā kaścid evaṁ vakti devadatto \\'ham āyāta iti //"],["Su, 1","athaiṣāmeva vyāpārabhedaṁ vakti //"],["VNSūtraV zu VNSūtra, 5.","śabdo \\'pi na mukhyaḥ ko \\'pi vakti iti āgacchantyā iva pratiśrutkāyāḥ śravaṇāt //"]]],"avocat":[64,[["Rām, 4","atha tasminn anāgacchatyupādhyāyaḥ śiṣyān avocat /"],["MPur","evaṁvrato \\'smīti ca mām avocat phalāni cānyāni navānyadān me //"],["Kir","yo naḥ purā ṣaṇḍhatilān avocat sabhāmadhye pārthivānāṁ samakṣam /"]]],"uvāca":[10368,[["KādSvīSComm zu KādSvīS, 12.","caṇḍakāpālir uvāca /"],["KādSvīSComm zu KādSvīS, 12.","gheraṇḍa uvāca /"],["KādSvīSComm zu KādSvīS, 16.","gheraṇḍa uvāca /"]]],"ūce":[37,[["ṚV, 1","ūce yayātmaśamalaṁ guṇasaṅgapaṅkamasmin vidhūya kapilasya gatiṁ prapede //"],["MBh, 3","hanyamānāgatān ūce yasmāddhetorna me vacaḥ /"],["ṚV, 1","upapattimad ūrjitāśrayaṁ nṛpam ūce vacanaṁ vṛkodaraḥ //"]]],"vakṣyati":[145,[["MBh, 1","vakṣyati vakṣyate caivaṁ vyākhyāsyatyācāryaḥ caivaṁ vyākhyāsyatyācāryaḥ doṣadūṣiteṣvatyart"],["Rām, 3","tathā cehaiva vakṣyati āgneyaṁ dāhabhāvarṇaprakāśapacanātmakam //"],["Ca, 1","nanu yadi sarvo jvaraḥ saṁnipātajaḥ tatkimiti vakṣyati ayaṁ saṁnipātajvara iti //"]]],"ukta":[19,[["ĀVDīp zu Ca, Sū., 26, 52.","anena nyāyena sākṣādanukte\\'pi ekarasadravyaikadoṣavikārayor api prabhāvo \\'saṁsṛṣṭarasado"],["KāSū, 5","ukta eva kāle yasmād balavanto bhavanti tasmāttatraiva saṁjātabalāḥ santo vyajyanta ityart"],["Rām, 4","sa evam ukta upādhyāyeneṣṭaṁ deśaṁ jagāma //"]]],"uktvā":[846,[["YS","yathaitat saṁnaddhadehas tvam uttarakuruṣu bhagavantaṁ pinākinam ārādhaya varṣasahasrānte "],["VārGṛSū","tadiyatā sṛṣṭisthitī uktvā saṁhāraṁ vaktum āha //"],["RAdhyṬ zu RAdhy, 235.","evaṁ guṇatattvam uktvā buddhitattvaṁ vaktum āha //"]]],"dadāti":[388,[["MuA zu RHT, 10, 12.","pītaṁ yadannam upayujya tadūrdhvakāye hanyādgadān bahuvidhāṁśca balaṁ dadāti /"],["PABh zu PāśupSūtra, 3","pāraṁ dadāti yasmāt tasmād ayameva pāradaḥ kathitaḥ //"],["ṚtuS","atisevanato jarāṁ ca pittaṁ sitimānaṁ ca dadāti kuṣṭhakārī //"]]],"datte":[109,[["PABh zu PāśupSūtra, 1","datte ca siddhihāniḥ syāt satyaṁ vacmi ca caṇḍa te //"],["ŚGDīp zu ŚdhSaṃh, 2, 12, 252.","snehavīryaṁ tathā datte dehaṁ cānuvisarpati //"],["ŚSDīp zu ŚdhSaṃh, 2, 12, 267.","datte ca punar api saṁsvedya galakapolādīn dhūmamāseveta bhojayeccainamabhiṣyandi tato \\'s"]]],"dadyāt":[504,[["MBh, 1","athaināṁ nave mahati ghaṭe sarastaḍāgodakapaṅkamāvāpya nidadhyāt bhakṣyārthe cāsām upahare"],["MBh, 1","tatra samyagviddhamāmatailena pariṣecayet tryahāttryahāc ca vartiṁ sthūlatarāṁ dadyāt pari"],["MuA zu RHT, 4, 16.","sūdaḥ sūpaudanaṁ dadyāt pradehāṁśca susaṁskṛtān //"]]],"dehi":[187,[["Rām, 2","sā vakti bhojanaṁ dehi yadīcchasi samīhitam //"],["MṛgṬīkā zu MṛgT, Vidyāpāda, 3, 4.","uoṁ namo bhagavate rudrāya śivāya jyotiṣāṁ pataye dehi jyotīṁṣi mativīryakaraṇāya svāhā /"],["MṛgṬīkā zu MṛgT, Vidyāpāda, 3, 4.","uoṁ namo bhagavate uḍḍāmareśvarāya añjanamantrasiddhiṁ dehi me svāhā ityañjanādhikāraḥ /"]]],"adadāt":[6,[["Ca, 1","yāṁ me vidyāṁ mahārāja adadāt sa mahāyaśāḥ /"],["Paraśurāmakalpasūtra","adadāt kuntibhojāya sakhā sakhye mahātmane //"],["MBh, 9","mucukundasya rājarṣer adadāt pṛthivīm imām /"]]],"dadau":[611,[["VārGṛSū","dadau sa daśa dharmāya kaśyapāya trayodaśa /"],["ṚV, 2","mahādhanāni vāsāṁsi dadau hārān mahāmanāḥ //"],["ṚV, 1","abhyarthitastadā tasmai sthānāni kalaye dadau /"]]],"dāsyati":[61,[["Rām, 2","hāraṁ dāsyati sā tuṣṭā na praveśaṁ prayacchati /"],["RAdhy","kiṁ vā dāsyati //"],["RAdhy","tad ucyate pūjāṁ kariṣyaty ātmānaṁ ca dāsyati //"]]],"adāt":[22,[["MṛgṬīkā zu MṛgT, Vidyāpāda, 6, 4.","tebhyo \\'nanteśādibhyas tṛtīyanetrāgniśikhānirdagdhasmaratarur bhagavān umāpatir adhigamya"],["ṚV, 1","punaśca yācamānāya jātarūpam adāt prabhuḥ /"],["ṚV, 1","devahūtim adāt tāta kardamāyātmajāṁ manuḥ /"]]],"datta":[17,[["MBh, 1","nimittaṁ bhūteṣu khaṇḍitatvaṁ kiṁtu svasnehādyutkarṣād kecicca svasnehādyutkarṣād tasmiṁs "],["Rām, 4","mamāpi śāpo na bhaved bhavatā datta iti //"],["AVŚ, 2","yajadhvaṁ ca mahāyajñair bhogān aśnīta datta ca /"]]],"dattvā":[1431,[["RCūM","tataḥ śastram avacārya śītābhir adbhir āturam āśvāsya samantāt paripīḍyāṅgulyā vraṇam abhi"],["RSK","tatra kṣārasādhyavyādhivyādhitam upaveśya nivātātape deśe \\'saṁbādhe \\'gropaharaṇīyoktena "],["MBh, 1","tatra ghanāṁ kavalikāṁ dattvā vāmahastaparikṣepam ṛjum anāviddham asaṁkucitaṁ mṛdu paṭṭaṁ "]]]};
+
+const EP={
+  'Present Ind.':  {sg:['mi','si','ti'],du:['vaḥ','thaḥ','taḥ'],pl:['maḥ','tha','nti']},
+  'Optative':      {sg:['yām','yāḥ','yāt'],du:['yāva','yātam','yātām'],pl:['yāma','yāta','yuḥ']},
+  'Imperative':    {sg:['āni','','tu'],du:['āva','tam','tām'],pl:['āma','ta','ntu']},
+  'Imperfect':     {sg:['am','aḥ','at'],du:['āva','tam','tām'],pl:['āma','ta','an']},
+  'Perfect':       {sg:['a','itha','a'],du:['iva','athuḥ','atuḥ'],pl:['ima','a','uḥ']},
+  'Future':        {sg:['āmi','asi','ati'],du:['āvaḥ','athaḥ','ataḥ'],pl:['āmaḥ','atha','anti']},
+  'Aorist':        {sg:['am','īḥ','īt'],du:['va','tam','tām'],pl:['ma','ṭa','uḥ']},
+};
+const EA={
+  'Present Ind.':  {sg:['e','se','te'],du:['vahe','the','te'],pl:['mahe','dhve','ate']},
+  'Optative':      {sg:['ya','thāḥ','ta'],du:['vahi','yāthām','yātām'],pl:['mahi','dhvam','ran']},
+  'Imperative':    {sg:['ai','sva','tām'],du:['vahai','thām','tām'],pl:['mahai','dhvam','tām']},
+  'Imperfect':     {sg:['e','thāḥ','ta'],du:['vahi','thām','tām'],pl:['mahi','dhvam','ta']},
+  'Perfect':       {sg:['e','ṣe','e'],du:['vahe','āthe','āte'],pl:['mahe','dhve','ire']},
+  'Future':        {sg:['e','se','te'],du:['vahe','ethe','ete'],pl:['mahe','dhve','ante']},
+  'Aorist':        {sg:['i','thāḥ','ta'],du:['vahi','yāthām','yātām'],pl:['mahi','dhvam','sata']},
+};
+const NFSUF={PPP:['ta','ta','ṇa'],Absolutive:['tvā','ya'],FPP:['tavya','anīya','ya'],Infinitive:['tum'],
+  'Past Act.P.':['tavat'],'Pres.Act.P.':['at','āna']};
+
+let showStem=false;
+
+function stemSplit(form,tense,numKey,pi,voice){
+  if(!form||form==='—'||typeof form!=='string')return form;
+  const tbl=voice==='A'?EA:EP;
+  const ends=tbl[tense]&&tbl[tense][numKey];
+  if(!ends||pi>=ends.length)return form;
+  const e=ends[pi];
+  if(e&&form.endsWith(e)){
+    const s=form.slice(0,form.length-e.length);
+    if(!showStem)return form;
+    return '<span style="opacity:0.45">'+s+'</span><span style="color:#3266ad;font-weight:600">'+e+'</span>';
+  }
+  return form;
+}
+function nfStemSplit(form,tense){
+  if(!form||form==='—'||typeof form!=='string')return form;
+  const sufs=NFSUF[tense]||[];
+  for(let i=0;i<sufs.length;i++){
+    const suf=sufs[i];
+    if(suf&&form.endsWith(suf)){
+      const s=form.slice(0,form.length-suf.length);
+      if(!showStem)return form;
+      return '<span style="opacity:0.45">'+s+'</span><span style="color:#3266ad;font-weight:600">'+suf+'</span>';
+    }
+  }
+  return form;
+}
+const LM="http://www.sanskrit-linguistics.org/dcs/index.php?contents=lemma&IDWord=";
+const FV=id=>`http://www.sanskrit-linguistics.org/dcs/index.php?contents=fundstellen&IDVerbalform=${id}&type=finite`;
+
+// Form-specific DCS IDs (from 12.csv/15.csv)
+const FID={'karomi':3570,'kurve':39209,'karoti':3572,'kurute':39210,'kuruṣva':87250,
+'kuryāt':3581,'kurvīta':41104,'kuru':41254,'karotu':69429,'akarot':3590,'akuruta':87259,
+'cakāra':3619,'cakre':67833,'kariṣyati':3599,'kariṣyate':175888,'akārṣīt':111377,'akṛta':181870,
+'kṛta':574,'kṛtvā':580,'kartavya':576,'kartum':579,
+'bhavati':11348,'bhavate':171781,'bhavet':11357,'bhaveta':171790,'bhava':11365,'bhavatu':11366,
+'abhavat':11375,'babhūva':11403,'bhaviṣyati':11384,'abhūt':11393,'bhūta':1355,'bhūtvā':1360,
+'asti':1247,'syāt':1256,'astu':1272,'edhi':148227,'āsīt':1265,'āsa':46597,
+'gacchati':5814,'gacchet':5823,'gaccha':56077,'gacchatu':56078,'agacchat':5850,
+'jagāma':5896,'jagme':430126,'gamiṣyati':5859,'agamat':5877,'gata':841,'gatvā':846,
+'vakti':44886,'avocat':49041,'uvāca':11766,'ūce':44460,'vakṣyati':11757,'ukta':1400,'uktvā':1402,
+'dadāti':13839,'datte':41151,'dadyāt':13848,'dadīta':247913,'dehi':54499,'dadātu':54500,
+'adadāt':13857,'dadau':13875,'dāsyati':13866,'adāt':46673,'datta':1668,'dattvā':1671};
+
+const TNOTES={
+  'Present Ind.':'Действие происходит сейчас или обычно (вневременное). Господствует 3sg — нарративный и гномический презент.',
+  'Optative':'Предписание, желание, возможность. 3sg kuryāt — безличная норма в дхармашастре и медицине (≈"следует"). 95.8% всех форм — 3sg.',
+  'Imperative':'Приказ/просьба. Единственное время, где 2sg доминирует (20 294 из 32 717). 2sg kuru — самая частая форма Imperative.',
+  'Imperfect':'Нарративное прошедшее. Доминирует 3sg. В эпосе — основное время рассказа (Imperfect + Perfect чередуются). Augment обязателен.',
+  'Perfect':'Косвенное/отдалённое прошедшее. В классическом санскрите вытесняет Imperfect. 3sg cakāra / uvāca — стандартная нарративная формула.',
+  'Future':'Будущее. Заметно больше 1sg (vows, promises) — характерно для эпоса и кавьи. 3sg gariṣyati — нейтральное предсказание.',
+  'Pres. Passive':'Описание состояний и общеизвестных истин. 3sg kriyate — «делается, выполняется». Безличный пассив prefers 3sg (94%).',
+  'Aorist':'Обобщённое прошедшее без временно́й дистанции. В классическом санскрите редок; в ведийском и эпосе активен. Сигма-аорист √kṛ: akārṣīt.',
+  'Injunctive':'Ведийская форма без аугмента. В классическом санскрите сохраняется как реликт. 2sg преобладает (46%) — функция запрета.',
+  'PPP':'Прош. страд. причастие. Самая частая форма корпуса (31.4%). Заменяет финитный глагол в описаниях и нарративе: kṛtaḥ «сделанный/совершённый».',
+  'Absolutive':'Деепричастие совершенного вида. Второй по частоте нефинитный класс. Цепочки absolutive характерны для нарративной прозы: kṛtvā gatvā śrutvā…',
+  'FPP':'Герундив — обязательность. kartavyaḥ «должен быть сделан». В медицинских и юридических текстах часто заменяет Optative.',
+  'Infinitive':'Инфинитив. Инвариантная форма: kartum. Используется при глаголах желания, способности, начала.',
+  'Past Act.P.':'Прош. действ. причастие. kṛtavān «совершивший». Реже PPP; используется в активной конструкции.',
+  'Pres.Act.P.':'Наст. действ. причастие. kurvan/kurvat «делающий». Редок в классической прозе, чаще в поэзии.',
+};
+
+// Corpus contexts: form → {n, ex:[{src,txt}]}
+const FCTX={"karoti":{"n":1130,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"pārthivīdhāraṇāmudrāṁ yaḥ karoti ca nityaśaḥ /"},{"src":"PABh zu PāśupSūtra, 1","txt":"prāṇaṁ tatra vinīya pañcaghaṭikāś cittānvitaṁ dhārayed eṣā khe gamanaṁ karoti yamināṁ syād vāyavī dhāraṇā //"},{"src":"Comm. on the Kāvyālaṃkāravṛtti zu Kāvyālaṃkāravṛtti, 1, Dvitīya adhyāyaḥ","txt":"tasya saṁvatsarātmano bhagavān ādityo gativiśeṣeṇa nimeṣakāṣṭhākalāmuhūrtāhorātrapakṣamāsartvayanasaṁvatsarayugapravibhā"}]},"kurute":{"n":914,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"uḍḍīnaṁ kurute yasmād aviśrāntaṁ mahākhagaḥ /"},{"src":"PABh zu PāśupSūtra, 1","txt":"pratyahaṁ kurute yas tu sa yogī yogavittamaḥ //"},{"src":"SBhedaV","txt":"yaḥ karma kurute vaidyaḥ sa vaidyo \\'nye tu taskarāḥ //"}]},"karomi":{"n":139,"ex":[{"src":"VNSūtraV zu VNSūtra, 11.","txt":"kāryakāraṇabhāve \\'pi asyā eva vyāpāraḥ tena kalāta eva etac catuṣkaṁ jātam idam eva kiṁcid adhunā jānan abhiṣvaktaḥ kar"},{"src":"Rām, 2","txt":"tyakte karomi saṁhāraṁ tasmādyatnena rakṣaya //"},{"src":"PABh zu PāśupSūtra, 2","txt":"na śaknomi tadā deva kiṁ karomi vada prabho //"}]},"kuryāt":{"n":1080,"ex":[{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"nityaṁ kuryāt prabhāte ca dantarakṣāya yogavit /"},{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"nityaṁ kuryāt prayatnena raver udayake \\'stake /"},{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"bhālabhātiṁ tridhā kuryāt kaphadoṣaṁ nivārayet //"}]},"kurvīta":{"n":419,"ex":[{"src":"Ṭikanikayātrā","txt":"yogārambhaṁ na kurvīta kṛtaś cet siddhihā bhavet //"},{"src":"Ṭikanikayātrā","txt":"yogārambhaṁ na kurvīta kṛte yogo hi rogadaḥ //"},{"src":"RCūM","txt":"mūḍhagarbhodarārśo\\'śmarībhagaṁdaramukharogeṣv abhuktavataḥ karma kurvīta //"}]},"kuru":{"n":748,"ex":[{"src":"MṛgṬīkā zu MṛgT, Vidyāpāda, 1, 5.","txt":"khamadhye kuru cātmānam ātmamadhye ca khaṁ kuru /"},{"src":"MuA zu RHT, 4, 11.","txt":"alarkajuṣṭametanme nirviṣaṁ kuru mācirāt /"},{"src":"ṚtuS","txt":"tenāhaṁ tvāṁ khaniṣyāmi siddhiṁ kuru mahauṣadha //"}]},"kuruṣva":{"n":151,"ex":[{"src":"Rām, 1","txt":"evaṁ kuruṣva tiṣṭhaivaṁ na kartavyamidaṁ tvayā /"},{"src":"SarvSund zu AHS, Sū., 9, 10.","txt":"kuruṣva rājaśārdūla bhava satyapratiśravaḥ //"},{"src":"SarvSund zu AHS, Sū., 9, 10.","txt":"tathā kuruṣva bhadraṁ te mā ca śoke manaḥ kṛthāḥ //"}]},"karotu":{"n":50,"ex":[{"src":"TantraS","txt":"kaṇṭhe satāṁ sakalanivṛtidhāmanāmacintāmaṇiprakaradāma karotu kelim //"},{"src":"LiPur, 1","txt":"atha carakavihīnaḥ prakriyāyām aklinnaḥ kim iva khalu karotu vyādhitānāṁ varākaḥ //"},{"src":"AHS, 1","txt":"sphuṭatu hṛdayaṁ kāmaṁ kāmaṁ karotu tanuṁ tanuṁ na sakhi caṭulapremṇā kāryaṁ punardayitena me /"}]},"akarot":{"n":137,"ex":[{"src":"BhāgPur, 11","txt":"kiṁ cākalayya bhagavān idam akarot //"},{"src":"VNSūtraV zu VNSūtra, 10.","txt":"vasurasapauṣe kṛṣṇadaśamyām abhinavaguptaḥ stavam imam akarot /"},{"src":"MṛgṬīkā zu MṛgT, Vidyāpāda, 3, 3.","txt":"mamākṣigocaraṁ rūpam akarot sa dayāparaḥ //"}]},"akuruta":{"n":5,"ex":[{"src":"ĀpGṛSū","txt":"akuruta japahomamaṅgalādyāḥ paramabhavāya sutasya devatejyāḥ //"},{"src":"ch","txt":"sā yad dakṣiṇena padā samagṛbhṇāt tat prātaḥsavanam abhavat tad gāyatrī svam āyatanam akuruta tasmāt tat samṛddhatamaṁ m"},{"src":"ch","txt":"sa triḥśreṇir bhūtvā tryanīko \\'surān yuddham upaprāyad vijayāya triḥśreṇir iti chandāṁsy eva śreṇīr akuruta tryanīka it"}]},"cakāra":{"n":596,"ex":[{"src":"KhGṛS, 2","txt":"medhābalotsāhamatipradaṁ ca cakāra caitadbhagavānagastyaḥ //"},{"src":"Bhairavastava","txt":"vahniyogena girije lājarūpaṁ cakāra ha //"},{"src":"PABh zu PāśupSūtra, 1","txt":"hatvā suretaravarau madhukaiṭabhākhyau nastaś cakāra viśrutīḥ śrutibhir vimṛgyaḥ //"}]},"cakre":{"n":711,"ex":[{"src":"RAdhyṬ zu RAdhy, 320.","txt":"harṣaṇe sārase kāmī cakre pārāvate tathā /"},{"src":"MṛgṬīkā zu MṛgT, Vidyāpāda, 4, 2.","txt":"tatra sadodite prāṇacārasaṁkhyayaiva udayasaṁkhyā vyākhyātā taddviguṇite tadardham ityādikrameṇa aṣṭottaraśate cakre dvi"},{"src":"ŚSūtraV zu ŚSūtra, 1, 12.","txt":"ābhyantaraṁ yathā tattaddharādirūpadhāraṇayā tatra tatra pārthivādau cakre tanmayībhāvaḥ //"}]},"kariṣyati":{"n":283,"ex":[{"src":"PABh zu PāśupSūtra, 2","txt":"uḍḍīśaṁ yo na jānāti sa ruṣṭaḥ kiṁ kariṣyati //"},{"src":"RAdhy","txt":"āha atra prapannaḥ kiṁ kariṣyati //"},{"src":"Rām, 2","txt":"āha kāmitvāt kṛpayā bhagavatā duḥkhānto dattaḥ svecchayaiva na punaraduḥkhāntaṁ kariṣyati //"}]},"kariṣyate":{"n":8,"ex":[{"src":"ĀVDīp zu Ca, Sū., 27","txt":"ihāpi yoge tadeva kariṣyate paraṁ tatra pātanāyehaiva pātitasyotthāpanāyeti viśeṣaḥ //"},{"src":"LiPur, 2","txt":"tathā kariṣyate sītā daivataṁ hi patiḥ striyāḥ //"},{"src":"YSBhā zu YS, 1, 39.","txt":"droṇaḥ kariṣyate yatnaṁ sarvathā mama vāraṇe /"}]},"akārṣīt":{"n":12,"ex":[{"src":"ĀVDīp zu Ca, Śār., 1, 44.","txt":"sahānujaiḥ pratyavaruddhabhojanaḥ kathaṁ pravṛttaḥ kim akārṣīt tataḥ //"},{"src":"MBh, 12","txt":"tanme dahati gātrāṇi tad akārṣīt prajāgaram //"},{"src":"MBh, 14","txt":"ācakṣe te mahārāja yad akārṣīt pitāmahaḥ /"}]},"akṛta":{"n":9,"ex":[{"src":"ṚV, 1","txt":"pratyutthānābhivādārhe vācāpy akṛta nocitam //"},{"src":"RAdhyṬ zu RAdhy, 35.","txt":"niḥkṣatriyām akṛta gāṁ ca triḥsaptakṛtvo rāmas tu haihayakulāpyayabhārgavāgniḥ /"},{"src":"AVŚ, 7","txt":"upo adarśi śundhyuvo na vakṣo nodhā ivāvir akṛta priyāṇi /"}]},"kṛta":{"n":26,"ex":[{"src":"Ca, 1","txt":"tato \\'smābhir etaddūṣaṇārambhaḥ kṛta iti na naḥ kopaḥ kāryo \\'trabhavadbhir upadeśanibhālanadattakarṇaiḥ //"},{"src":"Su, 6","txt":"kathaṁ tvayā sahānena saṁvādaḥ kṛta ityuta //"},{"src":"MṛgṬīkā zu MṛgT, Vidyāpāda, 11, 1.","txt":"abhīṣṭadevatānamaskārastu granthādau śiṣṭācāraprāptaḥ paramaśiṣṭenāgniveśena kṛta eva anyathā śiṣṭācāralaṅghanena śiṣṭat"}]},"kṛtvā":{"n":4374,"ex":[{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"ūrdhvadṛṣṭiṁ kṣaṇaṁ kṛtvā taj jalaṁ vamayet punaḥ /"},{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"pūrakaṁ recakaṁ kṛtvā vegena na tu cālayet /"},{"src":"KādSvīSComm zu KādSvīS, 16.","txt":"meḍhropary atha saṁnidhāya cibukaṁ kṛtvā hṛdi sthāpitam /"}]},"kartavya":{"n":27,"ex":[{"src":"MBh, 3","txt":"upayogavikalpa iti upayujyate ityupayogo gavyakṣīrādirāhāro vihāraśca upayogavikalpa upayogabhedaḥ kartavya ityarthaḥ //"},{"src":"RRĀ, 2","txt":"tuśabdaḥ samastasūtrasūtrāvayavānām upodghātādiniścayadvāreṇa navagaṇā vijñeyās tān vijñāya śiṣyāṇāṁ saṁśayād yajñānaṁ n"},{"src":"ĀVDīp zu Ca, Vim., 1, 22.","txt":"yastvevaṁ na śraddadhātyaparīkṣitebhyo vā dadāti tasya brahmahatyādibhyo \\'pi garīyaḥ pātakaṁ syād ityataḥ śiṣyaparīkṣāy"}]},"kartum":{"n":394,"ex":[{"src":"MPur","txt":"brāhmaṇas trayāṇāṁ varṇānām upanayanaṁ kartum arhati rājanyo dvayasya vaiśyo vaiśyasyaiveti śūdram api kulaguṇasampannaṁ"},{"src":"SBhedaV","txt":"anyaśāstropapannānāṁ cārthānāmihopanītānām arthavaśāt teṣāṁ tadvidyebhya eva vyākhyānam anuśrotavyaṁ kasmāt na hy ekasmi"},{"src":"SarvSund zu AHS, Sū., 9, 26.","txt":"ahitair dūṣaṇaṁ bhūyo na vidvān kartum arhati //"}]},"bhavati":{"n":4844,"ex":[{"src":"KādSvīSComm zu KādSvīS, 16.","txt":"harati sakalarogān āśu gulmajvarādīn bhavati vigatadoṣaṁ hy āsanaṁ śrīmayūram //"},{"src":"PABh zu PāśupSūtra, 1","txt":"bhruvor madhye gatā dṛṣṭir mudrā bhavati khecarī //"},{"src":"PABh zu PāśupSūtra, 1","txt":"tathāpi sakalā siddhis tasya bhavati niścitam //"}]},"bhavate":{"n":41,"ex":[{"src":"RArṇ","txt":"bhavate \\'pi varaṁ dadmi vṛṇītāṁ bhagavān api //"},{"src":"ASaṃ, 1","txt":"yauvanaṁ bhavate dattvā cariṣyāmi yathāttha mām //"},{"src":"ŚdhSaṃh, 2","txt":"sarve pradāya bhavate gantāro narakaṁ vayam //"}]},"bhavet":{"n":3571,"ex":[{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"ārogyaṁ balapuṣṭiś ca bhavet tasya dine dine //"},{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"bhavet svacchandadehaś ca kāmadevasamo bhavet //"},{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"evam abhyāsayogena kāmadevasamo bhavet //"}]},"bhavatu":{"n":233,"ex":[{"src":"BhāgPur, 11","txt":"sa tu tadabhyarthitaṁ jñānopadeśaṁ dātuṁ tān prativacanaṁ śrūyatām ity āha kiṁ tu mamaika eva bhavatāṁ madhyāt sakalaśro"},{"src":"PABh zu PāśupSūtra, 4","txt":"yadvā bījam ivāṅkurādīnāṁ kalādikāryāṇām upādānaṁ māyaivānyānapekṣiṇī sṛṣṭyādikṛd bhavatu prakṛtireva vāvyaktā etatkartṛ"},{"src":"MPur","txt":"tataśca bhinnārthameva śrotradṛgādi pāṇipādādi ca yuṣmaddṛśā bhavatu puṁbhogakāryahetutve nābhinnaviṣayamapi bhinnaphala"}]},"abhavat":{"n":244,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"tyaktvā vanasthavratavān abhavat tato vai gandharvakoṭimathanaṁ viharaṁś cakāra //"},{"src":"Rām, 2","txt":"vidyudbhir iva vikṣiptair ākāśam abhavat tadā //"},{"src":"Rām, 2","txt":"triśaṅkor abhavat putro dhundhumāro mahāyaśāḥ //"}]},"babhūva":{"n":934,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"sākṣād babhūva bhagavān paripātum īśo vedān yugādisamaye hayaśīrṣanāmā /"},{"src":"ĀVDīp zu Ca, Śār., 1, 44.","txt":"niveśayitvā nijarājya īśvaro yudhiṣṭhiraṁ prītamanā babhūva ha //"},{"src":"SkPur","txt":"yasyopamāno na babhūva so \\'cyuto mamāstu māṅgalyavivṛddhaye hariḥ //"}]},"bhaviṣyati":{"n":1476,"ex":[{"src":"KāvyAl","txt":"saviṁśam adhyāyaśatamasya vyākhyā bhaviṣyati //"},{"src":"ŚGDīp zu ŚdhSaṃh, 2, 11, 101.","txt":"tattu na samyak bhūtaguṇādāmāccānyo \\'mlo vipāko nāsti pittaṁ hi vidagdham amlatām upaityagner mandatvāt yadyevaṁ lavaṇo"},{"src":"MuA zu RHT, 6, 3.","txt":"tadyuṣmākaṁ śubhā vṛttirbāleṣveva bhaviṣyati /"}]},"abhūt":{"n":246,"ex":[{"src":"YS","txt":"atha teṣāṁ bharadvājo bhagavān agraṇīr abhūt /"},{"src":"Rām, 2","txt":"kuta etad abhivyajyata ityāha yatastadā paramapadapraveśasamaye sarvam īpsitamiti yadyaj jijñāsitaṁ cikīrṣitaṁ vāsya tat"},{"src":"PABh zu PāśupSūtra, 1","txt":"dviprakāram abhūt satyaṁ sattābhūtvā svayaṁ svayam /"}]},"bhūta":{"n":12,"ex":[{"src":"ŚSDīp zu ŚdhSaṃh, 2, 12, 153.","txt":"yadi dharmo bhaved bhūta adharmo vā paraṁtapa /"},{"src":"Rām, 5","txt":"eko bhūtvā dvidhā bhūta iti vādaḥ pradṛśyate //"},{"src":"GautDhS, 3","txt":"candramāśca sanakṣatro jyotir bhūta ivāvṛtaḥ //"}]},"bhūtvā":{"n":984,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"ūrdhvajihvaḥ sthiro bhūtvā dhārayet pavanaṁ sadā /"},{"src":"PABh zu PāśupSūtra, 1","txt":"virale sugupto bhūtvā mudrām etāṁ samabhyaset //"},{"src":"PABh zu PāśupSūtra, 1","txt":"ūrdhvapādaḥ sthiro bhūtvā viparītakarī matā //"}]},"asti":{"n":807,"ex":[{"src":"MPur","txt":"asti sravet //"},{"src":"MPur","txt":"āśritatvam svaguṇotkarṣāt śālākyaśāstrābhihitā tadeva ādhibhautikatvaṁ svaguṇotkarṣāt śālākyaśāstrābhihitā kiṁtu rudreṇa"},{"src":"MPur","txt":"ṣaḍdhātutvaṁ asti //"}]},"asmi":{"n":290,"ex":[{"src":"ŚSūtra","txt":"jissa daḍhapasiddhighaḍie vavahāre soi asmi ṇīsaṁko /"},{"src":"SpandaKārNir zu SpandaKār, 1, 16.","txt":"indro \\'haṁ sarvadevānāṁ vasūnām asmi havyavāṭ /"},{"src":"SpandaKārNir zu SpandaKār, 1, 16.","txt":"devarṣīṇāṁ nārado \\'haṁ havirdhāny asmi dhenuṣu //"}]},"syāt":{"n":2124,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"prakāśāt siddhihāniḥ syāt satyaṁ vacmi ca tattvataḥ //"},{"src":"PABh zu PāśupSūtra, 1","txt":"datte ca siddhihāniḥ syāt satyaṁ vacmi ca caṇḍa te //"},{"src":"MṛgṬīkā zu MṛgT, Vidyāpāda, 1, 5.","txt":"evaṁvidhiḥ samādhiḥ syāt sarvasaṁkalpavarjitaḥ /"}]},"astu":{"n":483,"ex":[{"src":"Ca, 6, 3","txt":"sudhevottamanāgānāṁ bhaiṣajyam idam astu te //"},{"src":"LiPur, 1","txt":"kṛtvā yacchubham āptaṁ śubham astu paraṁ tato jagataḥ //"},{"src":"ĀVDīp zu Ca, 2, Cik., 4, 14.","txt":"astu bhedād asaṁkhyātvam aikyaṁ vāsvādalakṣaṇāt /"}]},"āsīt":{"n":397,"ex":[{"src":"MuA zu RHT, 2, 2.","txt":"yaṁ lehaṁ prāśya cyavanasaṁjño munirjarākrānto\\'pi taruṇīlocanarañjana āsīt //"},{"src":"Ca, 1","txt":"asad evedam agra āsīt //"},{"src":"Su, 6","txt":"bhraśyati tu kṛtayuge keṣāṁcid atyādānāt sāṁpannikānāṁ sattvānāṁ śarīragauravam āsīt śarīragauravācchramaḥ śramādālasyam"}]},"āsa":{"n":61,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"bhūmer adho dharaṇimaṇḍalam aprameyaḥ śeṣākhya āsa jagataḥ sthitaye nitāntam /"},{"src":"PABh zu PāśupSūtra, 1","txt":"tasmād adhaḥ kamaṭha āsa viśālarūpī brahmāṇḍabhāṇḍaparivistṛtādivyakāyaḥ /"},{"src":"PABh zu PāśupSūtra, 1","txt":"yogeśvaro \\'tritanayo bhagavān ananto dattākhya āsa samatāvavadat svacaryām /"}]},"gacchati":{"n":671,"ex":[{"src":"Ṭikanikayātrā","txt":"malākulāsu nāḍīṣu māruto naiva gacchati /"},{"src":"MPālNigh","txt":"yathāhi puṣpamukulastho gandho na śakyamihāstīti vaktumatho naiva nāstīti atha cāsti satāṁ bhāvānāmabhivyaktiriti jñātvā"},{"src":"MBh, 1","txt":"sukhamevaṁ vraṇī śete sukhaṁ gacchati tiṣṭhati /"}]},"gacchet":{"n":227,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"yāvad gacchet suṣumṇāyāṁ vāyuḥ prakāśayeddhaṭhāt //"},{"src":"MBh, 1","txt":"māṁsodakābhaṁ rudhiraṁ ca gacchet sarvendriyārthoparamastathaiva /"},{"src":"ŚSDīp zu ŚdhSaṃh, 2, 12, 171.","txt":"alpīyaḥkhāṁ yadā harṣādbālāṁ gacchet striyaṁ naraḥ //"}]},"gaccha":{"n":535,"ex":[{"src":"BhāgPur, 3","txt":"taṁ gaccha śaraṇaṁ devadevādiṁ bhuvaneśvaram /"},{"src":"Rām, 2","txt":"gaccha tvaṁ paścimadvāre tatrāsti divyakanyakā /"},{"src":"AHS, 6","txt":"gaccha kāmaṁ mayāpṛṣṭo mayi saṁnyastakarmaṇā /"}]},"agacchat":{"n":36,"ex":[{"src":"ĀVDīp zu Ca, Cik., 1, 8.","txt":"agacchat tvām upādāya devarājasya sāhyakṛt //"},{"src":"SkPur Rkh, 1","txt":"agacchat sahasā dhyānam āsīd bāṣpapariplutaḥ //"},{"src":"Rām, 4","txt":"praviśya ca nāgalokaṁ svabhavanam agacchat /"}]},"jagāma":{"n":836,"ex":[{"src":"Rām, 1","txt":"jagāma lokaṁ svam akhaṇḍitotsavaṁ samīḍitaḥ puṣkaraviṣṭarādibhiḥ //"},{"src":"RRĀ, 2","txt":"jagāma bindusarasaḥ sarasvatyā pariśritāt //"},{"src":"AHS, 6","txt":"dakṣiṇīkṛtya taṁ prīto vanam eva jagāma ha //"}]},"gamiṣyati":{"n":116,"ex":[{"src":"VārGṛSū","txt":"na tāvad gataḥ gamiṣyati kiṁtu gamayatītyarthaḥ //"},{"src":"SpandaKārNir zu SpandaKār, 1, 4.","txt":"asamprajanyakleśo\\'pi vṛddhiṁ caivaṁ gamiṣyati //"},{"src":"SarvSund zu AHS, Sū., 9, 1.","txt":"tasmātpitāmahatvaṁ te loke khyātiṁ gamiṣyati //"}]},"agamat":{"n":81,"ex":[{"src":"MṛgT, 1","txt":"iti śrīmahārājarṣivaryeṇa purūravasā viracitaṁ kāmijanānāṁ vinodāya rativilāsāṅgabhūtaṁ kādambarasvīkaraṇasūtraṁ savyākh"},{"src":"Rām, 2","txt":"sabandhur agamat tatra janako yatra vartate //"},{"src":"Ayurvedarasāyana zu AHS, Sū., 9, 24.","txt":"kasyacit tv atha kālasya sāṁkāśyād agamat purāt /"}]},"gata":{"n":32,"ex":[{"src":"Rām, 2","txt":"śeṣaṁ pibet klamāpāye sthiratāṁ gata ojasi //"},{"src":"NiSaṃ zu Su, Sū., 14, 23.1_-","txt":"nanu yadi pratyayodbhavo \\'pyasya parāmṛtarasāpāyaḥ tatkatham uktaṁ śaktivargasya bhogyatāṁ gata ityāśaṅkāṁ pariharati /"},{"src":"ch","txt":"jugopa kukṣiṁ gata āttacakro mātuśca me yaḥ śaraṇaṁ gatāyāḥ //"}]},"gatvā":{"n":1505,"ex":[{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"ekadā caṇḍakāpālir gatvā gheraṇḍakuṭṭiram /"},{"src":"MuA zu RHT, 4, 16.","txt":"tataḥ pādaśataṁ gatvā vāmapārśvena saṁviśet //"},{"src":"ŚSDīp zu ŚdhSaṃh, 2, 12, 96.","txt":"tatrānātmavatāṁ yathoktaiḥ prakopaṇair viruddhādhyaśanastrīprasaṅgotkaṭukāsanapṛṣṭhayānavegavidhāraṇādibhir viśeṣaiḥ pra"}]},"vakti":{"n":47,"ex":[{"src":"YS","txt":"yathā kaścid evaṁ vakti devadatto \\'ham āyāta iti //"},{"src":"Su, 1","txt":"athaiṣāmeva vyāpārabhedaṁ vakti //"},{"src":"VNSūtraV zu VNSūtra, 5.","txt":"śabdo \\'pi na mukhyaḥ ko \\'pi vakti iti āgacchantyā iva pratiśrutkāyāḥ śravaṇāt //"}]},"avocat":{"n":64,"ex":[{"src":"Rām, 4","txt":"atha tasminn anāgacchatyupādhyāyaḥ śiṣyān avocat /"},{"src":"MPur","txt":"evaṁvrato \\'smīti ca mām avocat phalāni cānyāni navānyadān me //"},{"src":"Kir","txt":"yo naḥ purā ṣaṇḍhatilān avocat sabhāmadhye pārthivānāṁ samakṣam /"}]},"uvāca":{"n":10368,"ex":[{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"caṇḍakāpālir uvāca /"},{"src":"KādSvīSComm zu KādSvīS, 12.","txt":"gheraṇḍa uvāca /"},{"src":"KādSvīSComm zu KādSvīS, 16.","txt":"gheraṇḍa uvāca /"}]},"ūce":{"n":37,"ex":[{"src":"ṚV, 1","txt":"ūce yayātmaśamalaṁ guṇasaṅgapaṅkamasmin vidhūya kapilasya gatiṁ prapede //"},{"src":"MBh, 3","txt":"hanyamānāgatān ūce yasmāddhetorna me vacaḥ /"},{"src":"ṚV, 1","txt":"upapattimad ūrjitāśrayaṁ nṛpam ūce vacanaṁ vṛkodaraḥ //"}]},"vakṣyati":{"n":145,"ex":[{"src":"MBh, 1","txt":"vakṣyati vakṣyate caivaṁ vyākhyāsyatyācāryaḥ caivaṁ vyākhyāsyatyācāryaḥ doṣadūṣiteṣvatyarthaṁ iti //"},{"src":"Rām, 3","txt":"tathā cehaiva vakṣyati āgneyaṁ dāhabhāvarṇaprakāśapacanātmakam //"},{"src":"Ca, 1","txt":"nanu yadi sarvo jvaraḥ saṁnipātajaḥ tatkimiti vakṣyati ayaṁ saṁnipātajvara iti //"}]},"ukta":{"n":19,"ex":[{"src":"ĀVDīp zu Ca, Sū., 26, 52.","txt":"anena nyāyena sākṣādanukte\\'pi ekarasadravyaikadoṣavikārayor api prabhāvo \\'saṁsṛṣṭarasadoṣaprabhāvakathanād ukta eva jñ"},{"src":"KāSū, 5","txt":"ukta eva kāle yasmād balavanto bhavanti tasmāttatraiva saṁjātabalāḥ santo vyajyanta ityarthaḥ //"},{"src":"Rām, 4","txt":"sa evam ukta upādhyāyeneṣṭaṁ deśaṁ jagāma //"}]},"uktvā":{"n":846,"ex":[{"src":"YS","txt":"yathaitat saṁnaddhadehas tvam uttarakuruṣu bhagavantaṁ pinākinam ārādhaya varṣasahasrānte ca taṁ dṛṣṭvābhimatam āsādayiṣ"},{"src":"VārGṛSū","txt":"tadiyatā sṛṣṭisthitī uktvā saṁhāraṁ vaktum āha //"},{"src":"RAdhyṬ zu RAdhy, 235.","txt":"evaṁ guṇatattvam uktvā buddhitattvaṁ vaktum āha //"}]},"dadāti":{"n":388,"ex":[{"src":"MuA zu RHT, 10, 12.","txt":"pītaṁ yadannam upayujya tadūrdhvakāye hanyādgadān bahuvidhāṁśca balaṁ dadāti /"},{"src":"PABh zu PāśupSūtra, 3","txt":"pāraṁ dadāti yasmāt tasmād ayameva pāradaḥ kathitaḥ //"},{"src":"ṚtuS","txt":"atisevanato jarāṁ ca pittaṁ sitimānaṁ ca dadāti kuṣṭhakārī //"}]},"datte":{"n":109,"ex":[{"src":"PABh zu PāśupSūtra, 1","txt":"datte ca siddhihāniḥ syāt satyaṁ vacmi ca caṇḍa te //"},{"src":"ŚGDīp zu ŚdhSaṃh, 2, 12, 252.","txt":"snehavīryaṁ tathā datte dehaṁ cānuvisarpati //"},{"src":"ŚSDīp zu ŚdhSaṃh, 2, 12, 267.","txt":"datte ca punar api saṁsvedya galakapolādīn dhūmamāseveta bhojayeccainamabhiṣyandi tato \\'syācārikamādiśet rajodhūmasnehā"}]},"dadyāt":{"n":504,"ex":[{"src":"MBh, 1","txt":"athaināṁ nave mahati ghaṭe sarastaḍāgodakapaṅkamāvāpya nidadhyāt bhakṣyārthe cāsām upaharecchaivalaṁ vallūramaudakāṁś ca"},{"src":"MBh, 1","txt":"tatra samyagviddhamāmatailena pariṣecayet tryahāttryahāc ca vartiṁ sthūlatarāṁ dadyāt pariṣekaṁ ca tameva //"},{"src":"MuA zu RHT, 4, 16.","txt":"sūdaḥ sūpaudanaṁ dadyāt pradehāṁśca susaṁskṛtān //"}]},"dehi":{"n":187,"ex":[{"src":"Rām, 2","txt":"sā vakti bhojanaṁ dehi yadīcchasi samīhitam //"},{"src":"MṛgṬīkā zu MṛgT, Vidyāpāda, 3, 4.","txt":"uoṁ namo bhagavate rudrāya śivāya jyotiṣāṁ pataye dehi jyotīṁṣi mativīryakaraṇāya svāhā /"},{"src":"MṛgṬīkā zu MṛgT, Vidyāpāda, 3, 4.","txt":"uoṁ namo bhagavate uḍḍāmareśvarāya añjanamantrasiddhiṁ dehi me svāhā ityañjanādhikāraḥ /"}]},"adadāt":{"n":6,"ex":[{"src":"Ca, 1","txt":"yāṁ me vidyāṁ mahārāja adadāt sa mahāyaśāḥ /"},{"src":"Paraśurāmakalpasūtra","txt":"adadāt kuntibhojāya sakhā sakhye mahātmane //"},{"src":"MBh, 9","txt":"mucukundasya rājarṣer adadāt pṛthivīm imām /"}]},"dadau":{"n":611,"ex":[{"src":"VārGṛSū","txt":"dadau sa daśa dharmāya kaśyapāya trayodaśa /"},{"src":"ṚV, 2","txt":"mahādhanāni vāsāṁsi dadau hārān mahāmanāḥ //"},{"src":"ṚV, 1","txt":"abhyarthitastadā tasmai sthānāni kalaye dadau /"}]},"dāsyati":{"n":61,"ex":[{"src":"Rām, 2","txt":"hāraṁ dāsyati sā tuṣṭā na praveśaṁ prayacchati /"},{"src":"RAdhy","txt":"kiṁ vā dāsyati //"},{"src":"RAdhy","txt":"tad ucyate pūjāṁ kariṣyaty ātmānaṁ ca dāsyati //"}]},"adāt":{"n":22,"ex":[{"src":"MṛgṬīkā zu MṛgT, Vidyāpāda, 6, 4.","txt":"tebhyo \\'nanteśādibhyas tṛtīyanetrāgniśikhānirdagdhasmaratarur bhagavān umāpatir adhigamya bhavasaṁkhyair ekādaśabhiḥ sa"},{"src":"ṚV, 1","txt":"punaśca yācamānāya jātarūpam adāt prabhuḥ /"},{"src":"ṚV, 1","txt":"devahūtim adāt tāta kardamāyātmajāṁ manuḥ /"}]},"datta":{"n":17,"ex":[{"src":"MBh, 1","txt":"nimittaṁ bhūteṣu khaṇḍitatvaṁ kiṁtu svasnehādyutkarṣād kecicca svasnehādyutkarṣād tasmiṁs śreyasā datta rasādraktavat it"},{"src":"Rām, 4","txt":"mamāpi śāpo na bhaved bhavatā datta iti //"},{"src":"AVŚ, 2","txt":"yajadhvaṁ ca mahāyajñair bhogān aśnīta datta ca /"}]},"dattvā":{"n":1431,"ex":[{"src":"RCūM","txt":"tataḥ śastram avacārya śītābhir adbhir āturam āśvāsya samantāt paripīḍyāṅgulyā vraṇam abhimṛdya prakṣālya kaṣāyeṇa prote"},{"src":"RSK","txt":"tatra kṣārasādhyavyādhivyādhitam upaveśya nivātātape deśe \\'saṁbādhe \\'gropaharaṇīyoktena vidhānenopasaṁbhṛtasambhāraṁ t"},{"src":"MBh, 1","txt":"tatra ghanāṁ kavalikāṁ dattvā vāmahastaparikṣepam ṛjum anāviddham asaṁkucitaṁ mṛdu paṭṭaṁ niveśya badhnīyāt /"}]}};
+
+// Get all P and A forms for a given cell
+function getCellForms(t,ni,pi){
+  const rd=RD[cR];if(!rd||!rd[t])return[];
+  const nk=NS[ni];const cell=rd[t][nk]?.[pi];if(!cell)return[];
+  let pf,af;
+  if(cell.length>=3&&typeof cell[2]==='number'){pf=cell[0];af=cell[2];}
+  else{pf=cell[0];af=cell[1];}
+  return[pf,af].filter(f=>f&&f!=='—');
+}
+
+function showCtxPanel(key,t,ni,pi,cellN){
+  const forms=getCellForms(t,ni,pi);
+  const panel=document.getElementById('ctx-panel');
+  if(!panel)return;
+  if(cAct===key&&panel.style.display!=='none'){panel.style.display='none';return;}
+  panel.style.display='block';
+  let html='';
+  // Header
+  const nfLabel=cellN>0?`<span style="font-size:11px;color:#888;margin-left:6px">${cellN.toLocaleString()} употреблений в корпусе</span>`:'';
+  html+=`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:500">${t} · ${PS[pi]} ${NS[ni]}${nfLabel}</span><button onclick="document.getElementById('ctx-panel').style.display='none'" style="font-size:11px;padding:2px 7px;border:0.5px solid #ccc;border-radius:4px;cursor:pointer;background:#f5f5f5">✕</button></div>`;
+  
+  // For each form, show attestation count + examples
+  let anyCtx=false;
+  forms.forEach(form=>{
+    const fd=FCTX[form];if(!fd)return;
+    const voice=getCellForms(t,ni,pi)[0]===form?'P.':'Ā.';
+    const realId=FID[form]||null;
+    const href=realId?FV(realId):`${LM}${LID[cR]}`;
+    html+=`<div style="margin-bottom:10px"><div style="font-size:12px;margin-bottom:4px"><span style="color:#3266ad;font-weight:500">${voice}</span> <a class="d" href="${href}" target="_blank" style="font-style:italic">${form}</a> <span style="font-size:11px;color:#888">— ${fd.n.toLocaleString()} употр. в DCS</span></div>`;
+    fd.ex.forEach(ex=>{
+      // Highlight the form in text
+      const hl=ex.txt.replace(new RegExp(form.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'),`<mark style="background:#fef3cd;border-radius:2px;padding:0 1px">${form}</mark>`);
+      html+=`<div style="font-size:12px;color:#555;padding:3px 0 3px 10px;border-left:2px solid #e0e0e0;margin-bottom:3px;line-height:1.5">${hl}<span style="font-size:10px;color:#aaa;display:block">${ex.src}</span></div>`;
+    });
+    html+='</div>';
+    anyCtx=true;
+  });
+  if(!anyCtx)html+=`<p style="font-size:12px;color:#aaa">Примеры не найдены в индексе.</p>`;
+  panel.innerHTML=html;
+}
+
+// Known personal endings (longest match first)
+const ENDINGS=['anti','ante','āmaḥ','āmahi','athaḥ','ethe','ataḥ','ete',
+  'atha','dhve','āvaḥ','āvahe','ati','ate','asi','ase','ami','e',
+  'āni','ai','iṣye','iṣyati','iṣyate','iṣyāmi','itu','itum',
+  'tvā','tya','ya','ta','te','ti'];
+// Perfect endings
+const PERF_END=['uḥ','ire','iva','ivahe','ima','imahe','itha','iṣe',
+  'a','e','atuḥ','āte','athuḥ','āthe'];
+
+function splitForm(form){
+  if(!form||form==='—'||typeof form!=='string')return[String(form),''];
+  // Try longest ending match
+  for(const e of ENDINGS){
+    if(form.endsWith(e)&&form.length>e.length+1){
+      return[form.slice(0,-e.length),e];
+    }
+  }
+  return[form,''];
+}
+
+function renderForm(form,id,voicePrefix){
+  if(!form||form==='—')return'—';
+  const realId=FID[form]||id||null;
+  const href=realId?FV(realId):`${LM}${LID[cR]}`;
+  if(!showSplit)return`<a class="d" href="${href}" target="_blank">${form}</a>`;
+  const[stem,end]=splitForm(form);
+  const stemHtml=`<span style="color:#888">${stem}</span>`;
+  const endHtml=end?`<span style="color:#3266ad;font-weight:600;border-bottom:1.5px solid #3266ad55">${end}</span>`:'';
+  return`<a class="d" href="${href}" target="_blank" style="text-decoration:none">${stemHtml}${endHtml}</a>`;
+}
+
+const RINFO={
+  kṛ:{cls:'VIII',stem:'karo-/kuru- (u-class)',pa:'U.',note:'основа -u- в слаб. ступени'},
+  bhū:{cls:'I',stem:'bhava- (a-class)',pa:'U.',note:'Ā. часто в корпусе (bhavate)'},
+  as:{cls:'II',stem:'as-/s- (root cl.)',pa:'P. только',note:'нет ātmane; fut. от √bhū'},
+  gam:{cls:'I',stem:'gaccha- (a-class)',pa:'P. только',note:'Ā. лишь в Perfect (jagme)'},
+  vac:{cls:'II',stem:'vac-/vak- (root cl.)',pa:'P. только',note:'Perf. uvāca — нарр. формула'},
+  dā:{cls:'III',stem:'dadā-/dat- (redupl.)',pa:'U.',note:'Impv. 2sg: dehi (не *dadāhi)'},
+};
+function updateRInfo(){
+  const el=document.getElementById('r-info');
+  if(!el)return;
+  const d=RINFO[cR]||{};
+  el.innerHTML=`<span style="font-size:11px;color:#888">Класс <b style="color:#555">${d.cls||'?'}</b></span>
+    <span style="font-size:11px;color:#aaa;margin:0 6px">·</span>
+    <span style="font-size:11px;color:#888">Основа: <b style="color:#555">${d.stem||'?'}</b></span>
+    <span style="font-size:11px;color:#aaa;margin:0 6px">·</span>
+    <span style="font-size:11px;color:#888">${d.pa||''}</span>
+    <span style="font-size:11px;color:#aaa;margin:0 6px">·</span>
+    <span style="font-size:11px;font-style:italic;color:#888">${d.note||''}</span>`;
+}
+
+let cmpR=null;
+function setCmp(r,btn){
+  if(cmpR===r){cmpR=null;document.querySelectorAll('#cmp-btns .rb').forEach(b=>b.classList.remove('on'));}
+  else{cmpR=r;document.querySelectorAll('#cmp-btns .rb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+  bL();
+}
+function getCmpEx(t,ni,pi){
+  if(!cmpR)return'';
+  const rd=RD[cmpR];if(!rd||!rd[t])return'';
+  const nk=NS[ni];const cell=rd[t][nk]?.[pi];if(!cell)return'';
+  let pf,af;
+  if(cell.length>=3&&typeof cell[2]==='number'){pf=cell[0];af=cell[2];}
+  else{pf=cell[0];af=cell[1];}
+  const pStr=pf&&pf!=='—'?pf:'—';
+  const aStr=af&&af!=='—'?af:'—';
+  if(cV==='p')return`<span style="color:#1d9e75;font-style:italic;font-size:10px">√${cmpR}: ${pStr}</span>`;
+  if(cV==='a')return`<span style="color:#1d9e75;font-style:italic;font-size:10px">√${cmpR}: ${aStr}</span>`;
+  return`<span style="color:#1d9e75;font-style:italic;font-size:10px">√${cmpR}: ${pStr} / ${aStr}</span>`;
+}
+
+function updateRoute(){
+  const tg=parseFloat(document.getElementById('sl').value);
+  const el=document.getElementById('route-hint');if(!el)return;
+  // Find next cells just outside current coverage
+  const next=ALL.filter(c=>c.cp>tg&&c.cp<=tg+15&&c.fin).slice(0,3);
+  if(!next.length){el.textContent='';return;}
+  const rd=RD[cR];
+  const forms=next.map(c=>{
+    const cell=rd?.[c.t]?.[NS[c.ni]]?.[c.pi];
+    let pf='';if(cell){if(cell.length>=3&&typeof cell[2]==='number')pf=cell[0];else pf=cell[0];}
+    return pf&&pf!=='—'?`${pf} (${c.t}, ${PS[c.pi]} ${NS[c.ni]})`:`${c.t} · ${PS[c.pi]} ${NS[c.ni]}`;
+  }).join(' → ');
+  el.innerHTML=`<span style="color:#ba7517">▶ Следующие формы (+15%):</span> ${forms}`;
+}
+const LID={kṛ:'156168',bhū:'156108',as:'156107',gam:'159388',vac:'165618',dā:'157144'};
+const ROOTS=['kṛ','bhū','as','gam','vac','dā'];
+const PAN={'Present Ind.':'laṭ','Optative':'vidhi-liṅ','Imperative':'loṭ','Imperfect':'laṅ','Perfect':'liṭ','Future':'lṛṭ','Pres. Passive':'laṭ pass.','Aorist':'luṅ','Injunctive':'leṭ','PPP':'kta','Absolutive':'ktvā/lyap','FPP':'tavya/anīya/ya','Infinitive':'tumun','Past Act.P.':'ktavatu','Pres.Act.P.':'śatṛ/śānac'};
+
+const RD={
+kṛ:{'Present Ind.':{sg:[['karomi','kurve'],['karosi','kuruṣe'],['karoti',0,'kurute']],du:[['kurvaḥ','kurvāvahe'],['kuruthaḥ','kurvāthe'],['kurutaḥ','kurvāte']],pl:[['kurmaḥ','kurmahe'],['kurutha','kurudhve'],['kurvanti','kurvate']]},'Optative':{sg:[['kuryām','kurvīya'],['kuryāḥ','kurvīthāḥ'],['kuryāt',3581,'kurvīta',41104]],du:[['kuryāva','kurvīvahi'],['kuryātam','kurvīyāthām'],['kuryātām','kurvīyātām']],pl:[['kuryāma','kurvīmahi'],['kuryāta','kurvīdhvam'],['kuryuḥ','kurvīran']]},'Imperative':{sg:[['karavāṇi','karavai'],['kuru','kuruṣva'],['karotu','kurutām']],du:[['karavāva','karavāvahai'],['kurutam','kurvāthām'],['karotām','kurvātām']],pl:[['karavāma','karavāmahai'],['kuruta','kurudhvam'],['kurvantu','kurvatām']]},'Imperfect':{sg:[['akaram','akurvi'],['akaroḥ','akuruthāḥ'],['akarot','akuruta']],du:[['akurva','akurvahi'],['akurutam','akurvāthām'],['akurutām','akurvātām']],pl:[['akurma','akurmahi'],['akuruta','akurudhvam'],['akurvan','akurvata']]},'Perfect':{sg:[['cakara','cakre'],['cakartha','cakṛṣe'],['cakāra','cakre']],du:[['cakṛva','cakṛvahe'],['cakrathur','cakrāthe'],['cakratur','cakrāte']],pl:[['cakṛma','cakṛmahe'],['cakra','cakṛdhve'],['cakruḥ','cakrire']]},'Future':{sg:[['kariṣyāmi','kariṣye'],['kariṣyasi','kariṣyase'],['kariṣyati','kariṣyate']],du:[['kariṣyāvaḥ','kariṣyāvahe'],['kariṣyathaḥ','kariṣyethe'],['kariṣyataḥ','kariṣyete']],pl:[['kariṣyāmaḥ','kariṣyāmahe'],['kariṣyatha','kariṣyadhve'],['kariṣyanti','kariṣyante']]},'Pres. Passive':{sg:[['—','kriye'],['—','kriyase'],['—','kriyate']],du:[['—','—'],['—','kriyethe'],['—','kriyete']],pl:[['—','kriyāmahe'],['—','kriyadhve'],['—','kriyante']]},'Aorist':{sg:[['akārṣam','akṛvi'],['akārṣīḥ','akṛthāḥ'],['akārṣīt','akṛta']],du:[['akārṣva','akṛvahi'],['akārtam','akṛyāthām'],['akārtām','akṛyātām']],pl:[['akārṣma','akṛmahi'],['akārṣṭa','akṛdhvam'],['akārṣuḥ','akṛṣata']]},'Injunctive':{sg:[['karam','kurvi'],['karoḥ','kuruṣvā'],['karat','kuruta']],du:[['kurva','kurvahi'],['kurutam','kurvāthām'],['kurutām','kurvātām']],pl:[['kurma','kurmahi'],['kuruta','kurudhvam'],['kurvan','kurvata']]},nf:{PPP:'kṛta-',Abs:'kṛtvā / -kṛtya',FPP:'kartavya- / kāryaḥ',Inf:'kartum',PAP:'kṛtavān',PAcP:'kurvan'}},
+bhū:{'Present Ind.':{sg:[['bhavāmi','bhave'],['bhavasi','bhavase'],['bhavati','bhavate']],du:[['bhavāvaḥ','bhavāvahe'],['bhavathaḥ','bhavethe'],['bhavataḥ','bhavete']],pl:[['bhavāmaḥ','bhavāmahe'],['bhavatha','bhavadhve'],['bhavanti','bhavante']]},'Optative':{sg:[['bhaveyam','bhaveya'],['bhaveḥ','bhavethāḥ'],['bhavet','bhaveta']],du:[['bhaveva','bhavevahi'],['bhavetam','bhaveyāthām'],['bhavetām','bhaveyātām']],pl:[['bhavema','bhavemahi'],['bhaveta','bhavadhvam'],['bhaveyuḥ','bhaveran']]},'Imperative':{sg:[['bhavāni','bhavai'],['bhava','bhavasva'],['bhavatu','bhavatām']],du:[['bhavāva','bhavāvahai'],['bhavatam','bhavethām'],['bhavatām','bhavetām']],pl:[['bhavāma','bhavāmahai'],['bhavata','bhavadhvam'],['bhavantu','bhavatām']]},'Imperfect':{sg:[['abhavam','abhave'],['abhavaḥ','abhavathāḥ'],['abhavat','abhavata']],du:[['abhavāva','abhavāvahi'],['abhavatam','abhavethām'],['abhavatām','abhavetām']],pl:[['abhavāma','abhavāmahi'],['abhavata','abhavadhvam'],['abhavan','abhavanta']]},'Perfect':{sg:[['babhūva','babhūve'],['babhūvitha','babhūviṣe'],['babhūva','babhūve']],du:[['babhūviva','babhūvivahe'],['babhūvathuḥ','babhūvāthe'],['babhūvatuḥ','babhūvāte']],pl:[['babhūvima','babhūvimahe'],['babhūva','babhūvidhve'],['babhūvuḥ','babhūvire']]},'Future':{sg:[['bhaviṣyāmi','bhaviṣye'],['bhaviṣyasi','bhaviṣyase'],['bhaviṣyati','bhaviṣyate']],du:[['bhaviṣyāvaḥ','bhaviṣyāvahe'],['bhaviṣyathaḥ','bhaviṣyethe'],['bhaviṣyataḥ','bhaviṣyete']],pl:[['bhaviṣyāmaḥ','bhaviṣyāmahe'],['bhaviṣyatha','bhaviṣyadhve'],['bhaviṣyanti','bhaviṣyante']]},'Pres. Passive':{sg:[['—','bhūye'],['—','bhūyase'],['—','bhūyate']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','bhūyadhve'],['—','bhūyante']]},'Aorist':{sg:[['abhūvam','abhūvi'],['abhūḥ','abhūthāḥ'],['abhūt','abhūta']],du:[['abhūva','abhūvahi'],['abhūtam','abhūyāthām'],['abhūtām','abhūyātām']],pl:[['abhūma','abhūmahi'],['abhūta','abhūdhvam'],['abhūvan','abhūṣata']]},'Injunctive':{sg:[['bhuvam','—'],['bhuvaḥ','—'],['bhuvat','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['bhuvāma','—'],['—','—'],['bhuvan','—']]},nf:{PPP:'bhūta-',Abs:'bhūtvā / -bhūya',FPP:'bhavitavya-',Inf:'bhavitum',PAP:'bhūtavān',PAcP:'bhavat'}},
+as:{'Present Ind.':{sg:[['asmi','—'],['asi','—'],['asti','—']],du:[['svaḥ','—'],['sthaḥ','—'],['staḥ','—']],pl:[['smaḥ','—'],['stha','—'],['santi','—']]},'Optative':{sg:[['syām','—'],['syāḥ','—'],['syāt','—']],du:[['syāva','—'],['syātam','—'],['syātām','—']],pl:[['syāma','—'],['syāta','—'],['syuḥ','—']]},'Imperative':{sg:[['asāni','—'],['edhi','—'],['astu','—']],du:[['asāva','—'],['stam','—'],['stām','—']],pl:[['asāma','—'],['sta','—'],['santu','—']]},'Imperfect':{sg:[['āsam','—'],['āsīḥ','—'],['āsīt','—']],du:[['āsva','—'],['āstam','—'],['āstām','—']],pl:[['āsma','—'],['āsta','—'],['āsan','—']]},'Perfect':{sg:[['āsa','—'],['āsitha','—'],['āsa','—']],du:[['āsiva','—'],['āsathuḥ','—'],['āsatuḥ','—']],pl:[['āsima','—'],['āsa','—'],['āsuḥ','—']]},'Future':{sg:[['bhaviṣyāmi','—'],['bhaviṣyasi','—'],['bhaviṣyati','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['bhaviṣyanti','—']]},'Pres. Passive':{sg:[['—','—'],['—','—'],['—','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['—','—']]},'Aorist':{sg:[['abhūvam','—'],['abhūḥ','—'],['abhūt','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['abhūvan','—']]},'Injunctive':{sg:[['—','—'],['—','—'],['sat','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['san','—']]},nf:{PPP:'sat- / bhūta-',Abs:'bhūtvā',FPP:'bhavitavya-',Inf:'bhavitum',PAP:'—',PAcP:'sat'}},
+gam:{'Present Ind.':{sg:[['gacchāmi','—'],['gacchasi','—'],['gacchati','—']],du:[['gacchāvaḥ','—'],['gacchathaḥ','—'],['gacchataḥ','—']],pl:[['gacchāmaḥ','—'],['gacchatha','—'],['gacchanti','—']]},'Optative':{sg:[['gaccheyam','—'],['gaccheḥ','—'],['gacchet','—']],du:[['gaccheva','—'],['gacchetam','—'],['gacchetām','—']],pl:[['gacchema','—'],['gaccheta','—'],['gaccheyuḥ','—']]},'Imperative':{sg:[['gacchāni','—'],['gaccha','—'],['gacchatu','—']],du:[['gacchāva','—'],['gacchatam','—'],['gacchatām','—']],pl:[['gacchāma','—'],['gacchata','—'],['gacchantu','—']]},'Imperfect':{sg:[['agaccham','—'],['agacchaḥ','—'],['agacchat','—']],du:[['agacchāva','—'],['agacchatam','—'],['agacchatām','—']],pl:[['agacchāma','—'],['agacchata','—'],['agacchan','—']]},'Perfect':{sg:[['jagāma','jagme'],['jagamitha','jagmiṣe'],['jagāma','jagme']],du:[['jagmiva','jagmivahe'],['jagmathuḥ','jagmāthe'],['jagmatuḥ','jagmāte']],pl:[['jagmima','jagmimahe'],['jagma','jagmidhve'],['jagmuḥ','jagmire']]},'Future':{sg:[['gamiṣyāmi','—'],['gamiṣyasi','—'],['gamiṣyati','—']],du:[['—','—'],['—','—'],['gamiṣyataḥ','—']],pl:[['gamiṣyāmaḥ','—'],['—','—'],['gamiṣyanti','—']]},'Pres. Passive':{sg:[['—','gamye'],['—','gamyase'],['—','gamyate']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['—','gamyante']]},'Aorist':{sg:[['agamam','agami'],['agamaḥ','agamathāḥ'],['agamat','agamata']],du:[['agamāva','agamāvahi'],['agamatam','agameyāthām'],['agamatām','agameyātām']],pl:[['agamāma','agamāmahi'],['agamata','agamadhvam'],['agaman','agamanta']]},'Injunctive':{sg:[['gamam','—'],['gamaḥ','—'],['gamat','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['gaman','—']]},nf:{PPP:'gata-',Abs:'gatvā / -gatya',FPP:'gantavya- / gamya-',Inf:'gantum',PAP:'gatavān',PAcP:'gacchat'}},
+vac:{'Present Ind.':{sg:[['vacmi','—'],['vakṣi','—'],['vakti','—']],du:[['vacvaḥ','—'],['vakthaḥ','—'],['vaktaḥ','—']],pl:[['vacmaḥ','—'],['vakta','—'],['vacanti','—']]},'Optative':{sg:[['vaceyam','—'],['vaceḥ','—'],['vacet','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['vacema','—'],['—','—'],['vaceyuḥ','—']]},'Imperative':{sg:[['vacāni','—'],['vaca','—'],['vaktu','—']],du:[['vacāva','—'],['vaktam','—'],['vaktām','—']],pl:[['vacāma','—'],['vakta','—'],['vacantu','—']]},'Imperfect':{sg:[['avacam','—'],['avocaḥ','—'],['avocat','—']],du:[['avocāva','—'],['avocatam','—'],['avocatām','—']],pl:[['avocāma','—'],['avocata','—'],['avocan','—']]},'Perfect':{sg:[['uvāca','ūce'],['uvaciṣa','ūciṣe'],['uvāca','ūce']],du:[['ūciva','ūcivahe'],['ūcathuḥ','ūcāthe'],['ūcatuḥ','ūcāte']],pl:[['ūcima','ūcimahe'],['ūca','ūcidhve'],['ūcuḥ','ūcire']]},'Future':{sg:[['vakṣyāmi','—'],['vakṣyasi','—'],['vakṣyati','—']],du:[['—','—'],['—','—'],['vakṣyataḥ','—']],pl:[['vakṣyāmaḥ','—'],['—','—'],['vakṣyanti','—']]},'Pres. Passive':{sg:[['—','ucye'],['—','ucyase'],['—','ucyate']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['—','ucyante']]},'Aorist':{sg:[['avocat','—'],['avocaḥ','—'],['avocat','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['avocan','—']]},'Injunctive':{sg:[['—','—'],['—','—'],['vacat','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['vacan','—']]},nf:{PPP:'ukta-',Abs:'uktvā / -ucya',FPP:'vaktavya- / vācya-',Inf:'vaktum',PAP:'uktavān',PAcP:'vacat'}},
+dā:{'Present Ind.':{sg:[['dadāmi','dade'],['dadāsi','datse'],['dadāti','datte']],du:[['dadāvaḥ','dadāvahe'],['datthaḥ','dadāthe'],['dattaḥ','dadāte']],pl:[['dadmaḥ','dadmahe'],['dattha','daddhve'],['dadati','dadate']]},'Optative':{sg:[['dadyām','dadīya'],['dadyāḥ','dadīthāḥ'],['dadyāt','dadīta']],du:[['dadyāva','dadīvahi'],['dadyātam','dadīyāthām'],['dadyātām','dadīyātām']],pl:[['dadyāma','dadīmahi'],['dadyāta','dadīdhvam'],['dadyuḥ','dadīran']]},'Imperative':{sg:[['dadāni','dadai'],['dehi','datsvā'],['dadātu','dattām']],du:[['dadāva','dadāvahai'],['dattam','dadāthām'],['dattām','dadātām']],pl:[['dadāma','dadāmahai'],['datta','daddhvam'],['dadatu','dadatām']]},'Imperfect':{sg:[['adadām','adade'],['adadāḥ','adadithāḥ'],['adadāt','adadita']],du:[['adadāva','adadāvahi'],['adattam','adadāthām'],['adattām','adadātām']],pl:[['adadāma','adadāmahi'],['adatta','adadhvam'],['adaduḥ','adadata']]},'Perfect':{sg:[['dadau','dade'],['daditha','dadiṣe'],['dadau','dade']],du:[['dadiva','dadivahe'],['dadathuḥ','dadāthe'],['dadatuḥ','dadāte']],pl:[['dadima','dadimahe'],['dada','dadidhve'],['daduḥ','dadire']]},'Future':{sg:[['dāsyāmi','dāsye'],['dāsyasi','dāsyase'],['dāsyati','dāsyate']],du:[['dāsyāvaḥ','dāsyāvahe'],['dāsyathaḥ','dāsyethe'],['dāsyataḥ','dāsyete']],pl:[['dāsyāmaḥ','dāsyāmahe'],['dāsyatha','dāsyadhve'],['dāsyanti','dāsyante']]},'Pres. Passive':{sg:[['—','dīye'],['—','dīyase'],['—','dīyate']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['—','dīyante']]},'Aorist':{sg:[['adām','adāyi'],['adāḥ','adithāḥ'],['adāt','adita']],du:[['adāva','adāvahi'],['adātam','adeyāthām'],['adātām','adeyātām']],pl:[['adāma','adāmahi'],['adāta','adadhvam'],['aduḥ','adāsata']]},'Injunctive':{sg:[['—','—'],['dāḥ','—'],['dāt','—']],du:[['—','—'],['—','—'],['—','—']],pl:[['—','—'],['—','—'],['duḥ','—']]},nf:{PPP:'datta-',Abs:'dattvā / -dāya',FPP:'dātavya- / deya-',Inf:'dātum',PAP:'dattavān',PAcP:'dadat'}}
+};
+
+const FD={'Present Ind.':[[11889,8772,98947],[117,326,960],[2238,590,23535]],'Optative':[[1409,729,66776],[8,9,275],[848,49,2700]],'Perfect':[[290,490,45524],[3,124,1279],[269,88,12145]],'Imperfect':[[1197,804,26073],[23,125,566],[194,128,6803]],'Imperative':[[334,20294,5477],[74,819,174],[290,2972,2283]],'Pres. Passive':[[84,276,16810],[0,1,135],[29,1,2487]],'Future':[[5292,1793,6410],[67,20,142],[1346,213,2441]],'Aorist':[[139,133,3284],[3,13,34],[159,22,518]],'Injunctive':[[137,1109,747],[1,42,4],[98,57,171]]};
+const NF=[['PPP',233080],['Absolutive',81508],['FPP',23942],['Infinitive',10378],['Past Act.P.',2350],['Pres.Act.P.',899]];
+const NFK=['PPP','Abs','FPP','Inf','PAP','PAcP'];
+const TS=Object.keys(FD),PS=['1-е','2-е','3-е'],NS=['sg','du','pl'];
+const TTOT={};TS.forEach(t=>{let s=0;[0,1,2].forEach(ni=>[0,1,2].forEach(pi=>{s+=FD[t][ni][pi];}));TTOT[t]=s;});
+const ALL=[];
+TS.forEach(t=>[0,1,2].forEach(ni=>[0,1,2].forEach(pi=>{ALL.push({key:`${t}_${pi}_${ni}`,t,pi,ni,lbl:`${t} · ${PS[pi]} ${NS[ni]}`,n:FD[t][ni][pi],fin:true});})));
+NF.forEach(([lb,n],i)=>ALL.push({key:lb,t:lb,pi:-1,ni:-1,lbl:`${lb} (не-фин.)`,n,fin:false,nfi:i}));
+ALL.sort((a,b)=>b.n-a.n);
+let c=0;ALL.forEach((x,i)=>{c+=x.n;x.cp=100*c/TOT;x.rank=i+1;});
+
+let showZeros=true;
+function setZeros(s,btn){showZeros=s;document.getElementById('z0').classList.toggle('on',s);document.getElementById('z1').classList.toggle('on',!s);bT();}
+let cR='kṛ',cM='abs',cV='b',cP=false,cAct=null,showSplit=false;
+function setSplit(s,btn){showSplit=s;document.getElementById('sp0').classList.toggle('on',!s);document.getElementById('sp1').classList.toggle('on',s);bL();}
+
+function ss(n,mx=null){if(mx){const p=mx>0?n/mx:0;if(n===0)return{b:'#f5f8fc',f:'#ccc',w:'400'};if(p<.05)return{b:'#eef5fc',f:'#8899aa',w:'400'};if(p<.15)return{b:'#cfe0f5',f:'#2a3f5f',w:'400'};if(p<.35)return{b:'#93b8e5',f:'#1a2f4a',w:'500'};if(p<.65)return{b:'#4a7ec7',f:'#fff',w:'500'};if(p<.90)return{b:'#1e4d9c',f:'#fff',w:'600'};return{b:'#0d2b5e',f:'#fff',w:'700'};}if(n===0)return{b:'#f5f8fc',f:'#ccc',w:'400'};if(n<50)return{b:'#eef5fc',f:'#8899aa',w:'400'};if(n<500)return{b:'#cfe0f5',f:'#2a3f5f',w:'400'};if(n<3000)return{b:'#93b8e5',f:'#1a2f4a',w:'500'};if(n<10000)return{b:'#4a7ec7',f:'#fff',w:'500'};if(n<40000)return{b:'#1e4d9c',f:'#fff',w:'600'};return{b:'#0d2b5e',f:'#fff',w:'700'};}
+function fm(n){if(n===0)return'—';if(n>=10000)return(n/1000).toFixed(0)+'k';if(n>=1000)return(n/1000).toFixed(1)+'k';return n.toLocaleString();}
+function fmr(n,t){if(n===0||!t)return'—';return Math.round(100*n/t)+'%';}
+function fl(f,id){return renderForm(f,id,'');}
+function gEx(t,ni,pi){const rd=RD[cR];if(!rd||!rd[t])return'';const nk=NS[ni];const cell=rd[t][nk]?.[pi];if(!cell)return'';let pf,pid,af,aid;if(cell.length>=3&&typeof cell[2]==='number'){pf=cell[0];pid=cell[1];af=cell[2];aid=cell[3];}else{pf=cell[0];af=cell[1];pid=null;aid=null;}
+  function wn(form){const n=CTX[form]&&CTX[form][0];return n?' <span style="font-size:10px;color:#aaa">('+n.toLocaleString()+')</span>':'';}
+  function ws(form,voice){if(!form||form==='—')return form;return stemSplit(form,t,nk,pi,voice);}
+  function mkLink(form,id,voice){const s=ws(form,voice);const h=id?FV(id):(LM+LID[cR]);return '<a class="d" href="'+h+'" target="_blank">'+s+'</a>';}
+  if(cV==='p')return'<span style="display:inline-flex;gap:0;width:100%"><span style="min-width:120px;display:inline-block">P. '+mkLink(pf,pid,'P')+wn(pf)+'</span></span>';
+  if(cV==='a')return'Ā. '+mkLink(af,aid,'A')+wn(af);
+  return'<span style="display:inline-flex;gap:0;width:100%"><span style="min-width:120px;display:inline-block;flex-shrink:0">P. '+mkLink(pf,pid,'P')+wn(pf)+'</span><span style="flex-shrink:0">Ā. '+mkLink(af,aid,'A')+wn(af)+'</span></span>';}
+function gNFEx(i){
+  const raw=(RD[cR]&&RD[cR].nf&&RD[cR].nf[NFK[i]])||'—';
+  var disp=showStem?raw.split(' / ').map(function(f){
+    const nfLabels=['PPP','Absolutive','FPP','Infinitive','Past Act.P.','Pres.Act.P.'];
+    return nfStemSplit(f.trim(),nfLabels[i]||'');}).join(' / '):raw;
+  return '<span style="display:inline-flex;width:100%"><span style="min-width:120px;display:inline-block;flex-shrink:0;color:#aaa">—</span><span>'+disp+'</span></span>';
+}
+
+function bT(){
+  let h='<thead><tr><th rowspan="2" style="padding:6px 10px;text-align:left;font-weight:500;border-bottom:1px solid #ccc;vertical-align:bottom">Время</th>';
+  ['sg — Ед.','du — Дв.','pl — Мн.'].forEach(lb=>{h+=`<th colspan="3" style="padding:5px 7px;text-align:center;font-weight:500;border-bottom:0.5px solid #ddd;border-left:1px solid #ccc;font-size:11px">${lb}</th>`;});
+  h+='</tr><tr>';
+  for(let i=0;i<3;i++)PS.forEach((p,pi)=>{const bl=pi===0?'border-left:1px solid #ccc;':'';h+=`<th style="padding:4px 7px;text-align:center;font-weight:400;font-size:11px;border-bottom:1px solid #ccc;${bl};color:#666">${p}</th>`;});
+  h+='</tr></thead><tbody>';
+  TS.forEach(t=>{
+    const rT=TTOT[t];
+    const pan=cP?`<span style="font-size:10px;color:#aaa;margin-left:4px">(${PAN[t]||''})</span>`:'';
+    h+=`<tr><td style="padding:5px 10px;font-size:12px;border-bottom:0.5px solid #eee;white-space:nowrap;cursor:help" title="${TNOTES[t]||''}">${t}${pan}</td>`;
+    [0,1,2].forEach(ni=>[0,1,2].forEach(pi=>{const n=FD[t][ni][pi];const{b,f,w}=ss(n,cM==='rel'?rT:null);const bl=pi===0?'border-left:1px solid #ccc;':'';const k=`${t}_${pi}_${ni}`;const ac=cAct===k?';outline:2px solid #3266ad;outline-offset:-1px':'';
+      if(!showZeros&&n===0){h+=`<td style="background:#fafafa;padding:5px 7px;text-align:center;border:1px solid #f8f8f8;font-size:11px;${bl};color:#ddd">·</td>`;return;}h+=`<td id="c${CSS.escape(k)}" onclick="clC('${k}');showCtxPanel('${k}','${t}',${ni},${pi},${n})" style="background:${b};color:${f};font-weight:${w};padding:5px 7px;text-align:center;border:1px solid #f8f8f8;font-size:11px;${bl};cursor:pointer${ac}">${cM==='rel'?fmr(n,rT):fm(n)}</td>`;}));
+    h+='</tr>';
+  });
+  h+=`<tr><td colspan="10" style="padding:3px 10px;font-size:10px;color:#aaa;background:#f9f9f9;border-top:1px solid #ccc;font-weight:500">НЕ-ФИНИТНЫЕ</td></tr>`;
+  NF.forEach(([lb,n],i)=>{const{b,f,w}=ss(n);const k=lb;const pan=cP?`<span style="font-size:10px;color:#aaa;margin-left:4px">(${PAN[lb]||''})</span>`:'';const ac=cAct===k?';outline:2px solid #3266ad;outline-offset:-1px':'';
+      if(!showZeros&&n===0){h+=`<td style="background:#fafafa;padding:5px 7px;text-align:center;border:1px solid #f8f8f8;font-size:11px;${bl};color:#ddd">·</td>`;return;}h+=`<tr><td style="padding:5px 10px;font-size:12px;border-bottom:0.5px solid #eee;cursor:help" title="${TNOTES[lb]||''}">${lb}${pan}</td><td id="c${CSS.escape(k)}" onclick="clC('${k}')" colspan="9" style="background:${b};color:${f};font-weight:${w};padding:5px 7px;font-size:11px;border:1px solid #f8f8f8;border-left:1px solid #ccc;cursor:pointer${ac}">${n.toLocaleString()} употреблений</td></tr>`;});
+  h+='</tbody>';
+  document.getElementById('tbl').innerHTML=h;
+  if(cM==='rel'){document.getElementById('ll').textContent='Доля:';document.getElementById('s6').textContent='>90%';document.getElementById('s5').textContent='65–90%';document.getElementById('s4').textContent='35–65%';document.getElementById('s3').textContent='15–35%';document.getElementById('s2').textContent='5–15%';document.getElementById('s1').textContent='<5%';}
+  else{document.getElementById('ll').textContent='Употреблений:';document.getElementById('s6').textContent='>40k';document.getElementById('s5').textContent='10–40k';document.getElementById('s4').textContent='3–10k';document.getElementById('s3').textContent='0.5–3k';document.getElementById('s2').textContent='50–500';document.getElementById('s1').textContent='<50';}
+}
+
+let cSrt='n';
+
+function setStem(v,btn){showStem=v;
+  document.getElementById('st0').classList.toggle('on',!v);
+  document.getElementById('st1').classList.toggle('on',v);
+  bL();}
+function setSrt(s,btn){cSrt=s;['srt-n','srt-t','srt-p','srt-num'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('on');});btn.classList.add('on');bL();}
+function sortedCells(){
+  const inTarget=parseFloat(document.getElementById('sl').value);
+  const visible=ALL.filter(c=>!document.getElementById(`r${c.rank}`)?.classList.contains('hid'));
+  const sorted=[...ALL];
+  if(cSrt==='n') sorted.sort((a,b)=>b.n-a.n);
+  else if(cSrt==='t') sorted.sort((a,b)=>{const ti=Object.keys(FD);const ai=a.fin?ti.indexOf(a.t):ti.length+NF.findIndex(x=>x[0]===a.t);const bi=b.fin?ti.indexOf(b.t):ti.length+NF.findIndex(x=>x[0]===b.t);return ai!==bi?ai-bi:b.n-a.n;});
+  else if(cSrt==='p') sorted.sort((a,b)=>{const ap=a.fin?a.pi:3;const bp=b.fin?b.pi:3;return ap!==bp?ap-bp:b.n-a.n;});
+  else if(cSrt==='num') sorted.sort((a,b)=>{const ni=['sg','du','pl'];const an=a.fin?ni.indexOf(NS[a.ni]):3;const bn=b.fin?ni.indexOf(NS[b.ni]):3;return an!==bn?an-bn:b.n-a.n;});
+  return sorted;
+}
+function bL(){
+  const lst=document.getElementById('lst');lst.innerHTML='';
+  const qRaw=(document.getElementById('srch')?.value||'').toLowerCase().trim();
+  const q=qRaw;
+  sortedCells().forEach(c=>{
+    const{b}=ss(c.n);const pct=(100*c.n/TOT).toFixed(1);
+    const div=document.createElement('div');
+    div.className='ri'+(c.key===cAct?' act':'');div.id=`r${c.rank}`;div.onclick=()=>clR(c.key);
+    const ex=c.fin?gEx(c.t,c.ni,c.pi):gNFEx(c.nfi||0);const cmpEx=c.fin?getCmpEx(c.t,c.ni,c.pi):'';
+    const pan=cP?`<span style="font-size:10px;color:#aaa;margin-left:3px">(${PAN[c.t]||''})</span>`:'';
+    div.title=`Нарастающий итог: ${c.cp.toFixed(1)}%`;const barW=Math.round(60*c.n/TOT*3.2);// scale: 233k→max ~75px
+  div.innerHTML=`<span style="font-size:10px;color:#aaa;width:20px;text-align:right;flex-shrink:0">${c.rank}.</span><span style="width:70px;flex-shrink:0;display:inline-flex;align-items:center;padding:0 4px"><span style="width:${Math.max(2,barW)}px;height:6px;border-radius:2px;background:#3266ad55;display:inline-block"></span></span><span style="width:9px;height:9px;border-radius:2px;background:${b};border:0.5px solid #ccc;flex-shrink:0;display:inline-block;margin:0 5px"></span><span style="width:195px;flex-shrink:0">${c.lbl}${pan}</span><span style="flex:1;min-width:0;color:#555;font-size:11px">${ex}${cmpEx?` <span style="margin-left:4px">${cmpEx}</span>`:""}</span><span style="font-size:10px;color:#aaa;flex-shrink:0;padding-left:8px">${pct}%</span>`;
+    // search filter
+  const matchSrch = !q||c.lbl.toLowerCase().includes(q)||
+    (c.fin&&[NS[c.ni],PS[c.pi],c.t].some(x=>x.toLowerCase().includes(q)))||
+    (gEx(c.t,c.ni,c.pi)||'').toLowerCase().replace(/<[^>]+>/g,'').includes(q);
+  if(!matchSrch) div.style.display='none';
+  lst.appendChild(div);
+  });
+}
+
+function showCtxPanel(k){
+  var c=null;for(var i=0;i<ALL.length;i++){if(ALL[i].key===k){c=ALL[i];break;}}
+  if(!c)return;
+  var panel=document.getElementById('ctx-panel');
+  document.getElementById('ctx-title').textContent=c.lbl;
+  var rd=RD[cR];
+  var forms=[];
+  if(c.fin&&rd&&rd[c.t]){
+    var nk=NS[c.ni];var cell=rd[c.t][nk]&&rd[c.t][nk][c.pi];
+    if(cell){var pf,af;if(cell.length>=3&&typeof cell[2]==='number'){pf=cell[0];af=cell[2];}else{pf=cell[0];af=cell[1];}
+      if(pf&&pf!=='—')forms.push({form:pf,voice:'P.'});
+      if(af&&af!=='—'&&af!==pf)forms.push({form:af,voice:'Ā.'});}
+  } else if(!c.fin&&rd&&rd.nf){
+    var nfk=NFK[c.nfi||0];var raw=rd.nf[nfk]||'';
+    raw.split(' / ').forEach(function(f){var ft=f.replace(/[-·]/g,'').trim().split(' ')[0];if(ft)forms.push({form:ft,voice:'нф.'});});
+  }
+  var html='';
+  forms.forEach(function(item){
+    var form=item.form,voice=item.voice;
+    var d=CTX[form];var n=d?d[0]:0;
+    var cntStr=n?(n.toLocaleString()+' уп.'):'—';
+    html+='<div style="margin-bottom:5px"><span style="font-weight:500;font-style:italic">'+voice+' '+form+'</span> <span style="color:#aaa;font-size:11px">'+cntStr+' в корпусе</span></div>';
+    if(d&&d[1]&&d[1].length){
+      d[1].slice(0,3).forEach(function(ex){
+        var src=ex[0],txt=ex[1];
+        var hl=txt.replace(new RegExp(form.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'),'<strong style="color:#3266ad">'+form+'</strong>');
+        html+='<div style="margin:0 0 5px 10px;font-size:11px;border-left:2px solid #3266ad55;padding-left:6px"><span style="color:#aaa;font-size:10px">'+src+'</span><br>'+hl+'</div>';
+      });
+    }
+  });
+  if(!html)html='<span style="color:#aaa;font-size:12px">Примеры не найдены</span>';
+  document.getElementById('ctx-examples').innerHTML=html;
+  panel.style.display='block';
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function clC(k){cAct=cAct===k?null:k;bT();bL();if(cAct){var r=null;for(var i=0;i<ALL.length;i++){if(ALL[i].key===cAct){r=ALL[i];break;}}if(r){var ri=document.getElementById('r'+r.rank);if(ri)ri.scrollIntoView({behavior:'smooth',block:'nearest'});}showCtxPanel(cAct);}else{document.getElementById('ctx-panel').style.display='none';}}
+function clR(k){cAct=cAct===k?null:k;bT();bL();if(cAct)document.getElementById('c'+CSS.escape(k))?.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function setRoot(r,btn){cR=r;document.querySelectorAll('#rb .rb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');updateRInfo();updateRoute();bL();}
+function setMode(m,btn){cM=m;document.getElementById('ma').classList.toggle('on',m==='abs');document.getElementById('mr').classList.toggle('on',m==='rel');bT();}
+function setVoice(v,btn){cV=v;['vb','vp','va'].forEach(id=>document.getElementById(id).classList.remove('on'));document.getElementById('v'+v).classList.add('on');bL();}
+function setPan(p,btn){cP=p;document.getElementById('pn0').classList.toggle('on',!p);document.getElementById('pn1').classList.toggle('on',p);bT();bL();}
+function upd(){updateRoute();
+  const tg=parseFloat(document.getElementById('sl').value);
+  document.getElementById('pl').textContent=tg+'%';
+  const ik=new Set();let cnt=0;
+  ALL.forEach(c=>{if(c.cp<=tg+.05){ik.add(c.key);cnt++;}});
+  document.getElementById('rl').textContent=cnt;
+  ALL.forEach(c=>{
+    const el=document.getElementById('c'+CSS.escape(c.key));
+    if(el){el.style.opacity=ik.has(c.key)?'1':'0.1';el.style.filter=ik.has(c.key)?'none':'saturate(0) brightness(1.5)';}
+    const ri=document.getElementById(`r${c.rank}`);
+    if(ri)ri.classList.toggle('hid',!ik.has(c.key));
+  });
+}
+
+const rb=document.getElementById('rb');
+ROOTS.forEach(r=>{const b=document.createElement('button');b.className='rb'+(r==='kṛ'?' on':'');b.textContent=`√${r}`;b.onclick=()=>setRoot(r,b);rb.appendChild(b);});
+bT();bL();upd();updateRInfo();updateRoute();
+
+
+function dlMD(){
+  var root=cR;var rd=RD[root];
+  var lines=['# Sanskrit paradigm: √'+root,'','Source: Digital Corpus of Sanskrit (Oliver Hellwig). Tokens: 745,394.',''];
+  var tnames=['Present Ind.','Optative','Imperative','Imperfect','Perfect','Future','Pres. Passive','Aorist','Injunctive'];
+  tnames.forEach(function(t){
+    if(!rd||!rd[t])return;
+    lines.push('## '+t+' ('+(PAN[t]||'')+')')
+    lines.push('');
+    lines.push('| | 1sg | 2sg | 3sg | 1du | 2du | 3du | 1pl | 2pl | 3pl |');
+    lines.push('|---|---|---|---|---|---|---|---|---|---|');
+    ['P.','\u0100.'].forEach(function(voice){
+      var row='| '+voice+' |';
+      ['sg','du','pl'].forEach(function(nk){
+        [0,1,2].forEach(function(pi){
+          var cell=rd[t][nk]&&rd[t][nk][pi];
+          var f='—';
+          if(cell){if(cell.length>=3&&typeof cell[2]==='number'){f=voice==='P.'?cell[0]:cell[2];}else{f=voice==='P.'?cell[0]:cell[1];}}
+          var n=CTX[f]&&CTX[f][0];
+          row+=' '+(f==='—'?'—':f+(n?' ('+n.toLocaleString()+')':''))+' |';
+        });
+      });
+      lines.push(row);
+    });
+    lines.push('');
+  });
+  lines.push('## Non-finite forms','');
+  var nfPairs=[['PPP','PPP'],['Abs','Absolutive'],['FPP','FPP'],['Inf','Infinitive'],['PAP','Past Act. Part.'],['PAcP','Pres. Act. Part.']];
+  nfPairs.forEach(function(pair){lines.push('- **'+pair[1]+'**: '+(rd&&rd.nf&&rd.nf[pair[0]]||'—'));});
+  var a=document.createElement('a');a.href='data:text/markdown;charset=utf-8,\uFEFF'+encodeURIComponent(lines.join('\n'));
+  a.download='sanskrit_paradigm_'+root+'.md';a.click();
+}
+function dlCSV(){
+  const rows=[['Ранг','Форма','Время','Лицо','Число','P. пример','Ā. пример','Употреблений','%корпуса','∑%']];
+  ALL.forEach(c=>{
+    const rd=RD[cR];
+    let pf='',af='';
+    if(c.fin&&rd&&rd[c.t]){
+      const nk=NS[c.ni];const cell=rd[c.t][nk]?.[c.pi];
+      if(cell){if(cell.length>=3&&typeof cell[2]==='number'){pf=cell[0];af=cell[2];}else{pf=cell[0];af=cell[1];}}
+    } else if(!c.fin&&rd?.nf){pf=rd.nf[NFK[c.nfi||0]]||'';}
+    rows.push([c.rank,c.lbl,c.t,c.fin?PS[c.pi]:'—',c.fin?NS[c.ni]:'—',pf,af,c.n,(100*c.n/TOT).toFixed(2),c.cp.toFixed(1)]);
+  });
+  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
+  a.download=`sanskrit_pxn_${cR}.csv`;a.click();
+}
+
+function dlMD(){
+  const root=cR;
+  const date=new Date().toISOString().slice(0,10);
+  let md=`# Sanskrit verb paradigm: √${root}\n`;
+  md+=`*Source: Digital Corpus of Sanskrit (Hellwig). Generated ${date}.*\n\n`;
+  
+  // Stats summary
+  md+=`## Coverage\n`;
+  md+=`| Ранг | Форма | Употреблений | % корпуса |\n`;
+  md+=`|------|-------|-------------|----------|\n`;
+  let shown=0;
+  ALL.forEach(c=>{
+    if(shown>=20)return;
+    const rd=RD[root];
+    let pf='';
+    if(c.fin&&rd&&rd[c.t]){
+      const nk=NS[c.ni];const cell=rd[c.t][nk]?.[c.pi];
+      if(cell){pf=cell.length>=3&&typeof cell[2]==='number'?cell[0]:cell[0];}
+    }
+    if(!pf||pf==='—')return;
+    md+=`| ${c.rank} | ${c.lbl} (${pf}) | ${c.n.toLocaleString()} | ${(100*c.n/TOT).toFixed(1)}% |\n`;
+    shown++;
+  });
+  
+  md+='\n## Paradigm\n\n';
+  // Full paradigm table per tense
+  TS.forEach(t=>{
+    const rd=RD[root];if(!rd||!rd[t])return;
+    md+=`### ${t} (${PAN[t]||''})\n`;
+    md+=`| Число | 1-е P. | 1-е Ā. | 2-е P. | 2-е Ā. | 3-е P. | 3-е Ā. |\n`;
+    md+=`|-------|--------|--------|--------|--------|--------|--------|\n`;
+    NS.forEach(num=>{
+      const row=rd[t][num];if(!row)return;
+      let line=`| ${num} |`;
+      row.forEach(cell=>{
+        let pf,af;
+        if(cell.length>=3&&typeof cell[2]==='number'){pf=cell[0];af=cell[2];}
+        else{pf=cell[0];af=cell[1];}
+        line+=` ${pf||'—'} | ${af||'—'} |`;
+      });
+      md+=line+'\n';
+    });
+    md+='\n';
+  });
+  
+  // Non-finite
+  md+=`### Нефинитные формы\n\n`;
+  const nfe=RD[root]?.nf||{};
+  const nfLabels={PPP:'PPP (kta)',Abs:'Absolutive (ktvā)',FPP:'FPP (tavya)',Inf:'Infinitive (tumun)',PAP:'Past Act.Part.',PAcP:'Pres.Act.Part.'};
+  Object.entries(nfLabels).forEach(([k,lbl])=>{
+    if(nfe[k])md+=`- **${lbl}**: ${nfe[k]}\n`;
+  });
+  
+  const a=document.createElement('a');
+  a.href='data:text/markdown;charset=utf-8,'+encodeURIComponent(md);
+  a.download=`sanskrit_paradigm_${root}.md`;a.click();
+}
+
+// ── FLASHCARD STATE ──
+let fcDeck=[],fcIdx=0,fcRevealed=false,fcSession={ok:0,hm:0,no:0};
+
+function buildDeck(){
+  const inKeys=new Set();
+  const tg=parseFloat(document.getElementById('sl').value);
+  ALL.forEach(c=>{if(c.cp<=tg+.05)inKeys.add(c.key);});
+  const deck=[];
+  ALL.forEach(c=>{
+    if(!inKeys.has(c.key))return;
+    const rd=RD[cR];
+    if(!c.fin){
+      // non-finite: ask "что такое ___ от √X?"
+      const k=NFK[c.nfi||0];const form=rd?.nf?.[k];
+      if(form&&form!=='—') deck.push({
+        q:`Как образуется <b>${NF[c.nfi||0][0]}</b> от √${cR}?`,
+        hint:`(${PAN[c.t]||c.t})`,
+        aP:form, aA:'', ctx:''
+      });
+      return;
+    }
+    const nk=NS[c.ni];const cell=rd?.[c.t]?.[nk]?.[c.pi];
+    if(!cell)return;
+    let pf,af;
+    if(cell.length>=3&&typeof cell[2]==='number'){pf=cell[0];af=cell[2];}
+    else{pf=cell[0];af=cell[1];}
+    // Build question: show tense + person + number → answer = P. and/or Ā.
+    const qText=`√${cR} · <b>${c.t}</b> · ${PS[c.pi]} ${NS[c.ni]}`;
+    const hint=`(${PAN[c.t]||''})`;
+    // Context from corpus
+    let ctx='';
+    const form=pf&&pf!=='—'?pf:(af&&af!=='—'?af:null);
+    if(form&&FCTX[form]){const ex=FCTX[form].ex[0];if(ex)ctx=`${ex.txt.slice(0,90)} <em style="font-size:10px;color:#aaa">[${ex.src}]</em>`;}
+    deck.push({q:qText,hint,aP:pf&&pf!=='—'?pf:'—',aA:af&&af!=='—'?af:'—',ctx,n:c.n});
+  });
+  return deck;
+}
+
+function fcShuffle(){fcDeck.sort(()=>Math.random()-.5);fcIdx=0;fcShow();}
+
+function toggleFlash(){
+  const p=document.getElementById('flash-panel');
+  const btn=document.getElementById('btn-flash');
+  if(p.style.display==='none'||!p.style.display){
+    fcDeck=buildDeck();fcSession={ok:0,hm:0,no:0};
+    if(!fcDeck.length){alert('Нет карточек в текущем охвате.');return;}
+    p.style.display='block';
+    document.getElementById('fc-root').textContent=cR;
+    document.getElementById('fc-count').textContent=fcDeck.length;
+    fcIdx=0;fcShow();
+    if(btn)btn.classList.add('on');
+  } else {
+    p.style.display='none';
+    if(btn)btn.classList.remove('on');
+  }
+}
+
+function fcShow(){
+  if(!fcDeck.length)return;
+  const c=fcDeck[fcIdx];fcRevealed=false;
+  document.getElementById('fc-pos').textContent=`${fcIdx+1}/${fcDeck.length}`;
+  document.getElementById('fc-q').innerHTML=c.q;
+  document.getElementById('fc-hint').textContent=c.hint||'';
+  document.getElementById('fc-a').style.display='none';
+  document.getElementById('fc-tap').style.display='block';
+  document.getElementById('fc-rating').style.display='none';
+  document.getElementById('fc-card').style.background='#fafbfc';
+  const statsEl=document.getElementById('fc-stats');
+  statsEl.textContent=`✓ ${fcSession.ok}  ~ ${fcSession.hm}  ✗ ${fcSession.no}`;
+}
+
+function fcReveal(){
+  if(fcRevealed)return;fcRevealed=true;
+  const c=fcDeck[fcIdx];
+  const pHtml=c.aP!=='—'?`<b>P.</b> ${c.aP}`:'';
+  const aHtml=c.aA!=='—'?`<b>Ā.</b> ${c.aA}`:'';
+  document.getElementById('fc-ans').innerHTML=[pHtml,aHtml].filter(Boolean).join(' &nbsp;·&nbsp; ');
+  document.getElementById('fc-ans2').textContent=c.n?`${c.n.toLocaleString()} употреблений в DCS`:'';
+  document.getElementById('fc-ctx').innerHTML=c.ctx||'';
+  document.getElementById('fc-ctx').style.display=c.ctx?'block':'none';
+  document.getElementById('fc-a').style.display='block';
+  document.getElementById('fc-tap').style.display='none';
+  document.getElementById('fc-rating').style.display='flex';
+  document.getElementById('fc-card').style.background='#f0f6ff';
+}
+
+function fcRate(r){
+  if(r===3)fcSession.ok++;else if(r===2)fcSession.hm++;else fcSession.no++;
+  // If wrong, append to end of deck for repetition
+  if(r===1)fcDeck.push(fcDeck[fcIdx]);
+  fcNext();
+}
+
+function fcNext(){
+  if(fcIdx<fcDeck.length-1){fcIdx++;fcShow();}
+  else{
+    const s=fcSession;
+    document.getElementById('fc-card').innerHTML=`<div style="font-size:15px;color:#1d9e75;margin-bottom:8px">✓ Колода пройдена</div>
+    <div style="font-size:13px;color:#555">Знал: <b>${s.ok}</b> &nbsp; Вспомнил: <b>${s.hm}</b> &nbsp; Не знал: <b>${s.no}</b></div>
+    <button onclick="fcDeck=buildDeck();fcSession={ok:0,hm:0,no:0};fcIdx=0;fcShow()" style="margin-top:12px;padding:6px 16px;border-radius:6px;border:0.5px solid #3266ad;background:#3266ad18;cursor:pointer;color:#3266ad;font-size:12px">Начать заново</button>`;
+    document.getElementById('fc-rating').style.display='none';
+  }
+}
+function fcPrev(){if(fcIdx>0){fcIdx--;fcShow();}}
+
+function copyList(){
+  var rows=[];var num=0;
+  document.querySelectorAll('#lst .ri').forEach(function(item){
+    if(item.classList.contains('hid')||item.style.display==='none')return;
+    num++;
+    var labelSpan=item.querySelector('span[style*="width:195px"]');
+    var label=labelSpan?(labelSpan.innerText||labelSpan.textContent).trim():'';
+    var exSpan=item.querySelector('span[style*="flex:1"]');
+    var exRaw=exSpan?(exSpan.innerText||exSpan.textContent).trim():'';
+    var ex=exRaw.replace(/\s*\(\d[\d\s,\.]*\)\s*/g,'').trim();
+    var spans=item.querySelectorAll('span');
+    var pct=(spans[spans.length-1].innerText||spans[spans.length-1].textContent).trim();
+    var exParts=ex.split(/\s*·\s*Ā\.\s*/);
+    var pPart=exParts.length>1?exParts[0].trim():'—';
+    var aPart=exParts.length>1?'Ā. '+exParts[1].trim():ex.trim();
+    rows.push(num+'.\t'+label+'\t'+pPart+'\t'+aPart+'\t'+pct);
+  });
+  var text=rows.join('\n');
+  var fallback=function(){
+    var ta=document.createElement('textarea');ta.value=text;
+    ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();document.execCommand('copy');
+    document.body.removeChild(ta);
+    var btn=document.getElementById('copy-btn');
+    btn.textContent='Скопировано';
+    setTimeout(function(){btn.textContent='Копировать';},2000);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){
+      var btn=document.getElementById('copy-btn');
+      var orig=btn.textContent;
+      btn.textContent='✓ Скопировано';btn.style.color='#1d9e75';btn.style.borderColor='#1d9e75';
+      setTimeout(function(){btn.textContent=orig;btn.style.color='#555';btn.style.borderColor='#888';},2000);
+    }).catch(fallback);
+  } else { fallback(); }
+}
+</script>
+</body></html>
