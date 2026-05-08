@@ -74,6 +74,9 @@ For the full methodology with term definitions, see [`pareto.md`](pareto.md).
 
 ---
 
+ФайлСодержимоеsanskrit_verb_forms.mdObsidian-справочник топ-100 корней с парадигмамиdcs_texts_clean.json288 текстов с тенсовыми профилямиdcs_genres.json17 жанровых профилей (взвешенные средние)dcs_scatter.json170 точек для диахронических графиковform_lookup.json7873 глагольных форм → корень/время/рангcoll_compact.json800 лемм × коллокаты по частям речиparadigm_endings.json25 времён × реальные окончания из корпусаverb_classes.json13 классов глаголов с P/Ā распределениемtense_case_data.jsonЧастоты форм (timws) + падежи (cs.csv)morph_pn.jsonЛицо × число по временам (из 10.csv)corpus_stats_widget.jsonСводные морфостатистики для виджетовprefix_clean.jsonТоп-25 приставок с продуктивностьюpassage_library.json40 куратированных пассажей из 0.csvanki_compact.json200 Anki-карточекconc_totals.json6423 формы → общее число в корпусеconc_part1/2/3.jsonКонкорданс: 6423 формы × 5 примеров (разбит на 3 части)
+
+---
 ## License
 
 [Apache 2.0](LICENSE)
