@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanskrit Corpus Linguistics — Инструменты</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f7f8fa;color:#1a1a1a;min-height:100vh}
+a{color:inherit;text-decoration:none}
+
+/* HEADER */
+.hdr{background:#fff;border-bottom:1px solid #e0e0e0;padding:20px 24px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.hdr-title{font-size:20px;font-weight:600;letter-spacing:-.3px}
+.hdr-sub{font-size:13px;color:#888}
+.hdr-badge{font-size:11px;padding:3px 8px;border-radius:12px;background:#3266ad18;color:#3266ad;border:0.5px solid #3266ad44}
+
+/* STAGE TABS */
+.stage-row{display:flex;gap:6px;padding:20px 24px 0;flex-wrap:wrap}
+.stab{padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid #ddd;background:#fff;color:#888;transition:all .15s}
+.stab:hover{border-color:#3266ad;color:#3266ad}
+.stab.on{background:#3266ad;border-color:#3266ad;color:#fff}
+.stab.s1{--c:#1d9e75}
+.stab.s2{--c:#3266ad}
+.stab.s3{--c:#ba7517}
+.stab.s4{--c:#e24b4a}
+.stab.on.s1{background:#1d9e75;border-color:#1d9e75}
+.stab.on.s2{background:#3266ad;border-color:#3266ad}
+.stab.on.s3{background:#ba7517;border-color:#ba7517}
+.stab.on.s4{background:#e24b4a;border-color:#e24b4a}
+
+/* STAGE EXPLAINER */
+.stage-info{margin:12px 24px 0;padding:10px 14px;border-radius:8px;background:#fff;border:1px solid #e8e8e8;font-size:12px;color:#555;display:none}
+.stage-info.on{display:block}
+.stage-info b{color:#1a1a1a}
+
+/* MAIN GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;padding:20px 24px 40px}
+
+/* TOOL CARD */
+.card{background:#fff;border:1px solid #e0e0e0;border-radius:10px;overflow:hidden;transition:box-shadow .15s,border-color .15s;cursor:pointer;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);border-color:#bbb}
+.card.faded{opacity:.3;pointer-events:none}
+.card.highlight{border-color:#3266ad;box-shadow:0 0 0 2px #3266ad22}
+.card-top{padding:14px 14px 10px;flex:1}
+.card-icon{font-size:20px;margin-bottom:8px}
+.card-name{font-size:14px;font-weight:600;margin-bottom:4px}
+.card-desc{font-size:12px;color:#666;line-height:1.5}
+.card-fact{font-size:11px;font-style:italic;color:#3266ad;margin-top:6px;line-height:1.4}
+.card-foot{padding:8px 14px;border-top:1px solid #f0f0f0;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.tag{font-size:10px;padding:2px 7px;border-radius:10px;background:#f0f0f0;color:#666}
+.stage-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.card-type{font-size:10px;color:#aaa;margin-left:auto}
+.file-badge{font-size:10px;padding:2px 7px;border-radius:4px;background:#1d9e7518;color:#1d9e75;border:0.5px solid #1d9e7544}
+
+/* PATH SECTION */
+.path-section{padding:0 24px 0;margin-bottom:0}
+.path-title{font-size:13px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+.path-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}
+.path-step{flex-shrink:0;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:10px 12px;min-width:160px;max-width:200px}
+.path-stage{font-size:10px;font-weight:600;margin-bottom:4px}
+.path-roots{font-size:13px;font-style:italic;color:#3266ad;margin-bottom:4px}
+.path-desc{font-size:11px;color:#666;line-height:1.4}
+.path-arrow{align-self:center;color:#ccc;font-size:18px;flex-shrink:0}
+
+/* STAT BAR */
+.stat-row{display:flex;gap:12px;padding:16px 24px;flex-wrap:wrap}
+.stat{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:10px 14px;flex:1;min-width:120px}
+.stat-n{font-size:20px;font-weight:600}
+.stat-l{font-size:11px;color:#888;margin-top:2px}
+
+/* DIVIDER */
+.sec-label{padding:16px 24px 8px;font-size:11px;font-weight:600;color:#aaa;text-transform:uppercase;letter-spacing:.5px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-title">Sanskrit Corpus Linguistics</div>
+  <div class="hdr-sub">Oliver Hellwig · DCS · 4.58M токенов · 492 текста</div>
+  <div class="hdr-badge">11 инструментов</div>
+</div>
+
+<!-- KEY STATS -->
+<div class="stat-row">
+  <div class="stat"><div class="stat-n">781k</div><div class="stat-l">глагольных употреблений</div></div>
+  <div class="stat"><div class="stat-n">621k</div><div class="stat-l">строф в корпусе</div></div>
+  <div class="stat"><div class="stat-n">17</div><div class="stat-l">жанровых семей</div></div>
+  <div class="stat"><div class="stat-n">3050</div><div class="stat-l">лет охвата (−1350 → +1700)</div></div>
+  <div class="stat"><div class="stat-n">6423</div><div class="stat-l">форм в конкордансе</div></div>
+</div>
+
+<!-- LEARNING PATH -->
+<div class="path-section">
+  <div class="path-title">Маршрут обучения</div>
+  <div class="path-row">
+    <div class="path-step">
+      <div class="path-stage" style="color:#1d9e75">● STAGE 1 · ~70% корпуса</div>
+      <div class="path-roots">√kṛ · √vac · √bhū · √as</div>
+      <div class="path-desc">PPP + Absolutive + Present + Optative. Hitopadeśa, Aṣṭāvakragīta</div>
+    </div>
+    <div class="path-arrow">›</div>
+    <div class="path-step">
+      <div class="path-stage" style="color:#3266ad">● STAGE 2 · ~85% корпуса</div>
+      <div class="path-roots">√gam · √dṛś · √dā · √śru · √sthā</div>
+      <div class="path-desc">Imperfect, FPP, Pres. Passive, Inf. Purāṇa, Buddhist texts</div>
+    </div>
+    <div class="path-arrow">›</div>
+    <div class="path-step">
+      <div class="path-stage" style="color:#ba7517">● STAGE 3 · ~92% корпуса</div>
+      <div class="path-roots">√jan · √han · √vid · √yā · √jñā…</div>
+      <div class="path-desc">Perfect, Aorist, все неличные. Mahābhārata, Upaniṣads</div>
+    </div>
+    <div class="path-arrow">›</div>
+    <div class="path-step">
+      <div class="path-stage" style="color:#e24b4a">● STAGE 4 · 97%+</div>
+      <div class="path-roots">все остальные + приставки</div>
+      <div class="path-desc">Все типы аориста, конъюнктив. Kālidāsa, Arthaśāstra</div>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE FILTER -->
+<div class="stage-row">
+  <button class="stab on" onclick="setStage('all',this)">Все инструменты</button>
+  <button class="stab s1" onclick="setStage('1',this)">Stage 1</button>
+  <button class="stab s2" onclick="setStage('2',this)">Stage 2</button>
+  <button class="stab s3" onclick="setStage('3',this)">Stage 3</button>
+  <button class="stab s4" onclick="setStage('4',this)">Stage 4</button>
+  <button class="stab" onclick="setStage('ref',this)">Справочные</button>
+</div>
+
+<!-- STAGE EXPLAINERS -->
+<div class="stage-info on" id="si-all">
+  Показаны все 11 инструментов. Выберите этап обучения чтобы увидеть рекомендованные для него.
+</div>
+<div class="stage-info" id="si-1">
+  <b>Stage 1</b> — 4 корня, ~70% корпуса. Начните с <b>Парадигмы</b> (√kṛ, √bhū, √as), затем <b>D3 Анализатор</b> (Hitopadeśa ★), затем <b>Anki-деки</b> для повторения.
+</div>
+<div class="stage-info" id="si-2">
+  <b>Stage 2</b> — ещё 6 корней, охват 85%. Добавьте <b>Whitney Roots</b> для понимания системы корней, используйте <b>Конкорданс</b> для поиска форм в реальных текстах.
+</div>
+<div class="stage-info" id="si-3">
+  <b>Stage 3</b> — 92% корпуса. Работайте с <b>Анализатором текстов</b> (★★★ пассажи), изучайте <b>Коллокации</b> для семантических связей слова.
+</div>
+<div class="stage-info" id="si-4">
+  <b>Stage 4</b> — 97%+. Жанровые профили DCS (<b>Track C</b>), диахронический анализ, специализированная лексика Arthaśāstra и Kāvya.
+</div>
+<div class="stage-info" id="si-ref">
+  Справочные инструменты не привязаны к этапу — используйте в любое время для проверки частот, жанровых профилей и корпусной статистики.
+</div>
+
+<!-- TOOL GRID -->
+<div class="grid" id="grid"></div>
+
+<script>
+const TOOLS = [
+  {
+    id:'pxn', icon:'📊', name:'Глагольная парадигма', file:'sanskrit_pxn_v4.html', docs:'sanskrit_pxn_v4_docs.md',
+    desc:'6 корней × 9 времён × 9 ячеек (лицо × число). Карточки, контексты DCS, основа+окончание, сравнение корней, маршрут обучения.',
+    fact:'Opt. 3sg = 95.8% всего оптатива. Imper. 2sg = 73.6%.',
+    tags:['парадигма','P/Ā','карточки','DCS'],
+    stages:['1','2','3'],
+    type:'file', star:true,
+    note:'Автономный HTML-файл (92 KB) · сохрани в той же папке что sanskrit_pxn_v4.html'
+  },
+  {
+    id:'D3', icon:'📖', name:'Анализатор текстов',
+    desc:'40 куратированных пассажей из DCS 0.csv: Hitopadeśa, Mahābhārata, Upaniṣads, Arthaśāstra, Kālidāsa. Фильтр по жанру и сложности. Вставка своего IAST.',
+    fact:'Verb forms colour-coded by corpus frequency rank. Stage 1→4.',
+    tags:['тексты','пассажи','разбор'],
+    stages:['2','3','4'], type:'widget'
+  },
+  {
+    id:'D2', icon:'🃏', name:'Anki-деки',
+    desc:'200 карточек по 4 этапам обучения. Скачивание CSV для Anki + .md для Obsidian. Фильтр по стадии.',
+    fact:'Stage 1: kṛ,vac,bhū,as · Stage 2: gam,dṛś,dā,śru,sthā,brū…',
+    tags:['Anki','карточки','экспорт'],
+    stages:['1','2'], type:'widget'
+  },
+  {
+    id:'D1', icon:'🔢', name:'Парадигм-строитель',
+    desc:'10 корней × 6 времён в виде тепловой карты корпусной частоты. Реальные окончания из verx.csv. Сравнение paradigm endings.',
+    fact:'Данные из DCS verx.csv: 781k глагольных токенов.',
+    tags:['парадигма','частоты','хитмап'],
+    stages:['1','2'], type:'widget'
+  },
+  {
+    id:'conc', icon:'🔍', name:'Конкорданс',
+    desc:'Поиск по 6423 глагольным формам в 621 109 строфах DCS (7.txt). Примеры с источником. Автодополнение по корню.',
+    fact:'uvāca: 10 368 строф · kuryāt: 1 080 · dṛṣṭvā: 4 424',
+    tags:['конкорданс','формы','DCS'],
+    stages:['2','3','4'], type:'widget'
+  },
+  {
+    id:'coll', icon:'🔗', name:'Коллокации',
+    desc:'800 лемм (n≥100) × коллокаты из DCS 111.csv, разбитые по частям речи. Кликабельная навигация по сети слов.',
+    fact:'dharma↔artha(845)↔kāma(625)↔mokṣa(512) — пурушартха в корпусе.',
+    tags:['коллокации','семантика','DCS'],
+    stages:['3','4'], type:'widget'
+  },
+  {
+    id:'B', icon:'🌱', name:'Whitney Roots',
+    desc:'309 корней с корпусными данными + 550 «мёртвых» (не засвидетельствованных). Оценка сложности, семантические поля.',
+    fact:'8 корней = 25% корпуса · 52 = 50% · 238 = 75%.',
+    tags:['корни','Whitney','частотность'],
+    stages:['1','2'], type:'widget'
+  },
+  {
+    id:'morph', icon:'📐', name:'Морфостатистика',
+    desc:'Лицо × число по временам из 4.57M токенов 10.csv. Падежная система (cs.csv). Продуктивность приставок (9.txt).',
+    fact:'Nom.Sg = 34.6% всех именных · Dual < 1% везде.',
+    tags:['морфология','падежи','приставки'],
+    stages:['ref'], type:'widget'
+  },
+  {
+    id:'A', icon:'📈', name:'Корпусная статистика',
+    desc:'Абсолютные частоты 42 глагольных форм (timws.csv), классы глаголов P/Ā, реальные личные окончания из verx.csv.',
+    fact:'PPP=233k · Present=157k · Absolutive=81k · Optative=72k.',
+    tags:['частоты','времена','классы'],
+    stages:['ref'], type:'widget'
+  },
+  {
+    id:'C_dcs', icon:'📅', name:'DCS: 17 жанров',
+    desc:'288 текстов, 17 жанровых профилей. Тепловая матрица, 2700-летний диахронический scatter, радар, справочник по чтению.',
+    fact:'Vedic Saṃhitā −1350 BCE → Tantra/Āgama 1700 CE.',
+    tags:['жанры','DCS','диахрония'],
+    stages:['ref','4'], type:'widget'
+  },
+  {
+    id:'C_tans', icon:'📜', name:'TANS: 193 текста',
+    desc:'Жанровый тепловой map, диахронический scatter, радар-сравнение, отклонение от базовой линии.',
+    fact:'193 текста · Упанишады → Тантра · те же 17 жанров.',
+    tags:['жанры','TANS','диахрония'],
+    stages:['ref','4'], type:'widget'
+  },
+];
+
+const STAGE_COLORS = {'1':'#1d9e75','2':'#3266ad','3':'#ba7517','4':'#e24b4a','ref':'#888780'};
+
+let curStage = 'all';
+
+function renderCards(){
+  const grid = document.getElementById('grid');
+  grid.innerHTML = TOOLS.map(t => {
+    const inStage = curStage==='all' ||
+      t.stages.includes(curStage) ||
+      (curStage==='ref' && t.stages.includes('ref'));
+    const faded = !inStage;
+
+    const stageDots = t.stages.filter(s=>s!=='ref').map(s=>
+      `<span class="stage-dot" style="background:${STAGE_COLORS[s]||'#ccc'}" title="Stage ${s}"></span>`
+    ).join('');
+
+    const tags = t.tags.map(tg=>`<span class="tag">${tg}</span>`).join('');
+    const typeBadge = t.type==='file'
+      ? `<a href="${t.file||'#'}" download style="text-decoration:none"><span class="file-badge" style="cursor:pointer">↓ Скачать HTML</span></a>`
+      : `<span class="card-type">виджет</span>`;
+    const starBadge = t.star ? `<span style="color:#ba7517;font-size:12px">★</span>` : '';
+
+    const docsBadge = t.docs ? `<a href="${t.docs||'#'}" download style="text-decoration:none"><span style="font-size:10px;padding:2px 7px;border-radius:4px;background:#88878018;color:#888;border:0.5px solid #88878044;cursor:pointer">↓ docs.md</span></a>` : '';
+    return `<div class="card${faded?' faded':''}${!faded&&curStage!=='all'?' highlight':''}">
+      <div class="card-top">
+        <div class="card-icon">${t.icon}</div>
+        <div class="card-name">${t.name} ${starBadge}</div>
+        <div class="card-desc">${t.desc}</div>
+        <div class="card-fact">${t.fact}</div>
+        ${t.note?`<div style="font-size:10px;color:#888;margin-top:4px;font-style:italic">${t.note}</div>`:''}
+      </div>
+      <div class="card-foot">
+        ${stageDots}
+        ${tags}
+        ${typeBadge}
+        ${docsBadge||''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function setStage(s, btn){
+  curStage = s;
+  document.querySelectorAll('.stab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.stage-info').forEach(el=>el.classList.remove('on'));
+  const si = document.getElementById('si-'+s);
+  if(si) si.classList.add('on');
+  renderCards();
+}
+
+renderCards();
+</script>
+</body>
+</html>
