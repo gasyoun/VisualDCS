@@ -1,0 +1,402 @@
+[
+ {
+  "id": 0,
+  "title": "Hitopadeśa",
+  "genre": "Narrative Prose",
+  "diff": 1,
+  "desc": "Hitopadeśa — prose fable, maxim + story",
+  "src": "Hitop, 1: 1",
+  "txt": "anyac ca | udyoginaṁ puruṣasiṁham upaiti lakṣmīr daivena deyam iti kāpuruṣā vadanti | daivaṁ nihatya kuru pauruṣam ātmaśaktyā yatne kṛte yadi na sidhyati ko .tra doṣaḥ || yathā mṛtpiṇḍataḥ kartā kurute yad yad icchati | evam ātmakṛtaṁ karma mānavaḥ pratipadyate || kākatālīyavat prāptaṁ dṛṣṭvāpi nidhim agrataḥ | na svayaṁ daivam ādatte puruṣārtham apekṣate ||",
+  "vd": 0.26
+ },
+ {
+  "id": 1,
+  "title": "Hitopadeśa",
+  "genre": "Narrative Prose",
+  "diff": 1,
+  "desc": "Hitopadeśa — prose fable, maxim + story",
+  "src": "Hitop, 2: 2",
+  "txt": "anyac ca | ṣaḍdoṣāḥ puruṣeṇeha hātavyā bhūtim icchatā | nidrā tandrā bhayaṁ krodha ālasyaṁ dīrghasūtratā || idānīm api evaṁ kriyatāṁ sarvair ekacittībhūya jālam ādāya uḍḍīyatām | yataḥ | alpānām api vastūnāṁ saṁhatiḥ kāryasādhikā | tṛṇair guṇatvam āpannair badhyante mattadantinaḥ || saṁhatiḥ śreyasī puṁsāṁ svakulair alpakair api | tuṣeṇāpi parityaktā na prarohanti taṇḍulāḥ ||",
+  "vd": 0.02
+ },
+ {
+  "id": 2,
+  "title": "Hitopadeśa",
+  "genre": "Narrative Prose",
+  "diff": 1,
+  "desc": "Hitopadeśa — prose fable, maxim + story",
+  "src": "Hitop, 2: 2",
+  "txt": "kāko brūte mitra kāpuruṣasya vacanam etat | yataḥ | sthānam utsṛjya gacchanti siṁhāḥ satpuruṣā gajāḥ | tatraiva nidhanaṁ yānti kākāḥ kāpuruṣā mṛgāḥ || anyac ca | ko vīrasya manasvinaḥ svaviṣayaḥ ko vā videśaḥ smṛtaḥ yaṁ deśaṁ śrayate tam eva kurute bāhupratāpārjitam | yad daṁṣṭrānakhalāṅgulapraharaṇaḥ siṁho vanaṁ gāhate tasminn eva hatadvipendrarudhirais tṛṣṇāṁ chinatty ātmanaḥ || hiraṇyako brūte mitra kva gantavyam tathā coktam | calaty ekena pādena tiṣṭhaty ekena buddhimān | nāsamīkṣya paraṁ sthānaṁ pūrvam āyatanaṁ tyajet ||",
+  "vd": 0.12
+ },
+ {
+  "id": 3,
+  "title": "Hitopadeśa",
+  "genre": "Narrative Prose",
+  "diff": 1,
+  "desc": "Hitopadeśa — prose fable, maxim + story",
+  "src": "Hitop, 2: 2",
+  "txt": "anyac ca | asaṁbhogena sāmānyaṁ kṛpaṇasya dhanaṁ paraiḥ | asyedam iti sambandho hānau duḥkhena gamyate || api ca | na devāya na viprāya na bandhubhyo na cātmane | kṛpaṇasya dhanaṁ yāti vahnitaskarapārthivaiḥ || tathā coktam | dānaṁ priyavāksahitaṁ jñānam agarvaṁ kṣamānvitaṁ śauryam | tyāgaṁ sahitaṁ ca vittaṁ durlabham etac catur bhadram ||",
+  "vd": 0.05
+ },
+ {
+  "id": 4,
+  "title": "Hitopadeśa",
+  "genre": "Narrative Prose",
+  "diff": 1,
+  "desc": "Hitopadeśa — prose fable, maxim + story",
+  "src": "Hitop, 3: 3",
+  "txt": "damanako brūte bhadra katham ahaṁ sevānabhijñaḥ paśya | kim apy asti svabhāvena sundaraṁ vāpy asundaram | yad eva rocate yasmai bhavet tat tasya sundaram || yataḥ | yasya yasya hi yo bhāvas tena tena hi taṁ naram | anupraviśya medhāvī kṣipram ātmavaśaṁ nayet || anyac ca | ko .trety aham iti brūyāt samyag ādeśayeti ca | ājñām avitathāṁ kuryād yathāśakti mahīpateḥ ||",
+  "vd": 0.15
+ },
+ {
+  "id": 5,
+  "title": "Aṣṭāvakragīta",
+  "genre": "Philosophy",
+  "diff": 2,
+  "desc": "Aṣṭāvakragīta — non-dual teaching in simple śloka",
+  "src": "Aṣṭāvakragīta, 1: 1",
+  "txt": "janaka uvāca | kathaṁ jñānam avāpnoti kathaṁ muktir bhaviṣyati | vairāgyaṁ ca kathaṁ prāptam etad brūhi mama prabho || aṣṭāvakra uvāca | muktim icchasi cet tāta viṣayān viṣavat tyaja | kṣamārjavadayātoṣasatyaṁ pīyūṣavad bhaja || na pṛthvī na jalaṁ nāgnir na vāyur dyaur na vā bhavān | eṣāṁ sākṣiṇam ātmānaṁ cidrūpaṁ viddhi muktaye ||",
+  "vd": 0.2
+ },
+ {
+  "id": 6,
+  "title": "Aṣṭāvakragīta",
+  "genre": "Philosophy",
+  "diff": 2,
+  "desc": "Aṣṭāvakragīta — non-dual teaching in simple śloka",
+  "src": "Aṣṭāvakragīta, 2: 2",
+  "txt": "janaka uvāca | aho nirañjanaḥ śānto bodho .haṁ prakṛteḥ paraḥ | etāvantam ahaṁ kālaṁ mohenaiva viḍambitaḥ || yathā prakāśayāmy eko deham enaṁ tathā jagat | ato mama jagat sarvam athavā na ca kiṁcana || saśarīram aho viśvaṁ parityajya mayādhunā | kutaścit kauśalād eva paramātmā vilokyate ||",
+  "vd": 0.05
+ },
+ {
+  "id": 7,
+  "title": "Aṣṭāvakragīta",
+  "genre": "Philosophy",
+  "diff": 2,
+  "desc": "Aṣṭāvakragīta — non-dual teaching in simple śloka",
+  "src": "Aṣṭāvakragīta, 8: 8",
+  "txt": "tadā bandho yadā cittaṁ kiṁcid vāñchati śocati | kiṁcin muñcati gṛhṇāti kiṁciddhṛṣyati kupyati || tadā muktir yadā cittaṁ na vāñchati na śocati | na muñcati na gṛhṇāti na hṛṣyati na kupyati || tadā bandho yadā cittaṁ saktaṁ kāsvapi dṛṣṭiṣu | tadā mokṣo yadā cittam asaktaṁ sarvadṛṣṭiṣu ||",
+  "vd": 0.27
+ },
+ {
+  "id": 8,
+  "title": "Aṣṭāvakragīta",
+  "genre": "Philosophy",
+  "diff": 2,
+  "desc": "Aṣṭāvakragīta — non-dual teaching in simple śloka",
+  "src": "Aṣṭāvakragīta, 17: 17",
+  "txt": "tena jñānaphalaṁ prāptaṁ yogābhyāsaphalaṁ tathā | tṛptaḥ svacchendriyo nityam ekākī ramate tu yaḥ || na kadācij jagaty asmiṁs tattvajño hanta khidyati | yata ekena tenedaṁ pūrṇaṁ brahmāṇḍamaṇḍalam || na jātu viṣayāḥ ke.pi svārāmaṁ harṣayanty amī | sallakīpallavaprītam ivebhaṁ nimbapallavāḥ ||",
+  "vd": 0.06
+ },
+ {
+  "id": 9,
+  "title": "Manusmṛti",
+  "genre": "Sūtra/Dharma",
+  "diff": 3,
+  "desc": "Manusmṛti — dharmaśāstra, optative-heavy prescriptions",
+  "src": "ManuS, 5: 5",
+  "txt": "yad dhyāyati yat kurute ratiṁ badhnāti yatra ca | tad avāpnoty ayatnena yo hinasti na kiṁcana || nākṛtvā prāṇināṁ hiṁsāṁ māṁsam utpadyate kvacit | na ca prāṇivadhaḥ svargyas tasmānmāṁsaṁ vivarjayet || samutpattiṁ ca māṁsasya vadhabandhau ca dehinām | prasamīkṣya nivarteta sarvamāṁsasya bhakṣaṇāt || na bhakṣayati yo māṁsaṁ vidhiṁ hitvā piśācavat | na loke priyatāṁ yāti vyādhibhiś ca na pīḍyate ||",
+  "vd": 0.25
+ },
+ {
+  "id": 10,
+  "title": "Manusmṛti",
+  "genre": "Sūtra/Dharma",
+  "diff": 3,
+  "desc": "Manusmṛti — dharmaśāstra, optative-heavy prescriptions",
+  "src": "ManuS, 7: 7",
+  "txt": "adyāt kākaḥ puroḍāśaṁ śvā ca lihyāddhavis tathā | svāmyaṁ ca na syāt kasmiṁścit pravartetādharottaram || sarvo daṇḍajito loko durlabho hi śucir naraḥ | daṇḍasya hi bhayāt sarvaṁ jagad bhogāya kalpate || devadānavagandharvā rakṣāṁsi patagoragāḥ | te .pi bhogāya kalpante daṇḍenaiva nipīḍitāḥ || duṣyeyuḥ sarvavarṇāś ca bhidyeran sarvasetavaḥ | sarvalokaprakopaś ca bhaved daṇḍasya vibhramāt ||",
+  "vd": 0.11
+ },
+ {
+  "id": 11,
+  "title": "Manusmṛti",
+  "genre": "Sūtra/Dharma",
+  "diff": 3,
+  "desc": "Manusmṛti — dharmaśāstra, optative-heavy prescriptions",
+  "src": "ManuS, 8: 8",
+  "txt": "andho matsyān ivāśnāti sa naraḥ kaṇṭakaiḥ saha | yo bhāṣate .rthavaikalyam apratyakṣaṁ sabhāṁ gataḥ || yasya vidvān hi vadataḥ kṣetrajño nābhiśaṅkate | tasmān na devāḥ śreyāṁsaṁ loke .nyaṁ puruṣaṁ viduḥ || yāvato bāndhavān yasmin hanti sākṣye .nṛtaṁ vadan | tāvataḥ saṁkhyayā tasmin śṛṇu saumyānupūrvaśaḥ || pañca paśvanṛte hanti daśa hanti gavānṛte | śatam aśvānṛte hanti sahasraṁ puruṣānṛte ||",
+  "vd": 0.14
+ },
+ {
+  "id": 12,
+  "title": "Rāmāyaṇa",
+  "genre": "Epic",
+  "diff": 3,
+  "desc": "Rāmāyaṇa — epic narrative with perfect & imperfect",
+  "src": "Rām, 1, 1: 1",
+  "txt": "tapaḥsvādhyāyanirataṁ tapasvī vāgvidāṁ varam | nāradaṁ paripapraccha vālmīkir munipuṁgavam || ko nv asmin sāmprataṁ loke guṇavān kaś ca vīryavān | dharmajñaś ca kṛtajñaś ca satyavākyo dṛḍhavrataḥ || cāritreṇa ca ko yuktaḥ sarvabhūteṣu ko hitaḥ | vidvān kaḥ kaḥ samarthaś ca kaś caikapriyadarśanaḥ || ātmavān ko jitakrodho matimān ko .nasūyakaḥ | kasya bibhyati devāś ca jātaroṣasya saṁyuge ||",
+  "vd": 0.06
+ },
+ {
+  "id": 13,
+  "title": "Rāmāyaṇa",
+  "genre": "Epic",
+  "diff": 3,
+  "desc": "Rāmāyaṇa — epic narrative with perfect & imperfect",
+  "src": "Rām, 1, 35: 35",
+  "txt": "abhigamya surāḥ sarve praṇipatyedam abruvan | devadeva mahādeva lokasyāsya hite rata | surāṇāṁ praṇipātena prasādaṁ kartum arhasi || na lokā dhārayiṣyanti tava tejaḥ surottama | brāhmeṇa tapasā yukto devyā saha tapaś cara || trailokyahitakāmārthaṁ tejas tejasi dhāraya | rakṣa sarvān imāṁl lokān nālokaṁ kartum arhasi || devatānāṁ vacaḥ śrutvā sarvalokamaheśvaraḥ | bāḍham ity abravīt sarvān punaś cedam uvāca ha ||",
+  "vd": 0.27
+ },
+ {
+  "id": 14,
+  "title": "Rāmāyaṇa",
+  "genre": "Epic",
+  "diff": 3,
+  "desc": "Rāmāyaṇa — epic narrative with perfect & imperfect",
+  "src": "Rām, 2, 109: 185",
+  "txt": "skandhāvāraniveśena tena tasya mahātmanaḥ | hayahastikarīṣaiś ca upamardaḥ kṛto bhṛśam || tasmād anyatra gacchāma iti saṁcintya rāghavaḥ | prātiṣṭhata sa vaidehyā lakṣmaṇena ca saṁgataḥ || so .trer āśramam āsādya taṁ vavande mahāyaśāḥ | taṁ cāpi bhagavān atriḥ putravat pratyapadyata || svayam ātithyam ādiśya sarvam asya susatkṛtam | saumitriṁ ca mahābhāgāṁ sītāṁ ca samasāntvayat ||",
+  "vd": 0.13
+ },
+ {
+  "id": 15,
+  "title": "Rāmāyaṇa",
+  "genre": "Epic",
+  "diff": 3,
+  "desc": "Rāmāyaṇa — epic narrative with perfect & imperfect",
+  "src": "Rām, 6, 59: 449",
+  "txt": "na hi madbāhusṛṣṭānām astrāṇāṁ himavān api | soḍhum utsahate vegam antarikṣam atho mahī || sukhaprasuptaṁ kālāgniṁ prabodhayitum icchasi | nyasya cāpaṁ nivartasva mā prāṇāñ jahi madgataḥ || athavā tvaṁ pratiṣṭabdho na nivartitum icchasi | tiṣṭha prāṇān parityajya gamiṣyasi yamakṣayam || paśya me niśitān bāṇān aridarpaniṣūdanān | īśvarāyudhasaṁkāśāṁstaptakāñcanabhūṣaṇān ||",
+  "vd": 0.3
+ },
+ {
+  "id": 16,
+  "title": "Mahābhārata",
+  "genre": "Epic",
+  "diff": 3,
+  "desc": "Mahābhārata — full epic range of tenses",
+  "src": "MBh, 3, 297: 595",
+  "txt": "yakṣa uvāca | kaś ca dharmaḥ paro loke kaśca dharmaḥ sadāphalaḥ | kiṁ niyamya na śocanti kaiśca saṁdhir na jīryate || yudhiṣṭhira uvāca | ānṛśaṁsyaṁ paro dharmas trayīdharmaḥ sadāphalaḥ | mano yamya na śocanti sadbhiḥ saṁdhir na jīryate || yakṣa uvāca | kiṁ nu hitvā priyo bhavati kiṁ nu hitvā na śocati | kiṁ nu hitvārthavān bhavati kiṁ nu hitvā sukhī bhavet || yudhiṣṭhira uvāca | mānaṁ hitvā priyo bhavati krodhaṁ hitvā na śocati | kāmaṁ hitvārthavān bhavati lobhaṁ hitvā sukhī bhavet ||",
+  "vd": 0.32
+ },
+ {
+  "id": 17,
+  "title": "Mahābhārata",
+  "genre": "Epic",
+  "diff": 3,
+  "desc": "Mahābhārata — full epic range of tenses",
+  "src": "MBh, 5, 99: 763",
+  "txt": "gurubhāraḥ kapotaśca sūryanetraścirāntakaḥ | viṣṇudhanvā kumāraśca paribarho haristathā || susvaro madhuparkaśca hemavarṇastathaiva ca | malayo mātariśvā ca niśākaradivākarau || ete pradeśamātreṇa mayoktā garuḍātmajāḥ | prādhānyato .tha yaśasā kīrtitāḥ prāṇataśca te || yadyatra na ruciḥ kācid ehi gacchāva mātale | taṁ nayiṣyāmi deśaṁ tvāṁ ruciṁ yatropalapsyase ||",
+  "vd": 0.08
+ },
+ {
+  "id": 18,
+  "title": "Mahābhārata",
+  "genre": "Epic",
+  "diff": 3,
+  "desc": "Mahābhārata — full epic range of tenses",
+  "src": "MBh, 7, 152: 1130",
+  "txt": "sa taṁ dṛṣṭvā rākṣasendraṁ bhīmo bhīmaparākramaḥ | gadāṁ cikṣepa vegena vajrapātopamāṁ tadā || tām āpatantīṁ vegena gadāṁ jvālākulāṁ tataḥ | gadayā tāḍayāmāsa sā gadā bhīmam āvrajat || sa rākṣasendraṁ kaunteyaḥ śaravarṣair avākirat | tān apyasyākaronmoghān rākṣaso niśitaiḥ śaraiḥ || te cāpi rākṣasāḥ sarve sainikā bhīmarūpiṇaḥ | śāsanād rākṣasendrasya nijaghnū rathakuñjarān ||",
+  "vd": 0.12
+ },
+ {
+  "id": 19,
+  "title": "Chāndogyopaniṣad",
+  "genre": "Upaniṣad",
+  "diff": 3,
+  "desc": "Chāndogyopaniṣad — philosophical present, dialogue",
+  "src": "ChāUp, 1, 1: 1",
+  "txt": "om ity etad akṣaram udgītham upāsīta | om iti hy udgāyati | tasyopavyākhyānam || eṣāṁ bhūtānāṁ pṛthivī rasaḥ | pṛthivyā āpo rasaḥ | apām oṣadhayo rasaḥ | oṣadhīnāṁ puruṣo rasaḥ | puruṣasya vāg rasaḥ | vāca ṛg rasaḥ | ṛcaḥ sāma rasaḥ | sāmna udgītho rasaḥ || sa eṣa rasānāṁ rasatamaḥ paramaḥ parārdhyo .ṣṭamo yadudgīthaḥ || katamā katamark katamat katamat sāma katamaḥ katama udgītha iti vimṛṣṭaṁ bhavati ||",
+  "vd": 0.07
+ },
+ {
+  "id": 20,
+  "title": "Chāndogyopaniṣad",
+  "genre": "Upaniṣad",
+  "diff": 3,
+  "desc": "Chāndogyopaniṣad — philosophical present, dialogue",
+  "src": "ChāUp, 5, 19: 92",
+  "txt": "prāṇe tṛpyati cakṣus tṛpyati | cakṣuṣi tṛpyaty ādityas tṛpyati | āditye tṛpyati dyaus tṛpyati | divi tṛpyantyāṁ yat kiṁca dyauś cādityaś cādhitiṣṭhatas tat tṛpyati | tasyānu tṛptiṁ tṛpyati prajayā paśubhir annādyena tejasā brahmavarcaseneti || atha yāṁ dvitīyāṁ juhuyāt tāṁ juhuyād vyānāya svāheti | vyānas tṛpyati || vyāne tṛpyati śrotraṁ tṛpyati | śrotre tṛpyati candramās tṛpyati | candramasi tṛpyati diśas tṛpyanti | dikṣu tṛpyantīṣu yat kiṁca diśaś candramāś cādhitiṣṭhanti tat tṛpyati | tasyānu tṛptiṁ tṛpyati prajayā paśubhir annādyena tejasā brahmavarcaseneti || atha yāṁ tṛtīyāṁ juhuyāt tāṁ juhuyād apānāya svāheti | apānas tṛpyati ||",
+  "vd": 0.27
+ },
+ {
+  "id": 21,
+  "title": "Chāndogyopaniṣad",
+  "genre": "Upaniṣad",
+  "diff": 3,
+  "desc": "Chāndogyopaniṣad — philosophical present, dialogue",
+  "src": "ChāUp, 5, 21: 94",
+  "txt": "apāne tṛpyati vāk tṛpyati | vāci tṛpyantyām agnis tṛpyati | agnau tṛpyati pṛthivī tṛpyati | pṛthivyāṁ tṛpyantyāṁ yat kiṁca pṛthivī cāgniś cādhitiṣṭhatas tat tṛpyati | tasyānutṛptiṁ tṛpyati prajayā paśubhir annādyena tejasā brahmavarcaseneti || atha yāṁ caturthīṁ juhuyāt tāṁ juhuyāt samānāya svāheti | samānas tṛpyati || samāne tṛpyati manas tṛpyati | manasi tṛpyati parjanyas tṛpyati | parjanye tṛpyati vidyut tṛpyati | vidyuti tṛpyantyāṁ yat kiṁca vidyuc ca parjanyaś cādhitiṣṭhatas tat tṛpyati | tasyānu tṛptiṁ tṛpyati prajayā paśubhir annādyena tejasā brahmavarcaseneti || atha yām pañcamīṁ juhuyāt tāṁ juhuyāt udānāya svāheti | udānas tṛpyati ||",
+  "vd": 0.31
+ },
+ {
+  "id": 22,
+  "title": "Kaṭhopaniṣad",
+  "genre": "Kaṭhopaniṣad",
+  "diff": 3,
+  "desc": "Kaṭhopaniṣad — death and liberation, classic ślokas",
+  "src": "KaṭhUp, 2: 2",
+  "txt": "hantā cen manyate hantuṁ hataś cen manyate hatam | ubhau tau na vijānīto nāyaṁ hanti na hanyate || aṇor aṇīyān mahato mahīyān ātmāsya jantor nihito guhāyām | tam akratuḥ paśyati vītaśoko dhātuprasādān mahimānam ātmanaḥ || āsīno dūraṁ vrajati śayāno yāti sarvataḥ | kas taṁ madāmadaṁ devaṁ mad anyo jñātum arhati || aśarīraṁ śarīreṣu anavastheṣv avasthitam | mahāntaṁ vibhum ātmānaṁ matvā dhīro na śocati ||",
+  "vd": 0.23
+ },
+ {
+  "id": 23,
+  "title": "Kaṭhopaniṣad",
+  "genre": "Kaṭhopaniṣad",
+  "diff": 3,
+  "desc": "Kaṭhopaniṣad — death and liberation, classic ślokas",
+  "src": "KaṭhUp, 2: 2",
+  "txt": "taṁ durdarśaṁ gūḍham anupraviṣṭaṁ guhāhitaṁ gahvareṣṭhaṁ purāṇam | adhyātmayogādhigamena devaṁ matvā dhīro harṣaśokau jahāti || etacchrutvā samparigṛhya martyaḥ pravṛhya dharmyam aṇum etam āpya | sa modate modanīyaṁ hi labdhvā vivṛtaṁ sadma naciketasaṁ manye || anyatra dharmād anyatrādharmād anyatrāsmāt kṛtākṛtāt | anyatra bhūtāc ca bhavyāc ca yat tat paśyasi tad vada || sarve vedā yat padam āmananti tapāṁsi sarvāṇi ca yad vadanti | yad icchanto brahmacaryaṁ caranti tat te padaṁ saṁgraheṇa bravīmi ||",
+  "vd": 0.2
+ },
+ {
+  "id": 24,
+  "title": "Kaṭhopaniṣad",
+  "genre": "Kaṭhopaniṣad",
+  "diff": 3,
+  "desc": "Kaṭhopaniṣad — death and liberation, classic ślokas",
+  "src": "KaṭhUp, 3: 3",
+  "txt": "yas tu vijñānavān bhavati yuktena manasā sadā | tasyendriyāṇi vaśyāni sadaśvā iva sāratheḥ || yas tv avijñānavān bhavaty amanaskaḥ sadāśuciḥ | na sa tat padam āpnoti saṁsāraṁ cādhigacchati || yas tu vijñānavān bhavati samanaskaḥ sadā śuciḥ | sa tu tat padam āpnoti yasmād bhūyo na jāyate || vijñānasārathir yas tu manaḥpragrahavān naraḥ | so .dhvanaḥ pāram āpnoti tad viṣṇoḥ paramaṁ padam ||",
+  "vd": 0.11
+ },
+ {
+  "id": 25,
+  "title": "Arthaśāstra",
+  "genre": "Arthaśāstra",
+  "diff": 4,
+  "desc": "Arthaśāstra — Kauṭilya, dense optatives & gerundives",
+  "src": "ArthaŚ, 2, 9: 30",
+  "txt": "yaścāsya paraviṣaye saṁcāraṁ kuryāt tam anupraviśya mantraṁ vidyāt || suvidite śatruśāsanāpadeśenainaṁ ghātayet || tasmād asyādhyakṣāḥ saṁkhyāyakalekhakarūpadarśakanīvīgrāhakottarādhyakṣasakhāḥ karmaṇi kuryuḥ || uttarādhyakṣā hastyaśvarathārohāḥ ||",
+  "vd": 0.28
+ },
+ {
+  "id": 26,
+  "title": "Arthaśāstra",
+  "genre": "Arthaśāstra",
+  "diff": 4,
+  "desc": "Arthaśāstra — Kauṭilya, dense optatives & gerundives",
+  "src": "ArthaŚ, 2, 1: 22",
+  "txt": "ākarakarmāntadravyahastivanavrajavaṇikpathapracārān vāristhalapathapaṇyapattanāni ca niveśayet || sahodakam āhāryodakaṁ vā setuṁ bandhayet || anyeṣāṁ vā badhnatāṁ bhūmimārgavṛkṣopakaraṇānugrahaṁ kuryāt puṇyasthānārāmāṇāṁ ca || sambhūya setubandhād apakrāmataḥ karmakarabalīvardāḥ karma kuryuḥ ||",
+  "vd": 0.27
+ },
+ {
+  "id": 27,
+  "title": "Arthaśāstra",
+  "genre": "Arthaśāstra",
+  "diff": 4,
+  "desc": "Arthaśāstra — Kauṭilya, dense optatives & gerundives",
+  "src": "ArthaŚ, 1, 8: 8",
+  "txt": "sahādhyāyino .mātyān kurvīta dṛṣṭaśaucasāmarthyatvāt iti bhāradvājaḥ || te hyasya viśvāsyā bhavanti iti || neti viśālākṣaḥ || sahakrīḍitatvāt paribhavantyenam ||",
+  "vd": 0.13
+ },
+ {
+  "id": 28,
+  "title": "Carakasaṃhitā",
+  "genre": "Medical",
+  "diff": 4,
+  "desc": "Carakasaṃhitā — medical prose, PPP + optative",
+  "src": "Ca, 1, 18: 18",
+  "txt": "sādhyāścāpyapare santi vyādhayo mṛdusaṁmatāḥ | yatnāyatnakṛtaṁ yeṣu karma sidhyatyasaṁśayam || asādhyāścāpare santi vyādhayo yāpyasaṁjñitāḥ | susādhvapi kṛtaṁ yeṣu karma yātrākaraṁ bhavet || santi cāpyapare rogā yeṣu karma na sidhyati | api yatnakṛtaṁ bālairna tān vidvānupācaret || sādhyāścaivāpyasādhyāśca vyādhayo dvividhāḥ smṛtāḥ | mṛdudāruṇabhedena te bhavanti caturvidhāḥ ||",
+  "vd": 0.24
+ },
+ {
+  "id": 29,
+  "title": "Carakasaṃhitā",
+  "genre": "Medical",
+  "diff": 4,
+  "desc": "Carakasaṃhitā — medical prose, PPP + optative",
+  "src": "Ca, 5, 12: 66",
+  "txt": "indriyāṇi vinaśyanti khilībhavati cetanā | autsukyaṁ bhajate sattvaṁ ceto bhīrāviśatyapi || smṛtistyajati medhā ca hrīśriyau cāpasarpataḥ | upaplavante pāpmāna ojastejaśca naśyati || śīlaṁ vyāvartate .tyarthaṁ bhaktiśca parivartate | vikriyante praticchāyāśchāyāśca vikṛtiṁ prati || śukraṁ pracyavate sthānādunmārgaṁ bhajate .nilaḥ | kṣayaṁ māṁsāni gacchanti gacchatyasṛgapi kṣayam ||",
+  "vd": 0.24
+ },
+ {
+  "id": 30,
+  "title": "Carakasaṃhitā",
+  "genre": "Medical",
+  "diff": 4,
+  "desc": "Carakasaṃhitā — medical prose, PPP + optative",
+  "src": "Ca, 2, 8: 38",
+  "txt": "ityetadakhilenoktaṁ nidānasthānamuttamam | nidānārthakaro rogo rogasyāpyupalabhyate || tadyathā jvarasaṁtāpād raktapittam udīryate | raktapittājjvarastābhyāṁ śoṣaścāpyupajāyate || plīhābhivṛddhyā jaṭharaṁ jaṭharācchotha eva ca | arśobhyo jaṭharaṁ duḥkhaṁ gulmaścāpyupajāyate || pratiśyāyādbhavet kāsaḥ kāsāt saṁjāyate kṣayaḥ | kṣayo rogasya hetutve śoṣasyāpyupalabhyate ||",
+  "vd": 0.07
+ },
+ {
+  "id": 31,
+  "title": "Kumārasaṃbhava",
+  "genre": "Kāvya",
+  "diff": 4,
+  "desc": "Kumārasaṃbhava — Kālidāsa, PPP-dominant ornate verse",
+  "src": "KumSaṃ, 1: 1",
+  "txt": "asty uttarasyāṁ diśi devatātmā himālayo nāma nagādhirājaḥ | pūrvāparau toyanidhī vigāhya sthitaḥ pṛthivyā iva mānadaṇḍaḥ || yaṁ sarvaśailāḥ parikalpya vatsaṁ merau sthite dogdhari dohadakṣe | bhāsvanti ratnāni mahauṣadhīś ca pṛthūpadiṣṭāṁ duduhur dharitrīm || anantaratnaprabhavasya yasya himaṁ na saubhāgyavilopi jātam | eko hi doṣo guṇasaṁnipāte nimajjatīndoḥ kiraṇeṣv ivāṅkaḥ ||",
+  "vd": 0.02
+ },
+ {
+  "id": 32,
+  "title": "Kumārasaṃbhava",
+  "genre": "Kāvya",
+  "diff": 4,
+  "desc": "Kumārasaṃbhava — Kālidāsa, PPP-dominant ornate verse",
+  "src": "KumSaṃ, 2: 2",
+  "txt": "pure tāvantam evāsya tanoti ravir ātapam | dīrghikākamalonmeṣo yāvanmātreṇa sādhyate || sarvābhiḥ sarvadā candras taṁ kalābhir niṣevate | nādatte kevalāṁ lekhāṁ haracūḍāmaṇīkṛtām || vyāvṛttagatir udyāne kusumasteyasādhvasāt | na vāti vāyus tatpārśve tālavṛntānilādhikam ||",
+  "vd": 0.15
+ },
+ {
+  "id": 33,
+  "title": "Kumārasaṃbhava",
+  "genre": "Kāvya",
+  "diff": 4,
+  "desc": "Kumārasaṃbhava — Kālidāsa, PPP-dominant ornate verse",
+  "src": "KumSaṃ, 4: 4",
+  "txt": "śirasā praṇipatya yācitāny upagūḍhāni savepathūni ca | suratāni ca tāni te rahaḥ smara saṁsmṛtya na śāntir asti me || racitaṁ ratipaṇḍita tvayā svayam aṅgeṣu mamedam ārtavam | dhriyate kusumaprasādhanaṁ tava tac cāru vapur na dṛśyate || vibudhair asi yasya dāruṇair asamāpte parikarmaṇi smṛtaḥ | tam imaṁ kuru dakṣiṇetaraṁ caraṇaṁ nirmitarāgam ehi me ||",
+  "vd": 0.17
+ },
+ {
+  "id": 34,
+  "title": "Kathāsaritsāgara",
+  "genre": "Narrative Prose",
+  "diff": 3,
+  "desc": "Kathāsaritsāgara — Somadeva, flowing narrative prose",
+  "src": "KSS, 2, 4: 12",
+  "txt": "ityukto lohajaṅghena laṅkāmālokya durgamām | satyaṁ divyaprabhāvo .yamiti mene vibhīṣaṇaḥ || tiṣṭha dāsyāmi te vittam ity uktvā brāhmaṇaṁ ca tam | matvā ca rakṣasāṁ haste tamapreṣyaṁ nṛghātinām || tatrasthātsvarṇamūlākhyādgireḥ samprekṣya rākṣasān | ānāyayat pakṣipotaṁ garuḍānvayasaṁbhavam || taṁ cāsmai lohajaṅghāya mathurāyāṁ gamiṣyate | tatkālameva pradadau vaśīkārāya vāhanam ||",
+  "vd": 0.23
+ },
+ {
+  "id": 35,
+  "title": "Kathāsaritsāgara",
+  "genre": "Narrative Prose",
+  "diff": 3,
+  "desc": "Kathāsaritsāgara — Somadeva, flowing narrative prose",
+  "src": "KSS, 3, 6: 20",
+  "txt": "ānāyya sūpakāraṁ ca tataḥ sāhasikābhidham | viśvāsya dīkṣitaṁ kṛtvā daṁpatī tau sahocatuḥ || rājā devīdvitīyo .dya bhokṣyate tat tvarāṁ kuru | āhārasyeti yo .bhyetya tvāṁ brūyāt taṁ nipātayeḥ || tanmāṁsaiś ca rahaḥ kuryāḥ prātar nau svādu bhojanam | iti sūpakṛd ādiṣṭas tathetyuktvā gṛhaṁ yayau || prātaś ca phalabhūtiṁ taṁ prāptaṁ rājā jagāda saḥ | gaccha sāhasikaṁ brūhi sūpakāraṁ mahānase ||",
+  "vd": 0.21
+ },
+ {
+  "id": 36,
+  "title": "Kathāsaritsāgara",
+  "genre": "Narrative Prose",
+  "diff": 3,
+  "desc": "Kathāsaritsāgara — Somadeva, flowing narrative prose",
+  "src": "KSS, 1, 5: 5",
+  "txt": "jijñāsanāya raktaṁ te mayā śākarasīkṛtam | yāvannādyāpyahaṁkāraḥ parityaktastvayā mune || jñānamārge hyahaṁkāraḥ parigho duratikramaḥ | jñānaṁ vinā ca nāstyeva mokṣo vrataśatairapi || svargastu na mumukṣūṇāṁ kṣayī cittaṁ vilobhayet | tasmādahaṁkṛtityāgājjñāne yatnaṁ mune kuru || vinīyaivaṁ muniṁ tena praṇatena kṛtastutiḥ | taṁ badaryāśramoddeśaṁ śāntaṁ vararuciryayau ||",
+  "vd": 0.03
+ },
+ {
+  "id": 37,
+  "title": "Śukasaptati",
+  "genre": "Narrative Prose",
+  "diff": 2,
+  "desc": "Śukasaptati — prose frame story, mixed tenses",
+  "src": "Śusa, 1: 1",
+  "txt": "ahaṁ sāpi ca evaṁ jñāninau tvaṁ ca nijapitarau parityajya bhramanmādṛśāṁ na sambhāṣaṇārhaḥ | paramatithiṁ matvā jalpitaḥ | evamuktaḥ sa brāhmaṇo vinayaparaṁ vyādhaṁ papraccha | tenoktam | na pūjayanti ye pūjyānmānyānna mānayanti ye | jīvanti nindyamānāste mṛtāḥ svargaṁ na yānti ca || vyādhena bodhitastena sa yayau gṛhamātmanaḥ | abhavatkīrtimāṁlloke parataḥ kīrtibhājanam || tasmādvaṇigdharmaṁ svakulodbhavaṁ smara pitrośca vinayaparo bhava | evamuktaḥ sa madanaḥ pitarau namaskṛtya tadanujñāto bhāryāṁ cāpṛcchya pravahaṇam adhirūḍhavān gato deśāntaram | paścāttatpatnī katiciddināni śokayuktā nirvāhya svairiṇībhiḥ sakhībhiḥ pratibodhitā puruṣāntarābhilāṣukābhavat | yatastābhirevamuktam | tāvatpitā tathā bandhuryāvajjīvati mānavaḥ | mṛto mṛta iti jñātvā kṣaṇātsneho nivartate || atastvaṁ svapatim aprāpyamāṇā nijaśarīrasya katiciddinasthāyiyauvanasya puruṣāntararamaṇād gṛhāṇa phalam | tatastāsāṁ vacanena puruṣāntarasya guṇacandrasaṁjñasya ramaṇāya śṛṅgāraṁ vidhāya yāvatpracalitā tāvatsārikayā mā gacchetyādivacanairnirbhartsitā | tato yāvatsā tāṁ sārikāṁ galamoṭanapūrvaṁ vināśayati tāvaduḍḍīya yayau | tataḥ kṣaṇaṁ sthitvā sveṣṭadevatāṁ hṛdi smṛtvā tāmbūlaṁ pragṛhya yāvaccalitā tāvat śukaḥ prāha siddhirastu | kva gantavyam ityādivākyaiḥ pṛṣṭā | sā ca śukavacanaṁ śakunamiti kṛtvā prahasya tamāha he śukarāja narāntarāsvādaṁ vijñātuṁ pracalitāsmi | śuka uvāca yuktamidaṁ kartavyameva paraṁ duṣkaraṁ ninditaṁ ca kulastrīṇām | kiñca tadā gamyatā yadi viparīte samāyāte sati tava buddhirasti | yadi nāsti tadā parābhavapadaṁ bhaviṣyasi | yataḥ | kautukānveṣiṇo nityaṁ durjanā vyasanāgame | māsopavāsinī yadvad vaṇikputrakacagrahe ||",
+  "vd": 0.16
+ },
+ {
+  "id": 38,
+  "title": "Śukasaptati",
+  "genre": "Narrative Prose",
+  "diff": 2,
+  "desc": "Śukasaptati — prose frame story, mixed tenses",
+  "src": "Śusa, 14: 14",
+  "txt": "anyadā tu samāyāto vasantaḥ kālarāṭ kṣitau | mano .pi vikriyāṁ yasminyāti saṁyamināṁ kila || tasminvasantotsave gṛhopari sthitā nagarīrāmaṇīyakamālokya yauvanaṁ rūpaṁ ca nininda | sakhī ca tadiṅgitajñā jagāda bhāmini rūpaṁ vayaśca mā vyarthaṁ vidhehi | yataḥ vādyate śṛṇu rambhoru kokilārāvaḍiṇḍimaḥ | madanasya nṛpasyeva vasantena dharātale || muñcantu māninaḥ sarve mānaṁ sevantu vallabhāḥ | gatvaraṁ yauvanaṁ loke jīvitaṁ ca tathā calam || tatastvamapi kuru vayaḥsāphalyamityukte dhanaśrīrjagāda nāhaṁ vilambituṁ sahāmi | yattvayā bhavati tat śīghraṁ vidhehi | tatastayā sā narāntareṇa yojitā | yadā ca sā tenātmāsaktā jñātā tadā tadīyaśiroveṇī chinnā | tatkāle ca patirdeśāntarādājagāma | tadā sā kathaṁ bhavatviti praśnaḥ | śukaḥ prāha yadā ca patirgṛhadvāramāyayau tadā tayottaraṁ vicintyoktam nātha tvayā tāvadgṛhadvāri sthīyatāṁ yāvatsarvaṁ sajjaṁ vidhīyate | tena caivaṁ pratipanne sā madhye gatvā bhaṭṭārikāṁ pūjayitvā purato veṇīṁ sthāpayāmāsa | evaṁ kṛtvā bahirnirgatya caraṇamaṇḍakaiḥ patiṁ gṛhāntardevīpurato nītvā jagāda nātha pūjaya gṛhādhidevatām | tena pūjayatā veṇīṁ dṛṣṭvā uktaṁ kimidamiti | tayoktaṁ mayopayācitamāsīt | yadā me patiḥ sameṣyati tadā svāminyahaṁ tavāgre veṇīṁ chetsyāmi | tadadhunā mayā kṛtam | sa ca mugdho devīṁ namaskṛtya tāṁ bahu mānayāmāsa | iti kathāṁ śrutvā prabhāvatī suptā ||",
+  "vd": 0.15
+ },
+ {
+  "id": 39,
+  "title": "Śukasaptati",
+  "genre": "Narrative Prose",
+  "diff": 2,
+  "desc": "Śukasaptati — prose frame story, mixed tenses",
+  "src": "Śusa, 5: 5",
+  "txt": "tato he tāta sthirībhava | matsyahasanottaraṁ rājñaḥ purato mayābhidheyamiti | snāhi bhuṅkṣva | tataḥ sa evaṁ kṛtvā rājño .grato gatvā sarvaṁ nivedayāmāsa | nṛpo .pi tuṣṭastāmājuhāva | sā āśīrvādaṁ dattvā rājānamabravīt rājanmā mudhā viprānviḍambaya | kiṁ tvayā evaṁvidhaṁ matsyānāṁ hāsyaṁ dṛṣṭaṁ śrutaṁ vā | kathaṁ māmabalājanaṁ pṛcchanna vilajjase | yataḥ itaro .pi na sāmānyo nṛpatirdivyarūpabhṛt | tvaṁ punarvikramādityo yathārtho .si parantapa || uktaṁ ca | indrātprabhutvaṁ jvalanātpratāpaṁ krodhaṁ yamādvaiśravaṇācca vittam | sattvasthite rāmajanārdanābhyām ādāya rājñaḥ kriyate śarīram || tathā ca bhārate | mā vṛkodara pādena ekādaśacamūpatim | pañcanāmapi yo bharttā nāsāprakṛtimānavī || svāminkathaṁ na tvaṁ svayameva vicārayasi | yatastvameva sarvasaṁśayacchettā | athānyebhyaścet śrotuṁ kautukaṁ tarhi śṛṇu | iyaṁ rājñī na spṛśati hyasmānmatsyānmahāsatī | puruṣākhyānato rājan hasitāḥ śapharā dhruvam ||",
+  "vd": 0.11
+ }
+]

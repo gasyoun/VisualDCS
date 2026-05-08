@@ -1,0 +1,159 @@
+{
+ "top_prefixes": [
+  {
+   "prefix": "sam",
+   "count": 567,
+   "lemmas": 567
+  },
+  {
+   "prefix": "pra",
+   "count": 561,
+   "lemmas": 561
+  },
+  {
+   "prefix": "vi",
+   "count": 531,
+   "lemmas": 531
+  },
+  {
+   "prefix": "ā",
+   "count": 451,
+   "lemmas": 451
+  },
+  {
+   "prefix": "pari",
+   "count": 430,
+   "lemmas": 430
+  },
+  {
+   "prefix": "abhi",
+   "count": 396,
+   "lemmas": 396
+  },
+  {
+   "prefix": "anu",
+   "count": 309,
+   "lemmas": 309
+  },
+  {
+   "prefix": "upa",
+   "count": 286,
+   "lemmas": 286
+  },
+  {
+   "prefix": "prati",
+   "count": 286,
+   "lemmas": 286
+  },
+  {
+   "prefix": "ava",
+   "count": 281,
+   "lemmas": 281
+  },
+  {
+   "prefix": "ut",
+   "count": 242,
+   "lemmas": 242
+  },
+  {
+   "prefix": "ni",
+   "count": 240,
+   "lemmas": 240
+  },
+  {
+   "prefix": "niḥ",
+   "count": 205,
+   "lemmas": 205
+  },
+  {
+   "prefix": "ati",
+   "count": 156,
+   "lemmas": 156
+  },
+  {
+   "prefix": "apa",
+   "count": 154,
+   "lemmas": 154
+  },
+  {
+   "prefix": "samā",
+   "count": 146,
+   "lemmas": 146
+  },
+  {
+   "prefix": "ud",
+   "count": 106,
+   "lemmas": 106
+  },
+  {
+   "prefix": "sampra",
+   "count": 94,
+   "lemmas": 94
+  },
+  {
+   "prefix": "abhipra",
+   "count": 93,
+   "lemmas": 93
+  },
+  {
+   "prefix": "abhisam",
+   "count": 91,
+   "lemmas": 91
+  },
+  {
+   "prefix": "adhi",
+   "count": 89,
+   "lemmas": 89
+  },
+  {
+   "prefix": "vyā",
+   "count": 80,
+   "lemmas": 80
+  },
+  {
+   "prefix": "samut",
+   "count": 73,
+   "lemmas": 73
+  },
+  {
+   "prefix": "saṃpra",
+   "count": 72,
+   "lemmas": 72
+  },
+  {
+   "prefix": "pravi",
+   "count": 70,
+   "lemmas": 70
+  }
+ ],
+ "multi_prefix_dist": [
+  {
+   "n": 1,
+   "lemmas": 9435
+  }
+ ],
+ "total_with_prefix": 923,
+ "total_tokens": 9435,
+ "meanings": {
+  "pra": "forth, forward",
+  "sam": "together, completely",
+  "vi": "apart, asunder",
+  "ā": "hither, towards",
+  "pari": "around, fully",
+  "abhi": "towards, against",
+  "anu": "after, along",
+  "upa": "near, under",
+  "prati": "back, against",
+  "ava": "down, away",
+  "ut": "up, out",
+  "ni": "down, into",
+  "niḥ": "out, without",
+  "ati": "over, beyond",
+  "apa": "away, off",
+  "adhi": "over, upon",
+  "su": "well, good",
+  "dur": "ill, bad",
+  "accha": "towards",
+  "api": "also, even"
+ }
+}
