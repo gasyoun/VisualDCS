@@ -10,6 +10,18 @@ The DCS is the largest annotated corpus of Sanskrit texts, containing hundreds o
 
 ---
 
+## CSL Atlas DCS Handoff
+
+VisualDCS is the home for DCS/corpus material moved out of `csl-atlas`. The
+initial atlas handoff landed on 2026-06-04 in
+[`VisualDCS` PR #4](https://github.com/gasyoun/VisualDCS/pull/4), under
+[`docs/csl-atlas-migration/`](docs/csl-atlas-migration/).
+
+Those files are migration material only; they are not yet integrated into the
+runtime dashboards.
+
+---
+
 ## Source Data
 
 **`Распределение времен и наклонений.xlsx`** — the master Excel file containing raw frequency counts of Sanskrit verb forms across the DCS corpus:
@@ -53,6 +65,7 @@ The repository also tracks a set of derived JSON and reference files used to pow
 
 | File | Contents |
 |---|---|
+| `docs/csl-atlas-migration/` | DCS/corpus handoff material migrated out of `csl-atlas` |
 | `sanskrit_verb_forms.md` | Obsidian reference for the top 100 roots with paradigms |
 | `dcs_texts_clean.json` | 288 texts with tense profiles |
 | `dcs_genres.json` | 17 genre profiles (weighted averages) |
