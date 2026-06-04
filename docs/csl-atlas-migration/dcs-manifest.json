@@ -1,0 +1,971 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-05-30T21:26:27.342Z",
+  "corpusId": "dcs",
+  "sourcePath": "../DCS/",
+  "textCount": 184,
+  "textsEnrichedFromBibliography": 2,
+  "texts": [
+    {
+      "code": "Abh",
+      "title": "Abhidharmakośa"
+    },
+    {
+      "code": "AbhBh",
+      "title": "Abhidharmakośabhāṣya"
+    },
+    {
+      "code": "AcTa",
+      "title": "Acintyastava"
+    },
+    {
+      "code": "AgniP",
+      "title": "Agnipurāṇa"
+    },
+    {
+      "code": "AgRa",
+      "title": "Agastīyaratnaparīkṣā"
+    },
+    {
+      "code": "AHS",
+      "title": "Aṣṭāṅgahṛdayasaṃhitā",
+      "citation": "Rahul P. D.; Emmerick R. E. Vāgbhaṭa's Aṣṭāṅgahṛdayasaṃhitā : the romanised text accompanied by line and word indexes. – Groningen : Forsten, 1998. – (Groningen Oriental studies, v. 13.)"
+    },
+    {
+      "code": "AHSra",
+      "title": "Ayurvedarasāyana"
+    },
+    {
+      "code": "AitUp",
+      "title": "Aitareyopaniṣad"
+    },
+    {
+      "code": "ĀK",
+      "title": "Ānandakanda"
+    },
+    {
+      "code": "AmK",
+      "title": "Amarakośa"
+    },
+    {
+      "code": "AmŚ",
+      "title": "Amaruśataka"
+    },
+    {
+      "code": "AmŚā",
+      "title": "Amaraughaśāsana"
+    },
+    {
+      "code": "AmŚā",
+      "title": "Commentary on Amaraughaśāsana"
+    },
+    {
+      "code": "AmUp",
+      "title": "Amṛtabindūpaniṣat"
+    },
+    {
+      "code": "ArthŚ",
+      "title": "Arthaśāstra"
+    },
+    {
+      "code": "ASaṃ",
+      "title": "Aṣṭāṅgasaṃgraha"
+    },
+    {
+      "code": "Aṣṭ",
+      "title": "Aṣṭādhyāyī"
+    },
+    {
+      "code": "AṣṭGī",
+      "title": "Aṣṭavakragīta"
+    },
+    {
+      "code": "AṣṭNi",
+      "title": "Aṣṭāṅganighaṇṭu"
+    },
+    {
+      "code": "ĀyDī",
+      "title": "Āyurvedadīpikā"
+    },
+    {
+      "code": "BauSū",
+      "title": "Baudhāyanadharmasūtra"
+    },
+    {
+      "code": "BCar",
+      "title": "Buddhacarita"
+    },
+    {
+      "code": "BhāgP",
+      "title": "Bhāgavatapurāṇa"
+    },
+    {
+      "code": "Bhai",
+      "title": "Bhairavastava"
+    },
+    {
+      "code": "BhCa",
+      "title": "Bhadrabāhucarita"
+    },
+    {
+      "code": "BhPr",
+      "title": "Bhāvaprakāśa"
+    },
+    {
+      "code": "Bhra",
+      "title": "Bhramarāṣṭaka"
+    },
+    {
+      "code": "BījNi",
+      "title": "Bījanighaṇṭu"
+    },
+    {
+      "code": "BoCA",
+      "title": "Bodhicaryāvatāra"
+    },
+    {
+      "code": "BraUp",
+      "title": "Brahmabindūpaniṣat"
+    },
+    {
+      "code": "Bṛhat",
+      "title": "Bṛhatkathāślokasaṃgraha"
+    },
+    {
+      "code": "Ca",
+      "title": "Carakasaṃhitā"
+    },
+    {
+      "code": "CaDī",
+      "title": "Carakatattvapradīpikā"
+    },
+    {
+      "code": "Cakra",
+      "title": "Cakra (?) on Suśr"
+    },
+    {
+      "code": "ChāUp",
+      "title": "Chāndogyopaniṣad"
+    },
+    {
+      "code": "DhaNi",
+      "title": "Dhanvantarinighaṇṭu"
+    },
+    {
+      "code": "DhanV",
+      "title": "Dhanurveda"
+    },
+    {
+      "code": "DKCar",
+      "title": "Daśakumāracarita"
+    },
+    {
+      "code": "GaṇaK",
+      "title": "Gaṇakārikā"
+    },
+    {
+      "code": "GaṇKṬ",
+      "title": "Gaṇakārikāṭīkā"
+    },
+    {
+      "code": "GarPu",
+      "title": "Garuḍapurāṇa"
+    },
+    {
+      "code": "GarUp",
+      "title": "Garbhopaniṣat"
+    },
+    {
+      "code": "GauDh",
+      "title": "Gautamadharmasūtra"
+    },
+    {
+      "code": "GherS",
+      "title": "Gheraṇḍasaṃhitā"
+    },
+    {
+      "code": "GīG",
+      "title": "Gītagovinda"
+    },
+    {
+      "code": "GokP",
+      "title": "Gokarṇapurāṇasāraḥ"
+    },
+    {
+      "code": "GopBr",
+      "title": "Gopathabrāhmaṇa"
+    },
+    {
+      "code": "GorŚ",
+      "title": "Gorakṣaśataka"
+    },
+    {
+      "code": "GṛRĀ",
+      "title": "Gṛhastharatnākara"
+    },
+    {
+      "code": "H",
+      "title": "Hitopadeśa"
+    },
+    {
+      "code": "Haṃ",
+      "title": "Haṃsadūta"
+    },
+    {
+      "code": "HāSu",
+      "title": "Hārāṇacandara on Suśr"
+    },
+    {
+      "code": "HBh",
+      "title": "Haribhaktivilāsa"
+    },
+    {
+      "code": "HYP",
+      "title": "Haṭhayogapradīpikā"
+    },
+    {
+      "code": "InAHS",
+      "title": "Indu (ad AHS)"
+    },
+    {
+      "code": "JanM",
+      "title": "Janmamaraṇavicāra"
+    },
+    {
+      "code": "KādSv",
+      "title": "Commentary on the Kādambarīsvīkaraṇasūtramañjarī"
+    },
+    {
+      "code": "KaiNi",
+      "title": "Kaiyadevanighaṇṭu"
+    },
+    {
+      "code": "KālPu",
+      "title": "Kālikāpurāṇa"
+    },
+    {
+      "code": "KAM",
+      "title": "Kṛṣṇāmṛtamahārṇava"
+    },
+    {
+      "code": "KāSū",
+      "title": "Kāmasūtra"
+    },
+    {
+      "code": "KāSvī",
+      "title": "Kādambarīsvīkaraṇasūtramañjarī"
+    },
+    {
+      "code": "KāśVṛ",
+      "title": "Kāśikāvṛtti"
+    },
+    {
+      "code": "KāṭhGṛ",
+      "title": "Kāṭhakagṛhyasūtra"
+    },
+    {
+      "code": "KātSm",
+      "title": "Kātyāyanasmṛti"
+    },
+    {
+      "code": "Kauś",
+      "title": "Kauśikasūtra"
+    },
+    {
+      "code": "KāvĀ",
+      "title": "Kāvyādarśa"
+    },
+    {
+      "code": "KāvAl",
+      "title": "Kāvyālaṃkāra"
+    },
+    {
+      "code": "KāVṛ",
+      "title": "Comm. on the Kāvyālaṃkāravṛtti"
+    },
+    {
+      "code": "KāVṛ",
+      "title": "Kāvyālaṃkāravṛtti"
+    },
+    {
+      "code": "KDār",
+      "title": "Kauśikasūtradārilabhāṣya"
+    },
+    {
+      "code": "Kir",
+      "title": "Kirātārjunīya"
+    },
+    {
+      "code": "KṛṣiP",
+      "title": "Kṛṣiparāśara"
+    },
+    {
+      "code": "KumS",
+      "title": "Kumārasaṃbhava"
+    },
+    {
+      "code": "KūPu",
+      "title": "Kūrmapurāṇa"
+    },
+    {
+      "code": "LAS",
+      "title": "Laṅkāvatārasūtra"
+    },
+    {
+      "code": "LiPu",
+      "title": "Liṅgapurāṇa"
+    },
+    {
+      "code": "MahT",
+      "title": "Mahācīnatantra"
+    },
+    {
+      "code": "Maṇi",
+      "title": "Maṇimāhātmya"
+    },
+    {
+      "code": "MaPu",
+      "title": "Matsyapurāṇa"
+    },
+    {
+      "code": "MaS",
+      "title": "Manusmṛti"
+    },
+    {
+      "code": "MBh",
+      "title": "Mahābhārata",
+      "citation": "The Mahabharata Vishnu Sitaram Sukthankar; Shripad Krishna Belvalkar; Paraśurāma Lakshmaṇa Vaidya. – Poona: Bhandarkar Oriental Research Institute, 1927–<2009>."
+    },
+    {
+      "code": "MBhT",
+      "title": "Mātṛkābhedatantra"
+    },
+    {
+      "code": "Megh",
+      "title": "Meghadūta"
+    },
+    {
+      "code": "MPāNi",
+      "title": "Madanapālanighaṇṭu"
+    },
+    {
+      "code": "MṛgT",
+      "title": "Mṛgendratantra"
+    },
+    {
+      "code": "MṛgṬī",
+      "title": "Mṛgendraṭīkā"
+    },
+    {
+      "code": "Mugh",
+      "title": "Mugdhāvabodhinī"
+    },
+    {
+      "code": "MūlaK",
+      "title": "Mūlamadhyamakārikāḥ"
+    },
+    {
+      "code": "Nāḍī",
+      "title": "Nāḍīparīkṣā"
+    },
+    {
+      "code": "NāS",
+      "title": "Nāradasmṛti"
+    },
+    {
+      "code": "Nāṭ",
+      "title": "Nāṭyaśāstra"
+    },
+    {
+      "code": "NāUp",
+      "title": "Nādabindūpaniṣat"
+    },
+    {
+      "code": "Nir",
+      "title": "Nirukta"
+    },
+    {
+      "code": "NiSaṃ",
+      "title": "Nibandhasaṃgraha"
+    },
+    {
+      "code": "NiŚe",
+      "title": "Nighaṇṭuśeṣa"
+    },
+    {
+      "code": "NŚVi",
+      "title": "Nāṭyaśāstravivṛti"
+    },
+    {
+      "code": "NyāBh",
+      "title": "Nyāyabhāṣya"
+    },
+    {
+      "code": "NyāBi",
+      "title": "Nyāyabindu"
+    },
+    {
+      "code": "NyāSū",
+      "title": "Nyāyasūtra"
+    },
+    {
+      "code": "PaAHS",
+      "title": "Padārthacandrikā"
+    },
+    {
+      "code": "PABh",
+      "title": "Pañcārthabhāṣya"
+    },
+    {
+      "code": "ParāṬī",
+      "title": "Parāśarasmṛtiṭīkā"
+    },
+    {
+      "code": "ParDh",
+      "title": "Parāśaradharmasaṃhitā"
+    },
+    {
+      "code": "ParMā",
+      "title": "Paramānandīyanāmamālā"
+    },
+    {
+      "code": "PāśSū",
+      "title": "Pāśupatasūtra"
+    },
+    {
+      "code": "PrasP",
+      "title": "Prasannapadā"
+    },
+    {
+      "code": "RAdhy",
+      "title": "Rasādhyāya"
+    },
+    {
+      "code": "RājMā",
+      "title": "Rājamārtaṇḍa"
+    },
+    {
+      "code": "RājNi",
+      "title": "Rājanighaṇṭu"
+    },
+    {
+      "code": "RAK",
+      "title": "Rasārṇavakalpa"
+    },
+    {
+      "code": "Rām",
+      "title": "Rāmāyaṇa"
+    },
+    {
+      "code": "RArṇ",
+      "title": "Rasārṇava"
+    },
+    {
+      "code": "RasPr",
+      "title": "Rasikapriyā"
+    },
+    {
+      "code": "RasR",
+      "title": "Rasaratnasamuccayabodhinī"
+    },
+    {
+      "code": "RasṬ",
+      "title": "Rasādhyāyaṭīkā"
+    },
+    {
+      "code": "RatDī",
+      "title": "Ratnadīpikā"
+    },
+    {
+      "code": "RCint",
+      "title": "Rasendracintāmaṇi"
+    },
+    {
+      "code": "RCūM",
+      "title": "Rasendracūḍāmaṇi"
+    },
+    {
+      "code": "RHT",
+      "title": "Rasahṛdayatantra"
+    },
+    {
+      "code": "RKDh",
+      "title": "Rasakāmadhenu"
+    },
+    {
+      "code": "RMañj",
+      "title": "Rasamañjarī"
+    },
+    {
+      "code": "RPSu",
+      "title": "Rasaprakāśasudhākara"
+    },
+    {
+      "code": "RRĀ",
+      "title": "Rasaratnākara"
+    },
+    {
+      "code": "RRS",
+      "title": "Rasaratnasamuccaya"
+    },
+    {
+      "code": "RRSDī",
+      "title": "Rasaratnasamuccayadīpikā"
+    },
+    {
+      "code": "RRSṬī",
+      "title": "Rasaratnasamuccayaṭīkā"
+    },
+    {
+      "code": "Rsaṃ",
+      "title": "Rasikasaṃjīvanī"
+    },
+    {
+      "code": "RSK",
+      "title": "Rasasaṃketakalikā"
+    },
+    {
+      "code": "RSS",
+      "title": "Rasendrasārasaṃgraha"
+    },
+    {
+      "code": "RTar",
+      "title": "Rasataraṅgiṇī"
+    },
+    {
+      "code": "ṚtuS",
+      "title": "Ṛtusaṃhāra"
+    },
+    {
+      "code": "ṚVJ",
+      "title": "Ṛgvedavedāṅgajyotiṣa"
+    },
+    {
+      "code": "SaAHS",
+      "title": "Sarvāṅgasundarā"
+    },
+    {
+      "code": "ŚākVi",
+      "title": "Śāktavijñāna"
+    },
+    {
+      "code": "SāṃK",
+      "title": "Sāṃkhyakārikā"
+    },
+    {
+      "code": "Saṅgh",
+      "title": "Saṅghabhedavastu"
+    },
+    {
+      "code": "SātT",
+      "title": "Sātvatatantra"
+    },
+    {
+      "code": "ŚdhS",
+      "title": "Śārṅgadharasaṃhitā"
+    },
+    {
+      "code": "ŚdhSDī",
+      "title": "Śārṅgadharasaṃhitādīpikā"
+    },
+    {
+      "code": "SDS",
+      "title": "Sarvadarśanasaṃgraha"
+    },
+    {
+      "code": "ŚGDī",
+      "title": "Gūḍhārthadīpikā"
+    },
+    {
+      "code": "ŚirUp",
+      "title": "Śira'upaniṣad"
+    },
+    {
+      "code": "ŚiSū",
+      "title": "Śivasūtra"
+    },
+    {
+      "code": "ŚiSūV",
+      "title": "Śivasūtravārtika"
+    },
+    {
+      "code": "ŚivaP",
+      "title": "Śivapurāṇa"
+    },
+    {
+      "code": "SKBh",
+      "title": "Sāṃkhyakārikābhāṣya"
+    },
+    {
+      "code": "SkPu",
+      "title": "Skandapurāṇa"
+    },
+    {
+      "code": "SkPuR",
+      "title": "Skandapurāṇa (Revākhaṇḍa)"
+    },
+    {
+      "code": "SmaDī",
+      "title": "Smaradīpikā"
+    },
+    {
+      "code": "SpaKā",
+      "title": "Spandakārikā"
+    },
+    {
+      "code": "ŚpBr",
+      "title": "Śatapathabrāhmaṇa"
+    },
+    {
+      "code": "SphAbh",
+      "title": "Sphuṭārthāvyākhyā"
+    },
+    {
+      "code": "SpKāNi",
+      "title": "Spandakārikānirṇaya"
+    },
+    {
+      "code": "STKau",
+      "title": "Sāṃkhyatattvakaumudī"
+    },
+    {
+      "code": "Su",
+      "title": "Suśrutasaṃhitā"
+    },
+    {
+      "code": "SūrŚ",
+      "title": "Sūryaśataka"
+    },
+    {
+      "code": "SūrSi",
+      "title": "Sūryasiddhānta"
+    },
+    {
+      "code": "SūrŚṬī",
+      "title": "Sūryaśatakaṭīkā"
+    },
+    {
+      "code": "ŚveUp",
+      "title": "Śvetāśvataropaniṣad"
+    },
+    {
+      "code": "TĀ",
+      "title": "Tantrāloka"
+    },
+    {
+      "code": "TAkh",
+      "title": "Tantrākhyāyikā"
+    },
+    {
+      "code": "TantS",
+      "title": "Tantrasāra"
+    },
+    {
+      "code": "Tarka",
+      "title": "Tarkasaṃgraha"
+    },
+    {
+      "code": "Tattva",
+      "title": "Tattvavaiśāradī"
+    },
+    {
+      "code": "Ṭika",
+      "title": "Ṭikanikayātrā"
+    },
+    {
+      "code": "ToḍT",
+      "title": "Toḍalatantra"
+    },
+    {
+      "code": "TriKŚ",
+      "title": "Trikāṇḍaśeṣa"
+    },
+    {
+      "code": "TriVṛ",
+      "title": "Triṃśatikāvṛtti"
+    },
+    {
+      "code": "UḍḍT",
+      "title": "Uḍḍāmareśvaratantra"
+    },
+    {
+      "code": "VaiSū",
+      "title": "Vaiśeṣikasūtra"
+    },
+    {
+      "code": "VaiSūVṛ",
+      "title": "Vaiśeṣikasūtravṛtti"
+    },
+    {
+      "code": "VarPu",
+      "title": "Varāhapurāṇa"
+    },
+    {
+      "code": "VetPV",
+      "title": "Vetālapañcaviṃśatikā"
+    },
+    {
+      "code": "ViṃKā",
+      "title": "Viṃśatikākārikā"
+    },
+    {
+      "code": "ViPu",
+      "title": "Viṣṇupurāṇa"
+    },
+    {
+      "code": "ViSmṛ",
+      "title": "Viṣṇusmṛti"
+    },
+    {
+      "code": "VNSū",
+      "title": "Vātūlanāthasūtras"
+    },
+    {
+      "code": "VNSūV",
+      "title": "Vātūlanāthasūtravṛtti"
+    },
+    {
+      "code": "Vṛd",
+      "title": "Vṛddhayamasmṛti"
+    },
+    {
+      "code": "YāSmṛ",
+      "title": "Yājñavalkyasmṛti"
+    },
+    {
+      "code": "YRā",
+      "title": "Yogaratnākara"
+    },
+    {
+      "code": "YS",
+      "title": "Yogasūtra"
+    },
+    {
+      "code": "YSBh",
+      "title": "Yogasūtrabhāṣya"
+    }
+  ],
+  "wordGrammar": {
+    "totalWords": 78761,
+    "lossyWords": 55735,
+    "byGroup": {
+      "nominal": 48086,
+      "adjectival": 15322,
+      "verbal": 6936,
+      "unspecified": 6767,
+      "indeclinable": 1525,
+      "other": 125
+    },
+    "categories": [
+      {
+        "gram": "m",
+        "count": 21943,
+        "group": "nominal"
+      },
+      {
+        "gram": "adj",
+        "count": 15322,
+        "group": "adjectival"
+      },
+      {
+        "gram": "f",
+        "count": 12407,
+        "group": "nominal"
+      },
+      {
+        "gram": "n",
+        "count": 11491,
+        "group": "nominal"
+      },
+      {
+        "gram": "(blank)",
+        "count": 6767,
+        "group": "unspecified"
+      },
+      {
+        "gram": "mn",
+        "count": 1711,
+        "group": "nominal"
+      },
+      {
+        "gram": "ind",
+        "count": 1525,
+        "group": "indeclinable"
+      },
+      {
+        "gram": "10. P.",
+        "count": 1298,
+        "group": "verbal"
+      },
+      {
+        "gram": "1. P.",
+        "count": 1042,
+        "group": "verbal"
+      },
+      {
+        "gram": "1. ?.",
+        "count": 966,
+        "group": "verbal"
+      },
+      {
+        "gram": "10. ?.",
+        "count": 596,
+        "group": "verbal"
+      },
+      {
+        "gram": "mf",
+        "count": 359,
+        "group": "nominal"
+      },
+      {
+        "gram": "6. P.",
+        "count": 345,
+        "group": "verbal"
+      },
+      {
+        "gram": "4. P.",
+        "count": 344,
+        "group": "verbal"
+      },
+      {
+        "gram": "2. P.",
+        "count": 274,
+        "group": "verbal"
+      },
+      {
+        "gram": "4. ?.",
+        "count": 254,
+        "group": "verbal"
+      },
+      {
+        "gram": "Denom. P.",
+        "count": 252,
+        "group": "verbal"
+      },
+      {
+        "gram": "8. ?.",
+        "count": 202,
+        "group": "verbal"
+      },
+      {
+        "gram": "6. ?.",
+        "count": 186,
+        "group": "verbal"
+      },
+      {
+        "gram": "fn",
+        "count": 175,
+        "group": "nominal"
+      },
+      {
+        "gram": "8. P.",
+        "count": 152,
+        "group": "verbal"
+      },
+      {
+        "gram": "Denom. ?.",
+        "count": 150,
+        "group": "verbal"
+      },
+      {
+        "gram": "9. P.",
+        "count": 140,
+        "group": "verbal"
+      },
+      {
+        "gram": "2. ?.",
+        "count": 109,
+        "group": "verbal"
+      },
+      {
+        "gram": "3. P.",
+        "count": 105,
+        "group": "verbal"
+      },
+      {
+        "gram": "3. ?.",
+        "count": 81,
+        "group": "verbal"
+      },
+      {
+        "gram": "mfn",
+        "count": 80,
+        "group": "other"
+      },
+      {
+        "gram": "9. ?.",
+        "count": 78,
+        "group": "verbal"
+      },
+      {
+        "gram": "7. P.",
+        "count": 70,
+        "group": "verbal"
+      },
+      {
+        "gram": "5. ?.",
+        "count": 65,
+        "group": "verbal"
+      },
+      {
+        "gram": "7. ?.",
+        "count": 57,
+        "group": "verbal"
+      },
+      {
+        "gram": "5. P.",
+        "count": 55,
+        "group": "verbal"
+      },
+      {
+        "gram": "Desid. ?.",
+        "count": 53,
+        "group": "verbal"
+      },
+      {
+        "gram": "Desid. P.",
+        "count": 37,
+        "group": "verbal"
+      },
+      {
+        "gram": "pron",
+        "count": 29,
+        "group": "other"
+      },
+      {
+        "gram": "Int. ?.",
+        "count": 15,
+        "group": "verbal"
+      },
+      {
+        "gram": "djma",
+        "count": 10,
+        "group": "other"
+      },
+      {
+        "gram": "Int. P.",
+        "count": 10,
+        "group": "verbal"
+      },
+      {
+        "gram": "djan",
+        "count": 3,
+        "group": "other"
+      },
+      {
+        "gram": "nr",
+        "count": 3,
+        "group": "other"
+      }
+    ]
+  },
+  "assumptions": [
+    "The DCS export is reference data, not a passage-level corpus (see docs/DCS_SCHEMA.md): a text inventory, a bibliography, and a word -> grammar-category list.",
+    "texts come from DCS-abbreviation-list.txt (title -> DCS code); a few are enriched with bibliographic detail.",
+    "wordGrammar is the aggregate distribution of the 78k DCS words by grammar category; it has no passages, frequency, or period.",
+    "No CorpusOccurrence, lemma-frequency-by-text, or genre/period grammar is produced — those need the full DCS corpus."
+  ],
+  "warnings": [
+    "55735 of 78761 CSV words contain '?' (diacritic loss); excluded from any future SLP1 join."
+  ]
+}
