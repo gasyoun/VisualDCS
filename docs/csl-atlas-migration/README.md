@@ -1,0 +1,20 @@
+# CSL Atlas DCS Migration
+
+Date: 2026-06-03
+
+These files were copied from `csl-atlas` during the boundary cleanup that made
+`csl-atlas` dictionary-only.
+
+They preserve the earlier DCS reference-data inspection and generated manifest:
+
+- `DCS_SCHEMA.md`
+- `DCS_CORPUS_INGESTION_PLAN.md`
+- `build-dcs-corpus.mjs`
+- `dcs-manifest.json`
+
+They are migration material only. They are not yet integrated into the
+VisualDCS runtime or build.
+
+If a copied file still says "atlas", read that as historical context from the
+source repository. Active DCS/corpus ownership is here, in VisualDCS, and any
+future implementation should first rewrite the plan in VisualDCS terms.
