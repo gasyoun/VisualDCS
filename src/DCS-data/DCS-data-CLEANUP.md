@@ -1,4 +1,4 @@
-# DSC-data cleanup & large-file handling
+# DCS-data cleanup & large-file handling
 
 Date: 2026-06-05
 
@@ -96,8 +96,6 @@ These share a base name but differ in content, so **both** were kept:
 
 ---
 
----
-
 ## 3. Git LFS — large files (50–99 MB)
 
 To keep the repository lean and avoid GitHub's >50 MB warnings, the large committed
@@ -139,5 +137,5 @@ GitHub Desktop has LFS built in and handles this automatically.
 ## Files added by this cleanup
 - `.gitignore` — excludes the oversized originals `10.csv` / `10.txt`.
 - `rejoin.bat` — rebuilds the originals from the parts.
-- `DSC-data-CLEANUP.md` — this document.
+- `DCS-data-CLEANUP.md` — this document.
 - `../../.gitattributes` (repo root) — Git LFS tracking rules for the large files.
