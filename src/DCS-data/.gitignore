@@ -1,5 +1,5 @@
 # These originals exceed GitHub's 100 MB per-file limit, so they are NOT committed.
 # They are stored in the repo as <=99 MB split parts (10.csv.part*, 10.txt.part*).
-# Reassemble them with rejoin.bat. See DSC-data-CLEANUP.md for full details.
+# Reassemble them with rejoin.bat. See DCS-data-CLEANUP.md for full details.
 /10.csv
 /10.txt
