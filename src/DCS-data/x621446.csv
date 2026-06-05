@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="x621446.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="17"/>
+        <CursorPos Y="19"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="9" HistoryIndex="8">
+      <Position1>
+        <Filename Value="x621446.lpr"/>
+        <Caret Line="24" TopLine="22"/>
+      </Position1>
+      <Position2>
+        <Filename Value="x621446.lpr"/>
+        <Caret Line="68" Column="27" TopLine="65"/>
+      </Position2>
+      <Position3>
+        <Filename Value="x621446.lpr"/>
+        <Caret Line="8" Column="10" TopLine="3"/>
+      </Position3>
+      <Position4>
+        <Filename Value="x621446.lpr"/>
+        <Caret Line="15" Column="27" TopLine="10"/>
+      </Position4>
+      <Position5>
+        <Filename Value="x621446.lpr"/>
+        <Caret Line="14" Column="17" TopLine="10"/>
+      </Position5>
+      <Position6>
+        <Filename Value="x621446.lpr"/>
+        <Caret Line="6" Column="25"/>
+      </Position6>
+      <Position7>
+        <Filename Value="x621446.lpr"/>
+        <Caret Line="19" Column="2" TopLine="11"/>
+      </Position7>
+      <Position8>
+        <Filename Value="x621446.lpr"/>
+        <Caret Line="72" TopLine="65"/>
+      </Position8>
+      <Position9>
+        <Filename Value="x621446.lpr"/>
+      </Position9>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,450 @@
+unit Gas1;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+
+type
+
+  { TForm444 }
+
+  TForm444 = class(TForm)
+    Memo1: TMemo;
+    Memo2: TMemo;
+    Memo3: TMemo;
+    Memo4: TMemo;
+    Memo5: TMemo;
+    Memo6: TMemo;
+    procedure FormCreate(Sender: TObject);
+  private
+
+  public
+     procedure printt;
+  end;
+pnrec = record
+        form : string;
+        c : longint;
+        np : string;
+        nn : string;
+end;
+
+  VffRec = record
+         ts : longint;
+         tsn : string;
+         cc : longint;
+         pn : array[1..9] of pnrec;
+         end;
+  vfirec = record
+         ts : longint;
+         tsn : string;
+         form : string;
+         stem : string;
+  end;
+
+var
+  Form444: TForm444;
+  vf  : vffrec;
+  vfi : vfirec;
+  VFA : array[1..42] of vffrec;
+  VFIA: array[1..42] of vfirec;
+  zz : string = '<html><HEAD><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf8"></HEAD><body>'+
+        '<font face="Mangal" size = "2">' +
+        '<center><b>Таблица грамматических форм глаголов</b></center><left>';
+//        '<table width = "100%" rules = "ALL" border = "2">';
+ff,fi,vv : longint;
+implementation
+ uses poisk;
+{$R *.lfm}
+
+{ TForm444 }
+Function  GetEnd(s : string; lx : string) : string;
+var x : byte;
+    l2 : string;
+begin
+   s := poisk.Form1.converti(s);
+   if strtoint(lx) <= form444.memo4.Lines.Count then
+   l2 := form444.memo4.lines.Strings[strtoint(lx) - 1]
+   else l2 := '';
+   if l2 <> '' then
+   begin
+     delete(l2,1,pos(',',l2));
+     l2 := copy(l2,1,pos(',',l2)-1);
+   end;
+   l2 := form1.converti(l2);
+   if pos('^i',s) > 0 then
+   delete(s,pos('^i',s),2);
+   if pos('^I',s) > 0 then
+   delete(s,pos('^I',s),2);
+
+   if pos('^i',l2) > 0 then
+   delete(l2,pos('^i',l2),2);
+   if pos('^I',l2) > 0 then
+   delete(l2,pos('^I',l2),2);
+
+
+   x := length(l2);
+   if x > 1 then
+   for x := 1 to x  do
+   if length(s) > 2 then delete(s,1,1)
+   else
+   while length(s) > 3 do delete(s,1,1);
+   if s <> '' then
+   if length(s) > 2 then
+   if s[1] = 'h' then delete(s,1,1);
+   s := form1.convertx(s);
+   if s <> '' then
+   s := '-'+s +' ';
+   GetEnd := s;
+end;
+
+Function GetTense(s : string)  : string;
+begin
+   case s of
+     '1' : GetTense :='Present Ind.';
+     '2':GetTense := 'Pres. Potential';
+     '3':GetTense := 'Pres. Imp.';
+     '4':GetTense := 'Imperfect ind';
+     '5':GetTense := 'Future Ind.';
+     '6':GetTense := 'Future Cond.';
+     '7':GetTense := 'Future. Ind. Peri.';
+     '8':GetTense := 'Aorist Ind. Root.';
+     '9':GetTense := 'Aorist Ind. Them.';
+     '10':GetTense := 'Aorist Ind. Red.';
+     '11':GetTense := 'Aorist Ind. S.';
+     '12':GetTense := 'Aorist Ind. Is.';
+     '13':GetTense := 'Aorist Ind. Sa.';
+
+     '14':GetTense := 'Aorist Prec.';
+     '15':GetTense := 'Perfect Ind.';
+     '17':GetTense := '17';
+     '16':GetTense := 'Perfect Ind. Peri.';
+
+     '18':GetTense := '18';
+
+
+     '19':GetTense := 'Past Passive Participle';
+     '20':GetTense := 'Past Active Participle';
+     '21':GetTense := 'Future passive particle';
+     '22':GetTense := 'Infinitive';
+     '23':GetTense := 'Absolutive';
+     '24':GetTense := 'Present Passive';
+     '25':GetTense := 'Pres. Sub.';
+     '26':GetTense := 'Pres. Imperative Passive';
+     '27':GetTense := 'Imperfect Ind. Passive ';
+     '28':GetTense := 'Aorist Ind. Passive';
+     '29': GetTense := 'Pres. Opt Passive';
+     '30':GetTense := 'Aorist Jus.';
+     '31':GetTense := '31';
+     '32':GetTense := ' Aorist Jus./Sub./Opt/Perf_Opt';
+     '33':GetTense := ' Aorist Imp.';
+     '34':GetTense := '34?';
+
+     '35': GetTense := 'Aorist Ind. Sis.';
+     '36':GetTense := 'Perfect Sub';
+     '37':GetTense := ' Perfect Jus.';
+
+
+     '38':GetTense := ' Perfect Opt.';
+     '39':GetTense := ' Perfect Imp';
+
+     '40':GetTense := ' Present Jus.';
+     '42':GetTense := ' Aorist Sub.';
+     '41':GetTense := ' Plp. ind.';
+
+
+   else GetTense := s;
+
+   end;
+
+end;
+
+procedure TForm444.FormCreate(Sender: TObject);
+var i,j,k,l,m : longint;
+    s, lx,sx,p,p1,v1,v2 : string;
+    s1, id,l1,fr,st,ts,pn : string;
+
+begin
+   form1.Ldd;
+   ff := 0; fi := 0; vv := 0;
+  memo1.Lines.LoadFromFile('10.!');
+  memo2.Lines.LoadFromFile('12.1');
+  memo3.Lines.LoadFromFile('15.1');
+  memo4.Lines.LoadFromFile('!!8.txt');
+  vf.ts := 0;
+  vf.pn[1].nn:='Ед.ч.';
+  vf.pn[1].np:='1-е л.';
+
+  vf.pn[2].nn:='Ед.ч.';
+  vf.pn[2].np:='1-е л.';
+
+  vf.pn[3].nn:='Ед.ч.';
+  vf.pn[3].np:='1-е л.';
+
+  vf.pn[4].nn:='Дв.ч.';
+  vf.pn[4].np:='2-е л.';
+
+  vf.pn[5].nn:='Дв.ч.';
+  vf.pn[5].np:='2-е л.';
+
+  vf.pn[6].nn:='Дв.ч.';
+  vf.pn[6].np:='2-е л.';
+
+  vf.pn[7].nn:='Мн.ч.';
+  vf.pn[7].np:='3-е л.';
+
+  vf.pn[8].nn:='Мн.ч.';
+  vf.pn[8].np:='3-е л.';
+
+  vf.pn[9].nn:='Мн.ч.';
+  vf.pn[9].np:='3-е л.';
+  for i  := 1 to 8 do
+  begin
+    vf.pn[i].c:=0;
+    vf.pn[i].form:='';
+  end;
+  vf.ts:=0;;
+  for i := 1 to 42 do
+  begin
+    VFA[i] := vf;
+    vfa[i].tsn:=gettense(inttostr(i));
+  end;
+  vfi.form:='';
+  vfi.stem:='';
+  vfi.ts:=0;
+  for i := 1 to 42 do
+  begin
+    vfiA[i] := vfi;
+    vfia[i].tsn:=gettense(inttostr(i));
+  end;
+  showmessage('');
+  for i := 0 to memo1.Lines.Count - 1 do
+  begin
+    s := memo1.Lines.strings[i];
+    memo5.Clear;memo6.Clear;
+    k := 0;l := 0; m := 0;
+
+    if s <> '' then
+    begin
+      lx := copy(s,1,pos(',',s) - 1);
+      delete(s,1,pos(',',s));
+
+      sx := copy(s,1,pos(',',s) - 1);
+      delete(s,1,pos(',',s));
+
+      p := copy(s,1,pos(',',s) - 1);
+      delete(s,1,pos(',',s));
+
+      p1 := copy(s,1,pos(',',s) - 1);
+      delete(s,1,pos(',',s));
+
+      v1 := copy(s,1,pos(',',s) - 1);
+      delete(s,1,pos(',',s));
+
+      v2 := copy(s,1,pos(',',s) - 1);
+      delete(s,1,pos(',',s));
+      if v1 <> '0' then
+      begin
+        s1 := memo3.Lines.strings[strtoint(v1)];
+
+        id := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+        l1 := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+        fr := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+        ts := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+        pn := s1;//copy(s1,1,pos(',',s1) - 1);
+        if pos(',',pn) > 0 then pn := copy(pn,1,pos(',',pn) - 1);
+        if pos(';',pn) > 0 then pn := copy(pn,1,pos(';',pn) - 1);
+        delete(s1,1,pos(',',s1));
+        inc(vfA[strtoint(ts)].ts);
+
+
+        if pos(GetEnd(fr,l1),vfa[strtoint(ts)].pn[strtoint(pn)].form) = 0 then
+        vfa[strtoint(ts)].pn[strtoint(pn)].form :=
+        vfa[strtoint(ts)].pn[strtoint(pn)].form +
+        getend(fr,l1)
+        else
+        insert('*',vfa[strtoint(ts)].pn[strtoint(pn)].form,pos(GetEnd(fr,l1),vfa[strtoint(ts)].pn[strtoint(pn)].form));
+
+        inc(vfa[strtoint(ts)].pn[strtoint(pn)].c);
+      end;
+      if v2 <> '0' then
+      begin
+        s1 := memo2.Lines.strings[strtoint(v2)];
+        id := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+        l1 := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+        fr := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+        st := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+
+        ts := copy(s1,1,pos(',',s1) - 1);
+        delete(s1,1,pos(',',s1));
+
+        inc(vfIA[strtoint(ts)].ts);
+
+        if pos(GetEnd(fr,l1),vfia[strtoint(ts)].form) = 0 then
+        vfia[strtoint(ts)].form :=
+        vfia[strtoint(ts)].form +
+        getend(fr,l1)
+        else
+        insert('*',vfia[strtoint(ts)].form,pos(GetEnd(fr,l1),vfia[strtoint(ts)].form));
+
+
+
+
+
+        vfia[strtoint(ts)].stem:=st;
+
+      end;
+      end;
+    end;
+
+ for i := 1 to 42 do
+ for j := 1 to 41 do
+ if vfA[j].ts < vfa[j+1].ts then
+ begin
+   vf := vfa[j]; vfa[j] := vfa[j+1]; vfa[j+1] := vf;
+ end;
+ for i := 1 to 42 do
+ for j := 1 to 41 do
+ if vfIA[j].ts < vfIa[j+1].ts then
+ begin
+   vfi := vfia[j]; vfia[j] := vfia[j+1]; vfia[j+1] := vfi;
+ end;
+ memo3.Clear;
+ s := '';
+ for i  := 1 to 42 do
+ begin
+   inc(ff,vfa[i].ts);
+   inc(fi,vfia[i].ts);
+
+ end;
+ memo3.Clear;
+ printt;
+ memo3.Lines.SaveToFile('verx.htm');
+end;
+
+
+procedure tform444.printt;
+var s : string;
+    i,j,k,l,m : longint;
+    zx : string;
+    ac : array[1..9] of real;
+    d : string;
+begin
+
+ for i := 1 to 42 do
+ for j := 1 to 9 do
+ begin
+   m := 0;
+   s := vfa[i].pn[j].form;
+   while pos('*',s) > 0 do
+   begin
+   k := pos('*',s);
+   l :=k;
+   if l > 0 then
+   while s[l] = '*' do
+   begin
+     inc(m);
+     delete(s,l,1);
+   end;
+
+   insert('('+inttostr(m)+')',s,k);
+
+   end;
+   vfa[i].pn[j].form := s
+ end;
+
+ for i := 1 to 42 do
+ begin
+   m := 0;
+   s := vfia[i].form;
+   while pos('*',s) > 0 do
+   begin
+   k := pos('*',s);
+   l :=k;
+   if l > 0 then
+   while s[l] = '*' do
+   begin
+     inc(m);
+     delete(s,l,1);
+   end;
+
+   insert('('+inttostr(m)+')',s,k);
+
+   end;
+   vfia[i].form := s
+ end;
+
+/////////////////////////
+
+
+
+
+ for i := 1 to 9 do ac[i] := 0;
+
+
+ for i := 1 to 42 do
+ if vfa[i].ts > 0 then
+ begin
+   for k := 1 to 9 do
+   ac[k] := (vfa[i].pn[k].c/vfa[i].ts*100);
+   str(vfa[i].ts/ff*100:2:2,d);
+   s := s + vfa[i].tsn+';'+d+'%;;;';
+   memo3.Lines.Add(s);
+   s := 'Лицо;Ед.ч.;%;Дв.ч.;%;Мн.ч.;%;';
+   memo3.Lines.Add(s);
+   s := '1-е лицо;'+vfa[i].pn[1].form +';';
+   str(ac[1]:2:2,d);
+   s := s + d + ';' +vfa[i].pn[4].form +';';
+   str(ac[4]:2:2,d);
+   s := s + d + ';' +vfa[i].pn[7].form +';';
+      str(ac[7]:2:2,d);
+      s := s + d + ';';
+      memo3.Lines.Add(s);
+
+      s := '2-е лицо;'+vfa[i].pn[2].form +';';
+      str(ac[2]:2:2,d);
+      s := s + d + ';' +vfa[i].pn[5].form +';';
+      str(ac[5]:2:2,d);
+      s := s + d + ';' +vfa[i].pn[8].form +';';
+         str(ac[8]:2:2,d);
+         s := s + d + ';';
+         memo3.Lines.Add(s);
+
+         s := '3-е лицо;'+vfa[i].pn[3].form +';';
+         str(ac[3]:2:2,d);
+         s := s + d + ';' +vfa[i].pn[6].form +';';
+         str(ac[6]:2:2,d);
+         s := s + d + ';' +vfa[i].pn[9].form +';';
+            str(ac[9]:2:2,d);
+            s := s + d + ';';
+            memo3.Lines.Add(s);
+      s := '';
+      memo3.Lines.Add(s);
+
+ end;
+ memo3.Lines.Add('Неопределено личные глагольные формы;;;;');
+ s := '';
+ for i := 1 to 42 do
+ if vfia[i].ts > 0 then
+ begin
+   s := vfia[i].tsn+';';
+   str(vfia[i].ts/fi*100:2:2,d);
+   s := s + d + ';';
+   s := s + vfia[i].form+';';
+   memo3.Lines.Add(s);
+ end;
+
+end;
+
+end.
+
