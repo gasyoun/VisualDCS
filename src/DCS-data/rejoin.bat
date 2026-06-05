@@ -1,8 +1,8 @@
 @echo off
 REM ============================================================
-REM  Reassemble the split DSC-data files into their originals.
-REM  Run this from inside the src\DSC-data folder:
-REM      cd src\DSC-data
+REM  Reassemble the split DCS-data files into their originals.
+REM  Run this from inside the src\DCS-data folder:
+REM      cd src\DCS-data
 REM      rejoin.bat
 REM
 REM  copy /b concatenates the parts in order, byte-for-byte.
