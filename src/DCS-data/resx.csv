@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="resx.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="10"/>
+        <CursorPos X="61" Y="23"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="8" HistoryIndex="7">
+      <Position1>
+        <Filename Value="resx.lpr"/>
+        <Caret Line="21" Column="32" TopLine="10"/>
+      </Position1>
+      <Position2>
+        <Filename Value="resx.lpr"/>
+        <Caret Line="25" Column="46" TopLine="12"/>
+      </Position2>
+      <Position3>
+        <Filename Value="resx.lpr"/>
+        <Caret Line="20" Column="15" TopLine="11"/>
+      </Position3>
+      <Position4>
+        <Filename Value="resx.lpr"/>
+        <Caret Line="2" Column="22"/>
+      </Position4>
+      <Position5>
+        <Filename Value="resx.lpr"/>
+        <Caret Line="21" TopLine="10"/>
+      </Position5>
+      <Position6>
+        <Filename Value="resx.lpr"/>
+        <Caret Line="2" Column="25"/>
+      </Position6>
+      <Position7>
+        <Filename Value="resx.lpr"/>
+        <Caret Line="22" Column="50" TopLine="10"/>
+      </Position7>
+      <Position8>
+        <Filename Value="resx.lpr"/>
+        <Caret Line="9" Column="27" TopLine="8"/>
+      </Position8>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

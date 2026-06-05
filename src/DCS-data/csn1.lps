@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="csn1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="93"/>
+        <CursorPos X="11" Y="108"/>
+        <UsageCount Value="60"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ans.pas"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="dts.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="681"/>
+        <CursorPos X="15" Y="697"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="ans.pas"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ans.pas"/>
+        <Caret Line="75" Column="31" TopLine="59"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ans.pas"/>
+        <Caret Line="295" Column="60" TopLine="280"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ans.pas"/>
+        <Caret Line="75" Column="16" TopLine="67"/>
+      </Position4>
+      <Position5>
+        <Filename Value="dts.pas"/>
+        <Caret Column="10"/>
+      </Position5>
+      <Position6>
+        <Filename Value="dts.pas"/>
+        <Caret Line="416" Column="23" TopLine="409"/>
+      </Position6>
+      <Position7>
+        <Filename Value="csn1.lpr"/>
+      </Position7>
+      <Position8>
+        <Filename Value="ans.pas"/>
+        <Caret Line="4" Column="29"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ans.pas"/>
+        <Caret Line="150" Column="16" TopLine="141"/>
+      </Position9>
+      <Position10>
+        <Filename Value="ans.pas"/>
+        <Caret Line="159" Column="18" TopLine="149"/>
+      </Position10>
+      <Position11>
+        <Filename Value="csn1.lpr"/>
+        <Caret Line="100" Column="3" TopLine="93"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ans.pas"/>
+        <Caret Line="163" Column="50" TopLine="149"/>
+      </Position12>
+      <Position13>
+        <Filename Value="csn1.lpr"/>
+      </Position13>
+      <Position14>
+        <Filename Value="csn1.lpr"/>
+        <Caret Line="19" Column="8" TopLine="93"/>
+      </Position14>
+      <Position15>
+        <Filename Value="csn1.lpr"/>
+      </Position15>
+      <Position16>
+        <Filename Value="csn1.lpr"/>
+        <Caret Line="21" Column="21" TopLine="5"/>
+      </Position16>
+      <Position17>
+        <Filename Value="csn1.lpr"/>
+        <Caret Line="8" Column="26" TopLine="5"/>
+      </Position17>
+      <Position18>
+        <Filename Value="ans.pas"/>
+        <Caret Line="208" Column="19" TopLine="208"/>
+      </Position18>
+      <Position19>
+        <Filename Value="dts.pas"/>
+      </Position19>
+      <Position20>
+        <Filename Value="dts.pas"/>
+        <Caret Line="369" Column="42" TopLine="360"/>
+      </Position20>
+      <Position21>
+        <Filename Value="dts.pas"/>
+        <Caret Line="124" Column="4" TopLine="115"/>
+      </Position21>
+      <Position22>
+        <Filename Value="dts.pas"/>
+        <Caret Line="128" TopLine="119"/>
+      </Position22>
+      <Position23>
+        <Filename Value="dts.pas"/>
+        <Caret Line="364" Column="10" TopLine="356"/>
+      </Position23>
+      <Position24>
+        <Filename Value="dts.pas"/>
+        <Caret Line="363" Column="42" TopLine="355"/>
+      </Position24>
+      <Position25>
+        <Filename Value="dts.pas"/>
+        <Caret Line="428" TopLine="425"/>
+      </Position25>
+      <Position26>
+        <Filename Value="dts.pas"/>
+        <Caret Line="695" Column="15" TopLine="621"/>
+      </Position26>
+      <Position27>
+        <Filename Value="csn1.lpr"/>
+        <Caret Line="4" Column="22"/>
+      </Position27>
+      <Position28>
+        <Filename Value="csn1.lpr"/>
+        <Caret Line="108" Column="11" TopLine="93"/>
+      </Position28>
+      <Position29>
+        <Filename Value="dts.pas"/>
+        <Caret Line="372" Column="9" TopLine="364"/>
+      </Position29>
+      <Position30>
+        <Filename Value="dts.pas"/>
+        <Caret Line="701" TopLine="683"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,24 @@
+# Git LFS — large data files in src/DSC-data (50 MB – 99 MB).
+# See src/DSC-data/DSC-data-CLEANUP.md for the full inventory and rationale.
+# Note: the >100 MB originals 10.csv / 10.txt are git-ignored, not LFS-tracked;
+# their <=99 MB split parts below are what gets committed (via LFS).
+
+# Split parts of the oversized originals
+src/DSC-data/10.csv.part* filter=lfs diff=lfs merge=lfs -text
+src/DSC-data/10.txt.part* filter=lfs diff=lfs merge=lfs -text
+# Standalone large files
+src/DSC-data/0.csv         filter=lfs diff=lfs merge=lfs -text
+src/DSC-data/_0_.txt       filter=lfs diff=lfs merge=lfs -text
+src/DSC-data/7.txt         filter=lfs diff=lfs merge=lfs -text
+src/DSC-data/621445.txt    filter=lfs diff=lfs merge=lfs -text
+src/DSC-data/621445.dig    filter=lfs diff=lfs merge=lfs -text
+src/DSC-data/!7.csv        filter=lfs diff=lfs merge=lfs -text
+src/DCS-data/10.csv.part* filter=lfs diff=lfs merge=lfs -text
+src/DCS-data/10.txt.part* filter=lfs diff=lfs merge=lfs -text
+src/DCS-data/0.csv filter=lfs diff=lfs merge=lfs -text
+src/DCS-data/_0_.txt filter=lfs diff=lfs merge=lfs -text
+src/DCS-data/7.txt filter=lfs diff=lfs merge=lfs -text
+src/DCS-data/621445.txt filter=lfs diff=lfs merge=lfs -text
+src/DCS-data/621445.dig filter=lfs diff=lfs merge=lfs -text
+src/DCS-data/!7.csv filter=lfs diff=lfs merge=lfs -text
+* !text !filter !merge !diff

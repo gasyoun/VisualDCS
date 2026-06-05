@@ -1,0 +1,23 @@
+program Project1;
+var f,f1 : text;
+    s : string;
+    s2: string;
+begin
+  assign(f,'4x.txt');
+  reset(f);
+  assign(f1,'4x1.txt');
+  rewrite(f1);
+  while not(eof(f)) do
+begin
+  readln(f,s);
+  while pos(')',s) > 0 do
+  begin
+    s2 := copy(s,1,pos(')',s));
+    writeln(f1,s2);
+    delete(s,1,pos(')',s));
+  end;
+
+end;
+  close(f1);
+end.
+
