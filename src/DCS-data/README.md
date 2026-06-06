@@ -5,9 +5,11 @@ by **Oliver Hellwig**, together with the derived analysis files and small proces
 VisualDCS builds on top of it. It is the upstream data behind the dashboards in the repository root
 and the JSON assets in `visual/`.
 
-> **Two kinds of large-file handling apply here.** This README explains *what the data is and where it
-> came from*. For *how the oversized files are split / stored* (Git LFS, `*.part###`, `rejoin.bat`,
-> MD5 checks), see the companion [`DCS-data-CLEANUP.md`](DCS-data-CLEANUP.md).
+> **Companion docs.** This README explains *what the data is and where it came from*. For *how the
+> oversized files are split / stored* (Git LFS, `*.part###`, `rejoin.bat`, MD5 checks) see
+> [`DCS-data-CLEANUP.md`](DCS-data-CLEANUP.md); for how this export differs from the current **CoNLL-U**
+> distribution see [`DCS_FORMAT_COMPARISON.md`](DCS_FORMAT_COMPARISON.md) (+ the
+> [`compare_dcs_formats.py`](compare_dcs_formats.py) script that produced it).
 
 ---
 
@@ -125,6 +127,20 @@ artifact).
 | `csn1` | `.lpr` `.lpi` `.lps` `.exe` + units `dts.pas`, `ans.pas` | Console extraction program |
 | (GUI form) | `u1.pas` + `u1.lfm` | Lazarus `StringGrid` viewer/form |
 | — | `rejoin.bat` | Rebuilds the split `10.csv` / `10.txt` originals |
+
+---
+
+## 4. Format comparison (vs. CoNLL-U)
+
+The DCS is now distributed as **CoNLL-U**, not this relational dump. The differences — and a verified
+demonstration that both are the *same data* (the integer IDs in `0.csv` are the CoNLL-U `LemmaId`s) —
+are written up in [`DCS_FORMAT_COMPARISON.md`](DCS_FORMAT_COMPARISON.md).
+
+| File | Purpose |
+|---|---|
+| `compare_dcs_formats.py` | Parses `0.csv` and a CoNLL-U sample, proves the ID cross-walk, reports per-format stats. Stdlib only: `python compare_dcs_formats.py` |
+| `DCS_FORMAT_COMPARISON.md` | The findings (same-text example, field mapping, key differences) |
+| `sample_conllu/` | One **unmodified** real DCS CoNLL-U file (same text as `0.csv`'s first record), bundled so the script runs offline |
 
 ---
 
