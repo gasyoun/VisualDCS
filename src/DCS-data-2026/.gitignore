@@ -1,6 +1,7 @@
 # M1 parser output — regenerable staging JSONL (can be large). Not committed.
 staging/
-# M2 SQLite master — regenerable from the corpus. Not committed (pilot DB).
-dcs.sqlite
+# M2/M6 SQLite masters (pilot dcs.sqlite + full dcs_full.sqlite) — regenerable; not committed.
+*.sqlite
+*.sqlite.gz
 # M4 exports — regenerable CSVs from the master (the reports/ findings ARE committed).
 exports/

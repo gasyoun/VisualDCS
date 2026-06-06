@@ -217,7 +217,7 @@ All decisions are now locked; M0 (below) is unblocked and is the next concrete s
 
 Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate.
 
-**Status (2026-06-06):** M0–M5 ✅ done (pilot pipeline validated + CI-gated); **M6 (scale to all 270) next**.
+**Status (2026-06-06):** M0–M6 ✅ done (full corpus master, validated, Release-published); **M7 (dashboards) next**.
 
 - [x] **M0 — Acquire & pin.** ✅ *Done 2026-06-06.* Full CoNLL-U committed to `gasyoun/dcs-conllu`
   (pinned `04e0778`, 2026-03-05) and mounted as the `src/DCS-data-2026/conllu` submodule.
@@ -245,7 +245,12 @@ Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate
   (DB built twice → identical data hash), 50-verse full-token spot checks — **all PASS**. Caught + fixed
   a real bug: `occ_id` isn't unique (the corpus reuses it across a line's sub-sentences), so it's no
   longer the PK — synthetic `id` + plain INSERT, no tokens lost (134,047). — *Gate met:* all green.
-- [ ] **M6 — Scale to all ~270 texts.** — *Gate:* full import idempotent; coverage matches upstream.
+- [x] **M6 — Scale to all ~270 texts.** ✅ *Done 2026-06-06.* Full master `dcs_full.sqlite` (270 texts,
+  **5,688,416 tokens**, 754,726 sentences, 74 treebank; ~880 MB → 287 MB gz). `validate.py --all`:
+  coverage **270 texts / 98,606 lemmas** (matches upstream), cross-walk **0 mismatches**, spot 0,
+  integrity clean. — *Gate met.* Caught + fixed a scaling bug: `sent_id` collides *within* chapters
+  (449 dropped sentences) → `sentence` got a synthetic PK + token `sentence_id` link; validation is now
+  position-based. Full DB published as a **GitHub Release**.
 - [ ] **M7 — Derived analysis + dashboards (follow-up).** Recompute `texts.csv` / `timws.csv` /
   `visual/*.json`; refresh dashboard numbers with deltas explained. — *Gate:* dashboards render; changes
   documented.
