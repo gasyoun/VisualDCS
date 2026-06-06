@@ -215,10 +215,15 @@ All decisions are now locked; M0 (below) is unblocked and is the next concrete s
 
 Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate.
 
-- [ ] **M0 — Acquire & pin.** `git clone --depth 1 OliverHellwig/sanskrit` to a sibling dir; record the
-  source commit SHA in `provenance`. — *Gate:* importer can read `…/sanskrit/dcs/data/conllu/files/`.
-- [ ] **M1 — Parser → staging.** Promote `compare_dcs_formats.py`'s reader to a full CoNLL-U parser
-  (MWT, all FEATS, MISC, HEAD/DEPREL). — *Gate:* one text parses with zero column errors.
+**Status (2026-06-06):** M0 ✅ done (corpus committed + submodule wired); **M1 in progress**.
+
+- [x] **M0 — Acquire & pin.** ✅ *Done 2026-06-06.* Full CoNLL-U committed to `gasyoun/dcs-conllu`
+  (pinned `04e0778`, 2026-03-05) and mounted as the `src/DCS-data-2026/conllu` submodule.
+  — *Gate met:* the importer reads `src/DCS-data-2026/conllu/files/` (270 texts) + `lookup/dictionary.csv`.
+- [ ] **M1 — Parser → staging.** ⟳ *In progress (2026-06-06).* Promote `compare_dcs_formats.py`'s reader
+  to a full CoNLL-U parser: MWT spans, all FEATS, all MISC (`LemmaId`/`OccId`/`Unsandhied`/`WordSem`/
+  `Annotator`/`IsMantra`/`Punctuation`), `HEAD`/`DEPREL` (Vedic Treebank chapters), sentence + document
+  metadata. — *Gate:* a small text **and** a treebank text (`Ṛgveda`) parse with zero column errors.
 - [ ] **M2 — Master DB (pilot).** Build `dcs.sqlite` for the pilot text set (those in the 2021 dump). —
   *Gate:* schema loads; `lemma` table populated from `(LemmaId, LEMMA)`.
 - [ ] **M3 — Align & coverage diff.** Join on `lemma_id` + chapter ref; reconcile granularity; emit
@@ -232,8 +237,9 @@ Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate
 - [ ] **M7 — Derived analysis + dashboards (follow-up).** Recompute `texts.csv` / `timws.csv` /
   `visual/*.json`; refresh dashboard numbers with deltas explained. — *Gate:* dashboards render; changes
   documented.
-- [ ] **M8 — Land.** `dcs.sqlite` via LFS; update `README.md` / `CHANGELOG.md` / `.ai_state.md`; pin the
-  source SHA. — *Gate:* committed; docs updated.
+- [ ] **M8 — Land.** Commit `dcs.sqlite` (normal git if small, else its own repo — **not** LFS, per the
+  de-LFS decision); update `README.md` / `CHANGELOG.md` / `.ai_state.md`; pin the source SHA.
+  — *Gate:* committed; docs updated.
 
 > Stop-anywhere value: after **M5** you already have a clean, queryable, current DCS DB for the pilot
 > texts, even if M6–M8 wait.
