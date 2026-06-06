@@ -5,3 +5,5 @@ staging/
 *.sqlite.gz
 # M4 exports — regenerable CSVs from the master (the reports/ findings ARE committed).
 exports/
+# Python bytecode cache
+__pycache__/
