@@ -37,10 +37,22 @@ Sanskrit verb forms across the DCS corpus. It powers the verb-form frequency das
 
 **2. `src/DCS-data-2021/`** — a raw dump of the DCS corpus (CSV/txt: `10.csv` ≈ 4.57M annotated tokens,
 `7.txt`, `_8.csv`, `cs.csv`, …). It is the source for the paradigm browser and the derived
-concordance/JSON assets. Because some files exceed GitHub's 100 MB limit, the dump uses **Git LFS**
-plus line-boundary split parts (rebuild with `src/DCS-data-2021/rejoin.bat`); see
+concordance/JSON assets. Because some files exceed GitHub's 100 MB limit, the dump is split into
+line-boundary parts (rebuild with `src/DCS-data-2021/rejoin.bat`) and stored as **plain git blobs**
+(converted out of Git LFS to avoid the storage quota); see
 [`DCS-data-CLEANUP.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2021/DCS-data-CLEANUP.md)
 for the full inventory and rationale.
+
+**3. `src/DCS-data-2026/`** — the **current** DCS distribution (CoNLL-U / Universal Dependencies, CC BY 4.0),
+imported into a queryable SQLite master by a documented, validated pipeline. The full corpus —
+**270 texts · 5,688,416 tokens · 754,726 sentences · 74 treebank texts** — is pinned to
+[`gasyoun/dcs-conllu`](https://github.com/gasyoun/dcs-conllu) `@ 04e0778` (a submodule at
+`src/DCS-data-2026/conllu`) and published as a SQLite **GitHub Release**
+([`dcs-full-2026-03-05`](https://github.com/gasyoun/VisualDCS/releases/tag/dcs-full-2026-03-05), 287 MB gz).
+Pipeline: `parse_conllu` → `import_dcs_conllu` → `coverage_diff` → `export_master` → `validate` →
+`regen_widgets`, validated end-to-end (cross-walk 0 mismatches; CI re-runs the suite on push). See
+[`DCS_CONLLU_IMPORT_PLAN.md`](src/DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md) and `src/DCS-data-2026/reports/`
+for the pipeline, the verb tense/mood **code map**, and the 2021→2026 deltas.
 
 ---
 
