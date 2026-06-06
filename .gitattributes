@@ -13,9 +13,3 @@ src/DCS-data/7.txt         filter=lfs diff=lfs merge=lfs -text
 src/DCS-data/621445.txt    filter=lfs diff=lfs merge=lfs -text
 src/DCS-data/621445.dig    filter=lfs diff=lfs merge=lfs -text
 src/DCS-data/!7.csv        filter=lfs diff=lfs merge=lfs -text
-src/DCS-data/0.csv filter=lfs diff=lfs merge=lfs -text
-src/DCS-data/_0_.txt filter=lfs diff=lfs merge=lfs -text
-src/DCS-data/7.txt filter=lfs diff=lfs merge=lfs -text
-src/DCS-data/621445.txt filter=lfs diff=lfs merge=lfs -text
-src/DCS-data/621445.dig filter=lfs diff=lfs merge=lfs -text
-src/DCS-data/!7.csv filter=lfs diff=lfs merge=lfs -text
