@@ -1,2 +1,4 @@
 # M1 parser output — regenerable staging JSONL (can be large). Not committed.
 staging/
+# M2 SQLite master — regenerable from the corpus. Not committed (pilot DB).
+dcs.sqlite
