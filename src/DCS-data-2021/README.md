@@ -1,15 +1,15 @@
-# `src/DCS-data/` — Digital Corpus of Sanskrit (DCS) dump + derived analysis
+# `src/DCS-data-2021/` — Digital Corpus of Sanskrit (DCS) relational-DB export (2021)
 
 This folder holds a **dump of the [Digital Corpus of Sanskrit (DCS)](https://github.com/OliverHellwig/sanskrit)**
 by **Oliver Hellwig**, together with the derived analysis files and small processing programs that
 VisualDCS builds on top of it. It is the upstream data behind the dashboards in the repository root
 and the JSON assets in `visual/`.
 
-> **Companion docs.** This README explains *what the data is and where it came from*. For *how the
-> oversized files are split / stored* (Git LFS, `*.part###`, `rejoin.bat`, MD5 checks) see
-> [`DCS-data-CLEANUP.md`](DCS-data-CLEANUP.md); for how this export differs from the current **CoNLL-U**
-> distribution see [`DCS_FORMAT_COMPARISON.md`](DCS_FORMAT_COMPARISON.md) (+ the
-> [`compare_dcs_formats.py`](compare_dcs_formats.py) script that produced it).
+> **Companion docs.** This is the **2021 relational export**; the current **CoNLL-U** version lives in
+> the sibling [`../DCS-data-2026/`](../DCS-data-2026/). This README explains *what the data is and where
+> it came from*. For *how the oversized files are split / stored* (Git LFS, `*.part###`, `rejoin.bat`,
+> MD5 checks) see [`DCS-data-CLEANUP.md`](DCS-data-CLEANUP.md); for how the two versions differ see
+> [`../DCS-data-2026/DCS_FORMAT_COMPARISON.md`](../DCS-data-2026/DCS_FORMAT_COMPARISON.md).
 
 ---
 
@@ -132,15 +132,15 @@ artifact).
 
 ## 4. Format comparison (vs. CoNLL-U)
 
-The DCS is now distributed as **CoNLL-U**, not this relational dump. The differences — and a verified
+The DCS is now distributed as **CoNLL-U**, not this relational dump. The full comparison — and a verified
 demonstration that both are the *same data* (the integer IDs in `0.csv` are the CoNLL-U `LemmaId`s) —
-are written up in [`DCS_FORMAT_COMPARISON.md`](DCS_FORMAT_COMPARISON.md).
+now lives in the **2026** folder:
 
-| File | Purpose |
-|---|---|
-| `compare_dcs_formats.py` | Parses `0.csv` and a CoNLL-U sample, proves the ID cross-walk, reports per-format stats. Stdlib only: `python compare_dcs_formats.py` |
-| `DCS_FORMAT_COMPARISON.md` | The findings (same-text example, field mapping, key differences) |
-| `sample_conllu/` | One **unmodified** real DCS CoNLL-U file (same text as `0.csv`'s first record), bundled so the script runs offline |
+- [`../DCS-data-2026/DCS_FORMAT_COMPARISON.md`](../DCS-data-2026/DCS_FORMAT_COMPARISON.md) — the findings.
+- [`../DCS-data-2026/compare_dcs_formats.py`](../DCS-data-2026/compare_dcs_formats.py) — the script
+  (`python compare_dcs_formats.py`), with a bundled CoNLL-U sample.
+- [`../DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md`](../DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md) — the plan to
+  import the CoNLL-U updates into this export.
 
 ---
 
