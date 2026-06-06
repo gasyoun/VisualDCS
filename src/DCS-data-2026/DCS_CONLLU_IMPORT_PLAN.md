@@ -217,7 +217,7 @@ All decisions are now locked; M0 (below) is unblocked and is the next concrete s
 
 Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate.
 
-**Status (2026-06-06):** M0–M1 ✅ done (corpus + full lossless parser); **M2 (SQLite master) next**.
+**Status (2026-06-06):** M0–M2 ✅ done (corpus + parser + SQLite master); **M3 (align & coverage diff) next**.
 
 - [x] **M0 — Acquire & pin.** ✅ *Done 2026-06-06.* Full CoNLL-U committed to `gasyoun/dcs-conllu`
   (pinned `04e0778`, 2026-03-05) and mounted as the `src/DCS-data-2026/conllu` submodule.
@@ -227,8 +227,10 @@ Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate
   nodes, doc + sentence metadata) → one JSONL per text in `staging/` (gitignored). — *Gate met:*
   Meghadūta (244 sent / 3393 tok, morphological) **and** Ṛgveda treebank (264 dependency arcs) both
   parse with **0 column errors**.
-- [ ] **M2 — Master DB (pilot).** Build `dcs.sqlite` for the pilot text set (those in the 2021 dump). —
-  *Gate:* schema loads; `lemma` table populated from `(LemmaId, LEMMA)`.
+- [x] **M2 — Master DB (pilot).** ✅ *Done 2026-06-06.* `import_dcs_conllu.py` builds `dcs.sqlite`
+  (flatten-all schema — every FEATS/MISC key a column; `lemma` ← `dictionary.csv`) over a 13-text pilot
+  (incl. Ṛgveda + Arthaśāstra treebanks). — *Gate met:* schema loads · 180,176 lemmas · 134,027 tokens ·
+  **0 orphan lemma_ids** (FK OK).
 - [ ] **M3 — Align & coverage diff.** Join on `lemma_id` + chapter ref; reconcile granularity; emit
   `reports/coverage_diff.md`. — *Gate:* coverage report reviewed.
 - [ ] **M4 — Exports (pilot).** Generate clean + legacy CSVs; diff legacy vs the committed 2021 files;
