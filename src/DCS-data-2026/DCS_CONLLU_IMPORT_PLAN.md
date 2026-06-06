@@ -217,7 +217,7 @@ All decisions are now locked; M0 (below) is unblocked and is the next concrete s
 
 Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate.
 
-**Status (2026-06-06):** M0–M6 ✅ done (full corpus master, validated, Release-published); **M7 (dashboards) next**.
+**Status (2026-06-06):** M0–M7 ✅ done (imported · validated · exported · widgets regenerated); **M8 (land) next**.
 
 - [x] **M0 — Acquire & pin.** ✅ *Done 2026-06-06.* Full CoNLL-U committed to `gasyoun/dcs-conllu`
   (pinned `04e0778`, 2026-03-05) and mounted as the `src/DCS-data-2026/conllu` submodule.
@@ -251,9 +251,13 @@ Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate
   integrity clean. — *Gate met.* Caught + fixed a scaling bug: `sent_id` collides *within* chapters
   (449 dropped sentences) → `sentence` got a synthetic PK + token `sentence_id` link; validation is now
   position-based. Full DB published as a **GitHub Release**.
-- [ ] **M7 — Derived analysis + dashboards (follow-up).** Recompute `texts.csv` / `timws.csv` /
-  `visual/*.json`; refresh dashboard numbers with deltas explained. — *Gate:* dashboards render; changes
-  documented.
+- [x] **M7 — Derived analysis + dashboards.** ✅ *Done 2026-06-06.* `regen_widgets.py` rebuilds the
+  derivable widgets from the full master → `widgets/` (gitignored) + `reports/m7_widgets.md` deltas:
+  corpus stats, verb distribution **both ways** (native UD + legacy 38-category via the M4 map),
+  `morph_pn`, `tense_case`, `conc_totals`, collocations. Headline: 1,007,361 verbs; PPP 216,803 (vs 2021's
+  233,080). HTML untouched (data-only, per choice). — *Gate met; limits documented:* UD `Tense=Past`
+  conflates aorist/perfect; `dcs_genres`/`dcs_scatter` (need date/genre metadata) + `anki`/`passages`
+  (curated) aren't derivable from the corpus.
 - [ ] **M8 — Land.** Commit `dcs.sqlite` (normal git if small, else its own repo — **not** LFS, per the
   de-LFS decision); update `README.md` / `CHANGELOG.md` / `.ai_state.md`; pin the source SHA.
   — *Gate:* committed; docs updated.
