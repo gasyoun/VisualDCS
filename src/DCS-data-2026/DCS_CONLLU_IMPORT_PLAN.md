@@ -217,7 +217,7 @@ All decisions are now locked; M0 (below) is unblocked and is the next concrete s
 
 Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate.
 
-**Status (2026-06-06):** M0–M7 ✅ done (imported · validated · exported · widgets regenerated); **M8 (land) next**.
+**Status (2026-06-06):** M0–M8 ✅ **COMPLETE** — DCS CoNLL-U imported · validated (CI-gated) · exported · widgets regenerated · landed.
 
 - [x] **M0 — Acquire & pin.** ✅ *Done 2026-06-06.* Full CoNLL-U committed to `gasyoun/dcs-conllu`
   (pinned `04e0778`, 2026-03-05) and mounted as the `src/DCS-data-2026/conllu` submodule.
@@ -258,9 +258,10 @@ Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate
   233,080). HTML untouched (data-only, per choice). — *Gate met; limits documented:* UD `Tense=Past`
   conflates aorist/perfect; `dcs_genres`/`dcs_scatter` (need date/genre metadata) + `anki`/`passages`
   (curated) aren't derivable from the corpus.
-- [ ] **M8 — Land.** Commit `dcs.sqlite` (normal git if small, else its own repo — **not** LFS, per the
-  de-LFS decision); update `README.md` / `CHANGELOG.md` / `.ai_state.md`; pin the source SHA.
-  — *Gate:* committed; docs updated.
+- [x] **M8 — Land.** ✅ *Done 2026-06-06.* Full master published as a **GitHub Release**
+  (`dcs-full-2026-03-05`, 287 MB gz — not committed; 920 MB, regenerable via `import_dcs_conllu.py --all`,
+  per the de-LFS decision). `README.md` gains the 2026 source entry (+ the stale Git-LFS note fixed);
+  added root `CHANGELOG.md`; source pinned to `gasyoun/dcs-conllu @ 04e0778`. — *Gate met: docs updated.*
 
 > Stop-anywhere value: after **M5** you already have a clean, queryable, current DCS DB for the pilot
 > texts, even if M6–M8 wait.
