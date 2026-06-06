@@ -108,8 +108,8 @@ and why.
 - **Phase 5 — Derived analysis + dashboards.** Recompute `texts.csv` / `timws.csv` / `cs.csv` / `verx.csv`
   / `111.csv`, then `visual/*.json` and the `.xlsx`-equivalent; refresh the dashboard headline numbers.
 - **Phase 6 — Validate.** See §9.
-- **Phase 7 — Land.** `dcs.sqlite` likely needs **Git LFS**; update `README.md`, `CHANGELOG.md`,
-  `.ai_state.md`; pin the source SHA.
+- **Phase 7 — Land.** Commit `dcs.sqlite` as normal git if small (else its own repo — **not** LFS);
+  update `README.md`, `CHANGELOG.md`, `.ai_state.md`; pin the source SHA.
 
 ---
 
@@ -167,7 +167,9 @@ codes"* acceptable? This materially changes Phase 4 effort.
 ```
 src/DCS-data-2026/
   conllu/                       # submodule -> gasyoun/dcs-conllu (pinned 04e0778)
-  import_dcs_conllu.py          # the importer (builds dcs.sqlite + exports)
+  parse_conllu.py               # M1: full lossless CoNLL-U reader -> staging JSONL
+  staging/  <Text>.jsonl        # M1 output (gitignored, regenerable)
+  import_dcs_conllu.py          # M2: the importer (builds dcs.sqlite + exports)
   dcs.sqlite                    # master DB
   exports/
     clean/   *.csv|*.parquet    # tidy UD tables for queries
@@ -215,15 +217,16 @@ All decisions are now locked; M0 (below) is unblocked and is the next concrete s
 
 Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate.
 
-**Status (2026-06-06):** M0 ✅ done (corpus committed + submodule wired); **M1 in progress**.
+**Status (2026-06-06):** M0–M1 ✅ done (corpus + full lossless parser); **M2 (SQLite master) next**.
 
 - [x] **M0 — Acquire & pin.** ✅ *Done 2026-06-06.* Full CoNLL-U committed to `gasyoun/dcs-conllu`
   (pinned `04e0778`, 2026-03-05) and mounted as the `src/DCS-data-2026/conllu` submodule.
   — *Gate met:* the importer reads `src/DCS-data-2026/conllu/files/` (270 texts) + `lookup/dictionary.csv`.
-- [ ] **M1 — Parser → staging.** ⟳ *In progress (2026-06-06).* Promote `compare_dcs_formats.py`'s reader
-  to a full CoNLL-U parser: MWT spans, all FEATS, all MISC (`LemmaId`/`OccId`/`Unsandhied`/`WordSem`/
-  `Annotator`/`IsMantra`/`Punctuation`), `HEAD`/`DEPREL` (Vedic Treebank chapters), sentence + document
-  metadata. — *Gate:* a small text **and** a treebank text (`Ṛgveda`) parse with zero column errors.
+- [x] **M1 — Parser → staging.** ✅ *Done 2026-06-06.* `parse_conllu.py` — full **lossless** CoNLL-U
+  reader (MWT spans, all FEATS incl. the DCS-specific `Formation`, all MISC, `HEAD`/`DEPREL`, empty
+  nodes, doc + sentence metadata) → one JSONL per text in `staging/` (gitignored). — *Gate met:*
+  Meghadūta (244 sent / 3393 tok, morphological) **and** Ṛgveda treebank (264 dependency arcs) both
+  parse with **0 column errors**.
 - [ ] **M2 — Master DB (pilot).** Build `dcs.sqlite` for the pilot text set (those in the 2021 dump). —
   *Gate:* schema loads; `lemma` table populated from `(LemmaId, LEMMA)`.
 - [ ] **M3 — Align & coverage diff.** Join on `lemma_id` + chapter ref; reconcile granularity; emit
