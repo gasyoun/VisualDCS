@@ -94,9 +94,9 @@ def create_schema(conn):
     CREATE TABLE sentence (sent_id TEXT PRIMARY KEY, chapter_id INTEGER, sent_counter TEXT,
                            sent_subcounter TEXT, text_sandhied TEXT);
     CREATE TABLE mwt      (id INTEGER PRIMARY KEY AUTOINCREMENT, sent_id TEXT, span TEXT, form TEXT);
-    CREATE TABLE token    (occ_id INTEGER PRIMARY KEY, sent_id TEXT, idx INTEGER, form TEXT,
-                           lemma TEXT, lemma_id INTEGER, upos TEXT, xpos TEXT,
-                           head INTEGER, deprel TEXT, deps TEXT);
+    CREATE TABLE token    (id INTEGER PRIMARY KEY AUTOINCREMENT, occ_id INTEGER, sent_id TEXT,
+                           idx INTEGER, form TEXT, lemma TEXT, lemma_id INTEGER, upos TEXT,
+                           xpos TEXT, head INTEGER, deprel TEXT, deps TEXT);
     CREATE TABLE provenance (key TEXT PRIMARY KEY, value TEXT);
     """)
 
@@ -118,9 +118,10 @@ class Tokens:
     def add(self, sent_id, t):
         misc = t["misc"]
         occ = misc.get("OccId")
-        if occ is None:                                  # OccId is the PK; skip if absent
-            return False
-        row = {"occ_id": int(occ), "sent_id": sent_id, "idx": t["id"], "form": t["form"],
+        # OccId is NOT a reliable PK — the corpus reuses some across sub-sentences of a
+        # line — so it's a plain column and every token is kept (synthetic `id` PK).
+        row = {"occ_id": int(occ) if occ not in (None, True) else None,
+               "sent_id": sent_id, "idx": t["id"], "form": t["form"],
                "lemma": t["lemma"], "upos": t["upos"], "xpos": t["xpos"],
                "head": t["head"], "deprel": t["deprel"], "deps": t["deps"]}
         lid = misc.get("LemmaId")
@@ -139,7 +140,7 @@ class Tokens:
             self._ensure(c); row[c] = "Yes" if v is True else v
         cols = ", ".join(f'"{c}"' for c in row)
         ph = ", ".join("?" * len(row))
-        self.conn.execute(f"INSERT OR REPLACE INTO token ({cols}) VALUES ({ph})", list(row.values()))
+        self.conn.execute(f"INSERT INTO token ({cols}) VALUES ({ph})", list(row.values()))
         return True
 
 
@@ -262,6 +263,7 @@ def main():
     conn.commit()
     conn.execute("CREATE INDEX ix_token_sent ON token(sent_id)")
     conn.execute("CREATE INDEX ix_token_lemma ON token(lemma_id)")
+    conn.execute("CREATE INDEX ix_token_occ ON token(occ_id)")
     conn.execute("CREATE INDEX ix_sentence_chapter ON sentence(chapter_id)")
     conn.commit()
 

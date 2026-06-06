@@ -217,7 +217,7 @@ All decisions are now locked; M0 (below) is unblocked and is the next concrete s
 
 Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate.
 
-**Status (2026-06-06):** M0–M4 ✅ done (corpus · parser · master · coverage diff · exports + code map); **M5 (validate) next**.
+**Status (2026-06-06):** M0–M5 ✅ done (pilot pipeline validated + CI-gated); **M6 (scale to all 270) next**.
 
 - [x] **M0 — Acquire & pin.** ✅ *Done 2026-06-06.* Full CoNLL-U committed to `gasyoun/dcs-conllu`
   (pinned `04e0778`, 2026-03-05) and mounted as the `src/DCS-data-2026/conllu` submodule.
@@ -240,8 +240,11 @@ Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate
   `reports/m4_exports.md`. — *Gate met:* `_8.csv` lemmas overlap 2021 cleanly (14,294 shared); the verb
   **code map** is learned (31/33 tense-codes → UD; codes 1–5 / 24 map exactly). 10.csv's 2021-internal
   sentence/occ IDs can't be reproduced from 2026 (documented).
-- [ ] **M5 — Validate pilot.** Cross-walk at scale, idempotency, N-verse spot checks. — *Gate:* green on
-  the pilot.
+- [x] **M5 — Validate pilot.** ✅ *Done 2026-06-06.* `validate.py` (+ `.github/workflows/dcs-validate.yml`
+  CI gate) → `reports/m5_validation.md`: cross-walk at scale, referential integrity, **idempotency**
+  (DB built twice → identical data hash), 50-verse full-token spot checks — **all PASS**. Caught + fixed
+  a real bug: `occ_id` isn't unique (the corpus reuses it across a line's sub-sentences), so it's no
+  longer the PK — synthetic `id` + plain INSERT, no tokens lost (134,047). — *Gate met:* all green.
 - [ ] **M6 — Scale to all ~270 texts.** — *Gate:* full import idempotent; coverage matches upstream.
 - [ ] **M7 — Derived analysis + dashboards (follow-up).** Recompute `texts.csv` / `timws.csv` /
   `visual/*.json`; refresh dashboard numbers with deltas explained. — *Gate:* dashboards render; changes

@@ -1,0 +1,30 @@
+name: DCS pipeline validation
+
+# Builds the pilot SQLite master from the CoNLL-U submodule and runs the M5
+# validation suite (cross-walk, integrity, idempotency, spot checks). Keeps the
+# DCS import pipeline (src/DCS-data-2026/) honest as it evolves.
+
+on:
+  push:
+    paths:
+      - 'src/DCS-data-2026/*.py'
+      - '.github/workflows/dcs-validate.yml'
+  pull_request:
+    paths:
+      - 'src/DCS-data-2026/*.py'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive          # fetch the dcs-conllu corpus submodule
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Build pilot master (M2)
+        run: python src/DCS-data-2026/import_dcs_conllu.py
+      - name: Validate pipeline (M5)
+        run: python src/DCS-data-2026/validate.py
