@@ -153,6 +153,6 @@ Validation should fail if: the manifest is missing required metadata; a period l
 
 - `ARCHITECTURE.md` — Track 3, corpus metadata requirements, diachronic scale, Corpus Grammar Series.
 - `docs/READER_DEVELOPER_CRITIQUE.md` — the "inspect DCS before modeling" warning.
-- [`docs/REVIEW_REPORTS.md`](REVIEW_REPORTS.md) — the corpus-lemma mismatch queue.
-- [`docs/EVIDENCE_LABELS.md`](EVIDENCE_LABELS.md) — labeling derived/inferred period layers.
+- `docs/REVIEW_REPORTS.md` — the corpus-lemma mismatch queue.
+- `docs/EVIDENCE_LABELS.md` — labeling derived/inferred period layers.
 - `docs/USE_CASES.md` — UC-CG-01 through UC-CG-17, UC-RD-14, UC-DEV-06.

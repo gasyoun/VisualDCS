@@ -26,7 +26,7 @@ All dashboards are standalone `.html` files that run entirely in the browser —
 There are **two** upstream sources, not one:
 
 ```
-src/Распределение времен и наклонений.xlsx        src/DCS-data/ (raw DCS corpus dump:
+src/Распределение времен и наклонений.xlsx        src/DCS-data-2021/ (raw DCS corpus dump:
 (38-category tense/mood frequencies)               10.csv, _8.csv, 7.txt, cs.csv, …)
     ↓                                                   ↓
 [manual extraction / Python]                       [Python processing]
@@ -44,7 +44,7 @@ The Excel file (`src/Распределение времен и наклонен
 - 781,616 total verbal examples
 - 55,032 unique lemmas
 
-The raw corpus dump under `src/DCS-data/` (added 2026-06-05, Git LFS + split parts; see
+The raw corpus dump under `src/DCS-data-2021/` (added 2026-06-05, Git LFS + split parts; see
 `DCS-data-CLEANUP.md`) is the source for the paradigm browser and the concordance/JSON assets.
 Its `10.csv` carries ~4.57M morphologically annotated tokens; the paradigm browser reports
 **745,394** verbal uses across 87 person×number/non-finite cells — a different aggregation than the
@@ -55,7 +55,7 @@ Excel's 38-category 781,616, so the two headline totals are expected to differ.
 | File | Purpose |
 |---|---|
 | `src/Распределение времен и наклонений.xlsx` | Excel source — 38-category verb-frequency data |
-| `src/DCS-data/` | Raw DCS corpus dump (CSV/txt, Git LFS + split parts) — source for the paradigm browser and concordance/JSON assets. See `DCS-data-CLEANUP.md` |
+| `src/DCS-data-2021/` | Raw DCS corpus dump (CSV/txt, Git LFS + split parts) — source for the paradigm browser and concordance/JSON assets. See `DCS-data-CLEANUP.md` |
 | `sanskrit_index.html` | **Landing page / tool map** — Stage 1→4 learning path + cards for 11 tools (only some are built yet); the recommended entry point |
 | `sanskrit_verb_form_dashboard.html` | Frequency distribution dashboard with Pareto curve, bar charts, lemma density (781,616 examples) |
 | `sanskrit_pxn_v4.html` | Interactive paradigm browser: **6 roots (√kṛ √bhū √as √gam √vac √dā) × 9 tenses × 9 person/number cells** (87 cells), corpus color-coding, examples panel, root comparison, stem+ending split, flashcard mode, zero-filter, CSV/MD export |
@@ -204,7 +204,7 @@ See `roadmap.md` for the original discussion (Russian). Much of it has since shi
 ## Notes
 
 - **No build step:** Dashboards open directly in browser; data is embedded or loaded from `visual/` via `fetch()` or inline `<script>`
-- **Two upstream sources:** the Excel file (`Распределение времен и наклонений.xlsx`, 38-category frequencies) feeds the verb-form dashboard; the raw `src/DCS-data/` corpus dump feeds the paradigm browser and the concordance/JSON assets. The Excel file is no longer the sole source of truth.
+- **Two upstream sources:** the Excel file (`Распределение времен и наклонений.xlsx`, 38-category frequencies) feeds the verb-form dashboard; the raw `src/DCS-data-2021/` corpus dump feeds the paradigm browser and the concordance/JSON assets. The Excel file is no longer the sole source of truth.
 - **Encoding:** All JSON files must be UTF-8
 - **Browser-only:** No server required; full offline support
 - **Session continuity:** Use `.ai_state.md` to track progress across sessions

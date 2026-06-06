@@ -1,0 +1,3 @@
+[submodule "src/DCS-data-2026/conllu"]
+	path = src/DCS-data-2026/conllu
+	url = https://github.com/gasyoun/dcs-conllu

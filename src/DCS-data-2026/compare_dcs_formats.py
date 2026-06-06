@@ -219,7 +219,8 @@ def anusvara_note(rel_text, conllu):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--rel", default=HERE, help="relational dump dir (has 0.csv)")
+    ap.add_argument("--rel", default=os.path.join(HERE, "..", "DCS-data-2021"),
+                    help="relational dump dir (has 0.csv); default ../DCS-data-2021")
     ap.add_argument("--conllu", default=DEFAULT_CONLLU, help="a .conllu file")
     args = ap.parse_args()
 
@@ -257,7 +258,7 @@ def main():
         print(f"  FEATS keys : " + ", ".join(f"{k}({v})" for k, v in st["feats_keys"].most_common()))
         dep = st["n_head_populated"]
         print(f"  dependency : HEAD populated on {dep}/{st['n_tokens']} tokens "
-              f"-> {'PRESENT' if dep else 'EMPTY (morphological corpus, not a treebank)'}")
+              f"-> {'PRESENT' if dep else 'EMPTY in this file (DCS syntax coverage is partial - some texts have it)'}")
         print(f"  DCS IDs    : LemmaId on {st['n_lemmaid']}, OccId on {st['n_occid']}, "
               f"Unsandhied on {st['n_unsandhied']} "
               f"({st['n_unsandhied_reconstructed']} reconstructed)")

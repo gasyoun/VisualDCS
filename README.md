@@ -35,11 +35,11 @@ Sanskrit verb forms across the DCS corpus. It powers the verb-form frequency das
 | Unique lemmas | 55,032 |
 | Tense/mood categories | 38 |
 
-**2. `src/DCS-data/`** — a raw dump of the DCS corpus (CSV/txt: `10.csv` ≈ 4.57M annotated tokens,
+**2. `src/DCS-data-2021/`** — a raw dump of the DCS corpus (CSV/txt: `10.csv` ≈ 4.57M annotated tokens,
 `7.txt`, `_8.csv`, `cs.csv`, …). It is the source for the paradigm browser and the derived
 concordance/JSON assets. Because some files exceed GitHub's 100 MB limit, the dump uses **Git LFS**
-plus line-boundary split parts (rebuild with `src/DCS-data/rejoin.bat`); see
-[`DCS-data-CLEANUP.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data/DCS-data-CLEANUP.md)
+plus line-boundary split parts (rebuild with `src/DCS-data-2021/rejoin.bat`); see
+[`DCS-data-CLEANUP.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2021/DCS-data-CLEANUP.md)
 for the full inventory and rationale.
 
 ---
@@ -172,7 +172,7 @@ See [`roadmap.md`](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md) fo
 
 ## Tech Stack
 
-- **Data:** Microsoft Excel (`.xlsx`) for the frequency tables; raw DCS corpus CSV/txt under `src/DCS-data/` (Git LFS) for the paradigm browser; derived JSON in `visual/` and the repo root
+- **Data:** Microsoft Excel (`.xlsx`) for the frequency tables; raw DCS corpus CSV/txt under `src/DCS-data-2021/` (Git LFS) for the paradigm browser; derived JSON in `visual/` and the repo root
 - **Dashboards:** Vanilla HTML + [Chart.js 4.4.1](https://www.chartjs.org/) — no build step, no dependencies, open directly in browser
 
 ---

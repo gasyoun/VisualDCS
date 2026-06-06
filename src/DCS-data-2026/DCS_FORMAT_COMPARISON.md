@@ -1,12 +1,13 @@
 # DCS distributions compared: relational-DB export vs. CoNLL-U
 
-The Digital Corpus of Sanskrit (DCS) is published in two serialisations. This folder holds the
-older one; the project also ships a newer one. This note compares them, grounded in a
-**same-text** example and verified by [`compare_dcs_formats.py`](compare_dcs_formats.py).
+The Digital Corpus of Sanskrit (DCS) is published in two serialisations: the older **relational-DB
+export** in [`../DCS-data-2021/`](../DCS-data-2021/) and the current **CoNLL-U** distribution. This note
+compares them, grounded in a **same-text** example and verified by
+[`compare_dcs_formats.py`](compare_dcs_formats.py).
 
-| | **Relational-DB export** (this folder) | **CoNLL-U** (current) |
+| | **Relational-DB export** (`../DCS-data-2021/`) | **CoNLL-U** (current) |
 |---|---|---|
-| Where | `src/DCS-data/` (`0.csv`, `10.csv`, `_8.csv`, `12/15.csv`, …) | [`OliverHellwig/sanskrit` → `dcs/data/conllu`](https://github.com/OliverHellwig/sanskrit/tree/master/dcs/data/conllu) |
+| Where | `../DCS-data-2021/` (`0.csv`, `10.csv`, `_8.csv`, `12/15.csv`, …) | [`OliverHellwig/sanskrit` → `dcs/data/conllu`](https://github.com/OliverHellwig/sanskrit/tree/master/dcs/data/conllu) |
 | Vintage | ~2021 snapshot | actively maintained |
 | Shape | normalised **tables joined by integer IDs** | one **file per text/chapter**, one **token per line**, 10 TSV columns |
 | Morphology | DCS-internal **numeric codes** in separate tables | **Universal-Dependencies** `UPOS` + `FEATS` strings |
@@ -32,8 +33,9 @@ about different corpora:
   morphological features, the unsandhied form, and stable DCS IDs, all on one line.
 - CoNLL-U adds an **unsandhied/segmentation layer** (multiword-token spans) the flat relational
   sentence string does not encode explicitly.
-- Neither carries syntax here: the CoNLL-U **dependency columns are empty** in this sample (DCS is a
-  morphological corpus; full dependency trees cover only a subset of texts elsewhere).
+- Syntax is **partial**: the CoNLL-U dependency columns are empty *in this sample*, but DCS now ships
+  dependency (treebank) annotation for **some** texts — so check `HEAD`/`DEPREL` per text rather than
+  assuming none.
 
 ---
 
@@ -118,14 +120,15 @@ Sample = the one bundled chapter (`Abhidhānacintāmaṇi`, AbhCint 1): **154 se
 3. **Sandhi & compounds are first-class in CoNLL-U.** 234 MWT spans split sandhi/compounds, and every
    token has an `Unsandhied=` form (1019 of 1034 flagged `UnsandhiedReconstructed=True`). The
    relational `0.csv` only keeps the joined surface string.
-4. **No syntax layer here.** `HEAD` was populated on **0/1034** tokens — this DCS CoNLL-U is
-   morphological, not a dependency treebank. (A dependency-annotated DCS subset exists separately.)
+4. **Syntax is partial.** `HEAD` was populated on **0/1034** tokens *in this file*. DCS now provides
+   dependency (treebank) annotation for **some** texts but not all — so check `HEAD`/`DEPREL` per file
+   rather than assuming the corpus has none.
 5. **UD tagset vintage.** UPOS uses the older UD inventory (`CONJ`, `PART` — not the UDv2
    `CCONJ`/`SCONJ`), and a DCS-specific `Case=Cpd` marks compound members. Observed UPOS:
    `NOUN=698, ADJ=104, CONJ=54, PART=45, ADV=45, VERB=39, NUM=25, PRON=23, ADP=1`.
 6. **Encoding.** Both are IAST/Unicode, but **anusvāra differs**: `0.csv` uses `ṁ` (U+1E41), CoNLL-U
    uses `ṃ` (U+1E43). Normalise before matching strings across the two. (The relational side also has
-   the mojibake / mislabeled-`.xls` issues noted in [`README.md`](README.md).)
+   the mojibake / mislabeled-`.xls` issues noted in [`README.md`](../DCS-data-2021/README.md).)
 7. **Coverage / recency.** CoNLL-U covers **270** texts vs the relational dump's **246**, and is the
    maintained version — prefer it for anything current.
 8. **Tooling.** CoNLL-U parses with standard UD libraries; the relational export needs bespoke code
@@ -146,7 +149,7 @@ Sample = the one bundled chapter (`Abhidhānacintāmaṇi`, AbhCint 1): **154 se
 ## Provenance & reproducibility
 
 - Both distributions are © Oliver Hellwig, **Digital Corpus of Sanskrit**, **CC BY** (see
-  [`README.md`](README.md) for citation/license).
+  [`README.md`](../DCS-data-2021/README.md) for citation/license).
 - [`sample_conllu/Abhidhanacintamani-AbhCint-1.conllu`](sample_conllu/) is one **unmodified** DCS
   CoNLL-U file, included so [`compare_dcs_formats.py`](compare_dcs_formats.py) runs offline. Get the
   full set by cloning [`OliverHellwig/sanskrit`](https://github.com/OliverHellwig/sanskrit) and reading
