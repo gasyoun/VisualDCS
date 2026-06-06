@@ -2,3 +2,5 @@
 staging/
 # M2 SQLite master — regenerable from the corpus. Not committed (pilot DB).
 dcs.sqlite
+# M4 exports — regenerable CSVs from the master (the reports/ findings ARE committed).
+exports/
