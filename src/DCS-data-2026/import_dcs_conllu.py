@@ -91,19 +91,20 @@ def create_schema(conn):
     conn.executescript("""
     CREATE TABLE text     (text_id INTEGER PRIMARY KEY, name TEXT, has_dependencies INTEGER DEFAULT 0);
     CREATE TABLE chapter  (chapter_id INTEGER PRIMARY KEY, text_id INTEGER, ref TEXT);
-    CREATE TABLE sentence (sent_id TEXT PRIMARY KEY, chapter_id INTEGER, sent_counter TEXT,
-                           sent_subcounter TEXT, text_sandhied TEXT);
-    CREATE TABLE mwt      (id INTEGER PRIMARY KEY AUTOINCREMENT, sent_id TEXT, span TEXT, form TEXT);
-    CREATE TABLE token    (id INTEGER PRIMARY KEY AUTOINCREMENT, occ_id INTEGER, sent_id TEXT,
-                           idx INTEGER, form TEXT, lemma TEXT, lemma_id INTEGER, upos TEXT,
-                           xpos TEXT, head INTEGER, deprel TEXT, deps TEXT);
+    CREATE TABLE sentence (id INTEGER PRIMARY KEY AUTOINCREMENT, sent_id TEXT, chapter_id INTEGER,
+                           sent_counter TEXT, sent_subcounter TEXT, text_sandhied TEXT);
+    CREATE TABLE mwt      (id INTEGER PRIMARY KEY AUTOINCREMENT, sentence_id INTEGER, sent_id TEXT,
+                           span TEXT, form TEXT);
+    CREATE TABLE token    (id INTEGER PRIMARY KEY AUTOINCREMENT, sentence_id INTEGER, occ_id INTEGER,
+                           sent_id TEXT, idx INTEGER, form TEXT, lemma TEXT, lemma_id INTEGER,
+                           upos TEXT, xpos TEXT, head INTEGER, deprel TEXT, deps TEXT);
     CREATE TABLE provenance (key TEXT PRIMARY KEY, value TEXT);
     """)
 
 
 class Tokens:
     """Insert tokens, growing the `token` table with feat_*/misc columns on demand."""
-    BASE = {"occ_id", "sent_id", "idx", "form", "lemma", "lemma_id",
+    BASE = {"sentence_id", "occ_id", "sent_id", "idx", "form", "lemma", "lemma_id",
             "upos", "xpos", "head", "deprel", "deps"}
 
     def __init__(self, conn):
@@ -115,12 +116,14 @@ class Tokens:
             self.conn.execute(f'ALTER TABLE token ADD COLUMN "{col}" TEXT')
             self.cols.add(col)
 
-    def add(self, sent_id, t):
+    def add(self, sentence_id, sent_id, t):
         misc = t["misc"]
         occ = misc.get("OccId")
-        # OccId is NOT a reliable PK — the corpus reuses some across sub-sentences of a
-        # line — so it's a plain column and every token is kept (synthetic `id` PK).
-        row = {"occ_id": int(occ) if occ not in (None, True) else None,
+        # Neither OccId nor sent_id is a reliable key (the corpus reuses both, even within
+        # one chapter), so the synthetic token id / sentence_id are the keys; occ_id and
+        # the raw sent_id are kept as plain columns.
+        row = {"sentence_id": sentence_id,
+               "occ_id": int(occ) if occ not in (None, True) else None,
                "sent_id": sent_id, "idx": t["id"], "form": t["form"],
                "lemma": t["lemma"], "upos": t["upos"], "xpos": t["xpos"],
                "head": t["head"], "deprel": t["deprel"], "deps": t["deps"]}
@@ -158,16 +161,16 @@ def load_text(conn, tokens, name, sents):
             conn.execute("INSERT OR IGNORE INTO chapter (chapter_id, text_id, ref) VALUES (?,?,?)",
                          (cid, tid, doc.get("chapter")))
         sid = meta.get("sent_id")
-        if sid:
-            conn.execute("INSERT OR IGNORE INTO sentence "
-                         "(sent_id, chapter_id, sent_counter, sent_subcounter, text_sandhied) VALUES (?,?,?,?,?)",
-                         (sid, cid, meta.get("sent_counter"), meta.get("sent_subcounter"), meta.get("text")))
+        cur = conn.execute("INSERT INTO sentence "
+                           "(sent_id, chapter_id, sent_counter, sent_subcounter, text_sandhied) VALUES (?,?,?,?,?)",
+                           (sid, cid, meta.get("sent_counter"), meta.get("sent_subcounter"), meta.get("text")))
+        spk = cur.lastrowid
         for span in s["mwt"]:
-            conn.execute("INSERT INTO mwt (sent_id, span, form) VALUES (?,?,?)",
-                         (sid, span["range"], span["form"]))
+            conn.execute("INSERT INTO mwt (sentence_id, sent_id, span, form) VALUES (?,?,?,?)",
+                         (spk, sid, span["range"], span["form"]))
         for t in s["tokens"]:
-            if tokens.add(sid, t):
-                n_tok += 1
+            tokens.add(spk, sid, t)
+            n_tok += 1
             if t["head"] is not None:
                 has_deps = 1
     return n_tok, has_deps
@@ -262,9 +265,11 @@ def main():
     ])
     conn.commit()
     conn.execute("CREATE INDEX ix_token_sent ON token(sent_id)")
+    conn.execute("CREATE INDEX ix_token_sentence ON token(sentence_id)")
     conn.execute("CREATE INDEX ix_token_lemma ON token(lemma_id)")
     conn.execute("CREATE INDEX ix_token_occ ON token(occ_id)")
     conn.execute("CREATE INDEX ix_sentence_chapter ON sentence(chapter_id)")
+    conn.execute("CREATE INDEX ix_chapter_text ON chapter(text_id)")
     conn.commit()
 
     print()

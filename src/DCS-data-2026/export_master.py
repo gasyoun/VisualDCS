@@ -83,7 +83,7 @@ def export_clean(conn):
         conn.execute("""SELECT t.occ_id, te.name, ch.ref, t.sent_id, t.idx, t.form, t.lemma, t.lemma_id,
                           t.upos, t.feat_case, t.feat_number, t.feat_tense, t.feat_voice, t.head, t.deprel,
                           t.m_unsandhied, l.meanings
-                        FROM token t JOIN sentence s ON t.sent_id=s.sent_id
+                        FROM token t JOIN sentence s ON t.sentence_id=s.id
                         JOIN chapter ch ON s.chapter_id=ch.chapter_id
                         JOIN text te ON ch.text_id=te.text_id
                         LEFT JOIN lemma l ON t.lemma_id=l.lemma_id"""))
@@ -107,12 +107,12 @@ def export_legacy_0(conn):
     os.makedirs(LEGACY, exist_ok=True)
     n = 0
     with open(os.path.join(LEGACY, "0.csv"), "w", encoding="utf-8", newline="") as fh:
-        for sid, name, ref, txt in conn.execute(
-                """SELECT s.sent_id, te.name, ch.ref, s.text_sandhied
+        for spk, sid, name, ref, txt in conn.execute(
+                """SELECT s.id, s.sent_id, te.name, ch.ref, s.text_sandhied
                    FROM sentence s JOIN chapter ch ON s.chapter_id=ch.chapter_id
                    JOIN text te ON ch.text_id=te.text_id"""):
             ids = [str(r[0]) for r in conn.execute(
-                "SELECT lemma_id FROM token WHERE sent_id=? AND lemma_id IS NOT NULL ORDER BY idx", (sid,))]
+                "SELECT lemma_id FROM token WHERE sentence_id=? AND lemma_id IS NOT NULL ORDER BY idx", (spk,))]
             fh.write(f'"{name}";{ref or ""};{sid};,{",".join(ids)},;{txt or ""}\n')
             n += 1
     return n
