@@ -129,8 +129,28 @@ git clone <repo>     # LFS files download automatically
 
 GitHub Desktop has LFS built in and handles this automatically.
 
-> **Quota note:** GitHub's free LFS tier is 1 GB storage + 1 GB/month bandwidth.
-> The tracked files total ~760 MB, which fits, but watch the quota if you add more.
+### Decision (2026-06-06): keep LFS as-is
+
+We **kept Git LFS** rather than switching the files back to plain git blobs.
+
+- The 11 referenced LFS objects total **~846 MB**.
+- GitHub's free LFS tier is **1 GB storage + 1 GB/month bandwidth** (per *account*, not per repo).
+- The account currently shows **~1.32 GB** of LFS storage. The extra ~474 MB is **orphaned
+  objects** left over from earlier history rewrites (LFS migration + a re-split to fix
+  line-ending corruption in the first parts). GitHub does **not** garbage-collect LFS objects,
+  so a history rewrite removes the *references* but not the stored bytes — reclaiming them would
+  require deleting + recreating the repo (or a GitHub Support purge). We deliberately did **not**
+  do that.
+
+**Why over-quota is fine for this project:** these files are a **static data dump** —
+not updated and not downloaded on a schedule (used locally for comparison / data extraction).
+Being over the **storage** quota only blocks *uploading new/changed LFS objects* (which won't
+happen here); normal git pushes (code, docs) are unaffected. The **bandwidth** cap only matters
+for frequent LFS downloads, which also won't happen.
+
+If the repo ever becomes heavily cloned, revisit this — plain git blobs (all parts are < 100 MB)
+avoid the LFS storage *and* bandwidth limits entirely, but switching would still need a
+delete+recreate or Support purge to clear the already-stored objects.
 
 ---
 
