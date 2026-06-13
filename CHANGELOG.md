@@ -6,30 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
-## [2026-06-06] — DCS CoNLL-U import pipeline (M1–M8) ✅
-
-Imported the **current** DCS distribution (CoNLL-U / Universal Dependencies) alongside the 2021
-relational dump, as a queryable, validated SQLite master. The 2021 dashboards are unchanged.
-
-### Added
-- **`src/DCS-data-2026/` pipeline** (stdlib Python): `parse_conllu` → `import_dcs_conllu` (flatten-all
-  SQLite) → `coverage_diff` → `export_master` (CSVs + verb tense/mood **code map**) → `validate`
-  (cross-walk · integrity · idempotency · spot; CI-gated via `.github/workflows/dcs-validate.yml`) →
-  `regen_widgets` (dashboard JSON). Findings in `src/DCS-data-2026/reports/`.
-- **Full SQLite master** published as a GitHub Release `dcs-full-2026-03-05` (287 MB gz; regenerable, not
-  committed): 270 texts · 5,688,416 tokens · 754,726 sentences · 98,606 attested lemmas · 74 treebank
-  texts. Pinned to `gasyoun/dcs-conllu @ 04e0778` (submodule at `src/DCS-data-2026/conllu`).
-
-### Verified / Fixed
-- The 2021 `0.csv` integer IDs are exactly the CoNLL-U `LemmaId`s (cross-walk: 0 mismatches at scale).
-- `OccId` and `sent_id` are both non-unique in the corpus (`sent_id` even within a chapter) — sentences
-  and tokens are keyed by synthetic ids (bugs surfaced by the validation suite).
-
-### Changed
-- `src/DCS-data` split into `DCS-data-2021` (relational dump, converted out of Git LFS to plain blobs)
-  and `DCS-data-2026` (CoNLL-U submodule + pipeline); README gained the 2026 source entry.
-
-## [Unreleased]
+## [1.0.0] - 2026-06-13
 
 ### Added
 - Documentation and tooling for the DCS data and its lineage:
@@ -72,3 +49,26 @@ relational dump, as a queryable, validated SQLite master. The 2021 dashboards ar
 ### Removed
 - 8 redundant `.txt` files that were byte-for-byte identical to their `.csv` twin
   (`All`, `capters`, `cpx`, `forms`, `forms10`, `gra`, `topics`, `Files`) — kept the `.csv`.
+
+## [2026-06-06] — DCS CoNLL-U import pipeline (M1–M8) ✅
+
+Imported the **current** DCS distribution (CoNLL-U / Universal Dependencies) alongside the 2021
+relational dump, as a queryable, validated SQLite master. The 2021 dashboards are unchanged.
+
+### Added
+- **`src/DCS-data-2026/` pipeline** (stdlib Python): `parse_conllu` → `import_dcs_conllu` (flatten-all
+  SQLite) → `coverage_diff` → `export_master` (CSVs + verb tense/mood **code map**) → `validate`
+  (cross-walk · integrity · idempotency · spot; CI-gated via `.github/workflows/dcs-validate.yml`) →
+  `regen_widgets` (dashboard JSON). Findings in `src/DCS-data-2026/reports/`.
+- **Full SQLite master** published as a GitHub Release `dcs-full-2026-03-05` (287 MB gz; regenerable, not
+  committed): 270 texts · 5,688,416 tokens · 754,726 sentences · 98,606 attested lemmas · 74 treebank
+  texts. Pinned to `gasyoun/dcs-conllu @ 04e0778` (submodule at `src/DCS-data-2026/conllu`).
+
+### Verified / Fixed
+- The 2021 `0.csv` integer IDs are exactly the CoNLL-U `LemmaId`s (cross-walk: 0 mismatches at scale).
+- `OccId` and `sent_id` are both non-unique in the corpus (`sent_id` even within a chapter) — sentences
+  and tokens are keyed by synthetic ids (bugs surfaced by the validation suite).
+
+### Changed
+- `src/DCS-data` split into `DCS-data-2021` (relational dump, converted out of Git LFS to plain blobs)
+  and `DCS-data-2026` (CoNLL-U submodule + pipeline); README gained the 2026 source entry.
