@@ -1,0 +1,36 @@
+name: Validate lemma summary
+
+# Gate every change to dcs_lemma_summary.json (or its generator/validator)
+# against the csl-atlas consumption contract — see
+# csl-atlas docs/VISUALDCS_CONSUMPTION_CONTRACT.md. Validates the COMMITTED
+# artifact only, so it needs no DCS corpus source / Git LFS pull.
+
+on:
+  push:
+    paths:
+      - 'dcs_lemma_summary.json'
+      - 'gen_dcs_lemma_summary.py'
+      - 'validate_dcs_lemma_summary.py'
+      - '.github/workflows/validate-lemma-summary.yml'
+  pull_request:
+    paths:
+      - 'dcs_lemma_summary.json'
+      - 'gen_dcs_lemma_summary.py'
+      - 'validate_dcs_lemma_summary.py'
+      - '.github/workflows/validate-lemma-summary.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Contract invariants
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate dcs_lemma_summary.json against the consumption contract
+        run: python validate_dcs_lemma_summary.py dcs_lemma_summary.json
