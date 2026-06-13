@@ -162,7 +162,11 @@ def main():
             "to overwrite the committed contract with an empty file."
         )
 
-    # Build lemma map sorted by key
+    # Build lemma map sorted by key. `attested` is a REQUIRED contract field
+    # (csl-atlas reads it and its test asserts attested===true). It is always
+    # True here because this generator only emits corpus-attested lemmas; the
+    # field exists so a future version can add attested:false rows for
+    # dictionary-only lemmas with no corpus hit. Do not "optimize" it away.
     lemmas = {}
     band_counts = [0] * 5
     for norm in sorted(agg):
