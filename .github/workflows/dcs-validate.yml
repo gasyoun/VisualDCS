@@ -18,7 +18,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: recursive          # fetch the dcs-conllu corpus submodule
       - uses: actions/setup-python@v6
