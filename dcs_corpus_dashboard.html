@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DCS Corpus Dashboard</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f6f7f9;color:#191b1f}
+a{color:inherit;text-decoration:none}
+.top{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid #ddd;padding:14px 22px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.back{font-size:12px;color:#3266ad;border:1px solid #3266ad55;border-radius:5px;padding:5px 8px;background:#3266ad0f}
+.title{font-weight:650;font-size:18px}
+.meta{font-size:12px;color:#6c717a}
+.wrap{max-width:1180px;margin:0 auto;padding:22px}
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:10px;margin-bottom:18px}
+.kpi,.panel{background:#fff;border:1px solid #ddd;border-radius:8px}
+.kpi{padding:12px}
+.kpi b{display:block;font-size:22px;line-height:1.1}
+.kpi span{display:block;font-size:11px;color:#727781;margin-top:4px}
+.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;margin-bottom:14px}
+.panel{padding:14px;min-width:0}
+.panel h2{font-size:14px;margin:0 0 10px}
+.sub{font-size:12px;color:#666b75;line-height:1.45;margin:-4px 0 12px}
+.bar-row{display:grid;grid-template-columns:142px minmax(120px,1fr) 58px;gap:8px;align-items:center;margin:7px 0;font-size:12px}
+.bar-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.track{height:10px;border-radius:999px;background:#eceff3;overflow:hidden}
+.bar{height:100%;border-radius:999px;background:#3266ad}
+.bar.alt{background:#1d9e75}
+.bar.warn{background:#ba7517}
+.value{text-align:right;color:#555}
+.genre-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.genre{border:1px solid #e4e6ea;border-radius:7px;padding:9px;background:#fbfcfd;display:grid;grid-template-columns:1fr auto;gap:5px 8px}
+.genre b{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.genre span{font-size:11px;color:#69707a}
+.genre .date{text-align:right;color:#3266ad}
+.texts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:420px;overflow:auto;padding-right:4px}
+.text-row{border-bottom:1px solid #eee;padding:7px 0;font-size:12px;display:grid;grid-template-columns:1fr auto;gap:8px}
+.text-row b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.text-row span{color:#69707a}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.tab{border:1px solid #d9dce1;background:#fff;border-radius:5px;padding:5px 9px;font-size:12px;cursor:pointer;color:#555}
+.tab.on{background:#3266ad;color:#fff;border-color:#3266ad}
+.err{padding:18px;background:#fff3f3;border:1px solid #edbbbb;border-radius:8px;color:#9b2d2d}
+@media(max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}.grid,.texts,.genre-list{grid-template-columns:1fr}.wrap{padding:14px}.bar-row{grid-template-columns:112px minmax(80px,1fr) 48px}}
+</style>
+</head>
+<body>
+<div class="top">
+  <a class="back" href="sanskrit_index.html">← Индекс</a>
+  <div class="title">DCS Corpus Dashboard</div>
+  <div class="meta" id="sourceMeta">loading visual JSON…</div>
+</div>
+<main class="wrap" id="app"></main>
+<script>
+const paths = {
+  stats: 'visual/corpus_stats_widget.json',
+  genres: 'visual/dcs_genres.json',
+  texts: 'visual/dcs_texts_clean.json'
+};
+const fmt = new Intl.NumberFormat('ru-RU');
+function yearLabel(y){
+  if(y === null || y === undefined || Number.isNaN(Number(y))) return 'n/a';
+  const n = Math.round(Number(y));
+  return n < 0 ? `${Math.abs(n)} BCE` : `${n} CE`;
+}
+function pct(v){ return `${Number(v).toFixed(1)}%`; }
+function esc(s){
+  return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function barRows(rows, key='pct', cls=''){
+  const max = Math.max(...rows.map(r => Number(r[key]) || 0), 1);
+  return rows.map(r => {
+    const v = Number(r[key]) || 0;
+    return `<div class="bar-row">
+      <div class="bar-label" title="${esc(r.label)}">${esc(r.label)}</div>
+      <div class="track"><div class="bar ${cls}" style="width:${Math.max(2, v / max * 100)}%"></div></div>
+      <div class="value">${key === 'pct' ? pct(v) : fmt.format(v)}</div>
+    </div>`;
+  }).join('');
+}
+function genreCards(genres){
+  return Object.entries(genres)
+    .sort((a,b) => b[1].total - a[1].total)
+    .map(([name,g]) => `<div class="genre">
+      <b title="${esc(name)}">${esc(name)}</b><span class="date">${yearLabel(g.date)}</span>
+      <span>${fmt.format(g.total)} verbal tokens</span><span>${g.n} texts</span>
+      <span>PPP ${pct(g.PPP)}</span><span>PrI ${pct(g.PrI)}</span>
+    </div>`).join('');
+}
+function textRows(texts, genre='all'){
+  return texts
+    .filter(t => genre === 'all' || t.genre === genre)
+    .sort((a,b) => (a.date ?? 9999) - (b.date ?? 9999))
+    .map(t => `<div class="text-row">
+      <b title="${esc(t.name)}">${esc(t.name)}</b><span>${yearLabel(t.date)}</span>
+      <span>${esc(t.genre || 'Other')}</span><span>${fmt.format(t.total)} tokens</span>
+    </div>`).join('');
+}
+function render(data){
+  const {stats, genres, texts} = data;
+  const genreNames = Object.keys(genres).sort();
+  const verbal = stats.total_verbal || stats.tenses.reduce((n,r)=>n + Number(r.n || 0), 0);
+  const nominal = stats.total_nominal || stats.cases.reduce((n,r)=>n + Number(r.n || 0), 0);
+  const cases = (stats.cases || []).map(r => ({
+    label: r.abbr || r.case,
+    n: Number(r.total || 0),
+    pct: nominal ? Number(r.total || 0) / nominal * 100 : 0
+  }));
+  const prefixes = ((stats.prefixes && stats.prefixes.top_prefixes) || []).map(r => ({
+    label: r.prefix,
+    n: Number(r.count || r.lemmas || 0)
+  }));
+  const dateVals = texts.map(t => Number(t.date)).filter(Number.isFinite);
+  document.getElementById('sourceMeta').textContent = `${texts.length} texts · ${genreNames.length} genre profiles · tracked visual/*.json`;
+  document.getElementById('app').innerHTML = `
+    <section class="kpis">
+      <div class="kpi"><b>${fmt.format(verbal)}</b><span>verbal tokens</span></div>
+      <div class="kpi"><b>${fmt.format(nominal)}</b><span>nominal tokens</span></div>
+      <div class="kpi"><b>${texts.length}</b><span>dated text profiles</span></div>
+      <div class="kpi"><b>${genreNames.length}</b><span>genre profiles</span></div>
+      <div class="kpi"><b>${yearLabel(Math.min(...dateVals))} → ${yearLabel(Math.max(...dateVals))}</b><span>date range</span></div>
+    </section>
+    <section class="grid">
+      <div class="panel">
+        <h2>Verb-form distribution</h2>
+        <div class="sub">Top DCS verbal categories from <code>visual/corpus_stats_widget.json</code>.</div>
+        ${barRows(stats.tenses.slice(0,14), 'pct')}
+      </div>
+      <div class="panel">
+        <h2>Nominal cases</h2>
+        <div class="sub">Case totals from the same widget source.</div>
+        ${barRows(cases.slice(0,10), 'pct', 'alt')}
+      </div>
+    </section>
+    <section class="grid">
+      <div class="panel">
+        <h2>Genre profiles</h2>
+        <div class="sub">Weighted averages by genre from <code>visual/dcs_genres.json</code>.</div>
+        <div class="genre-list">${genreCards(genres)}</div>
+      </div>
+      <div class="panel">
+        <h2>Prefix productivity</h2>
+        <div class="sub">Most frequent verbal prefixes.</div>
+        ${barRows(prefixes.slice(0,14), 'n', 'warn')}
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Texts by genre and date</h2>
+      <div class="tabs" id="tabs">
+        <button class="tab on" data-genre="all">All</button>
+        ${genreNames.map(g => `<button class="tab" data-genre="${esc(g)}">${esc(g)}</button>`).join('')}
+      </div>
+      <div class="texts" id="texts">${textRows(texts)}</div>
+    </section>`;
+  document.getElementById('tabs').addEventListener('click', ev => {
+    const btn = ev.target.closest('.tab');
+    if(!btn) return;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+    btn.classList.add('on');
+    document.getElementById('texts').innerHTML = textRows(texts, btn.dataset.genre);
+  });
+}
+async function main(){
+  try{
+    const [stats, genres, texts] = await Promise.all(
+      Object.values(paths).map(p => fetch(p).then(r => {
+        if(!r.ok) throw new Error(`${p}: ${r.status}`);
+        return r.json();
+      }))
+    );
+    render({stats, genres, texts});
+  }catch(err){
+    document.getElementById('app').innerHTML = `<div class="err">Unable to load visual JSON: ${esc(err.message)}</div>`;
+    document.getElementById('sourceMeta').textContent = 'load failed';
+  }
+}
+main();
+</script>
+</body>
+</html>
