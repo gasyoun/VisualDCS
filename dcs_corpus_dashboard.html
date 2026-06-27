@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DCS Corpus Statistics</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7f8fa;color:#1a1a1a}
+a{color:#3266ad;text-decoration:none}
+.hdr{background:#fff;border-bottom:1px solid #e0e0e0;padding:18px 24px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.title{font-size:20px;font-weight:650}
+.sub{font-size:13px;color:#707780}
+.back{margin-left:auto;font-size:13px}
+.wrap{max-width:1280px;margin:0 auto;padding:20px 24px 36px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.stat{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:14px}
+.stat-n{font-size:24px;font-weight:650;line-height:1.1}
+.stat-l{font-size:12px;color:#707780;margin-top:5px}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+.panel{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:16px;min-width:0}
+.panel h2{font-size:15px;margin:0 0 12px}
+.chart{height:330px;position:relative}
+.chart.short{height:240px}
+.wide{grid-column:1/-1}
+.table-wrap{max-height:410px;overflow:auto;border:1px solid #ececec;border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{padding:8px 9px;border-bottom:1px solid #f0f0f0;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{position:sticky;top:0;background:#fafafa;color:#555;font-weight:600}
+.note{font-size:12px;color:#707780;line-height:1.5;margin:10px 0 0}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border:1px solid #d8dce2;border-radius:999px;font-size:12px;color:#555;margin:0 6px 8px 0}
+.dot{width:9px;height:9px;border-radius:50%}
+@media (max-width:900px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid{grid-template-columns:1fr}
+  .back{margin-left:0}
+}
+@media (max-width:560px){
+  .hdr,.wrap{padding-left:14px;padding-right:14px}
+  .stats{grid-template-columns:1fr}
+  .chart{height:280px}
+}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="title">DCS Corpus Statistics</div>
+  <div class="sub">morphology, genres, and diachrony from tracked VisualDCS JSON</div>
+  <a class="back" href="sanskrit_index.html">Back to tools</a>
+</header>
+
+<main class="wrap">
+  <section class="stats" id="stats"></section>
+
+  <section class="grid">
+    <article class="panel">
+      <h2>Verb Categories</h2>
+      <div class="chart"><canvas id="tenseChart"></canvas></div>
+      <p class="note">Bars show absolute examples. The line shows cumulative coverage by rank.</p>
+    </article>
+
+    <article class="panel">
+      <h2>Nominal Cases</h2>
+      <div class="chart"><canvas id="caseChart"></canvas></div>
+    </article>
+
+    <article class="panel">
+      <h2>Top Prefixes</h2>
+      <div class="chart short"><canvas id="prefixChart"></canvas></div>
+    </article>
+
+    <article class="panel">
+      <h2>Genre Profile</h2>
+      <div id="legend"></div>
+      <div class="chart short"><canvas id="genreChart"></canvas></div>
+    </article>
+
+    <article class="panel wide">
+      <h2>Genre Table</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Genre</th><th>Texts</th><th>Median date</th><th>Total</th><th>PPP</th><th>Present</th><th>Abs.</th><th>Opt.</th><th>Perfect</th><th>Aor.</th></tr>
+          </thead>
+          <tbody id="genreRows"></tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const fmt = new Intl.NumberFormat('en-US');
+const pct = n => `${Number(n).toFixed(1)}%`;
+const blue = '#3266ad', red = '#e24b4a', teal = '#1d9e75', amber = '#ba7517', gray = '#888780';
+
+async function loadJson(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`${path}: ${res.status}`);
+  return res.json();
+}
+
+function cumulative(items) {
+  let acc = 0;
+  return items.map(x => {
+    acc += x.pct;
+    return Math.min(100, Number(acc.toFixed(2)));
+  });
+}
+
+function yearLabel(y) {
+  return y < 0 ? `${Math.abs(y)} BCE` : `${y} CE`;
+}
+
+function renderStats(stats, genres, texts) {
+  const totalGenreTokens = Object.values(genres).reduce((s, g) => s + g.total, 0);
+  const datedTexts = texts.filter(t => Number.isFinite(t.date)).length;
+  const cards = [
+    [fmt.format(stats.total_verbal), 'verbal examples'],
+    [fmt.format(stats.total_nominal), 'nominal examples'],
+    [Object.keys(genres).length, 'genre families'],
+    [`${datedTexts}/${texts.length}`, 'dated text profiles'],
+    [fmt.format(totalGenreTokens), 'genre-profile tokens'],
+    [yearLabel(Math.min(...texts.map(t => t.date))), 'earliest dated text'],
+    [yearLabel(Math.max(...texts.map(t => t.date))), 'latest dated text'],
+    [fmt.format(stats.prefixes.total_tokens), 'prefixed-verb tokens'],
+  ];
+  document.getElementById('stats').innerHTML = cards.map(([n,l]) =>
+    `<div class="stat"><div class="stat-n">${n}</div><div class="stat-l">${l}</div></div>`
+  ).join('');
+}
+
+function drawTenses(stats) {
+  const top = stats.tenses.slice(0, 16);
+  new Chart(document.getElementById('tenseChart'), {
+    data: {
+      labels: top.map(x => x.label),
+      datasets: [
+        {type:'bar',label:'Examples',data:top.map(x=>x.n),backgroundColor:blue+'cc',yAxisID:'y'},
+        {type:'line',label:'Cumulative %',data:cumulative(top),borderColor:red,backgroundColor:'transparent',pointRadius:3,yAxisID:'y1'}
+      ]
+    },
+    options: {
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{
+        x:{ticks:{font:{size:10},maxRotation:45,minRotation:30}},
+        y:{ticks:{callback:v=>v>=1000?`${v/1000}k`:v}},
+        y1:{position:'right',min:0,max:100,grid:{drawOnChartArea:false},ticks:{callback:v=>`${v}%`}}
+      }
+    }
+  });
+}
+
+function drawCases(stats) {
+  new Chart(document.getElementById('caseChart'), {
+    type:'bar',
+    data:{
+      labels:stats.cases.map(x=>x.abbr),
+      datasets:[
+        {label:'Singular',data:stats.cases.map(x=>x.sg),backgroundColor:blue+'cc'},
+        {label:'Dual',data:stats.cases.map(x=>x.du),backgroundColor:amber+'cc'},
+        {label:'Plural',data:stats.cases.map(x=>x.pl),backgroundColor:teal+'cc'}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},scales:{y:{stacked:true},x:{stacked:true}}}
+  });
+}
+
+function drawPrefixes(stats) {
+  const top = stats.prefixes.top_prefixes.slice(0, 12);
+  new Chart(document.getElementById('prefixChart'), {
+    type:'bar',
+    data:{labels:top.map(x=>x.prefix),datasets:[{label:'Tokens',data:top.map(x=>x.count),backgroundColor:teal+'cc'}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{font:{size:10}}},x:{ticks:{font:{size:11}}}}}
+  });
+}
+
+function drawGenres(genres) {
+  const rows = Object.entries(genres).sort((a,b)=>b[1].total-a[1].total);
+  const top = rows.slice(0, 10);
+  document.getElementById('legend').innerHTML = [
+    ['PPP', blue], ['Present', teal], ['Optative', amber], ['Aorist', red]
+  ].map(([label,color]) => `<span class="pill"><span class="dot" style="background:${color}"></span>${label}</span>`).join('');
+  new Chart(document.getElementById('genreChart'), {
+    type:'bar',
+    data:{
+      labels:top.map(([name])=>name),
+      datasets:[
+        {label:'PPP',data:top.map(([,g])=>g.PPP),backgroundColor:blue+'cc'},
+        {label:'Present',data:top.map(([,g])=>g.PrI),backgroundColor:teal+'cc'},
+        {label:'Optative',data:top.map(([,g])=>g.Opt),backgroundColor:amber+'cc'},
+        {label:'Aorist',data:top.map(([,g])=>g.Aor),backgroundColor:red+'cc'}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10},maxRotation:35}},y:{ticks:{callback:v=>`${v}%`}}}}
+  });
+  document.getElementById('genreRows').innerHTML = rows.map(([name,g]) =>
+    `<tr><td>${name}</td><td>${g.n}</td><td>${yearLabel(g.date)}</td><td>${fmt.format(g.total)}</td><td>${pct(g.PPP)}</td><td>${pct(g.PrI)}</td><td>${pct(g.Abs)}</td><td>${pct(g.Opt)}</td><td>${pct(g.Prf)}</td><td>${pct(g.Aor)}</td></tr>`
+  ).join('');
+}
+
+async function init() {
+  const [stats, genres, texts] = await Promise.all([
+    loadJson('visual/corpus_stats_widget.json'),
+    loadJson('visual/dcs_genres.json'),
+    loadJson('visual/dcs_texts_clean.json')
+  ]);
+  renderStats(stats, genres, texts);
+  drawTenses(stats);
+  drawCases(stats);
+  drawPrefixes(stats);
+  drawGenres(genres);
+}
+
+init().catch(err => {
+  document.querySelector('.wrap').innerHTML = `<section class="panel"><h2>Data load failed</h2><p class="note">${err.message}</p></section>`;
+});
+</script>
+</body>
+</html>

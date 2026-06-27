@@ -215,18 +215,18 @@ const TOOLS = [
     stages:['ref'], type:'widget'
   },
   {
-    id:'A', icon:'📈', name:'Корпусная статистика',
+    id:'A', icon:'📈', name:'Корпусная статистика', file:'dcs_corpus_dashboard.html', open:true,
     desc:'Абсолютные частоты 42 глагольных форм (timws.csv), классы глаголов P/Ā, реальные личные окончания из verx.csv.',
     fact:'PPP=233k · Present=157k · Absolutive=81k · Optative=72k.',
     tags:['частоты','времена','классы'],
-    stages:['ref'], type:'widget'
+    stages:['ref'], type:'file'
   },
   {
-    id:'C_dcs', icon:'📅', name:'DCS: 17 жанров',
+    id:'C_dcs', icon:'📅', name:'DCS: 17 жанров', file:'dcs_corpus_dashboard.html', open:true,
     desc:'288 текстов, 17 жанровых профилей. Тепловая матрица, 2700-летний диахронический scatter, радар, справочник по чтению.',
     fact:'Vedic Saṃhitā −1350 BCE → Tantra/Āgama 1700 CE.',
     tags:['жанры','DCS','диахрония'],
-    stages:['ref','4'], type:'widget'
+    stages:['ref','4'], type:'file'
   },
   {
     id:'C_tans', icon:'📜', name:'TANS: 193 текста',
@@ -255,7 +255,7 @@ function renderCards(){
 
     const tags = t.tags.map(tg=>`<span class="tag">${tg}</span>`).join('');
     const typeBadge = t.type==='file'
-      ? `<a href="${t.file||'#'}" download style="text-decoration:none"><span class="file-badge" style="cursor:pointer">↓ Скачать HTML</span></a>`
+      ? `<a href="${t.file||'#'}" ${t.open?'':'download'} style="text-decoration:none"><span class="file-badge" style="cursor:pointer">${t.open?'Открыть':'↓ Скачать HTML'}</span></a>`
       : `<span class="card-type">виджет</span>`;
     const starBadge = t.star ? `<span style="color:#ba7517;font-size:12px">★</span>` : '';
 
