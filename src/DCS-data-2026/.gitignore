@@ -2,6 +2,8 @@
 staging/
 # M2/M6 SQLite masters (pilot dcs.sqlite + full dcs_full.sqlite) — regenerable; not committed.
 *.sqlite
+*.sqlite-wal
+*.sqlite-shm
 *.sqlite.gz
 # M4 exports — regenerable CSVs from the master (the reports/ findings ARE committed).
 exports/
