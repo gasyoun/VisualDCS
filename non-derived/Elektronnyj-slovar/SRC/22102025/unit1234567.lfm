@@ -1,0 +1,25 @@
+object Form1: TForm1
+  Left = 601
+  Height = 300
+  Top = 180
+  Width = 400
+  Caption = 'Form1'
+  ClientHeight = 300
+  ClientWidth = 400
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  LCLVersion = '2.0.8.0'
+  object MPlayerControl1: TMPlayerControl
+    Left = 138
+    Height = 113
+    Top = 73
+    Width = 200
+    Loop = 0
+    OnClick = MPlayerControl1Click
+    Volume = 0
+  end
+  object OpenDialog1: TOpenDialog
+    left = 338
+    top = 83
+  end
+end

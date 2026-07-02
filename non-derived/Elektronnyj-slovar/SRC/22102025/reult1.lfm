@@ -1,0 +1,489 @@
+object resform: Tresform
+  Left = 187
+  Height = 739
+  Top = 156
+  Width = 1612
+  Align = alClient
+  BorderWidth = 3
+  Caption = 'Результаты поиска'
+  ClientHeight = 739
+  ClientWidth = 1612
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  ShowHint = True
+  ShowInTaskBar = stAlways
+  LCLVersion = '4.0.0.4'
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  OnWindowStateChange = FormWindowStateChange
+  object ListBox1: TListBox
+    Left = 482
+    Height = 140
+    Top = 408
+    Width = 174
+    ItemHeight = 0
+    TabOrder = 0
+    Visible = False
+  end
+  object Memo4: TMemo
+    Left = 381
+    Height = 158
+    Top = 381
+    Width = 264
+    Lines.Strings = (
+      'Memo4'
+    )
+    TabOrder = 1
+    Visible = False
+    WordWrap = False
+  end
+  object Panel2: TPanel
+    Left = 3
+    Height = 733
+    Top = 3
+    Width = 1606
+    Align = alClient
+    BevelColor = clWhite
+    BevelWidth = 2
+    ClientHeight = 733
+    ClientWidth = 1606
+    ParentBackground = False
+    TabOrder = 2
+    object Panel3: TPanel
+      Left = 2
+      Height = 729
+      Top = 2
+      Width = 299
+      Align = alLeft
+      ClientHeight = 729
+      ClientWidth = 299
+      ParentBackground = False
+      TabOrder = 0
+      object CheckListBox2: TCheckListBox
+        Left = 1
+        Height = 576
+        Top = 109
+        Width = 297
+        Align = alClient
+        BorderSpacing.Top = 4
+        Color = clWhite
+        ExtendedSelect = False
+        ItemHeight = 0
+        PopupMenu = PopupMenu2
+        TabOrder = 0
+        OnClick = CheckListBox2Click
+        OnDblClick = CheckListBox2DblClick
+      end
+      object Label1: TLabel
+        Left = 1
+        Height = 30
+        Top = 1
+        Width = 297
+        Align = alTop
+        AutoSize = False
+        Caption = 'Найденные леммы:'
+        Layout = tlCenter
+      end
+      object EditButton1: TEditButton
+        Left = 1
+        Height = 39
+        Top = 31
+        Width = 297
+        Align = alTop
+        ButtonCaption = 'Поиск'
+        ButtonWidth = 93
+        Color = clWhite
+        MaxLength = 0
+        NumGlyphs = 1
+        PasswordChar = #0
+        TabOrder = 1
+        TextHint = 'Введите лемму'
+        OnButtonClick = EditButton1ButtonClick
+        OnChange = EditButton1Change
+      end
+      object StatusBar1: TStatusBar
+        Left = 1
+        Height = 43
+        Top = 685
+        Width = 297
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Panels = <        
+          item
+            Text = 'Всего найдено:'
+            Width = 209
+          end        
+          item
+            Width = 140
+          end>
+        ParentFont = False
+        SimplePanel = False
+      end
+      object SAD1: TCheckBox
+        Left = 1
+        Height = 35
+        Top = 70
+        Width = 297
+        Align = alTop
+        Caption = 'SAD1'
+        Checked = True
+        State = cbChecked
+        TabOrder = 3
+        OnChange = SAD1Change
+      end
+    end
+    object Panel4: TPanel
+      Left = 301
+      Height = 729
+      Top = 2
+      Width = 1303
+      Align = alClient
+      ClientHeight = 729
+      ClientWidth = 1303
+      ParentBackground = False
+      TabOrder = 1
+      object CheckListBox1: TCheckListBox
+        Left = 4
+        Height = 129
+        Hint = 'Словари. Жирнной точкой отмечены словари, в которых есть определение  искомой леммы.'
+        Top = 51
+        Width = 1295
+        Align = alTop
+        BorderSpacing.Bottom = 6
+        BorderSpacing.Around = 3
+        Color = clWhite
+        Columns = 5
+        ItemHeight = 0
+        PopupMenu = PopupMenu1
+        TabOrder = 0
+        OnClick = CheckListBox1Click
+        OnClickCheck = CheckListBox1ClickCheck
+      end
+      object ListBox2: TListBox
+        Left = 492
+        Height = 140
+        Top = 381
+        Width = 174
+        ItemHeight = 0
+        Options = []
+        TabOrder = 1
+        Visible = False
+      end
+      object Memo2: TMemo
+        Left = 672
+        Height = 158
+        Top = 269
+        Width = 264
+        TabOrder = 2
+        Visible = False
+      end
+      object Panel1: TPanel
+        Left = 1
+        Height = 47
+        Top = 1
+        Width = 1301
+        Align = alTop
+        ClientHeight = 47
+        ClientWidth = 1301
+        ParentBackground = False
+        TabOrder = 3
+        object SpeedButton1: TSpeedButton
+          Cursor = crHandPoint
+          Left = 641
+          Height = 45
+          Top = 1
+          Width = 82
+          Align = alLeft
+          Anchors = []
+          AutoSize = True
+          BorderSpacing.Left = 6
+          BorderSpacing.Right = 6
+          Caption = ' HTML '
+          Color = 12615680
+          OnClick = SpeedButton1Click
+        end
+        object Edit1: TEdit
+          Left = 22
+          Height = 35
+          Top = 6
+          Width = 301
+          Align = alLeft
+          BorderSpacing.Left = 21
+          BorderSpacing.Top = 5
+          BorderSpacing.Right = 6
+          BorderSpacing.Bottom = 5
+          Color = clWhite
+          TabOrder = 0
+          TextHint = 'Название результатов поиска'
+        end
+        object Button1: TButton
+          Left = 1250
+          Height = 45
+          Hint = 'Использовать выбранные словари для всех лемм из списка'
+          Top = 1
+          Width = 50
+          Align = alRight
+          Anchors = [akTop, akRight]
+          Caption = 'Применить выделение..'
+          TabOrder = 1
+          Visible = False
+          OnClick = Button1Click
+        end
+        object M95: TCheckBox
+          Left = 481
+          Height = 45
+          Hint = 'При выгрузке остановиться на первом словаре, где есть искомая лемма'
+          Top = 1
+          Width = 154
+          Align = alLeft
+          Caption = '1-й словарь'
+          TabOrder = 2
+        end
+        object MenuItem19: TCheckBox
+          Left = 329
+          Height = 45
+          Hint = 'Генерировать оглавление в HTML отчете'
+          Top = 1
+          Width = 152
+          Align = alLeft
+          Caption = 'Оглавление'
+          Checked = True
+          State = cbChecked
+          TabOrder = 3
+        end
+        object ProgressBar1: TProgressBar
+          Left = 729
+          Height = 45
+          Top = 1
+          Width = 97
+          Align = alClient
+          Font.CharSet = RUSSIAN_CHARSET
+          Font.Height = -18
+          Font.Name = 'Arial'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+          TabOrder = 4
+          Visible = False
+          BarShowText = True
+          OnContextPopup = ProgressBar1ContextPopup
+        end
+        object CheckBox1: TCheckBox
+          Left = 826
+          Height = 45
+          Top = 1
+          Width = 424
+          Align = alRight
+          Caption = 'Применить выделение для всех лемм'
+          Checked = True
+          State = cbChecked
+          TabOrder = 5
+          OnChange = CheckBox1Change
+        end
+      end
+      object Panel5: TPanel
+        Left = 1
+        Height = 39
+        Top = 689
+        Width = 1301
+        Align = alBottom
+        ClientHeight = 39
+        ClientWidth = 1301
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 4
+        object CheckBox3: TCheckBox
+          Left = 1
+          Height = 37
+          Top = 1
+          Width = 70
+          Align = alLeft
+          BorderSpacing.Right = 5
+          Caption = 'IAST'
+          TabOrder = 0
+          OnChange = CheckBox3Change
+        end
+        object Edit2: TEdit
+          Left = 238
+          Height = 37
+          Top = 1
+          Width = 300
+          Align = alLeft
+          TabOrder = 1
+          TextHint = 'Поиск в словарной статье'
+          OnChange = Edit2Change
+        end
+        object Button2: TButton
+          Left = 538
+          Height = 37
+          Top = 1
+          Width = 25
+          Align = alLeft
+          Caption = '<'
+          TabOrder = 2
+          OnClick = Button2Click
+        end
+        object Button3: TButton
+          Left = 563
+          Height = 37
+          Top = 1
+          Width = 25
+          Align = alLeft
+          Caption = '>'
+          TabOrder = 3
+          OnClick = Button3Click
+        end
+        object CheckBox4: TCheckBox
+          Left = 76
+          Height = 37
+          Top = 1
+          Width = 157
+          Align = alLeft
+          BorderSpacing.Right = 5
+          Caption = 'Case sensitive'
+          TabOrder = 4
+        end
+      end
+      object hw: THtmlViewer
+        Left = 1
+        Height = 500
+        Top = 189
+        Width = 1301
+        BorderStyle = htFocused
+        DefFontName = 'Areal'
+        DefFontSize = 10
+        HistoryMaxCount = 0
+        NoSelect = False
+        PrintMarginBottom = 2
+        PrintMarginLeft = 2
+        PrintMarginRight = 2
+        PrintMarginTop = 2
+        PrintScale = 1
+        Align = alClient
+        PopupMenu = PopupMenu3
+        TabOrder = 5
+      end
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    Title = 'Save file as..'
+    FileName = 'E:\d1\result.txt'
+    Filter = 'Text Files UTF-8|*.txt|HTML Files UTF-8|*.htm'
+    InitialDir = 'E:\d1\'
+    Options = [ofOverwritePrompt, ofExtensionDifferent, ofEnableSizing, ofViewDetail]
+    Left = 134
+    Top = 381
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 526
+    Top = 190
+    object MenuItem1: TMenuItem
+      Caption = 'Выделить все'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem3Click
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Выгрузить выбранные статьи в TXT'
+      OnClick = MenuItem6Click
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+  end
+  object PopupMenu2: TPopupMenu
+    Left = 88
+    Top = 520
+    object MenuItem9: TMenuItem
+      Caption = 'Выделить все'
+      OnClick = MenuItem9Click
+    end
+    object MenuItem10: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem10Click
+    end
+    object MenuItem11: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem11Click
+    end
+    object Separator2: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem12: TMenuItem
+      Caption = 'Добавить выделенное в хранилище'
+      OnClick = MenuItem4Click
+    end
+    object MenuItem13: TMenuItem
+      Caption = 'Добавить это слово в хранилище'
+      OnClick = MenuItem8Click
+    end
+    object MenuItem16: TMenuItem
+      Caption = 'Открыть хранилище'
+      OnClick = MenuItem7Click
+    end
+    object Separator3: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem14: TMenuItem
+      Caption = 'Выгрузить выделенное в HTML'
+      OnClick = MenuItem5Click
+    end
+    object MenuItem17: TMenuItem
+      Caption = 'Выгрузить список слов'
+      OnClick = MenuItem17Click
+    end
+    object MenuItem18: TMenuItem
+      Caption = 'Скопировать список в буфер обмена'
+      OnClick = MenuItem18Click
+    end
+    object Separator4: TMenuItem
+      Caption = '-'
+    end
+    object Mx1: TMenuItem
+      Caption = 'Передать в главный список'
+      OnClick = Mx1Click
+    end
+  end
+  object PopupMenu3: TPopupMenu
+    Left = 792
+    Top = 240
+    object MenuItem104: TMenuItem
+      Caption = 'Select All'
+      ShortCut = 16449
+      OnClick = MenuItem104Click
+    end
+    object MenuItem105: TMenuItem
+      Caption = 'Copy'
+      ShortCut = 16451
+      OnClick = MenuItem105Click
+    end
+    object MenuItem107: TMenuItem
+      Caption = 'Google Translate'
+      ShortCut = 16455
+      OnClick = MenuItem107Click
+    end
+    object MenuItem108: TMenuItem
+      Caption = 'Yandex Translate'
+      ShortCut = 16473
+      OnClick = MenuItem108Click
+    end
+  end
+end

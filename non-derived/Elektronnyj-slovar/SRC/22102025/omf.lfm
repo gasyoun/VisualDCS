@@ -1,0 +1,124 @@
+object of1: Tof1
+  Left = 793
+  Height = 869
+  Top = 100
+  Width = 1261
+  Caption = 'Некоторые омоформы'
+  ClientHeight = 869
+  ClientWidth = 1261
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnCreate = FormCreate
+  object StringGrid1: TStringGrid
+    Left = 0
+    Height = 791
+    Top = 35
+    Width = 1261
+    Align = alClient
+    ColCount = 6
+    ColumnClickSorts = True
+    Columns = <    
+      item
+        Title.Caption = 'Основа'
+        Width = 175
+      end    
+      item
+        Title.Caption = 'Именная форма'
+        Width = 258
+      end    
+      item
+        Title.Caption = 'Глагольная форма'
+        Width = 350
+      end    
+      item
+        Title.Caption = 'Основа'
+        Width = 155
+      end    
+      item
+        Title.Caption = '[]'
+        Visible = False
+      end    
+      item
+        Title.Caption = 'Title'
+      end>
+    FixedCols = 0
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -23
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goDblClickAutoSize, goSmoothScroll, goRowHighlight]
+    ParentFont = False
+    PopupMenu = PopupMenu1
+    TabOrder = 0
+  end
+  object ListBox1: TListBox
+    Left = 548
+    Height = 140
+    Top = 372
+    Width = 174
+    ItemHeight = 0
+    TabOrder = 1
+    Visible = False
+  end
+  object Label4: TLabel
+    Cursor = crHandPoint
+    Left = 0
+    Height = 35
+    Top = 0
+    Width = 1254
+    Align = alTop
+    Alignment = taRightJustify
+    AutoSize = False
+    BorderSpacing.Right = 7
+    Caption = 'Материалы с сайта:  https://sanskrit.inria.fr/DICO/grammar.html'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlue
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    PopupMenu = PopupMenu1
+    Transparent = False
+    OnClick = Label4Click
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 43
+    Top = 826
+    Width = 1261
+    Panels = <    
+      item
+        Text = 'Всего омоформ в списке:'
+        Width = 280
+      end    
+      item
+        Width = 97
+      end>
+    SimplePanel = False
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 114
+    Top = 258
+    object MenuItem1: TMenuItem
+      Caption = 'Сохранить..'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Перейти к расширенной таблице'
+      OnClick = MenuItem2Click
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    FileName = 'SomeOmoforms.txt'
+    Filter = 'Text Files|*.txt'
+    InitialDir = 'Reports'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 258
+    Top = 279
+  end
+end

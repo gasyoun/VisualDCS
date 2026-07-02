@@ -1,0 +1,363 @@
+object prl: Tprl
+  Left = 69
+  Height = 792
+  Top = 0
+  Width = 1185
+  BorderWidth = 2
+  Caption = 'Параллельные места в текстах DCS'
+  ClientHeight = 792
+  ClientWidth = 1185
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnCreate = FormCreate
+  object Panel1: TPanel
+    Left = 2
+    Height = 58
+    Top = 2
+    Width = 1181
+    Align = alTop
+    Alignment = taRightJustify
+    ClientHeight = 58
+    ClientWidth = 1181
+    ParentBackground = False
+    TabOrder = 0
+    object Button1: TButton
+      Left = 961
+      Height = 44
+      Top = 0
+      Width = 132
+      Caption = 'Button1'
+      TabOrder = 0
+      Visible = False
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 858
+      Height = 44
+      Top = -3
+      Width = 132
+      Caption = 'Button2'
+      TabOrder = 1
+      Visible = False
+      OnClick = Button2Click
+    end
+    object StringGrid4: TStringGrid
+      Left = 1106
+      Height = 174
+      Top = -3
+      Width = 350
+      FixedCols = 0
+      FixedRows = 0
+      RowCount = 4760
+      TabOrder = 2
+      Visible = False
+    end
+    object ComboBox1: TComboBox
+      Left = 8
+      Height = 39
+      Top = 8
+      Width = 323
+      Align = alLeft
+      BorderSpacing.Around = 7
+      DropDownCount = 16
+      ItemHeight = 31
+      ReadOnly = True
+      Style = csDropDownList
+      TabOrder = 3
+      OnChange = ComboBox1Change
+    end
+    object Button5: TButton
+      Left = 356
+      Height = 44
+      Top = 7
+      Width = 237
+      Align = alLeft
+      AutoSize = True
+      BorderSpacing.Left = 19
+      BorderSpacing.Around = 6
+      Caption = 'Build Citation Tree'
+      Enabled = False
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -23
+      Font.Name = 'Arial Unicode MS'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+      Visible = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 2
+    Height = 323
+    Top = 366
+    Width = 1181
+    Align = alBottom
+    ClientHeight = 323
+    ClientWidth = 1181
+    ParentBackground = False
+    TabOrder = 1
+    object StringGrid3: TStringGrid
+      Left = 1
+      Height = 321
+      Top = 1
+      Width = 1179
+      Align = alClient
+      ColCount = 6
+      ColumnClickSorts = True
+      Columns = <      
+        item
+          Title.Caption = 'id'
+          Visible = False
+        end      
+        item
+          Title.Font.CharSet = ANSI_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -23
+          Title.Font.Name = 'Arial'
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Параллель'
+          Width = 517
+        end      
+        item
+          Title.Caption = 'osn'
+          Visible = False
+        end      
+        item
+          Title.Font.CharSet = ANSI_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -23
+          Title.Font.Name = 'Arial'
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Фраза'
+          Width = 646
+        end      
+        item
+          Title.Caption = 'Length'
+          Visible = False
+        end      
+        item
+          Title.Caption = 'Type'
+          Visible = False
+        end>
+      FixedCols = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goSmoothScroll, goRowHighlight]
+      TabOrder = 0
+      OnDblClick = StringGrid3DblClick
+    end
+  end
+  object StringGrid1: TStringGrid
+    Left = 2
+    Height = 218
+    Top = 60
+    Width = 1181
+    Align = alClient
+    ColCount = 8
+    ColumnClickSorts = True
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Visible = False
+      end    
+      item
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -23
+        Title.Font.Name = 'Arial'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Источник'
+        Width = 517
+      end    
+      item
+        Title.Caption = 'osn'
+        Visible = False
+      end    
+      item
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -23
+        Title.Font.Name = 'Arial'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Фраза'
+        Width = 646
+      end    
+      item
+        Alignment = taRightJustify
+        Title.Alignment = taRightJustify
+        Title.Color = 8388672
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clWhite
+        Title.Font.Height = -23
+        Title.Font.Name = 'Arial Narrow'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Font.Style = [fsBold]
+        Title.Caption = 'Length'
+        Visible = False
+      end    
+      item
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        Title.Caption = 'Title'
+        Visible = False
+      end>
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goSmoothScroll, goRowHighlight]
+    TabOrder = 2
+    OnClick = StringGrid1Click
+    OnDblClick = StringGrid1DblClick
+  end
+  object StringGrid2: TStringGrid
+    Left = 548
+    Height = 174
+    Top = 208
+    Width = 350
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 3
+    Visible = False
+  end
+  object Panel3: TPanel
+    Left = 2
+    Height = 45
+    Top = 321
+    Width = 1181
+    Align = alBottom
+    ClientHeight = 45
+    ClientWidth = 1181
+    ParentBackground = False
+    TabOrder = 4
+    object Label1: TLabel
+      Left = 1
+      Height = 43
+      Top = 1
+      Width = 357
+      Align = alLeft
+      Caption = 'Параллели для выбранной фразы'
+      Layout = tlCenter
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 2
+    Height = 43
+    Top = 278
+    Width = 1181
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -23
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Panels = <    
+      item
+        Text = 'Всего фраз:'
+        Width = 155
+      end    
+      item
+        Width = 65
+      end    
+      item
+        Text = 'Всего текстов:'
+        Width = 155
+      end    
+      item
+        Width = 65
+      end>
+    ParentFont = False
+    SimplePanel = False
+  end
+  object StatusBar2: TStatusBar
+    Left = 2
+    Height = 43
+    Top = 689
+    Width = 1181
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clWhite
+    Font.Height = -23
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Panels = <    
+      item
+        Text = 'Всего параллелей:'
+        Width = 258
+      end    
+      item
+        Width = 65
+      end    
+      item
+        Text = 'Всего текстов:'
+        Width = 155
+      end    
+      item
+        Width = 65
+      end>
+    ParentFont = False
+    SimplePanel = False
+  end
+  object Panel4: TPanel
+    Left = 2
+    Height = 58
+    Top = 732
+    Width = 1181
+    Align = alBottom
+    ClientHeight = 58
+    ClientWidth = 1181
+    ParentBackground = False
+    TabOrder = 7
+    object Button3: TButton
+      Left = 707
+      Height = 42
+      Top = 8
+      Width = 261
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Right = 8
+      BorderSpacing.Around = 7
+      Caption = 'Сохранить выбранное'
+      TabOrder = 0
+      OnClick = Button3Click
+    end
+    object Button4: TButton
+      Left = 994
+      Height = 42
+      Top = 8
+      Width = 178
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Left = 19
+      BorderSpacing.Right = 1
+      BorderSpacing.Around = 7
+      Caption = 'Сохранить все'
+      TabOrder = 1
+      OnClick = Button4Click
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Text Files|*.txt'
+    InitialDir = 'Reports'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 41
+    Top = 145
+  end
+end

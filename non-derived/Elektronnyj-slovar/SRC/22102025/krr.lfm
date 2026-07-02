@@ -1,0 +1,592 @@
+object kr: Tkr
+  Left = 122
+  Height = 365
+  Top = 56
+  Width = 1084
+  BorderStyle = bsDialog
+  Caption = 'Корреляции'
+  ClientHeight = 365
+  ClientWidth = 1084
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  FormStyle = fsStayOnTop
+  LCLVersion = '4.0.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 58
+    Top = 307
+    Width = 1084
+    Align = alBottom
+    Alignment = taLeftJustify
+    Caption = 'Перетащите в таблицу леммы для анализа'
+    ClientHeight = 58
+    ClientWidth = 1084
+    ParentBackground = False
+    TabOrder = 0
+    object Button1: TButton
+      Left = 979
+      Height = 42
+      Top = 8
+      Width = 89
+      Align = alRight
+      Anchors = [akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Right = 8
+      BorderSpacing.Around = 7
+      Caption = 'Найти'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Panel2: TPanel
+      Left = 1
+      Height = 56
+      Top = 1
+      Width = 775
+      Align = alLeft
+      ClientHeight = 56
+      ClientWidth = 775
+      ParentBackground = False
+      TabOrder = 1
+      object ProgressBar1: TProgressBar
+        Left = 1
+        Height = 54
+        Top = 1
+        Width = 381
+        Align = alLeft
+        TabOrder = 0
+        Visible = False
+      end
+      object ProgressBar2: TProgressBar
+        Left = 395
+        Height = 54
+        Top = 1
+        Width = 381
+        Align = alLeft
+        BorderSpacing.Left = 13
+        TabOrder = 1
+        Visible = False
+      end
+    end
+  end
+  object StringGrid1: TStringGrid
+    Left = 0
+    Height = 251
+    Top = 56
+    Width = 1084
+    Align = alClient
+    ColCount = 8
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        Visible = False
+      end    
+      item
+        ButtonStyle = cbsButton
+        Title.Caption = 'Лемма'
+        Width = 173
+      end    
+      item
+        ButtonStyle = cbsPickList
+        DropDownRows = 25
+        PickList.Strings = (
+          'All'
+          'Absolutive'
+          'Aorist Imp.'
+          'Aorist Ind. Is.'
+          'Aorist Ind. Passive'
+          'Aorist Ind. Red.'
+          'Aorist Ind. Root.'
+          'Aorist Ind. S.'
+          'Aorist Ind. Sa.'
+          'Aorist Ind. Sis.'
+          'Aorist Ind. Them.'
+          'Aorist Jus.'
+          'Aorist Jus./Sub./Opt/Perf_Opt'
+          'Aorist Prec.'
+          'Aorist Sub.'
+          'Future Cond.'
+          'Future Ind.'
+          'Future passive particle'
+          'Future. Ind. Peri.'
+          'Imperfect ind'
+          'Imperfect Ind. Passive '
+          'Infinitive'
+          'Past Active Participle'
+          'Past Passive Participle'
+          'Perfect Imp'
+          'Perfect Ind.'
+          'Perfect Ind. Peri.'
+          'Perfect Jus.'
+          'Perfect Opt.'
+          'Perfect Sub'
+          'Plp. ind.'
+          'Pres. Imp.'
+          'Pres. Imperative Passive'
+          'Pres. Opt Passive'
+          'Pres. Potential'
+          'Pres. Sub.'
+          'Present Ind.'
+          'Present Jus.'
+          'Present Passive'
+          ''
+        )
+        Title.Caption = 'Глагольная форма'
+        Width = 173
+      end    
+      item
+        ButtonStyle = cbsPickList
+        PickList.Strings = (
+          'Any person'
+          '1st.'
+          '2d.'
+          '3d.'
+        )
+        Title.Caption = 'Лицо'
+        Width = 173
+      end    
+      item
+        ButtonStyle = cbsPickList
+        PickList.Strings = (
+          'Any gender'
+          'm.'
+          'f.'
+          'n.'
+        )
+        Title.Caption = 'Род'
+        Width = 173
+      end    
+      item
+        ButtonStyle = cbsPickList
+        PickList.Strings = (
+          'Any number'
+          'Sg.'
+          'Du.'
+          'Pl.'
+        )
+        Title.Caption = 'Число'
+        Width = 173
+      end    
+      item
+        ButtonStyle = cbsPickList
+        DropDownRows = 10
+        PickList.Strings = (
+          'Any case'
+          'Nom.'
+          'Acc.'
+          'Voc.'
+          'Ins.'
+          'Dat.'
+          'Abl.'
+          'Gen.'
+          'Loc.'
+        )
+        Title.Caption = 'Падеж'
+        Width = 173
+      end    
+      item
+        Title.Caption = 'ActiveID'
+        Visible = False
+      end>
+    FixedCols = 0
+    Flat = True
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goDblClickAutoSize, goSmoothScroll, goRowHighlight]
+    PopupMenu = PopupMenu2
+    RowCount = 1
+    TabOrder = 1
+    OnDragDrop = StringGrid1DragDrop
+    OnDragOver = StringGrid1DragOver
+    OnButtonClick = StringGrid1ButtonClick
+    ColWidths = (
+      0
+      173
+      173
+      173
+      173
+      173
+      173
+      0
+    )
+  end
+  object ListBox1: TListBox
+    Left = 227
+    Height = 140
+    Top = 124
+    Width = 174
+    ItemHeight = 0
+    TabOrder = 2
+    Visible = False
+    OnClick = ListBox1Click
+  end
+  object StringGrid3: TStringGrid
+    Left = 352
+    Height = 258
+    Top = 41
+    Width = 258
+    Color = clWhite
+    ColCount = 15
+    ColumnClickSorts = True
+    Columns = <    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 12
+        MaxSize = 234
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -18
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Layout = tlTop
+        Title.Caption = 'Примеры'
+        Width = 775
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Grammar Form'
+        Width = 0
+        Visible = False
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 12
+        MaxSize = 234
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -18
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Layout = tlTop
+        Title.Caption = 'Источник'
+        Width = 375
+      end    
+      item
+        Alignment = taRightJustify
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 12
+        MaxSize = 234
+        Title.Alignment = taRightJustify
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -18
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Layout = tlTop
+        Title.MultiLine = True
+        Title.Caption = 'Част.лемм.'
+        Width = 149
+      end    
+      item
+        Alignment = taCenter
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -18
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Метка'
+        Width = 83
+      end>
+    FixedCols = 0
+    MouseWheelOption = mwGrid
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goSmoothScroll, goRowHighlight]
+    PopupMenu = PopupMenu1
+    TabOrder = 3
+    Visible = False
+  end
+  object StringGrid2: TStringGrid
+    Left = 641
+    Height = 258
+    Top = 72
+    Width = 258
+    Color = clWhite
+    ColCount = 15
+    ColumnClickSorts = True
+    Columns = <    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 12
+        MaxSize = 234
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -18
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Layout = tlTop
+        Title.Caption = 'Примеры'
+        Width = 775
+      end    
+      item
+        MinSize = 12
+        MaxSize = 234
+        Title.Caption = 'Grammar Form'
+        Width = 0
+        Visible = False
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 12
+        MaxSize = 234
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -18
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Layout = tlTop
+        Title.Caption = 'Источник'
+        Width = 375
+      end    
+      item
+        Alignment = taRightJustify
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 12
+        MaxSize = 234
+        Title.Alignment = taRightJustify
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -18
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Layout = tlTop
+        Title.MultiLine = True
+        Title.Caption = 'Част.лемм.'
+        Width = 149
+      end    
+      item
+        Alignment = taCenter
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -18
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Title.Alignment = taCenter
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -18
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Метка'
+        Width = 83
+      end>
+    FixedCols = 0
+    MouseWheelOption = mwGrid
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goSmoothScroll, goRowHighlight]
+    PopupMenu = PopupMenu1
+    TabOrder = 4
+    Visible = False
+  end
+  object Label1: TLabel
+    Left = 10
+    Height = 36
+    Top = 10
+    Width = 1064
+    Align = alTop
+    BorderSpacing.Around = 10
+    Caption = 'Перетащите сюда лемму из основного списка и задайте ее грамматическую форму'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -26
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 21
+    Top = 72
+    object MenuItem1: TMenuItem
+      Caption = 'MenuItem1'
+      OnClick = MenuItem1Click
+    end
+  end
+  object PopupMenu2: TPopupMenu
+    Left = 145
+    Top = 145
+    object MenuItem2: TMenuItem
+      Caption = 'Одна грамм. форма'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Анализ всех форм'
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Удалить строку'
+      OnClick = MenuItem4Click
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Очистить запрос'
+      OnClick = MenuItem5Click
+    end
+  end
+end

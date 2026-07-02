@@ -1,0 +1,468 @@
+object tema: Ttema
+  Left = 376
+  Height = 773
+  Top = 163
+  Width = 1394
+  BorderStyle = bsSingle
+  BorderWidth = 2
+  Caption = 'Поиск в словарных статьях'
+  ClientHeight = 773
+  ClientWidth = 1394
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object GroupBox1: TGroupBox
+    Left = 1098
+    Height = 398
+    Top = 388
+    Width = 649
+    Caption = 'GroupBox1'
+    ClientHeight = 343
+    ClientWidth = 645
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -37
+    Font.Name = '@Arial Unicode MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+    object ListBox1: TListBox
+      Left = 0
+      Height = 257
+      Top = 0
+      Width = 32
+      Align = alLeft
+      Color = clWhite
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -23
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ItemHeight = 0
+      MultiSelect = True
+      ParentFont = False
+      TabOrder = 0
+      Visible = False
+      OnClick = ListBox1Click
+      OnDblClick = ListBox1DblClick
+    end
+    object ListBox3: TListBox
+      Left = 64
+      Height = 257
+      Top = 0
+      Width = 32
+      Align = alLeft
+      Color = clWhite
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -23
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ItemHeight = 0
+      MultiSelect = True
+      ParentFont = False
+      TabOrder = 1
+      Visible = False
+      OnClick = ListBox1Click
+      OnDblClick = ListBox3DblClick
+    end
+    object ListBox2: TListBox
+      Left = 32
+      Height = 257
+      Top = 0
+      Width = 32
+      Align = alLeft
+      Color = clWhite
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -23
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ItemHeight = 0
+      MultiSelect = True
+      ParentFont = False
+      TabOrder = 2
+      Visible = False
+      OnClick = ListBox1Click
+      OnDblClick = ListBox2DblClick
+    end
+    object ComboBox3: TComboBox
+      Left = 14
+      Height = 58
+      Top = 271
+      Width = 617
+      Align = alBottom
+      BorderSpacing.Around = 14
+      ItemHeight = 50
+      ItemIndex = 0
+      Items.Strings = (
+        'All Words of the List'
+        'Any Words of the List'
+      )
+      Style = csDropDownList
+      TabOrder = 3
+      Text = 'All Words of the List'
+    end
+    object CheckListBox1: TCheckListBox
+      Left = 96
+      Height = 257
+      Top = 0
+      Width = 129
+      Align = alLeft
+      Items.Strings = (
+        'Whole Words'
+        'Use "NOT List"'
+        'Use "AND List"'
+        'Use "OR  List"'
+        'Case Sensitive'
+      )
+      ItemHeight = 50
+      ParentColor = True
+      TabOrder = 4
+      Visible = False
+      OnClick = CheckListBox1Click
+      OnClickCheck = CheckListBox1ClickCheck
+      Data = {
+        050000000001010100
+      }
+    end
+  end
+  object Panel3: TPanel
+    Left = 2
+    Height = 769
+    Top = 2
+    Width = 1390
+    Align = alClient
+    Alignment = taLeftJustify
+    ClientHeight = 769
+    ClientWidth = 1390
+    ParentBackground = False
+    TabOrder = 1
+    object StringGrid1: TStringGrid
+      Left = 1
+      Height = 767
+      Top = 1
+      Width = 930
+      Align = alClient
+      AutoAdvance = aaDown
+      AutoFillColumns = True
+      CellHintPriority = chpAll
+      ColCount = 3
+      ColumnClickSorts = True
+      Columns = <      
+        item
+          Title.Caption = 'Не должно быть в переводе'
+          Width = 310
+        end      
+        item
+          Title.Caption = 'Должны быть в переводе'
+          Width = 310
+        end      
+        item
+          Title.Caption = 'Могут быть в переводе'
+          Width = 309
+        end>
+      FixedCols = 0
+      Flat = True
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goEditing, goAutoAddRows, goAlwaysShowEditor, goThumbTracking, goDblClickAutoSize, goSmoothScroll, goCellHints]
+      PopupMenu = PopupMenu1
+      RowCount = 2
+      TabOrder = 0
+      OnClick = StringGrid1Click
+      OnContextPopup = StringGrid1ContextPopup
+      OnEditingDone = StringGrid1EditingDone
+      ColWidths = (
+        310
+        310
+        309
+      )
+      Cells = (
+        1
+        0
+        0
+        'Не должно быть в переводе'
+      )
+    end
+    object GroupBox2: TGroupBox
+      Left = 937
+      Height = 767
+      Top = 1
+      Width = 452
+      Align = alRight
+      BorderSpacing.Left = 6
+      Caption = 'Поиск'
+      ClientHeight = 731
+      ClientWidth = 448
+      ParentBackground = False
+      TabOrder = 1
+      object ComboBox1: TComboBox
+        Left = 0
+        Height = 39
+        Top = 147
+        Width = 448
+        Align = alTop
+        BorderSpacing.Bottom = 13
+        ItemHeight = 31
+        ItemIndex = 0
+        Items.Strings = (
+          'С Санскрита'
+          'На Санскрит'
+        )
+        Style = csDropDownList
+        TabOrder = 0
+        Text = 'С Санскрита'
+        OnChange = ComboBox1Change
+      end
+      object Label1: TLabel
+        Left = 6
+        Height = 31
+        Top = 116
+        Width = 436
+        Align = alTop
+        BorderSpacing.Left = 6
+        BorderSpacing.Right = 6
+        Caption = 'Искать в переводах :'
+      end
+      object CheckBox1: TCheckBox
+        Left = 6
+        Height = 35
+        Top = 236
+        Width = 442
+        Align = alTop
+        BorderSpacing.Left = 6
+        Caption = 'Включить список  "NOT"'
+        Checked = True
+        State = cbChecked
+        TabOrder = 1
+        OnChange = CheckBox1Change
+      end
+      object CheckBox2: TCheckBox
+        Left = 6
+        Height = 35
+        Top = 271
+        Width = 442
+        Align = alTop
+        BorderSpacing.Left = 6
+        Caption = 'Включить список  "AND"'
+        Checked = True
+        State = cbChecked
+        TabOrder = 2
+        OnChange = CheckBox2Change
+      end
+      object CheckBox3: TCheckBox
+        Left = 6
+        Height = 35
+        Top = 306
+        Width = 442
+        Align = alTop
+        BorderSpacing.Left = 6
+        Caption = 'Включить список  "OR"'
+        Checked = True
+        State = cbChecked
+        TabOrder = 3
+        OnChange = CheckBox3Change
+      end
+      object Label2: TLabel
+        Left = 6
+        Height = 31
+        Top = 199
+        Width = 436
+        Align = alTop
+        BorderSpacing.Left = 6
+        BorderSpacing.Right = 6
+        BorderSpacing.Bottom = 6
+        Caption = 'Списки:'
+      end
+      object Label3: TLabel
+        Left = 6
+        Height = 31
+        Top = 354
+        Width = 442
+        Align = alTop
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 13
+        BorderSpacing.Bottom = 6
+        Caption = 'Прочее:'
+      end
+      object CheckBox4: TCheckBox
+        Left = 6
+        Height = 35
+        Top = 461
+        Width = 442
+        Align = alTop
+        BorderSpacing.Left = 6
+        BorderSpacing.Bottom = 45
+        Caption = 'Конвертировать в IAST'#13#10'при вводе'
+        TabOrder = 4
+      end
+      object CheckBox5: TCheckBox
+        Left = 6
+        Height = 35
+        Top = 426
+        Width = 442
+        Align = alTop
+        BorderSpacing.Left = 6
+        Caption = 'Искать слова целиком'
+        TabOrder = 5
+        OnChange = CheckBox5Change
+      end
+      object CheckBox6: TCheckBox
+        Left = 6
+        Height = 35
+        Top = 391
+        Width = 442
+        Align = alTop
+        BorderSpacing.Left = 6
+        Caption = 'Учитывать регистр'
+        TabOrder = 6
+        OnChange = CheckBox6Change
+      end
+      object ProgressBar1: TProgressBar
+        Left = 20
+        Height = 10
+        Top = 55
+        Width = 408
+        Align = alTop
+        BorderSpacing.Left = 6
+        BorderSpacing.Right = 6
+        BorderSpacing.Around = 14
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Height = -18
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        Step = 20
+        TabOrder = 7
+      end
+      object SpeedButton8: TSpeedButton
+        Left = 6
+        Height = 41
+        Top = 0
+        Width = 436
+        Align = alTop
+        AutoSize = True
+        BorderSpacing.Left = 6
+        BorderSpacing.Right = 6
+        Caption = ' Найти '
+        OnClick = SpeedButton8Click
+      end
+      object Label4: TLabel
+        Left = 6
+        Height = 31
+        Top = 79
+        Width = 436
+        Align = alTop
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 13
+        BorderSpacing.Right = 6
+        BorderSpacing.Bottom = 6
+        Caption = 'Параметры поиска'
+      end
+      object Button10: TButton
+        Left = 6
+        Height = 41
+        Top = 653
+        Width = 429
+        Align = alTop
+        AutoSize = True
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 15
+        BorderSpacing.Right = 13
+        Caption = 'Примеры запросов'
+        TabOrder = 8
+        OnClick = Button10Click
+      end
+      object Button7: TButton
+        Left = 6
+        Height = 41
+        Top = 541
+        Width = 429
+        Align = alTop
+        AutoSize = True
+        BorderSpacing.Left = 6
+        BorderSpacing.Right = 13
+        Caption = 'Открыть запрос'
+        TabOrder = 9
+        OnClick = Button7Click
+      end
+      object Button9: TButton
+        Left = 6
+        Height = 41
+        Top = 597
+        Width = 429
+        Align = alTop
+        AutoSize = True
+        BorderSpacing.Left = 6
+        BorderSpacing.Top = 15
+        BorderSpacing.Right = 13
+        Caption = 'Сохранить запрос'
+        TabOrder = 10
+        OnClick = Button9Click
+      end
+    end
+    object Memo1: TMemo
+      Left = 62
+      Height = 158
+      Top = 176
+      Width = 262
+      TabOrder = 2
+      Visible = False
+      WordWrap = False
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Thematic Requests files|*.rqs'
+    InitialDir = 'Requests'
+    Left = 775
+    Top = 393
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Thematic Requests Files|*.rqs'
+    InitialDir = 'Requests'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 703
+    Top = 289
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 104
+    Top = 152
+    object MenuItem5: TMenuItem
+      Caption = 'Скопировать столбец'
+      OnClick = MenuItem5Click
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Вставить столбец'
+      OnClick = MenuItem7Click
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Удалить элемент'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Очистить столбец'
+      OnClick = MenuItem4Click
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Очистить всё'
+      OnClick = MenuItem1Click
+    end
+  end
+end

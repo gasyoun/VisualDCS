@@ -1,0 +1,191 @@
+object WT1: TWT1
+  Left = 70
+  Height = 715
+  Top = 13
+  Width = 981
+  BorderWidth = 3
+  Caption = 'Использование леммы'
+  ClientHeight = 715
+  ClientWidth = 981
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -18
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnCreate = FormCreate
+  OnResize = FormResize
+  object Panel2: TPanel
+    Left = 3
+    Height = 58
+    Top = 654
+    Width = 975
+    Align = alBottom
+    ClientHeight = 58
+    ClientWidth = 975
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = 18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    object Button1: TButton
+      Left = 640
+      Height = 42
+      Top = 8
+      Width = 89
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Right = 8
+      BorderSpacing.Around = 7
+      Caption = 'Сохранить'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 744
+      Height = 42
+      Top = 8
+      Width = 215
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Right = 8
+      BorderSpacing.Around = 7
+      Caption = 'Таблица частотности лемм DCS'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+  end
+  object Panel3: TPanel
+    Left = 3
+    Height = 651
+    Top = 3
+    Width = 975
+    Align = alClient
+    ClientHeight = 651
+    ClientWidth = 975
+    ParentBackground = False
+    TabOrder = 1
+    object StringGrid1: TStringGrid
+      Left = 420
+      Height = 649
+      Top = 1
+      Width = 554
+      Align = alClient
+      ColCount = 3
+      ColumnClickSorts = True
+      Columns = <      
+        item
+          Font.CharSet = RUSSIAN_CHARSET
+          Font.Height = -23
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -23
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Текст'
+          Width = 258
+        end      
+        item
+          Font.CharSet = RUSSIAN_CHARSET
+          Font.Height = -23
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -23
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.MultiLine = True
+          Title.Caption = 'Датировка'
+          Width = 129
+        end      
+        item
+          Font.CharSet = RUSSIAN_CHARSET
+          Font.Height = -23
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -23
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Частота'
+          Width = 110
+        end>
+      FixedCols = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goSmoothScroll, goRowHighlight]
+      TabOrder = 0
+      TitleFont.CharSet = RUSSIAN_CHARSET
+      TitleFont.Color = clBlack
+      TitleFont.Height = -23
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      OnDblClick = StringGrid1DblClick
+    end
+    object StringGrid2: TStringGrid
+      Left = 10
+      Height = 174
+      Top = 10
+      Width = 350
+      ColCount = 20
+      FixedCols = 0
+      RowCount = 53933
+      TabOrder = 1
+      Visible = False
+    end
+    object StringGrid4: TStringGrid
+      Left = 1
+      Height = 649
+      Top = 1
+      Width = 419
+      Align = alLeft
+      ColCount = 2
+      ColumnClickSorts = True
+      FixedCols = 0
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -23
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      RowCount = 11
+      TabOrder = 2
+      ColWidths = (
+        251
+        147
+      )
+      Cells = (
+        2
+        0
+        0
+        'Период'
+        1
+        0
+        'Количество'
+      )
+    end
+  end
+  object StringGrid3: TStringGrid
+    Left = 31
+    Height = 174
+    Top = 248
+    Width = 350
+    ColCount = 488
+    FixedCols = 0
+    RowCount = 22751
+    TabOrder = 2
+    Visible = False
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Text Files|*.txt'
+    InitialDir = 'Reports'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 41
+    Top = 31
+  end
+end

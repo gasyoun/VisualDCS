@@ -1,0 +1,393 @@
+object Form7: TForm7
+  Left = 1993
+  Height = 641
+  Top = 278
+  Width = 582
+  BorderWidth = 3
+  Caption = 'Подбор лексического материала'
+  ClientHeight = 641
+  ClientWidth = 582
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
+  object Panel1: TPanel
+    Left = 3
+    Height = 47
+    Top = 591
+    Width = 576
+    Align = alBottom
+    ClientHeight = 47
+    ClientWidth = 576
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    object Button1: TButton
+      Left = 38
+      Height = 42
+      Hint = 'Определение общей для выбранных текстов или периодов лексики'
+      Top = 2
+      Width = 255
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Top = 1
+      BorderSpacing.Right = 15
+      BorderSpacing.Bottom = 2
+      Caption = 'Пересечение лексики'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 308
+      Height = 42
+      Hint = 'Определить совокупный объем лексики для выбранных текстов или периодов.'
+      Top = 2
+      Width = 260
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Top = 1
+      BorderSpacing.Right = 7
+      BorderSpacing.Bottom = 2
+      Caption = 'Объединение лексики'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+  end
+  object CheckListBox1: TCheckListBox
+    Left = 3
+    Height = 545
+    Hint = 'Выберите тексты или периоды для работы с их леммами'
+    Top = 3
+    Width = 576
+    Align = alClient
+    Columns = 1
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Items.Strings = (
+      'All Dictionaries'
+      'Vedic Language'
+      'Epic Language'
+      'Classic Language'
+      'Before -800 years'
+      '-800_-300 years'
+      '-300_200  years'
+      '200_700   years'
+      '700_1200  years'
+      '1200_1700 years'
+      '1700_1956 years'
+      'Abhidhānacintāmaṇi'
+      'Abhidharmakośa'
+      'Abhidharmakośabhāṣya'
+      'Abhinavacintāmaṇi'
+      'Acintyastava'
+      'Agastīyaratnaparīkṣā'
+      'Agnipurāṇa'
+      'Aitareyabrāhmaṇa'
+      'Aitareyopaniṣad'
+      'Amarakośa'
+      'Amaraughaśāsana'
+      'Amaruśataka'
+      'Amṛtabindūpaniṣat'
+      'Ānandakanda'
+      'Āpastambagṛhyasūtra'
+      'Āpastambaśrautasūtra'
+      'Arthaśāstra'
+      'Āryāsaptaśatī'
+      'Aṣṭādhyāyī'
+      'Aṣṭāṅgahṛdayasaṃhitā'
+      'Aṣṭāṅganighaṇṭu'
+      'Aṣṭāṅgasaṃgraha'
+      'Aṣṭasāhasrikā'
+      'Aṣṭāvakragīta'
+      'Āśvalāyanagṛhyasūtra'
+      'Atharvaprāyaścittāni'
+      'Atharvaveda Śaunaka)'
+      'Atharvavedapariśiṣṭa'
+      'Avadānaśataka'
+      'Āyurvedadīpikā'
+      'Ayurvedarasāyana'
+      'Baudhāyanadharmasūtra'
+      'Baudhāyanagṛhyasūtra'
+      'Baudhāyanaśrautasūtra'
+      'Bhadrabāhucarita'
+      'Bhāgavatapurāṇa'
+      'Bhairavastava'
+      'Bhallaṭaśataka'
+      'Bhāradvājagṛhyasūtra'
+      'Bhāratamañjarī'
+      'Bhāvaprakāśa'
+      'Bhramarāṣṭaka'
+      'Bījanighaṇṭu'
+      'Bodhicaryāvatāra'
+      'Brahmabindūpaniṣat'
+      'Bṛhadāraṇyakopaniṣad'
+      'Bṛhatkathāślokasaṃgraha'
+      'Buddhacarita'
+      'Cakra ?) on Suśr'
+      'Carakasaṃhitā'
+      'Carakatattvapradīpikā'
+      'Caurapañcaśikā'
+      'Chāndogyopaniṣad'
+      'Comm. on the Kāvyālaṃkāravṛtti'
+      'Commentary on Amaraughaśāsana'
+      'Commentary on the Kādambarīsvīkaraṇasūtramañjarī'
+      'Daśakumāracarita'
+      'Devīkālottarāgama'
+      'Devīmāhātmya'
+      'Dhanurveda'
+      'Dhanvantarinighaṇṭu'
+      'Divyāvadāna'
+      'Gaṇakārikā'
+      'Garbhopaniṣat'
+      'Garuḍapurāṇa'
+      'Gautamadharmasūtra'
+      'Gheraṇḍasaṃhitā'
+      'Gītagovinda'
+      'Gobhilagṛhyasūtra'
+      'Gokarṇapurāṇasāraḥ'
+      'Gopathabrāhmaṇa NEW'
+      'Gorakṣaśataka'
+      'Gṛhastharatnākara'
+      'Gūḍhārthadīpikā'
+      'Haṃsadūta'
+      'Haṃsasaṃdeśa'
+      'Hārāṇacandara on Suśr'
+      'Haribhaktivilāsa'
+      'Harṣacarita'
+      'Haṭhayogapradīpikā'
+      'Hiraṇyakeśigṛhyasūtra'
+      'Hitopadeśa'
+      'Indu ad AHS)'
+      'Jaiminigṛhyasūtra'
+      'Jaiminīyabrāhmaṇa'
+      'Janmamaraṇavicāra'
+      'Kādambarīsvīkaraṇasūtramañjarī'
+      'Kaiyadevanighaṇṭu'
+      'Kālikāpurāṇa'
+      'Kāmasūtra'
+      'Kāśikāvṛtti'
+      'Kāṭhakagṛhyasūtra'
+      'Kathāsaritsāgara'
+      'Kaṭhopaniṣad'
+      'Kātyāyanasmṛti'
+      'Kātyāyanaśrautasūtra'
+      'Kauśikasūtra'
+      'Kauśikasūtradārilabhāṣya'
+      'Kauṣītakyupaniṣad'
+      'Kāvyādarśa'
+      'Kāvyālaṃkāra'
+      'Kāvyālaṃkāravṛtti'
+      'Khādiragṛhyasūtra'
+      'Khādiragṛhyasūtrarudraskandavyākhyā'
+      'Kirātārjunīya'
+      'Kokilasaṃdeśa'
+      'Kṛṣiparāśara'
+      'Kṛṣṇāmṛtamahārṇava'
+      'Kumārasaṃbhava'
+      'Kūrmapurāṇa'
+      'Lalitavistara'
+      'Laṅkāvatārasūtra'
+      'Liṅgapurāṇa'
+      'Madanapālanighaṇṭu'
+      'Mahābhārata'
+      'Mahācīnatantra'
+      'Maitrāyaṇīsaṃhitā'
+      'Mānavagṛhyasūtra'
+      'Maṇimāhātmya'
+      'Manusmṛti'
+      'Mātṛkābhedatantra'
+      'Matsyapurāṇa'
+      'Meghadūta'
+      'Mṛgendratantra'
+      'Mṛgendraṭīkā'
+      'Mugdhāvabodhinī'
+      'Mukundamālā'
+      'Mūlamadhyamakārikāḥ'
+      'Muṇḍakopaniṣad'
+      'Nādabindūpaniṣat'
+      'Nāḍīparīkṣā'
+      'Nāradasmṛti'
+      'Narasiṃhapurāṇa'
+      'Narmamālā'
+      'Nāṭyaśāstra'
+      'Nāṭyaśāstravivṛti'
+      'Nibandhasaṃgraha'
+      'Nighaṇṭuśeṣa'
+      'Nirukta'
+      'Nyāyabhāṣya'
+      'Nyāyabindu'
+      'Nyāyasūtra'
+      'Padārthacandrikā'
+      'Pañcārthabhāṣya'
+      'Pañcaviṃśabrāhmaṇa'
+      'Paramānandīyanāmamālā'
+      'Parāśaradharmasaṃhitā'
+      'Parāśarasmṛtiṭīkā'
+      'Pāraskaragṛhyasūtra'
+      'Paraśurāmakalpasūtra'
+      'Pāśupatasūtra'
+      'Prasannapadā'
+      'Rājamārtaṇḍa'
+      'Rājanighaṇṭu'
+      'Rāmāyaṇa'
+      'Rasādhyāya'
+      'Rasādhyāyaṭīkā'
+      'Rasahṛdayatantra'
+      'Rasakāmadhenu'
+      'Rasamañjarī'
+      'Rasaprakāśasudhākara'
+      'Rasaratnākara'
+      'Rasaratnasamuccaya'
+      'Rasaratnasamuccayabodhinī'
+      'Rasaratnasamuccayadīpikā'
+      'Rasaratnasamuccayaṭīkā'
+      'Rasārṇava'
+      'Rasārṇavakalpa'
+      'Rasasaṃketakalikā'
+      'Rasataraṅgiṇī'
+      'Rasendracintāmaṇi'
+      'Rasendracūḍāmaṇi'
+      'Rasendrasārasaṃgraha'
+      'Rasikapriyā'
+      'Rasikasaṃjīvanī'
+      'Ratnadīpikā'
+      'Ratnaṭīkā'
+      'Ṛgveda'
+      'Ṛgvedakhilāni'
+      'Ṛgvedavedāṅgajyotiṣa'
+      'Ṛtusaṃhāra'
+      'Śāktavijñāna'
+      'Sāṃkhyakārikā'
+      'Sāṃkhyakārikābhāṣya'
+      'Sāṃkhyatattvakaumudī'
+      'Saṃvitsiddhi'
+      'Saṅghabhedavastu'
+      'Śāṅkhāyanagṛhyasūtra'
+      'Śāṅkhāyanāraṇyaka'
+      'Śārṅgadharasaṃhitā'
+      'Śārṅgadharasaṃhitādīpikā'
+      'Sarvadarśanasaṃgraha'
+      'Sarvāṅgasundarā'
+      'Śatakatraya'
+      'Śatapathabrāhmaṇa'
+      'Sātvatatantra'
+      'Saundarānanda'
+      'Śikṣāsamuccaya'
+      'Śira\upaniṣad'
+      'Śivapurāṇa'
+      'Śivasūtra'
+      'Śivasūtravārtika'
+      'Skandapurāṇa'
+      'Skandapurāṇa Revākhaṇḍa)'
+      'Smaradīpikā'
+      'Spandakārikā'
+      'Spandakārikānirṇaya'
+      'Sphuṭārthāvyākhyā'
+      'Śukasaptati'
+      'Sūryaśataka'
+      'Sūryaśatakaṭīkā'
+      'Sūryasiddhānta'
+      'Suśrutasaṃhitā'
+      'Śvetāśvataropaniṣad'
+      'Śyainikaśāstra'
+      'Taittirīyasaṃhitā'
+      'Taittirīyopaniṣad'
+      'Tantrākhyāyikā'
+      'Tantrāloka'
+      'Tantrasāra'
+      'Tarkasaṃgraha'
+      'Tattvavaiśāradī'
+      'Ṭikanikayātrā'
+      'Toḍalatantra'
+      'Trikāṇḍaśeṣa'
+      'Uḍḍāmareśvaratantra'
+      'Vaikhānasadharmasūtra'
+      'Vaikhānasagṛhyasūtra'
+      'Vaiśeṣikasūtra'
+      'Vaiśeṣikasūtravṛtti'
+      'Vārāhagṛhyasūtra'
+      'Varāhapurāṇa'
+      'Vātūlanāthasūtras'
+      'Vātūlanāthasūtravṛtti'
+      'Vetālapañcaviṃśatikā'
+      'Viṃśatikākārikā'
+      'Viṃśatikāvṛtti'
+      'Viṣṇupurāṇa'
+      'Viṣṇusmṛti'
+      'Vṛddhayamasmṛti'
+      'Yājñavalkyasmṛti'
+      'Yogaratnākara'
+      'Yogasūtra'
+      'Yogasūtrabhāṣya'
+    )
+    ItemHeight = 31
+    ParentFont = False
+    PopupMenu = PopupMenu1
+    TabOrder = 1
+    OnClick = CheckListBox1Click
+    OnClickCheck = CheckListBox1ClickCheck
+    OnDblClick = CheckListBox1DblClick
+    Data = {
+      FF00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000
+    }
+  end
+  object StatusBar1: TStatusBar
+    Left = 3
+    Height = 43
+    Top = 548
+    Width = 576
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Panels = <    
+      item
+        Text = 'Всего выбрано:'
+        Width = 155
+      end    
+      item
+        Width = 97
+      end>
+    ParentFont = False
+    SimplePanel = False
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 62
+    Top = 83
+    object MenuItem3: TMenuItem
+      Caption = 'Выделить только тексты DCS'
+      OnClick = MenuItem3Click
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem2Click
+    end
+  end
+end

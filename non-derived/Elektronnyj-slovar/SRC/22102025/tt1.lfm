@@ -1,0 +1,93 @@
+object tt: Ttt
+  Left = 303
+  Height = 487
+  Top = 114
+  Width = 813
+  BorderStyle = bsDialog
+  BorderWidth = 3
+  Caption = 'Таблица транслитерации'
+  ClientHeight = 487
+  ClientWidth = 813
+  Color = clSilver
+  DesignTimePPI = 130
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  FormStyle = fsStayOnTop
+  Position = poScreenCenter
+  LCLVersion = '2.2.0.4'
+  object StringGrid1: TStringGrid
+    Left = 6
+    Height = 441
+    Top = 6
+    Width = 801
+    Align = alClient
+    BorderSpacing.Around = 3
+    ColCount = 7
+    Columns = <    
+      item
+        Alignment = taCenter
+        MinSize = 11
+        MaxSize = 217
+        ReadOnly = True
+        Title.Alignment = taCenter
+        Title.Caption = 'देवनागरी'
+        Width = 130
+      end    
+      item
+        Alignment = taCenter
+        MinSize = 11
+        MaxSize = 217
+        Title.Caption = 'IAST'
+        Width = 130
+      end    
+      item
+        Alignment = taCenter
+        MinSize = 11
+        MaxSize = 217
+        Title.Caption = 'ITRANS 2'
+        Width = 130
+      end    
+      item
+        MinSize = 11
+        MaxSize = 217
+        Title.Alignment = taCenter
+        Title.Caption = 'ITRANS 3'
+      end    
+      item
+        MinSize = 11
+        MaxSize = 217
+        Title.Alignment = taCenter
+        Title.Caption = 'RUS'
+      end    
+      item
+        Title.Caption = 'SLP 1'
+      end    
+      item
+        Title.Caption = 'HK'
+      end>
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goSmoothScroll, goRowHighlight]
+    RowCount = 66
+    ScrollBars = ssVertical
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 3
+    Height = 34
+    Top = 450
+    Width = 807
+    Align = alBottom
+    Caption = 'HTML'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Memo1: TMemo
+    Left = 269
+    Height = 122
+    Top = 173
+    Width = 204
+    TabOrder = 2
+    Visible = False
+  end
+end

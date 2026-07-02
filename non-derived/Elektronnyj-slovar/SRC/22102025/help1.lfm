@@ -1,0 +1,255 @@
+object hlp: Thlp
+  Left = 298
+  Height = 713
+  Top = 0
+  Width = 1061
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  BorderWidth = 2
+  Caption = 'О Программе'
+  ClientHeight = 713
+  ClientWidth = 1061
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clBlack
+  Font.Height = -23
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  FormStyle = fsStayOnTop
+  Position = poScreenCenter
+  ShowHint = True
+  ShowInTaskBar = stAlways
+  LCLVersion = '3.0.0.1'
+  object Label1: TLabel
+    Left = 2
+    Height = 32
+    Top = 29
+    Width = 1057
+    Align = alTop
+    AutoSize = False
+    Caption = 'Основные возможности:'
+    Color = clWhite
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -18
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    WordWrap = True
+  end
+  object Label3: TLabel
+    Cursor = crHandPoint
+    Left = 2
+    Height = 35
+    Top = 541
+    Width = 1057
+    Align = alTop
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'Адрес для отзывов предложений и вопросов: iymagic@yandex.ru'
+    Color = clWhite
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlue
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsUnderline]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    OnClick = Label3Click
+  end
+  object Label4: TLabel
+    Cursor = crNone
+    Left = 2
+    Height = 27
+    Top = 2
+    Width = 1057
+    Align = alTop
+    Caption = 'सौदामनी - Saudāmanī. Electronic Sanskrit dictionary v6.x BETA FREE '
+    Color = clWhite
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    WordWrap = True
+    OnClick = Label2Click
+  end
+  object Label5: TLabel
+    Cursor = crNone
+    Left = 2
+    Height = 32
+    Top = 285
+    Width = 1057
+    Align = alTop
+    AutoSize = False
+    Caption = 'Источники'
+    Color = clWhite
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -18
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    OnClick = Label2Click
+  end
+  object Button1: TButton
+    Left = 982
+    Height = 26
+    Top = 668
+    Width = 70
+    Anchors = [akRight, akBottom]
+    Caption = 'OK'
+    Color = clWhite
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Memo1: TMemo
+    Left = 2
+    Height = 224
+    Top = 61
+    Width = 1057
+    Align = alTop
+    Color = clWhite
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'ИСПОЛЬЗУЕМЫЕ СЛОВАРИ:'
+      '    • Monier-Williams, Monier: A Sanskrit-English Dictionary. London : 1899'
+      '    • Apte, Vaman Shivaram: The Practical Sanskrit-English Dictionary. Poona : 1890'
+      '    • Н.Н. Wilson, A Dictionary in Sanskrit and English, 2nd ed., Calcutta 1832'
+      '    • Böhtlingk und Roth: Großes Petersburger Wörterbuch 1907'
+      '    • Macdonell, Arthur Anthony: A Sanskrit-English Dictionary. London : 1893'
+      '    • Dictionary of the Digital Corpus of Sanskrit. Dusseldorf 2021'
+      '    • Benfey, Theodor: A Sanskrit-English Dictionary. London : 1866'
+      '    • Cappeller, Carl: A Sanskrit-English Dictionary, based upon the St. Petersburg Lexicons. Strassburg : 1891'
+      '    • Mani, Vettam: Puranic Encyclopaedia. Delhi 1975'
+      '    • Rādhākāntadeva: Śabdakalpadruma (5 Vol). Third edition, reprint of the 1886 edition. Varanasi : 1967'
+      '    • Bhaṭṭācārya: Vācaspatyam (6 Vol). Chaukhamba Sanskrit Series 94, reprint of the 1873-1884 edition. Varanasi : 1962'
+      '    • Электронный словарь к монографии: "В.И. Тихвинский, Ю.М. Густяков, संस्कृतं, Совершенство(Санскрит), интернет-издание, издание 4-е исправленное и дополненное, 14-07-2023"'
+      '    • САНСКРИТСКО-РУССКИЙ УЧЕБНЫЙ СЛОВАРЬ. Около  6000 слов. Составитель Н.П. Лихушина. Версия 10.1 от 30.01.2020'
+      '    • В.А. Кочергина. Санскритско-Русский учебный словарь. 1500 слов.'
+      '    • Borooah, Anundoram: English-Sanskrit Dictionary. Guwahati, Assam : 1971 (= Calcutta : 1877)’;'
+      '    • Monier-Williams, Monier: A Dictionary. English and Sanskrit. Delhi : 2005 (= London : 1851)'
+      '    • Apte, Vaman Shivram: The Student»s English-Sanskrit Dictionary. Delhi : 1964'
+      '    • '
+      ''
+      'ЛЕММЫ И СЛОВАНЫЕ СТАТЬИ'
+      '    • Санскритский словник:  272 157 лемм, словарных статей : 771 293'
+      '    • Английский словник: 69 990, словарных статей: 69990'
+      ''
+      'ОСНОВНЫЕ ХАРАКТЕРИСТИКИ'
+      '    • Быстрый поиск леммы с учетом разнообразных фильтров;'
+      '    • Поиск списка лемм по заданной тематике; '
+      '    • Обработка больших массивов данных; '
+      '    • Сохранение данных в удобном для дальнейшей обработки формате; '
+      '    • Грамматические таблицы; '
+      '    • Симулятор чтения; '
+      '    • Мощный транслитератор; '
+      '    • Работа с данными Цифрового корпуса Санскрита О.Хельвига;'
+      '    • Дополнительные справочники;'
+      '    • Дополнительные функции для научной работы: '
+      '    • Исследование лексических частотных ядер;'
+      '    • Исследование сочетаемости лексических единиц;'
+      '    • Работа с текстами Цифрового корпуса Санскрита и их анализ;'
+      '    • Анализ параллелей в текстах корпуса;'
+      '    • Дополнительная авторская аналитика.'
+      '      '
+      '...'
+    )
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 1
+  end
+  object Memo2: TMemo
+    Left = 2
+    Height = 224
+    Top = 317
+    Width = 1057
+    Align = alTop
+    Color = clWhite
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'Программа использует некоммерческие источники'
+      ''
+      'Digital Corpus of Sanskrit (Dusseldorf. Germany)'
+      'http://www.sanskrit-linguistics.org/dcs/'
+      ''
+      'Georg August University. Gettingen. Germany.'
+      'https://www.uni-goettingen.de/'
+      ''
+      'Münchener DigitalisierungsZentrum'
+      'https://www.digitale-sammlungen.de'
+      ''
+      'The Sanskrit Grammarian Version 3.28 [2021-01-16] (French)'
+      'https://sanskrit.inria.fr/DICO/grammar.html'
+      ''
+      'В.И. Тихвинский  Ю.М. Густяков  "संस्कृतं СОВЕРШЕНСТВО(САНСКРИТ)", издание 4-е, исправленное и дополненное, 2019'
+      'https://yadi.sk/i/x1GtMNZ9Jy2Kbg'
+      ''
+      'В.И. Тихвинский  Ю.М. Густяков  "Электронная таблица склонений, спряжений и наклонений, к монографии о санскрите"'
+      'https://yadi.sk/d/yYYTb9WCiXuRKw'
+      ''
+      'С.С. Тавастшерна, «Времена и наклонения в санскрите» С.2003'
+      'Г.Бюлер. «Руководство к элементарному курсу санскритского языка» перевод под редакцией профессора Ф.И. Щербатского Стокгольм 1923'
+      'Кочергина В.А. «Учебник санскрита» М.1956'
+      'А.А. Зализняк «Грамматический очерк санскрита» М.1976'
+      ''
+      'В.А. Кочергина. Санскритско-Русский учебный словарь.'
+      ''
+      'Н.П. Лихушина  "САНСКРИТСКО-РУССКИЙ СЛОВАРЬ"'
+      ' http://galenel.info/sanskrit/Three-manual-vocabulary.pdf'
+    )
+    OnChange = Memo2Change
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 2
+  end
+  object Label2: TLabel
+    Left = 8
+    Height = 93
+    Top = 576
+    Width = 1051
+    Align = alTop
+    BorderSpacing.Left = 6
+    Caption = '© 2019-2024'#13#10'Viktor Kochergin (Ideas and design), '#13#10'Vladimir Leonchenko (Ideas and programming)'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+end

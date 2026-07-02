@@ -1,0 +1,123 @@
+object Form4: TForm4
+  Left = 245
+  Height = 1000
+  Top = 5
+  Width = 539
+  BorderWidth = 3
+  Caption = 'Синонимы, гиперонимы, семемы'
+  ClientHeight = 1000
+  ClientWidth = 539
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnCreate = FormCreate
+  object StringGrid1: TStringGrid
+    Left = 455
+    Height = 174
+    Top = 52
+    Width = 350
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+    RowCount = 0
+    TabOrder = 0
+    Visible = False
+  end
+  object Panel2: TPanel
+    Left = 520
+    Height = 994
+    Top = 3
+    Width = 16
+    Align = alClient
+    ParentBackground = False
+    TabOrder = 1
+  end
+  object Panel3: TPanel
+    Left = 3
+    Height = 994
+    Top = 3
+    Width = 517
+    Align = alLeft
+    ClientHeight = 994
+    ClientWidth = 517
+    ParentBackground = False
+    TabOrder = 2
+    object Edit1: TEdit
+      Left = 4
+      Height = 39
+      Top = 4
+      Width = 509
+      Align = alTop
+      AutoSelect = False
+      BorderSpacing.Around = 3
+      Color = clWhite
+      TabOrder = 0
+      TextHint = 'Введите лемму  (IAST/HK/ITRANS)'
+      OnChange = Edit1Change
+    end
+    object StringGrid2: TStringGrid
+      Left = 4
+      Height = 398
+      Hint = 'Single MouseClick for getting short definitions;'#13#10'DblMouseClick for getting synonyms.'
+      Top = 46
+      Width = 509
+      Align = alClient
+      BorderSpacing.Around = 3
+      Color = clWhite
+      ColCount = 2
+      Columns = <      
+        item
+          Title.Caption = 'Title'
+          Visible = False
+        end      
+        item
+          Title.Caption = 'Лемма'
+          Width = 485
+        end>
+      FixedCols = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      TitleFont.CharSet = RUSSIAN_CHARSET
+      TitleFont.Color = clBlack
+      TitleFont.Height = -23
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      OnClick = StringGrid2Click
+      OnDblClick = StringGrid2DblClick
+    end
+    object StatusBar1: TStatusBar
+      Left = 1
+      Height = 43
+      Top = 950
+      Width = 515
+      Panels = <      
+        item
+          Text = 'Всего найдено:'
+          Width = 155
+        end      
+        item
+          Width = 103
+        end>
+      SimplePanel = False
+    end
+    object Memo1: TMemo
+      Left = 1
+      Height = 500
+      Top = 450
+      Width = 515
+      Align = alBottom
+      BorderSpacing.Top = 6
+      Color = clWhite
+      ReadOnly = True
+      TabOrder = 3
+    end
+  end
+end

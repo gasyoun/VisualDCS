@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="sdm32.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="17"/>
+        <CursorPos X="25" Y="20"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="poisk.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="1271"/>
+        <CursorPos Y="1288"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="depo1.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="40"/>
+        <CursorPos X="29" Y="52"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="poisk.pas"/>
+        <Caret TopLine="421"/>
+      </Position1>
+      <Position2>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="3189" TopLine="3175"/>
+      </Position2>
+      <Position3>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="1291" Column="2" TopLine="1274"/>
+      </Position3>
+      <Position4>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="3181" Column="19" TopLine="3172"/>
+      </Position4>
+      <Position5>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="692" TopLine="676"/>
+      </Position5>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,170 @@
+object ht: Tht
+  Left = 308
+  Height = 243
+  Top = 132
+  Width = 373
+  BorderStyle = bsDialog
+  BorderWidth = 3
+  Caption = 'Create Online Dictionary'
+  ClientHeight = 243
+  ClientWidth = 373
+  Color = 12615680
+  DesignTimePPI = 120
+  FormStyle = fsStayOnTop
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 3
+    Height = 352
+    Top = 3
+    Width = 394
+    BevelWidth = 2
+    ClientHeight = 352
+    ClientWidth = 394
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 0
+    OnClick = Panel1Click
+    object Label1: TLabel
+      Left = 7
+      Height = 20
+      Top = 7
+      Width = 380
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = 'Prefix (For example: httm://123/) '
+      ParentColor = False
+    end
+    object Edit1: TEdit
+      Left = 7
+      Height = 28
+      Top = 32
+      Width = 380
+      Align = alTop
+      BorderSpacing.Around = 5
+      TabOrder = 0
+      TextHint = 'Enter a prefix (Don''t fill it for local machine)'
+    end
+    object Label2: TLabel
+      Left = 7
+      Height = 20
+      Top = 65
+      Width = 380
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = 'Divide big word''s group by:'
+      ParentColor = False
+    end
+    object Edit2: TEdit
+      Left = 7
+      Height = 28
+      Top = 90
+      Width = 333
+      BorderSpacing.Around = 5
+      TabOrder = 1
+      Text = '100'
+      TextHint = 'Enter a prefix (Don''t fill it for local machine)'
+    end
+    object UpDown1: TUpDown
+      Left = 340
+      Height = 28
+      Top = 90
+      Width = 21
+      Associate = Edit2
+      Max = 2000
+      Min = 1
+      MinRepeatInterval = 25
+      Position = 100
+      TabOrder = 2
+    end
+    object Label3: TLabel
+      Left = 8
+      Height = 20
+      Top = 128
+      Width = 167
+      Caption = 'Select a folder for output'
+      ParentColor = False
+    end
+    object Edit3: TEdit
+      Left = 8
+      Height = 28
+      Top = 152
+      Width = 268
+      TabOrder = 3
+    end
+    object Button1: TButton
+      Left = 284
+      Height = 31
+      Top = 152
+      Width = 94
+      Caption = 'Browse..'
+      OnClick = Button1Click
+      TabOrder = 4
+    end
+    object Button2: TButton
+      Left = 8
+      Height = 31
+      Top = 192
+      Width = 370
+      Caption = 'Create'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -15
+      Font.Name = 'Segoe UI Semibold'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      OnClick = Button2Click
+      ParentFont = False
+      TabOrder = 5
+    end
+    object Memo1: TMemo
+      Left = 104
+      Height = 113
+      Top = 67
+      Width = 188
+      TabOrder = 6
+      Visible = False
+    end
+    object Memo2: TMemo
+      Left = 260
+      Height = 113
+      Top = 135
+      Width = 188
+      Lines.Strings = (
+        'The Dictionary based on:'
+        ''
+        '- Monier-Williams, Monier: A Sanskrit-English Dictionary. London : 1899'
+        '- Apte, Vaman Shivaram: The Practical Sanskrit-English Dictionary. Poona : 1890'
+        '- Böhtlingk and Roth: Großes Petersburger Wörterbuch'
+        '- Mani, Vettam: Puranic Encyclopaedia. Delhi 1975'
+        ''
+        'Input by Cologne Digital Sanskrit Lexicon (CDSL)'
+        '[GRETIL-Version vom 30.09.2017]'
+        ''
+        ''
+        'LICENSE'
+        'This file is based on pw.txt, available at'
+        'http://sanskrit-lexicon.uni-koeln.de/scans/PWScan/2014/web/webtc/download.html'
+        '(C) Copyright 2014 The Sanskrit Library and Thomas Malten under the following license:'
+        ''
+        'All rights reserved other than those granted under the Creative Commons Attribution'
+        'Non-Commercial Share Alike license available in full at'
+        'http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode, and summarized at'
+        'http://creativecommons.org/licenses/by-nc-sa/3.0/ .'
+        'Permission is granted to build upon this work non-commercially, as long as credit is explicitly'
+        'acknowledged exactly as described herein and derivative work is distributed under the same license.'
+        '(http://www.sanskrit-lexicon.uni-koeln.de/scans/PWScan/2014/downloads/pwheader.xml)'
+        ''
+      )
+      TabOrder = 7
+      Visible = False
+      WordWrap = False
+    end
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    left = 264
+    top = 64
+  end
+end

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="charts1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="23"/>
+      </Unit>
+      <Unit>
+        <Filename Value="charts1_.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="36"/>
+        <CursorPos X="3" Y="48"/>
+        <ComponentState Value="2"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="G:\lazarus\components\tachart\tacustomseries.pas"/>
+        <UnitName Value="TACustomSeries"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="975"/>
+        <CursorPos Y="978"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="G:\lazarus\components\tachart\tagraph.pas"/>
+        <UnitName Value="TAGraph"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="585"/>
+        <CursorPos X="10" Y="588"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="40" Column="26" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="45" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="55" Column="7" TopLine="47"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="61" Column="7" TopLine="47"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="19" Column="23" TopLine="11"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="42" Column="3" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="60" Column="8" TopLine="49"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="39" Column="23" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="42" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="39" Column="21" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="45" Column="21" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="39" Column="3" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="41" Column="21" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="39" Column="24" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="41" Column="24" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="40" Column="24" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="41" Column="24" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="40" Column="24" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="39" Column="24" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="38" Column="24" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="17" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="18" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="19" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="20" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="21" TopLine="18"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="40" Column="57" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="39" Column="57" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="38" Column="57" TopLine="28"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="40" Column="41" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="charts1_.pas"/>
+        <Caret Line="47" Column="3" TopLine="35"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

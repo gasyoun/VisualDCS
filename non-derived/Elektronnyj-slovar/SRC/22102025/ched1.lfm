@@ -1,0 +1,544 @@
+object chd: Tchd
+  Left = 68
+  Height = 834
+  Top = 186
+  Width = 1549
+  Caption = 'Пересечение  и рязность лексических ядер'
+  ClientHeight = 834
+  ClientWidth = 1549
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  object Panel2: TPanel
+    Left = 0
+    Height = 776
+    Top = 58
+    Width = 1549
+    Align = alClient
+    ClientHeight = 776
+    ClientWidth = 1549
+    ParentBackground = False
+    TabOrder = 0
+    object GroupBox1: TGroupBox
+      Left = 1
+      Height = 774
+      Top = 1
+      Width = 526
+      Align = alLeft
+      Caption = 'Результаты пересечения и разности ядер'
+      ClientHeight = 738
+      ClientWidth = 522
+      ParentBackground = False
+      TabOrder = 0
+      object Edit1: TEdit
+        Left = 0
+        Height = 38
+        Top = 31
+        Width = 522
+        Align = alTop
+        Color = clWhite
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clNavy
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+        TextHint = 'Enter lemma for search'
+        OnChange = Edit1Change
+      end
+      object Label2: TLabel
+        Left = 0
+        Height = 31
+        Top = 0
+        Width = 522
+        Align = alTop
+        Caption = '"Потеряная" лексика ядра 1'
+      end
+      object StatusBar1: TStatusBar
+        Left = 0
+        Height = 43
+        Top = 695
+        Width = 522
+        Panels = <        
+          item
+            Text = 'Всего лемм:'
+            Width = 155
+          end        
+          item
+            Width = 65
+          end        
+          item
+            Text = '%Покрытия:'
+            Width = 155
+          end        
+          item
+            Width = 65
+          end>
+        SimplePanel = False
+      end
+      object StringGrid1: TStringGrid
+        Left = 0
+        Height = 626
+        Top = 69
+        Width = 522
+        Align = alClient
+        Color = clWhite
+        ColCount = 6
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Caption = 'KID'
+            Visible = False
+          end        
+          item
+            Title.Caption = 'ID'
+            Visible = False
+          end        
+          item
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = 8388672
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Lemma'
+            Width = 155
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clGreen
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Gramm.'
+            Width = 78
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clMaroon
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Rank.'
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clRed
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'FRQ%'
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        TabOrder = 2
+        TitleFont.CharSet = ANSI_CHARSET
+        TitleFont.Color = clWhite
+        TitleFont.Height = -21
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+      end
+    end
+    object GroupBox2: TGroupBox
+      Left = 527
+      Height = 774
+      Top = 1
+      Width = 526
+      Align = alLeft
+      ClientHeight = 738
+      ClientWidth = 522
+      ParentBackground = False
+      TabOrder = 1
+      object Edit2: TEdit
+        Left = 0
+        Height = 38
+        Top = 31
+        Width = 522
+        Align = alTop
+        Color = clWhite
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clNavy
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+        TextHint = 'Enter lemma for search'
+        OnChange = Edit2Change
+      end
+      object Label3: TLabel
+        Left = 0
+        Height = 31
+        Top = 0
+        Width = 522
+        Align = alTop
+        Caption = 'Пересечение ядер 1 и 2'
+      end
+      object StatusBar2: TStatusBar
+        Left = 0
+        Height = 43
+        Top = 695
+        Width = 522
+        Panels = <        
+          item
+            Text = 'Всего лемм:'
+            Width = 155
+          end        
+          item
+            Width = 65
+          end        
+          item
+            Text = '%Покрытия:'
+            Width = 155
+          end        
+          item
+            Width = 65
+          end>
+        SimplePanel = False
+      end
+      object StringGrid2: TStringGrid
+        Left = 0
+        Height = 626
+        Top = 69
+        Width = 522
+        Align = alClient
+        Color = clWhite
+        ColCount = 6
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Caption = 'KID'
+            Visible = False
+          end        
+          item
+            Title.Caption = 'ID'
+            Visible = False
+          end        
+          item
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clNavy
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Lemma'
+            Width = 155
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clGreen
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Gramm.'
+            Width = 78
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clMaroon
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Mid.Rank'
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clRed
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'FRQ%'
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        TabOrder = 2
+        TitleFont.CharSet = ANSI_CHARSET
+        TitleFont.Color = clWhite
+        TitleFont.Height = -21
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+      end
+    end
+    object GroupBox3: TGroupBox
+      Left = 1053
+      Height = 774
+      Top = 1
+      Width = 526
+      Align = alLeft
+      ClientHeight = 738
+      ClientWidth = 522
+      ParentBackground = False
+      TabOrder = 2
+      object Edit3: TEdit
+        Left = 0
+        Height = 38
+        Top = 31
+        Width = 522
+        Align = alTop
+        Color = clWhite
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clNavy
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+        TextHint = 'Enter lemma for search'
+        OnChange = Edit3Change
+      end
+      object Label4: TLabel
+        Left = 0
+        Height = 31
+        Top = 0
+        Width = 522
+        Align = alTop
+        Caption = 'Лексика, возникшая в ядре 2'
+      end
+      object StatusBar3: TStatusBar
+        Left = 0
+        Height = 43
+        Top = 695
+        Width = 522
+        Panels = <        
+          item
+            Text = 'Всего лемм:'
+            Width = 155
+          end        
+          item
+            Width = 65
+          end        
+          item
+            Text = '%Покрытия:'
+            Width = 155
+          end        
+          item
+            Width = 65
+          end>
+        SimplePanel = False
+      end
+      object StringGrid3: TStringGrid
+        Left = 0
+        Height = 626
+        Top = 69
+        Width = 522
+        Align = alClient
+        Color = clWhite
+        ColCount = 6
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Caption = 'KID'
+            Visible = False
+          end        
+          item
+            Title.Caption = 'ID'
+            Visible = False
+          end        
+          item
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clNavy
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Lemma'
+            Width = 155
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clGreen
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Gramm.'
+            Width = 78
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clMaroon
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Rank'
+          end        
+          item
+            Alignment = taCenter
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clRed
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Alignment = taCenter
+            Title.Color = clSilver
+            Title.Font.CharSet = ANSI_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'FRQ%'
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        TabOrder = 2
+        TitleFont.CharSet = ANSI_CHARSET
+        TitleFont.Color = clWhite
+        TitleFont.Height = -21
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+      end
+      object StringGrid4: TStringGrid
+        Left = -10
+        Height = 174
+        Top = 145
+        Width = 350
+        Color = clWhite
+        ColCount = 0
+        ColumnClickSorts = True
+        FixedCols = 0
+        FixedRows = 0
+        RowCount = 0
+        TabOrder = 3
+        Visible = False
+      end
+    end
+  end
+  object StringGrid5: TStringGrid
+    Left = 41
+    Height = 174
+    Top = 279
+    Width = 350
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 1
+    Visible = False
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 58
+    Top = 0
+    Width = 1549
+    Align = alTop
+    ClientHeight = 58
+    ClientWidth = 1549
+    ParentBackground = False
+    TabOrder = 2
+    object ComboBox2: TComboBox
+      Left = 8
+      Height = 39
+      Top = 12
+      Width = 258
+      Align = alLeft
+      BorderSpacing.Top = 4
+      BorderSpacing.Around = 7
+      ItemHeight = 31
+      ItemIndex = 0
+      Items.Strings = (
+        'Все леммы'
+        'Глаголы'
+        'Имена'
+      )
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Все леммы'
+      OnChange = ComboBox2Change
+    end
+    object Button1: TButton
+      Left = 1319
+      Height = 38
+      Top = 12
+      Width = 222
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Top = 4
+      BorderSpacing.Around = 7
+      Caption = 'Сохранить данные'
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+  end
+end

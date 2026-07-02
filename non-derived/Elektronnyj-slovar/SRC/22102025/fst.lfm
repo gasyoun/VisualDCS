@@ -1,0 +1,108 @@
+object FSinta: TFSinta
+  Left = 37
+  Height = 813
+  Top = 42
+  Width = 1710
+  Caption = 'FSinta'
+  ClientHeight = 813
+  ClientWidth = 1710
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poDefault
+  LCLVersion = '4.0.0.4'
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  OnResize = FormResize
+  object StringGrid1: TStringGrid
+    Left = 0
+    Height = 498
+    Top = 0
+    Width = 1710
+    Align = alClient
+    ColCount = 14
+    ColumnClickSorts = True
+    FixedCols = 0
+    FixedRows = 2
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goDblClickAutoSize, goSmoothScroll]
+    TabOrder = 0
+    TitleFont.CharSet = RUSSIAN_CHARSET
+    TitleFont.Height = -23
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+    OnClick = StringGrid1Click
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 43
+    Top = 498
+    Width = 1710
+    Panels = <    
+      item
+        Width = 200
+      end    
+      item
+        Width = 200
+      end    
+      item
+        Width = 200
+      end    
+      item
+        Width = 200
+      end    
+      item
+        Width = 200
+      end    
+      item
+        Width = 200
+      end    
+      item
+        Width = 200
+      end>
+    SimplePanel = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 272
+    Top = 541
+    Width = 1710
+    Align = alBottom
+    Caption = 'Значение леммы'
+    ClientHeight = 236
+    ClientWidth = 1706
+    TabOrder = 2
+    object hw: THtmlViewer
+      Left = 0
+      Height = 236
+      Top = 0
+      Width = 1706
+      BorderStyle = htFocused
+      HistoryMaxCount = 0
+      NoSelect = False
+      PrintMarginBottom = 2
+      PrintMarginLeft = 2
+      PrintMarginRight = 2
+      PrintMarginTop = 2
+      PrintScale = 1
+      Align = alClient
+      PopupMenu = PopupMenu3
+      TabOrder = 0
+    end
+  end
+  object PopupMenu3: TPopupMenu
+    Left = 840
+    Top = 312
+    object MenuItem201: TMenuItem
+      Caption = 'Копировать'
+      ShortCut = 16451
+      OnClick = MenuItem201Click
+    end
+    object MenuItem202: TMenuItem
+      Caption = 'Выделить все'
+      ShortCut = 16449
+      OnClick = MenuItem202Click
+    end
+  end
+end

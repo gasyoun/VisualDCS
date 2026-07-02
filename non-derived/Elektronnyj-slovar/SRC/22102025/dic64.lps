@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="dic64.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="80"/>
+        <CursorPos Y="98"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="xgd1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="200"/>
+      </Unit>
+      <Unit>
+        <Filename Value="fst.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FSinta"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Fst"/>
+        <EditorIndex Value="18"/>
+        <TopLine Value="43"/>
+        <CursorPos X="25" Y="53"/>
+        <UsageCount Value="207"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="info1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="inf1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="4"/>
+        <UsageCount Value="149"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="wcard1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="WCard"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="107"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="poisk.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="7380"/>
+        <CursorPos Y="7389"/>
+        <UsageCount Value="100"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="kn.pas"/>
+        <ComponentName Value="kkn"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="495"/>
+        <CursorPos X="41" Y="498"/>
+        <UsageCount Value="100"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tcompare.pas"/>
+        <ComponentName Value="CT"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1131"/>
+        <CursorPos X="4" Y="1131"/>
+        <UsageCount Value="100"/>
+      </Unit>
+      <Unit>
+        <Filename Value="trwin.pas"/>
+        <ComponentName Value="Tr"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="28"/>
+        <CursorPos Y="35"/>
+        <UsageCount Value="100"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="G:\lazarus\components\tachart\tasources.pas"/>
+        <UnitName Value="TASources"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="671"/>
+        <CursorPos Y="677"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="G:\lazarus\lcl\grids.pas"/>
+        <UnitName Value="Grids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2660"/>
+        <CursorPos X="23" Y="2664"/>
+        <UsageCount Value="7"/>
+      </Unit>
+      <Unit>
+        <Filename Value="lpak.pas"/>
+        <ComponentName Value="lp"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="2068"/>
+        <CursorPos X="26" Y="2076"/>
+        <UsageCount Value="100"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tx1.pas"/>
+        <ComponentName Value="DCS1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="1414"/>
+        <CursorPos X="33" Y="1417"/>
+        <UsageCount Value="100"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="dmk1.pas"/>
+        <ComponentName Value="dmk"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="40"/>
+        <UsageCount Value="104"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="sintagma1.pas"/>
+        <ComponentName Value="sintagma"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="86"/>
+        <CursorPos X="6" Y="86"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="91"/>
+      </Unit>
+      <Unit>
+        <Filename Value="G:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4671"/>
+        <CursorPos Y="4679"/>
+        <UsageCount Value="5"/>
+      </Unit>
+      <Unit>
+        <Filename Value="vd1.pas"/>
+        <ComponentName Value="verdir"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="1002"/>
+        <CursorPos X="66" Y="1005"/>
+        <UsageCount Value="51"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="dcon.pas"/>
+        <ComponentName Value="dc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="633"/>
+        <CursorPos X="23" Y="640"/>
+        <UsageCount Value="79"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="reult1.pas"/>
+        <ComponentName Value="resform"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="20"/>
+        <TopLine Value="838"/>
+        <CursorPos X="30" Y="842"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="sfo.pas"/>
+        <ComponentName Value="sf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="268"/>
+        <CursorPos X="81" Y="289"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="67"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tcf.pas"/>
+        <ComponentName Value="TTS"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="479"/>
+        <CursorPos X="51" Y="484"/>
+        <UsageCount Value="64"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="keybrd.pas"/>
+        <ComponentName Value="symba"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="752"/>
+        <CursorPos X="2" Y="728"/>
+        <UsageCount Value="23"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1872"/>
+        <CursorPos Y="1880"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tema1.pas"/>
+        <ComponentName Value="tema"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="371"/>
+        <CursorPos X="83" Y="378"/>
+        <UsageCount Value="19"/>
+      </Unit>
+      <Unit>
+        <Filename Value="sh1.pas"/>
+        <ComponentName Value="shis"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="173"/>
+        <CursorPos Y="177"/>
+        <UsageCount Value="17"/>
+      </Unit>
+      <Unit>
+        <Filename Value="lex2.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="16"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="lex2.pas"/>
+        <ComponentName Value="Form7"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="18"/>
+      </Unit>
+      <Unit>
+        <Filename Value="repo1.pas"/>
+        <ComponentName Value="Tz"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Repo1"/>
+        <EditorIndex Value="6"/>
+        <UsageCount Value="44"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="frs.pas"/>
+        <ComponentName Value="FR"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="118"/>
+        <CursorPos X="75" Y="120"/>
+        <UsageCount Value="16"/>
+      </Unit>
+      <Unit>
+        <Filename Value="omf.pas"/>
+        <ComponentName Value="of1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="30"/>
+        <CursorPos Y="39"/>
+        <UsageCount Value="11"/>
+      </Unit>
+      <Unit>
+        <Filename Value="syn.pas"/>
+        <ComponentName Value="Form4"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="df.pas"/>
+        <ComponentName Value="Form3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="dF"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="420"/>
+        <CursorPos X="3" Y="439"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="eda1.pas"/>
+        <ComponentName Value="EDA"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Eda1"/>
+        <EditorIndex Value="-1"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="edepo.pas"/>
+        <ComponentName Value="ED"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="EDepo"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="lns1.pas"/>
+        <ComponentName Value="Lns"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="156"/>
+        <CursorPos X="51" Y="161"/>
+        <UsageCount Value="34"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="wrf.pas"/>
+        <ComponentName Value="WR"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="21"/>
+        <TopLine Value="73"/>
+        <CursorPos X="63" Y="7"/>
+        <UsageCount Value="33"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="krr.pas"/>
+        <ComponentName Value="kr"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="24"/>
+        <CursorPos X="68" Y="3"/>
+        <UsageCount Value="33"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tinfo.pas"/>
+        <ComponentName Value="Form2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Tinfo"/>
+        <EditorIndex Value="23"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="trunit.pas"/>
+        <ComponentName Value="TRE"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="47" Y="15"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="wtc.pas"/>
+        <ComponentName Value="WT1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="wTC"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="90"/>
+        <CursorPos X="41" Y="99"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="parals.pas"/>
+        <ComponentName Value="prl"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="131"/>
+        <CursorPos X="3" Y="134"/>
+        <UsageCount Value="19"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tsn.pas"/>
+        <ComponentName Value="Sinta"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TsN"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="352"/>
+        <CursorPos Y="354"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ched1.pas"/>
+        <ComponentName Value="chd"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="16"/>
+        <UsageCount Value="14"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="vf2.pas"/>
+        <EditorIndex Value="22"/>
+        <CursorPos X="10"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="27">
+      <Position>
+        <Filename Value="wtc.pas"/>
+        <Caret Line="2" Column="48"/>
+      </Position>
+      <Position>
+        <Filename Value="vf2.pas"/>
+        <Caret Column="2"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="1076" Column="19" TopLine="1069"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="8590" Column="40" TopLine="8574"/>
+      </Position>
+      <Position>
+        <Filename Value="vf2.pas"/>
+        <Caret Column="10"/>
+      </Position>
+      <Position>
+        <Filename Value="wtc.pas"/>
+        <Caret Line="95" Column="27" TopLine="90"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="8594" TopLine="8585"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7361" Column="31" TopLine="7354"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7289" Column="15" TopLine="7279"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="8587" TopLine="8584"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7302" TopLine="7285"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7106" Column="31" TopLine="7104"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7373" Column="25" TopLine="7365"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7291" Column="13" TopLine="7282"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7354" TopLine="7343"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="1137" Column="14" TopLine="1124"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="1190" Column="11" TopLine="1172"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7371" Column="18" TopLine="7355"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="1136" Column="24" TopLine="1125"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7303" Column="14" TopLine="7291"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7401" Column="20" TopLine="7393"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7108" Column="14" TopLine="7101"/>
+      </Position>
+      <Position>
+        <Filename Value="poisk.pas"/>
+        <Caret Line="7289" TopLine="7288"/>
+      </Position>
+      <Position>
+        <Filename Value="wtc.pas"/>
+        <Caret Line="98" Column="36" TopLine="87"/>
+      </Position>
+      <Position>
+        <Filename Value="wtc.pas"/>
+        <Caret Line="40" Column="41" TopLine="31"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

@@ -1,0 +1,1117 @@
+object CT: TCT
+  Left = 80
+  Height = 869
+  Top = 29
+  Width = 1499
+  BorderWidth = 3
+  Caption = 'Сравнительный анализ текстов Корпуса'
+  ClientHeight = 869
+  ClientWidth = 1499
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  object Panel1: TPanel
+    Left = 3
+    Height = 90
+    Top = 776
+    Width = 1493
+    Align = alBottom
+    ClientHeight = 90
+    ClientWidth = 1493
+    ParentBackground = False
+    TabOrder = 0
+    object StringGrid1: TStringGrid
+      Left = 912
+      Height = 292
+      Top = -8
+      Width = 352
+      ColCount = 55
+      ColumnClickSorts = True
+      Columns = <      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Text Name'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Mark Validate'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Words/Stems'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Nouns'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Adjectives'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Pronouns'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Indicatives'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Djan.'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Djma'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Verbal Forms'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Mid. Verb Position'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Mid. Stanza Length'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end      
+        item
+          MinSize = 12
+          MaxSize = 234
+          Title.Caption = 'Title'
+        end>
+      FixedCols = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goRowSelect, goDblClickAutoSize, goSmoothScroll]
+      TabOrder = 0
+      Visible = False
+    end
+    object GroupBox4: TGroupBox
+      Left = 1
+      Height = 88
+      Top = 1
+      Width = 1491
+      Align = alClient
+      Caption = 'Ход вычислений'
+      ClientHeight = 52
+      ClientWidth = 1487
+      ParentBackground = False
+      TabOrder = 1
+      object ProgressBar1: TProgressBar
+        Left = 5
+        Height = 20
+        Top = 5
+        Width = 1477
+        Align = alTop
+        BorderSpacing.Around = 5
+        TabOrder = 0
+      end
+      object ProgressBar2: TProgressBar
+        Left = 5
+        Height = 20
+        Top = 30
+        Width = 1477
+        Align = alTop
+        BorderSpacing.Around = 5
+        TabOrder = 1
+      end
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 3
+    Height = 43
+    Top = 733
+    Width = 1493
+    Panels = <    
+      item
+        Text = 'Всего текстов в этом Корпусе:'
+        Width = 388
+      end    
+      item
+        Width = 65
+      end    
+      item
+        Text = 'Всего параметров анализа:'
+        Width = 323
+      end    
+      item
+        Width = 65
+      end>
+    SimplePanel = False
+  end
+  object Panel2: TPanel
+    Left = 3
+    Height = 730
+    Top = 3
+    Width = 1493
+    Align = alClient
+    ClientHeight = 730
+    ClientWidth = 1493
+    ParentBackground = False
+    TabOrder = 2
+    object Panel3: TPanel
+      Left = 1
+      Height = 728
+      Top = 1
+      Width = 950
+      Align = alLeft
+      ClientHeight = 728
+      ClientWidth = 950
+      ParentBackground = False
+      TabOrder = 0
+      object PageControl1: TPageControl
+        Left = 1
+        Height = 726
+        Top = 1
+        Width = 948
+        ActivePage = TabSheet3
+        Align = alClient
+        TabIndex = 2
+        TabOrder = 0
+        OnChange = PageControl1Change
+        object TabSheet1: TTabSheet
+          Caption = 'Датировка'
+          ClientHeight = 682
+          ClientWidth = 940
+          object StringGrid2: TStringGrid
+            Left = 0
+            Height = 480
+            Top = 0
+            Width = 940
+            Align = alTop
+            AutoFillColumns = True
+            ColCount = 4
+            Columns = <            
+              item
+                ButtonStyle = cbsPickList
+                PickList.Strings = (
+                  '-1500'
+                  '-1200'
+                  '-1000'
+                  '-800'
+                  '-699'
+                  '-599'
+                  '-500'
+                  '-499'
+                  '-300'
+                  '-200'
+                  '-150'
+                  '-100'
+                  '0'
+                  '100'
+                  '150'
+                  '200'
+                  '300'
+                  '350'
+                  '400'
+                  '450'
+                  '500'
+                  '550'
+                  '600'
+                  '650'
+                  '700'
+                  '750'
+                  '800'
+                  '850'
+                  '900'
+                  '950'
+                  '975'
+                  '1000'
+                  '1010'
+                  '1100'
+                  '1150'
+                  '1200'
+                  '1250'
+                  '1300'
+                  '1350'
+                  '1400'
+                  '1500'
+                  '1575'
+                  '1600'
+                  '1650'
+                  '1700'
+                  '1800'
+                  '1900'
+                  '2500'
+                )
+                Title.Caption = 'Начальная дата'
+                Width = 265
+              end            
+              item
+                ButtonStyle = cbsPickList
+                PickList.Strings = (
+                  '-1200'
+                  '-1000'
+                  '-599'
+                  '-499'
+                  '-399'
+                  '-299'
+                  '-100'
+                  '-4'
+                  '0'
+                  '100'
+                  '200'
+                  '250'
+                  '299'
+                  '300'
+                  '399'
+                  '400'
+                  '450'
+                  '500'
+                  '600'
+                  '650'
+                  '660'
+                  '700'
+                  '750'
+                  '800'
+                  '850'
+                  '900'
+                  '950'
+                  '1000'
+                  '1025'
+                  '1050'
+                  '1060'
+                  '1100'
+                  '1150'
+                  '1200'
+                  '1230'
+                  '1250'
+                  '1300'
+                  '1350'
+                  '1400'
+                  '1450'
+                  '1500'
+                  '1550'
+                  '1600'
+                  '1625'
+                  '1700'
+                  '1750'
+                  '1800'
+                  '1900'
+                  '1950'
+                  '2000'
+                  '2500'
+                )
+                Title.Caption = 'Конечная дата'
+                Width = 265
+              end            
+              item
+                Alignment = taCenter
+                ButtonStyle = cbsCheckboxColumn
+                Title.Caption = 'Вкл. период'
+                Width = 264
+              end>
+            Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goEditing, goAutoAddRows, goAlwaysShowEditor, goSmoothScroll, goFixedRowNumbering, goRowHighlight]
+            PopupMenu = PopupMenu1
+            RowCount = 2
+            TabOrder = 0
+            OnAfterSelection = StringGrid2AfterSelection
+            OnClick = StringGrid2Click
+            ColWidths = (
+              112
+              265
+              265
+              264
+            )
+            Cells = (
+              2
+              0
+              0
+              '№'
+              3
+              1
+              '0'
+            )
+          end
+          object Button6: TButton
+            Left = 0
+            Height = 44
+            Top = 638
+            Width = 940
+            Align = alBottom
+            Caption = 'Применить параметры датировки'
+            TabOrder = 1
+            OnClick = Button6Click
+          end
+        end
+        object TabSheet2: TTabSheet
+          Caption = 'Фонетика'
+          ClientHeight = 682
+          ClientWidth = 940
+          object GroupBox3: TGroupBox
+            Left = 0
+            Height = 682
+            Top = 0
+            Width = 940
+            Align = alClient
+            Caption = 'Звуки'
+            ClientHeight = 646
+            ClientWidth = 936
+            ParentBackground = False
+            TabOrder = 0
+            object CheckListBox9: TCheckListBox
+              Left = 0
+              Height = 646
+              Top = 0
+              Width = 936
+              Align = alClient
+              Columns = 5
+              ItemHeight = 0
+              PopupMenu = PopupMenu3
+              TabOrder = 0
+            end
+          end
+        end
+        object TabSheet3: TTabSheet
+          Caption = 'Грамматика'
+          ClientHeight = 682
+          ClientWidth = 940
+          object GroupBox1: TGroupBox
+            Left = 0
+            Height = 300
+            Top = 0
+            Width = 940
+            Align = alTop
+            Caption = 'Глагольные формы'
+            ClientHeight = 264
+            ClientWidth = 936
+            ParentBackground = False
+            TabOrder = 0
+            object PageControl2: TPageControl
+              Left = 0
+              Height = 264
+              Top = 0
+              Width = 936
+              ActivePage = TabSheet7
+              Align = alClient
+              TabIndex = 0
+              TabOrder = 0
+              object TabSheet7: TTabSheet
+                Caption = 'Личные формы'
+                ClientHeight = 220
+                ClientWidth = 928
+                object CheckListBox2: TCheckListBox
+                  Left = 0
+                  Height = 220
+                  Top = 0
+                  Width = 928
+                  Align = alClient
+                  Columns = 2
+                  ItemHeight = 0
+                  PopupMenu = PopupMenu4
+                  TabOrder = 0
+                end
+              end
+              object TabSheet8: TTabSheet
+                Caption = 'Неличные формы'
+                ClientHeight = 220
+                ClientWidth = 928
+                object CheckListBox3: TCheckListBox
+                  Left = 0
+                  Height = 220
+                  Top = 0
+                  Width = 928
+                  Align = alClient
+                  Columns = 2
+                  ItemHeight = 0
+                  PopupMenu = PopupMenu4
+                  TabOrder = 0
+                end
+              end
+            end
+          end
+          object GroupBox2: TGroupBox
+            Left = 0
+            Height = 348
+            Top = 300
+            Width = 940
+            Align = alTop
+            Caption = 'Именные формы'
+            ClientHeight = 312
+            ClientWidth = 936
+            ParentBackground = False
+            TabOrder = 1
+            object CheckListBox4: TCheckListBox
+              Left = 0
+              Height = 312
+              Top = 0
+              Width = 936
+              Align = alClient
+              Columns = 3
+              ItemHeight = 0
+              PopupMenu = PopupMenu6
+              TabOrder = 0
+            end
+          end
+        end
+        object TabSheet5: TTabSheet
+          Caption = 'Количественные'
+          ClientHeight = 682
+          ClientWidth = 940
+          object CheckListBox7: TCheckListBox
+            Left = 0
+            Height = 682
+            Top = 0
+            Width = 940
+            Align = alClient
+            Columns = 2
+            ItemHeight = 0
+            PopupMenu = PopupMenu5
+            TabOrder = 0
+          end
+        end
+        object TabSheet6: TTabSheet
+          Caption = 'Другие параметры'
+          ClientHeight = 682
+          ClientWidth = 940
+          object CheckListBox8: TCheckListBox
+            Left = 0
+            Height = 682
+            Top = 0
+            Width = 940
+            Align = alClient
+            ItemHeight = 0
+            TabOrder = 0
+          end
+          object CheckListBox10: TCheckListBox
+            Left = 0
+            Height = 682
+            Top = 0
+            Width = 940
+            Align = alClient
+            Columns = 2
+            ItemHeight = 0
+            PopupMenu = PopupMenu5
+            TabOrder = 1
+          end
+        end
+        object TabSheet4: TTabSheet
+          Caption = 'Результат сравнения'
+          ClientHeight = 682
+          ClientWidth = 940
+          object StringGrid3: TStringGrid
+            Left = 0
+            Height = 576
+            Top = 0
+            Width = 940
+            Align = alClient
+            AutoFillColumns = True
+            ColumnClickSorts = True
+            FixedCols = 0
+            Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDblClickAutoSize, goSmoothScroll]
+            TabOrder = 0
+            ColWidths = (
+              182
+              181
+              181
+              181
+              181
+            )
+            Cells = (
+              4
+              0
+              0
+              'Средняя дата'
+              1
+              0
+              'Исходный текст'
+              2
+              0
+              'Сравниваемый текст'
+              3
+              0
+              'Коэффициент близости'
+            )
+          end
+          object Label2: TLabel
+            Left = 0
+            Height = 62
+            Top = 620
+            Width = 940
+            Align = alBottom
+            Caption = 'Чем меньше значение коэффициента близости текстов'#13#10', тем они ближе по выбранным параметрам.'
+            Color = clInfoBk
+            ParentColor = False
+            WordWrap = True
+          end
+          object Save1: TButton
+            Left = 0
+            Height = 44
+            Top = 576
+            Width = 940
+            Align = alBottom
+            Caption = 'Скопировать таблицу в буфер обмена'
+            TabOrder = 1
+            OnClick = Save1Click
+          end
+        end
+      end
+    end
+    object Panel4: TPanel
+      Left = 951
+      Height = 728
+      Top = 1
+      Width = 541
+      Align = alClient
+      ClientHeight = 728
+      ClientWidth = 541
+      ParentBackground = False
+      TabOrder = 1
+      object Label1: TLabel
+        Left = 1
+        Height = 31
+        Top = 1
+        Width = 539
+        Align = alTop
+        Caption = 'Список текстов/глав по параметрам'
+      end
+      object CheckListBox1: TCheckListBox
+        Left = 1
+        Height = 438
+        Top = 32
+        Width = 539
+        Align = alTop
+        ItemHeight = 0
+        PopupMenu = PopupMenu2
+        Sorted = True
+        TabOrder = 0
+        OnClickCheck = CheckListBox1ClickCheck
+      end
+      object Button24: TButton
+        Left = 6
+        Height = 44
+        Top = 586
+        Width = 529
+        Align = alBottom
+        BorderSpacing.Around = 5
+        Caption = 'Расчет параметров текста'
+        TabOrder = 1
+        OnClick = Button24Click
+      end
+      object Button4: TButton
+        Left = 6
+        Height = 44
+        Top = 488
+        Width = 529
+        Align = alBottom
+        BorderSpacing.Around = 5
+        Caption = 'Сравнить тексты'
+        TabOrder = 2
+        OnClick = Button4Click
+      end
+      object StatusBar2: TStatusBar
+        Left = 1
+        Height = 43
+        Top = 684
+        Width = 539
+        Panels = <        
+          item
+            Text = 'Всего:'
+            Width = 100
+          end        
+          item
+            Width = 50
+          end        
+          item
+            Text = 'Выбрано:'
+            Width = 120
+          end        
+          item
+            Width = 50
+          end>
+        SimplePanel = False
+      end
+      object Button1: TButton
+        Left = 6
+        Height = 44
+        Top = 537
+        Width = 529
+        Align = alBottom
+        BorderSpacing.Around = 5
+        Caption = 'Найти ближайший текст'
+        TabOrder = 4
+        OnClick = Button1Click
+      end
+      object BT2: TButton
+        Left = 6
+        Height = 44
+        Top = 635
+        Width = 529
+        Align = alBottom
+        BorderSpacing.Around = 5
+        Caption = 'Динамика параметров'
+        TabOrder = 5
+        Visible = False
+        OnClick = BT2Click
+      end
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    FileName = 'DCS_Compare_Table.csv'
+    Filter = 'TXT Files (*.csv)|*.txt'
+    InitialDir = 'Reports'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 543
+    Top = 279
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 1016
+    Top = 64
+    object MenuItem1: TMenuItem
+      Caption = 'Все тексты'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Ведийский период'
+      OnClick = MenuItem3Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Эпический период'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Классический период'
+      OnClick = MenuItem4Click
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Не датированные тексты'
+      OnClick = MenuItem5Click
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'Отметить все'
+      OnClick = MenuItem8Click
+    end
+    object MenuItem9: TMenuItem
+      Caption = 'Убрать отметки'
+      OnClick = MenuItem9Click
+    end
+    object MenuItem10: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem10Click
+    end
+    object Separator3: TMenuItem
+      Caption = '-'
+    end
+    object Separator2: TMenuItem
+      Caption = 'Добавить период'
+      OnClick = Separator2Click
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Удалить период'
+      OnClick = MenuItem7Click
+    end
+  end
+  object PopupMenu2: TPopupMenu
+    Left = 1208
+    Top = 80
+    object MenuItem6: TMenuItem
+      Caption = 'Выбрать все'
+      OnClick = MenuItem6Click
+    end
+    object MenuItem11: TMenuItem
+      Caption = 'Снять метки'
+      OnClick = MenuItem11Click
+    end
+    object MenuItem12: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem12Click
+    end
+  end
+  object PopupMenu3: TPopupMenu
+    Left = 64
+    Top = 160
+    object MenuItem13: TMenuItem
+      Caption = 'Выбрать все'
+      OnClick = MenuItem13Click
+    end
+    object MenuItem23: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem23Click
+    end
+    object MenuItem24: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem24Click
+    end
+    object Separator4: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem14: TMenuItem
+      Caption = 'Гласные'
+      OnClick = MenuItem14Click
+    end
+    object MenuItem15: TMenuItem
+      Caption = 'Согласные'
+      OnClick = MenuItem15Click
+    end
+    object MenuItem16: TMenuItem
+      Caption = 'Заднеязычные'
+      OnClick = MenuItem16Click
+    end
+    object MenuItem17: TMenuItem
+      Caption = 'Церебральные'
+      OnClick = MenuItem17Click
+    end
+    object MenuItem18: TMenuItem
+      Caption = 'Зубные'
+      OnClick = MenuItem18Click
+    end
+    object MenuItem19: TMenuItem
+      Caption = 'Палатальные'
+      OnClick = MenuItem19Click
+    end
+    object MenuItem20: TMenuItem
+      Caption = 'Губные'
+      OnClick = MenuItem20Click
+    end
+    object MenuItem21: TMenuItem
+      Caption = 'Придыхательные'
+      OnClick = MenuItem21Click
+    end
+    object MenuItem22: TMenuItem
+      Caption = 'Фонема "n"'
+      OnClick = MenuItem22Click
+    end
+  end
+  object PopupMenu4: TPopupMenu
+    Left = 216
+    Top = 160
+    object MenuItem25: TMenuItem
+      Caption = 'Выбрать все'
+      OnClick = MenuItem25Click
+    end
+    object MenuItem26: TMenuItem
+      Caption = 'Снать выделение'
+      OnClick = MenuItem26Click
+    end
+    object MenuItem27: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem27Click
+    end
+    object Separator5: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem28: TMenuItem
+      Caption = 'Прошедшее время'
+      OnClick = MenuItem28Click
+    end
+    object MenuItem29: TMenuItem
+      Caption = 'Настоящее время'
+      OnClick = MenuItem29Click
+    end
+    object MenuItem30: TMenuItem
+      Caption = 'Будущее время'
+      OnClick = MenuItem30Click
+    end
+  end
+  object PopupMenu5: TPopupMenu
+    Left = 352
+    Top = 168
+    object MenuItem31: TMenuItem
+      Caption = 'Выбрать все'
+      OnClick = MenuItem31Click
+    end
+    object MenuItem32: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem32Click
+    end
+    object MenuItem33: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem33Click
+    end
+  end
+  object PopupMenu6: TPopupMenu
+    Left = 543
+    Top = 160
+    object MenuItem34: TMenuItem
+      Caption = 'Выбрать все'
+      OnClick = MenuItem34Click
+    end
+    object MenuItem35: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem35Click
+    end
+    object MenuItem36: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem36Click
+    end
+    object Separator6: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem37: TMenuItem
+      Caption = 'Выделить Ед.ч.'
+      OnClick = MenuItem37Click
+    end
+    object MenuItem38: TMenuItem
+      Caption = 'Выделить Дв.ч.'
+      OnClick = MenuItem38Click
+    end
+    object MenuItem39: TMenuItem
+      Caption = 'Выделить Мн.ч.'
+      OnClick = MenuItem39Click
+    end
+    object MenuItem40: TMenuItem
+      Caption = 'Выделить Nom.'
+      OnClick = MenuItem40Click
+    end
+    object MenuItem41: TMenuItem
+      Caption = 'Выделить Acc.'
+      OnClick = MenuItem41Click
+    end
+    object MenuItem42: TMenuItem
+      Caption = 'Выделить Voc.'
+      OnClick = MenuItem42Click
+    end
+    object MenuItem43: TMenuItem
+      Caption = 'Выделить Ins.'
+      OnClick = MenuItem43Click
+    end
+    object MenuItem44: TMenuItem
+      Caption = 'Выделить Dat.'
+      OnClick = MenuItem44Click
+    end
+    object MenuItem45: TMenuItem
+      Caption = 'Выделить Abl.'
+      OnClick = MenuItem45Click
+    end
+    object MenuItem46: TMenuItem
+      Caption = 'Выделить Gen.'
+      OnClick = MenuItem46Click
+    end
+    object MenuItem47: TMenuItem
+      Caption = 'Выделить Loc.'
+      OnClick = MenuItem47Click
+    end
+  end
+end

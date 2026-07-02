@@ -1,0 +1,37 @@
+object Hl: THl
+  Left = 482
+  Height = 300
+  Top = 172
+  Width = 400
+  AlphaBlend = True
+  AlphaBlendValue = 224
+  BorderStyle = bsDialog
+  BorderWidth = 5
+  Caption = 'Hello!'
+  ClientHeight = 300
+  ClientWidth = 400
+  Color = 4194304
+  DesignTimePPI = 120
+  FormStyle = fsStayOnTop
+  Position = poScreenCenter
+  LCLVersion = '2.0.8.0'
+  object Label1: TLabel
+    Left = 7
+    Height = 286
+    Top = 7
+    Width = 386
+    Align = alClient
+    AutoSize = False
+    BorderSpacing.Around = 2
+    Caption = 'My name is Vladimir. I am a private person and do not represent the interests of any organization. I live in a little Russian''s village.  I think Sanskrit is a great treasure. I want it to be easier for people to find it. This is the reason why I write this program. I will be very happy for your feedback, which you can send by email v_leon_77@list.ru or iymagic@yandex.ru. Thanks.'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -20
+    Font.Name = 'Segoe UI Emoji'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+end

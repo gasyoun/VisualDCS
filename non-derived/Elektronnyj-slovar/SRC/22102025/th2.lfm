@@ -1,0 +1,61 @@
+object Form11: TForm11
+  Left = 426
+  Height = 122
+  Top = 141
+  Width = 478
+  AutoSize = True
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  BorderWidth = 15
+  Caption = 'Support the project'
+  ClientHeight = 122
+  ClientWidth = 478
+  Color = 79
+  DesignTimePPI = 130
+  FormStyle = fsStayOnTop
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '3.0.0.1'
+  object Edit1: TEdit
+    Left = 72
+    Height = 33
+    Top = 16
+    Width = 352
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 25
+    Top = 16
+    Width = 45
+    Caption = 'MIR: '
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clYellow
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 72
+    Height = 34
+    Top = 56
+    Width = 352
+    Caption = 'Copy the card number'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = Button1Click
+    ParentFont = False
+    TabOrder = 1
+  end
+end

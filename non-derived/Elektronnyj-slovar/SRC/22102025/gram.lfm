@@ -1,0 +1,198 @@
+object NN: TNN
+  Left = 453
+  Height = 673
+  Top = 19
+  Width = 441
+  BorderWidth = 2
+  Caption = 'Примеры склонений имен'
+  ClientHeight = 673
+  ClientWidth = 441
+  Color = clSilver
+  DesignTimePPI = 130
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -14
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  ShowHint = True
+  ShowInTaskBar = stAlways
+  LCLVersion = '3.0.0.1'
+  object ComboBox1: TComboBox
+    Left = 7
+    Height = 27
+    Hint = 'Род склоняемого имени или местоимения'
+    Top = 39
+    Width = 427
+    Align = alTop
+    BorderSpacing.Around = 5
+    BorderStyle = bsSingle
+    DropDownCount = 25
+    ItemHeight = 19
+    ItemIndex = 0
+    Items.Strings = (
+      'Имена женского рода'
+      'Имена мужского рода'
+      'Имена среднего рода'
+      'Личные местоимения 1-го лица'
+      'Личные местоимения 1-го лица'
+      'Личные местоимения 3-го лица женского рода'
+      'Личные местоимения 3-го лица мужского рода'
+      'Личные местоимения 3-го лица среднего рода'
+    )
+    OnChange = ComboBox1Change
+    Style = csDropDownList
+    TabOrder = 0
+    Text = 'Имена женского рода'
+  end
+  object ComboBox2: TComboBox
+    Left = 7
+    Height = 27
+    Hint = 'Окончание'
+    Top = 71
+    Width = 427
+    Align = alTop
+    BorderSpacing.Around = 5
+    BorderStyle = bsSingle
+    DropDownCount = 25
+    ItemHeight = 19
+    OnChange = ComboBox2Change
+    Style = csDropDownList
+    TabOrder = 1
+  end
+  object EditButton1: TEditButton
+    Left = 7
+    Height = 27
+    Top = 7
+    Width = 427
+    Align = alTop
+    BorderSpacing.Around = 5
+    BorderStyle = bsSingle
+    ButtonCaption = 'Найти'
+    ButtonWidth = 81
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = EditButton1ButtonClick
+    OnChange = EditButton1Change
+    OnKeyPress = EditButton1KeyPress
+    PasswordChar = #0
+    TabOrder = 2
+    TextHint = 'Введите окончание для поиска'
+  end
+  object StringGrid1: TStringGrid
+    Left = 7
+    Height = 563
+    Top = 103
+    Width = 427
+    Align = alClient
+    BorderSpacing.Around = 5
+    Color = clWhite
+    ColCount = 4
+    Columns = <    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -14
+        Font.Name = 'Segoe UI Light'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 11
+        MaxSize = 217
+        Title.Caption = 'Sg.'
+        Width = 103
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -14
+        Font.Name = 'Segoe UI Light'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 11
+        MaxSize = 217
+        Title.Caption = 'Du.'
+        Width = 103
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -14
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 11
+        MaxSize = 217
+        Title.Caption = 'Pl.'
+        Width = 103
+      end>
+    DefaultColWidth = 103
+    DefaultRowHeight = 39
+    ExtendedSelect = False
+    FixedColor = clWhite
+    PopupMenu = PopupMenu1
+    RowCount = 17
+    TabOrder = 3
+    TitleFont.CharSet = ANSI_CHARSET
+    TitleFont.Height = -14
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+    Cells = (
+      9
+      0
+      1
+      'Nom.'
+      0
+      3
+      'Acc.'
+      0
+      5
+      'Voc.'
+      0
+      7
+      'Instr.'
+      0
+      9
+      'Dat.'
+      0
+      11
+      'Abl.'
+      0
+      13
+      'Gen.'
+      0
+      15
+      'Loc.'
+      1
+      0
+      'Single'
+    )
+  end
+  object Memo1: TMemo
+    Left = 234
+    Height = 122
+    Top = 338
+    Width = 204
+    TabOrder = 4
+    Visible = False
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 338
+    Top = 165
+    object MenuItem1: TMenuItem
+      Caption = 'Сохранить эту таблицу'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Сохранить все таблицы'
+      OnClick = MenuItem2Click
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    FileName = 'Table1.html'
+    Filter = 'HTML Files|*.html'
+    Left = 350
+    Top = 254
+  end
+end
