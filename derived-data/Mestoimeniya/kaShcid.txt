@@ -1,0 +1,40 @@
+Местоим. Частота Форма
+kaścit  1470  m.Nom.sg.
+kañcit  247  m.Acc.sg.
+kenacit  208  m.Ins.sg.
+kasmaicit  30  m.Dat.sg.
+kasmāccit  5  m.Abl.sg.
+kasyacit  352  m.Gen.sg.
+kasmiṃścit  71  m.Loc.sg.
+kaucic  1  m.Nom.du.
+kecit  1248  m.Nom.pl
+kāṃścit  80  m.Acc.pl
+kebhyaścit  2  m.Dat.pl
+keṣāṁcid  83  m.Gen.pl
+keṣucit  10  m.Loc.pl
+
+Виктор Кочергин, [11.05.2024 21:26]
+kācit  274  f.Nom.sg.
+kāñcit  67  f.Acc.sg.
+kayācit  9  f.Ins.sg.
+kasyaicit  1  f.Dat.sg.
+kasyāṃścit  8  f.Gen.sg.
+kasyāñcit  28  f.Loc.sg.
+kāścit  106  f.Nom.pl
+kāścit  14  f.Acc.pl
+kāśāṃcid  7  f.Gen.pl
+kāsucit  4  f.Loc.pl
+
+Виктор Кочергин, [11.05.2024 21:26]
+kiñcit  1184  n.Nom.sg.
+kiñcit  1511  n.Acc.sg.
+kenacit  65  n.Ins.sg.
+kasmaicit  1  n.Dat.sg.
+kasmāccit  4  n.Abl.sg.
+kasyacit  17  n.Gen.sg.
+kasmiṃścit  41  n.Loc.sg.
+kānicit  44  n.Nom.pl
+kānicit  13  n.Acc.pl
+kaiścid  5  n.Ins.pl
+keśamcic  3  n.Gen.pl
+keṣucit  7  n.Loc.pl
