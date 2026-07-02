@@ -5,8 +5,10 @@ _Created: 02-07-2026 · Last updated: 02-07-2026_
 Catalogue of `VisualDCS/non-derived/` — the **non-DCS** half of a two-repo-root split.
 The **DCS-corpus** half (frequency/statistics data computed from the Digital Corpus of
 Sanskrit) lives at the sibling [`../derived-data/`](../derived-data/INDEX.md) folder.
-This directory is **untracked in git** (too large / mixed binary formats) — the two
-INDEX.md files (here and in `derived-data/`) are the only map of what lives in either.
+This directory is **tracked in git and pushed to GitHub** (since 02-07-2026) with one
+exclusion: `Zalizniak/GH/` — independent nested git repos with their own remotes,
+intentionally gitignored. Files over ~95MB are stored as 7-Zip split volumes — see
+[RESTORE_SPLIT_FILES.md](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md).
 
 ## History
 
@@ -23,7 +25,11 @@ pass; files were left untouched throughout.
 `SaudAmanI`, `Zaliznyak-Kochergina`) — their internal `.git/` contents were never
 touched by any rename/move pass, so those repos remain functional.
 
-Current total: **1,219 files, 3.97GB** (17 folders + 2 loose root files).
+Current total: **1,233 files, 3.7GB** (17 folders + 2 loose root files), of which
+622 files are git-tracked — the remaining 611 (1.5GB) are the nested `Zalizniak/GH/`
+repos, gitignored here because each has its own GitHub history/remote. Oversize
+binaries were replaced by tracked 7-Zip split volumes during the 02-07-2026 backup
+(see [`../derived-data/INDEX.md`](../derived-data/INDEX.md) "History" pass 5).
 
 ## Folders (17) — dictionaries, catalogs, reference material, external tools
 

@@ -6,8 +6,11 @@ Catalogue of `VisualDCS/derived-data/` — the **DCS-corpus** half of a two-repo
 split. The **non-DCS** half (dictionaries, manuscript catalogs, reference/lecture
 material, external tool clones) lives at the sibling [`../non-derived/`](../non-derived/INDEX.md)
 folder, moved out to repo root so the two provenance buckets sit as peers rather than
-nested. Both directories are **untracked in git** (too large / mixed binary formats) —
-these two INDEX.md files are the only map of what lives in either.
+nested. Both directories are **tracked in git and pushed to GitHub** (since 02-07-2026,
+pass 5 below): files over ~95MB are stored as 7-Zip split volumes — see
+[RESTORE_SPLIT_FILES.md](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)
+— and the only exclusion is `non-derived/Zalizniak/GH/` (independent nested git repos
+with their own remotes).
 
 ## History
 
@@ -35,10 +38,23 @@ these two INDEX.md files are the only map of what lives in either.
    byte-identical duplicate (`VSE/FULL`, a copy of the 2022 original) was deleted,
    the 2022 original (`Polnorazmernye`) was archived as
    `Polnorazmernye-2022-archive`, and the corrected/regenerated 2026 pass
-   (`Full_NEW`) was promoted to the canonical `Polnorazmernye` name. Net: 851 files,
-   15.07GB in that folder — see its own entry below for the full breakdown.
+   (`Full_NEW`) was promoted to the canonical `Polnorazmernye` name. Net at the time:
+   851 files, 15.07GB in that folder.
+5. **02-07-2026, pass 5 — backed up to GitHub.** The whole archive was committed and
+   pushed to `gasyoun/VisualDCS` in 13 "Back up derived-data/non-derived research
+   archive" batches (Claude Sonnet 5, `claude-sonnet-5`). Files over ~95MB were
+   replaced by 7-Zip split volumes (`*.7z.NNN`, raw originals removed locally after
+   splitting — reassembly instructions in
+   [RESTORE_SPLIT_FILES.md](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)).
+   In the same pass **`PARA/VSE/PART/` (11.7GB / 245 files, the full 245-text
+   stop-word parallel run) was deliberately deleted by M.G.** (confirmed 02-07-2026)
+   rather than backed up — the stop-word method now survives only in the partial
+   113-text `Stopovye/` run; the full-text-match method is unaffected (canonical
+   `Polnorazmernye/` + its 2022 archive are intact and tracked).
 
-Current total: **1,083 files, 17.61GB**.
+Current total: **849 files, 3.5GB — all tracked in git.** (The drop from pass-4's
+1,083 files / 17.61GB = the deliberate `PART` deletion + raw originals removed after
+7z splitting.)
 
 ## Folders (14) — corpus-frequency/statistics-derived
 
@@ -58,7 +74,7 @@ Current total: **1,083 files, 17.61GB**.
 | `Korrelyacii` | <0.1MB | 1 | yad/tad correlative-form correlation table |
 | `Fonetika` | 1MB | 6 | Phonetics: ligature tables, historical alphabet frequency + `Works-Share-Lig` |
 | `Ramayana` | 187MB | 9 | Rāmāyaṇa most-frequent-words study, dictionary Pareto analysis, highlighted-names dictionary |
-| `Paralleli-v-tekstah-korpusa-SRC` | 15.07GB | 851 | Corpus-wide parallel-passage search — **by far the largest folder here**; split out of `Paralleli-v-sanskritskih-tekstah` (see [`../non-derived/INDEX.md`](../non-derived/INDEX.md) for its philological counterpart). See "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" below for its internal structure |
+| `Paralleli-v-tekstah-korpusa-SRC` | 1.5GB | 606 | Corpus-wide parallel-passage search — **still the largest folder here**; split out of `Paralleli-v-sanskritskih-tekstah` (see [`../non-derived/INDEX.md`](../non-derived/INDEX.md) for its philological counterpart). See "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" below for its internal structure |
 
 ## Contents of `Paralleli-v-tekstah-korpusa-SRC/`
 
@@ -71,11 +87,15 @@ GOOD|PARTLY; matched-words||separated`.
 
 | Subfolder | Size | Files | What it is |
 |---|---|---|---|
-| `PARA/VSE/PART/` | 11.7GB | 245 | Stop-word-method parallels, full 245-text run — the bulk of this folder's weight |
-| `PARA/Stopovye/` | 3.5GB | 113 | Stop-word-method parallels, an earlier/partial 113-text run |
-| `PARA/Polnorazmernye/` | 56.2MB | 245 | **Canonical.** Full-text-match parallels, 2026 corrected/regenerated pass (was `Full_NEW/`, promoted here 02-07-2026 after dedup) |
-| `PARA/Polnorazmernye-2022-archive/` | 53.2MB | 245 | Full-text-match parallels, original 2022 export — kept for reference/comparison against the 2026 pass, not the canonical version |
+| `PARA/Stopovye/` | 1.4GB | 113 | Stop-word-method parallels, partial 113-text run — **the only surviving stop-word data** after `PART`'s deletion (pass 5); 11 oversize CSVs stored as `.7z.NNN` split volumes |
+| `PARA/Polnorazmernye/` | 57MB | 245 | **Canonical.** Full-text-match parallels, 2026 corrected/regenerated pass (was `Full_NEW/`, promoted here 02-07-2026 after dedup) |
+| `PARA/Polnorazmernye-2022-archive/` | 54MB | 245 | Full-text-match parallels, original 2022 export — kept for reference/comparison against the 2026 pass, not the canonical version |
 | *(root)* | 0.6MB | 3 | Summary workbooks (`Распределение точных параллелей...xltx`, `Словарь точных полных параллелей.xlsx`) + the structure-doc RTF |
+
+**Deleted (pass 5, deliberate):** `PARA/VSE/PART/` — 11.7GB / 245 files, the
+stop-word-method full 245-text run. Removed by M.G. on 02-07-2026 instead of being
+backed up; regenerable in principle by re-running the stop-word parallel search
+against the DCS text list if ever needed.
 
 **Dedup note (02-07-2026):** this folder previously also had `PARA/VSE/FULL/`, which
 was byte-for-byte identical (MD5-verified, all 245 files) to the old

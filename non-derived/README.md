@@ -51,9 +51,11 @@ grouped by their original tag.
 
 ## Working with this data
 
-- **Not git-tracked.** Same as `derived-data/` — mixed binary formats and multi-GB
-  size make this a poor fit for the git repo. `INDEX.md` and this README are the only
-  persistent map; keep them current when you add or move things.
+- **Git-tracked and pushed (since 02-07-2026).** Same as `derived-data/` — committed
+  to `gasyoun/VisualDCS` with oversize files stored as 7-Zip split volumes
+  ([RESTORE_SPLIT_FILES.md](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)).
+  The one exclusion is `Zalizniak/GH/` (nested git repos, see next bullet). Keep
+  `INDEX.md` and this README current when you add or move things.
 - **The `Zalizniak/GH/*` git repos are a special case.** They're real, independent
   git checkouts nested inside an untracked folder. Don't run repo-wide operations
   (bulk rename, bulk delete, archive/zip) that would walk into and mutate their

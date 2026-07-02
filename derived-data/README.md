@@ -44,20 +44,23 @@ topic folder you'll typically find:
   generically-named files (`data42.xlsx`, …) with no reliable signal for exactly where
   within the topic folder they belong.
 
-`Paralleli-v-tekstah-korpusa-SRC/` is the odd one out size-wise (15.07GB / 851 files,
-by far most of this entire folder's weight) — it's the corpus-wide parallel-passage
+`Paralleli-v-tekstah-korpusa-SRC/` is the odd one out size-wise (1.5GB / 606 files,
+still the largest folder here) — it's the corpus-wide parallel-passage
 search data, split out of a formerly single `Параллели в санскритских текстах` folder
 whose Veda/Mahābhārata/Rāmāyaṇa philological-parallels material went to
-`non-derived/` instead (see below). It grew significantly and was deduplicated on
-02-07-2026 — see the "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" section in
+`non-derived/` instead (see below). It was deduplicated on 02-07-2026, and its bulky
+`PARA/VSE/PART/` full stop-word run (11.7GB) was deliberately deleted by M.G. the same
+day — see the "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" section in
 [`INDEX.md`](INDEX.md) for the current internal structure and what was consolidated.
 
 ## Working with this data
 
-- **Not git-tracked.** This directory (and `non-derived/`) is intentionally untracked
-  — mixed binary formats (Excel, Word, 7z archives, raw DCS dumps) and multi-GB total
-  size make it a poor fit for the git repo. `INDEX.md` and this README are the only
-  persistent map; keep them current when you add or move things (see below).
+- **Git-tracked and pushed (since 02-07-2026).** This directory (and `non-derived/`,
+  minus its nested `Zalizniak/GH/` git repos) is committed to `gasyoun/VisualDCS` —
+  backed up in 13 batches, with every file over ~95MB stored as 7-Zip split volumes
+  (`*.7z.NNN`; reassembly instructions in
+  [RESTORE_SPLIT_FILES.md](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)).
+  Keep `INDEX.md` and this README current when you add or move things (see below).
 - **Encoding.** Filenames and file contents are a mix of Russian and English;
   spreadsheets are mostly legacy `.xls`/Excel-97 format. No special handling needed
   beyond normal UTF-8-aware tooling — Windows/NTFS stores names fine even where a
