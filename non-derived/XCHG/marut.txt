@@ -1,0 +1,2717 @@
+देवनागरी	IAST	"Часть речи"	Примеры	Синонимы	Периоды/Тексты	Сочетаемость	Метка
+अंकृयत्	aṁkṛyat	m.					
+अंगिरस्वत्	aṁgirasvat	m.					
+अंतवत्	aṁtavat	m.					
+अंबुमत्	aṁbumat	m.					
+अंशयत्	aṁśayat	"m.f.n. *"					
+अंशवत्	aṁśavat	m.					
+अंशवन्त्	aṁśavant	"m. +"	"     1"	+	2/1	+	
+अंशुमन्त्	aṁśumant	"m. +"	"   116"	+	6/21	+	
+अंहस्वत्	aṁhasvat	m.					
+अकपीवत्	akapīvat	m.					
+अकपीवन्त्	akapīvant	"m. +"					
+अकर्मकृत्	akarmakṛt	m.					
+अकर्म्मकृत्	akarmmakṛt	m.f.n.					
+अकुत्सयन्त्	akutsayant	m.					
+अकुर्वन्त्	akurvant	m.					
+अकोपयन्त्	akopayant	m.					
+अक्रीडत्	akrīḍat	m.f.n.					
+अक्षत्	akṣat	"m. *"					
+अक्षवित्	akṣavit	m.					
+अक्षिणी	akṣiṇī	"f. +"					
+अगच्छत्	agacchat	"adj. +"	"     5"		4/4	+	
+अगज	agaja	"adj.n. +"	"     2"	+	2/2	+	
+अगन्धवन्त्	agandhavant	m.					
+अगृह्णन्त्	agṛhṇant	m.					
+अग्नामरुत्	agnāmarut	m.					
+अग्निचित्	agnicit	"m.m.f.n.adj. *"					
+अग्निवित्	agnivit	m.					
+अग्निष्टुत्	agniṣṭut	"m. * +"	"    10"		3/8	+	
+अघोषवत्	aghoṣavat	m.					
+अङ्कूयत्	aṅkūyat	m.f.n.					
+अङ्गवाक्पाणिमत्	aṅgavākpāṇimat	m.f.n.					
+अङ्गारकृत्	aṅgārakṛt	"m. +"					
+अजगावः	ajagāvaḥ	m.					
+अजरामर	ajarāmara	n.m.f.n.adv.					
+अजानेय	ajāneya	m.m.f.n.adj.					
+अज्ञानबन्धन	ajñānabandhana	n.					
+अज्ञानबन्धन	ajñānabandhana	n.					
+अज्यानि	ajyāni	"f. +"	"     1"		1/1	+	
+अञ्जनं	añjanaṁ	Noun					
+अटनि	aṭani	"f. +"					
+अटवि	aṭavi	f.					
+अच्युतस्थल	acyutasthala	"n. +"	"     2"		1/1	+	
+अत्	at	"Verb.cl.1.A.m. * +"	"     9"		3/4	+	
+अतत्त्वार्थवत्	atattvārthavat	m.f.n.					
+अतत्त्वार्थवन्त्	atattvārthavant	m.					
+अतनवत्	atanavat	m.					
+अतनवन्त्	atanavant	"m. +"					
+अतिबलवन्त्	atibalavant	m.					
+अतिभृत्	atibhṛt	m.					
+अतिमतिमत्	atimatimat	m.					
+अतिवीर्यवन्त्	ativīryavant	m.					
+अतुदन्त्	atudant	m.					
+अतृप्णुवत्	atṛpṇuvat	m.f.n.					
+अतृष्यत्	atṛṣyat	m.f.n.					
+अत्यश्नत्	atyaśnat	m.f.n.					
+अत्यश्नन्त्	atyaśnant	m.					
+अत्वरन्त्	atvarant	m.					
+अदण्डयन्त्	adaṇḍayant	m.					
+अदत्	adat	"m.f.n. *"					
+अदर्शयन्त्	adarśayant	m.					
+अदृप्यत्	adṛpyat	m.f.n.					
+अदेवयत्	adevayat	m.f.n.					
+अदोषवन्त्	adoṣavant	m.					
+अद्यौत्	adyaut	m.					
+अधरत्तात्	adharattāt	m.					
+अधिकरूपवत्	adhikarūpavat	m.					
+अधिकर्मकृत्	adhikarmakṛt	"m. +"	"     1"	+	1/1	+	
+अधिक्षित्	adhikṣit	"m. +"	"     1"	+	1/1	+	
+अधीयत्	adhīyat	m.f.n.					
+अध्वगत्	adhvagat	m.adj.					
+अध्वयन्त्	adhvayant	m.					
+अध्वरकृत्	adhvarakṛt	"m. +"					
+अनंतवत्	anaṁtavat	m.					
+अनङ्गासुहृत्	anaṅgāsuhṛt	m.					
+अनधीयन्त्	anadhīyant	m.					
+अननुतिष्ठत्	ananutiṣṭhat	m.					
+अनन्तजित्	anantajit	"m. +"	"     1"		1/1	+	
+अनन्ततीर्थकृत्	anantatīrthakṛt	"m. +"	"     1"		1/1	+	
+अनन्ततीर्थक्लत्	anantatīrthaklat	m.					
+अनन्तवन्त्	anantavant	"m. +"	"     3"	+	1/1	+	
+अनन्विष्यत्	ananviṣyat	m.					
+अनन्विष्यन्त्	ananviṣyant	m.					
+अनपराजित्	anaparājit	"m. +"	"     1"		1/1	+	
+अनपव्ययत्	anapavyayat	m.f.n.					
+अनपस्फुरत्	anapasphurat	m.					
+अनर्हन्त्	anarhant	m.					
+अनवग्लायत्	anavaglāyat	m.f.n.					
+अनवलोकयन्त्	anavalokayant	m.					
+अनवस्यत्	anavasyat	m.f.n.					
+अनवानत्	anavānat	m.f.n.					
+अनश्नत्	anaśnat	m.f.n.					
+अनागच्छन्त्	anāgacchant	m.					
+अनागमिष्यत्	anāgamiṣyat	m.f.n.					
+अनाचान्त	anācānta	"adj. +"	"     1"		1/1	+	
+अनाचारः	anācāraḥ	m.					
+अनातिष्ठन्त्	anātiṣṭhant	m.					
+अनाप्नुवत्	anāpnuvat	m.					
+अनामयत्	anāmayat	m.f.n.ind.					
+अनासादयन्त्	anāsādayant	m.					
+अनिःसरत्	aniḥsarat	m.					
+अनिङ्गयत्	aniṅgayat	m.f.n.					
+अनिच्छमान	anicchamāna	"adj. +"	"     2"		1/1	+	
+अनिदित्	anidit	m.					
+अनिमिषत्	animiṣat	m.f.n.					
+अनिमिषन्त्	animiṣant	"m. +"	"     1"	+	1/1	+	
+अनिर्यातयन्त्	aniryātayant	m.					
+अनिलहृत्	anilahṛt	m.f.n.					
+अनुकीर्त्	anukīrt	m.					
+अनुगुणवन्त्	anuguṇavant	m.					
+अनुचिन्तन	anucintana	"n. +"	"     1"	+	1/1	+	
+अनुच्चार	anuccāra	"m. +"	"     1"	+	1/1	+	
+अनुच्छिन्न	anucchinna	"adj. +"					
+अनुदात्तेत्	anudāttet	m.					
+अनुद्वेजयन्त्	anudvejayant	m.					
+अनुनिवृत्	anunivṛt	m.					
+अनुपघ्नन्त्	anupaghnant	m.					
+अनुपयन्त्	anupayant	m.					
+अनुपालयत्	anupālayat	m.f.n.					
+अनुबध्नत्	anubadhnat	m.f.n.					
+अनुमरिष्यत्	anumariṣyat	m.f.n.					
+अनुयोगकृत्	anuyogakṛt	"m. +"	"     1"		1/1	+	
+अनुवाक्यवत्	anuvākyavat	m.f.n.					
+अनुविचिन्त्	anuvicint	m.					
+अनुसंचिन्त्	anusaṁcint	m.					
+अनुहरत्	anuharat	m.m.f.n.					
+अनुहरन्त्	anuharant	m.					
+अनेककृत्	anekakṛt	"m. +"					
+अनेडमूकः	aneḍamūkaḥ	m.					
+अन्तकृत्	antakṛt	"adj.m. * +"	"    15"	+	4/10	+	
+अन्तरिक्षक्षित्	antarikṣakṣit	m.f.n.					
+अन्तरिक्षप्रुत्	antarikṣaprut	m.f.n.adj.					
+अन्तर्वसत्	antarvasat	m.f.n.					
+अन्तेवसत्	antevasat	m.					
+अन्धकासुहृत्	andhakāsuhṛt	m.					
+अन्धवत्	andhavat	m.					
+अन्नियत्	anniyat	m.f.n.					
+अन्यतोदत्	anyatodat	m.f.n.					
+अन्यभृत्	anyabhṛt	"m. +"					
+अन्वर्त्	anvart	m.					
+अपांनपात्	apāṁnapāt	m.					
+अपापकृत्	apāpakṛt	m.f.n.adj.					
+अपारयत्	apārayat	m.f.n.					
+अपारयन्त्	apārayant	m.					
+अपास्यत्	apāsyat	m.f.n.					
+अपिक्रित्	apikrit	m.					
+अपियत्	apiyat	m.f.n.					
+अपिवातयत्	apivātayat	m.					
+अपिवृत्	apivṛt	m.					
+अपीजू	apījū	n.adj.					
+अपुच्छा	apucchā	"f. +"					
+अपूर्ब्ववत्	apūrbvavat	m.					
+अप्रकाशन्त्	aprakāśant	m.					
+अप्रतिगृह्णन्त्	apratigṛhṇant	m.					
+अप्रतिबोधवत्	apratibodhavat	m.f.n.					
+अप्रमाद्यन्त्	apramādyant	m.					
+अप्रयच्छन्त्	aprayacchant	m.					
+अप्रयुच्चत्	aprayuccat	m.					
+अप्लवत्	aplavat	m.f.n.					
+अबन्धुकृत्	abandhukṛt	m.f.n.adj.					
+अबिभ्यत्	abibhyat	m.f.n.adj.					
+अब्रुवन्त्	abruvant	m.					
+अभयकृत्	abhayakṛt	m.					
+अभयङ्कृत्	abhayaṅkṛt	m.					
+अभवत्	abhavat	m.					
+अभावयन्त्	abhāvayant	m.					
+अभिगच्छत्	abhigacchat	m.f.n.					
+अभिजितः	abhijitaḥ	m.					
+अभिदधत्	abhidadhat	m.f.n.					
+अभिनवोद्भित्	abhinavodbhit	m.					
+अभिमातिजित्	abhimātijit	m.f.n.adj.					
+अभिवात्	abhivāt	m.					
+अभिवाशत्	abhivāśat	m.f.n.					
+अभिष्टिकृत्	abhiṣṭikṛt	m.f.n.adj.					
+अभिष्टुवत्	abhiṣṭuvat	m.f.n.					
+अभिष्यत्	abhiṣyat	m.n.m.f.n.					
+अभिष्वन्त्	abhiṣvant	"m. +"	"     2"	+	1/1	+	
+अभिश्चुत्	abhiścut	m.					
+अभिसंचिन्त्	abhisaṁcint	m.					
+अभिसंपत्	abhisaṁpat	m.					
+अभिसम्प्रवृत्	abhisampravṛt	m.					
+अभिह्रत्	abhihrat	m.					
+अभिह्व्रत्	abhihvrat	m.					
+अभीपत्	abhīpat	m.					
+अभीषुमन्त्	abhīṣumant	"m. +"					
+अभीशुमत्	abhīśumat	m.					
+अभुंजत्	abhuṁjat	m.					
+अभुज्	abhuj	"adj. +"	"     2"		2/2	+	
+अभुज्	abhuj	"adj. +"	"     2"		2/2	+	
+अभोजयन्त्	abhojayant	m.					
+अभ्यर्त्	abhyart	m.					
+अभ्यसूयत्	abhyasūyat	m.					
+अभ्यासवत्	abhyāsavat	m.					
+अभ्यासवन्त्	abhyāsavant	"m. +"	"     2"		1/2	+	
+अभ्युल्लसत्	abhyullasat	m.f.n.					
+अमद्यमद्यत्	amadyamadyat	m.					
+अमानयन्त्	amānayant	m.					
+अमावस्यत्	amāvasyat	"m. +"	"     1"		3/4/1	+	
+अमितबुद्धिमन्त्	amitabuddhimant	m.					
+अमित्रजित्	amitrajit	"m. +"	"     3"		2/2	+	
+अमित्रयन्त्	amitrayant	m.					
+अमिनत्	aminat	f.m.f.n.					
+अमिनन्त्	aminant	m.					
+अमृतस्रुत्	amṛtasrut	m.f.n.adj.					
+अमोक्षयत्	amokṣayat	m.f.n.					
+अम्बुभृत्	ambubhṛt	"m. +"	"     3"	+	3/3	+	
+अयाचन्त्	ayācant	m.					
+अयाचमान	ayācamāna	m.f.n.					
+अयुक्तकृत्	ayuktakṛt	m.f.n.					
+अयुगपत्	ayugapat	m.					
+अयुतजित्	ayutajit	"m. +"	"     1"	+	1/1	+	
+अयुताजित्	ayutājit	"m. +"	"     1"	+	1/1	+	
+अयुष्मन्त्	ayuṣmant	m.					
+अयोदत्	ayodat	m.f.n.					
+अरक्षन्त्	arakṣant	m.					
+अरङ्कृत्	araṅkṛt	m.					
+अरागद्वेषत्	arāgadveṣat	m.					
+अरातीयत्	arātīyat	m.					
+अरिणिन्	ariṇin	m.					
+अरोकदत्	arokadat	m.f.n.					
+अर्चिष्मत्	arciṣmat	"adj. +"	"    34"		4/7	+	
+अर्छ्	arch	Noun					
+अर्जुनतस्	arjunatas	"ind. +"					
+अर्जुनपुर	arjunapura	"n. +"					
+अर्जुनशिरीष	arjunaśirīṣa	"n. +"					
+अर्त्	art	m.					
+अर्थकृत्	arthakṛt	m.f.n.adj.					
+अर्थवन्त्	arthavant	"m. +"	"     1"	+	1/1	+	
+अर्थेत्	arthet	m.f.n.adj.					
+अर्वन्त्	arvant	"m. +"	"    91"	+	3/6	+	
+अर्वरीवन्त्	arvarīvant	m.					
+अर्हन्त्	arhant	"m. +"	"   283"	+	3/12	+	
+अलङ्घयत्	alaṅghayat	m.f.n.					
+अलिमन्त्	alimant	"m. +"	"     1"		1/1	+	
+अलुभ्यात्	alubhyāt	m.f.n.					
+अलोपयत्	alopayat	m.					
+अवगाढवत्	avagāḍhavat	m.f.n.					
+अवगुंठनवत्	avaguṁṭhanavat	m.					
+अवज्ञेय	avajñeya	m.f.n.					
+अवटोदा	avaṭodā	"f. +"					
+अवत्	avat	"m.m.f.n. *"					
+अवद्यत्	avadyat	m.f.n.					
+अवनिभृत्	avanibhṛt	"m. +"					
+अवनीभृत्	avanībhṛt	"m. +"					
+अवन्त्	avant	m.					
+अवमूत्रयत्	avamūtrayat	m.f.n.					
+अवरोहवन्त्	avarohavant	m.adj.					
+अवलात्	avalāt	m.					
+अवस्यन्त्	avasyant	m.					
+अवाग्गमनवन्त्	avāggamanavant	m.					
+अवाप्तवत्	avāptavat	m.f.n.					
+अविक्षित्	avikṣit	"m. +"	"     4"	+	2/2	+	
+अविचारिन्	avicārin	"adj. +"	"     1"		1/1	+	
+अविज्ञाति	avijñāti	"f. +"	"     1"	+	2/1	+	
+अविज्ञाति	avijñāti	"f. +"	"     1"	+	2/1	+	
+अविज्ञेयं	avijñeyaṁ	Noun					
+अविनश्यन्त्	avinaśyant	m.					
+अविन्दन्त्	avindant	m.					
+अविब्रुवत्	avibruvat	m.f.n.					
+अविब्रुवन्त्	avibruvant	m.					
+अविवेनन्त्	avivenant	m.					
+अविष्यत्	aviṣyat	"m.f.n. *"					
+अविह्वरत्	avihvarat	m.f.n.					
+अवीक्षित्	avīkṣit	m.					
+अवीचिमत्	avīcimat	m.					
+अवृहत्	avṛhat	m.					
+अवोचत्	avocat	m.					
+अव्यत्	avyat	f.m.f.n.					
+अव्यनत्	avyanat	m.f.n.					
+अव्यवसायवत्	avyavasāyavat	m.f.n.					
+अव्यवसायवन्त्	avyavasāyavant	m.					
+अव्येष्यत्	avyeṣyat	m.f.n.					
+अष्टपात्	aṣṭapāt	m.					
+अष्टारचक्रवत्	aṣṭāracakravat	m.					
+अष्टारचक्रवन्त्	aṣṭāracakravant	m.					
+अष्ठीवत्	aṣṭhīvat	m.n.m.f.n.					
+अष्ठीवन्त्	aṣṭhīvant	"m. +"	"    14"		4/6	+	
+अशक्नुवन्त्	aśaknuvant	m.					
+अशनायावन्त्	aśanāyāvant	m.					
+अशासन्त्	aśāsant	m.					
+अश्नत्	aśnat	"m.f.n. *"					
+अश्नवत्	aśnavat	m.					
+अश्मजित्	aśmajit	"m. +"	"     1"	+	1/1	+	
+अश्मभित्	aśmabhit	m.					
+अश्वजित्	aśvajit	"m. +"	"     4"		2/4	+	
+अश्ववन्त्	aśvavant	"m. +"	"     1"	+	1/1	+	
+अश्ववित्	aśvavit	m.					
+अश्वैत्	aśvait	m.					
+असंकल्पयत्	asaṁkalpayat	m.f.n.					
+असंचरत्	asaṁcarat	m.f.n.					
+असंभिन्दत्	asaṁbhindat	m.f.n.					
+असंयत्	asaṁyat	m.f.n.					
+असंवसन्त्	asaṁvasant	m.					
+असंह्रादयन्त्	asaṁhrādayant	m.					
+असन्त्	asant	"m. +"					
+असम्भवत्	asambhavat	m.					
+असश्चन्त्	asaścant	m.f.adv.adj.					
+अससत्	asasat	m.f.n.					
+असुन्वत्	asunvat	m.f.n.					
+असुभृत्	asubhṛt	"m. +"					
+असुमन्त्	asumant	"m. +"					
+अस्कन्दयन्त्	askandayant	m.					
+अस्तंयत्	astaṁyat	m.					
+अस्तंयन्त्	astaṁyant	m.					
+अस्तंयात्	astaṁyāt	m.					
+अस्तक्षितिभृत्	astakṣitibhṛt	"m. +"					
+अस्तमेष्यत्	astameṣyat	m.					
+अस्तवत्	astavat	"m.f.n. *"					
+अस्त्रभृत्	astrabhṛt	"m. +"	"     3"	+	2/2	+	
+अस्थिवत्	asthivat	m.f.n.					
+अस्पृशत्	aspṛśat	m.					
+अस्पृशन्त्	aspṛśant	m.					
+अस्मत्	asmat	m.					
+अस्रजित्	asrajit	m.					
+अस्रेधत्	asredhat	m.f.n.					
+अस्रेधन्त्	asredhant	m.					
+अहङ्कारबत्	ahaṅkārabat	m.f.n.					
+अहारयत्	ahārayat	m.n.m.f.n.					
+अहिट्टान	ahiṭṭāna	m.					
+अहिनामभृत्	ahināmabhṛt	m.					
+अहिभृत्	ahibhṛt	"m. +"					
+आकायम्	ākāyam	ind.					
+आकारवन्त्	ākāravant	f.adj.					
+आकृष्टिः	ākṛṣṭiḥ	f.					
+आक्षिप्तरेचित	ākṣiptarecita	"mn. +"	"     4"		1/1	+	
+आखंडलः	ākhaṁḍalaḥ	m.					
+आखुः	ākhuḥ	m.					
+आघ्नान	āghnāna	"adj. +"					
+आघ्रा	āghrā	"Verb.cl.4.P. +"	"   109"	+	6/38	+	
+आच्छेत्तर्	ācchettar	m.					
+आतंच्	ātaṁc	Verb.cl.7.P.					
+आतपत्रक	ātapatraka	n.					
+आतपवर्ष्य	ātapavarṣya	"adj. +"					
+आददि	ādadi	"adj. +"	"     3"	+	1/1	+	
+आदारिबिम्बी	ādāribimbī	f.					
+आदिगदाधर	ādigadādhara	"m. +"	"     7"		1/1	+	
+आद्यबीज	ādyabīja	n.					
+आपत्	āpat	"Verb.cl.1.A. +"	"   372"	+	6/31	+	
+आपांग्यम्	āpāṁgyam	Partic.					
+आप्यायः	āpyāyaḥ	m.					
+आप्यायक	āpyāyaka	"adj.adj. +"	"     6"		3/5	+	
+आफल्य	āphalya	"n. +"	"     1"	+	1/1	+	
+आमयावित्व	āmayāvitva	n.					
+आमीवित	āmīvita	"adj. +"					
+आमुकीनामन्	āmukīnāman	"n. +"					
+आम्ब	āmba	"m. +"	"     2"	+	1/2	+	
+आयतलोचन	āyatalocana	m.					
+आयुधसाह्वय	āyudhasāhvaya	"m. +"					
+आयुष्यं	āyuṣyaṁ	Noun					
+आरनालं	āranālaṁ	Noun					
+आरनालक	āranālaka	"n. +"	"    13"		3/5	+	
+आरूढिः	ārūḍhiḥ	f.					
+आर्तिहन्	ārtihan	m.f.n.					
+आलिख्य	ālikhya	ind.					
+आलिगव्य	āligavya	"m. +"					
+आलिङ्ग्य	āliṅgya	"adj.m. +"	"     1"	+	1/1	+	
+आलोहितीकृ	ālohitīkṛ	Noun					
+आवहमान	āvahamāna	"adj. +"					
+आवाप	āvāpa	"m. * +"	"    75"	+	7/24	+	
+आशीर्वत्	āśīrvat	"adj. +"	"     2"	+	1/1	+	
+आशीविष	āśīviṣa	"m. * +"	"   240"	+	6/22	+	
+आश्चुत्	āścut	m.					
+आश्चोतन	āścotana	"n. +"	"     1"	+	1/1	+	
+आश्वसूक्ति	āśvasūkti	"m. +"					
+आसज्य	āsajya	ind.					
+आसज्य	āsajya	ind.					
+आसन्दिका	āsandikā	"f. +"					
+आसन्दी	āsandī	"f. * +"	"    14"		4/9	+	
+आसन्नकाल	āsannakāla	"m.adj. +"					
+आसीन	āsīna	"n.m.f.n.Partic. *"					
+आसुतीय	āsutīya	adj.					
+आस्फोटः	āsphoṭaḥ	m.					
+इंद्रः	iṁdraḥ	m.f.n.Partic.					
+इंद्रिय	iṁdriya	m.f.					
+इंधन	iṁdhana	m.					
+इंरेजः	iṁrejaḥ	m.					
+इट्चर	iṭcara	"m. +"					
+इडस्	iḍas	Noun					
+इडापात्री	iḍāpātrī	"f. +"					
+इच्छता	icchatā	"f. +"					
+इतः	itaḥ	m.					
+इत्यः	ityaḥ	m.					
+इन्दुमत्	indumat	"m.f. *"					
+इन्दुमित्र	indumitra	"m. +"					
+इन्दुमौलि	indumauli	"m. +"	"    13"	+	3/7	+	
+इन्द्रजूत	indrajūta	m.f.n.adj.					
+इन्द्रस्वत्	indrasvat	"adj. +"	"     1"		1/1	+	
+इन्द्रायुधं	indrāyudhaṁ	Noun					
+इन्द्रावरुण	indrāvaruṇa	"m. * +"	"    57"		3/5	+	
+इन्द्रियविषय	indriyaviṣaya	m.					
+इभोषणा	ibhoṣaṇā	"f. +"					
+इरिका	irikā	"f. +"					
+इषुध	iṣudha	m.					
+इषुध्य	iṣudhya	m.					
+इष्टगन्धं	iṣṭagandhaṁ	Noun					
+इष्टसाधन	iṣṭasādhana	m.					
+इष्टिपच	iṣṭipaca	"m. +"					
+ईड्य	īḍya	"m. * +"	"     1"	+	1/1	+	
+ईन्	īn	"m. +"	"     1"	+	3/3/1	+	
+उक्तानुक्त	uktānukta	m.f.n.					
+उक्षसेन	ukṣasena	"m. +"					
+उक्षा	ukṣā	f.					
+उग्रं	ugraṁ	Noun					
+उच्चैश्श्रवस्	uccaiśśravas	Noun					
+उच्छोफः	ucchophaḥ	m.					
+उच्छोषुक	ucchoṣuka	"adj. +"					
+उज्ज्वलनीलमणि	ujjvalanīlamaṇi	"m. +"					
+उज्झक	ujjhaka	"m. +"	"     1"	+	1/1	+	
+उज्झटा	ujjhaṭā	"f. +"	"     1"	+	1/1	+	
+उत्कर्तम्	utkartam	"ind. +"					
+उत्कोच	utkoca	"m. * +"	"    12"	+	3/7	+	
+उत्क्रीश	utkrīśa	m.					
+उत्तरतर	uttaratara	"adj. +"	"     3"		2/3	+	
+उत्तरम्	uttaram	adv.ind.					
+उदपात्र	udapātra	"n. +"	"    22"	+	3/9	+	
+उदयतुङ्ग	udayatuṅga	"m. +"					
+उदरंभर	udaraṁbhara	"adj. +"					
+उदसन	udasana	"n. +"	"     1"	+	1/1	+	
+उद्दाल्य	uddālya	ind.					
+उद्दास	uddāsa	"m. +"					
+उद्भिदं	udbhidaṁ	Noun					
+उद्यतः	udyataḥ	m.					
+उद्यम्	udyam	"Verb.cl.6.P. +"	"   699"		6/60	+	
+उद्यमिन्	udyamin	"adj. +"	"     3"	+	1/3	+	
+उद्वहनम्	udvahanam	Partic.					
+उद्वाष्पत्व	udvāṣpatva	"n. +"					
+उद्वाश्	udvāś	"Verb.cl.4.A. +"					
+उन्मिश्र	unmiśra	"adj. +"	"    33"		5/12	+	
+उपचित	upacita	m.f.n.					
+उपचितः	upacitaḥ	m.					
+उपजन्मन्	upajanman	"n. +"	"     1"		1/1	+	
+उपतप्त	upatapta	m.f.n.					
+उपनिवपन	upanivapana	"n. +"					
+उपनिषद्	upaniṣad	"f.Verb.cl.1.P. * +"	"   125"	+	6/37	+	
+उपयिचारिक	upayicārika	m.					
+उपवध्	upavadh	"Verb.cl.1.P. +"		+			
+उपश्रुति	upaśruti	"m.f. * +"	"    20"		5/7	+	
+उपसंहारः	upasaṁhāraḥ	m.					
+उपसत्तिः	upasattiḥ	f.					
+उपस्वृ	upasvṛ	Noun					
+उपस्वेद	upasveda	"m. +"	"     3"	+	1/2	+	
+उपानद्गूढ	upānadgūḍha	m.f.n.Verb.					
+उपाप्रछ्	upāprach	"Verb.cl.6.P. +"		+			
+उपोक्ष्	upokṣ	"Verb.cl.6.P. +"					
+उपोच्चारिन्	upoccārin	adj.					
+उभयतोद्वार	ubhayatodvāra	"adj. +"					
+उभयद्युस्	ubhayadyus	"ind. +"	"     2"		1/1		
+उभयपद्	ubhayapad	m.m.f.n.					
+उर्वरित	urvarita	"adj. +"	"     1"	+	1/1	+	
+उर्वीश्वर	urvīśvara	"m. +"					
+उलूकपक्ष	ulūkapakṣa	"adj. +"					
+उल्ललित	ullalita	m.f.n.					
+उल्लसन	ullasana	m.					
+उल्लिखितः	ullikhitaḥ	m.					
+उषद्रथ	uṣadratha	"m. +"					
+उषय्	uṣay	"Verb.cl.10.P. +"					
+उष्णगत	uṣṇagata	"n. +"	"     1"		1/1	+	
+उष्णय्	uṣṇay	Noun					
+उष्णांशुः	uṣṇāṁśuḥ	m.					
+उशद्गु	uśadgu	"m. +"	"     3"		2/2	+	
+उशाना	uśānā	"f. +"					
+ऊर्ज्जयोनि	ūrjjayoni	n.					
+ऊर्ज्जा	ūrjjā	f.					
+ऊर्णा	ūrṇā	"f. * +"	"   111"		6/40	+	
+ऊर्णु	ūrṇu	"m. +"	"     2"		1/1/1/1	+	
+ऊर्जस्वित्	ūrjasvit	m.					
+ऊर्ध्वगुद	ūrdhvaguda	"m. +"	"     2"		1/1	+	
+ऊर्ध्वगुह्यक	ūrdhvaguhyaka	"m. +"	"     1"	+	1/1	+	
+ऊर्मिमाला	ūrmimālā	"f. +"					
+ऊर्म्य	ūrmya	"adj. * +"	"     1"	+	1/1	+	
+ऊषसूत	ūṣasūta	"n. +"	"     1"	+	2/1	+	
+ऋक्षं	ṛkṣaṁ	Noun					
+ऋक्षवान्	ṛkṣavān	m.					
+ऋक्षविडम्बिन्	ṛkṣaviḍambin	"m. +"					
+ऋञ्ज्	ṛñj	"Verb. cl.1."					
+ऋणापकरण	ṛṇāpakaraṇa	"n. +"					
+ऋतंजय	ṛtaṁjaya	"m. +"	"     1"	+	1/1	+	
+ऋतज्ञा	ṛtajñā	m.f.n.					
+ऋतायुस्	ṛtāyus	"m. +"					
+ऋतुधा	ṛtudhā	"ind. +"	"     1"		1/1		
+ऋधक्	ṛdhak	"ind. +"	"    17"		3/3		
+ऋधद्वार	ṛdhadvāra	"adj. +"					
+ऋश्यः	ṛśyaḥ	m.					
+एकपात्र	ekapātra	m.f.n.					
+एकवर्ण	ekavarṇa	m.f.m.f.n.adj.					
+एकाधिक	ekādhika	m.					
+एणी	eṇī	"f. +"	"     4"		2/3	+	
+एणीपचनीय	eṇīpacanīya	"adj. +"					
+एणेक्षण	eṇekṣaṇa	"adj. +"					
+एडुकं	eḍukaṁ	Noun					
+एतत्कालीन	etatkālīna	"adj. +"					
+एधाच्	edhāc	"m. +"	"     1"		5/12/1	+	
+एवयामरुत्	evayāmarut	"m. +"	"    10"	+	2/1	+	
+एवशब्द	evaśabda	"m. +"	"     2"	+	1/1	+	
+एश्	eś	"m. +"	"     1"	+	2/3/1	+	
+ओङ्कार	oṅkāra	"m.f. *"					
+कंठिन्	kaṁṭhin	m.					
+कंसः	kaṁsaḥ	m.f.n.Partic.					
+कंसवणिज्	kaṁsavaṇij	"m. +"					
+ककुदः	kakudaḥ	m.					
+ककुद्रुम	kakudruma	m.n.					
+ककुप्	kakup	Noun					
+ककुब्भण्ड	kakubbhaṇḍa	"m. +"					
+ककुभ्	kakubh	"f. * +"	"    42"	+	5/13	+	
+कक्षी	kakṣī	"f. +"	"     1"	+	1/1	+	
+कक्षीकर्	kakṣīkar	m.					
+कक्षोदक	kakṣodaka	"n. +"					
+कक्ष्य	kakṣya	"adj.n. * +"	"     4"	+	2/2	+	
+कण्ठसञ्जन	kaṇṭhasañjana	n.					
+कचि	kaci	n.					
+कण्टकालः	kaṇṭakālaḥ	m.					
+कतम	katama	"pron. * +"	"   278"		5/37		
+कतिपय	katipaya	"adj. * +"	"    56"		4/28	+	
+कथमपि	kathamapi	n.					
+कदिन्द्रियगण	kadindriyagaṇa	m.m.f.n.					
+कनिष्ठकं	kaniṣṭhakaṁ	Noun					
+कन्दशूरण	kandaśūraṇa	"m. +"	"     1"	+	1/1	+	
+कन्दशूरणः	kandaśūraṇaḥ	m.					
+कन्यासंवेद्य	kanyāsaṁvedya	"n. +"	"     1"	+	1/1	+	
+कपालवत्	kapālavat	"adj. +"	"     2"		2/2	+	
+कपुच्छल	kapucchala	"n. * +"					
+कपुत्सल	kaputsala	m.					
+कम्पि	kampi	"m. +"	"     1"		1/1/1	+	
+कयाधु	kayādhu	"f. * +"					
+कयाधू	kayādhū	f.					
+करपत्रवन्त्	karapatravant	m.					
+करपत्रिका	karapatrikā	f.					
+करपल्लव	karapallava	"m. +"	"     5"	+	1/5	+	
+करपल्लवः	karapallavaḥ	m.					
+करिगर्ज्जित	karigarjjita	n.					
+करिचर्म्मन्	karicarmman	n.					
+करिहस्त	karihasta	"m. +"	"     3"	+	1/1	+	
+कर्णगृह्य	karṇagṛhya	m.					
+कर्णजाप	karṇajāpa	"m. +"					
+कर्णशोभन	karṇaśobhana	"n. +"					
+कर्णिन्	karṇin	"adj.m. * +"	"    34"	+	5/8	+	
+कर्त्तृवाच्य	karttṛvācya	m.					
+कर्मक्षमः	karmakṣamaḥ	m.					
+कर्मक्षय	karmakṣaya	m.					
+कर्मक्षेत्र	karmakṣetra	"n. +"					
+कर्मण्यभुक्	karmaṇyabhuk	f.					
+कर्मत्याग	karmatyāga	m.					
+कर्म्मज्ञ	karmmajña	m.f.n.					
+कर्म्मठ	karmmaṭha	m.m.f.n.					
+कर्षिणी	karṣiṇī	"f. +"	"     3"	+	2/3	+	
+कल	kala	"adj.m.n. * +"	"   134"	+	5/44	+	
+कलचुरि	kalacuri	"m. * +"					
+कललजः	kalalajaḥ	m.					
+कलहाय	kalahāya	Verb.					
+कलायखञ्ज	kalāyakhañja	m.					
+कलाविद	kalāvida	m.					
+कल्याणधर्म्मन्	kalyāṇadharmman	m.f.n.					
+कवेल	kavela	"n. +"					
+कषायपाण	kaṣāyapāṇa	"m. +"					
+कशेरूः	kaśerūḥ	Noun					
+कशेरूमत्	kaśerūmat	m.					
+कश्मरी	kaśmarī	"f. +"	"     1"	+	1/1	+	
+कश्मल	kaśmala	"adj.n.mn. * +"	"    72"	+	4/8	+	
+कांडः	kāṁḍaḥ	m.					
+कांदिशीक	kāṁdiśīka	"adj. +"	"     4"	+	2/4	+	
+काकाख्य	kākākhya	"n. +"	"     1"	+	1/1	+	
+कागः	kāgaḥ	m.					
+काङ्कत	kāṅkata	"m. +"					
+काङ्क्षिन्	kāṅkṣin	"adj. * +"	"   168"	+	6/27	+	
+काणेरिन्	kāṇerin	"m. +"					
+कान्तिलोह	kāntiloha	"mn. +"					
+कान्तिव्रत	kāntivrata	"n. +"	"     1"	+	1/1	+	
+कामकोष्णी	kāmakoṣṇī	"f. +"					
+कामताल	kāmatāla	"m. +"					
+कायसम्पद्	kāyasampad	Noun					
+कारली	kāralī	"f. +"	"     1"	+	1/1	+	
+कार्म्मण	kārmmaṇa	n.m.f.n.					
+कार्यकर्तर्	kāryakartar	m.					
+कार्यशब्दिक	kāryaśabdika	"adj. *"					
+कार्य्यसागर	kāryyasāgara	m.					
+कालकोटि	kālakoṭi	"f. +"					
+कालञ्जर	kālañjara	m.					
+कालमसी	kālamasī	"f. +"					
+कालिव्य	kālivya	"adj. +"					
+काष्ठशारिवा	kāṣṭhaśārivā	f.					
+किकिदीवि	kikidīvi	"m. +"	"     1"	+	1/1	+	
+किणिः	kiṇiḥ	m.					
+किदर्भ	kidarbha	"m. +"					
+किन्तमाम्	kintamām	Partic.					
+किम्मय	kimmaya	"adj. +"	"     3"		2/2	+	
+किरातकः	kirātakaḥ	m.					
+किरोडाट्य्	kiroḍāṭy	Noun					
+किर्मीरारि	kirmīrāri	"m. +"					
+किर्म्मीरत्वच्	kirmmīratvac	f.					
+किलः	kilaḥ	m.					
+कीडेर	kīḍera	"m. +"					
+कीदृग्	kīdṛg	Noun					
+कीनारः	kīnāraḥ	m.					
+कीरमाण	kīramāṇa	m.					
+कीर्तितव्य	kīrtitavya	m.f.n.adj.					
+कीर्तिराज	kīrtirāja	"m. +"					
+कीर्त्त्य	kīrttya	m.f.n.					
+कीर्य	kīrya	m.f.n.adj.					
+कुक्कुटः	kukkuṭaḥ	m.					
+कुक्षिल	kukṣila	"m. +"					
+कुख्याति	kukhyāti	"f. +"					
+कुटीनिवातम्	kuṭīnivātam	"ind. +"					
+कुतप	kutapa	"adj.mn.m. * +"	"    23"	+	3/15	+	
+कुतार्किक	kutārkika	"m. +"	"     1"	+	1/1	+	
+कुत्सकुशिकिका	kutsakuśikikā	"f. +"					
+कुनाशक	kunāśaka	"m. +"	"     1"	+	1/1	+	
+कुन्तीतनय	kuntītanaya	m.					
+कुभ्रातृ	kubhrātṛ	"m. +"					
+कुमुदगन्ध्या	kumudagandhyā	f.					
+कुमोदक	kumodaka	"m. +"	"     1"	+	1/1	+	
+कुरुनन्दन	kurunandana	m.					
+कुरुराज्	kururāj	"m. +"	"     1"	+	1/1	+	
+कुर्वादि	kurvādi	n.					
+कुल	kula	"n. * +"	"  2962"	+	7/119	+	
+कुलतन्तु	kulatantu	"m. +"					
+कुलमर्य्यादा	kulamaryyādā	f.					
+कुलवत्	kulavat	"adj. +"	"     2"	+	2/2	+	
+कुलस	kulasa	"adj. +"					
+कुलिशासन	kuliśāsana	"m. +"					
+कुलुक्कगुंजा	kulukkaguṁjā	f.					
+कुविन्दक	kuvindaka	"m. +"					
+कुवेरः	kuveraḥ	m.					
+कुष्ठकन्द	kuṣṭhakanda	"m. +"					
+कुष्ठित	kuṣṭhita	"adj. +"	"     1"	+	2/1	+	
+कुशलता	kuśalatā	f.					
+कुसुमवाण	kusumavāṇa	m.					
+कूणितेक्षण	kūṇitekṣaṇa	"m. +"					
+कूजित	kūjita	"n. * +"	"    20"		5/11	+	
+कृच्छ्राप्त	kṛcchrāpta	"adj. +"					
+कृतकत्व	kṛtakatva	n.					
+कृततीर्थ	kṛtatīrtha	"adj. +"	"     1"	+	1/1	+	
+कृतवाक्	kṛtavāk	f.					
+कृतीमन्त्र	kṛtīmantra	"m. +"	"     1"		1/1	+	
+कृत्स्नविद्	kṛtsnavid	"adj. +"					
+कृषायु	kṛṣāyu	"adj. +"					
+कृषिभागिन्	kṛṣibhāgin	m.					
+कॢप्तकील	kḷptakīla	f.					
+केत	keta	"m. * +"	"    24"	+	3/5	+	
+केतकी	ketakī	"f. +"	"    73"		6/30	+	
+केतुमालिन्	ketumālin	"m. +"	"     2"	+	2/2	+	
+केशधर	keśadhara	"m. +"					
+केशपक्षः	keśapakṣaḥ	m.					
+कोटरक	koṭaraka	m.					
+कोटिकाश्य	koṭikāśya	"m. +"	"     9"	+	1/1	+	
+कोटिकास्य	koṭikāsya	"m. +"					
+कोषांश	koṣāṁśa	m.					
+कोष्ठाग्नि	koṣṭhāgni	m.					
+कोशदण्ड	kośadaṇḍa	m.					
+कोशशुद्धि	kośaśuddhi	"f. +"					
+कोशागाराधिकारिन्	kośāgārādhikārin	"m. +"					
+कैटभहा	kaiṭabhahā	f.					
+कौस्त्रुभवक्षस्	kaustrubhavakṣas	m.					
+क्र	kra	"m. +"	"     1"		1/1/1	+	
+क्रकणः	krakaṇaḥ	m.					
+क्रतुद्विष्	kratudviṣ	"m. +"					
+क्रतुविक्रयिन्	kratuvikrayin	"adj. +"					
+क्रमदण्डक	kramadaṇḍaka	m.					
+क्रव्याशिन्	kravyāśin	"adj.m. +"					
+क्रियासार	kriyāsāra	"m. +"					
+क्रियासिद्धि	kriyāsiddhi	f.					
+क्रीडनिका	krīḍanikā	"f. +"	"     5"		1/2	+	
+क्रुत्	krut	m.					
+क्रुध्	krudh	"f.Verb.cl.4.A. * +"	"  1574"	+	6/55	+	
+क्रुध	krudha	"m. +"	"     3"		6/55/1	+	
+क्रुमुकः	krumukaḥ	m.					
+क्रूरगन्ध	krūragandha	"m. +"	"     1"	+	1/1	+	
+क्रूरचरित	krūracarita	m.f.n.					
+क्रूर्च्च	krūrcca	m.					
+क्रोधनी	krodhanī	"f. +"	"     1"	+	2/2/1	+	
+क्रौञ्चब्रध्न	krauñcabradhna	m.					
+क्रौञ्चब्रध्न	krauñcabradhna	m.					
+क्रौञ्चारुणव्यूह	krauñcāruṇavyūha	m.					
+क्लिन्नहृद्	klinnahṛd	"adj. +"					
+क्वथ	kvatha	"m. +"					
+क्वथनम्	kvathanam	Partic.					
+क्वणनं	kvaṇanaṁ	Noun					
+क्षतज	kṣataja	"n. +"	"    81"	+	5/20	+	
+क्षतविक्षत	kṣatavikṣata	m.f.n.					
+क्षत्त्रान्तक	kṣattrāntaka	m.					
+क्षत्रवनि	kṣatravani	"adj. +"					
+क्षन्तव्य	kṣantavya	"n.m.f.n.adj. *"					
+क्षपाघन	kṣapāghana	m.					
+क्षपाटः	kṣapāṭaḥ	m.					
+क्षपित	kṣapita	"m.f.n. *"					
+क्षपितव्य	kṣapitavya	m.f.n.					
+क्षमावन्त	kṣamāvanta	m.					
+क्षयथुः	kṣayathuḥ	m.					
+क्षरिति	kṣariti	"f. +"	"     1"		1/1/1	+	
+क्षा	kṣā	"f. * +"	"    32"	+	4/6	+	
+क्षिं	kṣiṁ	"ind. +"	"     1"		1/1		
+क्षितिजः	kṣitijaḥ	m.					
+क्षितिरुह्	kṣitiruh	"m. +"	"     2"	+	1/1	+	
+क्षितिलवभुज्	kṣitilavabhuj	"m. +"					
+क्षितिशिञ्जिनी	kṣitiśiñjinī	f.					
+क्षिप्तः	kṣiptaḥ	m.					
+क्षिप्रकारिता	kṣiprakāritā	f.					
+क्षीरौदन	kṣīraudana	"m. +"	"     2"		3/2	+	
+क्षुत्क्षाम	kṣutkṣāma	m.f.n.Verb.					
+क्षुत्सम्बाध	kṣutsambādha	"adj. +"					
+क्षुद्रफल	kṣudraphala	Noun					
+क्षुद्ररस	kṣudrarasa	"m. +"					
+क्षुपडोडमुष्टिः	kṣupaḍoḍamuṣṭiḥ	m.					
+क्षेण	kṣeṇa	m.					
+क्षेत्रव्यवहार	kṣetravyavahāra	"m. +"					
+क्षेमधन्वन्	kṣemadhanvan	"m. +"	"     7"	+	3/6	+	
+क्षेमवृद्धि	kṣemavṛddhi	"m. +"	"     4"		1/1	+	
+क्षौद्रकमालवक	kṣaudrakamālavaka	"adj. +"					
+क्ष्मायितृ	kṣmāyitṛ	"adj. +"					
+खण्डिका	khaṇḍikā	"f. +"	"     6"		3/4	+	
+खञ्जनाकृति	khañjanākṛti	f.					
+खटकः	khaṭakaḥ	m.					
+खड्गमृग	khaḍgamṛga	"m. +"	"     1"	+	1/1	+	
+खन	khana	"adj.m. +"	"     3"	+	7/43/1	+	
+खनय्	khanay	"Verb.cl.10.P. +"	"     8"	+	2/4	+	
+खपुरः	khapuraḥ	m.					
+खमूली	khamūlī	f.					
+खम्भाति	khambhāti	n.					
+खादिरगृह्य	khādiragṛhya	"n. +"					
+गंधोली	gaṁdholī	f.					
+गङ्गायमुनामध्य	gaṅgāyamunāmadhya	"n. +"					
+गणश्री	gaṇaśrī	m.f.n.adj.					
+गजाण्ड	gajāṇḍa	"n. +"	"     1"		1/1	+	
+गडुलः	gaḍulaḥ	m.					
+गडुशिरस्	gaḍuśiras	"adj. +"					
+गणभृत्	gaṇabhṛt	"m. +"					
+गतकीर्ति	gatakīrti	m.f.n.					
+गतायुस्	gatāyus	m.f.n.adj.					
+गदायुद्धपर्वन्	gadāyuddhaparvan	n.					
+गद्गदक	gadgadaka	"adj. +"					
+गन्धबहुला	gandhabahulā	"f. +"	"     1"		1/1	+	
+गन्धेच्छा	gandhecchā	"f. +"					
+गभस्तिः	gabhastiḥ	m.f.					
+गभस्तीश्वर	gabhastīśvara	"n. +"					
+गमि	gami	"m. +"	"     8"		2/3	+	
+गरुल	garula	m.					
+गर्भपातक	garbhapātaka	"m. +"					
+गलन्ती	galantī	"f. +"					
+गात्रसंप्लव	gātrasaṁplava	m.					
+गायत्रबार्हत	gāyatrabārhata	"adj. +"					
+गिरिमाणः	girimāṇaḥ	m.					
+गुणी	guṇī	adv.Verb.					
+गुणी	guṇī	adv.Verb.					
+गुण्थक	guṇthaka	n.					
+गुडा	guḍā	"f. +"	"     5"	+	2/5	+	
+गुणगृह्य	guṇagṛhya	"adj. +"					
+गुणनिका	guṇanikā	"f. +"					
+गुरुमर्द्दल	gurumarddala	m.					
+गूढपुष्पक	gūḍhapuṣpaka	"m. +"	"     1"	+	1/1	+	
+गृञ्जनः	gṛñjanaḥ	m.					
+गृभीत्वा	gṛbhītvā	ind.					
+गृहवासिन्	gṛhavāsin	"m. +"	"     1"	+	1/1	+	
+गृहविच्छेद	gṛhaviccheda	m.					
+गृही	gṛhī	f.					
+गृह्यकर्मन्	gṛhyakarman	"n. +"					
+गोकृ	gokṛ	Noun					
+गोण्डाक्री	goṇḍākrī	"f. +"					
+गोत्रवृक्ष	gotravṛkṣa	"m. +"	"     1"	+	1/1	+	
+गोमणिंद	gomaṇiṁda	"m. +"					
+गोशाल	gośāla	"n.m. +"					
+गौरिला	gaurilā	"f. +"	"     1"	+	1/1	+	
+गौरिवीति	gaurivīti	"m. +"	"     2"	+	2/2	+	
+ग्नुमुष्टि	gnumuṣṭi	m.					
+ग्रथनीय	grathanīya	m.f.n.					
+ग्रन्थवृत्ति	granthavṛtti	"f. +"					
+ग्रन्थिलं	granthilaṁ	Noun					
+ग्रहमुष्	grahamuṣ	"m. +"					
+ग्रामदेवता	grāmadevatā	f.					
+ग्रावायण	grāvāyaṇa	"m. +"					
+ग्लुच	gluca	"Verb. cl. ("					
+घटजन्मन्	ghaṭajanman	"m. +"					
+घटिन्धम	ghaṭindhama	m.m.f.n.					
+घनगर्जित	ghanagarjita	n.					
+घनगोलक	ghanagolaka	"m. +"					
+घर्मस्वरम्	gharmasvaram	Partic.					
+घातिन्	ghātin	"adj. +"	"   203"	+	7/38	+	
+घुर्	ghur	"f.Verb. cl.6.Verb.cl.6.P."					
+घृतकरञ्जः	ghṛtakarañjaḥ	m.					
+घृतदीधिति	ghṛtadīdhiti	"m. +"					
+घोषद्	ghoṣad	m.					
+घोषातकी	ghoṣātakī	"f. +"					
+घ्रण्ण	ghraṇṇa	m.					
+ङेयुक्त	ṅeyukta	"adj. +"	"     2"		1/2	+	
+चटुला	caṭulā	"f. +"					
+चणकाम्लवारि	caṇakāmlavāri	n.					
+चण्डकापालिनी	caṇḍakāpālinī	"f. +"	"     1"	+	1/1	+	
+चण्डीरहस्य	caṇḍīrahasya	"n. +"					
+चतुःशमी	catuḥśamī	"f. +"					
+चतुरुष्ट्र	caturuṣṭra	"n. +"	"     1"		2/1	+	
+चन्दनीया	candanīyā	"f. +"					
+चन्दनसार	candanasāra	"mn. +"	"     3"	+	3/3	+	
+चन्दनसार	candanasāra	"mn. +"	"     3"	+	3/3	+	
+चन्दनसारः	candanasāraḥ	m.					
+चन्दनसारः	candanasāraḥ	m.					
+चन्द्रकी	candrakī	"f. +"	"     1"	+	1/1	+	
+चतुष्पञ्च	catuṣpañca	m.f.n.					
+चन्द्रगन्धा	candragandhā	"f. +"	"     1"	+	1/1	+	
+चन्द्रबिम्ब	candrabimba	n.					
+चन्द्रशेखरप्रबन्ध	candraśekharaprabandha	m.					
+चमत्करण	camatkaraṇa	"n. +"					
+चमत्करण	camatkaraṇa	"n. +"					
+चरण्टी	caraṇṭī	"f. +"					
+चरण्य्	caraṇy	"Denom.P. +"	"     2"	+	1/1	+	
+चातुःस्वर्य	cātuḥsvarya	"n. +"					
+चातुरिक	cāturika	m.					
+चान्द्रमस्	cāndramas						
+चापलायन	cāpalāyana	"m. +"					
+चारः	cāraḥ	m.					
+चारिका	cārikā	"f. +"	"    79"		2/4	+	
+चारुनालक	cārunālaka	"n. +"					
+चारुमती	cārumatī	"f. +"	"     2"		1/2	+	
+चित्रमेखल	citramekhala	"m. +"					
+चित्रवीर्यः	citravīryaḥ	m.					
+चित्राङ्गदः	citrāṅgadaḥ	m.					
+चित्रोत्पला	citrotpalā	"f. +"	"     3"	+	2/3	+	
+चिन्त्य	cintya	"n.m.f.n.adj. *"					
+चिप्पः	cippaḥ	m.					
+चिरयात	cirayāta	"adj. +"					
+चिल्	cil	"Verb. cl.6.Verb.Verb.cl.6.P."					
+चिल्वटि	cilvaṭi	"m. +"	"     1"		2/1	+	
+चुप	cupa	"m. +"					
+चुरी	curī	"f. +"					
+चुल्	cul	"Verb. cl.10Verb.cl.10.P."					
+चुल्हक	culhaka	"n. +"	"     2"	+	1/2	+	
+चूष्य	cūṣya	"n.m.f.n.adj. *"					
+चेलगङ्गा	celagaṅgā	"f. +"					
+चोष	coṣa	"adj.m. +"	"    20"		4/3	+	
+चैलकः	cailakaḥ	m.					
+चैलेय	caileya	"adj. +"					
+छंद	chaṁda	m.					
+छगलान्त्रिन्	chagalāntrin	"m. +"					
+छत्त्रिन्याय	chattrinyāya	"m. +"					
+छत्त्रीकर्	chattrīkar	m.					
+छन्दःसूत्र	chandaḥsūtra	n.					
+छागलान्त्री	chāgalāntrī	"f. +"					
+जगद्देव	jagaddeva	"m. +"					
+जज्ञि	jajñi	f.m.f.n.					
+जटातीर	jaṭātīra	m.					
+जनमार	janamāra	"mf. +"					
+जनान्तः	janāntaḥ	m.					
+जन्तुघ्नी	jantughnī	f.					
+जयंतः	jayaṁtaḥ	m.					
+जयंतः	jayaṁtaḥ	m.					
+जयघोषण	jayaghoṣaṇa	"n. +"					
+जम्बुः	jambuḥ	m.					
+जम्बूद्वीप	jambūdvīpa	"mn. +"	"    79"		4/16	+	
+जयवर्मन्	jayavarman	"m. +"	"     1"		1/1	+	
+जयाभट्टारिका	jayābhaṭṭārikā	"f. +"					
+जयासिंह	jayāsiṁha	"m. +"					
+जर्ज्जरीकृत	jarjjarīkṛta	m.f.n.					
+जलंग	jalaṁga	m.					
+जलतण्डुलीय	jalataṇḍulīya	"n. +"					
+जलधरसंकुसुमिताभिज्ञ	jaladharasaṁkusumitābhijña	m.					
+जलधार	jaladhāra	"m. +"	"     7"	+	3/4	+	
+जलबन्धुरस	jalabandhurasa	"m. +"	"     1"	+	1/1	+	
+जलबिन्दु	jalabindu	"m.f. +"	"     1"	+	1/1	+	
+जलभेद	jalabheda	m.					
+जलहारी	jalahārī	"f. +"					
+जलाणुक	jalāṇuka	"n. +"					
+जलालुक	jalāluka	"m. +"					
+जलालुहा	jalāluhā	"f. +"					
+जलेषु	jaleṣu	"m. +"	"     1"	+	1/1	+	
+जातकर्म	jātakarma	m.					
+जारय	jāraya	m.					
+जालकार	jālakāra	"m. +"					
+जालवातायन	jālavātāyana	"n. +"	"     4"		3/3	+	
+जाहच्	jāhac	"m. +"	"     1"	+	2/2/1	+	
+जिवाजिव	jivājiva	m.					
+जिह्वारोगः	jihvārogaḥ	m.					
+जिह्वाशोधन	jihvāśodhana	"n. +"					
+जिह्वु	jihvu	m.					
+जीगर्त	jīgarta	m.					
+जीमूतकुट	jīmūtakuṭa	m.					
+जीमूतकूट	jīmūtakūṭa	m.					
+जीवदातृ	jīvadātṛ	Noun					
+जीवमन्दिर	jīvamandira	"n. +"					
+जीवराज	jīvarāja	"m. +"					
+जीवलौकिक	jīvalaukika	"adj. +"					
+जीवविचारप्रकरण	jīvavicāraprakaraṇa	n.					
+जीवशाक	jīvaśāka	"mn. +"	"     4"		2/2	+	
+जीवसंज्ञ	jīvasaṁjña	m.					
+जीवसूः	jīvasūḥ	Noun					
+जीवितद	jīvitada	"adj. +"					
+जेतसाह्वय	jetasāhvaya	"adj. +"	"     1"		1/1	+	
+जेता	jetā	f.					
+जैह्माकनि	jaihmākani	"m. +"					
+ज्ञानश्री	jñānaśrī	m.					
+ज्ञापनीय	jñāpanīya	m.f.n.					
+ज्ञायतालिका	jñāyatālikā	"f. +"	"     1"	+	1/1	+	
+ज्ञास्	jñās	m.					
+ज्ञीप्स्यमान	jñīpsyamāna	m.					
+ज्योत्स्नामय	jyotsnāmaya	"adj. +"					
+ज्योत्स्नामय	jyotsnāmaya	"adj. +"					
+ज्वरराज	jvararāja	"m. +"	"     1"	+	1/1	+	
+ज्वरराज	jvararāja	"m. +"	"     1"	+	1/1	+	
+झर	jhara	"mf. * +"	"     4"	+	3/3	+	
+ज्वराग्निः	jvarāgniḥ	m.					
+झर्च्	jharc	"Verb. cl.1.Verb.cl.6.P."					
+झल्लिन्	jhallin	"m. +"	"     2"	+	1/1	+	
+झल्ली	jhallī	"f. +"					
+टांकम्	ṭāṁkam	Partic.					
+टिटिभकः	ṭiṭibhakaḥ	m.					
+डङ्गरि	ḍaṅgari	"m. +"	"     2"	+	2/2	+	
+डम	ḍama	"m. +"					
+डमरु	ḍamaru	"m. * +"	"    14"	+	3/6	+	
+डित	ḍita	"adj. +"					
+डित	ḍita	"adj. +"					
+चटचट्	caṭacaṭ	Verb.					
+चटिकाशिर	caṭikāśira	"m. +"					
+तंज्	taṁj	Verb.cl.7.P.					
+तट्य	taṭya	"adj. +"					
+तडाकिनि	taḍākini	n.					
+ततःपर	tataḥpara	m.f.n.ind.					
+ततत्व	tatatva	"n. +"					
+तत्कर्मकारिन्	tatkarmakārin	m.f.n.					
+तत्कारण	tatkāraṇa	m.					
+तत्रस्थ	tatrastha	"adj. +"	"   109"		5/31	+	
+तत्व	tatva	n.					
+तत्सिन	tatsina	"adj. +"	"     1"		1/1	+	
+तदुत्थ	taduttha	Verb.					
+तनुत्वच्	tanutvac	"m. +"	"     1"		1/1	+	
+तनुबीज	tanubīja	"m. +"	"     1"	+	1/1	+	
+तनुरस	tanurasa	"m. +"					
+तनूपान	tanūpāna	"adj.n. +"	"     2"		1/1	+	
+तपआतङ्क	tapaātaṅka	"m. +"					
+तपनकर	tapanakara	m.					
+तपस्तक्षः	tapastakṣaḥ	m.					
+तपस्विकन्या	tapasvikanyā	m.f.					
+तपस्विपत्त्र	tapasvipattra	"m. +"	"     1"	+	1/1	+	
+तपोयज्ञ	tapoyajña	m.f.n.					
+तमोपह	tamopaha	"m. +"					
+तमोभित्	tamobhit	m.					
+तमोमय	tamomaya	"m. +"	"     1"		1/1	+	
+तमोरूपिन्	tamorūpin	"adj. +"					
+तरत्सल	taratsala	"m. +"					
+तरसारिक	tarasārika	m.					
+तरा	tarā	"f. +"	"     5"		2/4	+	
+तरांधुः	tarāṁdhuḥ	m.					
+तरान्धुः	tarāndhuḥ	m.					
+तरीक	tarīka	m.					
+तरुसार	tarusāra	"m. +"					
+तर्कविद्या	tarkavidyā	"f. +"	"     4"		3/3	+	
+तष्टृ	taṣṭṛ	"m. +"	"     9"		2/2	+	
+तस्मिन्	tasmin	n.					
+तातगुः	tātaguḥ	m.					
+ताततुल्य	tātatulya	"adj.m. +"					
+ताद्रूप्य	tādrūpya	"n. +"	"     6"	+	1/1	+	
+तानूनपात	tānūnapāta	"adj. +"					
+तापसेष्टा	tāpaseṣṭā	f.					
+ताम्रकम्	tāmrakam	Partic.					
+तारकरिपु	tārakaripu	"m. +"					
+तालमूलिका	tālamūlikā	"f. +"	"     6"	+	4/6	+	
+तावर	tāvara	"n. +"					
+तिष्ठद्धोमः	tiṣṭhaddhomaḥ	m.					
+तीर्थकमण्डलु	tīrthakamaṇḍalu	"m. +"					
+तीर्थचिन्तामणि	tīrthacintāmaṇi	"m. +"					
+तीव्री	tīvrī	f.					
+तुंबरुः	tuṁbaruḥ	m.					
+तुरगब्रह्मचर्यक	turagabrahmacaryaka	n.					
+तुलावरार्ध	tulāvarārdha	"adj. +"					
+तुष्य	tuṣya	"adj. +"	"     1"		1/1	+	
+तुहिनमयूख	tuhinamayūkha	"m. +"	"     1"		1/1	+	
+तुहिनय	tuhinaya	m.					
+तूतकं	tūtakaṁ	Noun					
+तूपर	tūpara	"adj.m. +"	"     4"		3/4	+	
+तृपा	tṛpā	"f. +"					
+तृपाय	tṛpāya	m.					
+तृप्तियोग	tṛptiyoga	m.					
+तृफ्	tṛph	"Verb. cl.6.Verb."					
+तृषारोग	tṛṣāroga	"m. +"					
+ते	te	"m. +"	"     1"	+	1/2/1/1	+	
+तेक्ष्णिष्ठम्	tekṣṇiṣṭham	"ind. +"					
+तेजस	tejasa	"n. +"	"     7"	+	5/5	+	
+त्यक्तुकाम	tyaktukāma	m.f.n.adj.					
+त्यप्	tyap	"m. +"	"     1"	+	1/1/1/1	+	
+त्रयीविद	trayīvida	"adj. +"					
+त्रयीसानु	trayīsānu	"m. +"	"     1"		1/1	+	
+त्राणकारिन्	trāṇakārin	"m. +"					
+त्रायमाणं	trāyamāṇaṁ	Noun					
+त्रायमाणिका	trāyamāṇikā	"f. +"	"     1"	+	1/1	+	
+त्रिकटः	trikaṭaḥ	m.					
+त्रिकश	trikaśa	m.f.n.					
+त्रिकूटं	trikūṭaṁ	Noun					
+त्रिकोण	trikoṇa	"n. +"	"    31"		4/13	+	
+त्रिकोणं	trikoṇaṁ	Noun					
+त्रिणाचिकेत	triṇāciketa	"adj.m. +"	"    12"		3/9	+	
+त्रिणिधन	triṇidhana	"n. +"	"    10"	+	2/1	+	
+त्रिपत्त्रा	tripattrā	"f. +"	"     1"	+	1/1	+	
+त्रिपत्र	tripatra	m.m.f.n.					
+त्रिपिट	tripiṭa	"adj. +"	"     2"	+	1/1	+	
+त्रिपुटा	tripuṭā	"f. +"	"    13"	+	3/7	+	
+त्रिलोकीजित्	trilokījit	m.f.n.					
+त्रिलोचन	trilocana	"adj.m.n. +"	"    77"	+	5/24	+	
+त्रिवर्षीय	trivarṣīya	"adj. +"					
+त्रिवीज	trivīja	m.					
+त्रिवृत्ति	trivṛtti	"f. +"					
+त्रिष्ठ	triṣṭha	"adj. +"	"     2"		2/2	+	
+त्रिशङ्कुयाजिन्	triśaṅkuyājin	m.					
+त्रिशूलिनी	triśūlinī	"f. +"	"     1"	+	1/1	+	
+त्रिश्रुति	triśruti	"adj. +"					
+त्रिसंध्य	trisaṁdhya	"fn. +"	"    30"		5/15	+	
+त्रुटी	truṭī	"f. +"	"     7"		4/4	+	
+त्रैदशिक	traidaśika	"adj. +"	"     1"		2/1	+	
+त्वक्क्षीरी	tvakkṣīrī	"f. +"	"    11"		3/6	+	
+त्वग्जं	tvagjaṁ	Noun					
+त्वत्तस्	tvattas	adv.					
+त्वाच	tvāca	"adj. +"					
+त्वेषद्युम्न	tveṣadyumna	m.f.n.adj.					
+त्वेषनृम्ण	tveṣanṛmṇa	m.f.n.adj.					
+थुस्	thus	"m. +"	"     1"		1/1/1/1/1/1	+	
+थूत्कार	thūtkāra	"m. +"	"     2"		1/2	+	
+दंडिका	daṁḍikā	f.					
+दंष्ट्राविष	daṁṣṭrāviṣa	"adj. +"	"     1"		1/1	+	
+दक्षपितृ	dakṣapitṛ	"m. +"	"     1"	+	1/1	+	
+दक्षिण	dakṣiṇa	"adj.m.mn.n. * +"	"  1748"		7/116	+	
+दक्षिणक	dakṣiṇaka	"adj. +"	"     5"		3/3	+	
+दगु	dagu	"m. +"					
+दण्डपाश	daṇḍapāśa	m.					
+दण्डयोग	daṇḍayoga	"m. +"					
+दत्तः	dattaḥ	m.					
+दत्तभुजंगस्तोत्र	dattabhujaṁgastotra	"n. +"					
+दत्ताकारीषगन्ध्या	dattākārīṣagandhyā	"f. +"					
+ददाति	dadāti	"m. +"	"     3"	+	1/3	+	
+दधार	dadhāra	Verb.					
+दन्तकर्षण	dantakarṣaṇa	"m. +"					
+दमशरीरिन्	damaśarīrin	"adj. +"					
+दरदं	daradaṁ	Noun					
+दरेन्द्र	darendra	"m. +"					
+दर्वीकरः	darvīkaraḥ	m.					
+दर्ष्षनावरण	darṣṣanāvaraṇa	"n. +"					
+दर्शित	darśita	"m.f.n. *"					
+दर्शितः	darśitaḥ	m.					
+दर्ह्	darh	n.adv.Partic.					
+दलनिर्मोक	dalanirmoka	"m. +"					
+दवानल	davānala	"m. +"	"     1"	+	1/1	+	
+दवीयस्	davīyas	"adj. * +"	"    10"	+	3/7	+	
+दवीयान्	davīyān	m.					
+दशकन्यातीर्थ	daśakanyātīrtha	"n. +"					
+दशकमासिक	daśakamāsika	"adj. +"					
+दशकामजव्यसन	daśakāmajavyasana	n.					
+दशभूमिक	daśabhūmika	m.					
+दशभूमिग	daśabhūmiga	"m. +"	"     1"	+	1/1	+	
+दशलक्षनी	daśalakṣanī	"f. +"					
+दशेन्धनः	daśendhanaḥ	m.					
+दहनकेतन	dahanaketana	"m. +"					
+दावन्त्	dāvant	m.					
+दावाग्नि	dāvāgni	m.					
+दासक	dāsaka	"m. +"	"     6"	+	1/1	+	
+दिद्दिभ	diddibha	m.					
+दिधिषाय्य	didhiṣāyya	"adj. +"					
+दिनक्षय	dinakṣaya	"m. +"	"    14"	+	5/6	+	
+दिवसनिरीक्षक	divasanirīkṣaka	"m. +"					
+दिवातन	divātana	"adj.adj.m. * +"	"     1"		1/1	+	
+दिवासप्न	divāsapna	m.					
+दिविसंस्थिता	divisaṁsthitā	"f. +"	"     1"	+	1/1	+	
+दिव्यकौषधी	divyakauṣadhī	"f. +"	"     1"		1/1	+	
+दिव्यश्रोत्र	divyaśrotra	"n. +"					
+दिव्यसार	divyasāra	"m. +"	"     1"		1/1	+	
+दिव्यसारः	divyasāraḥ	m.					
+दिव्यस्रगनुलेपिन्	divyasraganulepin	"adj. +"					
+दीधितिव्याख्या	dīdhitivyākhyā	f.					
+दीन	dīna	"adj.n. * +"	"   613"	+	6/51	+	
+दीनचित्त	dīnacitta	m.f.n.					
+दीपविधि	dīpavidhi	m.					
+दीप्त्य	dīptya	adj.					
+दीर्घपाद्या	dīrghapādyā	"f. +"					
+दीव्यमान	dīvyamāna	"m.f.n. *"					
+दुःखसंस्पर्श	duḥkhasaṁsparśa	f.m.f.n.adj.					
+दुःसम्पाद	duḥsampāda	"adj. * +"	"     5"		2/2	+	
+दुग्धवीजा	dugdhavījā	f.					
+दुन्दम	dundama	"m. +"					
+दुरन्तवीर्य	durantavīrya	m.f.n.					
+दुरीषणा	durīṣaṇā	"f. +"					
+दुर्द्धर्ष	durddharṣa	m.f.n.					
+दुल	dula	"Verb. cl. ("					
+दुवोया	duvoyā	"f. +"	"     1"	+	1/1	+	
+दुहितुःपतिः	duhituḥpatiḥ	m.					
+दूरं	dūraṁ	Noun					
+दूषिका	dūṣikā	"f. +"	"    14"		3/7	+	
+दृषदक	dṛṣadaka	m.					
+दृष्टं	dṛṣṭaṁ	Noun					
+दृष्टकूट	dṛṣṭakūṭa	"n. +"					
+दृष्टादृष्ट	dṛṣṭādṛṣṭa	m.n.m.f.n.adj.Verb.					
+दृशाकाङ्क्ष्य	dṛśākāṅkṣya	"n. +"					
+देवतात्रयतीर्थ	devatātrayatīrtha	"n. +"	"     1"	+	1/1	+	
+देवमणि	devamaṇi	"m. +"	"     2"		2/2	+	
+देवयाज्ञिक	devayājñika	m.					
+देववर्धकि	devavardhaki	"m. +"	"     2"	+	1/2	+	
+देवसंध	devasaṁdha	"adj. +"					
+देवस्व	devasva	n.					
+देवारण्य	devāraṇya	n.					
+देवावृध	devāvṛdha	"m. +"	"    23"	+	3/6	+	
+देवासुरयुद्ध	devāsurayuddha	Noun					
+देहग्रहण	dehagrahaṇa	n.					
+देहम्भरवार्त्तिक	dehambharavārttika	m.f.n.					
+देहवेध	dehavedha	"m. +"	"     8"		2/4	+	
+दोग्धृ	dogdhṛ	"m.adj. * +"	"    34"	+	5/11	+	
+दोम्	dom	m.					
+दोषजित्कार	doṣajitkāra	"m. +"					
+द्युतान	dyutāna	"adj.m. +"	"     5"		2/2	+	
+द्युधुनि	dyudhuni	"f. +"	"     1"	+	1/1	+	
+द्युमौर्वि	dyumaurvi	"f. +"					
+द्युसरित्	dyusarit	"f. +"	"     2"		2/2	+	
+द्यूतपर्व	dyūtaparva	m.					
+द्यौतान	dyautāna	"n. +"					
+द्रवत्य	dravatya	m.					
+द्राङ्गवध	drāṅgavadha	"m. +"					
+द्रुमशल्य	drumaśalya	"m. +"	"     1"	+	1/1	+	
+द्रूघणः	drūghaṇaḥ	m.					
+द्वयसच्	dvayasac	"m. +"	"     2"	+	3/4/1	+	
+द्वयहीन	dvayahīna	"adj. +"	"     1"	+	1/1	+	
+द्वापरयुगाद्या	dvāparayugādyā	f.					
+द्वापरयुगाद्या	dvāparayugādyā	f.					
+द्विकर्मक	dvikarmaka	"m.f.n.m.f.n. *"					
+द्विगुणं	dviguṇaṁ	Noun					
+द्विगुणय्	dviguṇay	Verb.					
+द्विपादिका	dvipādikā	"f. +"					
+द्विषदायुस्	dviṣadāyus	m.					
+द्विषष्टिवाक्य	dviṣaṣṭivākya	n.					
+द्विशौर्पिक	dviśaurpika	m.f.n.					
+द्वीन्द्रियग्राह्यः	dvīndriyagrāhyaḥ	m.					
+द्वीपसंभव	dvīpasaṁbhava	m.f.					
+धनक्रीती	dhanakrītī	"f. +"	"     2"		1/1	+	
+धनत्यज्	dhanatyaj	"adj. +"					
+धनविभाग	dhanavibhāga	m.					
+धनाधिकृत	dhanādhikṛta	"m. +"					
+धनुर्मासमाहात्म्य	dhanurmāsamāhātmya	"n. +"					
+धनुष्पाणि	dhanuṣpāṇi	"adj. +"	"    47"	+	3/6	+	
+धनुहस्ता	dhanuhastā	"f. +"					
+धरणिस्थ	dharaṇistha	m.f.n.					
+धरणीकन्द	dharaṇīkanda	"m. +"					
+धरणीप्लवः	dharaṇīplavaḥ	m.					
+धरणीश्वर	dharaṇīśvara	"m. +"	"     1"	+	1/1	+	
+धरित्री	dharitrī	"f. * +"	"    47"	+	4/25	+	
+धरुण	dharuṇa	"adj.m.n.m. * +"	"    46"	+	2/5	+	
+धर्मक्रित्य	dharmakritya	"n. +"					
+धर्मचिन्तनं	dharmacintanaṁ	Noun					
+धर्मनदी	dharmanadī	"f. +"	"     1"	+	1/1	+	
+धर्ममात्र	dharmamātra	"adj.n. +"	"     1"		1/1	+	
+धर्माय्	dharmāy	Noun					
+धर्म्मतस्	dharmmatas	Noun					
+धर्म्मशाला	dharmmaśālā	f.					
+धातुमय	dhātumaya	"f.n.adj. *"					
+धानावत्	dhānāvat	"adj. +"	"     4"		2/2	+	
+धानावन्त्	dhānāvant	adj.					
+धान्यपति	dhānyapati	"m. +"					
+धान्याम्ल	dhānyāmla	"n. +"	"    85"	+	4/19	+	
+धामार्गव	dhāmārgava	"mn.n. +"	"    28"	+	4/10	+	
+धारयितव्य	dhārayitavya	"m.f.n. *"					
+धावनिर्गुहा	dhāvanirguhā	"f. +"	"     1"	+	1/1	+	
+धावितर्	dhāvitar	m.					
+धिषणः	dhiṣaṇaḥ	m.					
+धीरगोविन्दशर्मन्	dhīragovindaśarman	"m. +"					
+धुन्धु	dhundhu	"m. * +"	"    25"		3/5	+	
+धुन्धुरी	dhundhurī	"f. +"					
+धुन्धुलि	dhundhuli	n.					
+धुमावतीमनु	dhumāvatīmanu	m.Partic.					
+धूपकटच्छुक	dhūpakaṭacchuka	"n. +"					
+धूपतृण	dhūpatṛṇa	"n. +"					
+धूर्तनर्तक	dhūrtanartaka	"n. +"					
+धूर्धुर	dhūrdhura	"m. +"	"     1"	+	1/1	+	
+धृतश्री	dhṛtaśrī	"f. +"					
+धृतिसिंह	dhṛtisiṁha	"m. +"					
+ध्याश्रयटीका	dhyāśrayaṭīkā	f.					
+ध्राक्षामत्	dhrākṣāmat	"adj. +"					
+ध्रुवचक्र	dhruvacakra	"n. +"					
+ध्रुवनडी	dhruvanaḍī	"f. +"					
+ध्वजाग्रकेयूर	dhvajāgrakeyūra	n.					
+ध्वजोत्थापन	dhvajotthāpana	m.n.					
+ध्वनमोदिन्	dhvanamodin	"m. +"					
+ध्वनयति	dhvanayati	"m. +"	"     1"		3/3/1	+	
+ध्वनिकाव्य	dhvanikāvya	m.					
+ध्वनिगाथापञ्जिका	dhvanigāthāpañjikā	f.					
+ध्वनित्व	dhvanitva	"n. +"					
+ध्वान्तं	dhvāntaṁ	Noun					
+नंगः	naṁgaḥ	m.					
+नगर	nagara	"mn. * +"	"   897"	+	7/68	+	
+नग्नम्भविष्णु	nagnambhaviṣṇu	m.f.n.					
+नट्ट	naṭṭa	"mf. +"					
+नतज्या	natajyā	"f. +"					
+नदनदीपति	nadanadīpati	"m. +"	"     6"	+	2/2	+	
+नन्दवर्धन	nandavardhana	"m. +"					
+नपुंसकं	napuṁsakaṁ	Noun					
+नपुंसकः	napuṁsakaḥ	m.					
+नभःस्थ	nabhaḥstha	"adj. +"					
+नभाग	nabhāga	"m. +"					
+नमय्	namay	"Verb.cl.10.P. +"	"    44"	+	5/22	+	
+नमसित	namasita	"adj. +"					
+नमस्वन्त्	namasvant	adj.					
+नयनचरित	nayanacarita	"n. +"					
+नयनाञ्चल	nayanāñcala	m.					
+नरकमुक्त	narakamukta	m.					
+नरुण	naruṇa	"m. +"					
+नरेतर	naretara	"m. +"	"     2"		1/1	+	
+नर्ब्ब	narbba	"Verb. cl. ("					
+नर्मस्फञ्ज	narmasphañja	m.					
+नवगुण	navaguṇa	"adj. +"	"     4"		2/3	+	
+नवग्रहाकृतिविज्ञानीय	navagrahākṛtivijñānīya	"m. +"	"     1"	+	2/1	+	
+नवसंघाराम	navasaṁghārāma	"m. +"					
+नस	nasa	m.f.adj.					
+नागमल्लः	nāgamallaḥ	m.					
+नाचिकेत	nāciketa	"adj.m. * +"	"    17"		2/3	+	
+नाथभौत	nāthabhauta	m.					
+नानास्त्री	nānāstrī	"f. +"	"     1"		2/1	+	
+नाभिभूः	nābhibhūḥ	Noun					
+नाभिमत्	nābhimat	"adj. +"	"     3"		2/3	+	
+नामशुण्डी	nāmaśuṇḍī	"f. +"					
+नारकीटः	nārakīṭaḥ	m.					
+नाशिन्	nāśin	"adj. * +"	"   171"	+	5/34	+	
+निःष्पन्द	niḥṣpanda	f.					
+निःशोक	niḥśoka	"adj. +"	"     7"		2/4	+	
+निःसहाय	niḥsahāya	"adj. +"	"     2"	+	1/2	+	
+निक्षेपः	nikṣepaḥ	m.					
+निगम	nigama	"m.n. * +"	"    70"		6/30	+	
+निगमय्	nigamay	"Verb.cl.10.P. +"	"     2"	+	2/2	+	
+निगीर्णवत्	nigīrṇavat	m.f.n.					
+निगुह्	niguh	"Verb.cl.1.A. +"	"    60"	+	7/27	+	
+निगूढचारिन्	nigūḍhacārin	m.f.n.					
+निग्रन्थन	nigranthana	"n. +"					
+निचक्र	nicakra	m.					
+नितंबः	nitaṁbaḥ	m.					
+नितन्	nitan	"Verb.cl.8.P. +"					
+निदिग्दिग्धिका	nidigdigdhikā	f.					
+निद्यमान	nidyamāna	m.f.n.					
+निद्रायमाण	nidrāyamāṇa	"adj. +"	"     1"		1/1	+	
+निधनपति	nidhanapati	m.					
+निधातोस्	nidhātos	Noun					
+निन्दा	nindā	"f. * +"	"   160"	+	5/43	+	
+निपद्	nipad	"Verb.cl.4.A. +"	"    13"	+	4/9	+	
+निमज्जय्	nimajjay	"Verb.cl.10.P. +"	"    35"		5/20	+	
+निमित्तधर्म	nimittadharma	"m. +"					
+निमित्तायमान	nimittāyamāna	"adj. +"					
+निमीलक	nimīlaka	"adj. +"					
+निमीलित	nimīlita	n.m.f.n.					
+निम्नगत	nimnagata	"adj.n. +"					
+नियोगार्थ	niyogārtha	m.					
+निरहंकारिन्	nirahaṁkārin	adj.					
+निरालम्बन	nirālambana	"adj. * +"	"     8"	+	4/6	+	
+निरिङ्ग	niriṅga	"adj. +"	"     2"	+	1/1	+	
+निरीक्षिन्	nirīkṣin	"adj. +"					
+निरुक्तवृत्ति	niruktavṛtti	"f. +"					
+निरुक्तिलक्षण	niruktilakṣaṇa	n.					
+निरुक्ष्	nirukṣ	"Verb.cl.6.P. +"					
+निरुपद्रव	nirupadrava	"adj. * +"	"    37"		5/16	+	
+निरूप्य	nirūpya	m.f.n.adj.ind.					
+निर्द्रु	nirdru	"Verb.cl.1.P. +"	"     1"		2/1	+	
+निर्द्वंद्व	nirdvaṁdva	"adj. +"	"    77"	+	3/13	+	
+निर्भाग्य	nirbhāgya	"adj. +"					
+निर्यन्त्रा	niryantrā	"f. +"	"     2"	+	1/2	+	
+निर्हर	nirhara	"adj. +"	"     1"		1/1	+	
+निवसनम्	nivasanam	Partic.					
+निवारुभूय	nivārubhūya	n.					
+निविरीशस	nivirīśasa	m.					
+निविशेष	niviśeṣa	m.f.n.					
+निवेश्यः	niveśyaḥ	m.					
+निषादी	niṣādī	"f. +"	"    13"		3/3	+	
+निषिक्त	niṣikta	m.f.n.					
+निषीध	niṣīdha	"m. +"	"     1"	+	1/1	+	
+निषूदनम्	niṣūdanam	Partic.					
+निषेचितर्	niṣecitar	m.					
+निष्पतिष्णु	niṣpatiṣṇu	"adj. +"	"     1"		1/1	+	
+निशाकर	niśākara	"m. +"	"    83"	+	5/26	+	
+निश्चय	niścaya	"m. * +"	"   652"	+	6/72	+	
+निश्चल	niścala	"adj. * +"	"   134"		6/52	+	
+निस्तुष	nistuṣa	"adj.m. +"	"    24"	+	4/13	+	
+नीलवल्ली	nīlavallī	"f. +"					
+नृतिः	nṛtiḥ	f.					
+नृत्यस्थान	nṛtyasthāna	"n. +"					
+नृम्ण	nṛmṇa	"n. * +"	"    53"	+	3/5	+	
+नृषाह्य	nṛṣāhya	"adj.n. +"	"    10"		1/1	+	
+नेदीयस्	nedīyas	"adj. * +"	"    33"		3/7	+	
+नोदनम्	nodanam	Partic.					
+नोदय्	noday	"Verb.cl.10.P. +"	"    10"	+	2/7	+	
+नैकविकल्प	naikavikalpa	m.					
+नौतार्य्य	nautāryya	m.f.n.					
+नौदण्ड	naudaṇḍa	"m. +"					
+न्यासखण्ड	nyāsakhaṇḍa	m.f.n.					
+पंचम	paṁcama	f.ind.					
+पक्वबीजक	pakvabījaka	"n. +"	"     2"		2/1	+	
+पक्षग्राहिन्	pakṣagrāhin	"adj. +"					
+पङ्कदिग्धाङ्ग	paṅkadigdhāṅga	"m. +"	"     1"	+	1/1	+	
+पङ्क्त्युत्तरा	paṅktyuttarā	"f. +"					
+पञ्चाङ्गसहस्रनामन्	pañcāṅgasahasranāman	n.					
+पञ्चाम्ल	pañcāmla	n.					
+पञ्चप्रयाग	pañcaprayāga	m.					
+पञ्चप्रयाग	pañcaprayāga	m.					
+पञ्चमीसुधोदय	pañcamīsudhodaya	m.					
+पञ्चमीसुधोदय	pañcamīsudhodaya	m.					
+पञ्चाङ्गपुष्पक	pañcāṅgapuṣpaka	m.					
+पञ्चाङ्गपुष्पक	pañcāṅgapuṣpaka	m.					
+पचनः	pacanaḥ	m.					
+पञ्चकोलकिन्	pañcakolakin	"adj. +"	"     1"		1/1	+	
+पञ्चकोषा	pañcakoṣā	m.					
+पञ्चगव्यघृत	pañcagavyaghṛta	n.Partic.					
+पञ्चतक्ष	pañcatakṣa	n.					
+पञ्चधारणा	pañcadhāraṇā	"f. +"	"     2"	+	1/1	+	
+पञ्चधीव	pañcadhīva	n.					
+पतंगमः	pataṁgamaḥ	m.					
+पतत्प्रकर्ष	patatprakarṣa	"adj. +"					
+पतयालुः	patayāluḥ	m.					
+पत्त्रवृश्चिक	pattravṛścika	"m. +"	"     1"	+	2/1	+	
+पथातिथि	pathātithi	"m. +"					
+पथिकः	pathikaḥ	f.					
+पथिकजन	pathikajana	m.					
+पदगत	padagata	"adj. +"					
+पद्मा	padmā	"f. +"	"    54"	+	6/27	+	
+पद्यं	padyaṁ	Noun					
+पनीयंस्	panīyaṁs	adj.					
+पयोर	payora	"m. +"					
+परभेदक	parabhedaka	m.f.n.					
+परमपुरुष	paramapuruṣa	"m. +"	"     2"		2/2	+	
+परमरहस्य	paramarahasya	n.					
+परमरहस्यजपसंग्रह	paramarahasyajapasaṁgraha	m.f.					
+परश्वन्त्	paraśvant	"m. +"					
+परसंज्ञक	parasaṁjñaka	m.					
+परस्वहृत्	parasvahṛt	m.f.n.					
+परहित	parahita	"adj. * +"					
+परा	parā	"ind.f. +"	"   170"		6/29	+	
+पराक्रान्तृ	parākrāntṛ	"adj. +"					
+परागवत्	parāgavat	m.f.n.					
+पराघातन	parāghātana	"n. +"	"     1"	+	1/1	+	
+पराण्	parāṇ	m.f.n.adj.					
+परात्परतर	parātparatara	"adj. +"	"    11"		1/2	+	
+परापरविसर्ग	parāparavisarga	"m. +"					
+पराव्याध	parāvyādha	"m. +"	"     4"		2/1	+	
+परिकुत्सय्	parikutsay	"Denom.A. +"	"     1"	+	1/1	+	
+परिकोपित	parikopita	m.f.n.					
+परिक्रुध्	parikrudh	"Verb.cl.4.P. +"		+			
+परिक्षीब	parikṣība	"adj. +"					
+परिच्छिन्नः	paricchinnaḥ	m.					
+परिजिहीर्ष्	parijihīrṣ	"Desid.A. +"	"     3"		2/2	+	
+परिजेतृ	parijetṛ	"m. +"					
+परिणाहः	pariṇāhaḥ	m.					
+परिचिन्त्	paricint	m.					
+परित्यक्तर्	parityaktar	m.					
+परिप्रापण	pariprāpaṇa	"n. +"					
+परिबृंहण	paribṛṁhaṇa	"n. +"	"     5"		3/4	+	
+परिमन्द	parimanda	"adj. +"					
+परिमाण	parimāṇa	"n. * +"	"   195"		6/43	+	
+परिमुक्तबन्धन	parimuktabandhana	m.f.n.					
+परिमोक्ष्	parimokṣ	"Denom.A. +"	"     2"		1/1	+	
+परिविक्रय	parivikraya	"m. +"	"     1"	+	1/1	+	
+परिविक्रयिन्	parivikrayin	"adj. +"	"     1"	+	1/1	+	
+परिविविदान	parivividāna	"m. +"					
+परिविष्	pariviṣ	"Verb.cl.4.P. +"	"    25"		4/9	+	
+परिषद्यः	pariṣadyaḥ	m.					
+परिष्कन्दः	pariṣkandaḥ	m.					
+परिस्तरः	paristaraḥ	m.					
+परिस्यन्दः	parisyandaḥ	m.					
+परिहर्षय्	pariharṣay	"Verb.cl.10.P. +"	"     3"	+	1/2	+	
+परीक्ष्य	parīkṣya	m.f.n.adj.					
+परीत्त	parītta	"adj.adj.m. +"	"    14"		2/5	+	
+पर्णकुटी	parṇakuṭī	f.					
+पर्याप्लुत	paryāpluta	"adj. +"					
+पर्यावतः	paryāvataḥ	m.					
+पर्य्याप्ति	paryyāpti	f.					
+पर्य्यायशयन	paryyāyaśayana	n.					
+पर्वतदानपद्धति	parvatadānapaddhati	f.					
+पर्षि	parṣi	n.					
+पवनजव	pavanajava	"m. +"					
+पशुमोहनिका	paśumohanikā	"f. +"	"     1"	+	1/1	+	
+पश्यन	paśyana	"n. +"	"     4"	+	1/1	+	
+पस्पशा	paspaśā	"f. +"					
+पह्णिका	pahṇikā	f.					
+पाकहन्तर्	pākahantar	m.					
+पाटीकौमुदी	pāṭīkaumudī	"f. +"					
+पातक	pātaka	"adj.mn. * +"	"   294"	+	5/50	+	
+पातञ्जल	pātañjala	m.n.					
+पात्रयोजन	pātrayojana	"n. +"					
+पादातिकः	pādātikaḥ	m.					
+पादूः	pādūḥ	Noun					
+पादेष्टका	pādeṣṭakā	"f. +"					
+पादोदकं	pādodakaṁ	Noun					
+पापक्षयतिर्थ	pāpakṣayatirtha	n.					
+पापतिमिर	pāpatimira	m.f.n.					
+पारलौकिक	pāralaukika	"adj. +"	"    16"		4/8	+	
+पारिखीय	pārikhīya	"adj. +"					
+पारीणह्यम्	pārīṇahyam	Partic.					
+पालश	pālaśa	n.					
+पाशवत्	pāśavat	"adj. +"	"     2"		2/2	+	
+पिण्डात	piṇḍāta	"m. +"					
+पितापुत्र	pitāputra	"m. * +"	"    17"		4/8	+	
+पितृयज	pitṛyaja	m.					
+पिथित	pithita	"adj. +"	"     1"	+	1/1	+	
+पिधान	pidhāna	"n. * +"	"    72"	+	6/29	+	
+पिनाकिनी	pinākinī	"f. +"					
+पिपलिः	pipaliḥ	m.					
+पिपाठक	pipāṭhaka	"m. +"					
+पिपासावन्त्	pipāsāvant	adj.					
+पिपासितः	pipāsitaḥ	m.					
+पिप्पल	pippala	"m.n. * +"	"    64"	+	6/34	+	
+पिष्टकं	piṣṭakaṁ	Noun					
+पिष्टपेष	piṣṭapeṣa	"m. +"					
+पिष्टपेषण	piṣṭapeṣaṇa	"n. +"					
+पिशङ्गिल	piśaṅgila	"adj. +"					
+पीडाय	pīḍāya	m.					
+पीवरीकर्	pīvarīkar	m.					
+पुटभेद	puṭabheda	"m. +"	"     1"		1/1	+	
+पुण्डरीकवनमहात्म्य	puṇḍarīkavanamahātmya	"n. +"					
+पुण्यता	puṇyatā	f.n.					
+पुत्तलक	puttalaka	"m. +"	"     1"		2/1	+	
+पुत्त्रान्नाद	puttrānnāda	m.					
+पुत्त्र्य	puttrya	m.f.n.					
+पुत्रघ्नी	putraghnī	"f. +"	"     3"	+	2/2	+	
+पुत्रहत	putrahata	"m. +"	"     2"		2/1	+	
+पुनरुत्पादन	punarutpādana	"n. +"					
+पुप्फुटः	pupphuṭaḥ	m.					
+पुरंजनः	puraṁjanaḥ	m.					
+पुरणः	puraṇaḥ	m.					
+पुराकृत	purākṛta	"adj.n. +"	"     5"		2/2	+	
+पुरिकाय	purikāya	"m. +"					
+पुरीत्	purīt	"mn. +"					
+पुरीलोक	purīloka	"m. +"					
+पुरीषक	purīṣaka	"n. +"	"     8"		2/6	+	
+पुरीषण	purīṣaṇa	"n.m. +"					
+पुरुकृत्वन्	purukṛtvan	"adj. +"	"     1"		1/1	+	
+पुरुद	puruda	"n. +"					
+पुरुदंसस्	purudaṁsas	"n. +"	"     1"	+	1/1/1	+	
+पुरुनिःषिध्वन्	puruniḥṣidhvan	m.f.n.adj.					
+पुरुनिष्ठ	puruniṣṭha	adj.					
+पुरोडाशहर	puroḍāśahara	m.					
+पुलीका	pulīkā	"f. +"					
+पुलीकोय	pulīkoya	"m. +"					
+पुलोमन्त्	pulomant	"m. +"					
+पुलोमभिट्	pulomabhiṭ	m.					
+पुलोमारिः	pulomāriḥ	m.					
+पुलोमावि	pulomāvi	"m. +"					
+पुष्ट्यर्थ	puṣṭyartha	"n. +"					
+पुष्पभद्रक	puṣpabhadraka	"n. +"	"     1"		1/1	+	
+पुष्पवल्ली	puṣpavallī	"f. +"	"     1"	+	1/1	+	
+पूजयान	pūjayāna	m.f.n.					
+पूता	pūtā	"f. +"	"     2"		2/2	+	
+पूर्णस्रुव	pūrṇasruva	"m. +"					
+पूर्वक्रिया	pūrvakriyā	"f. +"					
+पूर्वमारिन्	pūrvamārin	m.f.n.adj.					
+पूर्वयक्ष	pūrvayakṣa	"m. +"					
+पूर्व्वदेव	pūrvvadeva	m.					
+पूर्व्वसाहस	pūrvvasāhasa	n.					
+पूषिम	pūṣima	m.					
+पृक्का	pṛkkā	"f. +"					
+पृज्	pṛj	"Verb. cl.2.Verb."					
+पृतनाषह्	pṛtanāṣah	"adj. +"	"     1"		1/1	+	
+पृथिवीतल	pṛthivītala	n.					
+पृथिवीरुह	pṛthivīruha	"m. +"					
+पृथुयामन्	pṛthuyāman	"adj. +"					
+पृथुरुक्म	pṛthurukma	"m. +"	"     5"	+	2/3	+	
+पृथ्वीवराहसंवाद	pṛthvīvarāhasaṁvāda	"m. +"					
+पृषातक	pṛṣātaka	"mn.m. +"					
+पेयक	peyaka	"n. +"	"     1"	+	1/1	+	
+पेशितृ	peśitṛ	"m. +"					
+पौष्कजिति	pauṣkajiti	"m. +"					
+प्रकरः	prakaraḥ	m.					
+प्रकालय्	prakālay	"Verb.cl.10.A. +"	"     8"	+	1/1	+	
+प्रकाशात्मा	prakāśātmā	f.					
+प्रकीर्तिः	prakīrtiḥ	f.					
+प्रकूटा	prakūṭā	f.					
+प्रकृतिक	prakṛtika	"adj. +"	"     5"		2/4	+	
+प्रकेत	praketa	"m. * +"	"    17"	+	2/2	+	
+प्रक्षुण्ण	prakṣuṇṇa	"adj. +"					
+प्रखिद्	prakhid	"Verb.cl.6.P. +"		+			
+प्रघट्	praghaṭ	"Verb.cl.1.A. +"					
+प्रघर्	praghar	"Verb.cl.1.P. +"	"     3"	+	1/1	+	
+प्रच्छो	praccho	ind.					
+प्रच्योतोस्	pracyotos	Noun					
+प्रजागर	prajāgara	"adj.m. * +"	"    42"	+	4/14	+	
+प्रजागरय्	prajāgaray	"Verb.cl.10.P. +"		+			
+प्रज्ञु	prajñu	m.f.n.					
+प्रणप्तृ	praṇaptṛ	m.					
+प्रणिघ्नत्	praṇighnat	m.f.n.					
+प्रणिघ्नत्	praṇighnat	m.f.n.					
+प्रचण्डता	pracaṇḍatā	"f. +"					
+प्रचण्डवदन	pracaṇḍavadana	"adj. +"					
+प्रचण्डशेफस्	pracaṇḍaśephas	"m. +"					
+प्रचयन	pracayana	"n. * +"					
+प्रचलाय्	pracalāy	n.adj.					
+प्रचीबल	pracībala	"mfn. +"	"     2"	+	3/2	+	
+प्रचुररत्नधनागम	pracuraratnadhanāgama	m.f.n.					
+प्रतमाम्	pratamām	"ind. +"	"     3"		2/1		
+प्रतापः	pratāpaḥ	m.					
+प्रतापितर्	pratāpitar	m.					
+प्रतिगज	pratigaja	"m. +"	"     9"		2/2	+	
+प्रतिगात्रम्	pratigātram	"ind. +"					
+प्रतिघातिन्	pratighātin	"adj. +"	"     5"	+	2/5	+	
+प्रतिचक्षण	praticakṣaṇa	"n. +"	"     4"	+	3/4	+	
+प्रतिचोदना	praticodanā	"f. +"	"     1"	+	1/1	+	
+प्रतिनिवर्तन	pratinivartana	"n. +"					
+प्रतिनिवारण	pratinivāraṇa	"n. +"					
+प्रतिप्रसवम्	pratiprasavam	"ind. +"					
+प्रतिबद्धप्रसर	pratibaddhaprasara	m.f.n.					
+प्रतिबन्धिन्ता	pratibandhintā	f.					
+प्रतिबोधनीय	pratibodhanīya	m.f.n.					
+प्रतिभाष्य	pratibhāṣya	"n. +"					
+प्रतिभास	pratibhāsa	"m. * +"	"    23"	+	4/10	+	
+प्रतिभेदन	pratibhedana	"n. +"	"     1"	+	1/1	+	
+प्रतिषीव्य	pratiṣīvya	"adj. +"	"     1"		4/36/1	+	
+प्रतिष्ठित	pratiṣṭhita	"adj.m. +"	"     1"		1/1	+	
+प्रतिसामर्थ्य	pratisāmarthya	"n. +"					
+प्रतिहिंसा	pratihiṁsā	"f. +"					
+प्रतीकास	pratīkāsa	m.					
+प्रतीसारम्	pratīsāram	Partic.					
+प्रत्य्	praty	Noun					
+प्रत्यभिज्ञानम्	pratyabhijñānam	Partic.					
+प्रत्यवयव	pratyavayava	f.Partic.					
+प्रत्यववरोहम्	pratyavavaroham	ind.					
+प्रथा	prathā	"f. +"	"    51"	+	2/10	+	
+प्रदुष्	praduṣ	"Verb.cl.4.A. +"	"    90"		5/20	+	
+प्रदेह	pradeha	"m. +"	"    98"		2/5	+	
+प्रधन	pradhana	"n.m. +"	"    11"		4/5	+	
+प्रधानकर्मन्	pradhānakarman	n.					
+प्रनभ्	pranabh	Verb.					
+प्रपंचित	prapaṁcita	m.					
+प्रपक्व	prapakva	"adj. +"	"     2"	+	2/2	+	
+प्रबाहुः	prabāhuḥ	m.					
+प्रमथन	pramathana	"adj.m. * +"	"    20"	+	4/13	+	
+प्रमाणवत्	pramāṇavat	"adj. +"	"     5"		3/4	+	
+प्रमुदिता	pramuditā	"f. +"					
+प्रमेहघ्नी	pramehaghnī	"f. +"	"     1"	+	1/1	+	
+प्रयमण	prayamaṇa	"n. +"					
+प्रयुक्ततम	prayuktatama	"adj. +"	"     1"		2/1	+	
+प्रयोद्धृ	prayoddhṛ	"adj. +"					
+प्रलब्धृ	pralabdhṛ	"adj. +"	"     1"	+	1/1	+	
+प्रलम्बिन्	pralambin	"adj. +"	"     3"	+	3/3	+	
+प्रवदितर्	pravaditar	m.					
+प्रवद्भार्गव	pravadbhārgava	"n. +"					
+प्रवह्	pravah	"Verb.cl.1.A. +"	"    32"	+	6/21	+	
+प्रवा	pravā	"f.Verb.cl.4.P. +"	"    68"	+	5/20	+	
+प्रवासय्	pravāsay	"Verb.cl.10.P. +"	"    35"	+	4/11	+	
+प्रविख्यात	pravikhyāta	"adj. +"					
+प्रविज्	pravij	"Verb.cl.6.A. +"	"     2"	+	1/1	+	
+प्रवृद्ध	pravṛddha	"adj. +"	"     4"	+	2/3	+	
+प्रवेटः	praveṭaḥ	m.					
+प्रवेध	pravedha	"m. +"	"     2"		1/1	+	
+प्रश्रु	praśru	"Verb.cl.5.P. +"					
+प्रसंगम	prasaṁgama	"m. +"	"     1"	+	1/1	+	
+प्रसर्पः	prasarpaḥ	m.					
+प्रसलवि	prasalavi	"ind. +"					
+प्रसवन्ती	prasavantī	"f. +"					
+प्रसवमास	prasavamāsa	m.					
+प्रसादस्थ	prasādastha	m.f.n.					
+प्रस्कंदिका	praskaṁdikā	f.					
+प्रस्थानभेद	prasthānabheda	m.					
+प्रस्थापय्	prasthāpay	"Verb.cl.10.P. +"	"    98"	+	3/8	+	
+प्रहणेमि	prahaṇemi	"m. +"					
+प्रहर्ष	praharṣa	"m. * +"	"   107"	+	5/20	+	
+प्रहसितनेत्र	prahasitanetra	"m. +"	"     1"	+	1/1	+	
+प्रहीणजीवित	prahīṇajīvita	m.f.n.					
+प्राक्श्रोतस्	prākśrotas	Noun					
+प्राक्समास	prāksamāsa	"adj. +"					
+प्राक्सवन	prāksavana	n.					
+प्रागाथक	prāgāthaka	"adj. +"					
+प्राग्घण्टिका	prāgghaṇṭikā	"f. +"	"     1"		1/1	+	
+प्राणप्रिय	prāṇapriya	"m. +"					
+प्राणप्रेप्सु	prāṇaprepsu	"adj. +"					
+प्राचीनपनसः	prācīnapanasaḥ	m.					
+प्राचीनमत	prācīnamata	"n. +"					
+प्राचीनहरण	prācīnaharaṇa	"n. +"					
+प्राचीनापवीतिन्	prācīnāpavītin	"adj. +"					
+प्राजकः	prājakaḥ	m.					
+प्राजन	prājana	"mn. +"	"     2"		1/2	+	
+प्राजया	prājayā	f.					
+प्राजल	prājala	"m. +"					
+प्रातिस्विक	prātisvika	"adj. +"	"     2"		1/2	+	
+प्राप्तव्यमर्थ	prāptavyamartha	"m.n. * +"					
+प्रायश्चेतन	prāyaścetana	"n. +"					
+प्रार्ध्	prārdh	Noun					
+प्रावृष्	prāvṛṣ	"f. * +"	"   145"		6/42	+	
+प्रियङ्करी	priyaṅkarī	f.					
+प्रेङ्खोल्	preṅkhol	Noun					
+प्रेष्यः	preṣyaḥ	m.					
+प्रोक्षणी	prokṣaṇī	"f. +"	"    18"		4/11	+	
+प्रोञ्छन	proñchana	n.					
+प्रोषक	proṣaka	"m. +"					
+प्रोष्ठपदः	proṣṭhapadaḥ	m.					
+प्लति	plati	"m. +"	"     2"	+	1/1	+	
+फणधर	phaṇadhara	"m. +"	"     1"	+	1/1	+	
+फणमणि	phaṇamaṇi	"m. +"					
+फणाफलक	phaṇāphalaka	"n. +"	"     1"		1/1	+	
+फणाभरः	phaṇābharaḥ	m.					
+फणामणिसहस्ररुच्	phaṇāmaṇisahasraruc	"f. +"					
+फलत्रिक	phalatrika	"n. +"	"    16"	+	4/9	+	
+फलराशि	phalarāśi	"m. +"					
+फलाम्ल	phalāmla	"m.n. +"	"     7"		4/4	+	
+फल्गू	phalgū	Noun					
+फुप्फु	phupphu	"ind. +"					
+फुल्ललोचनः	phullalocanaḥ	m.					
+फुल्लित	phullita	"adj. * +"	"     1"	+	1/1	+	
+फेञ्चक	pheñcaka	m.					
+बंध्या	baṁdhyā	f.					
+बकनखगुदपरिणद्ध	bakanakhagudapariṇaddha	m.					
+बद्धदर्भ	baddhadarbha	"m. +"					
+बद्धप्रतिज्ञ	baddhapratijña	n.					
+बन्धुजीवकः	bandhujīvakaḥ	m.					
+बन्धुरकोमलाङ्गुलि	bandhurakomalāṅguli	"adj. +"					
+बर्हापीड	barhāpīḍa	m.					
+बल्	bal	"Verb.cl.1.P.Verb.cl.10.A. *"					
+बलक्षतण्डुला	balakṣataṇḍulā	"f. +"					
+बलय्	balay	"Denom.A. +"					
+बलवर्धन	balavardhana	"m. +"	"     2"		1/1	+	
+बलिमन्दिरं	balimandiraṁ	Noun					
+बलीकृ	balīkṛ	"Verb.cl.8.P. +"	"     1"	+	1/1	+	
+बहला	bahalā	"f. +"	"     1"	+	1/1	+	
+बहिर्यान	bahiryāna	"n. +"					
+बहुपत्रिका	bahupatrikā	f.					
+बहुपुत्त्र	bahuputtra	m.f.m.f.n.					
+बहुप्रजः	bahuprajaḥ	m.					
+बाणधि	bāṇadhi	"m. +"	"     1"	+	1/1	+	
+बाणवृष्टि	bāṇavṛṣṭi	f.					
+बार्हदीषव	bārhadīṣava	"m. +"					
+बाहुविद्ध	bāhuviddha	"m. +"					
+बाहुविमर्द	bāhuvimarda	"m. +"					
+बाह्य	bāhya	"adj.m. * +"	"   629"	+	7/101	+	
+बिन्दुरेखा	bindurekhā	"f. +"	"     8"		1/1	+	
+बिम्बटङ्क	bimbaṭaṅka	"m. +"	"     1"		2/1	+	
+बुद्धसंगीति	buddhasaṁgīti	"f. +"					
+बुद्धियोगमय	buddhiyogamaya	n.					
+बृहदग्निमुख	bṛhadagnimukha	n.Partic.					
+बृहन्नाट	bṛhannāṭa	"m. +"					
+बोधवासर	bodhavāsara	"m. +"					
+ब्रह्मकैवर्तपुराण	brahmakaivartapurāṇa	"n. +"					
+ब्रह्मणस्पति	brahmaṇaspati	"m. * +"	"    76"		3/11	+	
+ब्रह्मयज्ञः	brahmayajñaḥ	m.					
+ब्रह्मयज्ञतर्पण	brahmayajñatarpaṇa	m.f.n.					
+ब्रह्मवृत्ति	brahmavṛtti	"f. +"					
+ब्राह्मणवर	brāhmaṇavara	"m. +"					
+ब्ली	blī	f.					
+भंजक	bhaṁjaka	f.					
+भक्षाली	bhakṣālī	"f. +"					
+भगवन्नाममाहात्म्यग्रन्थसंग्रह	bhagavannāmamāhātmyagranthasaṁgraha	m.					
+भण्डर	bhaṇḍara	"m. +"					
+भण्डीरः	bhaṇḍīraḥ	m.					
+भद्रङ्कर	bhadraṅkara	m.f.n.					
+भद्रतुङ्ग	bhadratuṅga	"m. +"					
+भयडिण्डिमः	bhayaḍiṇḍimaḥ	m.					
+भरुक	bharuka	"m. * +"					
+भवन्मन्यु	bhavanmanyu	"m. +"					
+भवव्यय	bhavavyaya	"m. +"					
+भवाभिभाविन्	bhavābhibhāvin	"adj. +"					
+भस्	bhas	"m.Verb.cl.1.P. * +"	"    20"	+	2/4	+	
+भसन्धि	bhasandhi	n.					
+भात्वक्षस्	bhātvakṣas	"adj. +"					
+भानुनाथ	bhānunātha	"m. +"					
+भानुवर्मन्	bhānuvarman	"m. +"	"     1"	+	1/1	+	
+भारयष्टि	bhārayaṣṭi	"f. +"					
+भालनयन	bhālanayana	m.					
+भावयु	bhāvayu	"adj. +"	"     1"	+	1/1	+	
+भाषाचित्रक	bhāṣācitraka	"n. +"					
+भाष्यप्रत्ययोद्बोध	bhāṣyapratyayodbodha	m.					
+भासापुर	bhāsāpura	n.					
+भिंदपालः	bhiṁdapālaḥ	m.					
+भित्तिका	bhittikā	"f. +"	"     3"	+	2/2	+	
+भिन्दुर	bhindura	"m. +"					
+भिन्नदृश्	bhinnadṛś	"adj. +"	"     5"		2/2	+	
+भिन्नविट्का	bhinnaviṭkā	f.					
+भीमकर्म्मन्	bhīmakarmman	m.f.n.					
+भीमत्	bhīmat	"adj. +"					
+भीमशुक्ल	bhīmaśukla	"m. +"					
+भुक्तसमुज्झितं	bhuktasamujjhitaṁ	Noun					
+भुवनकोष	bhuvanakoṣa	m.					
+भुवनकोशनिरूपण	bhuvanakośanirūpaṇa	"n. +"	"     1"	+	1/1	+	
+भूगन्धपति	bhūgandhapati	"m. +"					
+भूतकोटि	bhūtakoṭi	"f. +"	"    17"		2/2	+	
+भूतिदत्त	bhūtidatta	"m. +"					
+भूमण्डल	bhūmaṇḍala	n.					
+भूमयति	bhūmayati	n.					
+भूमविद्या	bhūmavidyā	"f. +"					
+भूमिमत्	bhūmimat	"adj. +"					
+भूमीसह	bhūmīsaha	"m. +"					
+भूरिधामन्	bhūridhāman	"m. +"					
+भृत्यभरण	bhṛtyabharaṇa	n.					
+भृष्टपिष्ट	bhṛṣṭapiṣṭa	"n. +"	"     1"		1/1	+	
+भृशदण्ड	bhṛśadaṇḍa	m.f.n.					
+भेदधिक्कार	bhedadhikkāra	"m. +"					
+भेरीस्वनमहास्वना	bherīsvanamahāsvanā	"f. +"	"     1"	+	1/1	+	
+भेरुंड	bheruṁḍa	m.					
+भोगसद्मन्	bhogasadman	"n. +"					
+भ्रमय्	bhramay	"Verb.cl.10.A. +"	"    18"		4/12	+	
+भ्राजत्	bhrājat	m.f.n.					
+भ्राजस्	bhrājas	"n. +"	"     5"	+	1/2	+	
+भ्रामिन्	bhrāmin	"adj. +"	"     1"	+	2/1	+	
+भ्राष्ट्रकृत्	bhrāṣṭrakṛt	m.					
+भ्राश्	bhrāś	"Verb. cl.1.Verb."					
+मकर	makara	"m.n. * +"	"   198"		6/40	+	
+मकरन्दः	makarandaḥ	m.					
+मकरन्दक	makarandaka	"n. +"	"     1"	+	1/1	+	
+मखस्य	makhasya	m.					
+मगण	magaṇa	m.					
+मघवान्	maghavān	m.					
+मघात्रयोदशीश्राद्ध	maghātrayodaśīśrāddha	n.					
+मण्डलकं	maṇḍalakaṁ	Noun					
+मञ्चागार	mañcāgāra	n.					
+मञ्जुप्राण	mañjuprāṇa	m.					
+मञ्जुला	mañjulā	f.					
+मणिग्रन्थ	maṇigrantha	"m. +"					
+मतंगजः	mataṁgajaḥ	m.					
+मतिवत्	mativat	m.					
+मतिविभ्रान्ति	mativibhrānti	"f. +"	"     1"		1/1	+	
+मत्सकाशे	matsakāśe	ind.					
+मत्स्यधानी	matsyadhānī	"f. +"					
+मदगमन	madagamana	m.					
+मदराग	madarāga	"m. +"					
+मधुकैटभ	madhukaiṭabha	Noun					
+मधुजम्भल	madhujambhala	"m. +"					
+मधुतृणं	madhutṛṇaṁ	Noun					
+मधुमज्जन्	madhumajjan	"m. +"	"     1"	+	1/1	+	
+मधुमस्तकं	madhumastakaṁ	Noun					
+मधुसूदनी	madhusūdanī	"f. +"	"     1"	+	1/1	+	
+मनीमुषग्राम	manīmuṣagrāma	"m. +"					
+मनोहतः	manohataḥ	m.					
+मन्त्रगणपतितत्त्वरत्न	mantragaṇapatitattvaratna	n.					
+मन्त्रभेद	mantrabheda	"m. +"					
+मन्त्ररत्न	mantraratna	n.					
+मन्त्रशक्ति	mantraśakti	f.					
+मन्त्रसार	mantrasāra	"m. +"					
+मन्थ्यग्र	manthyagra	"adj. +"					
+मन्द्	mand	"Verb.cl.1.A. * +"	"    53"	+	1/1	+	
+मन्युशमन	manyuśamana	m.f.n.adj.					
+मरीमृश	marīmṛśa	"adj. +"					
+मरुत्क्रिया	marutkriyā	"f. +"					
+मरुत्वान्	marutvān	m.					
+मरुत्वामल	marutvāmala	m.					
+मरुत्सहाय	marutsahāya	"adj. +"					
+मर्मवेदिन्	marmavedin	f.					
+मर्मृजेन्य	marmṛjenya	"adj. +"	"     2"		1/1	+	
+मर्यादिन्	maryādin	"adj. +"	"     1"		2/3/1	+	
+मर्शण	marśaṇa	n.					
+मलयवती	malayavatī	"f. +"	"     4"	+	2/2	+	
+मलयवासिनी	malayavāsinī	"f. +"					
+महय्य	mahayya	"adj. +"	"     1"		1/1	+	
+महाकण्टकिनी	mahākaṇṭakinī	"f. +"					
+महाधी	mahādhī	m.f.n.adj.					
+महामुनिः	mahāmuniḥ	m.					
+महारथ्या	mahārathyā	"f. +"	"     1"		1/1	+	
+महाह्रद	mahāhrada	"mn. +"	"    18"		3/7	+	
+महाह्रस्व	mahāhrasva	"adj. +"					
+महि	mahi	"adj.mn.m.f. +"	"   232"	+	5/10	+	
+महिमान्	mahimān	m.					
+महिरकुल	mahirakula	"m. +"					
+महिरत्न	mahiratna	"adj. +"					
+महीकम्प	mahīkampa	"m. +"	"     1"	+	1/1	+	
+महीजः	mahījaḥ	m.					
+महीदास	mahīdāsa	"m. +"					
+महीमहेन्द्र	mahīmahendra	"m. +"					
+मांसभेत्तर्	māṁsabhettar	m.					
+मानग्रहण	mānagrahaṇa	"n. +"					
+मानय	mānaya	m.					
+मायाजीवी	māyājīvī	f.					
+मायामाहात्म्य	māyāmāhātmya	"n. +"					
+मायाविद्	māyāvid	m.f.n.adj.					
+मारबीज	mārabīja	"n. +"	"     1"		2/1	+	
+मालकः	mālakaḥ	m.					
+मालका	mālakā	"f. +"					
+मालतीतीर	mālatītīra	m.n.					
+मालिः	māliḥ	m.					
+माल्ल	mālla	"m. +"					
+मित्रगुप्तचरित	mitraguptacarita	"n. +"	"     1"		1/1	+	
+मित्रदेव	mitradeva	"m.n. +"	"     4"	+	2/2	+	
+मित्रय	mitraya	m.					
+मित्रवान्	mitravān	m.					
+मित्र्य	mitrya	"adj. +"	"     4"		2/2	+	
+मिथ्याज्ञान	mithyājñāna	n.					
+मिथ्याविकल्प	mithyāvikalpa	m.					
+मिमर्द्	mimard	"Desid.P. +"					
+मिरफ	mirapha	m.n.Partic.					
+मिलिंदकः	miliṁdakaḥ	m.					
+मीमांसानयविवेक	mīmāṁsānayaviveka	"m. +"					
+मीलित	mīlita	"adj. * +"					
+मुकंदकः	mukaṁdakaḥ	m.					
+मुण्डशयनासनवारिक	muṇḍaśayanāsanavārika	"m. +"					
+मुञ्जेषीकतूल	muñjeṣīkatūla	n.					
+मुञ्जेषीकतूल	muñjeṣīkatūla	n.					
+मुण्डिरी	muṇḍirī	"f. +"	"     1"	+	1/1	+	
+मुत्यम्	mutyam	Partic.					
+मुमोचयिषु	mumocayiṣu	"adj. +"	"     1"	+	1/1	+	
+मुरमर्दन	muramardana	"m. +"	"     1"	+	1/1	+	
+मुरमर्दनः	muramardanaḥ	m.					
+मुरजफलः	murajaphalaḥ	m.					
+मुष्काबर्ह	muṣkābarha	"m. +"	"     1"		1/1	+	
+मुष्ट	muṣṭa	n.m.f.n.					
+मुस	musa	m.					
+मूताकार	mūtākāra	"adj. +"					
+मूतावबद्ध	mūtāvabaddha	"adj. +"					
+मूर्छता	mūrchatā	f.Partic.					
+मूर्छाक्षेप	mūrchākṣepa	"m. +"	"     1"		1/1	+	
+मूर्तिसंचार	mūrtisaṁcāra	"adj. +"					
+मूर्द्धन्	mūrddhan	m.					
+मूर्धरसः	mūrdharasaḥ	m.					
+मूलविभुज	mūlavibhuja	"adj.m. * +"					
+मूलशाकिनः	mūlaśākinaḥ	m.					
+मूषाकर्णी	mūṣākarṇī	"f. +"					
+मूषिकाहैरन्यिक	mūṣikāhairanyika	"m. +"					
+मृगाधिप	mṛgādhipa	"m. +"	"     9"	+	3/5	+	
+मृगितः	mṛgitaḥ	m.					
+मृत्युदूत	mṛtyudūta	"m. +"					
+मृदुलोमकः	mṛdulomakaḥ	m.					
+मृदुलोह	mṛduloha	"n. +"	"     1"	+	1/1	+	
+मेघङ्कर	meghaṅkara	m.f.n.					
+मेघनादानुलासी	meghanādānulāsī	f.					
+मेघवह्नि	meghavahni	"m. +"	"     1"	+	1/1	+	
+मेघस्वन	meghasvana	f.adj.					
+मेघागमः	meghāgamaḥ	m.					
+मेधाः	medhāḥ	Noun					
+मेधामृति	medhāmṛti	"m. +"					
+मेधारुद्र	medhārudra	"m. +"					
+मेरुक	meruka	"m.mn. +"					
+मेरुविरहतन्त्रेभुवनेश्वरीसहस्रनामस्तोत्र	meruvirahatantrebhuvaneśvarīsahasranāmastotra	n.					
+मेरुशिखरधरकुमारभूत	meruśikharadharakumārabhūta	m.					
+मेलान्धुः	melāndhuḥ	m.					
+मेषाण्डः	meṣāṇḍaḥ	m.					
+मेहना	mehanā	"f.ind. +"	"     5"		1/1		
+मोट्टायितम्	moṭṭāyitam	Partic.					
+मोदाकी	modākī	f.					
+म्लिष्ट	mliṣṭa	"adj.n. * +"	"     3"	+	2/3	+	
+म्लुच	mluca	m.					
+यजन्	yajan	m.					
+यज्ञकुण्ड	yajñakuṇḍa	n.					
+यज्ञकुण्ड	yajñakuṇḍa	n.					
+यज्ञतन्त्रसूत्र	yajñatantrasūtra	n.					
+यज्ञतन्त्रसूत्र	yajñatantrasūtra	n.					
+यज्ञद्रुह्	yajñadruh	m.					
+यज्ञद्रुह्	yajñadruh	m.					
+यज्ञपरिभाषा	yajñaparibhāṣā	f.n.					
+यज्ञपरिभाषा	yajñaparibhāṣā	f.n.					
+यज्ञमञ्जूषा	yajñamañjūṣā	f.					
+यज्ञमञ्जूषा	yajñamañjūṣā	f.					
+यज्ञरस	yajñarasa	m.					
+यज्ञरस	yajñarasa	m.					
+यतचित्तात्मन्	yatacittātman	m.f.n.					
+यतन	yatana	"n. * +"	"     1"	+	1/1	+	
+यतमन्यु	yatamanyu	"adj. +"					
+यतिचान्द्रायणं	yaticāndrāyaṇaṁ	Noun					
+यतित	yatita	"n.m.f.n. *"					
+यन्त्रगोलः	yantragolaḥ	m.					
+यमदंष्ट्र	yamadaṁṣṭra	"m. +"	"     4"	+	1/1	+	
+यमुनाष्टक	yamunāṣṭaka	"n. +"					
+यवजः	yavajaḥ	m.					
+यवय	yavaya	m.					
+यशस्यु	yaśasyu	"adj. +"	"     1"		1/1	+	
+यायजूक	yāyajūka	"adj. +"	"     4"		3/4	+	
+यावत्सत्त्वम्	yāvatsattvam	"ind. +"					
+यियप्सु	yiyapsu	"adj. +"					
+यियविषु	yiyaviṣu	"adj. +"					
+युगप	yugapa	"m. +"	"     1"	+	1/1	+	
+युगपत्रकः	yugapatrakaḥ	m.					
+युगांशक	yugāṁśaka	"m. +"					
+युत	yuta	"adj.adj.n. +"	"  1125"	+	6/84	+	
+युजे	yuje	Noun					
+युतः	yutaḥ	m.					
+युद्	yud	Noun					
+युद्धपरिपाटी	yuddhaparipāṭī	"f. +"					
+युधि	yudhi	"m. +"	"     2"		2/2/1	+	
+योगचन्द्रिका	yogacandrikā	m.f.					
+योगस्थ	yogastha	"m.f.n. *"					
+योधिन्	yodhin	"adj.m. * +"	"   171"	+	5/9	+	
+योषिज्जन	yoṣijjana	m.					
+रक्षस्त्व	rakṣastva	"n. +"					
+रक्षिन्	rakṣin	"adj. * +"	"   113"	+	5/17	+	
+रघुवंश	raghuvaṁśa	"m. +"					
+रङ्कुक	raṅkuka	"m. +"					
+रङ्कुटि	raṅkuṭi	"f. +"					
+रणः	raṇaḥ	m.f.n.					
+रचितः	racitaḥ	m.					
+रजतं	rajataṁ	Noun					
+रजा	rajā	"f. +"	"     1"		1/1	+	
+रत्नविशुद्ध	ratnaviśuddha	"m. +"					
+रथक्षय	rathakṣaya	m.f.n.adj.					
+रथचित्रा	rathacitrā	"f. +"	"     1"	+	1/1	+	
+रथतूर्	rathatūr	adj.					
+रथमुख	rathamukha	n.					
+रमल	ramala	"mn. +"					
+रवा	ravā	"f. +"	"     1"		1/1	+	
+रश्मिवती	raśmivatī	"f. +"					
+रश्रुति	raśruti	"f. +"	"     1"	+	1/1	+	
+रसकः	rasakaḥ	m.					
+रसता	rasatā	f.					
+रहसू	rahasū	"f. +"					
+राक्षसीभूत	rākṣasībhūta	"adj. +"					
+रागपुष्पः	rāgapuṣpaḥ	m.					
+रागवृन्तः	rāgavṛntaḥ	m.					
+राजघातक	rājaghātaka	m.					
+राजचिह्कक	rājacihkaka	n.					
+राजन्य	rājanya	"adj.m. * +"	"   181"	+	6/48	+	
+राजमुट्ग	rājamuṭga	m.					
+राजवेत्रिन्	rājavetrin	"m. +"					
+राजोद्वेजनसंज्ञक	rājodvejanasaṁjñaka	m.					
+राज्ञी	rājñī	f.					
+रामकृष्णसंवाद	rāmakṛṣṇasaṁvāda	m.n.					
+रामतरुणी	rāmataruṇī	"f. +"	"     1"	+	1/1	+	
+रामात्मैक्यप्रकाशिका	rāmātmaikyaprakāśikā	"f. +"					
+राष्ट्रवर्धन	rāṣṭravardhana	"m. +"	"     1"		1/1	+	
+राहुलत	rāhulata	"m. +"					
+रिवक	rivaka	m.					
+रीतिबद्ध	rītibaddha	"adj. +"					
+रुक्मावती	rukmāvatī	f.					
+रुक्ष्म	rukṣma	m.					
+रुचकपर्वत	rucakaparvata	m.					
+रुचिर	rucira	"adj.m.n. * +"	"   277"	+	6/44	+	
+रुट्	ruṭ	"m. +"	"     1"		1/1/1	+	
+रुदन्ती	rudantī	"f. +"	"    28"	+	3/8	+	
+रुप्यक	rupyaka	"m. +"					
+रुम्रः	rumraḥ	m.					
+रुरु	ruru	"m. * +"	"   103"	+	6/26	+	
+रुवुकः	ruvukaḥ	m.					
+रुशद्	ruśad	Noun					
+रूपजीव	rūpajīva	"adj. +"					
+रूपनाशिन्	rūpanāśin	"adj. +"					
+रूपमती	rūpamatī	"f. +"					
+रूपराग	rūparāga	m.					
+रूपलता	rūpalatā	"f. +"					
+रूपलावण्य	rūpalāvaṇya	n.					
+रूपवती	rūpavatī	"f. +"	"     1"	+	1/1	+	
+रूपवत्तर	rūpavattara	"adj. * +"	"     1"		1/1	+	
+रूपा	rūpā	"f. +"	"     1"	+	1/1	+	
+रूपाढ्य	rūpāḍhya	m.					
+रेणुकातनय	reṇukātanaya	"m. +"					
+रेणुकामालामन्त्र	reṇukāmālāmantra	"m. +"					
+रेतोधेय	retodheya	"n. +"	"     1"		2/1	+	
+रोकः	rokaḥ	m.					
+रोगाभ्यागम	rogābhyāgama	"m. +"					
+रोदः	rodaḥ	m.					
+रोधवेदी	rodhavedī	"f. +"					
+रोल	rola	"m. +"	"     1"	+	1/1	+	
+रोलः	rolaḥ	m.					
+रोहय्	rohay	"Verb.cl.10.P. +"	"    15"	+	3/4	+	
+रोहितकूल	rohitakūla	n.					
+लक्ष्मीवती	lakṣmīvatī	"f. +"					
+लक्ष्मीविनय	lakṣmīvinaya	"m. +"					
+लटभा	laṭabhā	"f. +"					
+लतावेष्टित	latāveṣṭita	"m. +"					
+लब्धशब्द	labdhaśabda	"adj. +"					
+लय्	lay	"Verb. cl.1.Verb.cl.1.A."					
+ललना	lalanā	"f. +"	"    50"	+	5/14	+	
+लसोफरञ्ज	lasopharañja	m.n.					
+लिः	liḥ	m.					
+लिखितं	likhitaṁ	Noun					
+लिङ्गवर्धिन्	liṅgavardhin	"adj. +"					
+लुञ्चन	luñcana	n.m.f.n.					
+लुञ्चना	luñcanā	f.					
+लुड	luḍa	"Verb. cl. ("					
+लेयः	leyaḥ	m.					
+लोकचक्षुस्	lokacakṣus	m.n.					
+लोकचरित	lokacarita	n.					
+लोकतस्	lokatas	"ind. +"	"     2"		2/2		
+लोहधातु	lohadhātu	m.					
+लोहशृङ्खल	lohaśṛṅkhala	m.					
+लोहितकल्माष	lohitakalmāṣa	"adj. +"					
+वंशगुल्म	vaṁśagulma	"m. +"	"     1"	+	1/1	+	
+वंशतण्डुल	vaṁśataṇḍula	"m. +"	"     1"	+	1/1	+	
+वंशराग	vaṁśarāga	"m. +"	"     1"	+	2/1	+	
+वक्रचञ्चु	vakracañcu	m.					
+वज्रबीज	vajrabīja	"n. +"	"     8"		2/2	+	
+वज्राहिका	vajrāhikā	"f. +"					
+वञ्जुला	vañjulā	m.f.					
+वणिकव्रत	vaṇikavrata	m.					
+वज्रनाभ	vajranābha	"mn. * +"	"     7"		3/4	+	
+वज्रनाभ	vajranābha	"mn. * +"	"     7"		3/4	+	
+वत्सपति	vatsapati	"m. +"					
+वत्सस्मृति	vatsasmṛti	"f. +"					
+वदनपङ्कज	vadanapaṅkaja	n.					
+वदन्यः	vadanyaḥ	m.					
+वध्यपाल	vadhyapāla	"m. +"					
+वनकार्पासी	vanakārpāsī	"f. +"	"     1"	+	1/1	+	
+वनकार्प्पासी	vanakārppāsī	f.					
+वन्दनेस्थ	vandanestha	"adj. +"					
+वपावहन	vapāvahana	"n. +"	"     3"		1/1	+	
+वपुस्सात्	vapussāt	"ind. +"					
+वपोदर	vapodara	"adj. +"					
+वयसान्वित	vayasānvita	m.					
+वयस्कर	vayaskara	"adj. +"					
+वयुनं	vayunaṁ	Noun					
+वरिवस्य्	varivasy	"Denom.P. +"	"     7"		1/1	+	
+वरिवस्या	varivasyā	"f. +"	"     4"	+	2/2	+	
+वरुटः	varuṭaḥ	m.					
+वर्चाय्	varcāy	Noun					
+वर्त्तिन्	varttin	m.f.n.					
+वर्मशर्मन्	varmaśarman	"m. +"					
+वर्षधर	varṣadhara	"m. +"	"     4"		2/3	+	
+वर्षपर्व्वत	varṣaparvvata	m.					
+वलंरुज	valaṁruja	"adj. +"	"     1"		1/1	+	
+वलयी	valayī	f.					
+वल्कलवत्	valkalavat	"adj. +"					
+वल्गित	valgita	"n. * +"	"     5"	+	3/5	+	
+वल्भिक	valbhika	m.					
+वसथ	vasatha	"m. * +"					
+वसुकन्यालिका	vasukanyālikā	"f. +"	"     1"	+	2/1	+	
+वसुचरित	vasucarita	"n. +"					
+वसुद	vasuda	"m. +"	"     2"	+	2/2	+	
+वसुमतिपृष्ठ	vasumatipṛṣṭha	n.					
+वसुरण्व	vasuraṇva	"adj. +"					
+वस्तुशक्ति	vastuśakti	f.ind.					
+वह्निगर्भा	vahnigarbhā	"f. +"					
+वाकुची	vākucī	"f. +"	"    80"		5/24	+	
+वाङ्क्ष्	vāṅkṣ	Verb.					
+वाङ्ग	vāṅga	"m.adj. +"	"     1"		1/1	+	
+वाडवेय	vāḍaveya	m.					
+वाणमय	vāṇamaya	f.adj.					
+वाणीर	vāṇīra	"m. +"	"     1"	+	1/1	+	
+वातकपिण्डक	vātakapiṇḍaka	"m. +"					
+वातक्षोभ	vātakṣobha	"m. +"					
+वातचोदित	vātacodita	m.f.n.adj.					
+वाततूलं	vātatūlaṁ	Noun					
+वातविकारिन्	vātavikārin	m.f.n.adj.					
+वातासह	vātāsaha	"adj. +"					
+वादरः	vādaraḥ	m.					
+वान्तीभाव	vāntībhāva	"m. +"					
+वान्य	vānya	"adj. * +"					
+वार्त्तिकसार	vārttikasāra	m.					
+वार्हद्रथिः	vārhadrathiḥ	m.					
+वावहि	vāvahi	"adj. +"	"     1"		1/1	+	
+वावातृ	vāvātṛ	"m. +"	"     2"	+	1/1	+	
+वाशिंत	vāśiṁta	m.					
+वासरेश	vāsareśa	"m. +"					
+वाहनकार	vāhanakāra	"m. +"					
+वाहनकारशाला	vāhanakāraśālā	f.					
+वाहनत्व	vāhanatva	n.					
+वाहस्	vāhas	"adj.n. +"	"    38"	+	2/3	+	
+विकर्षणं	vikarṣaṇaṁ	Noun					
+विकल्पित	vikalpita	"adj. +"	"     1"	+	1/1	+	
+विकसितवदन	vikasitavadana	m.f.n.					
+विकास	vikāsa	"m. * +"	"    48"	+	5/18	+	
+विकीर्णः	vikīrṇaḥ	m.					
+विकुण्डल	vikuṇḍala	"adj.m. +"	"     5"		1/1/1	+	
+विक्रमोर्वशी	vikramorvaśī	f.					
+विक्षिप्ताक्षिप्तक	vikṣiptākṣiptaka	"n. +"	"     2"	+	1/1	+	
+विक्षीणकः	vikṣīṇakaḥ	m.					
+विगलितलज्ज	vigalitalajja	m.f.n.					
+विघ्ननाशक	vighnanāśaka	m.m.f.n.					
+विघ्ननाशकः	vighnanāśakaḥ	m.					
+विचेष्टन	viceṣṭana	"n. +"	"     4"		3/3	+	
+विच्छन्दकः	vicchandakaḥ	m.					
+विच्छाय	vicchāya	"n.adj.m. +"	"    24"	+	4/12	+	
+विच्छेदना	vicchedanā	"f. +"					
+विछेदनीय	vichedanīya	m.f.n.					
+विजट	vijaṭa	"adj. +"					
+विजयदेवी	vijayadevī	"f. +"					
+विजयन्ती	vijayantī	"f. +"					
+विज्ञानकन्द	vijñānakanda	m.					
+विज्ञानकाय	vijñānakāya	m.					
+विज्ञानाकल	vijñānākala	"m. +"	"    14"	+	2/4	+	
+विटङ्कः	viṭaṅkaḥ	m.					
+विट्चरः	viṭcaraḥ	m.					
+विट्चरः	viṭcaraḥ	m.					
+विचारु	vicāru	"m. +"					
+वितरण	vitaraṇa	"adj.n. * +"	"     5"		4/5	+	
+वितर्दन	vitardana	"m. +"	"     1"	+	1/1	+	
+वित्तागम	vittāgama	"m. +"	"     1"	+	2/1	+	
+विदथ्य	vidathya	"adj. +"	"    10"	+	2/2	+	
+विदर्	vidar	m.					
+विदरः	vidaraḥ	m.					
+विदरण	vidaraṇa	"n. +"	"     1"	+	1/1	+	
+विदर्भ	vidarbha	"m. * +"	"    60"		4/13	+	
+विदारित	vidārita	m.f.n.					
+विद्यातीर्थशिष्य	vidyātīrthaśiṣya	m.					
+विद्यामय	vidyāmaya	n.adj.					
+विद्याव्रतस्नात	vidyāvratasnāta	adj.					
+विद्युत्केश	vidyutkeśa	m.					
+विद्युदम्भस्	vidyudambhas	"f. +"	"     2"	+	2/2	+	
+विद्युन्मत्	vidyunmat	"adj. +"	"     1"		1/1	+	
+विद्युन्मन्	vidyunman	m.					
+विद्योता	vidyotā	"f. +"	"     1"	+	1/1	+	
+विद्वत्तरः	vidvattaraḥ	m.					
+विद्वेषक	vidveṣaka	"adj. +"	"     1"		1/1	+	
+विधिज्ञ	vidhijña	m.m.f.n.					
+विधिरूपनिरूपण	vidhirūpanirūpaṇa	n.					
+विधुमण्डल	vidhumaṇḍala	n.					
+विध्यलंकार	vidhyalaṁkāra	"m. +"					
+विनष्टि	vinaṣṭi	"f. * +"	"     4"	+	2/3	+	
+विना	vinā	"ind. +"	"  1049"		6/113		
+विनाशसम्भव	vināśasambhava	m.					
+विनाशिन्	vināśin	"adj. * +"	"   145"	+	6/39	+	
+विनिद्रा	vinidrā	"f. +"	"     1"	+	1/1	+	
+विनिर्लिख्	vinirlikh	"Verb.cl.6.P. +"	"     2"	+	2/2	+	
+विनिर्वृत्	vinirvṛt	"Verb.cl.1.A. +"	"    10"	+	2/6	+	
+विनिश्वसित	viniśvasita	"n. +"					
+विनोदनम्	vinodanam	Partic.					
+विन्द	vinda	"adj.m.m. +"	"    54"	+	4/8	+	
+विन्दुजालकं	vindujālakaṁ	Noun					
+विन्ध्यवासी	vindhyavāsī	f.					
+विन्ध्यशैल	vindhyaśaila	m.					
+विपा	vipā	"f.Verb.cl.1.A. +"	"     7"		2/2	+	
+विपुर	vipura	"n.adj. +"					
+विप्रजूत	viprajūta	m.f.n.adj.					
+विप्रत्यनीयक	vipratyanīyaka	"adj. +"					
+विबाणज्य	vibāṇajya	m.f.n.adj.					
+विभावः	vibhāvaḥ	Partic.					
+विभावनं	vibhāvanaṁ	Noun					
+विभिद्यमान	vibhidyamāna	m.f.n.					
+विभ्रमातन्त्र	vibhramātantra	n.					
+वियङ्ग	viyaṅga	m.					
+विरजस्कर्	virajaskar	n.					
+विरलजानुक	viralajānuka	"m. +"					
+विरागिन्	virāgin	"adj. * +"	"     6"	+	2/4	+	
+विराज्	virāj	"m.adj.f.mf.m.Verb.cl.1.A. * +"	"   565"	+	7/65	+	
+विराड्रूपा	virāḍrūpā	"f. +"					
+विरालः	virālaḥ	m.					
+विरुत	viruta	"adj.n. +"	"    12"		3/7	+	
+विरोधवन्त्	virodhavant	adj.					
+विरोधोक्ति	virodhokti	m.f.					
+विलबिका	vilabikā	f.					
+विलात	vilāta	f.m.f.n.adj.					
+विलिप्	vilip	"Verb.cl.6.P. +"	"    65"	+	5/31	+	
+विलोचनपथ	vilocanapatha	m.					
+विवदिष्	vivadiṣ	Noun					
+विवर्तनं	vivartanaṁ	Noun					
+विवाक	vivāka	"m. * +"					
+विवादचिन्तामणि	vivādacintāmaṇi	m.					
+विविच्य	vivicya	m.					
+विवृद्धिद	vivṛddhida	m.					
+विवेकचन्द्रोदय	vivekacandrodaya	m.					
+विवेकचूडामणि	vivekacūḍāmaṇi	m.					
+विव्यत्स्	vivyats	"Denom.P. +"	"     1"		1/1	+	
+विषंज्	viṣaṁj	Verb.cl.1.P.					
+विषपानीय	viṣapānīya	"n. +"	"     4"	+	2/2	+	
+विषमकर्मन्	viṣamakarman	n.					
+विषाणोल्लिखितस्कन्ध	viṣāṇollikhitaskandha	m.f.n.					
+विषादित	viṣādita	m.f.n.					
+विषुद्रुह्	viṣudruh	"adj. +"					
+विषोदर	viṣodara	"m. +"	"     1"	+	1/1	+	
+विष्कर	viṣkara	"m.n. +"	"     1"		1/1	+	
+विष्टुति	viṣṭuti	"f. +"	"    33"		2/1	+	
+विष्वग्वृत	viṣvagvṛta	"adj. +"					
+विशदा	viśadā	"f. +"	"     1"	+	1/1	+	
+विशरणं	viśaraṇaṁ	Noun					
+विशल्यी	viśalyī	"f. +"					
+विशातनम्	viśātanam	Partic.					
+विशिस्	viśis	"f. +"	"     1"	+	1/1	+	
+विश्रय	viśraya	"m. +"					
+विश्रामभू	viśrāmabhū	f.					
+विश्रामवेश्मन्	viśrāmaveśman	n.					
+विश्लथाङ्ग	viślathāṅga	m.f.n.					
+विश्वक्षिति	viśvakṣiti	"adj. +"					
+विश्वगोचर	viśvagocara	m.f.n.					
+विश्वञ्च्	viśvañc	Noun					
+विश्वदैव	viśvadaiva	"n. +"					
+विश्वनाथ	viśvanātha	"m. +"	"     1"		1/1/1	+	
+विश्वमातृका	viśvamātṛkā	"f. +"					
+विश्वमानव	viśvamānava	m.					
+विश्वहा	viśvahā	"ind. +"	"    23"		1/2		
+विश्वासन	viśvāsana	"n. +"	"     6"		4/4	+	
+विसर्पिनी	visarpinī	"f. +"					
+विसृति	visṛti	"f. +"	"     2"	+	2/2	+	
+विस्फुलिंग	visphuliṁga	m.					
+विस्फूर्ज्	visphūrj	"Verb.cl.1.P. +"	"    14"	+	3/7	+	
+विस्मयान्वितः	vismayānvitaḥ	m.					
+विस्मयिन्	vismayin	"adj. * +"					
+विहीन	vihīna	f.m.f.n.Verb.					
+वीटा	vīṭā	f.					
+वीणापाणि	vīṇāpāṇi	"m. +"	"     1"	+	1/1	+	
+वीरणस्तम्ब	vīraṇastamba	m.					
+वीरभद्रस्तोत्र	vīrabhadrastotra	n.					
+वीरभुज	vīrabhuja	"m. +"					
+वीरभूपति	vīrabhūpati	"m. +"					
+वीरेण्य	vīreṇya	"adj. +"	"     1"	+	1/1	+	
+वीरेन्द्री	vīrendrī	"f. +"					
+वीर्यसत्त्ववन्त्	vīryasattvavant	adj.					
+वीर्याशुल्क	vīryāśulka	"adj. +"					
+वीलक	vīlaka	"m. +"					
+वृक्षमार्जार	vṛkṣamārjāra	"m. +"					
+वृक्षश	vṛkṣaśa	"m. +"					
+वृक्षशाखा	vṛkṣaśākhā	f.					
+वृजिनः	vṛjinaḥ	m.					
+वृजिनवत्	vṛjinavat	m.					
+वृणान	vṛṇāna	"m. *"					
+वृणोति	vṛṇoti	"m. +"	"     1"		2/1/1/1	+	
+वृतंचय	vṛtaṁcaya	"adj. +"	"     1"		1/1	+	
+वृतः	vṛtaḥ	m.					
+वृजिः	vṛjiḥ	m.					
+वृता	vṛtā	"f. +"	"     1"		1/1	+	
+वृत्तिद	vṛttida	m.f.n.adj.					
+वृत्रारिः	vṛtrāriḥ	m.					
+वृधसानुः	vṛdhasānuḥ	m.					
+वृषव्रात	vṛṣavrāta	m.f.n.adj.					
+वृष्टिसंपात	vṛṣṭisaṁpāta	m.					
+वृष्ण्यावत्	vṛṣṇyāvat	"adj. +"	"     3"	+	1/2	+	
+वृष्ण्यावन्त्	vṛṣṇyāvant	adj.					
+वृहत्कन्द	vṛhatkanda	m.					
+वृहस्पतिचक्र	vṛhaspaticakra	n.					
+वेगवृष्टि	vegavṛṣṭi	f.					
+वेणुमण्डल	veṇumaṇḍala	"n. +"	"     2"	+	2/2	+	
+वेत्रवनमाहात्म्य	vetravanamāhātmya	"n. +"					
+वेत्राभिघात	vetrābhighāta	"m. +"					
+वेदमातृ	vedamātṛ	"f. +"	"    21"		3/7	+	
+वेदविद्वस्	vedavidvas	m.m.f.n.					
+वेदान्तचिन्तामणि	vedāntacintāmaṇi	m.					
+वेषकार	veṣakāra	"m. +"					
+वेषग्य	veṣagya	"n. +"	"     1"	+	1/1	+	
+वेशवत्	veśavat	m.					
+वेशवास	veśavāsa	"m. +"					
+वेशस्त्री	veśastrī	f.					
+वैजयंती	vaijayaṁtī	f.					
+वैरज	vairaja	"m. +"	"     1"	+	1/1	+	
+वैश्वध	vaiśvadha	"adj. +"					
+व्यजनचामर	vyajanacāmara	"n. +"					
+व्यजनचामर	vyajanacāmara	"n. +"					
+व्यतिकरतिकृत	vyatikaratikṛta	"adj. +"					
+व्यतिकरित	vyatikarita	"adj. * +"					
+व्यतिक्रतिक्रम	vyatikratikrama	"m. +"					
+व्यतिक्रतिक्रमिन्	vyatikratikramin	"adj. +"					
+व्यतिसंदह्	vyatisaṁdah	"Verb.cl.1.P. +"	"     1"		1/1	+	
+व्यथातुर	vyathātura	"adj. +"					
+व्यन्तराम्	vyantarām	adv.ind.					
+व्यपत्रप	vyapatrapa	"adj. +"	"     2"	+	2/2	+	
+व्यपनश्	vyapanaś	Noun					
+व्यभिचारिणी	vyabhicāriṇī	"f. +"					
+व्यवहारसार	vyavahārasāra	"m. +"					
+व्यसनब्रह्मचारिन्	vyasanabrahmacārin	m.					
+व्यसनार्त्तं	vyasanārttaṁ	m.f.n.					
+व्याख्याख्यातृ	vyākhyākhyātṛ	m.f.					
+व्याघ्रपादी	vyāghrapādī	"f. +"	"     9"	+	2/6	+	
+व्याघ्रा	vyāghrā	"Verb.cl.3.P. +"					
+व्याजाभिप्राय	vyājābhiprāya	"m. +"					
+व्याटि	vyāṭi	"adj. +"	"     1"		2/1	+	
+व्यापापाद्य	vyāpāpādya	"adj. +"					
+व्यापारी	vyāpārī	f.					
+व्यापिका	vyāpikā	"f. +"					
+व्यायामिन्	vyāyāmin	"adj. +"	"     2"		2/1	+	
+व्यालीमुख	vyālīmukha	m.					
+व्यावक्रोशी	vyāvakrośī	"f. +"					
+व्याहावः	vyāhāvaḥ	m.					
+व्युच्छेद	vyuccheda	"m. +"	"     3"		1/2	+	
+व्युत्पादक	vyutpādaka	"adj. * +"					
+व्रणजिता	vraṇajitā	"f. +"					
+व्रजतत्त्व	vrajatattva	"n. +"					
+व्रजेन्द्र	vrajendra	"m. +"					
+व्रतयति	vratayati	n.					
+षट्कर्म्मन्	ṣaṭkarmman	m.n.					
+षट्चरण	ṣaṭcaraṇa	"adj.m. +"	"     3"	+	3/3	+	
+षट्पञ्चाशत्	ṣaṭpañcāśat	f.m.f.n.					
+षट्पञ्चाशत्	ṣaṭpañcāśat	f.m.f.n.					
+षडङ्गविद्	ṣaḍaṅgavid	Noun					
+षड्भाववादिन्	ṣaḍbhāvavādin	"m. +"					
+षोडशकर्मविधि	ṣoḍaśakarmavidhi	m.					
+ष्कष	ṣkaṣa	"m. +"					
+शंकरदिग्विजय	śaṁkaradigvijaya	"m. +"					
+शंस्था	śaṁsthā	"f. +"					
+शकटभिद्	śakaṭabhid	"m. +"					
+शकाधिपराजधानी	śakādhiparājadhānī	"f. +"					
+शकुनिप्रपा	śakuniprapā	f.					
+शक्तिनाडी	śaktināḍī	"f. +"	"     1"		1/1	+	
+शक्तिमत्तर	śaktimattara	"adj. +"	"     2"		1/1	+	
+शक्तिरत्नाकर	śaktiratnākara	"m. +"					
+शक्रदन्तिन्	śakradantin	"m. +"					
+शक्रमातर्	śakramātar	f.					
+शक्रशिरस्	śakraśiras	"n. +"					
+शङ्खमुखः	śaṅkhamukhaḥ	m.					
+शतकः	śatakaḥ	m.					
+शतचरणा	śatacaraṇā	"f. +"					
+शततन्त्री	śatatantrī	f.m.f.n.					
+शतदारुक	śatadāruka	"m. +"					
+शतपुट	śatapuṭa	"m. +"					
+शताधिपति	śatādhipati	m.					
+शतावर्तवन	śatāvartavana	n.					
+शत्रुतूर्य	śatrutūrya	n.					
+शत्रुपक्ष	śatrupakṣa	m.m.f.n.					
+शमथसम्भार	śamathasambhāra	"m. +"					
+शमलम्	śamalam	Partic.					
+शम्पक	śampaka	"m. +"					
+शम्पा	śampā	"f. +"	"     3"	+	1/3	+	
+शरत्काल	śaratkāla	m.n.m.f.n.					
+शरधि	śaradhi	"m. * +"	"     1"		1/1	+	
+शरीरतुल्य	śarīratulya	"adj. +"					
+शरीरयोगज	śarīrayogaja	m.f.n.					
+शरीरवैकल्य	śarīravaikalya	n.					
+शरोगृहीत	śarogṛhīta	Verb.					
+शर्धिन्	śardhin	adj.					
+शर्मय	śarmaya	m.					
+शर्या	śaryā	"f. +"	"     5"	+	2/2	+	
+शर्याति	śaryāti	"m. * +"	"    37"		3/7	+	
+शर्यातिः	śaryātiḥ	m.					
+शर्व	śarva	"m. * +"	"   210"		6/31	+	
+शलियत	śaliyata	m.					
+शली	śalī	f.					
+शल्यज्ञान	śalyajñāna	n.					
+शल्याहरणविधि	śalyāharaṇavidhi	"m. +"	"     1"	+	1/1	+	
+शवधान	śavadhāna	"m. +"					
+शशयु	śaśayu	"adj. +"	"     2"		1/1	+	
+शशरजस्	śaśarajas	"n. +"	"     1"		1/1	+	
+शशिमुख	śaśimukha	m.f.n.					
+शश्वाय्	śaśvāy	Noun					
+शस्त्रजीविन्	śastrajīvin	"m. +"					
+शस्त्रवत्	śastravat	"adj. +"	"     9"		3/3	+	
+शस्त्रोत्त्रोद्यम	śastrottrodyama	m.					
+शस्रवृत्ति	śasravṛtti	m.					
+शहरीभू	śaharībhū	Noun					
+शाखामृगः	śākhāmṛgaḥ	m.					
+शाखामृगी	śākhāmṛgī	"f. +"	"     1"		1/1	+	
+शार्ङ्गस्था	śārṅgasthā	"f. +"	"     1"	+	1/1	+	
+शालावृकः	śālāvṛkaḥ	m.					
+शालास्तम्भ	śālāstambha	"m. +"					
+शाश्वतानन्द	śāśvatānanda	"m. +"					
+शास्त्रगत	śāstragata	m.					
+शास्त्रविमुख	śāstravimukha	m.f.n.					
+शिखण्डिकेतु	śikhaṇḍiketu	"m. +"					
+शिखावली	śikhāvalī	f.					
+शिञ्जद्षडङ्घ्रि	śiñjadṣaḍaṅghri	m.f.n.					
+शिञ्जद्षडङ्घ्रि	śiñjadṣaḍaṅghri	m.f.n.					
+शितधार	śitadhāra	m.f.n.					
+शितिकण्ठ	śitikaṇṭha	"mn. +"	"    40"		3/15	+	
+शिल्पशास्त्रं	śilpaśāstraṁ	Noun					
+शीघ्रगति	śīghragati	f.m.f.n.adj.					
+शीताद	śītāda	"m. +"	"     8"		2/2	+	
+शीलवृद्ध	śīlavṛddha	"adj. +"					
+शुक्तिवीज	śuktivīja	n.					
+शुक्तिसाह्वया	śuktisāhvayā	"f. +"	"     1"	+	1/1	+	
+शुक्लवत्	śuklavat	"adj. +"	"     1"	+	1/1	+	
+शुण्डार	śuṇḍāra	"m. +"					
+शुद्धिदर्पण	śuddhidarpaṇa	"m. +"					
+शुनासीरीय	śunāsīrīya	f.n.adj.					
+शुभगाभीरी	śubhagābhīrī	"f. +"					
+शुभय्	śubhay	"Verb.cl.10.A. +"	"     4"	+	2/2	+	
+शुभ्रदन्ती	śubhradantī	"f. +"	"     1"		1/1	+	
+शुशुभ्	śuśubh	"Int.A. +"	"    18"	+	4/5	+	
+शून्यकर्ण	śūnyakarṇa	"m. +"					
+शूलवत्	śūlavat	"adj. +"	"     5"		4/4	+	
+शूलाग्र	śūlāgra	n.m.f.n.adj.Verb.					
+शृंगिः	śṛṁgiḥ	m.					
+शृङ्गवेर	śṛṅgavera	"mn. +"	"   112"	+	5/27	+	
+शृतंकृत	śṛtaṁkṛta	"adj. +"	"     2"		2/1	+	
+शोक	śoka	"adj.m. * +"	"  1782"	+	7/87	+	
+शोथवत्	śothavat	"adj. +"	"     2"		1/1	+	
+शोथारि	śothāri	"m. +"					
+शोधक	śodhaka	"m.n.adj. * +"	"    28"	+	4/6	+	
+शोफहृत	śophahṛta	m.					
+शोभक	śobhaka	"m.adj. +"					
+शोभनकः	śobhanakaḥ	m.					
+शै	śai	"Verb. cl. ("					
+श्नप्त्र	śnaptra	"n. +"					
+श्मशानवेताल	śmaśānavetāla	"m. +"					
+श्मसि	śmasi	n.					
+श्यामपत्रः	śyāmapatraḥ	m.					
+श्यावदन्तता	śyāvadantatā	"f. +"	"     2"		2/2	+	
+श्येनपत्त्वन्	śyenapattvan	m.					
+श्येनपाता	śyenapātā	"f. +"	"     5"	+	1/1	+	
+श्येनाख्य	śyenākhya	"m. +"					
+श्येनाभृत	śyenābhṛta	"adj. +"					
+श्रद्ध	śraddha	"adj. +"	"     2"		2/2	+	
+श्रद्धाकृत	śraddhākṛta	m.f.n.					
+श्राद्धतत्त्व	śrāddhatattva	"n. +"					
+श्रावस्त	śrāvasta	"m. * +"	"     7"	+	3/4	+	
+श्रियंमन्य	śriyaṁmanya	m.					
+श्रीमल्लकर्णि	śrīmallakarṇi	"m. +"					
+श्रीवत्	śrīvat	"adj. +"					
+श्रीवत्स	śrīvatsa	"m. +"	"    83"		3/20	+	
+श्रीवद	śrīvada	"m. +"					
+श्रीवसुक्र	śrīvasukra	"m. +"					
+श्रीवह	śrīvaha	"m. +"	"     1"	+	1/1	+	
+श्रुतंधर	śrutaṁdhara	"m. +"					
+श्रुतर्व	śrutarva	m.					
+श्रुतवृत्त	śrutavṛtta	n.m.f.n.					
+श्रुतिमूल	śrutimūla	"n. +"					
+श्रुतिसारपञ्चरत्न	śrutisārapañcaratna	m.n.					
+श्रुतिसुख	śrutisukha	m.f.n.					
+श्रुष्	śruṣ	"Verb.cl.1.A. +"	"     5"	+	1/1	+	
+श्रुष्टि	śruṣṭi	"f. +"	"    27"	+	1/1	+	
+श्रेटी	śreṭī	"f. +"					
+श्रेणीबन्ध	śreṇībandha	"m. +"					
+श्रेयी	śreyī	f.					
+श्लीपदापहः	ślīpadāpahaḥ	m.					
+श्वल्क्	śvalk	"Verb. cl.10Verb."					
+श्वव्याघ्र	śvavyāghra	"m. +"					
+श्वसनरन्ध्र	śvasanarandhra	"n. +"					
+श्वसृप	śvasṛpa	"m. +"	"     2"	+	1/1	+	
+श्वाविल्	śvāvil	Noun					
+श्वेतगुणवन्त्	śvetaguṇavant	adj.					
+श्वेतघण्टी	śvetaghaṇṭī	f.					
+संकुच्	saṁkuc	Noun					
+संकेतक	saṁketaka	"mn. +"	"     4"	+	3/3	+	
+संख्यासमापन	saṁkhyāsamāpana	"m. +"	"     1"	+	1/1	+	
+संगतिन्	saṁgatin	"adj. +"					
+संगरक्स्कम	saṁgarakskama	m.f.n.					
+संग्रहीतर्	saṁgrahītar	m.					
+संग्रामपाल	saṁgrāmapāla	"m. +"					
+संघानन्द	saṁghānanda	m.					
+संघाराम	saṁghārāma	"m. +"					
+संचकान	saṁcakāna	m.					
+संचरिष्णु	saṁcariṣṇu	"adj. +"					
+संचिन्त्य	saṁcintya	m.f.n.adj.ind.					
+संचेय	saṁceya	"adj. +"					
+संजुघुक्षु	saṁjughukṣu	"adj. +"					
+संज्ञानम्	saṁjñānam	Partic.					
+संज्ञानम्	saṁjñānam	Partic.					
+संतः	saṁtaḥ	m.					
+संत्यज्	saṁtyaj	"Verb.cl.1.A. +"	"   210"	+	6/39	+	
+संदर्शक	saṁdarśaka	"adj. +"	"     1"		1/1	+	
+संदेहिन्	saṁdehin	"adj. +"					
+संधिला	saṁdhilā	"f. +"					
+संनद्धकवच	saṁnaddhakavaca	m.f.n.					
+संपद्	saṁpad	f.n.adj.Verb.					
+संप्रवेधय्	saṁpravedhay	"Verb.cl.10.A. +"	"     1"	+	1/1	+	
+संयमनी	saṁyamanī	"f. +"	"    10"		3/6	+	
+संयुक्तः	saṁyuktaḥ	m.					
+संरागः	saṁrāgaḥ	m.					
+संवत्	saṁvat	"f.adj. +"	"     5"	+	1/2	+	
+संवत्सररूप	saṁvatsararūpa	"n. +"					
+संवर्जनम्	saṁvarjanam	Partic.					
+संवादिन्	saṁvādin	"adj. +"	"    12"		3/8	+	
+संविज्ञान	saṁvijñāna	n.					
+संविद्	saṁvid	"f.f.Verb.cl.2.A.Verb.cl.6.A. * +"	"   560"	+	7/64	+	
+संव्यव्यवहारिक	saṁvyavyavahārika	m.					
+संश्रद्धा	saṁśraddhā	"Verb.cl.3.A. +"	"     1"		1/1	+	
+संश्रद्धू	saṁśraddhū	ind.					
+संसनिष्यदत्	saṁsaniṣyadat	"m. +"	"     1"		6/30/1	+	
+संसर्ग	saṁsarga	"adj.m. * +"	"   243"	+	6/53	+	
+संसह	saṁsaha	"adj. +"	"     2"	+	1/1	+	
+संस्तम्भ	saṁstambha	"m. * +"	"     6"		3/6	+	
+संहततल	saṁhatatala	m.					
+संहारवेगवत्	saṁhāravegavat	m.f.n.					
+संहि	saṁhi	"Verb.cl.5.P. +"		+			
+संहृष्टरोमन्	saṁhṛṣṭaroman	m.f.n.					
+संह्रादः	saṁhrādaḥ	m.					
+सक्तु	saktu	"m. * +"	"   175"		6/35	+	
+सङ्ख्यान	saṅkhyāna	"n. *"					
+सङ्गगुप्तसूनु	saṅgaguptasūnu	"m. +"					
+सच	saca	"adj. +"	"     3"	+	1/1	+	
+सञ्जः	sañjaḥ	m.					
+सचेतस्	sacetas	"adj. * +"	"    21"	+	4/6	+	
+सचेतस्	sacetas	"adj. * +"	"    21"	+	4/6	+	
+सट्वा	saṭvā	"f. +"					
+सच्चरित्र	saccaritra	"n.adj. +"					
+सतत	satata	"adj. * +"	"   125"	+	5/41	+	
+सत्त्रगृह	sattragṛha	"n. +"					
+सत्त्रासाहीय	sattrāsāhīya	"n. +"	"     5"	+	2/1	+	
+सत्त्वशील	sattvaśīla	"adj.m. +"					
+सत्यतपस्	satyatapas	"m. +"	"     5"	+	3/7/1	+	
+सत्यमूल	satyamūla	m.					
+सत्यवाक्	satyavāk	f.					
+सत्रासह्	satrāsah	adj.					
+सत्वन्त्	satvant	"m. +"					
+सत्वररचनम्	satvararacanam	ind.					
+सत्ववन्त्	satvavant	m.					
+सत्संग्रह	satsaṁgraha	m.f.n.					
+सदस्य	sadasya	"m. * +"	"    75"	+	6/15	+	
+सदानन	sadānana	m.f.n.adj.					
+सद्गति	sadgati	m.f.n.Verb.					
+सनिर्वेद	sanirveda	"n.m.f.n.adv.adj. *"					
+सन्तताभ्यास	santatābhyāsa	m.					
+सन्दानितः	sandānitaḥ	m.					
+सन्दृष्ट	sandṛṣṭa	m.f.n.					
+सन्निभः	sannibhaḥ	m.					
+सपत्नत्व	sapatnatva	n.					
+सपत्नबलसूदन	sapatnabalasūdana	m.f.n.					
+सप्तकर्ण	saptakarṇa	"m. +"					
+सप्तगमन	saptagamana	"n. +"					
+सप्ततन्ति	saptatanti	"adj. +"					
+सभास्तारः	sabhāstāraḥ	m.					
+समनुज्ञात	samanujñāta	m.f.n.					
+समपोह्	samapoh	Noun					
+समरबल	samarabala	m.					
+समर्धक	samardhaka	"adj. +"					
+समर्पितर्	samarpitar	m.					
+समर्यादः	samaryādaḥ	m.					
+समर्ह्	samarh	Noun					
+समवयस्क	samavayaska	"adj. +"					
+समवसन्न	samavasanna	"adj. +"					
+समाच्छद्	samācchad	Noun					
+समाधियोगर्द्धितपोविद्याविरक्तिमत्	samādhiyogarddhitapovidyāviraktimat	m.f.n.					
+समाधिस्थः	samādhisthaḥ	m.					
+समासतस	samāsatasa	m.					
+समासशोभा	samāsaśobhā	f.					
+समिन्धय्	samindhay	"Verb.cl.10.P. +"	"     1"	+	1/1	+	
+समुच्चेतव्य	samuccetavya	m.f.n.					
+समुच्छ्वि	samucchvi	"Verb.cl.1.P. +"	"     1"	+	2/1	+	
+समुत्तृ	samuttṛ	"Verb.cl.1.P. +"	"    25"	+	4/14	+	
+समुद्धृ	samuddhṛ	"Verb.cl.2.P.Verb.cl.1.A. +"	"   440"	+	7/53	+	
+समुन्निद्र	samunnidra	"adj. +"					
+समुल्लिखन्	samullikhan	m.					
+समूहिन्	samūhin	"adj. +"	"     1"		1/1	+	
+समृष्	samṛṣ	Noun		+			
+सम्परिचर्	samparicar	"Verb.cl.1.A. +"		+			
+सम्पाठ	sampāṭha	"m. +"					
+सम्पाद	sampāda	"m. +"					
+सम्प्रतिपूजय्	sampratipūjay	"Verb.cl.10.P. +"	"     5"	+	2/3	+	
+सम्प्रेप्सु	samprepsu	"adj. +"	"     1"	+	1/1	+	
+सम्भोगयक्षिणी	sambhogayakṣiṇī	f.					
+सम्भोजन	sambhojana	"n. +"	"     7"		2/3	+	
+सम्मट्	sammaṭ	m.m.f.n.					
+सम्मृष्टः	sammṛṣṭaḥ	m.					
+सरत्नि	saratni	"mf. +"	"     1"	+	1/1	+	
+सरदण्डा	saradaṇḍā	f.					
+सरभस	sarabhasa	"adj. +"	"    17"		4/10	+	
+सरस्वतीतीर्थ	sarasvatītīrtha	"n. +"					
+सराक्षेप	sarākṣepa	"m. +"					
+सरिदधिपति	saridadhipati	"m. +"					
+सरिन्मुख	sarinmukha	"n. +"					
+सर्गिन्	sargin	"adj.m. +"					
+सर्म	sarma	"m. +"	"     1"	+	1/1	+	
+सर्वकेशी	sarvakeśī	f.					
+सर्वगत	sarvagata	"adj.m. +"	"    16"		4/12	+	
+सर्वज्ञः	sarvajñaḥ	m.					
+सर्वतमोनुद	sarvatamonuda	m.f.n.					
+सर्वदेवतीर्थ	sarvadevatīrtha	m.					
+सर्वभूतरुतग्रहणी	sarvabhūtarutagrahaṇī	f.					
+सर्वमङ्गला	sarvamaṅgalā	"f. +"	"    10"	+	3/6	+	
+सर्वमात्रा	sarvamātrā	"f. +"					
+सर्वयोषित्	sarvayoṣit	f.					
+सर्वलोकभयंकर	sarvalokabhayaṁkara	m.f.n.					
+सर्वलोकेश	sarvalokeśa	m.					
+सर्वविध	sarvavidha	"adj. +"	"     1"		1/1	+	
+सर्वशाकुन	sarvaśākuna	n.					
+सर्वशिष्य	sarvaśiṣya	f.m.f.n.					
+सर्वसूक्ष्म	sarvasūkṣma	m.f.n.adj.					
+सर्वस्व	sarvasva	"n. +"	"    36"		5/19	+	
+सर्वस्वरलक्षण	sarvasvaralakṣaṇa	"n. +"					
+सर्वस्वर्णमय	sarvasvarṇamaya	n.adj.					
+सर्वा	sarvā	f.					
+सर्व्वतेजस्	sarvvatejas	n.					
+सर्व्वमङ्गला	sarvvamaṅgalā	f.					
+सर्व्वमूषक	sarvvamūṣaka	m.					
+सर्व्वसह	sarvvasaha	m.m.f.n.					
+सलिग	saliga	"adj. +"	"     1"		2/1	+	
+सविन्	savin	"adj. +"					
+सषोडशिक	saṣoḍaśika	"adj. +"					
+सश्रम	saśrama	"adj. +"					
+सश्रिल्क	saśrilka	"adj. +"					
+सहत्	sahat	"adj. * +"					
+सहस्रद	sahasrada	"m. * +"	"     1"		1/1	+	
+सहस्रचण्ड्यादिविधि	sahasracaṇḍyādividhi	"m. +"					
+सहस्रपूरण	sahasrapūraṇa	"adj. +"					
+सहस्राचार	sahasrācāra	"m. +"					
+सहस्रानीकः	sahasrānīkaḥ	m.					
+सहाटक	sahāṭaka	"adj. +"	"     1"		2/1	+	
+सहायवत्	sahāyavat	"adj. * +"	"    49"		3/8	+	
+सह्यु	sahyu	"adj. +"	"     1"	+	1/1	+	
+सातम	sātama	"adj. +"	"    18"		1/2	+	
+सात्वताचारवादार्थ	sātvatācāravādārtha	"m. +"					
+सादन	sādana	"n.adj.m.n. * +"	"   129"	+	6/14	+	
+सादाख्य	sādākhya	"n. +"	"     6"		1/2	+	
+साधर्म्य	sādharmya	"n. * +"	"    55"		4/17	+	
+साधुज	sādhuja	m.f.n.					
+साध्यसमत्व	sādhyasamatva	n.					
+सानुवषट्कार	sānuvaṣaṭkāra	"adj. +"					
+सान्दीपनि	sāndīpani	"n. *"					
+सामविधान	sāmavidhāna	"n. +"					
+सारमार्गण	sāramārgaṇa	n.					
+सारामुख	sārāmukha	"m. +"	"     1"	+	1/1	+	
+सार्थवाह	sārthavāha	"m. +"	"   276"	+	3/10	+	
+सास्वादन	sāsvādana	"n. +"					
+साहदेव्य	sāhadevya	"m. +"	"     4"		1/1	+	
+सिंहमुखी	siṁhamukhī	"f. +"	"     3"	+	2/3	+	
+सिकतावन्त्	sikatāvant	adj.					
+सिञ्जा	siñjā	f.					
+सिनाडिका	sināḍikā	"f. +"	"     1"	+	1/1	+	
+सिनी	sinī	"f. +"	"     1"		1/1	+	
+सिन्धुजन्म	sindhujanma	m.					
+सिराल	sirāla	"adj.m.n. +"	"     7"	+	3/4	+	
+सीताकुण्ड	sītākuṇḍa	m.					
+सीताचरणचामर	sītācaraṇacāmara	m.					
+सीधुगन्ध	sīdhugandha	"m. +"	"     1"		1/1	+	
+सीरिन्	sīrin	"m. * +"	"     3"	+	2/2	+	
+सुकण्डु	sukaṇḍu	"m. +"					
+सुकण्डुः	sukaṇḍuḥ	m.					
+सुकृतरस	sukṛtarasa	m.					
+सुकृतात्मन्	sukṛtātman	adj.					
+सुखगम	sukhagama	adj.					
+सुखभञ्ज	sukhabhañja	m.					
+सुखवर्मन्	sukhavarman	"m. +"					
+सुखाशः	sukhāśaḥ	m.					
+सुतः	sutaḥ	m.					
+सुतसोम	sutasoma	"adj.m. +"	"    34"		2/2	+	
+सुतृष्णं	sutṛṣṇaṁ	Noun					
+सुदयित	sudayita	m.f.n.adj.					
+सुधावलित	sudhāvalita	m.					
+सुधावास	sudhāvāsa	"m. +"					
+सुधीः	sudhīḥ	Noun					
+सुधोद्गार	sudhodgāra	"m. +"					
+सुनेपथ्य	sunepathya	"adj. +"					
+सुपक्ष्मन्	supakṣman	"adj. +"	"     1"		1/1	+	
+सुपच	supaca	n.					
+सुबालक	subālaka	"m. +"	"     3"		2/2	+	
+सुमहातपस्	sumahātapas	adj.					
+सुयमा	suyamā	"f. +"					
+सुरक्तकः	suraktakaḥ	m.					
+सुरतं	surataṁ	Noun					
+सुरभिवल्कलं	surabhivalkalaṁ	Noun					
+सुरेलश	surelaśa	"m. +"	"     1"	+	1/1	+	
+सुवर्णकक्ष्य	suvarṇakakṣya	m.f.n.					
+सुविदल्ला	suvidallā	"f. +"					
+सुविदु	suvidu	"m. +"	"     1"		1/1	+	
+सुविधिः	suvidhiḥ	m.					
+सुश्रोतु	suśrotu	"adj. +"					
+सुसम्प्रतप्त	susampratapta	"adj. +"					
+सुसान्त्वयमन	susāntvayamana	"adj. +"					
+सुसान्त्वित	susāntvita	n.					
+सुस्थितंमन्य	susthitaṁmanya	adj.					
+सुहृद्	suhṛd	"m.f.adj. * +"	"  1022"	+	5/62	+	
+सूक्ष्मवस्त्र	sūkṣmavastra	n.					
+सूचिसूत्र	sūcisūtra	"n. +"					
+सूचीकटाहन्याय	sūcīkaṭāhanyāya	"m. +"					
+सूत्रकोश	sūtrakośa	"m. +"					
+सूत्रमय	sūtramaya	n.adj.					
+सूत्रय्	sūtray	"Denom.P. +"	"     5"	+	2/4	+	
+सूनिक	sūnika	"m. +"					
+सूनिन्	sūnin	"m. +"	"     1"		1/1	+	
+सूनुता	sūnutā	"f. * +"					
+सूपतीर्थ	sūpatīrtha	n.adj.					
+सूरत	sūrata	"adj. +"					
+सूर्यम्पश्य	sūryampaśya	"adj. * +"					
+सूर्यवर्ण	sūryavarṇa	n.adj.					
+सूर्यसंज्ञं	sūryasaṁjñaṁ	Noun					
+सूर्याकर	sūryākara	"m. +"					
+सृक्क	sṛkka	"m. +"	"     2"		3/2	+	
+सृगालघण्टी	sṛgālaghaṇṭī	"f. +"					
+सृजत्वकर्मन्	sṛjatvakarman	"n. +"					
+सृष्टिप्रसङ्ग	sṛṣṭiprasaṅga	"m. +"					
+सेनाकर्मन्	senākarman	n.					
+सेपुर	sepura	"n. +"					
+सोढाक	soḍhāka	"m. +"	"     1"		1/1	+	
+सोमसुत्	somasut	"m. +"					
+सोमसुर्यप्रकाश	somasuryaprakāśa	"adj. +"					
+सोशीर	sośīra	"adj. +"	"     1"		2/1	+	
+सौर्यायणि	sauryāyaṇi	"m. +"					
+सौर्यायणिन्	sauryāyaṇin	"m. +"					
+स्कन्दनं	skandanaṁ	Noun					
+स्कन्दषष्ठीव्रत	skandaṣaṣṭhīvrata	f.n.Partic.					
+स्खद	skhada	"Verb. cl. ("					
+स्खलनम्	skhalanam	Partic.					
+स्तुतिकुसुमाञ्जलि	stutikusumāñjali	m.					
+स्तुतिगीतक	stutigītaka	"n. +"					
+स्तुषेप्यः	stuṣepyaḥ	m.					
+स्तृह्	stṛh	"Verb. cl.6.Verb.Verb.cl.6.P."					
+स्तेयी	steyī	f.					
+स्त्रीमाया	strīmāyā	f.					
+स्त्रीमुखप	strīmukhapa	m.n.					
+स्त्रैण	straiṇa	"adj.n. * +"	"    22"	+	4/10	+	
+स्थानेयोगिन्	sthāneyogin	"adj. +"					
+स्थापितर्	sthāpitar	m.					
+स्थूलभूत	sthūlabhūta	"n. +"	"     1"		1/1	+	
+स्थूलवृक्षफलः	sthūlavṛkṣaphalaḥ	m.					
+स्थौणाभारिक	sthauṇābhārika	"adj. +"					
+स्नातर्	snātar	m.					
+स्निग्धजन	snigdhajana	m.					
+स्नेहाकूत	snehākūta	"n. +"					
+स्पर्ष्टव्य	sparṣṭavya	"adj. +"					
+स्पर्श	sparśa	"adj.m. * +"	"   899"	+	6/108	+	
+स्पर्शवर्ग	sparśavarga	"m. +"					
+स्पर्शस्यन्दः	sparśasyandaḥ	m.					
+स्पृह	spṛha	"Verb. cl. ("					
+स्फिग्	sphig	Noun					
+स्फुटन	sphuṭana	"n.adj. +"	"    24"	+	5/12	+	
+स्फूर्त्ति	sphūrtti	f.					
+स्फेयंस्	spheyaṁs	Noun					
+स्फेष्ठ	spheṣṭha	"adj. +"					
+स्बृ	sbṛ	"Verb. cl. ("					
+स्मरदा	smaradā	"f. +"	"     1"	+	1/1	+	
+स्मारणीयक	smāraṇīyaka	"n. +"	"     1"		1/1	+	
+स्यामन्तोपाख्यान	syāmantopākhyāna	"n. +"					
+स्रंग्विन्	sraṁgvin	f.					
+स्रुघ्निका	srughnikā	"f. +"					
+स्रुघ्नी	srughnī	"f. +"					
+स्वकर्म्मवश	svakarmmavaśa	m.f.n.					
+स्वकार्यसह	svakāryasaha	m.f.n.					
+स्वक्षत्र	svakṣatra	"adj. +"	"     3"	+	1/1	+	
+स्वत्वोत्पत्ति	svatvotpatti	f.					
+स्वधाप्रियः	svadhāpriyaḥ	m.					
+स्वधितिहेतिक	svadhitihetika	"m. +"					
+स्वनवेक्षणीय	svanavekṣaṇīya	"adj. +"					
+स्वपनं	svapanaṁ	Noun					
+स्वप्नज्ञान	svapnajñāna	n.					
+स्वमातृतस्	svamātṛtas	adv.					
+स्वर्गति	svargati	"f. +"	"     9"		2/4	+	
+स्वर्त	svarta	"m. *"					
+स्वर्णंजीरी	svarṇaṁjīrī	f.					
+स्वर्दा	svardā	"f. +"					
+स्वर्यातृ	svaryātṛ	"adj. +"	"     1"	+	1/1	+	
+स्वर्वैद्यौ	svarvaidyau	m.					
+स्वलिखित	svalikhita	"n. +"					
+स्वश्चूडामणि	svaścūḍāmaṇi	m.					
+स्वान	svāna	"m. +"	"    15"	+	6/8	+	
+स्वीकरणं	svīkaraṇaṁ	f.					
+हनुमत्पञ्चाङ्ग	hanumatpañcāṅga	n.					
+हनुमन्निघण्टु	hanumannighaṇṭu	"m. +"					
+हनूमन्तेश्वर	hanūmanteśvara	"mn. +"	"    13"		1/1	+	
+हनूष	hanūṣa	"m. +"					
+हयप	hayapa	"m. +"					
+हयपति	hayapati	"m. +"					
+हयप्रिय	hayapriya	"m. +"					
+हरदग्धमूर्ति	haradagdhamūrti	"m. +"					
+हरदत्तचरित	haradattacarita	n.					
+हरितक	haritaka	"adj.mn.n. +"	"     8"	+	2/4	+	
+हरितकम्	haritakam	Partic.					
+हरितालजनक	haritālajanaka	"m. +"					
+हरिधायस्	haridhāyas	"adj. +"					
+हरिमन्थक	harimanthaka	"m. +"	"     1"	+	1/1	+	
+हरिमन्थजः	harimanthajaḥ	m.					
+हरिवर्ष	harivarṣa	"n.m. +"	"    21"		3/8	+	
+हरिवासुक	harivāsuka	"n. +"					
+हर्य्	hary	"Verb.cl.1.A. +"	"    38"	+	2/3	+	
+हर्षचरित	harṣacarita	"n. +"					
+हलय्	halay	Noun					
+हवल	havala	Partic.					
+हविष्पति	haviṣpati	"m. +"	"     1"		1/1	+	
+हविष्यभक्ष	haviṣyabhakṣa	f.m.f.n.					
+हसनीमणि	hasanīmaṇi	"m. +"					
+हालहाल	hālahāla	"n. +"					
+हाहलं	hāhalaṁ	Noun					
+हिडिम्ब	hiḍimba	"m. * +"	"    36"		2/3	+	
+हिडिम्बनिसूदन	hiḍimbanisūdana	"m. +"					
+हितप्रेप्सु	hitaprepsu	m.f.n.					
+हिमबालुक	himabāluka	m.					
+हिमराज्	himarāj	"m. +"	"     1"	+	1/1	+	
+हिमवालुक	himavāluka	"mn. +"	"     5"	+	2/5	+	
+हिमांशुः	himāṁśuḥ	m.					
+हिमांश्वभिख्य	himāṁśvabhikhya	n.					
+हिरण्यकक्ष	hiraṇyakakṣa	"adj. +"					
+हिरण्यधनुस्	hiraṇyadhanus	"m. +"	"     2"	+	1/1	+	
+हिरण्यवर्ष	hiraṇyavarṣa	"m. +"					
+हिराधर	hirādhara	m.					
+हिरिशिप्र	hiriśipra	"adj. +"	"     2"		1/1	+	
+हीरानान्द	hīrānānda	"m. +"					
+हुम्भा	humbhā	"f. * +"	"     3"		1/2	+	
+हुम्मा	hummā	"ind. +"					
+हृच्छोष	hṛcchoṣa	"m. +"					
+हेतुलक्षणटीका	hetulakṣaṇaṭīkā	m.f.n.					
+हेममाषा	hemamāṣā	"f. +"					
+हेमरथ	hemaratha	m.					
+हैमवन्त्	haimavant	"m. +"					
+हैमह	haimaha	m.					
+ह्रीवेल	hrīvela	"n. +"					
+ह्रेषुक	hreṣuka	"m. +"	"     1"	+	1/1	+	

@@ -1,0 +1,97 @@
+Кочергина пересекается с самой употребительной лексикой Оливера на 87%
+(80% самых частотных слов Оливера =3811, а пересечение с Кочергиной составляет 
+3314).
+-800:2057;62,1%
+-800,-300;2221;67%
+-300,200;3281;99%
+200,700;3280;99%
+700,-1200;3297;99,5%
+1200,1700;3046;92%
+1700,1900;2071;68,7%
+Список текстов из Корпуса, относящихся к периоду от -200  до 1200 гг. н.э.
+GautamadharmasЕ«tra	-300	-100	-200
+Kaб№­hopaniб№Јad	-300	0	-150
+Muб№‡бёЌakopaniб№Јad	-300	0	-150
+DivyДЃvadДЃna	-200	200	0
+MahДЃbhДЃrata	-500	500	0
+NДЃб№­yaЕ›ДЃstra	-200	200	0
+Lalitavistara	0	100	50
+Saб№…ghabhedavastu	0	200	100
+NyДЃyasЕ«tra	100	200	150
+RДЃmДЃyaб№‡a	0	299	150
+SaundarДЃnanda	100	200	150
+VaiЕ›eб№ЈikasЕ«tra	0	300	150
+MЕ«lamadhyamakДЃrikДЃбёҐ	150	250	200
+Manusmб№›ti	100	300	200
+SuЕ›rutasaб№ѓhitДЃ	-100	500	200
+KДЃmasЕ«tra	300	399	350
+NДЃradasmб№›ti	200	500	350
+TantrДЃkhyДЃyikДЃ	200	500	350
+VaikhДЃnasadharmasЕ«tra	300	399	350
+Viб№ѓЕ›atikДЃkДЃrikДЃ	300	399	350
+Viб№ѓЕ›atikДЃvб№›tti	300	399	350
+Laб№…kДЃvatДЃrasЕ«tra	300	450	375
+SДЃб№ѓkhyakДЃrikДЃ	350	400	375
+Ељatakatraya	350	450	400
+KumДЃrasaб№ѓbhava	350	450	400
+MeghadЕ«ta	350	450	400
+PДЃЕ›upatasЕ«tra	300	500	400
+PaГ±cДЃrthabhДЃб№Јya	300	500	400
+SЕ«ryasiddhДЃnta	300	500	400
+б№љtusaб№ѓhДЃra	350	450	400
+Viб№Јб№‡upurДЃб№‡a	300	500	400
+YДЃjГ±avalkyasmб№›ti	300	500	400
+YogasЕ«tra	350	450	400
+YogasЕ«trabhДЃб№Јya	350	450	400
+MatsyapurДЃб№‡a	300	600	450
+VaikhДЃnasagб№›hyasЕ«tra	300	600	450
+NyДЃyabhДЃб№Јya	450	500	475
+SДЃб№ѓkhyakДЃrikДЃbhДЃб№Јya	500	600	550
+KirДЃtДЃrjunД«ya	500	650	575
+PrasannapadДЃ	550	600	575
+SЕ«ryaЕ›ataka	550	650	600
+Narasiб№ѓhapurДЃб№‡a	450	800	625
+NyДЃyabindu	600	660	630
+KДЃЕ›ikДЃvб№›tti	600	700	650
+KДЃtyДЃyanasmб№›ti	600	700	650
+KДЃvyДЃdarЕ›a	600	700	650
+Viб№Јб№‡usmб№›ti	500	800	650
+Ељikб№ЈДЃsamuccaya	650	750	700
+ParДЃЕ›aradharmasaб№ѓhitДЃ	600	800	700
+SkandapurДЃб№‡a	400	1000	700
+Gaб№‡akДЃrikДЃ	700	800	750
+б№¬ikanikayДЃtrДЃ	500	1000	750
+KЕ«rmapurДЃб№‡a	700	800	750
+KДЃvyДЃlaб№ѓkДЃra	700	800	750
+Liб№…gapurДЃб№‡a	500	1000	750
+TattvavaiЕ›ДЃradД«	500	1000	750
+VaiЕ›eб№ЈikasЕ«travб№›tti	500	1000	750
+KДЃvyДЃlaб№ѓkДЃravб№›tti	750	850	800
+Mб№›gendratantra	700	900	800
+SkandapurДЃб№‡a RevДЃkhaб№‡бёЌa)	500	1200	850
+SpandakДЃrikДЃ	850	900	875
+Kб№›б№ЈiparДЃЕ›ara	800	1000	900
+SДЃб№ѓkhyatattvakaumudД«	800	1000	900
+GaruбёЌapurДЃб№‡a	900	1000	950
+Mб№›gendraб№­Д«kДЃ	900	1000	950
+Rasahб№›dayatantra	900	1000	950
+Ratnaб№­Д«kДЃ	900	1000	950
+Saб№ѓvitsiddhi	900	1000	950
+VarДЃhapurДЃб№‡a	700	1200	950
+MukundamДЃlДЃ	900	1100	1000
+SpandakДЃrikДЃnirб№‡aya	950	1050	1000
+TantrДЃloka	975	1025	1000
+TantrasДЃra	975	1025	1000
+HitopadeЕ›a	900	1200	1050
+KathДЃsaritsДЃgara	1000	1100	1050
+NarmamДЃlДЃ	1000	1100	1050
+RДЃjamДЃrtaб№‡бёЌa	1000	1100	1050
+RasДЃrб№‡ava	1000	1100	1050
+TrikДЃб№‡бёЌaЕ›eб№Јa	1100	1150	1125
+KДЃlikДЃpurДЃб№‡a	900	1400	1150
+Nibandhasaб№ѓgraha	1100	1200	1150
+SarvДЃб№…gasundarДЃ	1150	1200	1175
+Nighaб№‡б№­uЕ›eб№Јa	1150	1230	1190
+GД«tagovinda	1150	1250	1200
+MДЃtб№›kДЃbhedatantra	1100	1300	1200
+RasaratnДЃkara	1100	1300	1200
