@@ -22,15 +22,17 @@ runtime dashboards.
 
 ---
 
-## Research Archive (`derived-data/`, `non-derived/`) — untracked, not part of the dashboards
+## Research Archive (`derived-data/`, `non-derived/`) — tracked, not part of the dashboards
 
-Two large local-only folders sit alongside this repo: [`derived-data/`](derived-data/README.md)
-and [`non-derived/`](non-derived/README.md), together ~21.6GB / ~2,300 files. They're a personal
+Two large folders sit alongside this repo's code: [`derived-data/`](derived-data/README.md)
+and [`non-derived/`](non-derived/README.md), together ~7.2GB / ~2,080 files. They're a personal
 Sanskrit-linguistics research archive (much of it V.V. Leonchenko's "Цифровой корпус санскрита"
 corpus-statistics work and related material) that predates and is broader than this repo's shipped
-dashboards — **neither folder is git-tracked** (mixed binary formats, multi-GB size) and **neither
-feeds the dashboard pipeline**, which runs solely on `src/DCS-data-2021/` and `src/DCS-data-2026/`
-below. Treat them as a reference archive to mine for ideas or figures, not as live dashboard input.
+dashboards. Both are **git-tracked and pushed since 02-07-2026** (files >95MB as 7-Zip split
+volumes, see [RESTORE_SPLIT_FILES.md](RESTORE_SPLIT_FILES.md); only the nested `Zalizniak/GH/`
+git repos are excluded), but **neither feeds the dashboard pipeline**, which runs solely on
+`src/DCS-data-2021/` and `src/DCS-data-2026/` below. Treat them as a reference archive to mine
+for ideas or figures, not as live dashboard input.
 
 - **`derived-data/`** — the DCS-corpus half: datasets computed by statistically analyzing corpus
   text (frequency counts, distributions, collocations, verb/nominal-form analysis, compounds,
