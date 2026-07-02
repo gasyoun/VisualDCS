@@ -22,6 +22,30 @@ runtime dashboards.
 
 ---
 
+## Research Archive (`derived-data/`, `non-derived/`) — untracked, not part of the dashboards
+
+Two large local-only folders sit alongside this repo: [`derived-data/`](derived-data/README.md)
+and [`non-derived/`](non-derived/README.md), together ~21.6GB / ~2,300 files. They're a personal
+Sanskrit-linguistics research archive (much of it V.V. Leonchenko's "Цифровой корпус санскрита"
+corpus-statistics work and related material) that predates and is broader than this repo's shipped
+dashboards — **neither folder is git-tracked** (mixed binary formats, multi-GB size) and **neither
+feeds the dashboard pipeline**, which runs solely on `src/DCS-data-2021/` and `src/DCS-data-2026/`
+below. Treat them as a reference archive to mine for ideas or figures, not as live dashboard input.
+
+- **`derived-data/`** — the DCS-corpus half: datasets computed by statistically analyzing corpus
+  text (frequency counts, distributions, collocations, verb/nominal-form analysis, compounds,
+  synonyms, and the large `Paralleli-v-tekstah-korpusa-SRC/` intra-corpus parallel-passage search).
+- **`non-derived/`** — the non-DCS half: dictionaries (Kochergina, PWG/MW comparisons, the
+  Saudamani electronic dictionary), the NCC manuscript catalog, lecture/conference material,
+  translations, and cloned external tool repos under `Zalizniak/GH/`.
+
+Both were reorganized 02-07-2026 — folder names transliterated Cyrillic→Latin, a legacy
+`Works/Share/` export tree merged and deduplicated, and topics split DCS-vs-non-DCS. Each folder
+has its own `README.md` (context/how-to-work-with-it) and `INDEX.md` (per-folder size/file-count
+table + full change history) — start there rather than exploring blind.
+
+---
+
 ## Source Data
 
 The repository draws on **two** upstream sources:

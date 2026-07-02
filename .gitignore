@@ -1,3 +1,39 @@
 # audit sidecars
 .contributing_old.md
 .contributing_audit.txt
+
+# scratch / stray, not part of the tracked archive
+/merge_log.txt
+/src/dcs_full.sqlite
+
+# independent nested git repos under non-derived/Zalizniak/GH/ — each already has its
+# own GitHub history/remote; tracking their files here would cross a nested-.git
+# boundary redundantly. See non-derived/README.md.
+/non-derived/Zalizniak/GH/
+
+# raw originals of files split into <95MB 7z volumes for GitHub's 100MB/file limit —
+# only the `.7z.NNN` parts are tracked; see RESTORE_SPLIT_FILES.md to reassemble.
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/35_1--32.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/136_1--5.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/130_1--5.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/58_1--119.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/152_1--45.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/77_1--153.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/68_1--47.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/114_1--166.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/104_1--20.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/166_1--9.csv
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/PARA/Stopovye/175_1--95.csv
+/derived-data/DCS_FILES/lex2.7z
+/derived-data/DCS_FILES/sdm4arc.7z
+/derived-data/DCS_FILES/lex.7z
+/derived-data/DCS_FILES/Handled/Handled.7z
+/derived-data/Kompozity/Композиты.xlsx
+/derived-data/Kompozity/good.txt
+/non-derived/Elektronnyj-slovar/bin/Elektronnyj-slovar-Sanskrita-Saudamani-v5.0/Saudamani_v6_1_win64.zip
+/non-derived/Elektronnyj-slovar/bin/Saudamani v4.0.zip
+/non-derived/Elektronnyj-slovar/bin/SDM4+/T/Script_DCS_Analysys.7z
+/non-derived/Elektronnyj-slovar/SRC/22102025/dic64.exe
+/non-derived/Zalizniak/Vyskazyvaniya/adj/10.!
+/non-derived/Slovari/Synonyms.htm
+/non-derived/Astronomiya/zenmusicorg_audiokniga_-_Kalevala_62586031.mp3
