@@ -31,6 +31,10 @@ sys.stderr.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 ARCHIVE_DB = os.path.join(HERE, "archive.sqlite")
+# The ~40.5M-row stop-word run lives in its own DB: it is 20-30x the size of everything
+# else and is fully regenerable from the committed Stopovye/ CSVs, so it is kept out of the
+# compact primary archive.sqlite (the asset the bridges actually download).
+STOPWORD_DB = os.path.join(HERE, "archive_stopword.sqlite")
 DCS_FULL = os.path.join(HERE, "dcs_full.sqlite")
 
 DERIVED = os.path.join(REPO, "derived-data")
@@ -323,9 +327,18 @@ def cmd_stopword(args):
     try:
         extra = _reassemble_split_csvs(STOPO, tmp)
         print(f"[D2] reassembled {len(extra)} oversize CSVs into temp", file=sys.stderr)
-        con = connect()
+        con = connect(STOPWORD_DB)  # separate DB — regenerable, not shipped
         stats, _ = load_parallels(con, STOPO, "stopword", "2022-partial", extra=extra, store_text=False)
         build_crosswalk(con)
+        # copy the authoritative id->name list from the core DB for standalone usability
+        if os.path.exists(ARCHIVE_DB):
+            con.execute("ATTACH DATABASE ? AS core", (ARCHIVE_DB,))
+            if _table_exists(con, "text_names"):
+                con.execute("DELETE FROM text_names")
+            con.executescript("CREATE TABLE IF NOT EXISTS text_names (text_id INTEGER PRIMARY KEY, text_name TEXT)")
+            con.execute("INSERT OR REPLACE INTO text_names SELECT text_id,text_name FROM core.text_names")
+            con.commit()
+            con.execute("DETACH DATABASE core")
         _index_parallels(con)
         con.close()
         print("[D2 parallels/stopword]", stats)
@@ -865,6 +878,18 @@ def cmd_validate(args):
         if _table_exists(con, t):
             n = con.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
             p(f"- {t}: {n:,} rows")
+    # separate stop-word DB (regenerable, not shipped)
+    if os.path.exists(STOPWORD_DB):
+        sc = sqlite3.connect(STOPWORD_DB)
+        try:
+            if _table_exists(sc, "parallels"):
+                tot = sc.execute("SELECT COUNT(*) FROM parallels").fetchone()[0]
+                good = sc.execute("SELECT COUNT(*) FROM parallels WHERE quality='GOOD'").fetchone()[0]
+                tid = sc.execute("SELECT COUNT(*) FROM parallels WHERE target_text_id IS NOT NULL").fetchone()[0]
+                p(f"- [archive_stopword.sqlite] parallels [stopword/2022-partial]: {tot:,} matches | "
+                  f"GOOD {good:,} / PARTLY {tot-good:,} | target_id resolved {100*tid/tot:.1f}%")
+        finally:
+            sc.close()
     if _table_exists(con, "period_freq"):
         p("  - period_freq SLP1 coverage: " + str(dict(con.execute(
             "SELECT source, ROUND(100.0*SUM(lemma_slp1 IS NOT NULL)/COUNT(*),1) FROM period_freq GROUP BY source"))))
