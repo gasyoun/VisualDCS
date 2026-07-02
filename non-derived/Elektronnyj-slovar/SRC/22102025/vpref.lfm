@@ -1,0 +1,64 @@
+object Form6: TForm6
+  Left = 339
+  Height = 431
+  Top = 141
+  Width = 441
+  Caption = 'Prefix/Non-prefix Verbal Stems '
+  ClientHeight = 431
+  ClientWidth = 441
+  Color = 4194368
+  DesignTimePPI = 130
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 54
+    Top = 0
+    Width = 441
+    Align = alTop
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 54
+    Top = 377
+    Width = 441
+    Align = alBottom
+    TabOrder = 1
+  end
+  object StringGrid1: TStringGrid
+    Left = 0
+    Height = 323
+    Top = 54
+    Width = 441
+    Align = alClient
+    ColCount = 3
+    FixedColor = 4194368
+    FixedCols = 0
+    TabOrder = 2
+    TitleFont.CharSet = RUSSIAN_CHARSET
+    TitleFont.Color = clWhite
+    TitleFont.Height = -18
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+    TitleFont.Style = [fsBold]
+    ColWidths = (
+      115
+      100
+      280
+    )
+    Cells = (
+      3
+      0
+      0
+      'Roor'
+      1
+      0
+      'Prefix'
+      2
+      0
+      'Stem'
+    )
+  end
+end

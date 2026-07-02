@@ -1,0 +1,67 @@
+object Form1: TForm1
+  Left = -12
+  Height = 970
+  Top = -12
+  Width = 1920
+  Caption = 'Form1'
+  ClientHeight = 970
+  ClientWidth = 1920
+  DesignTimePPI = 168
+  LCLVersion = '3.0.0.1'
+  object Button1: TButton
+    Left = 0
+    Height = 44
+    Top = 0
+    Width = 1920
+    Align = alTop
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Chart1: TChart
+    Left = 0
+    Height = 926
+    Top = 44
+    Width = 1920
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Alignment = calBottom
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelBrush.Style = bsClear
+      end>
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    Align = alClient
+    object Chart1PieSeries1: TPieSeries
+      Source = ListChartSource1
+    end
+    object Chart1BarSeries1: TBarSeries
+      AxisIndexX = 0
+      AxisIndexY = 0
+      BarBrush.Color = clRed
+      BarShape = bsCylindrical
+      BarWidthPercent = 100
+      BarWidthStyle = bwPercentMin
+      MarkPositionCentered = True
+      Source = ListChartSource1
+    end
+  end
+  object ListChartSource1: TListChartSource
+    DataPoints.Strings = (
+      '0|50|$000096|50'
+      '2|20|$FFFFE0|20'
+      '3|30|$F0E000|30'
+    )
+    OnCompare = ListChartSource1Compare
+    Left = 16
+    Top = 16
+  end
+end

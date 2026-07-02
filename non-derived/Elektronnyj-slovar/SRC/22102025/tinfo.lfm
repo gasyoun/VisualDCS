@@ -1,0 +1,40 @@
+object Form2: TForm2
+  Left = 106
+  Height = 627
+  Top = 18
+  Width = 526
+  BorderStyle = bsDialog
+  Caption = 'Historical Period Info'
+  ClientHeight = 627
+  ClientWidth = 526
+  DesignTimePPI = 168
+  Font.Height = -23
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  object ListBox1: TListBox
+    Left = 0
+    Height = 584
+    Top = 0
+    Width = 526
+    Align = alClient
+    ItemHeight = 0
+    Sorted = True
+    TabOrder = 0
+    OnDblClick = ListBox1DblClick
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 43
+    Top = 584
+    Width = 526
+    Panels = <    
+      item
+        Text = 'Total Texts:'
+        Width = 194
+      end    
+      item
+        Width = 97
+      end>
+    SimplePanel = False
+  end
+end

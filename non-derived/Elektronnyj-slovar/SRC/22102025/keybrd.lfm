@@ -1,0 +1,183 @@
+object symba: Tsymba
+  Left = 123
+  Height = 738
+  Top = 205
+  Width = 1495
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  BorderWidth = 5
+  Caption = 'Алфавит'
+  ClientHeight = 738
+  ClientWidth = 1495
+  Color = clWhite
+  DesignTimePPI = 168
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -47
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  PopupMenu = PopupMenu1
+  Position = poScreenCenter
+  ShowHint = True
+  ShowInTaskBar = stAlways
+  LCLVersion = '4.0.0.4'
+  OnClick = FormClick
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnMouseEnter = FormMouseEnter
+  OnMouseLeave = FormMouseLeave
+  OnResize = FormResize
+  object GroupBox1: TGroupBox
+    Left = 531
+    Height = 584
+    Top = 64
+    Width = 1049
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = True
+    Caption = 'Перевод'
+    ClientHeight = 548
+    ClientWidth = 1045
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    object hw: THtmlViewer
+      Left = 0
+      Height = 548
+      Top = 0
+      Width = 1045
+      BorderStyle = htFocused
+      HistoryMaxCount = 0
+      NoSelect = False
+      PrintMarginBottom = 2
+      PrintMarginLeft = 2
+      PrintMarginRight = 2
+      PrintMarginTop = 2
+      PrintScale = 1
+      QuirksMode = qmDetect
+      Align = alClient
+      PopupMenu = PopupMenu2
+      TabOrder = 0
+    end
+  end
+  object Panel1: TPanel
+    Left = 5
+    Height = 34
+    Top = 699
+    Width = 1485
+    Align = alBottom
+    ClientHeight = 34
+    ClientWidth = 1485
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 1
+    object CheckBox1: TCheckBox
+      Left = 5
+      Height = 32
+      Top = 1
+      Width = 73
+      Align = alLeft
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 6
+      Caption = 'IAST'
+      TabOrder = 0
+      OnChange = CheckBox1Change
+    end
+    object CheckBox2: TCheckBox
+      Left = 239
+      Height = 32
+      Top = 1
+      Width = 246
+      Align = alLeft
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 6
+      Caption = 'Показывать перевод'
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+      OnChange = CheckBox2Change
+    end
+    object CheckBox3: TCheckBox
+      Left = 84
+      Height = 32
+      Top = 1
+      Width = 149
+      Align = alLeft
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 6
+      Caption = 'Озвучивать'
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+      OnChange = CheckBox1Change
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 190
+    Top = 22
+    object MenuItem7: TMenuItem
+      Caption = 'Произнести'
+      OnClick = MenuItem7Click
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Слоги'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Лигатуры'
+      OnClick = MenuItem5Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Выгрузить алфавит в HTML'
+      OnClick = MenuItem3Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Выгрузить слоги вHTML'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Выгрузить лигатуры в HTML'
+      OnClick = MenuItem4Click
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Транслитератор'
+      OnClick = MenuItem6Click
+    end
+  end
+  object PopupMenu2: TPopupMenu
+    Left = 808
+    Top = 200
+    object MenuItem101: TMenuItem
+      Caption = 'Копировать'
+      ShortCut = 16451
+      OnClick = MenuItem101Click
+    end
+    object MenuItem102: TMenuItem
+      Caption = 'Выделить всё'
+      ShortCut = 16449
+      OnClick = MenuItem102Click
+    end
+    object MenuItem103: TMenuItem
+      Caption = 'Перевести в Google'
+      ShortCut = 16455
+      OnClick = MenuItem103Click
+    end
+    object MenuItem104: TMenuItem
+      Caption = 'Перевести в Yandex'
+      ShortCut = 16473
+      OnClick = MenuItem104Click
+    end
+  end
+end

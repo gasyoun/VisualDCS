@@ -1,0 +1,4142 @@
+object liga: Tliga
+  Left = 240
+  Height = 629
+  Top = 83
+  Width = 1014
+  Caption = 'Лигатуры'
+  ClientHeight = 629
+  ClientWidth = 1014
+  Color = clSilver
+  DesignTimePPI = 130
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clBlack
+  Font.Height = -18
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 41
+    Top = 0
+    Width = 1014
+    Align = alTop
+    ClientHeight = 41
+    ClientWidth = 1014
+    TabOrder = 0
+    object Edit1: TEdit
+      Left = 6
+      Height = 29
+      Top = 6
+      Width = 150
+      Align = alLeft
+      BorderSpacing.Right = 10
+      BorderSpacing.Around = 5
+      Color = clWhite
+      OnChange = Edit1Change
+      TabOrder = 0
+      TextHint = 'Введите лигатуру'
+    end
+    object ComboBox1: TComboBox
+      Left = 171
+      Height = 33
+      Top = 6
+      Width = 150
+      Align = alLeft
+      BorderSpacing.Right = 10
+      BorderSpacing.Around = 5
+      Color = clYellow
+      ItemHeight = 25
+      ItemIndex = 0
+      Items.Strings = (
+        'В начале'
+        'В любом месте'
+        'В конце'
+        'Целиком'
+      )
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'В начале'
+    end
+    object SpeedButton1: TSpeedButton
+      Left = 336
+      Height = 29
+      Top = 6
+      Width = 63
+      Align = alLeft
+      AutoSize = True
+      BorderSpacing.Right = 10
+      BorderSpacing.Around = 5
+      Caption = ' Найти '
+      Flat = True
+      OnClick = SpeedButton1Click
+      OnMouseEnter = SpeedButton1MouseEnter
+      OnMouseLeave = SpeedButton1MouseLeave
+    end
+    object SpeedButton2: TSpeedButton
+      Left = 593
+      Height = 29
+      Top = 6
+      Width = 132
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Right = 10
+      BorderSpacing.Around = 5
+      Caption = ' Сохранить все '
+      Flat = True
+      OnClick = SpeedButton2Click
+      OnMouseEnter = SpeedButton2MouseEnter
+      OnMouseLeave = SpeedButton2MouseLeave
+    end
+    object SpeedButton3: TSpeedButton
+      Left = 740
+      Height = 29
+      Top = 6
+      Width = 258
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Right = 10
+      BorderSpacing.Around = 5
+      Caption = ' Сохранить результаты поиска '
+      Flat = True
+      OnClick = SpeedButton3Click
+      OnMouseEnter = SpeedButton3MouseEnter
+      OnMouseLeave = SpeedButton3MouseLeave
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 588
+    Top = 41
+    Width = 1014
+    ActivePage = TabSheet1
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = '2 символьные лигатуры'
+      ClientHeight = 550
+      ClientWidth = 1006
+      object StringGrid1: TStringGrid
+        Left = 0
+        Height = 520
+        Top = 0
+        Width = 1006
+        Align = alClient
+        ColCount = 250
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Font.CharSet = RUSSIAN_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -18
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Title'
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goSmoothScroll, goRowHighlight]
+        TabOrder = 0
+      end
+      object StatusBar1: TStatusBar
+        Left = 0
+        Height = 30
+        Top = 520
+        Width = 1006
+        Panels = <        
+          item
+            Text = 'Всего 2 символьных:'
+            Width = 250
+          end        
+          item
+            Width = 50
+          end>
+        SimplePanel = False
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = '3 символьные лигатуры'
+      ClientHeight = 550
+      ClientWidth = 1006
+      object StringGrid2: TStringGrid
+        Left = 0
+        Height = 520
+        Top = 0
+        Width = 1006
+        Align = alClient
+        ColCount = 250
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Color = clBtnFace
+            Title.Font.CharSet = RUSSIAN_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -18
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Title'
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        TabOrder = 0
+      end
+      object StatusBar2: TStatusBar
+        Left = 0
+        Height = 30
+        Top = 520
+        Width = 1006
+        Panels = <        
+          item
+            Text = 'Всего 3 символьных:'
+            Width = 250
+          end        
+          item
+            Width = 50
+          end>
+        SimplePanel = False
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = '4 символьные лигатуры'
+      ClientHeight = 550
+      ClientWidth = 1006
+      object StringGrid3: TStringGrid
+        Left = 0
+        Height = 520
+        Top = 0
+        Width = 1006
+        Align = alClient
+        ColCount = 250
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Color = 4227072
+            Title.Font.CharSet = RUSSIAN_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -22
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Title'
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        TabOrder = 0
+      end
+      object StatusBar3: TStatusBar
+        Left = 0
+        Height = 30
+        Top = 520
+        Width = 1006
+        Panels = <        
+          item
+            Text = 'Всего 4 символьных:'
+            Width = 250
+          end        
+          item
+            Width = 50
+          end>
+        SimplePanel = False
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = '5 символьные лигатуры'
+      ClientHeight = 550
+      ClientWidth = 1006
+      object StringGrid4: TStringGrid
+        Left = 0
+        Height = 520
+        Top = 0
+        Width = 1006
+        Align = alClient
+        ColCount = 250
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Color = clBtnFace
+            Title.Font.CharSet = RUSSIAN_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -18
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Title'
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        TabOrder = 0
+      end
+      object StatusBar4: TStatusBar
+        Left = 0
+        Height = 30
+        Top = 520
+        Width = 1006
+        Panels = <        
+          item
+            Text = 'Всего 5 символьных:'
+            Width = 250
+          end        
+          item
+            Width = 50
+          end>
+        SimplePanel = False
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Результаты поиска'
+      ClientHeight = 550
+      ClientWidth = 1006
+      object StringGrid5: TStringGrid
+        Left = 0
+        Height = 520
+        Top = 0
+        Width = 1006
+        Align = alClient
+        ColCount = 250
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Title.Color = clBtnFace
+            Title.Font.CharSet = RUSSIAN_CHARSET
+            Title.Font.Color = clWhite
+            Title.Font.Height = -22
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Font.Style = [fsBold]
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Title.Caption = 'Title'
+            Width = 100
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+            Width = 75
+          end        
+          item
+            Title.Alignment = taCenter
+            Title.Caption = 'Title'
+          end        
+          item
+            Alignment = taRightJustify
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        TabOrder = 0
+      end
+      object StatusBar5: TStatusBar
+        Left = 0
+        Height = 30
+        Top = 520
+        Width = 1006
+        Panels = <        
+          item
+            Text = 'Всего найдено:'
+            Width = 250
+          end        
+          item
+            Width = 50
+          end>
+        SimplePanel = False
+      end
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    FileName = 'Ligatures.txt'
+    Filter = 'Text Files|*.txt|All Files|*.*'
+    InitialDir = 'Reports'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 48
+    Top = 152
+  end
+end

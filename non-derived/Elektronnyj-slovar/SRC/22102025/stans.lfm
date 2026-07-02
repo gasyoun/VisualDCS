@@ -1,0 +1,217 @@
+object STA: TSTA
+  Left = 255
+  Height = 607
+  Top = 93
+  Width = 629
+  BorderWidth = 3
+  Caption = 'Анализ строфы'
+  ClientHeight = 607
+  ClientWidth = 629
+  Color = clSilver
+  DesignTimePPI = 130
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clBlack
+  Font.Height = -14
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnClose = FormClose
+  OnDblClick = FormDblClick
+  OnResize = FormResize
+  OnShow = FormShow
+  OnWindowStateChange = FormWindowStateChange
+  Position = poScreenCenter
+  LCLVersion = '3.0.0.1'
+  object Label1: TLabel
+    Left = 3
+    Height = 19
+    Top = 3
+    Width = 623
+    Align = alTop
+    Caption = 'Строфа'
+    Color = clWhite
+    ParentColor = False
+  end
+  object Memo1: TMemo
+    Left = 3
+    Height = 75
+    Top = 22
+    Width = 623
+    Align = alTop
+    Color = clWhite
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    Left = 3
+    Height = 19
+    Top = 97
+    Width = 623
+    Align = alTop
+    Caption = 'Разбивка на леммы'
+  end
+  object StringGrid1: TStringGrid
+    Left = 3
+    Height = 170
+    Top = 116
+    Width = 623
+    Align = alTop
+    Color = clWhite
+    ColCount = 8
+    Columns = <    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -14
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 9
+        MaxSize = 181
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -14
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Лемма'
+        Width = 150
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -14
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 9
+        MaxSize = 181
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -14
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Грамм.'
+        Width = 150
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -14
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 9
+        MaxSize = 181
+        Title.Alignment = taCenter
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -14
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Лич. Гл.Форма'
+        Visible = False
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -14
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 9
+        MaxSize = 181
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -14
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'НеЛ. Гл. Форма'
+        Visible = False
+      end    
+      item
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -14
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        MinSize = 9
+        MaxSize = 181
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -14
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Грамм. Форма'
+        Width = 361
+      end    
+      item
+        MinSize = 9
+        MaxSize = 181
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 9
+        MaxSize = 181
+        Title.Caption = 'Title'
+        Visible = False
+      end    
+      item
+        MinSize = 9
+        MaxSize = 181
+        Title.Caption = 'Title'
+        Visible = False
+      end>
+    FixedCols = 0
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goDblClickAutoSize, goSmoothScroll, goRowHighlight]
+    ParentFont = False
+    TabOrder = 1
+    OnClick = StringGrid1Click
+    OnDblClick = StringGrid1DblClick
+  end
+  object Label3: TLabel
+    Left = 3
+    Height = 19
+    Top = 286
+    Width = 623
+    Align = alTop
+    Caption = 'Перевод выделенной леммы'
+  end
+  object Memo2: TMemo
+    Left = 3
+    Height = 269
+    Top = 305
+    Width = 623
+    Align = alClient
+    Color = clWhite
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 2
+  end
+  object ListBox1: TListBox
+    Left = 440
+    Height = 108
+    Top = 190
+    Width = 135
+    ItemHeight = 0
+    TabOrder = 3
+    Visible = False
+  end
+  object StatusBar1: TStatusBar
+    Left = 3
+    Height = 30
+    Top = 574
+    Width = 623
+    Panels = <    
+      item
+        Text = 'Всего лемм размечено:'
+        Width = 200
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+end

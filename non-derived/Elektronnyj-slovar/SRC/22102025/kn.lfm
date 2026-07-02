@@ -1,0 +1,773 @@
+object kkn: Tkkn
+  Left = -11
+  Height = 946
+  Top = 0
+  Width = 1899
+  HorzScrollBar.Page = 1869
+  VertScrollBar.Page = 916
+  AutoScroll = True
+  Caption = 'Частотные лексические ядра различных исторических периодов'
+  ChildSizing.Layout = cclLeftToRightThenTopToBottom
+  ClientHeight = 916
+  ClientWidth = 1869
+  Color = clSilver
+  DefaultMonitor = dmPrimary
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clBlack
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  ShowHint = True
+  LCLVersion = '4.0.0.4'
+  WindowState = wsMaximized
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnResize = FormResize
+  object Panel1: TPanel
+    Left = 0
+    Height = 78
+    Top = 0
+    Width = 1900
+    Align = alTop
+    ClientHeight = 78
+    ClientWidth = 1900
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    OnClick = Panel1Click
+    object ComboBox1: TComboBox
+      Left = 4
+      Height = 38
+      Top = 31
+      Width = 296
+      DropDownCount = 25
+      ItemHeight = 30
+      ItemIndex = 1
+      Items.Strings = (
+        'Объединенное ядро'
+        'Древнейшее ядро'
+        'от -800 до  -300'
+        'от -300 до 200'
+        'от 200 до 700'
+        'от 700 до 1200'
+        'от 1200 до 1700'
+        'от 1700 до the present day'
+        'Не датированные тексты'
+        'Пересечение всех ядер'
+      )
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Древнейшее ядро'
+      OnChange = ComboBox1Change
+    end
+    object Label1: TLabel
+      Left = 4
+      Height = 30
+      Top = 1
+      Width = 120
+      Caption = 'Список ядер'
+    end
+    object UpDown1: TUpDown
+      Left = 352
+      Height = 37
+      Top = 31
+      Width = 65
+      Increment = 10
+      Max = 80
+      Min = 10
+      Orientation = udHorizontal
+      Position = 80
+      TabOrder = 1
+      OnClick = UpDown1Click
+    end
+    object Button1: TButton
+      Left = 310
+      Height = 37
+      Top = 31
+      Width = 39
+      Caption = '10'
+      TabOrder = 2
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 424
+      Height = 37
+      Top = 31
+      Width = 39
+      Caption = '80'
+      TabOrder = 3
+      OnClick = Button2Click
+    end
+    object Label3: TLabel
+      Left = 317
+      Height = 30
+      Top = 1
+      Width = 144
+      Caption = 'Размер ядра %'
+    end
+    object ComboBox_: TComboBox
+      Left = 540
+      Height = 38
+      Top = 31
+      Width = 296
+      DropDownCount = 25
+      ItemHeight = 30
+      ItemIndex = 0
+      Items.Strings = (
+        'Объединенное ядро'
+        'Древнейшее ядро'
+        'от -800 до  -300'
+        'от -300 до 200'
+        'от 200 до 700'
+        'от 700 до 1200'
+        'от 1200 до 1700'
+        'от 1700 до the present day'
+        'Не датированные тексты'
+        'Пересечение всех ядер'
+      )
+      Style = csDropDownList
+      TabOrder = 4
+      Text = 'Объединенное ядро'
+      OnChange = ComboBox_Change
+    end
+    object Label4: TLabel
+      Left = 540
+      Height = 30
+      Top = 1
+      Width = 120
+      Caption = 'Список ядер'
+    end
+    object Button3: TButton
+      Left = 840
+      Height = 40
+      Top = 31
+      Width = 216
+      AutoSize = True
+      Caption = 'Найти пересечение'
+      TabOrder = 5
+      OnClick = Button3Click
+    end
+    object Button5: TButton
+      Left = 1080
+      Height = 40
+      Top = 31
+      Width = 194
+      AutoSize = True
+      BorderSpacing.Left = 19
+      BorderSpacing.Top = 30
+      BorderSpacing.Bottom = 8
+      Caption = 'Сохранить даные'
+      TabOrder = 6
+      OnClick = Button5Click
+    end
+    object Button400: TButton
+      Left = 1592
+      Height = 40
+      Hint = 'Показать динамику употребительности леммы или группы лемм выбранного ядра'#13#10'при помощи графиков'
+      Top = 16
+      Width = 185
+      AutoSize = True
+      Caption = 'Динамика слова'
+      TabOrder = 7
+      Visible = False
+      OnClick = Button400Click
+    end
+    object Button4: TButton
+      Left = 1768
+      Height = 76
+      Top = 1
+      Width = 131
+      Align = alRight
+      Caption = 'Справка'
+      TabOrder = 8
+      Visible = False
+      OnClick = Button4Click
+    end
+    object StringGrid3: TStringGrid
+      Left = 310
+      Height = 175
+      Top = 8
+      Width = 350
+      ColCount = 0
+      FixedCols = 0
+      FixedRows = 0
+      RowCount = 0
+      TabOrder = 9
+      Visible = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 922
+    Top = 78
+    Width = 1900
+    Align = alClient
+    ClientHeight = 922
+    ClientWidth = 1900
+    ParentBackground = False
+    TabOrder = 1
+    object GroupBox1: TGroupBox
+      Left = 1
+      Height = 920
+      Top = 1
+      Width = 500
+      Align = alLeft
+      Caption = 'Состав ядра'
+      ClientHeight = 884
+      ClientWidth = 496
+      ParentBackground = False
+      TabOrder = 0
+      object Edit1: TEdit
+        Left = 0
+        Height = 38
+        Top = 0
+        Width = 496
+        Align = alTop
+        AutoSelect = False
+        Color = clWhite
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clNavy
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 0
+        TextHint = 'Введите лемму для поиска'
+        OnChange = Edit1Change
+      end
+      object StatusBar1: TStatusBar
+        Left = 0
+        Height = 43
+        Top = 841
+        Width = 496
+        Panels = <        
+          item
+            Text = 'Всего лемм'
+            Width = 155
+          end        
+          item
+            Width = 65
+          end        
+          item
+            Text = 'Размер ядра'
+            Width = 168
+          end        
+          item
+            Width = 65
+          end>
+        SimplePanel = False
+      end
+      object ComboBox2: TComboBox
+        Left = 0
+        Height = 39
+        Top = 42
+        Width = 496
+        Align = alTop
+        BorderSpacing.Top = 4
+        ItemHeight = 31
+        ItemIndex = 0
+        Items.Strings = (
+          'Все леммы'
+          'Глаголы'
+          'Имена'
+        )
+        Style = csDropDownList
+        TabOrder = 2
+        Text = 'Все леммы'
+        OnChange = ComboBox2Change
+      end
+      object StringGrid1: TStringGrid
+        Left = 0
+        Height = 760
+        Top = 81
+        Width = 496
+        Align = alClient
+        Color = clWhite
+        ColCount = 7
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clMaroon
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Caption = 'Ранг'
+            Width = 56
+          end        
+          item
+            Title.Caption = 'ID'
+            Visible = False
+          end        
+          item
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clNavy
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Caption = 'Лемма'
+            Width = 125
+          end        
+          item
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clGreen
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Caption = 'Грамм.'
+            Width = 48
+          end        
+          item
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clMaroon
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Caption = '%Покрытия'
+          end        
+          item
+            Font.CharSet = RUSSIAN_CHARSET
+            Font.Color = clRed
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            Title.Caption = 'Частота'
+            Width = 90
+          end        
+          item
+            ButtonStyle = cbsCheckboxColumn
+            Title.Caption = '🗸'
+            Width = 35
+          end>
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goDblClickAutoSize, goSmoothScroll, goRowHighlight]
+        PopupMenu = PopupMenu1
+        TabOrder = 3
+        TitleFont.CharSet = RUSSIAN_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -23
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+        OnClick = StringGrid1Click
+      end
+    end
+    object Panel3: TPanel
+      Left = 501
+      Height = 920
+      Top = 1
+      Width = 1398
+      Align = alClient
+      ClientHeight = 920
+      ClientWidth = 1398
+      ParentBackground = False
+      TabOrder = 1
+      object Memo2: TMemo
+        Left = 972
+        Height = 158
+        Top = 83
+        Width = 262
+        Lines.Strings = (
+          'Memo2'
+        )
+        TabOrder = 0
+        Visible = False
+        WordWrap = False
+      end
+      object Memo3: TMemo
+        Left = 10
+        Height = 158
+        Top = 10
+        Width = 262
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clNavy
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Lines.Strings = (
+          'Memo3'
+        )
+        ParentFont = False
+        TabOrder = 1
+        Visible = False
+        WordWrap = False
+      end
+      object ListBox1: TListBox
+        Left = 21
+        Height = 140
+        Top = 21
+        Width = 174
+        ItemHeight = 0
+        TabOrder = 2
+        Visible = False
+      end
+      object Panel4: TPanel
+        Left = 1
+        Height = 918
+        Top = 1
+        Width = 1396
+        Align = alClient
+        ClientHeight = 918
+        ClientWidth = 1396
+        ParentBackground = False
+        TabOrder = 3
+        object StringGrid2: TStringGrid
+          Left = 1
+          Height = 300
+          Top = 617
+          Width = 1394
+          Color = clWhite
+          ColCount = 16
+          Columns = <          
+            item
+              Title.Caption = 'Title'
+              Width = 116
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 39
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 116
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 39
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 116
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 39
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 116
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 39
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 116
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 39
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 116
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 39
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 116
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 39
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 116
+            end          
+            item
+              Title.Caption = 'Title'
+              Width = 39
+            end>
+          FixedCols = 0
+          Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goThumbTracking, goDblClickAutoSize, goSmoothScroll, goTruncCellHints]
+          RowCount = 4000
+          TabOrder = 0
+          TitleFont.CharSet = RUSSIAN_CHARSET
+          TitleFont.Color = clBlack
+          TitleFont.Height = -18
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Pitch = fpVariable
+          TitleFont.Quality = fqDraft
+          Visible = False
+        end
+        object Chart1: TChart
+          Left = 1
+          Height = 616
+          Top = 1
+          Width = 1394
+          AxisList = <          
+            item
+              Marks.LabelBrush.Style = bsClear
+              Marks.Source = ls1
+              Minors = <>
+              Title.LabelFont.Orientation = 900
+              Title.Visible = True
+              Title.Caption = '%Покрытия словоупотреблений в периоде'
+              Title.LabelBrush.Style = bsClear
+            end          
+            item
+              Alignment = calBottom
+              Marks.Format = '%2:s'
+              Marks.LabelBrush.Style = bsClear
+              Marks.Source = ls2
+              Marks.Style = smsLabel
+              Minors = <>
+              Title.Visible = True
+              Title.Caption = 'Исторические периоды'
+              Title.LabelBrush.Style = bsClear
+            end>
+          Legend.FixedItemHeight = 30
+          Legend.Font.CharSet = RUSSIAN_CHARSET
+          Legend.Font.Height = -19
+          Legend.Font.Pitch = fpVariable
+          Legend.Font.Quality = fqDraft
+          Legend.GridVertical.Visible = True
+          Legend.GroupTitles.Strings = (
+            'Легенда'
+            '1'
+            '2'
+            '3'
+            '4'
+            '5'
+          )
+          Legend.Visible = True
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Font.Style = [fsBold]
+          Title.Text.Strings = (
+            'Динамика изменений значимости слова в различных исторических периодах'
+          )
+          Title.Visible = True
+          Title.Wordwrap = True
+          Align = alClient
+          PopupMenu = PopupMenu2
+          object Chart1LineSeries1: TLineSeries
+            Legend.GroupIndex = 0
+            Legend.Visible = False
+            LinePen.Width = 3
+            Source = ls1
+          end
+          object Chart1BarSeries1: TBarSeries
+            Legend.Visible = False
+            AxisIndexX = 1
+            AxisIndexY = 0
+            BarBrush.Color = clRed
+            Marks.Format = '%2:s'
+            Marks.Style = smsLabel
+            Source = ls3
+          end
+          object Chart1PieSeries1: TPieSeries
+            Legend.GroupIndex = 0
+            Legend.Order = 0
+            Legend.Visible = False
+            Marks.Format = '%2:s %0:.9g'
+            Marks.Style = smsLabelValue
+            Source = ls4
+          end
+          object Chart1LineSeries2: TLineSeries
+            Legend.GroupIndex = 2
+            Legend.Visible = False
+            LinePen.Color = clTeal
+            LinePen.Width = 3
+            Source = ls5
+          end
+          object Chart1LineSeries3: TLineSeries
+            Legend.GroupIndex = 3
+            Legend.Visible = False
+            LinePen.Color = 33023
+            LinePen.Width = 3
+            Source = ls6
+          end
+          object Chart1LineSeries4: TLineSeries
+            Legend.GroupIndex = 4
+            Legend.Visible = False
+            LinePen.Color = 16744448
+            LinePen.Width = 3
+            Source = ls7
+          end
+          object Chart1LineSeries5: TLineSeries
+            Legend.GroupIndex = 5
+            Legend.Visible = False
+            LinePen.Color = 12615680
+            LinePen.Width = 3
+            Source = ls8
+          end
+          object Chart1LineSeries6: TLineSeries
+            Legend.GroupIndex = 6
+            Legend.Visible = False
+            LinePen.Color = 8388863
+            LinePen.Width = 3
+            Source = ls9
+          end
+        end
+        object GroupBox2: TGroupBox
+          Left = 1
+          Height = 300
+          Top = 617
+          Width = 1394
+          Align = alBottom
+          Caption = 'Значение леммы'
+          ClientHeight = 264
+          ClientWidth = 1390
+          ParentBackground = False
+          TabOrder = 2
+          object hw: THtmlViewer
+            Left = 72
+            Height = 263
+            Top = 0
+            Width = 800
+            BorderStyle = htFocused
+            HistoryMaxCount = 0
+            NoSelect = False
+            PrintMarginBottom = 2
+            PrintMarginLeft = 2
+            PrintMarginRight = 2
+            PrintMarginTop = 2
+            PrintScale = 1
+            PopupMenu = PopupMenu3
+            TabOrder = 0
+          end
+        end
+      end
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 40
+    Top = 448
+    object MenuItem1: TMenuItem
+      Caption = 'Динамика изменений ранга'
+      Hint = 'Динамика изменений значимости слова в различных эпохах'
+      OnClick = MenuItem1Click
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Динамика лексики ядра'
+      OnClick = MenuItem7Click
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'Объемы ядер'
+      OnClick = MenuItem8Click
+    end
+    object Separator3: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem200: TMenuItem
+      Caption = 'Сравнить сочетаемость'
+      OnClick = MenuItem200Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Показать сочетаемость'
+      Hint = 'Поиск похожих векторов сочетаемости'
+      OnClick = MenuItem3Click
+    end
+    object MenuItem210: TMenuItem
+      Caption = 'Справочник сочетаемости'
+      OnClick = MenuItem210Click
+    end
+    object MenuItem9: TMenuItem
+      Caption = 'Карта лексических ядер'
+      Visible = False
+      OnClick = MenuItem9Click
+    end
+    object Separator2: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Выделить все'
+      OnClick = MenuItem4Click
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem5Click
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem6Click
+    end
+  end
+  object ls1: TListChartSource
+    Left = 552
+    Top = 104
+  end
+  object ls2: TListChartSource
+    Left = 568
+    Top = 192
+  end
+  object PopupMenu2: TPopupMenu
+    Left = 736
+    Top = 128
+    object MenuItem110: TMenuItem
+      Caption = 'Копировать изображение'
+      ShortCut = 16451
+      OnClick = MenuItem110Click
+    end
+    object MenuItem111: TMenuItem
+      Caption = 'Сохранить изображение как..'
+      ShortCut = 16467
+      OnClick = MenuItem111Click
+    end
+  end
+  object SavePictureDialog1: TSavePictureDialog
+    DefaultExt = '.*.bmp'
+    FileName = 'Result.bmp'
+    Filter = 'Файлы точечных рисунков (*.bmp)|*.bmp'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 912
+    Top = 160
+  end
+  object ls3: TListChartSource
+    OnCompare = ls3Compare
+    Left = 8
+    Top = 8
+  end
+  object ls4: TListChartSource
+    Left = 568
+    Top = 312
+  end
+  object PopupMenu3: TPopupMenu
+    Left = 856
+    Top = 768
+    object MenuItem201: TMenuItem
+      Caption = 'Копировать'
+      ShortCut = 16451
+      OnClick = MenuItem201Click
+    end
+    object MenuItem202: TMenuItem
+      Caption = 'Выделить все'
+      ShortCut = 16449
+      OnClick = MenuItem202Click
+    end
+  end
+  object ls5: TListChartSource
+    Left = 614
+    Top = 358
+  end
+  object ls6: TListChartSource
+    Left = 660
+    Top = 404
+  end
+  object ls7: TListChartSource
+    Left = 706
+    Top = 450
+  end
+  object ls8: TListChartSource
+    Left = 752
+    Top = 496
+  end
+  object ls9: TListChartSource
+    Left = 798
+    Top = 542
+  end
+end

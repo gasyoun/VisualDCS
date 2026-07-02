@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <General>
+      <MainUnit Value="0"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <VersionInfo>
+      <Language Value=""/>
+      <CharSet Value=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="47">
+      <Unit0>
+        <Filename Value="testgif.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="3"/>
+        <CursorPos Y="14"/>
+        <UsageCount Value="93"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="fmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fgif"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos Y="311"/>
+        <UsageCount Value="93"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="FPReadGIF.pas"/>
+        <CursorPos X="7" Y="67"/>
+        <UsageCount Value="26"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ufastbitmap.pas"/>
+        <TopLine Value="4"/>
+        <CursorPos X="14" Y="20"/>
+        <UsageCount Value="13"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/objpas/sysutils/datih.inc"/>
+        <TopLine Value="96"/>
+        <CursorPos X="10" Y="120"/>
+        <UsageCount Value="3"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/objpas/sysutils/dati.inc"/>
+        <TopLine Value="254"/>
+        <CursorPos X="3" Y="258"/>
+        <UsageCount Value="3"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/inc/systemh.inc"/>
+        <TopLine Value="236"/>
+        <CursorPos X="3" Y="256"/>
+        <UsageCount Value="13"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/inc/objpash.inc"/>
+        <TopLine Value="140"/>
+        <CursorPos X="21" Y="160"/>
+        <UsageCount Value="9"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/inc/objpas.inc"/>
+        <TopLine Value="147"/>
+        <CursorPos X="12" Y="150"/>
+        <UsageCount Value="3"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="../lazarus/lcl/customtimer.pas"/>
+        <UnitName Value="CustomTimer"/>
+        <TopLine Value="165"/>
+        <CursorPos Y="182"/>
+        <UsageCount Value="8"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="../lazarus/lcl/interfaces/win32/win32callback.inc"/>
+        <TopLine Value="185"/>
+        <CursorPos Y="205"/>
+        <UsageCount Value="5"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/objpas/sysutils/sysutilh.inc"/>
+        <TopLine Value="213"/>
+        <CursorPos X="13" Y="234"/>
+        <UsageCount Value="4"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/objpas/sysutils/sysutils.inc"/>
+        <TopLine Value="115"/>
+        <CursorPos X="9" Y="119"/>
+        <UsageCount Value="4"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="../lazarus/fpc/2.2.4/source/packages/fcl-image/src/fpimage.pp"/>
+        <UnitName Value="FPimage"/>
+        <TopLine Value="113"/>
+        <CursorPos X="17" Y="133"/>
+        <UsageCount Value="40"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="../lazarus/lcl/include/canvas.inc"/>
+        <TopLine Value="1013"/>
+        <CursorPos X="3" Y="1021"/>
+        <UsageCount Value="36"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="../lazarus/lcl/intfgraphics.pas"/>
+        <UnitName Value="IntfGraphics"/>
+        <TopLine Value="245"/>
+        <CursorPos X="35" Y="118"/>
+        <UsageCount Value="5"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="../lazarus/lcl/include/lclintfh.inc"/>
+        <TopLine Value="115"/>
+        <CursorPos X="123" Y="132"/>
+        <UsageCount Value="3"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="../lazarus/lcl/graphtype.pp"/>
+        <UnitName Value="GraphType"/>
+        <UsageCount Value="13"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="membitmap.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="MemBitmap"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="893"/>
+        <CursorPos Y="909"/>
+        <UsageCount Value="92"/>
+        <Loaded Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/inc/heaph.inc"/>
+        <TopLine Value="50"/>
+        <CursorPos X="10" Y="94"/>
+        <UsageCount Value="3"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="../lazarus/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <TopLine Value="895"/>
+        <CursorPos X="13" Y="902"/>
+        <UsageCount Value="42"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="../lazarus/lcl/include/rasterimage.inc"/>
+        <TopLine Value="10"/>
+        <CursorPos X="27" Y="11"/>
+        <UsageCount Value="13"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/inc/heap.inc"/>
+        <TopLine Value="412"/>
+        <CursorPos X="3" Y="414"/>
+        <UsageCount Value="3"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="../lazarus/lcl/include/custombitmap.inc"/>
+        <TopLine Value="213"/>
+        <CursorPos X="10" Y="479"/>
+        <UsageCount Value="10"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="../AnimJavascript/ufastbitmap.pas"/>
+        <CursorPos X="32" Y="26"/>
+        <UsageCount Value="3"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="../lazarus/lcl/include/graphic.inc"/>
+        <TopLine Value="24"/>
+        <CursorPos Y="26"/>
+        <UsageCount Value="9"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="../lazarus/fpc/2.2.4/source/packages/fcl-image/src/fpreadjpeg.pas"/>
+        <UnitName Value="FPReadJPEG"/>
+        <TopLine Value="19"/>
+        <UsageCount Value="7"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="../lazarus/lcl/include/bitmap.inc"/>
+        <TopLine Value="145"/>
+        <CursorPos X="25" Y="142"/>
+        <UsageCount Value="5"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="animatedgif.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="AnimatedGif"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="889"/>
+        <CursorPos X="41" Y="916"/>
+        <UsageCount Value="82"/>
+        <Loaded Value="True"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="gifgraphic.pas"/>
+        <UnitName Value="GifGraphic"/>
+        <CursorPos X="20" Y="78"/>
+        <UsageCount Value="15"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="../lazarus/fpc/2.2.4/source/packages/fcl-image/src/fpimage.inc"/>
+        <CursorPos X="5" Y="447"/>
+        <UsageCount Value="7"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="../lazarus/fpc/2.2.4/source/rtl/objpas/classes/classesh.inc"/>
+        <TopLine Value="13"/>
+        <CursorPos X="4" Y="33"/>
+        <UsageCount Value="12"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="../lazarus/lcl/include/picture.inc"/>
+        <TopLine Value="550"/>
+        <CursorPos X="57" Y="587"/>
+        <UsageCount Value="10"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="../lazarus/fpc/2.2.4/source/packages/fcl-image/src/fphandler.inc"/>
+        <TopLine Value="148"/>
+        <CursorPos X="35" Y="165"/>
+        <UsageCount Value="10"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="../lazarus/lcl/extctrls.pp"/>
+        <UnitName Value="ExtCtrls"/>
+        <TopLine Value="300"/>
+        <CursorPos X="14" Y="320"/>
+        <UsageCount Value="10"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="../testbgra/bgrabitmap.pas"/>
+        <UnitName Value="BGRABitmap"/>
+        <CursorPos X="36" Y="13"/>
+        <UsageCount Value="20"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="../testbgra/bgrabitmaptypes.pas"/>
+        <UnitName Value="BGRABitmapTypes"/>
+        <UsageCount Value="20"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="../testbgra/bgradefaultbitmap.pas"/>
+        <UnitName Value="BGRADefaultBitmap"/>
+        <CursorPos X="17" Y="71"/>
+        <UsageCount Value="10"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="../usr/lib/lazarus/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <TopLine Value="1257"/>
+        <CursorPos X="25" Y="1275"/>
+        <UsageCount Value="12"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="../usr/lib/lazarus/lcl/include/rasterimage.inc"/>
+        <TopLine Value="535"/>
+        <CursorPos X="18" Y="539"/>
+        <UsageCount Value="12"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="../usr/lib/lazarus/lcl/intfgraphics.pas"/>
+        <UnitName Value="IntfGraphics"/>
+        <TopLine Value="3191"/>
+        <CursorPos X="22" Y="3193"/>
+        <UsageCount Value="12"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="../usr/lib/lazarus/lcl/include/lclintfh.inc"/>
+        <CursorPos X="10"/>
+        <UsageCount Value="10"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="../usr/lib/lazarus/lcl/lclintf.pas"/>
+        <UnitName Value="LCLIntf"/>
+        <TopLine Value="31"/>
+        <CursorPos Y="31"/>
+        <UsageCount Value="11"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="../usr/lib/lazarus/lcl/interfaces/gtk/gtkdef.pp"/>
+        <UnitName Value="GtkDef"/>
+        <TopLine Value="325"/>
+        <CursorPos X="28" Y="340"/>
+        <UsageCount Value="11"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="../usr/share/fpcsrc/2.2.4/packages/gtk2/src/gtk+/gdk/gdkdrawable.inc"/>
+        <CursorPos X="4" Y="4"/>
+        <UsageCount Value="11"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="../lazarus/lcl/forms.pp"/>
+        <UnitName Value="Forms"/>
+        <TopLine Value="118"/>
+        <CursorPos X="39" Y="146"/>
+        <UsageCount Value="10"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="../lazarus/lcl/controls.pp"/>
+        <UnitName Value="Controls"/>
+        <TopLine Value="1895"/>
+        <CursorPos X="17" Y="1923"/>
+        <UsageCount Value="10"/>
+      </Unit46>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="973" TopLine="957"/>
+      </Position1>
+      <Position2>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="968" TopLine="952"/>
+      </Position2>
+      <Position3>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="969" TopLine="953"/>
+      </Position3>
+      <Position4>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="970" TopLine="936"/>
+      </Position4>
+      <Position5>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="971" TopLine="955"/>
+      </Position5>
+      <Position6>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="936" Column="51" TopLine="914"/>
+      </Position6>
+      <Position7>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="909" Column="29" TopLine="893"/>
+      </Position7>
+      <Position8>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="910" TopLine="894"/>
+      </Position8>
+      <Position9>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="911" TopLine="895"/>
+      </Position9>
+      <Position10>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="912" TopLine="896"/>
+      </Position10>
+      <Position11>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="913" TopLine="897"/>
+      </Position11>
+      <Position12>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="914" TopLine="898"/>
+      </Position12>
+      <Position13>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="915" TopLine="899"/>
+      </Position13>
+      <Position14>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="916" TopLine="900"/>
+      </Position14>
+      <Position15>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="935" TopLine="919"/>
+      </Position15>
+      <Position16>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="939" TopLine="923"/>
+      </Position16>
+      <Position17>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="958" TopLine="942"/>
+      </Position17>
+      <Position18>
+        <Filename Value="membitmap.pas"/>
+        <Caret Line="960" TopLine="944"/>
+      </Position18>
+      <Position19>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="145" Column="9" TopLine="138"/>
+      </Position19>
+      <Position20>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="60" Column="23" TopLine="29"/>
+      </Position20>
+      <Position21>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="187" Column="29" TopLine="24"/>
+      </Position21>
+      <Position22>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="162" Column="36" TopLine="156"/>
+      </Position22>
+      <Position23>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="143" Column="3" TopLine="4"/>
+      </Position23>
+      <Position24>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="115" Column="4" TopLine="112"/>
+      </Position24>
+      <Position25>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="164" Column="24" TopLine="162"/>
+      </Position25>
+      <Position26>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="259" Column="3" TopLine="256"/>
+      </Position26>
+      <Position27>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="186" Column="27" TopLine="181"/>
+      </Position27>
+      <Position28>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="116" TopLine="116"/>
+      </Position28>
+      <Position29>
+        <Filename Value="fmain.pas"/>
+        <Caret Line="144" Column="3" TopLine="141"/>
+      </Position29>
+      <Position30>
+        <Filename Value="fmain.pas"/>
+        <Caret TopLine="64"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <UseAnsiStrings Value="False"/>
+      </SyntaxOptions>
+    </Parsing>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

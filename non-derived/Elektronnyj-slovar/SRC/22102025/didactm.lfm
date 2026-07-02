@@ -1,0 +1,48 @@
+object Form1: TForm1
+  Left = 506
+  Height = 576
+  Top = 122
+  Width = 993
+  Caption = 'Form1'
+  ClientHeight = 576
+  ClientWidth = 993
+  DesignTimePPI = 168
+  LCLVersion = '4.0.0.4'
+  object Panel1: TPanel
+    Left = 0
+    Height = 576
+    Top = 0
+    Width = 450
+    Align = alLeft
+    Alignment = taLeftJustify
+    BevelOuter = bvNone
+    ClientHeight = 576
+    ClientWidth = 450
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 0
+      Height = 30
+      Top = 0
+      Width = 450
+      Align = alTop
+      Caption = 'Темы занятий'
+    end
+    object Edit1: TEdit
+      Left = 0
+      Height = 38
+      Top = 30
+      Width = 450
+      Align = alTop
+      TabOrder = 0
+      TextHint = 'Поиск темы'
+    end
+    object TreeView1: TTreeView
+      Left = 0
+      Height = 508
+      Top = 68
+      Width = 450
+      Align = alClient
+      TabOrder = 1
+    end
+  end
+end

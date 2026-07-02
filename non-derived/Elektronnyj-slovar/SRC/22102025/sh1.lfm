@@ -1,0 +1,194 @@
+object shis: Tshis
+  Left = 1957
+  Height = 732
+  Top = 193
+  Width = 709
+  BorderStyle = bsDialog
+  BorderWidth = 3
+  Caption = 'История поиска лемм'
+  ClientHeight = 732
+  ClientWidth = 709
+  Color = clWhite
+  DesignTimePPI = 168
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -23
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  FormStyle = fsStayOnTop
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object Panel1: TPanel
+    Left = 3
+    Height = 50
+    Top = 679
+    Width = 703
+    Align = alBottom
+    ClientHeight = 50
+    ClientWidth = 703
+    ParentBackground = False
+    TabOrder = 0
+    object Button1: TButton
+      Left = 632
+      Height = 42
+      Top = 4
+      Width = 63
+      Align = alRight
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 7
+      BorderSpacing.Bottom = 3
+      Caption = 'OK'
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 494
+      Height = 42
+      Top = 4
+      Width = 123
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 15
+      BorderSpacing.Bottom = 3
+      Caption = 'Очистить'
+      TabOrder = 1
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 235
+      Height = 42
+      Top = 4
+      Width = 244
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 15
+      BorderSpacing.Bottom = 3
+      Caption = 'Удалить выделенное'
+      TabOrder = 2
+      OnClick = Button3Click
+    end
+    object Button4: TButton
+      Left = 73
+      Height = 42
+      Top = 4
+      Width = 147
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 15
+      BorderSpacing.Bottom = 3
+      Caption = 'Сохранить..'
+      TabOrder = 3
+      OnClick = Button4Click
+    end
+  end
+  object StringGrid1: TStringGrid
+    Left = 6
+    Height = 627
+    Top = 6
+    Width = 697
+    Align = alClient
+    BorderSpacing.Around = 3
+    ColumnClickSorts = True
+    Columns = <    
+      item
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -23
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'देवनागरी'
+        Width = 220
+      end    
+      item
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -23
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'IAST'
+        Width = 220
+      end    
+      item
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -23
+        Title.Font.Name = 'Segoe UI'
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Ранг'
+        Width = 103
+      end    
+      item
+        Title.Font.CharSet = RUSSIAN_CHARSET
+        Title.Font.Color = clBlack
+        Title.Font.Height = -23
+        Title.Font.Pitch = fpVariable
+        Title.Font.Quality = fqDraft
+        Title.Caption = 'Порядок'
+        Width = 103
+      end    
+      item
+        Title.Caption = 'Title'
+        Visible = False
+      end>
+    FixedCols = 0
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -21
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goSmoothScroll, goRowHighlight]
+    ParentColor = True
+    ParentFont = False
+    RangeSelectMode = rsmMulti
+    RowCount = 1
+    TabOrder = 1
+    OnClick = StringGrid1Click
+    OnDblClick = StringGrid1DblClick
+    OnSelection = StringGrid1Selection
+  end
+  object StatusBar1: TStatusBar
+    Left = 3
+    Height = 43
+    Top = 636
+    Width = 703
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Panels = <    
+      item
+        Text = 'Лемм:'
+        Width = 116
+      end    
+      item
+        Width = 78
+      end    
+      item
+        Text = 'Запросов:'
+        Width = 116
+      end    
+      item
+        Width = 78
+      end>
+    ParentFont = False
+    SimplePanel = False
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '.*.sdm'
+    Filter = 'Text Files|*.txt'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 224
+    Top = 90
+  end
+end

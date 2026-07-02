@@ -1,0 +1,485 @@
+object FR: TFR
+  Left = 306
+  Height = 715
+  Top = 249
+  Width = 1542
+  BorderWidth = 2
+  Caption = 'Справочник грамматических форм'
+  ClientHeight = 715
+  ClientWidth = 1542
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clBlack
+  Font.Height = -23
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  OnWindowStateChange = FormWindowStateChange
+  object Panel1: TPanel
+    Left = 2
+    Height = 58
+    Top = 655
+    Width = 1538
+    Align = alBottom
+    ClientHeight = 58
+    ClientWidth = 1538
+    ParentBackground = False
+    TabOrder = 0
+    Visible = False
+    object GroupBox1: TGroupBox
+      Left = 672
+      Height = 246
+      Top = 10
+      Width = 352
+      Caption = 'GroupBox1'
+      ClientHeight = 210
+      ClientWidth = 348
+      ParentBackground = False
+      TabOrder = 0
+      Visible = False
+      object StringGrid1: TStringGrid
+        Left = 93
+        Height = 217
+        Top = 114
+        Width = 775
+        ColCount = 8
+        Columns = <        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end        
+          item
+            Title.Caption = 'Title'
+          end>
+        FixedCols = 0
+        RowCount = 803955
+        TabOrder = 0
+        Visible = False
+      end
+      object Memo1: TMemo
+        Left = 10
+        Height = 158
+        Top = 10
+        Width = 262
+        TabOrder = 1
+        Visible = False
+        WordWrap = False
+      end
+      object ListBox1: TListBox
+        Left = 21
+        Height = 140
+        Top = 21
+        Width = 174
+        ItemHeight = 0
+        TabOrder = 2
+      end
+      object ListBox2: TListBox
+        Left = 68
+        Height = 140
+        Top = 67
+        Width = 174
+        ItemHeight = 0
+        TabOrder = 3
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 2
+    Height = 58
+    Top = 60
+    Width = 1538
+    Align = alTop
+    ClientHeight = 58
+    ClientWidth = 1538
+    ParentBackground = False
+    TabOrder = 1
+    OnClick = Panel2Click
+    object ComboBox1: TComboBox
+      Left = 13
+      Height = 39
+      Top = 7
+      Width = 174
+      Align = alLeft
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      BorderSpacing.Around = 6
+      BorderStyle = bsSingle
+      ItemHeight = 31
+      ItemIndex = 0
+      Items.Strings = (
+        'Начало слова'
+        'Конец слова'
+        'В любом месте'
+        'Слово целиком'
+      )
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Начало слова'
+    end
+    object ComboBox2: TComboBox
+      Left = 199
+      Height = 39
+      Top = 7
+      Width = 174
+      Align = alLeft
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      BorderSpacing.Around = 6
+      BorderStyle = bsSingle
+      ItemHeight = 31
+      ItemIndex = 0
+      Items.Strings = (
+        'All'
+        'verb'
+        'participle'
+        'name'
+        'pronoun'
+      )
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'All'
+    end
+    object CheckBox1: TCheckBox
+      Left = 385
+      Height = 56
+      Hint = 'Опция позволяет игнорировать долготы гласных и принадлежность согласных к определенной варге,'#13#10'что позволяет облегчить поиск в случае сомнений в написании слова'
+      Top = 1
+      Width = 480
+      Align = alLeft
+      Caption = 'Игнорировать долготы и варги при поиске'
+      TabOrder = 2
+    end
+  end
+  object Panel3: TPanel
+    Left = 2
+    Height = 537
+    Top = 118
+    Width = 1538
+    Align = alClient
+    ClientHeight = 537
+    ClientWidth = 1538
+    ParentBackground = False
+    TabOrder = 2
+    object StatusBar1: TStatusBar
+      Left = 1
+      Height = 43
+      Top = 493
+      Width = 1536
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Panels = <      
+        item
+          Text = 'Форм найдено:'
+          Width = 258
+        end      
+        item
+          Text = '0'
+          Width = 97
+        end      
+        item
+          Width = 0
+        end      
+        item
+          Width = 0
+        end      
+        item
+          Text = 'Всего выбрано:'
+          Width = 194
+        end      
+        item
+          Text = '0'
+          Width = 97
+        end>
+      ParentFont = False
+      SimplePanel = False
+    end
+    object StringGrid2: TStringGrid
+      Left = 1
+      Height = 486
+      Top = 1
+      Width = 1536
+      Align = alClient
+      Color = clWhite
+      ColCount = 9
+      ColumnClickSorts = True
+      Columns = <      
+        item
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'देवनागरी'
+          Width = 194
+        end      
+        item
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'IAST'
+          Width = 194
+        end      
+        item
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Основа'
+          Width = 194
+        end      
+        item
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Грамматическая форма'
+          Width = 336
+        end      
+        item
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Тип'
+          Width = 129
+        end      
+        item
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Title'
+          Visible = False
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Метка'
+          Width = 83
+        end      
+        item
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Title'
+          Visible = False
+        end      
+        item
+          Title.Font.CharSet = RUSSIAN_CHARSET
+          Title.Font.Color = clBlack
+          Title.Font.Height = -21
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Caption = 'Title'
+          Visible = False
+        end>
+      FixedCols = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goSmoothScroll, goRowHighlight]
+      PopupMenu = PopupMenu1
+      RowCount = 1
+      TabOrder = 1
+      OnClick = StringGrid2Click
+      OnDblClick = StringGrid2DblClick
+    end
+    object ProgressBar1: TProgressBar
+      Left = 1
+      Height = 6
+      Top = 487
+      Width = 1536
+      Align = alBottom
+      BorderWidth = 1
+      TabOrder = 2
+    end
+    object ListBox3: TListBox
+      Left = 8
+      Height = 140
+      Top = 8
+      Width = 175
+      ItemHeight = 0
+      TabOrder = 3
+      Visible = False
+    end
+  end
+  object Panel4: TPanel
+    Left = 2
+    Height = 58
+    Top = 2
+    Width = 1538
+    Align = alTop
+    ClientHeight = 58
+    ClientWidth = 1538
+    ParentBackground = False
+    TabOrder = 3
+    object Label4: TLabel
+      Cursor = crHandPoint
+      Left = 936
+      Height = 56
+      Top = 1
+      Width = 594
+      Align = alRight
+      Alignment = taRightJustify
+      BorderSpacing.Right = 7
+      Caption = 'Используются данные с сайта: https://sanskrit.inria.fr/DICO/grammar.html'
+      Color = clSilver
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlue
+      Font.Height = -18
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsUnderline]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      PopupMenu = PopupMenu1
+      Transparent = False
+      OnClick = Label4Click
+    end
+    object Edit1: TEdit
+      Left = 8
+      Height = 42
+      Top = 8
+      Width = 200
+      Align = alLeft
+      BorderSpacing.Left = 7
+      BorderSpacing.Top = 7
+      BorderSpacing.Bottom = 7
+      Color = clWhite
+      TabOrder = 0
+      TextHint = 'Введите форму'
+      OnChange = Edit1Change
+    end
+    object Edit2: TEdit
+      Left = 395
+      Height = 42
+      Top = 8
+      Width = 239
+      Align = alLeft
+      BorderSpacing.Left = 15
+      BorderSpacing.Top = 7
+      BorderSpacing.Bottom = 7
+      Color = clWhite
+      TabOrder = 1
+      TextHint = 'Введите лемму'
+      OnChange = Edit2Change
+    end
+    object SpeedButton1: TButton
+      Left = 215
+      Height = 42
+      Top = 8
+      Width = 165
+      Align = alLeft
+      AutoSize = True
+      BorderSpacing.Left = 7
+      BorderSpacing.Top = 7
+      BorderSpacing.Bottom = 7
+      Caption = 'Найти форму'
+      TabOrder = 2
+      OnClick = SpeedButton1Click
+    end
+    object SpeedButton2: TButton
+      Left = 641
+      Height = 42
+      Top = 8
+      Width = 168
+      Align = alLeft
+      AutoSize = True
+      BorderSpacing.Left = 7
+      BorderSpacing.Top = 7
+      BorderSpacing.Bottom = 7
+      Caption = 'Найти основу'
+      TabOrder = 3
+      OnClick = SpeedButton2Click
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 62
+    Top = 207
+    object MenuItem9: TMenuItem
+      Caption = 'Скопировать выбранное в буфер обмена'
+      OnClick = MenuItem9Click
+    end
+    object Separator2: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Выделить все'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem2Click
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem3Click
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Выделить основу'
+      OnClick = MenuItem4Click
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Выделить форму'
+      OnClick = MenuItem5Click
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Выделить грамматику'
+      OnClick = MenuItem6Click
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Выделить тип'
+      OnClick = MenuItem7Click
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'Удалить выбранное'
+      OnClick = MenuItem8Click
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Text Files|*.txt'
+    InitialDir = 'Reports'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    Left = 62
+    Top = 124
+  end
+end

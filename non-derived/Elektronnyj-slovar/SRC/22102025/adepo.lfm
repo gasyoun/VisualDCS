@@ -1,0 +1,8 @@
+object Apte: TApte
+  Left = -9
+  Height = 689
+  Top = -9
+  Width = 1366
+  DesignTimePPI = 120
+  LCLVersion = '1.8.4.0'
+end

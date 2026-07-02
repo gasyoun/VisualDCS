@@ -1,0 +1,154 @@
+object Form10: TForm10
+  Left = 238
+  Height = 600
+  Top = 69
+  Width = 800
+  BorderStyle = bsNone
+  BorderWidth = 3
+  Caption = 'Thank You'
+  ClientHeight = 600
+  ClientWidth = 800
+  Color = clWhite
+  DesignTimePPI = 130
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '3.0.0.1'
+  object Panel1: TPanel
+    Left = 3
+    Height = 36
+    Top = 3
+    Width = 794
+    Align = alTop
+    ClientHeight = 36
+    ClientWidth = 794
+    Color = clSilver
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -18
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    object Button1: TButton
+      Left = 739
+      Height = 30
+      Top = 3
+      Width = 52
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Around = 2
+      Caption = 'OK'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object ComboBox1: TComboBox
+      Left = 567
+      Height = 33
+      Top = 3
+      Width = 155
+      Align = alRight
+      BorderSpacing.Left = 5
+      BorderSpacing.Right = 15
+      BorderSpacing.Around = 2
+      ItemHeight = 25
+      OnChange = ComboBox1Change
+      ReadOnly = True
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object Label1: TLabel
+      Left = 318
+      Height = 34
+      Top = 1
+      Width = 242
+      Align = alRight
+      Caption = 'Select an interface language'
+    end
+    object Label2: TLabel
+      Left = 1
+      Height = 34
+      Top = 1
+      Width = 290
+      Align = alLeft
+      Caption = 'Уважаемый пользователь!'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -22
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object Memo1: TMemo
+    Left = 3
+    Height = 558
+    Top = 39
+    Width = 794
+    Align = alClient
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -14
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'Благодарю Вас за Выбор этой программы! '
+      '    • Если Вы лишь начинаете изучать Санскрит, она будет полезна вам как словарь или пособие по грамматике; '
+      '    • Если Вы преподаете его, то сможете подготовить множество полезных дидактических материалов;'
+      '    • Если же Вы- исследователь то найдете здесь научные сведения и готовые разработки автора, которые также могут помочь Вам!'
+      ''
+      #9'Выражаю глубокую признательность и благодарность'
+      'Цифровому Корпусу Санскрита (Digital Corpus of Sanskrit – DCS: http://www.sanskrit-linguistics.org/dcs/)  и лично Оливеру Хельвигу (Oliver Hellwig) за огромную, проделанную им и его коллективом работу, результаты которой использованы здесь;'
+      ''
+      #9'Выражаю глубокую признательность и благодарность Геттингенскому университету им Георга Августа  (http://gretil.sub.uni-goettingen.de) за оцифрованные и отредактированные словарные материалы, использованные в программе;'
+      ''
+      #9'Выражаю глубокую признательность и благодарность сайту  http://inria.fr и лично Жереру Юэ (Gérard Huet) за обширный грамматический материал, который также использован в базах данных программы.'
+      ' '
+      #9'Настоящий электронный словарь является бесплатной программой.'
+      #9'Все используемые в нем словарные, грамматические материалы и материалы из Цифрового корпуса Санскрита не могут быть использованы в коммерческих целях.'
+      'Код программы написан автором на языке программирования Object Pascal в среде программирования Lazarus также не являющейся коммерческой.'
+      'Если же Вы пожелаете поощрить автора программы за его труд, то можете воспользоваться функцией «Благодарность» в разделе «Инструменты» главного окна программы. '
+    )
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Memo2: TMemo
+    Left = 3
+    Height = 558
+    Top = 39
+    Width = 794
+    Align = alClient
+    Lines.Strings = (
+      'Thank you for choosing this program!'
+      '  • If you are just starting to learn Sanskrit, it will be useful to you as a dictionary or grammar guide;'
+      '  • If you teach it, you will be able to prepare a lot of useful didactic materials;'
+      '  • If you are a researcher, you will find scientific information and ready-made developments of the author here, which can also help you!'
+      ''
+      'I express my deep appreciation and gratitude'
+      '   Digital Corpus of Sanskrit – DCS: http://www.sanskrit-linguistics.org/dcs'
+      '    and personally to Oliver Hellwig for the tremendous work done by him and his team, '
+      '    the results of which are used here;'
+      ''
+      'I express my deep appreciation and gratitude to the '
+      '   Georg August University of Göttingen'
+      '   http://gretil.sub.uni-goettingen.de '
+      '   for digitized and edited dictionary materials used in the program;'
+      ''
+      'I express my deep appreciation and gratitude to the site '
+      '   http://inria .fr '
+      '   and personally Gerard Huet for the extensive grammatical material that is also used in the program databases.'
+      ''
+      'This electronic dictionary is a free program.'
+      '   All vocabulary, grammar materials and materials from the Digital Corpus of Sanskrit used in it cannot be used for commercial purposes.'
+      '   The program code was written by the author in the Object Pascal programming language in the Lazarus programming environment '
+      '   which is also non commercial.'
+      '   '
+      'If you wish to reward the author of the program for his work, you can use the "Support project" function in the "Tools" section of the main program window.'
+    )
+    ReadOnly = True
+    TabOrder = 2
+    Visible = False
+  end
+end

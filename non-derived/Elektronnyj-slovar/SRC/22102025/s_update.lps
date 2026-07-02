@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="s_update.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="22"/>
+      </Unit>
+      <Unit>
+        <Filename Value="upd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="40"/>
+        <CursorPos X="29" Y="44"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="14">
+      <Position>
+        <Filename Value="upd.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="37" Column="18" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="38" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="37" TopLine="22"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="38" Column="40" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="39" Column="42" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="38" Column="42" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="37" Column="42" TopLine="22"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="38" Column="42" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="43" Column="3" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="42" Column="3" TopLine="28"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="36" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="38" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="48" Column="34" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="upd.pas"/>
+        <Caret Line="50" Column="18" TopLine="39"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

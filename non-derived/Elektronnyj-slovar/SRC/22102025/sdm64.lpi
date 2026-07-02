@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="sdm64"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <TextName Value="Sanskrit-English Dictionary"/>
+        <TextDesc Value="v1.0"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="2"/>
+      <Attributes pvaPreRelease="True"/>
+      <StringTable OriginalFilename="Dic32" ProductName="Saudamani - Sanskrit-English and Sanskrit-German Dictionary  with Thematic Search Mode" ProductVersion="2.0"/>
+    </VersionInfo>
+    <MacroValues Count="1">
+      <Macro1 Name="LCLWidgetType" Value="win32"/>
+    </MacroValues>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="33">
+      <Unit0>
+        <Filename Value="sdm64.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="gram.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="NN"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="gdepo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="gd"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="gfr.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="gres"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="ver1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="vr"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="FREE\sfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="sf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="fmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="fgif"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="dcon.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="edepo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ED"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="EDepo"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="ssv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="RDR"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="sh1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="shis"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="adepo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Apte"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="ngh.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ng"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="ent1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Ent"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="h1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Hl"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="ht1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ht"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="tt1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="tt"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="keyboard1.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="grmx.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="wc"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="eda1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="EDA"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Eda1"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="unit2xxx.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="ds1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DSet"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="tcf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TTS"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="lns1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Lns"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="wrf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="WR"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="vf2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="VForms"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="tcompare.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="CT"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="stans.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="STA"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="StAns"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="tsn.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Sinta"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TsN"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="rusk.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="rk"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="trunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TRE"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="omf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="of1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit32>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="sdm64"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="C:\Users\Владимир\AppData\Local\lazarus\onlinepackagemanager\packages\richmemo\"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <TargetOS Value="win64"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="4">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="Exception"/>
+      </Item4>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

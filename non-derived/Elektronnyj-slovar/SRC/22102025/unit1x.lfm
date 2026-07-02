@@ -1,0 +1,20 @@
+object F332: TF332
+  Left = 100
+  Height = 300
+  Top = 177
+  Width = 400
+  Caption = 'F332'
+  ClientHeight = 300
+  ClientWidth = 400
+  DesignTimePPI = 120
+  LCLVersion = '1.8.4.0'
+  object Button1: TButton
+    Left = 243
+    Height = 31
+    Top = 67
+    Width = 94
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+end

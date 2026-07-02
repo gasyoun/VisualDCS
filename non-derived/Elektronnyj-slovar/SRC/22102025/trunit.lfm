@@ -1,0 +1,10 @@
+object TRE: TTRE
+  Left = 173
+  Height = 664
+  Top = 75
+  Width = 1021
+  Caption = 'Редактор Переводов'
+  DesignTimePPI = 168
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+end

@@ -1,0 +1,506 @@
+object TTS: TTTS
+  Left = 226
+  Height = 822
+  Top = 14
+  Width = 981
+  BorderStyle = bsDialog
+  BorderWidth = 3
+  Caption = 'Поиск фрагмента текста'
+  ClientHeight = 822
+  ClientWidth = 981
+  Color = clSilver
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clBlack
+  Font.Height = -23
+  Font.Name = 'Segoe UI'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  FormStyle = fsStayOnTop
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  object Panel1: TPanel
+    Left = 3
+    Height = 700
+    Top = 119
+    Width = 975
+    Align = alClient
+    ClientHeight = 700
+    ClientWidth = 975
+    ParentBackground = False
+    TabOrder = 0
+    object StringGrid4: TStringGrid
+      Left = -327
+      Height = 174
+      Top = 327
+      Width = 350
+      FixedCols = 0
+      FixedRows = 0
+      RowCount = 311617
+      TabOrder = 0
+      TitleFont.CharSet = RUSSIAN_CHARSET
+      TitleFont.Color = clBlack
+      TitleFont.Height = -23
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      TitleFont.Style = [fsBold]
+      Visible = False
+    end
+    object Panel2: TPanel
+      Left = 1
+      Height = 58
+      Top = 641
+      Width = 973
+      Align = alBottom
+      ClientHeight = 58
+      ClientWidth = 973
+      ParentBackground = False
+      TabOrder = 1
+      object Button1: TButton
+        Left = 877
+        Height = 42
+        Top = 8
+        Width = 88
+        Align = alRight
+        BorderSpacing.Top = 7
+        BorderSpacing.Right = 7
+        BorderSpacing.Bottom = 7
+        Caption = 'Найти'
+        TabOrder = 0
+        OnClick = Button1Click
+      end
+      object Button4: TButton
+        Left = 698
+        Height = 42
+        Top = 8
+        Width = 164
+        Align = alRight
+        AutoSize = True
+        BorderSpacing.Top = 7
+        BorderSpacing.Right = 15
+        BorderSpacing.Bottom = 7
+        Caption = 'Очистить все'
+        TabOrder = 1
+        OnClick = Button4Click
+      end
+    end
+    object GroupBox1: TGroupBox
+      Left = 328
+      Height = 640
+      Top = 1
+      Width = 320
+      Align = alLeft
+      BorderSpacing.Right = 7
+      Caption = 'Могут быть во фразе'
+      ClientHeight = 604
+      ClientWidth = 316
+      ParentBackground = False
+      TabOrder = 2
+      object StringGrid2: TStringGrid
+        Left = 0
+        Height = 604
+        Hint = 'Перетащите сюда лемму из общего списка'
+        Top = 0
+        Width = 316
+        Align = alClient
+        ColCount = 3
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            MinSize = 12
+            MaxSize = 234
+            ReadOnly = True
+            Title.Font.CharSet = RUSSIAN_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Лемма'
+            Width = 250
+          end        
+          item
+            MinSize = 12
+            MaxSize = 234
+            Title.Caption = 'Title'
+            Visible = False
+          end        
+          item
+            ButtonStyle = cbsCheckboxColumn
+            Title.Alignment = taCenter
+            Title.Caption = '🗸'
+            Width = 64
+          end>
+        DragMode = dmAutomatic
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        PopupMenu = PopupMenu2
+        RowCount = 1
+        TabOrder = 0
+        TitleFont.CharSet = RUSSIAN_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -23
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+        TitleFont.Style = [fsBold]
+        OnClick = StringGrid2Click
+        OnDragDrop = StringGrid2DragDrop
+        OnDragOver = StringGrid2DragOver
+        OnKeyPress = StringGrid2KeyPress
+      end
+      object ListBox1: TListBox
+        Left = 312
+        Height = 140
+        Top = 80
+        Width = 175
+        ItemHeight = 0
+        TabOrder = 1
+        Visible = False
+      end
+    end
+    object GroupBox2: TGroupBox
+      Left = 654
+      Height = 640
+      Top = 1
+      Width = 320
+      Align = alRight
+      Caption = 'Не должно быть во фразе'
+      ClientHeight = 604
+      ClientWidth = 316
+      ParentBackground = False
+      TabOrder = 3
+      object StringGrid3: TStringGrid
+        Left = 0
+        Height = 604
+        Hint = 'Перетащите сюда леммы из основного списка'
+        Top = 0
+        Width = 316
+        Align = alClient
+        ColCount = 3
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            MinSize = 12
+            MaxSize = 234
+            ReadOnly = True
+            Title.Font.CharSet = RUSSIAN_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Лемма'
+            Width = 250
+          end        
+          item
+            MinSize = 12
+            MaxSize = 234
+            Title.Caption = 'Title'
+            Visible = False
+          end        
+          item
+            ButtonStyle = cbsCheckboxColumn
+            Title.Alignment = taCenter
+            Title.Caption = '🗸'
+            Width = 64
+          end>
+        DragMode = dmAutomatic
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        PopupMenu = PopupMenu3
+        RowCount = 1
+        TabOrder = 0
+        TitleFont.CharSet = RUSSIAN_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -23
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+        TitleFont.Style = [fsBold]
+        OnClick = StringGrid3Click
+        OnDragDrop = StringGrid3DragDrop
+        OnDragOver = StringGrid3DragOver
+        OnKeyPress = StringGrid3KeyPress
+        OnMouseUp = StringGrid3MouseUp
+      end
+    end
+    object GroupBox3: TGroupBox
+      Left = 1
+      Height = 640
+      Top = 1
+      Width = 320
+      Align = alLeft
+      BorderSpacing.Right = 7
+      Caption = 'Должны быть во фразе'
+      ClientHeight = 604
+      ClientWidth = 316
+      ParentBackground = False
+      TabOrder = 4
+      object StringGrid1: TStringGrid
+        Left = 0
+        Height = 604
+        Hint = 'Перетащите сюда леммы из общего списка'
+        Top = 0
+        Width = 316
+        Align = alClient
+        ColCount = 3
+        ColumnClickSorts = True
+        Columns = <        
+          item
+            MinSize = 12
+            MaxSize = 234
+            ReadOnly = True
+            Title.Font.CharSet = RUSSIAN_CHARSET
+            Title.Font.Color = clBlack
+            Title.Font.Height = -23
+            Title.Font.Name = 'Segoe UI'
+            Title.Font.Pitch = fpVariable
+            Title.Font.Quality = fqDraft
+            Title.Caption = 'Лемма'
+            Width = 250
+          end        
+          item
+            MinSize = 12
+            MaxSize = 234
+            Title.Caption = 'Title'
+            Width = 0
+            Visible = False
+          end        
+          item
+            Alignment = taCenter
+            ButtonStyle = cbsCheckboxColumn
+            Title.Alignment = taCenter
+            Title.Caption = '🗸'
+            Width = 64
+          end>
+        DragMode = dmAutomatic
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goSmoothScroll, goRowHighlight]
+        PopupMenu = PopupMenu1
+        RowCount = 1
+        TabOrder = 0
+        TitleFont.CharSet = RUSSIAN_CHARSET
+        TitleFont.Color = clBlack
+        TitleFont.Height = -23
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Pitch = fpVariable
+        TitleFont.Quality = fqDraft
+        OnClick = StringGrid1Click
+        OnDragDrop = StringGrid1DragDrop
+        OnDragOver = StringGrid1DragOver
+        OnKeyPress = StringGrid1KeyPress
+      end
+    end
+  end
+  object Panel3: TPanel
+    Left = 3
+    Height = 58
+    Top = 3
+    Width = 975
+    Align = alTop
+    ClientHeight = 58
+    ClientWidth = 975
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -23
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 1
+    object Edit1: TEdit
+      Left = 1
+      Height = 39
+      Top = 8
+      Width = 388
+      Align = alLeft
+      BorderSpacing.Top = 7
+      BorderSpacing.Right = 15
+      BorderSpacing.Bottom = 10
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -23
+      Font.Name = 'Arial Narrow'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      TabOrder = 0
+      TextHint = 'Часть фразы для поиска'
+      OnChange = Edit1Change
+    end
+    object ComboBox1: TComboBox
+      Left = 404
+      Height = 39
+      Top = 8
+      Width = 398
+      Align = alLeft
+      BorderSpacing.Right = 8
+      BorderSpacing.Around = 7
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -23
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ItemHeight = 31
+      ItemIndex = 0
+      Items.Strings = (
+        'Слово целиком'
+        'Обтекание текстом'
+      )
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'Слово целиком'
+    end
+    object SpeedButton1: TButton
+      Left = 873
+      Height = 39
+      Top = 8
+      Width = 93
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Right = 1
+      BorderSpacing.Bottom = 3
+      BorderSpacing.Around = 7
+      Caption = 'Найти'
+      TabOrder = 2
+      OnClick = SpeedButton1Click
+    end
+  end
+  object ListBox2: TListBox
+    Left = 400
+    Height = 140
+    Top = 208
+    Width = 175
+    ItemHeight = 0
+    TabOrder = 2
+    Visible = False
+  end
+  object ListBox3: TListBox
+    Left = 440
+    Height = 140
+    Top = 288
+    Width = 175
+    ItemHeight = 0
+    TabOrder = 3
+    Visible = False
+  end
+  object Panel4: TPanel
+    Left = 3
+    Height = 58
+    Top = 61
+    Width = 975
+    Align = alTop
+    ClientHeight = 58
+    ClientWidth = 975
+    ParentBackground = False
+    TabOrder = 4
+    object Label1: TLabel
+      Left = 8
+      Height = 42
+      Top = 8
+      Width = 455
+      Align = alLeft
+      BorderSpacing.Around = 7
+      Caption = 'Перетащите лемму в один из списков'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -26
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Layout = tlBottom
+      ParentFont = False
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 72
+    Top = 200
+    object MenuItem9: TMenuItem
+      Caption = 'Выделить всё'
+      OnClick = MenuItem9Click
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem8Click
+    end
+    object MenuItem7: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem7Click
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Удалить элемент'
+      ShortCut = 46
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Очистить список'
+      OnClick = MenuItem2Click
+    end
+  end
+  object PopupMenu2: TPopupMenu
+    Left = 384
+    Top = 288
+    object MenuItem12: TMenuItem
+      Caption = 'Выделить все'
+      OnClick = MenuItem12Click
+    end
+    object MenuItem11: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem11Click
+    end
+    object MenuItem10: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem10Click
+    end
+    object Separator2: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Удалить элемент'
+      ShortCut = 46
+      OnClick = MenuItem3Click
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Очистить список'
+      OnClick = MenuItem4Click
+    end
+  end
+  object PopupMenu3: TPopupMenu
+    Left = 672
+    Top = 232
+    object MenuItem15: TMenuItem
+      Caption = 'Выделить все'
+      OnClick = MenuItem15Click
+    end
+    object MenuItem14: TMenuItem
+      Caption = 'Снять выделение'
+      OnClick = MenuItem14Click
+    end
+    object MenuItem13: TMenuItem
+      Caption = 'Обратить выделение'
+      OnClick = MenuItem13Click
+    end
+    object Separator3: TMenuItem
+      Caption = '-'
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Удалить элемент'
+      ShortCut = 46
+      OnClick = MenuItem5Click
+    end
+    object MenuItem6: TMenuItem
+      Caption = 'Очистить список'
+      OnClick = MenuItem6Click
+    end
+  end
+end

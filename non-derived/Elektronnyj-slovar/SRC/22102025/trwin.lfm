@@ -1,0 +1,90 @@
+object Tr: TTr
+  Left = 74
+  Height = 850
+  Top = 61
+  Width = 1737
+  HelpType = htKeyword
+  Caption = 'Анализ текстов корпуса'
+  ClientHeight = 850
+  ClientWidth = 1737
+  DesignTimePPI = 168
+  HelpFile = '123.html'
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  WindowState = wsMaximized
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnWindowStateChange = FormWindowStateChange
+  object Chart1: TChart
+    Left = 0
+    Height = 850
+    Top = 0
+    Width = 1737
+    AxisList = <    
+      item
+        Marks.LabelBrush.Style = bsClear
+        Marks.Source = ls1
+        Minors = <>
+        Range.Max = 100
+        Range.UseMax = True
+        Range.UseMin = True
+        Title.LabelFont.Orientation = 900
+        Title.Visible = True
+        Title.Caption = '%Покрытия'
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Alignment = calBottom
+        Marks.Format = '%2:s'
+        Marks.LabelBrush.Style = bsClear
+        Marks.Source = ls1
+        Marks.Style = smsLabel
+        Minors = <>
+        Title.Visible = True
+        Title.Caption = 'Параметры'
+        Title.LabelBrush.Style = bsClear
+      end>
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    Title.Visible = True
+    Align = alClient
+    object Chart1BarSeries1: TBarSeries
+      BarBrush.Color = clRed
+      Source = ls1
+    end
+    object Chart1LineSeries1: TLineSeries
+      LinePen.Color = 8388863
+      LinePen.Width = 3
+      Source = ls2
+    end
+    object Chart1PolarSeries1: TPolarSeries
+      Source = ls3
+    end
+  end
+  object ls1: TListChartSource
+    Left = 104
+    Top = 32
+  end
+  object ls2: TListChartSource
+    Left = 184
+    Top = 48
+  end
+  object ls3: TListChartSource
+    Left = 150
+    Top = 78
+  end
+  object ls4: TListChartSource
+    Left = 196
+    Top = 124
+  end
+  object ls5: TListChartSource
+    Left = 242
+    Top = 170
+  end
+  object ls6: TListChartSource
+    Left = 288
+    Top = 216
+  end
+end

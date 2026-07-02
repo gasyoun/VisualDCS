@@ -1,0 +1,106 @@
+object Form9: TForm9
+  Left = 151
+  Height = 443
+  Top = 78
+  Width = 818
+  BorderWidth = 3
+  Caption = 'Авторская аналитика'
+  ClientHeight = 443
+  ClientWidth = 818
+  Color = clSilver
+  DesignTimePPI = 130
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -14
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnResize = FormResize
+  Position = poScreenCenter
+  LCLVersion = '3.0.0.1'
+  object StatusBar1: TStatusBar
+    Left = 3
+    Height = 30
+    Top = 410
+    Width = 812
+    Panels = <    
+      item
+        Text = 'Всего:'
+        Width = 75
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object StringGrid1: TStringGrid
+    Left = 3
+    Height = 265
+    Top = 3
+    Width = 812
+    Align = alClient
+    ColCount = 6
+    ColumnClickSorts = True
+    Columns = <    
+      item
+        Title.Caption = 'Название'
+        Width = 400
+      end    
+      item
+        Title.Caption = 'Тема'
+        Width = 150
+      end    
+      item
+        Title.Caption = 'Автор'
+        Width = 120
+      end    
+      item
+        Title.Caption = 'Язык'
+        Width = 120
+      end    
+      item
+        Title.Caption = 'Описание'
+        Visible = False
+      end    
+      item
+        Title.Caption = 'Путь'
+        Visible = False
+      end>
+    FixedCols = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goColSizing, goDblClickAutoSize, goSmoothScroll, goRowHighlight]
+    TabOrder = 1
+    OnClick = StringGrid1Click
+    OnDblClick = StringGrid1DblClick
+    OnKeyPress = StringGrid1KeyPress
+  end
+  object GroupBox1: TGroupBox
+    Left = 3
+    Height = 142
+    Top = 268
+    Width = 812
+    Align = alBottom
+    Caption = 'Описание'
+    ClientHeight = 118
+    ClientWidth = 808
+    ParentBackground = False
+    TabOrder = 2
+    object Memo1: TMemo
+      Left = 0
+      Height = 118
+      Top = 0
+      Width = 808
+      Align = alClient
+      ReadOnly = True
+      TabOrder = 0
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 8
+    Top = 8
+    object MenuItem1: TMenuItem
+      Caption = 'Добавить работу или ресурс'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'MenuItem2'
+    end
+  end
+end

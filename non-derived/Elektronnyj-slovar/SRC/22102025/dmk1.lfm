@@ -1,0 +1,122 @@
+object dmk: Tdmk
+  Left = 317
+  Height = 806
+  Top = 0
+  Width = 645
+  Caption = 'dmk'
+  ClientHeight = 806
+  ClientWidth = 645
+  DesignTimePPI = 130
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.4'
+  object StringGrid1: TStringGrid
+    Left = 8
+    Height = 135
+    Top = 8
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 0
+  end
+  object StringGrid2: TStringGrid
+    Left = 176
+    Height = 135
+    Top = 16
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 1
+  end
+  object StringGrid3: TStringGrid
+    Left = 344
+    Height = 135
+    Top = 24
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 2
+  end
+  object StringGrid4: TStringGrid
+    Left = 16
+    Height = 135
+    Top = 176
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 3
+  end
+  object StringGrid5: TStringGrid
+    Left = 184
+    Height = 135
+    Top = 176
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 4
+  end
+  object StringGrid6: TStringGrid
+    Left = 360
+    Height = 135
+    Top = 192
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 5
+  end
+  object StringGrid7: TStringGrid
+    Left = 40
+    Height = 135
+    Top = 312
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 6
+  end
+  object StringGrid8: TStringGrid
+    Left = 240
+    Height = 135
+    Top = 336
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 7
+  end
+  object StringGrid0: TStringGrid
+    Left = 400
+    Height = 135
+    Top = 344
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 8
+  end
+  object StringGrid9: TStringGrid
+    Left = 72
+    Height = 135
+    Top = 496
+    Width = 144
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 9
+  end
+end

@@ -1,0 +1,258 @@
+object EDA: TEDA
+  Left = 93
+  Height = 638
+  Top = 60
+  Width = 1401
+  BorderWidth = 3
+  Caption = 'Dictionary Articles Editor'
+  ClientHeight = 0
+  ClientWidth = 0
+  Color = 12615680
+  DesignTimePPI = 168
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Color = clBlack
+  Font.Height = -25
+  Font.Name = 'Arial'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  object Panel1: TPanel
+    Left = 3
+    Height = 632
+    Top = 3
+    Width = 392
+    Align = alLeft
+    ClientHeight = 632
+    ClientWidth = 392
+    ParentBackground = False
+    TabOrder = 0
+    object Edit1: TEdit
+      Left = 4
+      Height = 36
+      Top = 4
+      Width = 384
+      Align = alTop
+      BorderSpacing.Around = 3
+      TabOrder = 0
+      TextHint = 'A Keyword for Search'
+      OnChange = Edit1Change
+    end
+    object StringGrid1: TStringGrid
+      Left = 4
+      Height = 542
+      Top = 43
+      Width = 384
+      Align = alClient
+      BorderSpacing.Around = 3
+      ColCount = 4
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Color = 12615680
+          Title.Font.CharSet = ANSI_CHARSET
+          Title.Font.Color = clWhite
+          Title.Font.Height = -24
+          Title.Font.Name = 'Arial'
+          Title.Font.Pitch = fpVariable
+          Title.Font.Quality = fqDraft
+          Title.Font.Style = [fsBold]
+          Title.Caption = 'WordList for Edit'
+          Width = 342
+        end      
+        item
+          Title.Caption = 'Title'
+          Visible = False
+        end      
+        item
+          Title.Caption = 'Title'
+          Visible = False
+        end      
+        item
+          Title.Caption = 'Title'
+          Visible = False
+        end>
+      FixedCols = 0
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goSmoothScroll]
+      PopupMenu = PopupMenu1
+      TabOrder = 1
+      OnClick = StringGrid1Click
+    end
+    object StatusBar1: TStatusBar
+      Left = 1
+      Height = 43
+      Top = 588
+      Width = 390
+      Panels = <      
+        item
+          Text = 'Total Words:'
+          Width = 168
+        end      
+        item
+          Width = 105
+        end>
+      SimplePanel = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 395
+    Height = 632
+    Top = 3
+    Width = 1003
+    Align = alClient
+    ClientHeight = 632
+    ClientWidth = 1003
+    ParentBackground = False
+    TabOrder = 1
+    object Panel3: TPanel
+      Left = 1
+      Height = 59
+      Top = 1
+      Width = 1001
+      Align = alTop
+      ClientHeight = 59
+      ClientWidth = 1001
+      ParentBackground = False
+      TabOrder = 0
+      object ComboBox1: TComboBox
+        Left = 5
+        Height = 36
+        Top = 5
+        Width = 350
+        Align = alLeft
+        BorderSpacing.Left = 4
+        BorderSpacing.Top = 4
+        BorderSpacing.Right = 7
+        BorderSpacing.Bottom = 4
+        ItemHeight = 28
+        Style = csDropDownList
+        TabOrder = 0
+        OnChange = ComboBox1Change
+        OnClick = ComboBox1Click
+      end
+      object Button1: TButton
+        Left = 362
+        Height = 49
+        Top = 5
+        Width = 105
+        Align = alLeft
+        BorderSpacing.Around = 4
+        Caption = 'Save'
+        TabOrder = 1
+        OnClick = Button1Click
+      end
+      object Button2: TButton
+        Left = 580
+        Height = 49
+        Top = 5
+        Width = 105
+        Align = alLeft
+        BorderSpacing.Around = 4
+        Caption = 'Delete'
+        TabOrder = 2
+        OnClick = Button2Click
+      end
+      object Button3: TButton
+        Left = 471
+        Height = 49
+        Top = 5
+        Width = 105
+        Align = alLeft
+        BorderSpacing.Around = 4
+        Caption = 'Add'
+        TabOrder = 3
+        OnClick = Button3Click
+      end
+      object Button4: TButton
+        Left = 828
+        Height = 49
+        Hint = 'Discard All Changes for All Times [!!!]'
+        Top = 5
+        Width = 168
+        Align = alRight
+        BorderSpacing.Around = 4
+        Caption = 'Discard.. [!]'
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Color = clBlack
+        Font.Height = -24
+        Font.Name = 'Arial Black'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 4
+        OnClick = Button4Click
+      end
+    end
+    object StatusBar2: TStatusBar
+      Left = 1
+      Height = 43
+      Top = 588
+      Width = 1001
+      Panels = <      
+        item
+          Text = 'Total Articles:'
+          Width = 210
+        end      
+        item
+          Width = 105
+        end>
+      SimplePanel = False
+    end
+    object Label1: TLabel
+      Left = 1
+      Height = 35
+      Top = 60
+      Width = 1001
+      Align = alTop
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Dictionary Article'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clWhite
+      Font.Height = -24
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+    end
+    object Memo1: TMemo
+      Left = 5
+      Height = 485
+      Top = 99
+      Width = 993
+      Align = alClient
+      BorderSpacing.Around = 4
+      ScrollBars = ssAutoVertical
+      TabOrder = 2
+      OnChange = Memo1Change
+    end
+    object StringGrid2: TStringGrid
+      Left = 482
+      Height = 175
+      Top = 206
+      Width = 350
+      ColCount = 3
+      FixedCols = 0
+      FixedRows = 0
+      RowCount = 0
+      TabOrder = 3
+      Visible = False
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 238
+    Top = 274
+    object MenuItem1: TMenuItem
+      Caption = 'Find Indexes'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Full Indexation'
+    end
+  end
+end

@@ -1,0 +1,89 @@
+object rk: Trk
+  Left = 82
+  Height = 570
+  Top = 37
+  Width = 1090
+  Caption = 'rk'
+  ClientHeight = 570
+  ClientWidth = 1090
+  DesignTimePPI = 130
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.4'
+  object StringGrid1: TStringGrid
+    Left = 43
+    Height = 101
+    Top = 29
+    Width = 412
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 0
+  end
+  object StringGrid2: TStringGrid
+    Left = 693
+    Height = 101
+    Top = 36
+    Width = 368
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 1
+  end
+  object StringGrid3: TStringGrid
+    Left = 51
+    Height = 101
+    Top = 224
+    Width = 802
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 2
+  end
+  object StringGrid4: TStringGrid
+    Left = 29
+    Height = 130
+    Top = 354
+    Width = 838
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 3
+  end
+  object StringGrid5: TStringGrid
+    Left = 720
+    Height = 101
+    Top = 72
+    Width = 368
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 4
+  end
+  object StringGrid6: TStringGrid
+    Left = 722
+    Height = 101
+    Top = 109
+    Width = 368
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 5
+  end
+  object StringGrid7: TStringGrid
+    Left = 80
+    Height = 101
+    Top = 66
+    Width = 412
+    ColCount = 0
+    FixedCols = 0
+    FixedRows = 0
+    RowCount = 0
+    TabOrder = 6
+  end
+end
