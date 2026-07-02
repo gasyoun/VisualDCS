@@ -1,0 +1,411 @@
+"Textname","Author","Subtit","Shorthand","Comment","Publish","Place of publication","Release year","Publishing","Range","Digitizers","LanguageID","Habil Etym TimeSlot","TextCompleted","SubjectID","secondary_literature","NrOfWords"
+"""Rasādhyāyaṭīkā"""," "," ","""RAdhyṬ""",1," "," ",0," "," ","""Oliver Hellwig""",1,4,0,56,0,7769
+"""Rasahṛdayatantra""","""Govindbhagavatpāda""","""With the commentary called Mudghāvabodhinī of Caturbhuja Miśra""","""RHT""",0," ","""Delhi""",1989,"""Chaukhambha Orientalia"""," ","""O. Hellwig""",1,4,1,56,0,8147
+"""Rasakāmadhenu""","""Śrīcūḍāmaṇimiśra"""," ","""RKDh""",0,"""Gulraj Sharma Mishra  Santosh Kumar Sharma""","""Varanasi""",1999,"""Chaukhamba Orientalia""","""Jaikrishnadas Ayurveda Series  76""","""O. Hellwig""",1,5,0,56,0,7894
+"""Śāṅkhāyanagṛhyasūtra"""," "," ","""ŚGṛS""",0," "," ",0," "," "," ",1,1,0,18,0,750
+"""Śāṅkhāyanāraṇyaka"""," "," ","""ŚāĀr""",0,"""Bhim Dev and A.B. Keith for Adhy. 7-15)""","""Hoshiarpur""",1980," ","""Vishveshvaranand Indological Series  70""","""Martin Joachim Kﾁ￼mmel""",1,1,1,9,0,12701
+"""Śāktavijñāna""","""Somānanda"""," ","""ŚāktaVij""",0,"""J.D. Zaidoo""","""Srinagar""",1947,"""Research Department""","""Kashmir Series of Texts and Studies  74""","""Oliver Hellwig""",1,4,1,44,0,427
+"""Śārṅgadharasaṃhitā""","""Śārṅgadhara"""," ","""ŚdhSaṃh""",0,"""P.S. Vidyasagar""","""Varanasi""",2000,"""Krishnadas Academy""","""Krishnadas Ayurveda Series  14""","""O. Hellwig""",1,4,0,33,0,5623
+"""Śārṅgadharasaṃhitādīpikā""","""Āḍhamalla"""," ","""ŚSDīp""",1," "," ",0," "," "," ",1,4,0,33,0,14764
+"""Śatakatraya""","""Bhartṛhari"""," ","""ŚTr""",0," "," ",0," ","""Nitisataka: Chaukhamba Vidya Bhavan edition 1990); Srngarasataka: Vidya Bhavan Sanskrit Granthamala no. 61 1988; Vairagyasataka: Vidya Bhavan Sanskrit Granthamala no. 67 1988""","""Jan K. Brzezinski""",1,3,1,47,0,8688
+"""Śatapathabrāhmaṇa"""," ","""The Śatapatha-Brāhmaṇa in the Mādhyandina-Śākhā""","""ŚpBr""",0,"""Weber  Albrecht""","""Berlin""",1849," "," ","""H.S. Ananthanarayana  W. P. Lehman TITUS)""",1,1,0,8,0,3718
+"""Śikṣāsamuccaya""","""Śāntideva"""," ","""ŚiSam""",0," "," ",0," "," ","""Mirek Rozehnahl  GRETIL""",1,3,0,58,0,791
+,,,,,,,,,,,,,,,,
+"""Śivapurāṇa"""," "," ","""ŚivaPur""",0," "," ",0," "," "," ",1,4,0,42,0,827
+"""Śivasūtra"""," "," ","""ŚSūtra""",0,"""Madhusudan Kaul Shastri""","""Srinagar""",1925,"""Kashmir Pratap Steam Press"""," ","""Oliver Hellwig""",1,3,1,44,0,297
+"""Śivasūtravārtika""","""Varadarāja"""," ","""ŚSūtraV""",1," "," ",0," "," "," ",1,4,0,44,0,5339
+"""Śukasaptati"""," "," ","""Śusa""",0," "," ",0," "," ","""Members of the Sansknet project""",1,4,0,48,0,9670
+"""Śvetāśvataropaniṣad"""," "," ","""ŚvetāśvUp""",0," "," ",0," "," ","""Input by S. H.  proofread by John Manetta [GRETIL]""",1,2,1,10,0,2100
+"""Śyainikaśāstra""","""Rudradeva"""," "," ",0," "," ",0," "," "," ",1,4,1,33,0,5272
+"""2. fiktiver Komm. zum Hitopadeśa"""," "," "," ",1," "," ",0," "," "," ",0," ",0," ",0,0
+"""A concise history of science in India""","""D.M. Bose  S.N. Sen  B.V. Subbarayappa"""," "," ",0," ","""New Delhi""",1971,"""Indian National Science Academy"""," "," ",0," ",0," ",1,0
+"""A history of Indian medical literature  I A""","""G.J. Meulenbeld"""," ","""IndMedLit I A""",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""A history of Indian medical literature  II B""","""G.J. Meulenbeld"""," ","""IndMedLit II B""",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""A Sanskrit Dictionary of Law and Statescraft""","""Olivelle  Patrick"""," ","""Olivelle 2015 [Law  Statescraft]""",0," ","""Delhi""",2015," "," "," ",0,5,0," ",1,0
+"""A survey of Hinduism""","""Klaus K. Klostermaier"""," "," ",0," ","""Albany""",1989,"""State University of New York Press"""," "," ",0," ",0," ",1,0
+"""A Vedic Grammar for Students""","""Macdonell  A.A."""," "," ",0," ","""Oxford""",1916,"""Clarendon Press"""," "," ",0,5,0," ",1,0
+"""Āśvālāyanaśrautasūtra"""," "," ","""ĀśŚS""",0," "," ",0," ","""Bibliotheca Indica""","""Muneo Tokunaga""",1,1,0," ",0,0
+"""Āśvalāyanagṛhyasūtra"""," "," ","""ĀśGS""",0,"""A.F. Stenzler"""," ",1864," ","""Abhandlungen fﾁ￼r die Kunde des Morgenlandes""","""Muneo Tokunaga""",1,1,0,18,0,1088
+"""Aṣṭāṅgahṛdayasaṃhitā""","""Vāgbhaṭa"""," ","""AHS""",0," "," ",0," "," "," ",1,3,1,33,0,107404
+"""Aṣṭāṅganighaṇṭu""","""Vāhaṭa"""," ","""AṣṭNigh""",0,"""P.V. Sharma""","""Madras""",1973,"""The Kuppuswamy Sastri Research Institute"""," ","""Oliver Hellwig""",1,4,1,49,0,4770
+"""Aṣṭāṅgasaṃgraha"""," "," ","""ASaṃ""",0," "," ",0," "," "," ",1,3,0,33,0,2187
+"""Aṣṭādhyāyī""","""Pāṇini"""," "," ",0," "," ",0," "," ","""Mari Minamino GRETIL)""",1,2,1,20,0,15461
+"""Aṣṭādhyāyī of Pāṇini"""," ","""In Roman Transliteration""","""Katre 1987)""",0,"""Sumitra M. Katre""","""Austin""",1987,"""University of Texas Press"""," "," ",0,0,0," ",1,0
+"""Aṣṭasāhasrikā"""," "," ","""ASāh""",0,"""P.L. Vaidya""","""Darbhanga""",1960," "," ","""Sanskrit Buddhist Input Project""",1,2,0,58,0,43182
+"""Aṣṭāvakragīta"""," "," "," ",0," "," ",0," "," ","""John Richards; with corrections by Robert Drecogna""",1,4,1,44,0,4553
+"""Abhidhānacintāmaṇi""","""Hemacandra"""," ","""AbhCint""",0,"""Paṃḍita Śivadatta""","""Mumbai""",1818,"""Nirṇayasāgara"""," "," ",1,4,0,49,0,4326
+"""Abhidharmakośa""","""Vasubandhu"""," ","""AbhidhKo""",0," "," ",0," "," "," ",1,3,0,58,0,1331
+"""Abhidharmakośabhāṣya""","""Vasubandhu"""," ","""AbhidhKoBh""",1," "," ",0," "," "," ",1,3,0,58,0,107
+"""Abhinavacintāmaṇi""","""Cakrapāṇidāsa"""," ","""ACint""",0," "," ",0," "," ","""Jan Houben""",1,5,0,56,0,2605
+"""Acintyastava""","""Nāgārjuna"""," "," ",0," "," ",0," "," ","""Richard Mahoney""",1,0,1,58,0,894
+"""Agastīyaratnaparīkṣā"""," "," ","""AgRPar""",0,"""Louis Finot""","""Paris""",1896,"""Librairie ￉mile Bouillon"""," "," ",1,5,0,54,0,604
+"""Agnipurāṇa"""," "," ","""AgniPur""",0,"""Rajendralal Mitra""","""Calcutta""",1870,"""Asiatic Society of Bengal""","""Bibliotheca Indica  65 1-3""","""Jun Takashima""",1,3,0,42,0,8333
+"""Aitareyabrāhmaṇa"""," "," ","""AitBr""",0,"""Th. Aufrecht""","""Bonn""",1879," "," ","""TITUS; S. Scarlata""",1,1,0,8,0,45709
+"""Aitareyopaniṣad"""," "," ","""AitUp""",0," "," ",0," "," ","""Sansknet; checked by R. Gr￼nendahl""",1,1,1,10,0,843
+"""Alchemy and sacred geography in medieval Deccan.""","""Rosu  Arion"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Allgemeine Geschichte der Philosophie""","""Deussen  Paul""","""Erster Band  erste Abteilung""","""Deussen 1894""",0," ","""Leipzig""",1894,"""Brockhaus"""," "," ",0,5,0," ",1,0
+"""Amarakośa""","""Amara"""," ","""AKośa""",0," "," ",0," "," ","""Avinash Sathaye  Pramod SV Ganesan""",1,3,0,49,0,11960
+"""Amaraughaśāsana""","""Gorakṣanātha"""," ","""AmarŚās""",0,"""Mukund Rām Shāstrī""","""Bombay""",1918,"""Nirnaya-Sagara Press""","""Kashmir Series of Texts & Studies  20""","""Oliver Hellwig""",1,4,1,44,0,1024
+"""Amaruśataka""","""Amaru"""," ","""AmaruŚ""",0,"""Jīvānanda Vidyāsāgara"""," ",0," "," ","""???""",1,3,1,47,0,3221
+"""AMTest"""," "," "," ",0," "," ",0," "," "," ",2," ",0," ",0,0
+"""Amṛtabindūpaniṣat"""," "," "," ",0," "," ",0," "," "," ",1," ",0,10,0,105
+"""An English translation of the Suśrutasaṃhitā"""," ","""Based on original Sanskrit text"""," ",0,"""Kaviraj Kunjalal Bhishagratna  M.R.A.S""","""Varanasi""",1981,"""Chowkhamba Sanskrit Series Office""","""Chowkhamba Sanskrit Studies  Vol. XXX"""," ",0," ",0," ",1,0
+"""An English Translation of the Sushruta Samhita  vol. I"""," ","""Based on original Sanskrit text"""," ",0,"""K.K. Bhishagratna""","""Varanasi""",1981,"""Chowkhamba Sanskrit Series Office"""," "," ",0," ",0," ",1,0
+"""An illustrated Ardhamagadhi dictionary""","""Ratnachandraji Maharaj"""," "," ",0," ","""Ajmer""",1923,"""Shri Sukhadeo sahai Jain Printing Press"""," "," ",0," ",0," ",1,0
+"""An Index to the Names in the Mahābhārata""","""S. S￶rensen"""," ","""S￶rensen""",0," ","""London""",1904,"""Williams and Norgate"""," "," ",0,5,0," ",1,0
+"""An introduction to Buddhism.""","""Peter Harvey""","""Teachings  history and practices"""," ",0," ","""Cambridge""",1993,"""Cambridge University Press"""," "," ",0," ",0," ",1,0
+"""Ānandakanda"""," ","""Edited with translation in Tamil  and introduction in Tamil and Sanskrit""","""ĀK""",0,"""S.V. Radhakrishna Sastri""","""Srirangam""",1952,"""Sri Vilasam Press""","""Tanjore Saraswathi Mahal Series No. 15""","""O. Hellwig""",1,4,0,56,0,84032
+"""Anga Suttani"""," ","""Original text critically edited"""," ",0,"""Muni Nathamal""","""Ladnun""",0,"""Jain Viswa Bhārati"""," "," ",0," ",0," ",1,0
+"""Antagaḍadasāo"""," "," "," ",0,"""Shah Venichand Surchand""","""Bombay""",1920,"""Nirnayasagara Press"""," "," ",2," ",0," ",0,6645
+"""Āpastambaśrautasūtra"""," "," ","""ĀpŚS""",0,"""Garbe  Richard""","""Calcutta""",1882," "," ","""Makoto Fushimi TITUS)""",1,1,0," ",0,861
+"""Āpastambagṛhyasūtra"""," ","""With two commentaries""","""ĀpGṛSū""",0,"""A. Chinnaswami Sastri""","""Benares City""",1928,"""Jai Krishnadas-Haridas Gupta""","""The Kashi-Sanskrit-Series  No. 59"""," ",1,1,1,18,0,3120
+"""Arthaśāstra""","""Kauṭilya""","""A critical Edtion with a Glossary""","""ArthaŚ""",0,"""R.P. Kangle""","""Bombay""",1969,"""University of Bombay"""," ","""Muneo Tokunaga""",1,2,0,53,0,19434
+"""Āryāsaptaśatī""","""Govardhana"""," ","""Āsapt""",0,"""Ramakant Tripathi""","""Varanasi""",1965,"""Chowkhamba Vidyabhawan""","""Vidyabhawan Sanskrit Granthamala 127""","""Jan Brzezinski""",1,4,1,47,0,11798
+"""Atharvaprāyaścittāni"""," "," ","""AVPr""",0,"""Julius von Negelein""","""K￶nigsberg""",1913," "," ","""Arlo Griffiths  Reinhold Gr￼nendahl TITUS)""",1,1,0," ",0,517
+"""Atharvaveda Śaunaka)"""," "," ","""AVŚ""",0,"""Chatia Orlandi""","""Pisa""",1991," "," ","""Vladimir Petr  Petr Vavrousek et al.; OH: corrections with ed. Whitney/Roth""",1,1,0,6,0,52931
+"""Atharva-Veda Saṃhitā""","""William Dwight Whitney"""," ","""Whitney and Lanman 1905""",0," ","""Cambridge""",1905,"""Harvard University"""," "," ",0,5,0," ",1,0
+"""Atharvaveda-Paippalāda  Kāṇḍa Five""","""Lubotsky  Alexander"""," ","""Lubotsky 2002""",0," ","""Cambridge""",2002," ","""Harvard Oriental Series  4"""," ",0,5,0," ",1,0
+"""Atharvavedapariśiṣṭa"""," "," ","""AVPariś""",0,"""George Melville Bolling and Julius von Negelein""","""Leipzig""",1909," "," ","""Yuri Ishii  Arlo Griffiths TITUS)""",1,1,0," ",0,63
+"""Avadānaśataka"""," "," ","""AvŚat""",0,"""J.S. Speyer""","""St. Petersbourg""",1906," "," ","""Klaus Wille""",1,2,0,58,0,19819
+"""Āyaraṅga"""," "," "," ",0," "," ",0," "," ","""Yumi Ousaka  Moriichi Yamazaki""",2," ",0," ",0,0
+"""Āyāracūlā"""," "," "," ",0," "," ",0," "," "," ",2," ",0," ",0,860
+"""Āyurvedadīpikā""","""Cakrapāṇidatta"""," ","""ĀVDīp""",1," "," ",0," "," "," ",1,4,0,33,0,38742
+"""Ayurvedarasāyana""","""Hemādri"""," "," ",1," "," ",0," "," "," ",1,4,0,33,0,4104
+"""Balarāma im Mahābhārata""","""Bigger  Andreas""","""Seine Darstellung im Rahmen des Textes und seiner Entwicklung."""," ",0," ","""Wiesbaden""",1998,"""Harrassowitz Verlag""","""Beitr￤ge zur Indologie  30"""," ",0," ",0," ",1,0
+"""Baudhāyanaśrautasūtra"""," "," ","""BaudhŚS""",0,"""W. Caland""","""Calcutta""",1904," "," ",,,,,,,
+"""Baudhāyanadharmasūtra"""," "," ","""BaudhDhSū""",0,"""E. Hultzsch""","""Leipzig""",1922," ","""Abhandlungen fur die Kunde des Morgenlandes  16""","""Masato Fujii  Mieko Kajihara""",1,1,0,38,0,1681
+"""Baudhāyanagṛhyasūtra"""," "," ","""BaudhGS""",0," "," ",0," "," "," ",1,1,0,18,0,2649
+"""Bhadrabāhucarita"""," "," "," ",0,"""H. Jacobi"""," ",0," "," "," ",1," ",0," ",0,210
+"""Bhāgavatapurāṇa"""," "," ","""BhāgPur""",0," "," ",0," "," ","""Ulrich Stiehl""",1,4,0,42,0,77576
+"""Bhairavastava""","""Abhinavagupta"""," "," ",0," "," ",0," "," ","""Oliver Hellwig""",1,4,1,44,0,204
+"""Bhallaṭaśataka""","""Bhallaṭa"""," ","""BhallŚ""",0," "," ",0," "," ","""Somadeva Vasudeva""",1,3,1,47,0,2809
+"""Bhāradvājagṛhyasūtra"""," "," ","""BhārGS""",0," "," ",0," "," "," ",1,1,0,18,0,504
+"""Bhāratamañjarī""","""Kṣemendra"""," ","""BhāMañj""",0,"""Mahāmahopādhyāya Pandit Śivadatta""","""Bombay""",1898,"""Tukārām Jāvaji""","""Kāvyamālā  64""","""Members of the Sansknet project; source: GRETIL""",1,4,0,40,0,85577
+"""Bhāvaprakāśa""","""Bhāvamiśra"""," ","""BhPr""",0," ","""Benares City""",1947,"""Jaya Krishna Das Hari Das Gupta""","""Haridas Sanskrit Series  39""","""oh""",1,5,0,33,0,13062
+"""Bhramarāṣṭaka"""," "," "," ",0," "," ",0," "," ","""O. Hellwig""",1," ",0,47,0,216
+"""Bījanighaṇṭu"""," "," ","""BījaN""",0," "," ",0," "," "," ",1," ",0,49,0,770
+"""Bodhicaryāvatāra""","""Śāntideva"""," ","""BoCA""",0," "," ",0," "," ","""Richard Mahoney""",1,3,1,58,0,13712
+"""Brahmabindūpaniṣat"""," "," "," ",0," "," ",0," "," ","""O. Hellwig""",1," ",1,10,0,320
+"""British Eighteenth-Century Chemical Terms""","""Eklund  Jon"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Buddhacarita""","""Aśvaghoṣa"""," ","""BCar""",0,"""E.H. Johnston""","""Calcutta""",1935,"""Baptist Mission Press"""," ","""The Sanskrit Buddhist Input Project""",1,2,1,58,0,19020
+"""Buddhist Hybrid Sanskrit""","""Edgerton"""," "," ",0," "," ",0," "," "," ",0,5,0," ",1,0
+"""Bṛhadāraṇyakopaniṣad"""," "," ","""BĀU""",0," "," ",0," "," ","""Sansknet project; checked by R. Gr￼nendahl against the ed. by V.P. Limaye and R.D. Vadekar 1958)""",1,1,1,10,0,18824
+"""Bṛhatkathāślokasaṃgraha""","""Buddhasvāmin"""," ","""BKŚS""",0," "," ",0," "," ","""Andreas Bigger GRETIL)""",1,3,1,48,0,62095
+"""Cakra ?) on Suśr"""," "," "," ",1," "," ",0," "," "," ",1," ",0,33,0,165
+"""Carakasaṃhitā"""," "," ","""Ca""",0,"""J. Trikamji""","""Varanasi""",1994,"""Chaukhambha Sanskrit Sansthan"""," "," ",1,2,0,33,0,94635
+"""Carakatattvapradīpikā""","""Śivadāsasena"""," ","""CaTPra""",1," "," ",0," "," "," ",1,5,0,33,0,121
+"""Caurapañcaśikā""","""Bilhaṇa"""," ","""CauP""",0,"""S.N. Tadpatrikar""","""Poona""",1966,"""Oriental Book Agency""","""Poona Oriental Series  86""","""Somadeva Vasudeva""",1,5,1,47,0,1183
+"""Chāndogyopaniṣad"""," "," ","""ChāUp""",0," "," ",0," "," ","""Sansknet project; checked by R. Gr￼nendahl""",1,1,1,10,0,15571
+"""Classical Hindu mythology"""," "," "," ",0,"""Dimmitt  C.; van Buitenen  J.A.B."""," ",0," "," "," ",0," ",0," ",1,0
+"""Comm. on the Kāvyālaṃkāravṛtti"""," "," "," ",1," "," ",0," "," "," ",1," ",0," ",0,393
+"""Commentary on Amaraughaśāsana"""," "," ","""AmarŚās Komm.)""",1," "," ",0," "," "," ",1,4,0,44,0,673
+"""Commentary on the Kādambarīsvīkaraṇasūtramañjarī"""," "," ","""KādSvīSComm""",1," "," ",0," "," "," ",1,5,0,55,0,1899
+"""Cuire le monde""","""Charles Malamoud"""," "," ",0," "," ",1975," ","""Puruṣārtha 1  91ff."""," ",0," ",0," ",1,0
+"""Daśakumāracarita""","""Daṇḍin"""," ","""DKCar""",0," "," ",0," "," ","""Members of the Sansknet project; version found on GRETIL; typos corrected with a Kane edition""",1,3,1,48,0,35081
+"""D￤cher  Decken und Gew￶lbe indischer Kultst￤tten und Nutzbauten.""","""Fischer  Klaus"""," ","""Fischer 1974)""",0," ","""Wiesbaden""",1974,"""Franz Steiner Verlag GmbH"""," "," ",0," ",0," ",1,0
+"""Darśan""","""Diana L. Eck""","""Seeing the divine image in India"""," ",0," ","""Chambersburg""",1985,"""Anima Publications"""," "," ",0," ",0," ",1,0
+"""Das Śrautasūtra des Āpastamba""","""Caland  W. transl.)"""," ","""Caland 1928 [ĀpŚS tr.]""",0," ","""Amsterdam""",1928," "," "," ",0,5,0," ",1,0
+"""Das altindische Buch vom Welt- und Staatsleben""","""Meyer  J.J."""," ","""Meyer 1926 [Arthaśāstra]""",0," "," ",1926," "," "," ",0,5,0," ",1,0
+"""Das Jaiminīya-Brāhmaṇa in Auswahl""","""Caland  W."""," ","""Caland 1919 [Jaiminīyabr.]""",0," ","""Amsterdam""",1919," "," "," ",0,5,0," ",1,0
+"""Das Rāmāyaṇa""","""Jacobi  Hermann""","""Geschichte und Inhalt nebst Concordanz der gedruckten Recensionen."""," ",0," ","""Darmstadt""",1970,"""Wissenschaftliche Buchgesellschaft"""," "," ",0," ",0," ",1,0
+"""Der Jainismus""","""von Glasenapp  Helmuth""","""Eine indische Erl￶sungsreligion."""," ",0," ","""Berlin""",1925,"""Alf H￤ger Verlag"""," "," ",0," ",0," ",1,0
+"""Der Mondschein der Sāṃkhya-Wahrheit in deutscher ￜbersetzung""","""Richard Garbe""","""Nebst einer Einleitung ￼ber das Alter und die Herkunft der Sāṃkhya-Philosophie"""," ",0," ","""M￼nchen""",1891,"""Verlag der k￶niglichen Akademie"""," "," ",0," ",0," ",1,0
+"""Der Rigveda in Auswahl. Erster Teil: Glossar""","""Geldner"""," ","""Geldner [RV Auswahl]""",0," "," ",1907," "," "," ",0,5,0," ",1,0
+"""Der Rig-Veda. Aus dem Sanskrit ins Deutsche ￼bersetzt""","""Geldner  K. F."""," "," ",0," "," ",1951," ","""Harvard Oriental Series"""," ",0,5,0," ",1,0
+"""Devīkālottarāgama"""," "," ","""DevīĀgama""",0,"""Vrajavallabha Dwivedi""","""Varanasi""",2000,"""Shaiva Bharati Shodha Pratishthanam""","""Research Publication Series  21""","""Dominic Goodall""",1,0,1," ",0,1258
+"""Devīmāhātmya"""," "," "," ",0," "," ",0," "," "," ",1,5,0," ",0,24
+"""Dhanurveda""","""Sadāśiva"""," ","""DhanV""",0,"""Īśvaracandra Śāstri""","""Calcutta""",0,"""Śrīphaṇibhūṣaṇ Hāzrā Guptpreś"""," ","""oh""",1,5,1,35,0,3139
+"""Dhanvantarinighaṇṭu"""," "," ","""DhanvNigh""",0," "," ",0," "," "," ",1,4,0,49,0,6939
+"""Die altindische Stadt""","""Schlingloff  Dieter""","""Eine vergleichende Untersuchung."""," ",0," ","""Wiesbaden""",1969,"""Verlag der Akademie der Wissenschaften und der Literatur in Mainz""","""Abhandlungen der Geistes- und Sozialwissenschaftlichen Klasse  Nr. 5"""," ",0," ",0," ",1,0
+"""Die Feldfr￼chte Indiens in ihrer geographischen Verbreitung""","""Th. H. Engelbrecht"""," ","""Feldfr￼chte""",0," ","""Hamburg""",1914,"""L. Freiderichsen & Co.""","""Abhandlungen des Hamburgischen Kolonialinstituts  XIX"""," ",0," ",0," ",1,0
+"""Die Lehre der Jainas""","""Walther Schubring""","""Nach den alten Quellen dargestellt."""," ",0," ","""Berlin/Leipzig""",1935,"""Walter de Gruyter & Co.""","""Grundriss der indo-arischen Philologie und Altertumskunde  III  7"""," ",0," ",0," ",0,0
+"""Die philosophisch-theologischen Lehren des Pāśupata-Systems""","""Schultz  Friedrich August"""," "," ",0," ","""Walldorf""",1958,"""Verlag f￼r Orientkunde Dr. H. Vorndran"""," "," ",0," ",0," ",1,0
+"""Die Religionen Indiens""","""Gonda  Jan""","""2 Der j￼ngere Hinduismus"""," ",0," ","""Stuttgart""",1963,"""W. Kohlhammer Verlag"""," "," ",0," ",0," ",1,0
+"""Die Sāṃkhya-Philosophie""","""Richard Garbe""","""Eine Darstellung des indischen Rationalismus.""","""Garbe 1917)""",0," ","""Leipzig""",1917,"""H. Haessel Verlag"""," "," ",0," ",0," ",1,0
+"""Divyāvadāna"""," "," ","""Divyāv""",0,"""L. Vaidya""","""Mithila""",1959," ","""Buddhist Sanskrit Texts  20""","""Kensuke Okamoto""",1,3,0,58,0,67405
+"""Early Indian secular architecture""","""K. Krishna Murthy"""," "," ",0," ","""Delhi""",1987,"""Sundeep Prakashan"""," "," ",0," ",0," ",1,0
+"""Ein buddhistisches Yogalehrbuch""","""Schlingloff  D."""," ","""Schlingloff 1964 [Yoga]""",0," "," ",1964," "," "," ",0,5,0," ",1,0
+"""Ekākṣarakoṣa""","""Puruṣottamadeva""","""In: Dictionaries of Tantra Śāstra or The Tantrābhidhāna. - 30-37"""," ",0,"""Ram Kumar Rai""","""Varanasi""",1978,"""Prachya Prakashan"""," ","""Oliver Hellwig""",1," ",0,49,0,0
+"""Encyclopaedia of Indian Temple Architecture. North India. Foundations of North Indian Style c. 250 B.C. - A.D. 1100""","""Meister  M.W."""," ","""Meister 1988 [Temple Architecture]""",0," "," ",0," "," "," ",0,5,0," ",1,0
+"""Essays in early Indian architecture.""","""Coomaraswamy  Ananda K.""","""Edited and with an introduction by Michael W. Meister""","""Coomaraswamy 1992)""",0,"""Michael W. Meister""","""Delhi""",1992,"""Oxford University Press"""," "," ",0," ",0," ",1,0
+"""Etymologisches W￶rterbuch des Altindoarischen""","""Mayrhofer  Manfred"""," "," ",0," ","""Heidelberg""",1992,"""Carl Winter Universit￤tsverlag"""," "," ",0,5,0," ",1,0
+"""Exploration of underground water springs according to the ancient Hindus""","""E.G.K. Rao"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Gūḍhārthadīpikā""","""Kāśirāma"""," ","""ŚGDīp""",1," "," ",0," "," "," ",1,5,0,33,0,4822
+"""Gaṇakārikā""","""Haradatta""","""With four appendices including the Kāravaṇamāhātmya""","""GaṇaKār""",0,"""Chimanlai D. Dalai""","""Baroda""",1966,"""Oriental Institute"""," ","""Oliver Hellwig""",1,3,0,44,0,95
+"""Garbhopaniṣat"""," "," ","""GarbhOp""",0," "," ",0," "," ","""O. Hellwig""",1," ",1,10,0,559
+"""Garuḍapurāṇa"""," "," ","""GarPur""",0," "," ",0,"""Venkatesvara Steam Press"""," ","""Members of the SANSKNET-project""",1,4,0,42,0,75648
+"""Gautamadharmasūtra"""," "," ","""GautDhS""",0," "," ",1966," ","""Ānandāśrama Sanskrit Series  61""","""Nobuyuki Watase""",1,1,1,38,0,5615
+"""Gheraṇḍasaṃhitā"""," "," ","""GherS""",0," ","""Internet; ftp-Server)""",0," "," ","""Peter Thomi""",1,5,1,29,0,5484
+"""Gītagovinda""","""Jayadeva"""," ","""GītGov""",0," "," ",0," "," "," ",1,4,1,47,0,6020
+"""Gmelins Handbuch der anorganischen Chemie"""," ","""Kupfer. Teil B - Lieferung 1. Verbindungen bis Kupfertellurate.""","""Gmelin Cu  B  1)""",0," ","""Weinheim/Bergstrasse""",1958,"""Verlag Chemie"""," "," ",0," ",0," ",1,0
+"""Gmelins Handbuch der anorganischen Chemie"""," ","""Quecksilber. Lieferung 1.""","""Gmelin Hg  1)""",0," ","""Weinheim/Bergstrasse""",1960,"""Verlag Chemie"""," "," ",0," ",0," ",1,0
+"""Gmelins Handbuch der anorganischen Chemie"""," ","""Arsen. System-Nummer 17.""","""Gmelin As)""",0," ","""Weinheim/Bergstrasse""",1952,"""Verlag Chemie"""," "," ",0," ",0," ",1,0
+"""G￸ḍhārthaprakāśaka""","""Raṅganātha"""," "," ",1,"""Fitzedward Hall""","""Amsterdam""",1974,"""Philo Press"""," "," ",1," ",0," ",0,0
+"""Gobhilagṛhyasūtra"""," "," ","""GobhGṛS""",0,"""Friedrich Knauer""","""Dorpat""",1884,"""C. Matthiesen"""," ","""Oliver Hellwig""",1,1,0,18,0,1317
+"""Gokarṇapurāṇasāraḥ"""," "," ","""GokPurS""",0," "," ",0," "," ","""Kerstin Schier""",1,5,1,42,0,14689
+"""Gopathabrāhmaṇa NEW"""," "," ","""GB""",0,"""Dieuke Gastra""","""Leiden""",1919," "," ","""Arlo Griffiths""",1,1,0," ",0,7469
+"""Gorakṣaśataka""","""Gorakhnath"""," ","""GorŚ""",0," "," ",0," "," ","""Oliver Hellwig""",1,5,1,29,0,1471
+"""Gorakhnath and the Kanphata Yogins""","""Briggs"""," "," ",0," "," ",1938," "," "," ",0," ",0," ",1,0
+"""Ṛgveda"""," "," ","""ṚV""",0,"""Theodor Aufrecht""","""Bonn""",1877," "," ","""Barend A. Van Nooten and Gary B. Holland; revised by D. Eichler""",1,1,1,3,0,170860
+"""Ṛgvedakhilāni"""," "," ","""ṚVKhil""",0,"""Scheftelowitz"""," ",1906," "," ","""M. K￼mmel  Th. Zehnder""",1,1,0," ",0,1317
+"""Ṛgvedavedāṅgajyotiṣa""","""Lagadha""","""In: Vedāṅgajyotiṣa in its Ṛk and Yajur recensions. - 23-26""","""ṚVJ""",0,"""K. V. Sarma""","""New Delhi""",0,"""Indian National Science Academy"""," "," ",1,1,0,24,0,185
+"""Gṛhastharatnākara""","""Caṇḍeśvara Ṭhakkura""","""A treatise on Smṛti""","""GṛRĀ""",0,"""Kamalakṛṣṇa Smṛtitīrtha""","""Calcutta""",1928,"""Asiatic Society of Bengal"""," ","""O. Hellwig""",1,4,0,37,0,1539
+"""Haṭhayogapradīpikā""","""Svātmarāma"""," ","""HYP""",0," "," ",0," "," ","""???""",1,5,1,29,0,5659
+"""Haṃsadūta""","""Rūpa Goswāmin"""," "," ",0," "," ",0," "," ","""GRETIL""",1,5,0,47,0,2622
+"""Haṃsasaṃdeśa""","""Vedānta Deśika"""," "," ",0,"""Sastriar""","""Madras""",1902," "," ","""Oliver Fallon""",1,4,0,47,0,620
+"""Harṣacarita""","""Bāṇa"""," "," ",0," "," ",0," "," ","""Sansknet""",1,3,0,48,0,41
+"""Hārāṇacandara on Suśr"""," "," "," ",1," "," ",0," "," "," ",1,5,0,33,0,162
+"""Haribhaktivilāsa""","""Gopālabhaṭṭa"""," ","""HBhVil""",0,"""Haridasa Sastri"""," ",0," "," ","""Jan Brzezinski""",1,5,0,43,0,28839
+"""Hindu Tantrism""","""Sanjukta Gupta; Dirk Jan Hoens; Teun Goudriaan"""," "," ",0," ","""Leiden  K￶ln""",1979,"""E.J. Brill""","""Handbuch der Orientalistik  2. Abt.  4. Band  2. Abschnitt"""," ",0," ",0," ",1,0
+"""Hiraṇyakeśigṛhyasūtra"""," "," "," ",0," "," ",0," "," "," ",1,1,0,18,0,1154
+"""History of chemistry in ancient and medieval India""","""Ray  Praphulla Chandra""","""Incorporating the history of Hindu chemistry."""," ",0," ","""Calcutta""",1956,"""Indian Chemical Society"""," "," ",0," ",0," ",1,0
+"""Hitopadeśa""","""Nārāyaṇa"""," ","""Hitop""",0," "," ",0," "," ","""Jan Brzezinski  Ulrich Stiehl""",1,4,1,48,0,24961
+"""Hymnes de Abhinavagupta""","""Silburn  Lilian"""," "," ",0," ","""Paris""",1970,"""Institut de civilisation indienne"""," "," ",0," ",0," ",1,0
+"""Hymns of the Atharva-Veda""","""Bloomfield  Maurice"""," ","""Bloomfield 1897  Hymns AV)""",0," "," ",1897," "," "," ",0,5,0," ",1,0
+"""Ṭikanikayātrā""","""Varāhamihira"""," "," ",0,"""Vasant Kumar R. Pandit"""," ",0," "," ","""Mizue Sugita GRETIL)""",1,3,1,24,0,1626
+"""Index of Viṃśatikā and Triṃśatikā""","""Bareau"""," ","""Bareau 1953 [Index]""",0," "," ",1953," "," "," ",0,5,0," ",0,0
+"""Indian Epigraphical Glossary""","""Sircar  D.C."""," ","""Sircar 1966 [Epigraphy]""",0," "," ",1966," "," "," ",0,5,0," ",0,0
+"""Indian lexicography""","""Vogel  Claus"""," "," ",0," "," ",0," ","""A history of Indian literature  5 4"""," ",0," ",0," ",1,0
+"""Indu ad AHS)""","""Indu"""," "," ",1," "," ",0," "," "," ",1,4,0,33,0,18
+"""Jaiminigṛhyasūtra"""," ","""Belonging to the Sāmaveda.""","""JaimGṛS""",0,"""W. Caland""","""Lahore""",1922,"""Motilal Banarsidass Publisher Ltd.""","""Punjab Sanskrit Series  2""","""Thomas Zehnder""",1,1,1,18,0,6780
+"""Jaiminīyabrāhmaṇa"""," "," ","""JB""",0,"""Raghu Vira  Lokesh Candra"""," ",0," "," "," ",1,1,0,8,0,2531
+"""Janmamaraṇavicāra""","""Vāmadeva"""," ","""JanMVic""",0,"""M.R. Shāstri""","""Bombay""",1918,"""Nirnaya Sagar Press""","""Kashmir Series of Texts & Studies  19""","""Oliver Hellwig""",1,5,1,44,0,3251
+"""Kūrmapurāṇa"""," "," ","""KūPur""",0," "," ",0," "," ","""Sansknet""",1,3,1,42,0,81775
+"""Kāśikāvṛtti""","""Jayāditya  Vāmana"""," "," ",1,"""Aryendra Sharma""","""Hyderabad""",1969,"""Osmania University"""," ","""Mari Minamino""",1,3,0,20,0,2859
+"""Kāṭhakagṛhyasūtra"""," ","""With extracts from three commentaries  an appendix and indexes""","""KāṭhGṛSū""",0,"""Wilhelm Caland""","""Lahore""",1925," "," "," ",1,1,0,18,0,177
+"""Kaṭhopaniṣad"""," "," ","""KaṭhUp""",0,"""Olivelle  Patrick""","""New York""",1998," "," ","""Vienna University Student Team  2016""",1,1,1,10,0,2120
+"""Kādambarīsvīkaraṇasūtramañjarī""","""Purūravas"""," ","""KādSvīS""",0," "," ",0," "," ","""Oliver Hellwig""",1,4,1,55,0,265
+"""Kaiyadevanighaṇṭu"""," "," ","""KaiNigh""",0," "," ",0," "," "," ",1,5,0,49,0,1827
+"""Kālikāpurāṇa"""," "," ","""KālPur""",0,"""Biśwanārāyan Śāstri  M.A.""","""Varanasi""",1972,"""The Chowkhamba Sanskrit Series Office""","""Jaikrishnadas-Krishnadas Prachyavidya Granthamala  5""","""O. Hellwig""",1,4,0,42,0,4091
+"""Kāmakuñjalatā""","""P. Ḍhuṇḍhirājśāstrā"""," "," ",0," ","""Vārāṇasī""",1967,"""The Chowkhamba Sanskrit Series Office"""," ","""Oliver Hellwig""",0," ",0,55,1,0
+"""Kāmasūtra""","""Vātsyāyana""","""With commentary of Yasodhara""","""KāSū""",0," "," ",1900,"""Nirnayasagarayantralaya"""," ","""Mizue Sugita""",1,3,1,55,0,18841
+"""Kashmir Shaivism""","""Jagdish Chandra Chatterji"""," "," ",0," ","""Srinagar""",1962,"""Research & Publicatoin Department"""," "," ",0," ",0," ",1,0
+"""Kathāsaritsāgara""","""Somadeva"""," ","""KSS""",0,"""Durgaprasad and Parab""","""Bombay""",1955,"""Nirnaya Sagara Press"""," ","""James Mallinson  Elena Artesani  Rabi Acharya  Nirajan Kafle  and Tyler Neill""",1,4,0,48,0,66536
+"""Kātyāyanaśrautasūtra"""," "," ","""KātyŚS""",0,"""Weber  Albrecht"""," ",0," "," ","""Makoto Fushimi TITUS)""",1,1,0," ",0,106
+"""Kātyāyanasmṛti"""," "," ","""KātySmṛ""",0,"""P.V.Kane""","""Bombay""",1933,"""Hindu Law Quarterly"""," ","""Akihiko Akamatsu GRETIL)""",1,3,1,37,0,14268
+"""Kauśikasūtra"""," "," "," ",0,"""Bloomfield"""," ",1889," "," ","""A. Griffiths GRETIL)""",1,1,0,18,0,5209
+"""Kauśikasūtradārilabhāṣya"""," "," ","""KDār""",0," "," ",0," "," "," ",1," ",0," ",0,440
+"""Kauṣītakyupaniṣad"""," "," ","""KauṣUp""",0,"""Mislav Jezic""","""Zagreb""",1999," "," ","""Mislav Jezic  TITUS""",1,1,0,10,0,747
+"""Kaulāvalīnirṇaya"""," "," "," ",0," "," ",0," "," "," ",1,0,0,44,0,0
+"""Kāvyādarśa""","""Daṇḍin"""," ","""KāvĀ""",0,"""S.K. Belvalkar""","""Poona""",1924,"""The Oriental Book-supplying Agency"""," ","""R. Gr￼nendahl Ch. 1; 2.1-144); 2.145ff. by S. Vasudeva ed. Shastri)""",1,3,0,50,0,4446
+"""Kāvyālaṃkāra""","""Bhāmaha"""," ","""KāvyAl""",0,"""B.N. Sharma et al.""","""Benares""",1928,"""The Chowkhamba Sanskrit Series Office""","""The Kashi Sanskrit Series  61""","""oh""",1,3,1,50,0,5614
+"""Kāvyālaṃkāravṛtti""","""Vāmana""","""Vāmanas Lehrbuch der Poetik"""," ",0,"""Carl Capeller""","""Jena""",1875,"""Verlag von Hermann Dufft"""," ","""O. Hellwig""",1,3,0,50,0,71
+"""Kāvyasaṃgraha"""," ","""A Sanskrit anthology""","""KāSaṃgr""",0,"""John Haeberlin""","""Calcutta""",1847,"""W. Thacker and Co."""," "," ",0," ",0,50,0,0
+"""Khādiragṛhyasūtra"""," ","""With the commentary of Rudraskanda""","""KhGṛS""",0,"""A. Mahadeva Sastri  B.A.""","""Mysore""",1913,"""Government Branch Press""","""Bibliotheca Sanscritica No. 41"""," ",1,1,0,18,0,1999
+"""Khādiragṛhyasūtrarudraskandavyākhyā""","""Rudraskanda"""," "," ",1," "," ",0," ","""Bibliotheca Sanscritica No. 41"""," ",1," ",0," ",0,172
+"""King  Governance and Law in Ancient India""","""Olivelle  Patrick"""," ","""Olivelle 2013 [King]""",0," "," ",2013," "," "," ",0,5,0," ",1,0
+"""Kirātārjunīya""","""Bhāravi"""," ","""Kir""",0,"""""Text follows that commented on by Mallinaatha"""""," ",0," "," ","""Harunaga Isaacson; GRETIL""",1,3,1,47,0,18410
+"""Kokilasaṃdeśa""","""Uddaṇḍa"""," ","""KokSam""",0,"""Shankar Rajaraman  Venetia Kotamraju""","""Bangalore""",2012,"""Rasāla"""," ","""Rajaraman  Venetia Kotamraju""",1,5,1,47,0,4640
+"""Kranich und Reiher im Sanskrit""","""Paul Thiem"""," "," ",0," "," ",1975," "," "," ",0,0,0," ",1,0
+"""Kumārasaṃbhava""","""Kālidāsa"""," ","""KumSaṃ""",0," "," ",0," "," ","""Utz Podzeit""",1,3,1,47,0,10237
+,,,,,,,,,,,,,,,,
+"""Kurzgefa￟tes W￶rterbuch ...""","""M. Mayrhofer"""," ","""Mayrhofer""",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Kṛṣṇāmṛtamahārṇava""","""Mādhva"""," ","""KAM""",0,"""Govindacarya""","""Udupi""",1974,"""Akhila Bharata Madhva Maha Mandala"""," ","""Thomas K. Gugler""",1,4,1,43,0,3300
+"""Kṛṣiparāśara""","""Parāśara"""," ","""KṛṣiPar""",0,"""Girija Prasanna Majumdar  Sures Chandra Banerji""","""Calcutta""",1960,"""The Asiatic Society""","""Bibliotheca Indica  285""","""Oliver Hellwig""",1,4,1,33,0,3860
+"""La doctrine du sacrifice dans les Brahmanas""","""L￩vi  Sylvain"""," ","""L￩vi 1898)""",0," ","""Paris""",1961,"""Presses Universitaires de France"""," "," ",0," ",0," ",1,0
+"""La Kāśikā-vṛtti"""," ","""adhyāya I  pāda I"""," ",0,"""Yutaka Ojihara  Louis Renou""","""Paris""",1960,,,,,,,,,
+"""Laṅkāvatārasūtra"""," "," ","""LAS""",0,"""P.L. Vaidya""","""Darbhanga""",1963,"""The Mithila Institute"""," ","""O. Hellwig""",1,3,0,58,0,13253
+"""Lalitavistara"""," "," ","""LalVis""",0,"""Vaidya"""," ",1958," "," "," ",1,2,0,58,0,25222
+"""Le discours des rem￨des au pays des ￩pices""","""Zimmermann  Francis"""," "," ",0," ","""Paris""",1989,"""￉ditions Payot"""," "," ",0," ",0," ",1,0
+"""Les enseignements architecturaux de l\""Ajitāgama et du Rauravāgama"" ""Dagens"," Bruno"" ""Etudes sur les āgama śivaites"," I"" ""Dagens 1977)"" 0  ""Pondichery"" 1977 ""Institut francais d\""Indologie"""," "," ",0," ",0," ",1,0,,,,,,
+"""Les lapidaires indiens""","""Finot  Louis"""," "," ",0," ","""Paris""",1896,"""Librairie ￉mile Bouillon"""," "," ",0," ",0," ",1,0
+"""Les Strophes de Sāṃkhya Sāṃkhyakārikā)"""," ","""Avec le commentaire de Gauḍapāda"""," ",0,"""Anne-Marie Esnoul""","""Paris""",1964,"""Les Belles Lettres"""," "," ",0," ",0," ",1,0
+"""Liṅgapurāṇa"""," "," ","""LiPur""",0," "," ",0," "," ","""Members of the Sansknet Project""",1,3,1,42,0,127418
+"""Mūlamadhyamakārikāḥ""","""Nāgārjuna"""," ","""MMadhKār""",0," "," ",0," "," ","""Douglas Bachman; R. Mahoney""",1,2,0,58,0,2827
+"""Maṇimāhātmya"""," "," ","""MaṇiMāh""",0," "," "," "," "," "," ",1,4,0,54,0,913
+"""Madanapālanighaṇṭu""","""Vinoda"""," ","""MPālNigh""",0," "," ",1897," "," "," ",1,4,0,49,0,6183
+"""Mahābhārata"""," "," ","""MBh""",0,"""Bhandarkar Oriental Research Institute""","""Poona""",1999," "," ","""Muneo Tokunaga et al.; revision: J. Smith  Cambridge  et al.""",1,2,0,40,0,1145816
+"""Mahācīnatantra"""," "," "," ",0,"""M. Meisig"""," ",0," "," "," ",1,0,0,44,0,546
+"""Maitrāyaṇīsaṃhitā"""," "," ","""MS""",0,"""Leopold von Schroeder""","""Leipzig""",1881," "," ","""Makoto Fushimi  2015""",1,1,0," ",0,5664
+"""Mānavagṛhyasūtra"""," ","""Nebst Commentar in kurzer Fassung""","""MānGS""",0,"""F. Knauer""","""St. Petersburg""",1897," "," "," ",1,1,0,18,0,82
+,,,,,,,,,,,,,,,,
+"""Manusmṛti""","""Manu"""," ","""ManuS""",0,"""J. L. Shastri"""," ",1983," "," ","""M. Yano; Y. Ikari""",1,2,1,37,0,37625
+"""Matsyapurāṇa"""," "," ","""MPur""",0," ","""Calcutta""",1954,"""Caukhambā vidyābhavan"""," ","""oh""",1,3,0,42,0,122639
+"""Mātṛkābhedatantra"""," "," ","""MBhT""",0," "," ",0," "," ","""Oliver Hellwig""",1,4,1,44,0,7842
+"""Mayamata"""," ","""An Indian treatise on housing architecture and iconography.""","""MayaM""",0,"""Bruno Dagens transl.)""","""New Delhi""",1985,"""Sitaram Bhartia Institute of Scientific Research"""," "," ",0," ",0,36,1,0
+"""Meghadūta""","""Kālidāsa"""," ","""Megh""",0,"""M.R. Kale"""," ",0," "," "," ",1,3,1,47,0,3392
+"""Mindat"""," "," "," ",0," ","""Published on internet http://www.mindat.org""",2004," "," "," ",0," ",0," ",1,0
+"""Minerals and gems in Indian alchemy""","""Ray  Mira"""," "," ",0," "," ",1991," "," "," ",0," ",0," ",1,0
+"""Miscellanea de operibus āyurvedicis""","""Das  Rahul Peter"""," "," ",0," ","""Reinbek""",1990,"""Dr. Inge Wezler Verlag f￼r Orientalistische Fachpublikationen"""," "," ",0," ",0," ",1,0
+"""Miscellanea de operibus āyurvedicis II)""","""Das  Rahul Peter"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Muṇḍakopaniṣad"""," "," ","""MuṇḍUp""",0,"""Limaye  Vadekar""","""Poona""",1958," "," ","""Paolo Magnone  TITUS""",1,1,1,10,0,1300
+"""Mugdhāvabodhinī""","""Caturbhuja Miśra"""," ","""MuA""",1," "," ",0," "," "," ",1,5,0,56,0,30128
+"""Mukundamālā""","""Kulaśekhara"""," ","""MukMā""",0,"""Pdt. Durgaprasad and Kasinath Pandurang Parab"""," ",1886," ","""Kāvyamālā  vol. 1  1886 3rd ed.  1929 pp. 11-16""","""Dhaval Patel""",1,4,1,47,0,908
+"""Mṛgendraṭīkā""","""Nārāyaṇakaṇṭha"""," ","""MṛgṬīkā""",1," "," ",0," "," "," ",1,4,0,44,0,22075
+"""Mṛgendratantra"""," "," ","""MṛgT""",0,"""Madhusudan Kaul Shastri""","""Bombay""",1930,"""Nirnaya Sagar Press"""," ","""Oliver Hellwig""",1,4,0,44,0,3308
+"""Nāṭyaśāstra""","""Bharata"""," ","""NāṭŚ""",0," "," ",0," "," ","""Padmakar Dadegaonkar [corrected by OH using the edition of Madhusudan Shastri]""",1,3,0,51,0,7844
+"""Nāṭyaśāstravivṛti""","""Abhinavagupta"""," ","""NŚVi""",1,"""M. Ramakrishna Kavi""","""Baroda""",1956,"""Oriental Institute""",,,,,,,,
+"""Nāḍīparīkṣā""","""Rāvaṇa"""," "," ",0," "," ",0," "," ","""O. Hellwig""",1,5,1,33,0,1553
+"""Nāḍīvijñāna""","""Kaṇāda"""," "," ",0," "," ",0," "," ","""O. Hellwig""",1,5,1,33,0,0
+"""Nachtrag zum W￶rterbuch des altindischen Rituals""","""Mylius  Klaus"""," ","""Mylius 2000 [Nachtrag]""",0," "," ",2000," "," "," ",0,5,0," ",1,0
+"""Nachtragsw￶rterbuch des Sanskrit""","""Schmidt  R."""," ","""NWS Schmidt)""",0," "," ",1928," "," "," ",0,5,0," ",1,0
+"""Nādabindūpaniṣat"""," "," "," ",0," "," ",0," "," "," ",1," ",0,10,0,272
+"""Nāradasmṛti"""," "," ","""NāSmṛ""",0,"""Richard Lariviere""","""Philadelphia""",1989," "," ","""Yasuke Ikari""",1,3,1,37,0,13278
+"""Narasiṃhapurāṇa"""," "," ","""NarasiṃPur""",0,"""Siddheswar Jena""","""Delhi""",1987,"""Nag Publications"""," ","""Peter Schreiner  GRETIL""",1,3,0,42,0,503
+"""Narmamālā""","""Kṣemendra"""," ","""KṣNarm""",0,"""Fabrizia Baldissera""","""Rome""",1999," ","""Rivista degli studi orientali  Supplementi""","""Martin Straube""",1,4,1,48,0,5579
+"""Nibandhasaṃgraha""","""Dalhaṇa"""," ","""NiSaṃ""",1," ","""Varanasi""",1980,"""Chaukhambha Orientalia"""," "," ",1,4,0,33,0,7335
+"""Nighaṇṭuśeṣa""","""Hemacandra"""," ","""NighŚeṣa""",0,"""Paṇḍit Durgāprasād  Kāśīnāth Pāṇḍurang Parab  Paṇḍit Śivadatta""","""Bombay""",1896,"""Nirṇaya-Sāgara Press"""," ","""oh""",1,4,0,49,0,2003
+"""Nirukta""","""Yāska"""," "," ",0,"""Lakshman Sarup"""," ",0," "," ","""Munoe Tokunaga and partly M. Kobayashi)""",1,1,0,22,0,807
+"""Nyāyabhāṣya""","""Vātsyāyana"""," ","""NyāBh""",1,"""Taranatha Nyaya-Tarkatirtha""","""Calcutta""",1936,"""Metropolitan Printing & Publ.""","""Calcutta Sanskrit Series  18 & 19""","""Indology Student Team  University of Tokyo www1.linkclub.or.jp/~bussei)""",1,3,0,26,0,952
+"""Nyāyabindu""","""Dharmakīrti"""," ","""NyāBi""",0,"""D. Malvania""","""Patna""",1971," "," ","""Motoi Ono""",1,3,0,58,0,159
+"""Nyāyacandrikāpaṇjikā""","""Gayadāsācārya"""," "," ",1," ","""Varanasi""",1980,"""Chaukhambha Orientalia"""," "," ",1,4,0,33,0,0
+"""Nyāyasūtra""","""Gautama"""," ","""NyāSū""",0," "," ",0," "," ","""Members of the Sansknet Project""",1,2,1,26,0,3335
+"""Nyāyasūtra""","""Gautama""","""With Vātsyāyana\""s Nyāyabhāṣya""  0 ""Taranatha Nyaya-Tarkatirtha"" ""Calcutta"" 1936 ""Metropolitan Printing & Publ."" ""Calcutta Sanskrit Series"," 18 & 19"" ""Indology Student Team",,,,,,,,,,,,,
+"""OH meanings""","""Oliver Hellwig"""," ","""OH meanings""",0," "," ",0," "," "," ",0,5,0," ",0,0
+"""On the Dravyaguṇasaṃgraha of Cakrapāṇidatta""","""Sharma  P.V."""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""On the identity of arka  an Āyurvedic class of medicines""","""Kumar  Damodaran Suresh"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Origin and tradition of alchemy""","""Rāy  Priyadaranjan"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Pāśupatasūtra"""," "," ","""PāśupSūtra""",0,"""R.A. Sastri""","""Trivandrum""",1940,"""The Oriental Manuscripts Library of the University of Travancore""","""Trivandrum Sanskrit Series  143"""," ",1,2,1,44,0,493
+,,,,,,,,,,,,,,,,
+"""Padārthacandrikā""","""Candranandana"""," ","""PadCandr""",1," "," ",0," "," "," ",1,4,0," ",0,28
+"""Pañcārthabhāṣya""","""Kauṇḍinya"""," ","""PABh""",1," "," ",0," ","""Trivandrum Sanskrit Series  143"""," ",1,3,1,44,0,23164
+"""Pañcaviṃśabrāhmaṇa"""," "," ","""PB""",0," "," ",0," "," ","""Martin Kuemmel  Arlo Griffiths  Masato Kobayashi""",1,1,0,8,0,28712
+"""Panels of the VIIth World Sanskrit Conference""","""Volume VIII: Medical literature from India  Sri Lanka and Tibet"""," "," ",0,"""Meulenbeld  G. Jan""","""Leiden""",1991,"""E.J. Brill"""," "," ",0," ",0," ",1,0
+"""Paṃcasuttaṃ"""," "," "," ",0," "," ",0," "," "," ",2," ",0," ",0,2373
+"""Parāśaradharmasaṃhitā"""," ","""With commentary of Sāyaṇa Mādhavācārya""","""ParDhSmṛti""",0,"""Vāman Śāstrī Islāmapurkar""","""Bombay""",1893,"""Government Central Book Depot""","""Bombay Sanskrit Series  XLVIII""","""Muneo Tokunaga; revised GRETIL edition""",1,5,1,37,0,8178
+"""Parāśarasmṛtiṭīkā""","""Sāyaṇamādhavācārya"""," "," ",1," "," ",0," "," ","""O. Hellwig""",1,4,0,37,0,7558
+"""Paraśurāmakalpasūtra"""," "," "," ",0,"""A. Mahadeva Sastri""","""Baroda""",1923,"""Central Library""","""Gaekwad\""s Oriental Series",,,,,,,
+"""Pāradasaṃhitā""","""Nirañjanaprasād Gupta"""," "," ",0," ","""Bombay""",1997,"""Shri Venkateshvara Press"""," "," ",0," ",0," ",1,0
+"""Paramānandīyanāmamālā""","""Makarānanda"""," ","""ParNāmMālā""",0,"""E.D. Kulkarni ed.)""","""Poona""",1968,"""Deccan College"""," ","""O. Hellwig""",1,4,0,49,0,211
+"""Pāraskaragṛhyasūtra"""," "," "," ",0," "," ",0," "," "," ",1,1,0,18,0,661
+"""Pavanadūta""","""Dhoyi"""," ","""PavDū""",0,"""Chintaharan Chakravarti""","""Calcutta""",1926,"""Sanskrit Sahitya Parishat""","""Sanskrit Sahitya Parishat Series No. 13""","""Harunaga Isaacson""",1,4,0,47,0,0
+"""Petersburger W￶rterbuch"""," "," ","""PeW￶""",0," "," ",0," "," "," ",0,5,0," ",1,0
+"""Pottery in Vedic literature""","""Kashikar  Chintamani Ganesh"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Prasannapadā""","""Candrakīrti"""," "," ",1," "," ",0," "," "," ",1,3,0,58,0,409
+"""Rājamārtaṇḍa""","""Bhoja"""," ","""RājMār""",1,"""Rājendralāla Mitra""","""Calcutta""",1883,"""Baptist Mission Press"""," ","""oh""",1,4,0,29,0,761
+"""Rājanighaṇṭu""","""Narahari"""," ","""RājNigh""",0," "," ",0," "," ","""Oliver Hellwig""",1,4,1,49,0,49984
+"""Rāmāyaṇa""","""Valmīki"""," ","""Rām""",0," "," ",0," "," ","""Muneo Tokunaga et al.  revised by John Smith""",1,2,1,41,0,261044
+"""Rasādhyāya"""," "," ","""RAdhy""",0,"""Rāmakṛṣṇa Śarman""","""Benares""",1930,"""Chowkhamba Sanskrit Series  north of Gopal Mandir""","""Kāśī Sanskrit Series  79""","""Oliver Hellwig""",1,4,1,56,0,6719
+,,,,,,,,,,,,,,,,
+"""Rasamañjarī""","""Śālīnātha"""," ","""RMañj""",0,"""Siddhinandan Mishra""","""Varanasi""",1995,"""Chaukhambha Orientalia""","""Jaikrishnadas Ayurveda Series  81""","""O. Hellwig""",1,4,0,56,0,12588
+"""Rasaprakāśasudhākara""","""Yaśodhara"""," ","""RPSudh""",0,"""Jīvrām Kālidās Śāstri""","""Goṇḍal""",1940,"""Rasaśālā auṣadhāśram""","""Rasaśālā granthamālā  10""","""O. Hellwig""",1,4,0,56,0,15616
+"""Rasaprakāśasudhākara""","""Yaśodhara""","""With Siddhipradā Hindi commentaries""","""RPrSudh2""",0,"""Siddhinandan Mishra""","""Varanasi""",1998,"""Chaukhambha Orientalia""","""Jaikrishnadas Ayurveda Series  54"""," ",0," ",0," ",1,0
+"""Rasārṇava"""," "," ","""RArṇ""",0,"""Praphulla Chandra Ray  D.Sc. Ph.D.""","""Calcutta""",1910,"""Hitavrata Chattopadhyaya""","""Bibliotheca Indica  1193  1220  1238""","""Oliver Hellwig""",1,4,1,56,0,32040
+"""Rasārṇavakalpa"""," "," ","""RAK""",0,"""Mira Roy""","""New Delhi""",1993,"""Indian National Science Academy"""," ","""Oliver Hellwig""",1,5,0,56,0,4796
+"""Rasārṇavam nāma rasatantram"""," ","""With Hindi commentary by I. Tripathi"""," ",0,"""Krishna Dixit""","""Varanasi""",1995,"""Chowkhamba Sanskrit Series Office""","""Haridas Sanskrit Series  88"""," ",0," ",0," ",1,0
+"""Rasārṇavam nāma rasatantram"""," ","""Vimarśākhya rasacandrikā hindīvyākhyayā vibhūṣitam""","""RasArṇ 2)""",0," ","""Vārāṇasī""",1995,"""Caukhambā Saṃskṛt Sīrīj Āphis""","""Haridās Saṃskṛta Granthamālā  88"""," ",0," ",0," ",1,0
+"""Rasaratnākara""","""Nitya Nātha Siddha"""," ","""RRĀ""",0,"""Vaidya Jādavjī Tricumjī Ācārya""","""Benares""",1939,"""Caukhamba Sanskrit Office"""," ","""Oliver Hellwig""",1,4,1,56,0,52856
+"""Rasaratnākara Ṛddhikhaṇḍa""","""Nityanātha"""," ","""RRĀṚddhi""",0," ","""Varanasi""",1991,"""Chaukhambha Orientalia""","""Vidyavilas Ayurveda Series  No. 10""","""oh""",0," ",0,56,1,0
+"""Rasaratnākara Rasakhaṇḍa""","""Nityanātha"""," ","""RRĀ Rasakhaṇḍa""",0," ","""Varanasi""",1985,"""Chaukhamba Amarabharati Prakashan""","""Chaukhamba Ayurveda Granthamala  11""","""oh""",0," ",0,56,0,0
+"""Rasaratnasamuccaya""","""Vāgbhaṭa"""," ","""RRS""",0,"""Krsnaravasarman Vinayaka Bapata""","""Poona""",1890," ","""Anandasrama Sanskrit Series edition  vol. 19""","""Wieslaw Mical  Som Dev Vasudeva  Anne Glazier; O. Hellwig""",1,4,0,56,0,28144
+"""Rasaratnasamuccayaṭīkā"""," "," ","""RRSṬīkā""",1," "," ",0," "," "," ",1,5,0,56,0,12167
+"""Rasaratnasamuccayabodhinī""","""Āśubodhavidyābhūṣaṇa  Nityabodhavidyāratna"""," ","""RRSBoṬ""",1," "," ",0," "," ","""O. Hellwig""",1,5,0,56,0,6426
+"""Rasaratnasamuccayadīpikā""","""Hazārīlāl Sukul"""," ","""RRSDīp""",1," "," ",0," "," "," ",1,5,0,56,0,82
+"""Rasasaṃketakalikā""","""Kāyasthacāmuṇḍa""","""Saṭippaṇ rasacandrikā hindīvyākhyopetā""","""RSK""",0,"""Jādavjī Tricumjī""","""Benares""",0,"""Chaukhamba Amarabharati Prakashan""","""Chaukhamba Ayurveda Granthamala  10""","""O. Hellwig""",1,5,0,56,0,4563
+"""Rasataraṅgiṇī"""," "," ","""RTar""",0," "," ",0," "," ","""Oliver Hellwig""",1,5,0,56,0,2684
+"""Rasendracūḍāmaṇi""","""Somadeva"""," ","""RCūM""",0,"""Siddhinandan Miśra""","""Benares""",1999,"""Chaukhamba Orientalia"""," "," ",1,4,1,56,0,17923
+"""Rasendracintāmaṇi""","""Ḍhuṇḍhukanātha"""," ","""RCint""",0,"""Prof. Siddhinandanamiśra""","""Benares""",2000,"""Caukhambha Orientalia"""," "," ",1,4,0,56,0,13321
+"""Rasendrasārasaṃgraha""","""Gopālakṛṣṇabhaṭṭa"""," ","""RSS""",0," ","""Dillī""",0,"""Caukhambā saṃskṛt pratiṣṭhān""","""Vrajjīvan āyurvijñān granthamālā  28""","""OH""",1,4,0,56,0,5676
+"""Rasikapriyā""","""Kumbha"""," ","""RasPr""",1," "," ",0," "," "," ",1," ",0,56,0,346
+"""Rasikasaṃjīvanī""","""Arjunavarmadeva"""," ","""RSaṃjīv""",1,"""Paṇḍit Durgāprasāda; Kāśīnāth Pāṇḍuraṅg Parab""","""Bombay""",1900,"""Nirnaya Sagara Press""","""Kāvyamālā  18""","""O. Hellwig""",1," ",0,56,0,166
+"""Ratna Dīpikā and Ratna Śāstram"""," ","""Edited with introduction"""," ",0,"""Sri. P.S. Rama Sastri""","""Madras""",1951,"""Government Oriental Manuscripts Library"""," ","""O. Hellwig""",0," ",0," ",1,0
+"""Ratnaṭīkā""","""Bhāsarvajña"""," ","""GaṇaKārṬīkā""",1," "," ",0," "," "," ",1,3,0,44,0,5390
+"""Ratnadīpikā"""," "," "," ",0," "," ",0," "," "," ",1,4,0,54,0,1511
+"""Reflections on the basic concepts on Indian pharmacology""","""G.J. Meulenbeld"""," "," ",0," "," ",0," ","""Groningen Oriental Studies  vol. II"""," ",0," ",0," ",1,0
+"""Religious beliefs and practices of North Indie during the early mediaeval period""","""V.Bh. Mishra"""," "," ",0," ","""Leiden""",1973,"""E.J. Brill""","""Handbuch der Orientalistik  2. III"""," ",0," ",0," ",1,0
+"""Remarkable words from the Kāvyamīmāṃsā""","""Renou  Louis"""," ","""Renou 1956 [Kāvyamī.]""",0," "," ",1956," "," "," ",0,5,0," ",1,0
+"""Rigveda Brahmanas""","""Keith  Arthur B."""," "," ",0," ","""Cambridge""",1920,"""Harvard University Press"""," "," ",0,5,0," ",1,0
+"""Ritualliteratur""","""Hillebrandt  Alfred""","""Vedische Opfer und Zauber."""," ",0," ","""Strassburg""",1897,"""Verlag von Karl J. Tr￼bner""","""Grundriss der Indo-Arischen Philologie und Altertumskunde  III. 2"""," ",0," ",0," ",1,0
+"""Rivelex: Rigveda-Lexikon""","""Krisch  Thomas"""," ","""Krisch 2006 [Rivelex]""",0," ","""Graz""",2006," "," "," ",0,5,0," ",1,0
+"""Sūryaśataka""","""Mayūra""","""With the commentary of Tribhuvanapāla.""","""SūryaŚ""",0,"""M.P. Durgāprasāda  Kāśīnātha Pāṇḍurang Parab""","""Bombay""",1900,"""Nirnaya-Sagara Press""","""Kāvyamālā  19""","""O. Hellwig""",1,3,0,47,0,593
+"""Sūryaśatakaṭīkā""","""Tribhuvanapāla"""," "," ",1," "," ",0," "," ","""O. Hellwig""",1,4,0,47,0,2322
+"""Sūryasiddhānta"""," ","""An ancient system of Hindu astronomy""","""SūrSiddh""",0,"""Fitzedward Hall""","""Amsterdam""",1974,"""Philo Press"""," ","""Michio Yano""",1,3,0,24,0,2138
+"""Saṅghabhedavastu"""," ","""The Gilgit Manuscript of the Saṅghabhedavastu""","""SBhedaV""",0,"""Gnoli  Raniero""","""Roma""",1977,"""Istituto italiano per il Medio ed Estremo Oriente"""," ","""oh""",1,2,0,58,0,7631
+"""Sanskritischer Index der jungvedischen Namen und Sachen  Teil I""","""Mylius  Klaus"""," ","""Mylius 1976 [SansIx 1]""",0," "," ",0," "," "," ",0,5,0," ",1,0
+"""Sanskritischer Index der jungvedischen Namen und Sachen  Teil II""","""Klaus Mylius"""," ","""Mylius 1977 [SansIx II]""",0," "," ",1977," "," "," ",0,5,0," ",1,0
+"""Sanskṛt-English dictionary""","""Monier-Williams  Sir M."""," ","""MW""",0," ","""New Delhi""",1988,"""Munshiram Manoharlal Publishers"""," "," ",0," ",0," ",1,0
+"""Sāṃkhyakārikā""","""Īśvarakṛṣṇa"""," ","""SāṃKār""",0," "," ",0," "," ","""Ferenc Ruzsa""",1,3,1,28,0,1067
+"""Sāṃkhyakārikābhāṣya""","""Gauḍapāda"""," ","""SKBh""",1,"""Anne-Marie Esnoul""","""Paris""",1964," "," ","""O. Hellwig""",1,3,0,28,0,9956
+"""Sāṃkhyatattvakaumudī""","""Vācaspatimiśra"""," ","""STKau""",1,"""S.A. Srinivasan""","""Hamburg""",1967," "," ","""O. Hellwig""",1,3,0,28,0,5849
+"""Saṃvitsiddhi""","""Yāmuna"""," ","""SaṃSi""",0,"""Roque Mesquita""","""Wien""",1988,"""Verlag der Oesterreichischen Akademie der Wissenschaften"""," ","""Somadeva Vasudeva""",1,3,0," ",0,3398
+"""Sarvāṅgasundarā""","""Aruṇadatta"""," ","""SarvSund""",1," "," ",0," "," "," ",1,4,0,33,0,9063
+"""Sarvadarśanasaṃgraha""","""Mādhava""","""An epitome of the different systems of Indian philosophy""","""SDS""",0,"""I. Vidyāsāgara""","""Calcutta""",1858,"""Baptist Mission Press""","""Bibliotheca Indica  63/142""","""Oliver Hellwig""",1,4,0,25,0,1056
+"""Sarvāstivāda Buddhist scholasticism""","""Charles Willemen  Bart Dessein  Collett Cox"""," "," ",0," ","""Leiden  New York  K￶ln""",1998,"""Brill""","""Handbuch der Orientalistik  2. Abteilung  11. Band"""," ",0," ",0," ",1,0
+"""Sātvatatantra"""," ","""Revealed by Narāyaṇa and communicated to Nārada.""","""SātT""",0,"""A.Ś. Phadke""","""Benares""",1934,"""Chowkhamba Sanskrit Series Office"""," ","""Oliver Hellwig""",1,5,1,44,0,10046
+"""Saundarānanda""","""Aśvaghoṣa"""," ","""SaundĀ""",0,"""Tripathi  Ramshankar ? acc. to website)"""," ",1999," "," ","""Sanskrit Buddhist Input Project GRETIL); proofread using the Johnston edition""",1,2,1,47,0,18988
+"""Skandapurāṇa"""," "," ","""SkPur""",0," "," ",0," "," ","""R. Adriaensen  H.T. Bakker  H. Isaacson""",1,4,0,42,0,16429
+"""Skandapurāṇa Revākhaṇḍa)"""," "," ","""SkPur Rkh)""",0," "," ",0," "," ","""J￼rgen Neuss""",1,5,0,42,0,114026
+"""Smaradīpikā""","""Mīnanātha"""," "," ",0," "," ",0," "," ","""Oliver Hellwig""",1,4,0,55,0,921
+"""Some aspects of glass manufacturing in ancient India""","""Govind  Vijay"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Spandakārikā""","""Vasugupta""","""The Spandakarikas of Vasugupta with the Nirnaya by Ksemaraja.""","""SpandaKār""",0,"""M. K. Shastri""","""Srinagar""",1925,"""Kashmir Pratap Steam Press""","""Kashmir Series of Texts & Studies  42""","""Oliver Hellwig""",1,4,0,44,0,750
+"""Spandakārikānirṇaya""","""Kṣemarāja"""," ","""SpandaKārNir""",1," "," ",0," "," "," ",1,4,0,44,0,10219
+"""Sphuṭārthāvyākhyā""","""Yaśomitra"""," "," ",1," "," ",0," "," "," ",1," ",0,58,0,358
+"""Studies on Indian medical history."""," "," "," ",0,"""G.J. Meulenbeld; D. Wujastyk""","""Groningen""",1987,"""Egbert Forsten""","""Groningen Oriental Studies  vol. II"""," ",0," ",0," ",1,0
+"""Suśrutasaṃhitā""","""Suśruta"""," ","""Su""",0,"""V.J. Trikamji Acharya""","""Varanasi""",1980,"""Chaukhambha Orientalia"""," "," ",1,3,0,33,0,146509
+"""Taittirīyasaṃhitā"""," "," ","""TS""",0,"""Weber  Albrecht""","""Leipzig""",1871,"""Brockhaus"""," ","""Makoto Fushimi""",1,1,0," ",0,1941
+"""Taittirīyopaniṣad"""," "," ","""TaittUp""",0," "," ",0," "," ","""Kartik Jayaraman; corrections by Matthias Ahlborn; TITUS""",1,1,0,10,0,407
+"""Tantrākhyāyikā"""," "," ","""TAkhy""",0," "," ",0," "," ","""Peter Schreiner""",1,3,1,48,0,8303
+"""Tantrāloka""","""Abhinavagupta""","""The Tantraloka of Abhinavagupta With commentary of Rajanaka Jayaratha""","""TĀ""",0," "," ",0," ","""Kashmir Series of Texts and Studies  No. 23 28 30 36 35 29 41 47 59 52 57 58""","""Jun Takashima""",1,4,0,44,0,41268
+"""Tantrasāra""","""Abhinavagupta"""," ","""TantraS""",0," ","""Bombay""",1918,"""Nirnaya Sagara Press""","""Kashmir Series of Texts & Studies  17""","""Oliver Hellwig""",1,4,0,44,0,14143
+"""Tapas und tapasvin in den erz￤hlenden Partien des Mahābhārata""","""Shee  Monika"""," "," ",0," ","""Reinbek""",1986,"""Dr. Inge Wezler Verlag f￼r orientalistische Fachpublikationen""","""Studien zur Indologie und Iranistik  Dissertationen  Band 1"""," ",0," ",0," ",1,0
+"""Tarkasaṃgraha""","""Annambhaṭṭa"""," "," ",0," "," ",0," "," ","""Takuya Ono""",1,5,1,26,0,1967
+"""Tattvavaiśāradī"""," "," "," ",1," "," ",0," "," "," ",1,3,0,29,0,203
+"""The Śatapatha Brāhmaṇa According to the Text of the Mādhyandina Recension""","""Julius Eggeling tr.)"""," ","""Eggeling 1894 [ŚB]""",0," "," ",1894," "," "," ",0,5,0," ",1,0
+"""The āśrama system""","""Patrick Olivelle""","""The history and hermeneutics of a religious institution."""," ",0," ","""Oxford""",1993,"""Oxford University Press"""," "," ",0," ",0," ",1,0
+"""The alchemical body""","""D.G. White""","""Siddha tradition in medieval India"""," ",0," ","""Chicago""",1996,"""The University of Chicago Press"""," "," ",0," ",0," ",1,0
+"""The Antagaḍa-Dasāo and Aṇuttarovavāiya-Dasāo"""," ","""Translated from the Prakrit"""," ",0,"""L.D. Barnett""","""London""",1907,"""Royal Asiatic Society""","""Oriental Translation Fund  New Series  Vol. XVII"""," ",0," ",0," ",1,0
+"""The Arthaśāstra""","""Kauṭilya""","""Edited  rearranged  translated and introduced by L.N. Rangarajan""","""Arthaśāstra Rangarajan)""",0," ","""New Delhi""",1992,"""Penguin Books"""," "," ",0," ",0," ",1,0
+"""The Ātharvaṇa Upanishads"""," ","""With the commentary of Nārāyaṇa."""," ",0,"""R. Tarkaratna""","""Calcutta""",1872,"""Asiatic Society of Bengal""","""Bibliotheca Indica  265"""," ",0," ",0," ",1,0
+"""The Atharvaveda and the Gopathabrāhmaṇa""","""Bloomfield  Maurice"""," "," ",0," ","""Strassburg""",1899,"""Verlag von Karl J. Tr￼bner"""," "," ",0," ",0," ",1,0
+"""The constraints of theory in the evolution of nosological classifications""","""Meulenbeld  G.J.""","""A study on the position of blood in Indian medicin Āyurveda)"""," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""The Early Upaniṣadas""","""Olivelle  Patrick"""," "," ",0," ","""New York  Oxford""",1998,"""Oxford University Press"""," "," ",0,5,0," ",1,0
+"""The ghaṭikā of the twice-born in South Indian inscriptions""","""Tieken  Herman; Sato  Katsuhiko"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""The heroic satī or the widow ascetic""","""Leslie  Julia"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""The International Plant Names Index 2004)."""," "," ","""IPNI""",0," ","""Published on the internet http://www.ipni.org""",2004," "," "," ",0," ",0," ",1,0
+"""The Kauṭilīya Arthaśāstra""","""Kangle  R.P."""," ","""Kangle 1969  Arthaśāstra)""",0," "," ",1969," "," "," ",0,5,0," ",1,0
+"""The Mādhavanidāna and its chief commentary""","""Meulenbeld  G.J.""","""Chapters 1-10""","""Meulenbeld 1974 [MādhNid]""",0," ","""Leiden""",1974,"""E.J. Brill"""," "," ",0,0,0," ",1,0
+"""The Materia medica of the Hindus""","""Dutt  Udoy Chand""","""Compiled from Sanskrit medical works.""","""Mat. Med.""",0," ","""Calcutta""",1877," "," "," ",0," ",0," ",1,0
+"""The Nighaṇṭu and the Nirukta""","""Lakshman Sarup Ed.)""","""The oldest Indian treatises on Etymology  Philology  and Semantics"""," ",0," ","""Bombay""",1927,"""University of the Panjab"""," "," ",0," ",0," ",1,0
+"""The origin of the life of a human being""","""Rahul Peter Das""","""Conception and the female according to ancient Indian medical and sexological literature."""," ",0," ","""Delhi""",2003,"""Motilal Banarsidass""","""Indian Medical Tradition  6"""," ",0," ",0," ",1,0
+"""The Oxford Hindi-English dictionary""","""McGregor  R. S."""," ","""Hindi McGregor)""",0," ","""Oxford""",1993,"""Oxford University Press"""," "," ",0," ",0," ",1,0
+"""The presence of Śiva""","""Kramrisch  Stella"""," ","""Kramrisch 1981)""",0," ","""Princeton""",1981,"""Princeton University Press"""," "," ",0," ",0," ",1,0
+"""The Rigveda. The earliest religious poetry of India""","""Jamison and Brereton"""," ","""Jamison and Brereton 2014)""",0," "," ",2014," "," "," ",0,5,0," ",1,0
+"""The social and military position of the ruling caste in ancient India.""","""Hopkins  Edward W."""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""The useful plants of India""","""H. Drury"""," ","""Useful plants""",0," ","""London""",1873,"""William H. Allen & Co."""," "," ",0," ",0," ",1,0
+"""The Veda of the Black Yajus School""","""Keith  Arthur Berriedale"""," ","""Keith [1914  TS transl.]""",0," "," ",1914," "," "," ",0,1,0," ",1,0
+"""The Vocabulary of the Rāmāyaṇa""","""Sen  Nilamadhab"""," "," ",0," "," ",1951," "," "," ",0,5,0," ",1,0
+"""Toḍalatantra"""," "," ","""ToḍalT""",0," "," ",0," "," ","""Oliver Hellwig""",1,4,0,46,0,5470
+"""T￶pferei und Tongeschirr im vedischen Indien""","""Rau  Wilhelm"""," ","""Rau T￶pfe)""",0," ","""Wiesbaden""",1972,"""Franz Steiner Verlag GmbH""","""Akad. der Wiss. und der Literatur  Abhandlungen der geistes- und sozialwissenschaftlichen Klasse  Jahrgang 1972  Nr. 10"""," ",0," ",0," ",1,0
+"""Translation of Gītā""","""Johnston"""," "," ",0," "," ",0," "," "," ",0,0,0," ",1,0
+"""Trikāṇḍaśeṣa""","""Puruṣottadeva"""," ","""TriKŚ""",0,"""P. Durgāprasāda""","""Mumbai""",1811,"""Nirṇayasāgara"""," ","""Oliver Hellwig""",1,3,0,49,0,904
+"""Tropical flowering plants""","""Llamas  Kirsten Albrecht""","""A guide to identification and cultivation."""," ",0," ","""Cambridge""",2003,"""Timber Press"""," "," ",0," ",0," ",1,0
+"""Ṛtusaṃhāra""","""Kālidāsa"""," ","""ṚtuS""",0," "," ",0," "," "," ",1,3,1,47,0,3130
+"""Tṛtīyakaḥ phenakaḥ""","""Sarma  S.R."""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Uḍḍāmareśvaratantra"""," ","""A book on magical rites.""","""UḍḍT""",0,"""J.D. Zadoo""","""Srinagar""",1947,"""The Normal Press""","""Kashmir Series of Texts & Studies  70""","""Oliver Hellwig""",1,5,1,44,0,10919
+"""Ueber die Entstehung der Śvetāmbara und Digambara Sekten""","""Hermann Jacobi"""," "," ",0," "," ",0," "," "," ",0," ",0," ",1,0
+"""Une technique du rasāyana āyurv￩dique""","""Rosu  Arion"""," "," ",0," "," ",1975,"""Indo-Iranian Journal 17"""," "," ",0," ",0," ",1,0
+"""Upaniṣads  ￜbersetzung""","""Deussen  Paul"""," "," ",0," "," ",1897," "," "," ",0,5,0," ",1,0
+"""Vāc""","""Padoux  Andr￩""","""The concept of the word in selected Hindu tantras."""," ",0," ","""Albany""",1990,"""State University of New York Press"""," "," ",0," ",0," ",1,0
+"""Vācaspatimiśras Tattvakaumudī""","""Srinivasa Ayya Srinivasan""","""Ein Beitrag zur Textkritik bei kontaminierter ￜberlieferung"""," ",0," ","""Hamburg""",1967,"""Cram  de Gruyter & Co."""," "," ",0," ",0," ",1,0
+"""Vāgbhaṭas\""s Aṣṭāṅgahṛdayasaṃhitā""  ""Ein altindisches Lehrbuch der Heilkunde""  0 ""Luise Hilgenberg",,,,,,,,,,,,,,,,
+"""Vaiśeṣikasūtra""","""Kaṇāda""","""With the commentary of Candrānanda""","""VaiśSū""",0,"""Muni Śrī Jambuvijayajī""","""Baroda""",1961,"""Oriental Institute"""," ","""O. Hellwig""",1,2,0,27,0,2120
+"""Vaiśeṣikasūtravṛtti""","""Candrānanda"""," ","""VaiSūVṛ""",1," "," ",0," "," "," ",1,3,0,27,0,8649
+"""Vaiṣṇavism  Śaivism  and minor religious systems.""","""R.G. Bhandarkar"""," "," ",0," ","""Strassburg""",1913,"""Verlag von Karl J. Tr￼bner""","""Grundriss der indo-iranischen Phil. und Altertumskunde  III.6"""," ",0," ",0," ",1,0
+"""Vaikhānasadharmasūtra"""," ","""The domestic rules of the Vaikhanasa school belonging to the Black Yajurveda = Vaikhānasasmārtasūtra  8-10)""","""VaikhDharmSū""",0,"""W. Caland""","""Calcutta""",1927," "," ","""Hiromichi Hikita""",1,3,1,38,0,4899
+"""Vaikhānasagṛhyasūtra"""," "," ","""VaikhGṛS""",0," ","""TITUS""",0," "," "," ",1,3,0,18,0,7759
+"""Vārāhagṛhyasūtra"""," ","""With short extracts from the paddhatis of Gaṅgādhara and Vasiṣṭha""","""VārGṛSū""",0,"""Raghu Vira""","""New Delhi""",1982,"""Meharchand Lachhmandas""","""Panini Vaidika Granthamala  2""","""Oliver Hellwig""",1,1,0,18,0,4602
+"""Varāhapurāṇa"""," "," ","""VarPur""",0," "," ",0," "," "," ",1,3,0,42,0,621
+"""Vātūlanāthasūtras"""," ","""With the vṛtti of Anantaśaktipāda.""","""VNSūtra""",0,"""M.K. Shāstrī""","""Bombay""",1923,"""Nirnaya Sagar Press"""," ","""Oliver Hellwig""",1,4,1,44,0,84
+"""Vātūlanāthasūtravṛtti""","""Anantaśaktipāda"""," ","""VNSūtraV""",1," "," ",0," "," "," ",1,4,1,44,0,2058
+"""Vedachrestomathie""","""Hillebrandt  Alfred"""," ","""Hillebrandt 1885 [Vedachrestomathie]""",0," "," ",1885," "," "," ",0,5,0," ",1,0
+"""Vetālapañcaviṃśatikā"""," ","""In den Recencsionen des Śivadāsa und eines Ungenannten""","""VetPV""",0,"""Heinrich Uhle""","""Leipzip""",1881," ","""Abhandlungen f￼r die Kunde des Morgenlandes  VIII. Band  No. 1.""","""OH""",1,4,0,48,0,977
+"""Viṣṇupurāṇa"""," "," ","""ViPur""",0," "," ",0," "," ","""Peter Schreiner""",1,3,0,42,0,87528
+"""Viṣṇusmṛti"""," "," ","""ViSmṛ""",0,"""V. Krishnamacharya""","""Madras""",1964,"""The Adyar Library and Research Center""","""The Adyar Library Series   Vol. 93.1 + 2""","""I. Shima""",1,3,0,37,0,19199
+"""Viṣkali-  Name of an Accouching Deity""","""Kuiper  F.B.J."""," "," ",0," "," ",0," "," "," ",0,5,0," ",1,0
+"""Vidyādharas""","""Grafe  J￶rg""","""Fr￼heste Zeit bis zur Kashmirischen Bṛhatkathā"""," ",0," ","""Frankfurt/Main""",2001,"""Peter Lang GmbH""","""Europ￤ische Hochschulschriften  Reihe XXVII  Bd. 82"""," ",0," ",0," ",1,0
+"""Viṃśatikākārikā""","""Vasubandhu"""," ","""ViṃKār""",0,"""Sylvain L￩vi""","""Paris""",1925,"""Librairie Ancienne Honor￩ Champion"""," ","""O. Hellwig""",1,3,0,58,0,342
+"""Viṃśatikāvṛtti""","""Vasubandhu"""," ","""ViṃVṛtti""",1," "," ",0," "," ","""O. Hellwig""",1,3,0,58,0,1854
+"""Vivāgasuyaṃ"""," ","""The eleventh Anga of ... - Edited with introduction  translation  notes  glossary  ..."""," ",0,"""V.J. Chokshi; M.C. Modi""","""Ahmedabad""",1935,"""Shambhubhai Jagshi Shah"""," ","""O. Hellwig""",2," ",0," ",0,898
+"""Vṛddhayamasmṛti""","""Yama"""," "," ",0,"""J￼rgen Neuss""","""Berlin""",0," "," ","""J. Neuss""",1," ",0,37,0,445
+"""Vṛkṣāyurveda""","""Surapāla""","""Das Wissen von der Lebensspanne der B￤ume.""","""Das 1988)""",0,"""R.P. Das ed.  transl.)""","""Stuttgart""",1988,"""Franz Steiner Verlag GmbH""","""Alt- und Neu-Indische Studien  34"""," ",0," ",0,33,1,0
+"""Webmineral"""," "," "," ",0," ","""Published on internet http://webmineral.com""",2004," "," "," ",0," ",0," ",1,0
+"""Worship of the goddess according to the Kālikāpurāṇa""","""K.R. von Kooji"""," "," ",0," ","""Leiden""",1972,"""E.J. Brill"""," "," ",0," ",0," ",1,0
+"""W￶rterbuch Ardhamāgadhī-Deutsch""","""Mylius  Klaus"""," "," ",0," ","""Wichtrach""",2003,"""Institut f￼r Indologie Wichtrach"""," "," ",0," ",0," ",1,0
+"""W￶rterbuch des altindischen Rituals""","""Klaus Mylius"""," ","""Mylius 1995 [Ritual]""",0," ","""Wichtrach""",1995," "," "," ",0,5,0," ",1,0
+"""W￶rterbuch des Ṛigveda""","""Grassmann"""," "," ",0," "," ",0," "," "," ",0,5,0," ",1,0
+"""Yājñavalkyasmṛti""","""Yogīśvara Yājñavalkya""","""With the commentary Mitaksara of Vijñanesvara  Notes  Variant readings  etc.""","""YāSmṛ""",0,"""Narayan Ram Acharya""","""Bombay""",1949,"""Nirnayasagara Press"""," ","""Muneo Tokunaga  checked by Yasuke Ikari""",1,3,1,37,0,14206
+"""Yoga""","""Mircea Eliade""","""Unsterblichkeit und Freiheit."""," ",0," ","""Z￼rich""",1960,"""Rascher Verlag"""," "," ",0," ",0," ",1,0
+"""Yoga et alch￩mie""","""Rosu  Arion"""," "," ",0," "," ",1982," ","""ZDMG 132  363ff."""," ",0," ",0," ",1,0
+"""Yogaratnākara"""," "," ","""YRā""",0," "," ",0," "," "," ",1,5,0,56,0,6478
+"""Yogasūtra""","""Patañjali"""," ","""YS""",0,"""Baladeva Miśra""","""Benares""",1932,"""The Chowkhamba Sanskrit Series"""," ","""Oliver Hellwig""",1,2,1,29,0,1137
+"""Yogasūtrabhāṣya""","""Vyāsa"""," ","""YSBhā""",1," "," ",0," "," ","""Peter Schreiner""",1,3,0,29,0,9977
