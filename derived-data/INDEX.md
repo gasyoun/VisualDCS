@@ -1,6 +1,6 @@
 # derived-data — index
 
-_Created: 02-07-2026 · Last updated: 02-07-2026_
+_Created: 02-07-2026 · Last updated: 03-07-2026_
 
 Catalogue of `VisualDCS/derived-data/` — the **DCS-corpus** half of a two-repo-root
 split. The **non-DCS** half (dictionaries, manuscript catalogs, reference/lecture
@@ -61,7 +61,7 @@ Current total: **849 files, 3.5GB — all tracked in git.** (The drop from pass-
 | Folder | Size | Files | Contents |
 |---|---|---|---|
 | `DCS_FILES` | 1.1GB | 9 | Raw Digital Corpus of Sanskrit (DCS) export archives + quantitative-analysis workbook |
-| `Glagolnye-formy` | 112MB | 71 | Verb-form corpus analysis, verb classes/root lists by class + `Works-Share-Roots`, `Works-Share-VERBAL-FORMS` |
+| `Glagolnye-formy` | 112MB | 71 | Verb-form corpus analysis, verb classes/root lists by class + `Works-Share-Roots`, `Works-Share-VERBAL-FORMS`. Derived PPP extract: `Bazadannyh-glagolnyh-form-Korpusa/dcs_ppp_verified.tsv` (5,181 corpus-attested Past Passive Participle forms + counts; see its `.md`) |
 | `Imennye-formy` | 75MB | 38 | Nominal-form (declension/stem-ending) corpus analysis + `Works-Share-Endings`, `Works-Share-NAMES`, `Works-Share-POSIT` |
 | `Lexical-Cores` | 92MB | 24 | Leonchenko's "lexical cores" study — full appendix set (frequency dictionaries by period, core-vocabulary lists) |
 | `Leksicheskie-issledovaniya` | 11MB | 17 | Lexical studies: homoforms, ligatures, rarest words, lemma-ending distributions + `Works-Share-DIF`, `Works-Share-LEX`, `Works-Share-OMOFORMS` |
