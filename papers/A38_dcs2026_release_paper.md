@@ -19,7 +19,13 @@ data_source: "src/DCS-data-2026/ (master built M0–M8; figures verified against
 > [`reports/coverage_diff.md`](../src/DCS-data-2026/reports/coverage_diff.md),
 > [`reports/m4_exports.md`](../src/DCS-data-2026/reports/m4_exports.md)) and recomputes via
 > `python src/DCS-data-2026/validate.py --all`. **Open before submission:**
-> (1) write §2 Related work; (2) paste the exact `dcs_full.sqlite` schema table + the M4
+> (1) ~~write §2 Related work~~ **DONE 2026-07-04** — Hellwig et al. 2020 (Vedic Treebank),
+> Hellwig & Nehrdich 2018 (rcNN segmenter), Nehrdich/Hellwig/Keutzer 2024 (ByT5-Sanskrit) verified
+> against aclanthology.org abstracts; §2.1 states explicitly this release does NOT use or benchmark
+> against any of those methods (packaging/cross-walk layer, not a methodological successor). One
+> claim (rcNN-with-shortcuts, 2h vs 55h training, sentencepiece-Transformer parity) could not be
+> verified against either paper's abstract and was deliberately left out.
+> (2) paste the exact `dcs_full.sqlite` schema table + the M4
 > verb code-map into §3; (3) mint the Zenodo DOI and fill the data-availability statement;
 > (4) obtain Oliver Hellwig's CC-BY redistribution sign-off and lock the upstream citation;
 > (5) confirm ORCID / finalise byline; (6) add the per-text count-delta sample table.
@@ -79,16 +85,53 @@ Our claims are modest and data-oriented:
 3. **The release is honest about UD's limits for Sanskrit** — the aorist/perfect collapse and the
    non-unique corpus IDs are documented as first-class caveats, not hidden behind clean totals.
 
-## 2. Related work  *(TODO — to be written)*
+## 2. Related work
 
-Position against: (a) the DCS itself and Hellwig's publications describing its annotation; (b) UD
-treebank and corpus *data descriptors* as a genre (what an LR-track / RDJ / JOHD descriptor is
-expected to document — schema, provenance, validation, licence); (c) other Sanskrit corpus and
-treebank releases and the Sanskrit-NLP tooling that consumes them. The **novelty claim** is not
-new annotation but the *validated, reproducible, query-ready packaging* of the current DCS plus
-the documented, tested 2021→2026 cross-walk that lets the large installed base of relational-export
-tooling migrate. Keep this section short and precise — a descriptor's related work is orientation,
-not a survey.
+**The annotation this release packages.** The DCS's own annotation pipeline is documented across a
+line of NLP papers we cite for accuracy, not because we reuse their methods (§2.1 is explicit about
+that boundary). Hellwig, Scarlata, Ackermann & Widmer (2020), *The Treebank of Vedic Sanskrit* (LREC
+2020), introduce the first dependency treebank for Vedic Sanskrit (3,700+ sentences across ~600
+years of texts, Universal-Dependencies scheme, with a neural syntactic labeler to bootstrap further
+parsing) — this is the direct upstream source of the 74 dependency-annotated texts in our `text`
+table's `has_dependencies` flag. Hellwig & Nehrdich (2018), *Sanskrit Word Segmentation Using
+Character-level Recurrent and Convolutional Neural Networks* (EMNLP 2018), present the end-to-end
+neural sandhi-and-compound segmenter (joint compound splitting + phonetic-merge resolution, no
+external linguistic resources) that underlies the sandhi/compound-split surface forms already
+present in the CoNLL-U tokens we ingest. Nehrdich, Hellwig & Keutzer (2024), *ByT5-Sanskrit: One
+Model is All You Need* (Findings of EMNLP 2024), introduce a unified byte-level model spanning
+segmentation, lemmatization, dependency parsing, and OCR post-correction — the current state of the
+art for the annotation tasks that produced the corpus we packaged, and the natural reference point
+for a future re-annotation pass. **We could not independently verify a specific claim sometimes
+attributed to the segmentation literature (an rcNN-with-shortcuts model training in ~2h vs. ~55h for
+a prior baseline, matching a sentencepiece-based Transformer) against either paper's published
+abstract; that comparison is not repeated here and should not be cited to this manuscript.**
+
+**Data descriptors as a genre.** LR-track / Research Data Journal / JOHD descriptors are expected to
+document schema, provenance, validation methodology, and licence rather than propose new annotation
+or modelling — the genre this paper follows (Related work here is orientation, not a survey of
+Sanskrit NLP broadly).
+
+**Venue currency.** The 8th International Sanskrit Computational Linguistics Symposium (ISCLS 2026,
+IIT Roorkee, March 2026; proceedings front matter at the ACL Anthology) confirms the Sanskrit-NLP
+venue is active and current as of this writing; we did not identify a specific ISCLS 2026 paper on
+compound segmentation, Vedic accent prediction, or DCS/treebank morphology whose individual citation
+would strengthen this section over the front-matter reference, so none is added pending a fuller TOC
+check before submission.
+
+### 2.1 Method boundary — this is a packaging layer, not a re-annotation
+
+**This release does not use, reproduce, or benchmark against ByT5-Sanskrit, the rcNN sandhi/compound
+segmenter, or the treebank's neural syntactic labeler.** Our pipeline (§3.2) is a lossless
+CoNLL-U→SQLite import, a lemma-keyed cross-walk, and CI validation — it consumes the *already
+produced* annotation from those upstream systems and does not re-derive, re-train, or re-score any
+of it. Citing the segmentation/parsing/ByT5 line establishes where the annotation *in* the corpus
+came from; it is not evidence of methodological continuity with our own contribution, which is
+purely a data-engineering layer (schema, provenance, validated cross-walk) over annotation that
+remains entirely Hellwig et al.'s.
+
+The **novelty claim** is not new annotation but the *validated, reproducible, query-ready packaging*
+of the current DCS plus the documented, tested 2021→2026 cross-walk that lets the large installed
+base of relational-export tooling migrate.
 
 ## 3. Data and method
 
