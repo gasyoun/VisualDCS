@@ -3,7 +3,7 @@
 _Created: 04-07-2026 · Last updated: 04-07-2026_
 
 Data-release checklist for the DCS-2026 master behind
-[`A38_dcs2026_release_paper.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_dcs2026_release_paper.md).
+[`H043-Fable_VisualDCS_dcs2026_release_26.06.26_paper.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/H043-Fable_VisualDCS_dcs2026_release_26.06.26_paper.md).
 Agent-doable items are done; the Zenodo push / DOI mint itself is an **MG action** (needs the
 Zenodo account) and is mirrored in the Uprava GTD hub.
 
