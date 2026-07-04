@@ -1,6 +1,6 @@
 # derived-data
 
-_Created: 02-07-2026 · Last updated: 02-07-2026_
+_Created: 02-07-2026 · Last updated: 04-07-2026_
 
 
 
@@ -17,7 +17,9 @@ same corpus VisualDCS's dashboards visualize. Nearly everything here is *derived
 frequency counts, distributions, collocations, and cross-tabulations computed from
 corpus text, not primary source material. Much of it comes from research by
 V.V. Leonchenko ("Цифровой корпус санскрита" / "Digital corpus of Sanskrit" — the study
-behind `Lexical-Cores/`) and collaborators, spanning verb forms, nominal forms,
+behind [`Lexical-Cores/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md),
+which has the most-frequent-word / core-vocabulary tables) and collaborators, spanning
+verb forms, nominal forms,
 compounds, pronouns, particles, phonetics, synonymy, and stem collocability.
 
 Its sibling, [`../non-derived/`](../non-derived/README.md), holds everything from the

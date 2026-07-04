@@ -37,6 +37,8 @@ for ideas or figures, not as live dashboard input.
 - **`derived-data/`** — the DCS-corpus half: datasets computed by statistically analyzing corpus
   text (frequency counts, distributions, collocations, verb/nominal-form analysis, compounds,
   synonyms, and the large `Paralleli-v-tekstah-korpusa-SRC/` intra-corpus parallel-passage search).
+  The most-frequent-Sanskrit-word / core-vocabulary lists specifically live in
+  [`derived-data/Lexical-Cores/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md).
 - **`non-derived/`** — the non-DCS half: dictionaries (Kochergina, PWG/MW comparisons, the
   Saudamani electronic dictionary), the NCC manuscript catalog, lecture/conference material,
   translations, and cloned external tool repos under `Zalizniak/GH/`.
