@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: >-
+  If you use the DCS-2026 SQLite master or its exports, please cite it as below,
+  and cite the underlying corpus annotation separately (Hellwig, Oliver. The
+  Digital Corpus of Sanskrit (DCS). 2010-2024. CC BY 4.0).
+type: dataset
+title: >-
+  DCS-2026: The Digital Corpus of Sanskrit as a validated, query-ready SQLite
+  master with a 2021-2026 cross-walk
+authors:
+  - family-names: "Gasūns"
+    given-names: "Mārcis"
+    orcid: "https://orcid.org/0000-0003-4513-884X"
+    email: "gasyoun@ya.ru"
+version: dcs-full-2026-03-05
+date-released: "2026-06-06"
+license: CC-BY-4.0
+repository-code: "https://github.com/gasyoun/VisualDCS"
+url: "https://github.com/gasyoun/VisualDCS/releases/tag/dcs-full-2026-03-05"
+# doi: (to be filled after the Zenodo mint — see papers/A38_release_checklist.md)
+keywords:
+  - Sanskrit
+  - Digital Corpus of Sanskrit
+  - treebank
+  - Universal Dependencies
+  - morphology
+  - SQLite
+  - language resource
+references:
+  - type: data
+    title: "The Digital Corpus of Sanskrit (DCS)"
+    authors:
+      - family-names: "Hellwig"
+        given-names: "Oliver"
+    year: 2026
+    url: "https://github.com/OliverHellwig/sanskrit"
+    notes: >-
+      Upstream annotated corpus, CC BY 4.0; DCS-2026 is a derived packaging
+      pinned to commit 04e0778d3dc971030229179e25eea043d06ff397 (2026-03-05).
