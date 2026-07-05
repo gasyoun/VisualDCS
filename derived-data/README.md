@@ -1,6 +1,6 @@
 # derived-data
 
-_Created: 02-07-2026 · Last updated: 04-07-2026_
+_Created: 02-07-2026 · Last updated: 05-07-2026_
 
 
 
@@ -54,6 +54,27 @@ whose Veda/Mahābhārata/Rāmāyaṇa philological-parallels material went to
 `PARA/VSE/PART/` full stop-word run (11.7GB) was deliberately deleted by M.G. the same
 day — see the "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" section in
 [`INDEX.md`](INDEX.md) for the current internal structure and what was consolidated.
+
+## README coverage
+
+Every topic folder now has its own `README.md` (added 05-07-2026): data schema,
+a usage snippet, verified caveats, and provenance where a generating script
+could be found — [Chasticy](Chasticy/README.md), [DCS_FILES](DCS_FILES/README.md),
+[Fonetika](Fonetika/README.md), [Glagolnye-formy](Glagolnye-formy/README.md),
+[Imennye-formy](Imennye-formy/README.md), [Kompozity](Kompozity/README.md),
+[Korrelyacii](Korrelyacii/README.md), [Leksicheskie-issledovaniya](Leksicheskie-issledovaniya/README.md),
+[Lexical-Cores](Lexical-Cores/README.md), [Mestoimeniya](Mestoimeniya/README.md),
+[Paralleli-v-tekstah-korpusa-SRC](Paralleli-v-tekstah-korpusa-SRC/README.md),
+[QL](QL/README.md), [Ramayana](Ramayana/README.md), [Sinonimy](Sinonimy/README.md),
+[Sochetaemost-sanskritskih-osnov](Sochetaemost-sanskritskih-osnov/README.md).
+Most files in these folders are legacy binary `.xls`/`.xlsx`/`.doc(x)` — schemas
+were confirmed where a readable sample existed (`.txt`/`.csv`) and inferred from
+filenames/sheet names otherwise; treat any unconfirmed schema claim in a
+subfolder README as a starting hypothesis, not a verified fact. A repo-wide
+generating script was found for only one folder
+([Sochetaemost-sanskritskih-osnov](Sochetaemost-sanskritskih-osnov/README.md),
+via its `Ishodnye-dannye/SINTAGMA.7z` unpack) — the rest predate any tracked
+pipeline code and are best treated as hand-curated research archives.
 
 ## Working with this data
 
