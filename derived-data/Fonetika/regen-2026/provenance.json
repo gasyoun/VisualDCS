@@ -1,0 +1,30 @@
+{
+  "generated_by": "build_akshara_ligature_freq.py",
+  "source": "DCS CoNLL-U (Oliver Hellwig), CC BY 4.0",
+  "pin": "see ../PROVENANCE.md (commit 04e0778…, pin 2026-03-05)",
+  "input": "# text = surface (sandhied) lines, files/**/*.conllu",
+  "transliteration": "IAST -> SLP1 via indic_transliteration; Devanagari for display",
+  "counts": {
+    "akshara": {
+      "distinct": 7347,
+      "total": 14326647
+    },
+    "varna": {
+      "distinct": 48,
+      "total": 31805819
+    },
+    "ligature": {
+      "distinct": 999,
+      "total": 3265549
+    },
+    "ligature2": {
+      "distinct": 417,
+      "total": 3068829
+    }
+  },
+  "text_lines": 754726,
+  "words": 4240775,
+  "unmatched_slot_files": 18,
+  "time_slots": "DCS dcsTimeSlot 1..5 (1 oldest/Vedic .. 5 latest); per chapter",
+  "seconds": 480.9
+}
