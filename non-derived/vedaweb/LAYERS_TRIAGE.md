@@ -2,6 +2,28 @@
 
 _Created: 08-07-2026 · Last updated: 08-07-2026_
 
+## ✅ Update 08-07-2026: rights confirmed — the 4 DECIDE-tier candidates are now GO
+
+[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)'s
+outreach email got an explicit written reply from Prof. Daniel Kölligan (writing also on
+behalf of Prof. Uta Reinöhl), 08-07-2026: **all 4 layers below (#6 Metrical Data, #14
+Geldner, #15 Grassmann, #20 Elizarenkova) are confirmed CC BY 4.0**, same terms as the
+already-landed H096 layers — redistribution/adaptation/publication permitted (including
+commercial use), attribution `"VedaWeb 2.0 – Universität zu Köln"` + the specific resource
+citation, no separate consent required. **VedaWeb also confirmed the 34-empty-license-field
+gap this triage found is a genuine metadata omission on their side, not an absence of
+rights, and committed to backfilling all 34 entries with CC BY 4.0.** This retroactively
+confirms H096's own blanket claim for its 4 already-landed layers too — no longer an
+unverified assumption. Full reply text:
+[`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md).
+Consumer handoffs minted: [H360](https://github.com/gasyoun/Uprava/blob/main/handoffs/H360-Sonnet_SanskritKaraoke_vedaweb_metrical_verse_seeds_08.07.26.md)
+(SanskritKaraoke meter), [H361](https://github.com/gasyoun/Uprava/blob/main/handoffs/H361-Sonnet_SanskritLexicography_vedaweb_elizarenkova_ru_witness_08.07.26.md)
+(RussianTranslation RU witness), [H362](https://github.com/gasyoun/Uprava/blob/main/handoffs/H362-Sonnet_VisualDCS_vedaweb_geldner_grassmann_pwg_gloss_08.07.26.md)
+(PWG German gloss witness). The verdicts in the tables below are left as originally
+written (historical record of the triage's own reasoning) — treat every "DECIDE" on rows
+#6/#14/#15/#20 as superseded by this update; all other DECIDE rows (translations we did
+not ask about — Renou, Van Nooten & Holland, etc.) remain open, unconfirmed.
+
 [H098](https://github.com/gasyoun/Uprava/blob/main/handoffs/H098-Sonnet_VisualDCS_vedaweb_meter_translations_triage_03.07.26.md)
 deliverable — Phase 4 of
 [ROADMAP_VEDAWEB_REUSE.md](https://github.com/gasyoun/SanskritLexicography/blob/master/ROADMAP_VEDAWEB_REUSE.md).
@@ -119,10 +141,11 @@ a maintainer email is more likely to yield a quick GO than the in-copyright rows
 | Geldner de (#14), Grassmann de (#15) | PWG German gloss cross-check witness | DECIDE, lower-risk tier (translators PD, VedaWeb edition layer unconfirmed) | ~0.5d each if cleared |
 | Casaretto et al. (2026) annotations (#28) | glossary-adjudication pool (SCL pilot 3 pattern) | DECIDE, same rationale as the already-landed #22 — worth a single combined rights confirmation covering both | ~0.5d if cleared |
 
-**No GO items in the meter/translation/gloss/morphology scope this triage was asked to
-cover.** The only two confirmed-license layers (#33, #34) are primary AV texts outside
-that scope — noted for completeness, not spun into new handoffs here (no immediate
-consumer named in the mission).
+**Originally: no GO items in the meter/translation/gloss/morphology scope this triage was
+asked to cover** (see ✅ Update above — all 4 candidate layers are now confirmed GO
+following the H359 rights-confirmation reply). The two confirmed-license layers (#33, #34)
+found during the original triage are primary AV texts outside this scope — noted for
+completeness, not spun into new handoffs (no immediate consumer named in the mission).
 
 ## Sample exports (verified, not landed)
 
@@ -143,11 +166,11 @@ Both fetched via the async export flow, inspected for real field shapes, then di
 
 ## Wiring
 
-- **FINDINGS.md**: new §62 entry for the license-field-vs-blanket-claim gap (below).
-- **GTD**: H098 row → done; new `@DECIDE` rows for (a) re-confirm/narrow the H096 blanket
-  CC BY 4.0 claim, (b) rights clearance for the 4 DECIDE consumer-mapped layers above.
-- **ROADMAP_VEDAWEB_REUSE.md**: Phase 4 ticked, with the DECIDE outcome (not a silent GO)
-  recorded inline.
-- **Registry**: H098 row 🟡→✅ in `handoffs/README.md`.
+- **FINDINGS.md**: §64 entry for the license-field-vs-blanket-claim gap, with a resolution
+  addendum for the confirmed reply.
+- **GTD**: H098 row → done; `@DECIDE` row → resolved (email sent, reply received, all 4
+  confirmed GO); new agent-ready rows for H360/H361/H362.
+- **ROADMAP_VEDAWEB_REUSE.md**: Phase 4 ticked, outcome updated from DECIDE to GO.
+- **Registry**: H098, H359 rows ✅; H360/H361/H362 minted 🟡 (consumer builds).
 
 _Dr. Mārcis Gasūns_
