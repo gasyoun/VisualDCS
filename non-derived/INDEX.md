@@ -1,6 +1,6 @@
 # non-derived — index
 
-_Created: 02-07-2026 · Last updated: 02-07-2026_
+_Created: 02-07-2026 · Last updated: 08-07-2026_
 
 Catalogue of `VisualDCS/non-derived/` — the **non-DCS** half of a two-repo-root split.
 The **DCS-corpus** half (frequency/statistics data computed from the Digital Corpus of
@@ -25,13 +25,17 @@ pass; files were left untouched throughout.
 `SaudAmanI`, `Zaliznyak-Kochergina`) — their internal `.git/` contents were never
 touched by any rename/move pass, so those repos remain functional.
 
-Current total: **1,233 files, 3.7GB** (17 folders + 2 loose root files), of which
-622 files are git-tracked — the remaining 611 (1.5GB) are the nested `Zalizniak/GH/`
+Current total: **1,239 files, 3.75GB** (18 folders + 2 loose root files), of which
+628 files are git-tracked — the remaining 611 (1.5GB) are the nested `Zalizniak/GH/`
 repos, gitignored here because each has its own GitHub history/remote. Oversize
 binaries were replaced by tracked 7-Zip split volumes during the 02-07-2026 backup
-(see [`../derived-data/INDEX.md`](../derived-data/INDEX.md) "History" pass 5).
+(see [`../derived-data/INDEX.md`](../derived-data/INDEX.md) "History" pass 5). `vedaweb`
+(added 08-07-2026, [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md))
+is an **external-corpus feed**, not a folder classified during the original
+Cyrillic→Latin rename pass — see its own [README.md](vedaweb/README.md) for
+retrieval/license provenance.
 
-## Folders (17) — dictionaries, catalogs, reference material, external tools
+## Folders (18) — dictionaries, catalogs, reference material, external tools
 
 | Folder | Size | Files | Contents |
 |---|---|---|---|
@@ -53,6 +57,7 @@ binaries were replaced by tracked 7-Zip split volumes during the 02-07-2026 back
 | `CHANDAH` | 1MB | 5 | Chandas (Sanskrit meter/prosody) references + `Works-Share-CHANDAS` |
 | `ALANKARA` | 1MB | 1 | Alaṅkāra (rhetoric/figures of speech) reference HTML |
 | `Rigveda` | 0.4MB | 3 | Rigveda introduction/hymn-164 article/parallels drafts |
+| [`vedaweb`](vedaweb/README.md) | 52MB | 6 | VedaWeb 2.0 (Uni Köln) Rig-Veda bulk export — catalog + 4 core annotation layers (Casaretto et al. accented word-split/morphology, gzipped; lemmatization+dictionary refs; Scarlata & Widmer accented text; Lubotsky padapāṭha), 10,552 stanzas each, CC BY 4.0 |
 
 ## Loose root files
 
