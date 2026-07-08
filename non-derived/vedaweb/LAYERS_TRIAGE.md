@@ -109,7 +109,7 @@ Data). The two explicitly-licensed layers are the only clean GO.
 | 17 | MacDonell (1922) | plainText | 2 | en | Arthur A. MacDonell †1930 — PD (life+70 since 2001) | null | DECIDE* | — |
 | 18 | Müller (1891) | plainText | 2 | en | Max Müller †1900 — PD | null | DECIDE* | — |
 | 19 | Oldenberg (1897) | plainText | 2 | en | Hermann Oldenberg †1920 — PD | null | DECIDE* | — |
-| 20 | **Elizarenkova (1989-1999)** | plainText | 2 | **ru** | Tatyana Elizarenkova †2007 — **in copyright to ~2078 (Russia, life+70)** | null | **DECIDE — do not use without rights clearance** | **RussianTranslation RU witness (blocked)** |
+| 20 | **Elizarenkova (1989-1999)** | plainText | 2 | **ru** | Tatyana Elizarenkova †2007 — **in copyright to ~2078 (Russia, life+70)** | null | **GO (confirmed CC BY 4.0, H359 reply 08-07-2026; landed [H361](https://github.com/gasyoun/Uprava/blob/main/handoffs/H361-Sonnet_SanskritLexicography_vedaweb_elizarenkova_ru_witness_08.07.26.md))** | **RussianTranslation RU witness — landed** |
 | 21 | Geraldes et al. (2023) | plainText | 2 | pt | living authors — **in copyright** | null | DECIDE | — (out of org scope) |
 | 22 | **Annotations, Casaretto et al. (2025)** | textAnnotation | 2 | sa (ISO15919) | VedaWeb team (living) | null | GO (already landed, H096) | already consumed |
 | 23 | Literature References (AB) | externalReferences | 3 | — | VedaWeb team | null | DECIDE | low priority |
