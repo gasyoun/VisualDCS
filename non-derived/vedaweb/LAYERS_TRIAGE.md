@@ -103,8 +103,8 @@ Data). The two explicitly-licensed layers are the only clean GO.
 | 11 | Eichler (2017), after Aufrecht/Van Nooten & Holland | plainText | 2 | sa (Deva) | Detlef Eichler (living/recent) — **in copyright** | null | **DECIDE — do not use without clearance** | — |
 | 12 | Van Nooten & Holland (1994) | plainText | 2 | sa (IAST) | living/recent editors — **in copyright** | null | **DECIDE** | base text for Metrical Data (#6) |
 | 13 | Lubotsky Padapatha (1997) | plainText | 2 | sa | Alexander Lubotsky (living) — **in copyright** | null | DECIDE (already landed via H096 under the team-hosting rationale) | already consumed |
-| 14 | Geldner (1951-1957) | plainText | 2 | de | Karl Friedrich Geldner †1929 — PD (life+70 since 2000); VedaWeb's specific digitized/revised edition layer unconfirmed | null | DECIDE* | **PWG German gloss witness** |
-| 15 | Grassmann (1876-1877) | plainText | 2 | de | Hermann Grassmann †1877 — PD | null | DECIDE* | PWG German gloss witness (GRA is a sibling dict already) |
+| 14 | Geldner (1951-1957) | plainText | 2 | de | Karl Friedrich Geldner †1929 — PD (life+70 since 2000); VedaWeb's specific digitized/revised edition layer unconfirmed | null | **GO (confirmed 08-07-2026, landed via H362)** | **PWG German gloss witness** |
+| 15 | Grassmann (1876-1877) | plainText | 2 | de | Hermann Grassmann †1877 — PD | null | **GO (confirmed 08-07-2026, landed via H362)** | PWG German gloss witness (GRA is a sibling dict already) |
 | 16 | Otto (1948, written pre-1937) | plainText | 2 | de | Rudolf Otto †1937 — PD (life+70 since 2008) | null | DECIDE* | — |
 | 17 | MacDonell (1922) | plainText | 2 | en | Arthur A. MacDonell †1930 — PD (life+70 since 2001) | null | DECIDE* | — |
 | 18 | Müller (1891) | plainText | 2 | en | Max Müller †1900 — PD | null | DECIDE* | — |
@@ -138,7 +138,7 @@ a maintainer email is more likely to yield a quick GO than the in-copyright rows
 |---|---|---|---|
 | Metrical Data (VedaWeb 2024) (#6) | [SanskritKaraoke](https://github.com/gasyoun/SanskritKaraoke) RV verse seeds | **GO — landed 08-07-2026** ([H360](https://github.com/gasyoun/Uprava/blob/main/handoffs/H360-Sonnet_SanskritKaraoke_vedaweb_metrical_verse_seeds_08.07.26.md), `metrical_data_2024.json` here + `rv_verse_seeds.json` seed table in SanskritKaraoke, 10,551/10,551 stanzas joined) | done |
 | Elizarenkova RU (#20) | [RussianTranslation](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation) context/citation witness | **DECIDE, in-copyright — do not use in bulk without explicit rights clearance from VedaWeb/Nauka publisher**; short scholarly-quotation excerpts (a line or two per citation, not bulk incorporation) are a materially different, likely-fine use, but that's an editorial call each time, not a feed | 0d until cleared; if cleared, ~0.5d export+land |
-| Geldner de (#14), Grassmann de (#15) | PWG German gloss cross-check witness | DECIDE, lower-risk tier (translators PD, VedaWeb edition layer unconfirmed) | ~0.5d each if cleared |
+| Geldner de (#14), Grassmann de (#15) | PWG German gloss cross-check witness | **GO — landed 08-07-2026** ([H362](https://github.com/gasyoun/Uprava/blob/main/handoffs/H362-Sonnet_VisualDCS_vedaweb_geldner_grassmann_pwg_gloss_08.07.26.md), [`PWG_VEDAWEB_GLOSS_CROSSWALK.md`](PWG_VEDAWEB_GLOSS_CROSSWALK.md), 10,182/123,366 PWG entries attested) | done |
 | Casaretto et al. (2026) annotations (#28) | glossary-adjudication pool (SCL pilot 3 pattern) | DECIDE, same rationale as the already-landed #22 — worth a single combined rights confirmation covering both | ~0.5d if cleared |
 
 **Originally: no GO items in the meter/translation/gloss/morphology scope this triage was
