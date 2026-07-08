@@ -2,6 +2,10 @@
 
 _Created: 08-07-2026 · Last updated: 08-07-2026_
 
+**Derived crosswalk:** [`gra_vedaweb_crosswalk.tsv`](gra_vedaweb_crosswalk.tsv) + report
+[`GRA_CROSSWALK.md`](GRA_CROSSWALK.md) — Grassmann `<L>` entries → attested RV occurrence
+counts, built from this feed's `lemmatization.json` (H097).
+
 Registered feed for [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
 — a **one-time bulk export** of four core Rig-Veda annotation layers from
 [VedaWeb 2.0](https://vedaweb.uni-koeln.de/) (Universität zu Köln), landed here so
