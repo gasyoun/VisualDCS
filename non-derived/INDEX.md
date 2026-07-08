@@ -57,7 +57,7 @@ retrieval/license provenance.
 | `CHANDAH` | 1MB | 5 | Chandas (Sanskrit meter/prosody) references + `Works-Share-CHANDAS` |
 | `ALANKARA` | 1MB | 1 | Alaṅkāra (rhetoric/figures of speech) reference HTML |
 | `Rigveda` | 0.4MB | 3 | Rigveda introduction/hymn-164 article/parallels drafts |
-| [`vedaweb`](vedaweb/README.md) | 52MB | 6 | VedaWeb 2.0 (Uni Köln) Rig-Veda bulk export — catalog + 4 core annotation layers (Casaretto et al. accented word-split/morphology, gzipped; lemmatization+dictionary refs; Scarlata & Widmer accented text; Lubotsky padapāṭha), 10,552 stanzas each, CC BY 4.0 |
+| [`vedaweb`](vedaweb/README.md) | 52MB | 8 | VedaWeb 2.0 (Uni Köln) Rig-Veda bulk export — catalog + 4 core annotation layers (Casaretto et al. accented word-split/morphology, gzipped; lemmatization+dictionary refs; Scarlata & Widmer accented text; Lubotsky padapāṭha), 10,552 stanzas each; GRA crosswalk (H097); [`LAYERS_TRIAGE.md`](vedaweb/LAYERS_TRIAGE.md) (H098) — GO/DECIDE triage of the remaining 34 catalog layers, no new data landed (rights-honesty finding: only 2/36 resources carry an explicit machine-readable license) |
 
 ## Loose root files
 
