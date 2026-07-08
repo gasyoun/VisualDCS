@@ -2,6 +2,12 @@
 
 _Created: 08-07-2026 · Last updated: 08-07-2026_
 
+**Consumer witness:** [`elizarenkova_ru_1989_1999.json`](elizarenkova_ru_1989_1999.json) —
+Elizarenkova's Russian Rig-Veda translation, landed
+[H361](https://github.com/gasyoun/Uprava/blob/main/handoffs/H361-Sonnet_SanskritLexicography_vedaweb_elizarenkova_ru_witness_08.07.26.md)
+as a citation/context witness for
+[RussianTranslation](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation).
+
 **Derived crosswalk:** [`gra_vedaweb_crosswalk.tsv`](gra_vedaweb_crosswalk.tsv) + report
 [`GRA_CROSSWALK.md`](GRA_CROSSWALK.md) — Grassmann `<L>` entries → attested RV occurrence
 counts, built from this feed's `lemmatization.json` (H097).
@@ -43,17 +49,21 @@ instead of re-hitting the API.
 | [`lemmatization.json`](lemmatization.json) | `679b7da2d5b833a67f64b3f7` | lemmatization + dictionary-entry cross-references (same positions) | 10,552 | 40,975,485 | `fc7ac8a419f66881ed1b9e9556adf13b2ebce4df8395ba7a6db1ec54b6a96cf3` |
 | [`accented_text_scarlata_widmer_lubotsky.json`](accented_text_scarlata_widmer_lubotsky.json) | `66695c4b14f6d337f778873f` | accented saṁhitā text (Zurich version, Scarlata & Widmer 2017, after Lubotsky) | 10,552 | 2,520,899 | `02a3cf443ffb1f746abe3ca068732de247ae0f3715c527d67bd8a81588bbe7cd` |
 | [`padapatha_lubotsky.json`](padapatha_lubotsky.json) | `668ba4460b5942c9849a8684` | Lubotsky (1997) padapāṭha | 10,552 | 2,414,660 | `87b95d2dc5c25a591ab6be638725813fcf96c5f5df9ec1cf766357a9551040f4` |
+| [`elizarenkova_ru_1989_1999.json`](elizarenkova_ru_1989_1999.json) | `668be38c1e18769f3d9b0251` | Elizarenkova (1989-1999) Russian Rig-Veda translation | 10,552 | 4,066,118 | `34016bd2c18a607ef5daf4e9d26b6cfde0703837afaf04005d4d155713731905` |
 
-All four core exports cover the same 10,552 Rig-Veda stanza/verse positions
+All five exports cover the same 10,552 Rig-Veda stanza/verse positions
 (RV maṇḍalas 1–10, per `location`-keyed `contents[]` entries), position-aligned across
 files. `casaretto_accented_wordsplit.json` exceeds the ~40MB size rule (105MB raw) and
 is committed gzipped only — decompress with `gunzip -k casaretto_accented_wordsplit.json.gz`
 or re-fetch fresh via the export flow above (resource ID `66695e4a14f6d337f7788740`).
 
-Export format for all four is the API default (`format=json`, undocumented top-level
+Export format for all files is the API default (`format=json`, undocumented top-level
 shape: `id`, `title`, `subtitle`, `level`, `citation`, `description`, `meta`,
 `contents[]` — each `contents[]` entry keyed by `location` with layer-specific fields:
-`tokens`/`text`/`calls`).
+`tokens`/`text`/`calls`). `elizarenkova_ru_1989_1999.json` retrieved 08-07-2026 (~10:51
+UTC), same async export flow, re-triggered fresh per the single-use pickup-key rule
+above (an initial trigger via `urllib` hit a transient `429`; a fresh `curl` trigger
+seconds later succeeded cleanly, no further rate-limit errors).
 
 ## License & attribution
 
@@ -81,6 +91,21 @@ confirmed, [ROADMAP_VEDAWEB_REUSE.md](https://github.com/gasyoun/SanskritLexicog
   Monier-Williams) — `provided by` credits Thomas Malten, Peter Scharf, Malcolm D.
   Hyman, Jim Funderburk (CDSD) alongside the VedaWeb team, a direct tie to this org's
   own dictionary work.
+- **Elizarenkova (1989-1999)** (`elizarenkova_ru_1989_1999.json`): Elizarenkova,
+  Tatyana. 1989/1995/1999. *Rigveda: Izbrannye gimny* (Rigveda: Selected Hymns),
+  Vols. 1–3. Moskau: Nauka. Curated and hosted by VedaWeb – Online Research Platform
+  for Old Indic Texts. University of Cologne. **CC BY 4.0 explicitly confirmed**
+  08-07-2026 by Prof. Daniel Kölligan (also for Prof. Uta Reinöhl) in reply to org
+  rights outreach — see
+  [`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md)
+  and [`LAYERS_TRIAGE.md`](LAYERS_TRIAGE.md) row #20. **This is a distinct rights
+  posture from the same translator's text already present in
+  [SamudraManthanam](https://github.com/gasyoun/SamudraManthanam)'s parallel corpus**
+  (grey-rights, no public redistribution, per that repo's `README.md` and
+  `ROADMAP_2026_H2_DH_MOBILE.md`) — that copy's provenance/rights were never cleared
+  and stays gitignored/non-redistributable; this VedaWeb copy carries an explicit
+  written CC BY 4.0 grant for this specific hosted resource and is committed openly
+  on that basis. Do not conflate the two when citing "Elizarenkova via this org."
 
 ## Advisory-only
 
