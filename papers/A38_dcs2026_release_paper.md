@@ -1,9 +1,9 @@
 ---
 paper_id: A38
 title: "The Digital Corpus of Sanskrit 2026: An Open Treebank-and-Morphology SQLite Release with a Validated 2021→2026 Cross-Walk"
-status: draft (expanded skeleton, 3/5) — scaffolded 2026-06-26, expanded 2026-07-04
-readiness: 3/5
-venue: "LREC-COLING (LR track) / Research Data Journal / JOHD"
+status: draft (expanded skeleton, 4/5) — scaffolded 2026-06-26, expanded 2026-07-04, venue+sign-off locked 2026-07-09
+readiness: 4/5
+venue: "Research Data Journal (locked)"
 author: "**Mārcis Gasūns**, independent scholar ([ORCID 0000-0003-4513-884X](https://orcid.org/0000-0003-4513-884X)), gasyoun@ya.ru"
 data_source: "src/DCS-data-2026/ (master built M0–M8; figures verified against reports/m6_validation.md + reports/m7_widgets.md)"
 ---
@@ -28,12 +28,19 @@ _Created: 26-06-2026 · Last updated: 04-07-2026_
 > release does NOT use or benchmark against any of those methods (packaging/cross-walk layer, not
 > a methodological successor). One claim (rcNN-with-shortcuts, 2h vs 55h training,
 > sentencepiece-Transformer parity) could not be verified against either paper's abstract and was
-> deliberately left out. **Still open before submission:**
-> (1) mint the Zenodo DOI and fill the data-availability statement (MG action — see
-> [`A38_release_checklist.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md));
-> (2) obtain Oliver Hellwig's CC-BY redistribution sign-off and lock the upstream citation
-> string (email queued in the GTD hub); (3) confirm the byline; (4) verify the exact
-> bibliographic details of the remaining §2 references against the published versions.
+> deliberately left out. **Resolved 2026-07-09:** venue locked to **Research Data Journal**
+> (LREC-COLING/JOHD dropped as alternates); byline confirmed (Mārcis Gasūns, sole, ORCID
+> [0000-0003-4513-884X](https://orcid.org/0000-0003-4513-884X)); **Oliver Hellwig gave
+> explicit written CC-BY redistribution sign-off** by email 2026-07-09 for the derived
+> SQLite + CSV master, confirming CC BY 4.0 covers redistribution/modification (commercial
+> included) with attribution and requesting no further individual permission beyond the
+> licence. Locked attribution string per his email: "Oliver Hellwig: Digital Corpus of
+> Sanskrit (DCS)" with the release version appended (e.g. "DCS – Release 26.06.2026"). **Still
+> open before submission:** (1) mint the Zenodo DOI and fill the data-availability statement
+> (MG action — see
+> [`A38_release_checklist.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md),
+> to start after the current coding pass); (2) verify the exact bibliographic details of the
+> remaining §2 references against the published versions.
 
 ## Abstract
 
@@ -438,17 +445,19 @@ identifiers do not fit Sanskrit cleanly.
   recorded in the `provenance` table.
 - **Reproduce the headline.** `python src/DCS-data-2026/validate.py --all` regenerates the M6
   figures against the master.
-- **DOI.** _(TODO: mint via Zenodo↔GitHub on the VisualDCS repo — MG action; steps in
+- **DOI.** _(TODO: mint via Zenodo↔GitHub on the VisualDCS repo — MG action, to start after the
+  current coding pass; steps in
   [`A38_release_checklist.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md);
   insert the DOI here before submission.)_
 - **Licence.** Upstream DCS CoNLL-U is **CC BY 4.0** (Oliver Hellwig; per the distribution's
   provenance and readme). The derived master + exports are released under **CC BY 4.0** with
-  attribution to Hellwig for the annotation and to this project for the packaging. _(Open gate:
-  explicit redistribution sign-off from O. Hellwig — email queued — and the locked upstream
-  citation string.)_
-- **Cite the corpus.** Hellwig, Oliver. *The Digital Corpus of Sanskrit (DCS).* 2010–2024
-  (year range per the distribution's own readme; re-check against upstream when locking the
-  citation string).
+  attribution to Hellwig for the annotation and to this project for the packaging. **Explicit
+  redistribution sign-off obtained from Oliver Hellwig by email, 2026-07-09**, confirming CC BY
+  4.0 covers redistribution and modification (including commercial use) of the derived SQLite +
+  CSV master with attribution, and that no permission beyond the licence is required.
+- **Cite the corpus.** Locked attribution string, per O. Hellwig's 2026-07-09 email: "Oliver
+  Hellwig: Digital Corpus of Sanskrit (DCS)" with the release version appended, e.g. "DCS –
+  Release 26.06.2026."
 - **Cite the release.** See [`CITATION.cff`](https://github.com/gasyoun/VisualDCS/blob/main/CITATION.cff)
   at the repository root.
 - **Provenance docs.**
