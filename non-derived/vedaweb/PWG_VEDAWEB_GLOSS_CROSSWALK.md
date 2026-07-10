@@ -62,7 +62,7 @@ the repo, each serving its own crosswalk (`GRA_CROSSWALK.md` for GRA↔attestati
 3. Parsed `csl-orig/v02/pwg/pwg.txt` locally: regex over
    `<L>ID<pc>PC<k1>KEY1<k2>KEY2[<h>HOM]` header lines → 123,366 entries (matches the
    dictionary's own full `<L>` count exactly), plus a short markup-stripped snippet of the
-   entry body (PWG's local text uses `{#…#}` for transliterated Sanskrit and `{%…%}` for
+   entry body (PWG's local text uses `{#…#}` for transliterated Sanskrit and {% raw %}`{%…%}`{% endraw %} for
    German prose, not the `<i>`/`<div>` structure the kosh API's on-the-fly XML rendering
    exposes — both were stripped for a readable plain-text snippet).
 4. Joined `id_pwg` → `<L>` entry → `key1`/`key2`/`hom`/gloss-snippet, then for one example
