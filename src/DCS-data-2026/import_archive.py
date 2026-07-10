@@ -708,7 +708,7 @@ def cmd_freq(args):
     p5 = _first("Приложение 5.*", lc)
     if p5:
         stats["core_P5"] = _load_core_paired(con, p5, "Leonchenko/Прил5")
-    p10 = _first("Приложение 10.*", lc)
+    p10 = _first("Prilozhenie-10-*", lc)
     if p10:
         stats["core_P10_stable"] = _load_core_simple(con, p10, "Leonchenko/Прил10", "STABLE-ALL-HISTORY")
     sbor = _first("Сборное ядро.xlsx", lc)
