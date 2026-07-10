@@ -49,7 +49,7 @@ Content of This Website" page) found:
   which can be found in the resource information. Please use these for citing specific
   data."* — i.e. the platform's own stated policy is **per-resource citation, not a
   blanket redistribution license**. The `citation` field present on every resource (a
-  bibliographic "cite as" string with `{{res_url}}`/`{{curr_date}}` placeholders) is a
+  bibliographic "cite as" string with {% raw %}`{{res_url}}`/`{{curr_date}}`{% endraw %} placeholders) is a
   **citation requirement, not a license grant**.
 - No platform-wide content-license statement was found on `/api/platform` (footer,
   about, privacy, or site-notice segments) — the only license text present is for the
