@@ -75,6 +75,7 @@ Current total: **849 files, 3.5GB — all tracked in git.** (The drop from pass-
 | `Fonetika` | 1MB | 6 | Phonetics: ligature tables, historical alphabet frequency + `Works-Share-Lig` |
 | `Ramayana` | 187MB | 9 | Rāmāyaṇa most-frequent-words study, dictionary Pareto analysis, highlighted-names dictionary |
 | `Paralleli-v-tekstah-korpusa-SRC` | 1.5GB | 606 | Corpus-wide parallel-passage search — **still the largest folder here**; split out of `Paralleli-v-sanskritskih-tekstah` (see [`../non-derived/INDEX.md`](../non-derived/INDEX.md) for its philological counterpart). See "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" below for its internal structure |
+| [`Corpus-Delta-2021-2026`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/REPORT.md) | <0.1MB | 2 | H686: `DCS-data-2021/` vs `DCS-data-2026/dcs_full.sqlite` delta stats (corpus growth, POS-bucket shift, top-200 lemma frequency drift) + verdict — 2021 is **not** superseded, keep it |
 
 ## Contents of `Paralleli-v-tekstah-korpusa-SRC/`
 
