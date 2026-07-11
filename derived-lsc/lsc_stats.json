@@ -1,0 +1,22 @@
+{
+ "built": "H728, Fable 5 (claude-fable-5)",
+ "corpus": "dcs-conllu (DCS gold lemmatization), dating chapter-info.xml dcsTimeSlot",
+ "sentences": 754561,
+ "tokens_per_slot": {
+  "1 Vedic": 1278147,
+  "2 Epic": 1731353,
+  "3 Classical": 1268792,
+  "4 Medieval": 1028609,
+  "5 Late": 380325
+ },
+ "distinct_lemmas": 90331,
+ "context_dim": 5000,
+ "min_count": 50,
+ "scoreable_rows": 3224,
+ "rows_written": 3049,
+ "primary_pair": "1(Vedic)->2(Epic)",
+ "primary_scored": 1258,
+ "binary_threshold_q75_dist": 0.905203,
+ "spearman_dist_vs_fshift_primary": -0.0134,
+ "targets": 60
+}
