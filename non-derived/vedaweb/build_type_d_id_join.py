@@ -1,4 +1,10 @@
-"""Type-D grammar<->nongrammar ID join (Q4.0, H522).
+"""SUPERSEDED (H540, 11-07-2026) — see emit_typed_link_translation_witness.py for
+the canonical TYPE_D_RECORD_FIELDS emission per TYPED_LINK_ID_GRAMMAR.md (H539).
+This ad-hoc pre-spec schema (grammar_id/nongrammar_locus) predates the ID grammar
+and is incompatible with it; kept as a historical artifact only, do not consume
+type_d_id_join.tsv for new work.
+
+Type-D grammar<->nongrammar ID join (Q4.0, H522).
 
 Joins the existing gra_vedaweb_crosswalk.tsv (id_gra -> VedaWeb example
 location) against the three VedaWeb translation-layer exports landed
