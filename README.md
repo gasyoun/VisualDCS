@@ -1,5 +1,7 @@
 # VisualDCS
 
+_Created: 20-04-2026 · Last updated: 11-07-2026_
+
 Interactive frequency dashboards for the [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/), built from corpus frequency data and rendered as standalone HTML files — no build step, no server, open directly in a browser.
 
 ---
@@ -82,17 +84,30 @@ Pipeline: `parse_conllu` → `import_dcs_conllu` → `coverage_diff` → `export
 [`DCS_CONLLU_IMPORT_PLAN.md`](src/DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md) and `src/DCS-data-2026/reports/`
 for the pipeline, the verb tense/mood **code map**, and the 2021→2026 deltas.
 
+### Cross-repo consumer asset — `dcs_lemma_summary.json`
+
+[`dcs_lemma_summary.json`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_lemma_summary.json)
+(**83,239 lemmas**) is the canonical DCS lemma-frequency summary that other repos in the org are
+meant to consume directly instead of re-parsing the CoNLL-U corpus — VisualDCS is registered as
+the org's DCS corpus/morphology ingest owner (family 8 in
+[`SHARED_CODE.md`](https://github.com/gasyoun/SanskritLexicography/blob/master/SHARED_CODE.md)).
+It is produced by [`gen_dcs_lemma_summary.py`](https://github.com/gasyoun/VisualDCS/blob/main/gen_dcs_lemma_summary.py)
+from the DCS-2026 master and checked by
+[`validate_dcs_lemma_summary.py`](https://github.com/gasyoun/VisualDCS/blob/main/validate_dcs_lemma_summary.py)
+(CI-gated via [`validate-lemma-summary.yml`](https://github.com/gasyoun/VisualDCS/blob/main/.github/workflows/validate-lemma-summary.yml)).
+It is the feed behind the `csl-atlas` DCS adapter.
+
 ---
 
 ## Dashboards
 
-Three standalone HTML tools, best entered via the landing page.
+Four standalone HTML tools, best entered via the landing page.
 
 ### [`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html) — landing page / tool map
 
 The recommended starting point. A single page that lays out a **Stage 1 → 4 learning path**
 (which roots and forms to study first for the fastest corpus coverage) and a filterable grid of
-tool cards. It advertises 11 planned tools; the two below are the ones currently built as
+tool cards. It advertises 11 planned tools; the three below are the ones currently built as
 standalone files — the rest are described widgets, not yet shipped.
 
 ### [`sanskrit_verb_form_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_verb_form_dashboard.html) — verb-form frequency
@@ -123,7 +138,16 @@ coverage route, flashcard mode, a zero-cell filter, and CSV/Markdown export. Ful
 documentation is in [`sanskrit_pxn_v4_docs.md`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_pxn_v4_docs.md)
 (Russian).
 
-> The two dashboards report different headline totals (781,616 vs 745,394) because they use
+### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
+
+**DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
+consuming the tracked JSON assets [`visual/corpus_stats_widget.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/corpus_stats_widget.json),
+[`visual/dcs_genres.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/dcs_genres.json)
+(18 genre profiles), and [`visual/dcs_texts_clean.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/dcs_texts_clean.json)
+(288 texts with tense profiles). The landing-page cards *Корпусная статистика* and *DCS: 17 жанров*
+open it.
+
+> The two verb dashboards report different headline totals (781,616 vs 745,394) because they use
 > different aggregations of the corpus — the Excel's 38 tense/mood categories vs the browser's
 > 87 person×number / non-finite cells.
 
@@ -155,6 +179,25 @@ The repository also tracks a set of derived JSON and reference files used to pow
 
 > JSON files live in two places — most under `visual/`, but `verb_classes`, `tense_case_data`,
 > `morph_pn`, `prefix_clean`, and `passage_library` sit at the repo root.
+
+---
+
+## Other tracked material
+
+Beyond the dashboards, source data, and research archive, the repo also holds:
+
+- **[`papers/`](https://github.com/gasyoun/VisualDCS/tree/main/papers)** — the A38 data-descriptor
+  paper for the DCS-2026 SQLite release ([`A38_dcs2026_release_paper.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_dcs2026_release_paper.md))
+  and its [`A38_release_checklist.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md)
+  (Zenodo deposit + DOI-mint steps, still pending the upstream CC-BY sign-off).
+- **[`derived-parametric-core/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-parametric-core/README.md)** —
+  a dictionary-side **parametric core of Sanskrit** extracted from PWG (Voronezh-school
+  parametric-lexicology method of V. T. Titov / A. A. Kretov), cross-checked against V. V.
+  Leonchenko's corpus core in [`derived-data/Lexical-Cores/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md).
+  A separate, additive dataset — the Leonchenko sources in `derived-data/` are untouched.
+- **[`mockups/`](https://github.com/gasyoun/VisualDCS/tree/main/mockups)** — non-destructive dark
+  data-app restyles of the three shipped dashboards (CSS-only; the dashboard scripts are
+  byte-identical). Design exploration, not the live pages.
 
 ---
 
@@ -212,11 +255,19 @@ See [`roadmap.md`](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md) fo
 
 ## Tech Stack
 
-- **Data:** Microsoft Excel (`.xlsx`) for the frequency tables; raw DCS corpus CSV/txt under `src/DCS-data-2021/` (Git LFS) for the paradigm browser; derived JSON in `visual/` and the repo root
+- **Data:** Microsoft Excel (`.xlsx`) for the frequency tables; raw DCS corpus CSV/txt under `src/DCS-data-2021/` (plain git blobs, split into line-boundary parts — converted out of Git LFS) for the paradigm browser; derived JSON in `visual/` and the repo root
 - **Dashboards:** Vanilla HTML + [Chart.js 4.4.1](https://www.chartjs.org/) — no build step, no dependencies, open directly in browser
 
 ---
 
 ## License
 
-[Apache 2.0](https://github.com/gasyoun/VisualDCS/blob/main/LICENSE)
+- **Code and dashboards** (the HTML tools, Python pipeline, and derived JSON): [Apache 2.0](https://github.com/gasyoun/VisualDCS/blob/main/LICENSE).
+- **The DCS-2026 SQLite master and its exports**: **CC BY 4.0**, inherited from the upstream
+  Digital Corpus of Sanskrit (Hellwig, CC BY 4.0). Cite it per
+  [`CITATION.cff`](https://github.com/gasyoun/VisualDCS/blob/main/CITATION.cff), and cite the
+  underlying corpus annotation separately.
+
+---
+
+_Dr. Mārcis Gasūns_
