@@ -1,6 +1,24 @@
 # non-derived/vedaweb — VedaWeb 2.0 Rig-Veda bulk export
 
-_Created: 08-07-2026 · Last updated: 08-07-2026_
+_Created: 08-07-2026 · Last updated: 11-07-2026_
+
+**Typed-link dataset (D2b, H540):**
+[`typed_link_translation_witness.tsv`](typed_link_translation_witness.tsv) — the
+`gra_vedaweb_crosswalk.tsv` × `grassmann_de_1876_1877.json` join re-emitted in the
+canonical `TYPE_D_RECORD_FIELDS` shape per
+[`TYPED_LINK_ID_GRAMMAR.md`](https://github.com/gasyoun/Uprava/blob/main/TYPED_LINK_ID_GRAMMAR.md)
+§4a (`link_type=translation-witness`, `match_method=id-link`), built by
+[`emit_typed_link_translation_witness.py`](emit_typed_link_translation_witness.py)
+(regenerable, not hand-written) and validated 0-error against
+[`kosha/scripts/typed_link_lint.py`](https://github.com/gasyoun/kosha/blob/main/scripts/typed_link_lint.py).
+Registered per-repo per spec §5 (D2b) — **not** added to the kosha manifest until
+the Q2.1 unified concordance release. Per D2b, this dataset stays in VisualDCS
+(not kosha) until then. Supersedes the pre-spec prototype
+[`build_type_d_id_join.py`](build_type_d_id_join.py) /
+[`type_d_id_join.tsv`](type_d_id_join.tsv) (Q4.0, H522), whose ad-hoc schema
+(`grammar_id`/`nongrammar_locus`, no `anchor_key_slp1`/`confidence`/`evidence_count`)
+predates and is incompatible with the canonical H539 grammar — kept only as a
+historical artifact, do not consume it for new work.
 
 **Consumer witness:** [`elizarenkova_ru_1989_1999.json`](elizarenkova_ru_1989_1999.json) —
 Elizarenkova's Russian Rig-Veda translation, landed
