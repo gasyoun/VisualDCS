@@ -1,6 +1,6 @@
 # derived-data — index
 
-_Created: 02-07-2026 · Last updated: 04-07-2026_
+_Created: 02-07-2026 · Last updated: 12-07-2026_
 
 Catalogue of `VisualDCS/derived-data/` — the **DCS-corpus** half of a two-repo-root
 split. The **non-DCS** half (dictionaries, manuscript catalogs, reference/lecture
@@ -75,7 +75,7 @@ Current total: **849 files, 3.5GB — all tracked in git.** (The drop from pass-
 | `Fonetika` | 1MB | 6 | Phonetics: ligature tables, historical alphabet frequency + `Works-Share-Lig` |
 | `Ramayana` | 187MB | 9 | Rāmāyaṇa most-frequent-words study, dictionary Pareto analysis, highlighted-names dictionary |
 | `Paralleli-v-tekstah-korpusa-SRC` | 1.5GB | 606 | Corpus-wide parallel-passage search — **still the largest folder here**; split out of `Paralleli-v-sanskritskih-tekstah` (see [`../non-derived/INDEX.md`](../non-derived/INDEX.md) for its philological counterpart). See "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" below for its internal structure |
-| [`Corpus-Delta-2021-2026`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/REPORT.md) | <0.1MB | 2 | H686: `DCS-data-2021/` vs `DCS-data-2026/dcs_full.sqlite` delta stats (corpus growth, POS-bucket shift, top-200 lemma frequency drift) + verdict — 2021 is **not** superseded, keep it |
+| [`Corpus-Delta-2021-2026`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/REPORT.md) | 0.1MB | 8 | H686: `DCS-data-2021/` vs `DCS-data-2026/dcs_full.sqlite` delta stats (corpus growth, POS-bucket shift, top-200 lemma frequency drift) + verdict — 2021 is **not** superseded, keep it (for corpus *statistics* it IS superseded — never compute a current number from it). Plus the [`DRIFT_INTERPRETATION.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md) supplement: what the drift means (the corpus went Vedic), per-10k rate-drift CSV, all-texts token-delta CSV, shared-lexicon POS shift, a-privative lemmatization-drift diagnosis |
 
 ## Contents of `Paralleli-v-tekstah-korpusa-SRC/`
 
