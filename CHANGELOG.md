@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
+## [2026-07-12] — 2021→2026 delta: drift-interpretation supplement (H686 completed)
+
+### Added
+- **Drift interpretation + replication supplement** to the H686 delta report:
+  [`derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md`](derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md)
+  (+ `delta_supplement.py`, 3 CSVs, generated tables) — what the delta *means*: the +24.3%
+  growth is a coherent Vedic composition shift (iti/vai/agni/etad up, ca/tu/api/vac down);
+  the 1,761 only-2021 lemmas are mostly a-privative **lemmatization-policy drift**, not lost
+  text (real only-2021 text = 892 tokens across 4 commentary fragments); POS texture stable
+  within 1.5 pp under a shared-lexicon comparison; all-texts per-text token deltas (only
+  10/240 matched texts shrank, max −873). Verdict unchanged: keep `DCS-data-2021/`, but
+  never compute a *current statistic* from it.
+
 ## [2026-07-11] — Type-D VedaWeb concordance, 2021-2026 delta verdict, DCS 2026 hapax census
 
 ### Added
