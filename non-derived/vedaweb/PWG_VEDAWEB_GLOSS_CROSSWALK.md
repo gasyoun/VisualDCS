@@ -2,10 +2,10 @@
 
 _Created: 08-07-2026 · Last updated: 08-07-2026_
 
-Built for [H362](https://github.com/gasyoun/Uprava/blob/main/handoffs/H362-Sonnet_VisualDCS_vedaweb_geldner_grassmann_pwg_gloss_08.07.26.md),
-consuming the [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
+Built for [H362](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H362-Sonnet_VisualDCS_vedaweb_geldner_grassmann_pwg_gloss_08.07.26.md),
+consuming the [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
 feed's [`lemmatization.json`](lemmatization.json) `id_pwg` field (the same generalization
-[H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md)
+[H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md)
 found for `id_gra`, noted at [FINDINGS.md §63](https://github.com/gasyoun/SanskritLexicography/blob/master/FINDINGS.md))
 plus two newly-landed translation exports:
 [`geldner_de_1951_1957.json`](geldner_de_1951_1957.json) and
@@ -14,7 +14,7 @@ plus two newly-landed translation exports:
 
 Rights: both translations were unconfirmed ("DECIDE") at
 [LAYERS_TRIAGE.md](LAYERS_TRIAGE.md) rows #14/#15 until
-[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)'s
+[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)'s
 outreach got an explicit written reply (Prof. Daniel Kölligan, 08-07-2026) confirming both
 as **CC BY 4.0** — see
 [`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md).

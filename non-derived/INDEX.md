@@ -30,7 +30,7 @@ Current total: **1,239 files, 3.75GB** (18 folders + 2 loose root files), of whi
 repos, gitignored here because each has its own GitHub history/remote. Oversize
 binaries were replaced by tracked 7-Zip split volumes during the 02-07-2026 backup
 (see [`../derived-data/INDEX.md`](../derived-data/INDEX.md) "History" pass 5). `vedaweb`
-(added 08-07-2026, [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md))
+(added 08-07-2026, [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md))
 is an **external-corpus feed**, not a folder classified during the original
 Cyrillic→Latin rename pass — see its own [README.md](vedaweb/README.md) for
 retrieval/license provenance.

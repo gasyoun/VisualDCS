@@ -6,7 +6,7 @@ First lexical-semantic-change derivation for Sanskrit: the ACL Anthology's 81-pa
 (73 papers since 2020) contains **no Sanskrit work** as of 11-07-2026 — measured in
 [ACL_METHOD_OPPORTUNITIES_SANSKRIT_2026.md](https://github.com/gasyoun/Uprava/blob/main/ACL_METHOD_OPPORTUNITIES_SANSKRIT_2026.md)
 (opportunity #1). Built by
-[H728](https://github.com/gasyoun/Uprava/blob/main/handoffs/H728-Fable_VisualDCS_sanskrit-lsc-pilot_11.07.26.md),
+[H728](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H728-Fable_VisualDCS_sanskrit-lsc-pilot_11.07.26.md),
 Fable 5 (`claude-fable-5`). Task shape:
 [SemEval-2020 Task 1](https://aclanthology.org/2020.semeval-1.1/) (binary + graded change);
 metric caveats per [Goworek & Dubossarsky 2026](https://aclanthology.org/2026.lchange-1.13/).

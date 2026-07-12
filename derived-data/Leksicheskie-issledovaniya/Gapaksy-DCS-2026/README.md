@@ -82,6 +82,6 @@ Reads `../../../src/DCS-data-2026/dcs_full.sqlite`, rewrites the three TSVs in p
 Source DB: Oliver Hellwig, *Digital Corpus of Sanskrit*, release 2026 (CC BY-SA),
 imported by the VisualDCS M1–M8 pipeline. Census authored under Opus 4.8
 (`claude-opus-4-8`), 12-07-2026, handoff
-[H762](https://github.com/gasyoun/Uprava/blob/main/handoffs/H762-Sonnet_VisualDCS_dcs-hapax-census-single-vs-compound_12.07.26.md).
+[H762](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H762-Sonnet_VisualDCS_dcs-hapax-census-single-vs-compound_12.07.26.md).
 
 _Dr. Mārcis Gasūns_
