@@ -6,6 +6,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
+## [2026-07-11] — Type-D VedaWeb concordance, 2021-2026 delta verdict, DCS 2026 hapax census
+
+### Added
+- **Type-D translation-witness typed-link retrofit** ([PR #36](https://github.com/gasyoun/VisualDCS/pull/36),
+  H540): [`non-derived/vedaweb/typed_link_translation_witness.tsv`](non-derived/vedaweb/typed_link_translation_witness.tsv)
+  (9,945 rows, regenerable via `emit_typed_link_translation_witness.py`) — the
+  `gra_vedaweb_crosswalk.tsv` × `grassmann_de_1876_1877.json` join re-emitted in the canonical
+  `TYPE_D_RECORD_FIELDS` shape per [`TYPED_LINK_ID_GRAMMAR.md`](https://github.com/gasyoun/Uprava/blob/main/TYPED_LINK_ID_GRAMMAR.md)
+  §4a, validated 0-error against `kosha/scripts/typed_link_lint.py`. Supersedes the pre-spec
+  `build_type_d_id_join.py` / `type_d_id_join.tsv` prototype (Q4.0, H522) — kept in-repo,
+  marked superseded, not deleted.
+- **DCS 2021→2026 corpus delta report** ([PR #37](https://github.com/gasyoun/VisualDCS/pull/37),
+  H686): [`derived-data/Corpus-Delta-2021-2026/`](derived-data/Corpus-Delta-2021-2026/REPORT.md)
+  — texts 246→270 (+9.8%), tokens 4,577,461→5,688,416 (+24.3%), lemma IDs 91,406→98,606,
+  POS-bucket shift + top-200 lemma frequency-drift table. **Verdict: `DCS-data-2021/` is
+  NOT superseded** (6 texts + 1,761 lemma IDs are 2021-only) — report only, no deletion.
+- **DCS 2026 hapax census** ([PR #38](https://github.com/gasyoun/VisualDCS/pull/38), H762):
+  [`derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/`](derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/README.md)
+  — 39,987 hapax lemmas (41.9% of the 95,457-lemma vocabulary) over the full 5,688,416-token
+  corpus, split single-morpheme (57.7%) vs compound (42.3%) via direct stem-concat
+  segmentation; 3 TSVs + deterministic generator + a 5-limitation method README.
+
+### Fixed
+- A lint gap in `kosha/scripts/typed_link_lint.py`: 21 Grassmann `<L>` entries carry a
+  decimal homonym suffix (`gra:5833.1`) the `gra:` regex rejected — widened to
+  `^\d+(\.\d+)?$` (landed alongside PR #36, see [kosha PR #59](https://github.com/gasyoun/kosha/pull/59)).
+
 ## [2026-06-06] — DCS CoNLL-U import pipeline (M1–M8) ✅
 
 Imported the **current** DCS distribution (CoNLL-U / Universal Dependencies) alongside the 2021
