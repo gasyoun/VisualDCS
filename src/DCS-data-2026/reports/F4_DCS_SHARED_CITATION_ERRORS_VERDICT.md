@@ -2,7 +2,7 @@
 
 _Created: 10-07-2026 · Last updated: 10-07-2026_
 
-Handoff [H203](https://github.com/gasyoun/Uprava/blob/main/handoffs/H203-Opus_VisualDCS_dcs_shared_citation_errors_05.07.26.md).
+Handoff [H203](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H203-Opus_VisualDCS_dcs_shared_citation_errors_05.07.26.md).
 Run by Opus 4.8 (`claude-opus-4-8`). Read-only against the DCS passage corpus; this is the
 compact, dictionary-facing summary for csl-atlas consumption per the
 [VISUALDCS_CONSUMPTION_CONTRACT](https://github.com/sanskrit-lexicon/csl-atlas/blob/main/docs/VISUALDCS_CONSUMPTION_CONTRACT.md)

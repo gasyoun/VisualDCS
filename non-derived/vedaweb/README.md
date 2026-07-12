@@ -22,7 +22,7 @@ historical artifact, do not consume it for new work.
 
 **Consumer witness:** [`elizarenkova_ru_1989_1999.json`](elizarenkova_ru_1989_1999.json) —
 Elizarenkova's Russian Rig-Veda translation, landed
-[H361](https://github.com/gasyoun/Uprava/blob/main/handoffs/H361-Sonnet_SanskritLexicography_vedaweb_elizarenkova_ru_witness_08.07.26.md)
+[H361](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H361-Sonnet_SanskritLexicography_vedaweb_elizarenkova_ru_witness_08.07.26.md)
 as a citation/context witness for
 [RussianTranslation](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation).
 
@@ -37,11 +37,11 @@ as a citation/context witness for
   [`grassmann_de_1876_1877.json`](grassmann_de_1876_1877.json)) as a gloss-validation
   witness, built from `lemmatization.json`'s `id_pwg` field (H362).
 
-Registered feed for [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
+Registered feed for [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
 — a **one-time bulk export** of four core Rig-Veda annotation layers from
 [VedaWeb 2.0](https://vedaweb.uni-koeln.de/) (Universität zu Köln), landed here so
-downstream consumers ([H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md)
-GRA↔VedaWeb crosswalk, [H098](https://github.com/gasyoun/Uprava/blob/main/handoffs/H098-Sonnet_VisualDCS_vedaweb_meter_translations_triage_03.07.26.md)
+downstream consumers ([H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md)
+GRA↔VedaWeb crosswalk, [H098](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H098-Sonnet_VisualDCS_vedaweb_meter_translations_triage_03.07.26.md)
 meter/translation triage, the ZALIZNYAK a–f accent-mobility emission) read from disk
 instead of re-hitting the API.
 
@@ -88,7 +88,7 @@ not export defects). `casaretto_accented_wordsplit.json` exceeds the ~40MB size 
 above (resource ID `66695e4a14f6d337f7788740`).
 
 **Elizarenkova translation (08-07-2026, H361):** landed after
-[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)
+[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)
 confirmed CC BY 4.0 (see § License & attribution below). Retrieved ~10:51 UTC, same
 async export flow, re-triggered fresh per the single-use pickup-key rule above (an
 initial trigger via `urllib` hit a transient `429`; a fresh `curl` trigger seconds
@@ -100,14 +100,14 @@ of the stanza (not per-token). Consumed by
 `vedaweb_ru_witness.py` citation lookup (H361).
 
 **Geldner + Grassmann translations (08-07-2026, H362):** landed after
-[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)
+[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)
 confirmed both CC BY 4.0 (see § License & attribution below). Export shape:
 `id`, `title`, `subtitle`, `level`, `citation`, `description`, `meta`,
 `contents[]` — each entry `{location, text, createdAt, archived}`, `text` a
 full-sentence German translation of the stanza (not per-token).
 
 **Metrical Data (08-07-2026, H360):** landed after
-[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)
+[H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)
 confirmed CC BY 4.0 (see § License & attribution below). Export shape: `id`, `title`,
 `subtitle`, `level`, `citation`, `description`, `meta`, `contents[]` — each entry
 `{location, text, comments[], createdAt, archived}`; `text` holds one long/short

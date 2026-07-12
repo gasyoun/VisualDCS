@@ -2,7 +2,7 @@
 
 _Created: 10-07-2026 · Last updated: 10-07-2026_
 
-Дериват сессии [H457](https://github.com/gasyoun/Uprava/blob/main/handoffs/H457-Opus_VisualDCS_titov_parametric_core_dictionary_side_10.07.26.md).
+Дериват сессии [H457](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H457-Opus_VisualDCS_titov_parametric_core_dictionary_side_10.07.26.md).
 Исполнитель: Opus 4.8 (`claude-opus-4-8`).
 
 Первое применение **параметрического анализа лексики** воронежской школы

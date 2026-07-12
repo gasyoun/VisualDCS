@@ -6,7 +6,7 @@ Supplement to
 [`REPORT.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/REPORT.md)
 (the primary H686 pass, [PR #37](https://github.com/gasyoun/VisualDCS/pull/37)), written by
 Fable 5 (`claude-fable-5`) for
-[H686](https://github.com/gasyoun/Uprava/blob/main/handoffs/H686-Fable_VisualDCS_dcs-2021-2026-delta-stats_11.07.26.md).
+[H686](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H686-Fable_VisualDCS_dcs-2021-2026-delta-stats_11.07.26.md).
 `REPORT.md` counts the delta; this file is the interpretation layer — what the drift
 means, plus an independent replication by
 [`delta_supplement.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/delta_supplement.py)

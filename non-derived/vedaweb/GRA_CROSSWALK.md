@@ -2,8 +2,8 @@
 
 _Created: 08-07-2026 · Last updated: 08-07-2026_
 
-Built for [H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md),
-consuming the [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
+Built for [H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md),
+consuming the [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
 feed in [`lemmatization.json`](lemmatization.json). Data file:
 [`gra_vedaweb_crosswalk.tsv`](gra_vedaweb_crosswalk.tsv).
 

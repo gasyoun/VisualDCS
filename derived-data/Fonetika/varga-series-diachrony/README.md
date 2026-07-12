@@ -5,7 +5,7 @@ _Created: 07-07-2026 · Last updated: 07-07-2026_
 The five Sanskrit consonant series (varga) as **shares by historical period**, derived
 from the DCS-2026 per-varṇa/per-period counts. Built to replace the χ²-p-value "Table 5"
 of the 2014 dissertation *Состав и строй древнеиндийских корней* (Gasūns) with an
-honest frequency-share + effect-size analysis (see [H246](https://github.com/gasyoun/Uprava/blob/main/handoffs/H246-Fable_GasunsDhatu_2026_printed_book_prep_06.07.26.md),
+honest frequency-share + effect-size analysis (see [H246](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H246-Fable_GasunsDhatu_2026_printed_book_prep_06.07.26.md),
 defect **L7**), and reusable on its own.
 
 ## Files

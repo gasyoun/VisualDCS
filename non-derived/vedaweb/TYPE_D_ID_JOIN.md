@@ -2,7 +2,7 @@
 
 _Created: 11-07-2026 · Last updated: 11-07-2026_
 
-Built for [H522](https://github.com/gasyoun/Uprava/blob/main/handoffs/H522-Sonnet_VisualDCS_type_d_grammar_nongrammar_id_join_10.07.26.md)
+Built for [H522](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H522-Sonnet_VisualDCS_type_d_grammar_nongrammar_id_join_10.07.26.md)
 (Q4.0 of the
 [Concordance roadmap](https://github.com/gasyoun/Uprava/blob/main/CONCORDANCE_ROADMAP_GRAMMAR_NONGRAMMAR_2026_2027.md)),
 consuming the D2 schema and the [H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md)
