@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
+## [2026-07-12] — annotation-layer census supplement (H686 §3b)
+
+### Added
+- **Annotation-depth census**, a second axis the token-level delta passes miss:
+  census over all 270 CoNLL-U text folders (`delta_annotation_layers.py`) —
+  WordSem 219/270 (corpus-wide, not Vedic-selective), Vedic Treebank 74,
+  IsMantra 44 (both Vedic-selective). Sharp finding: 29 of the 30 only-2026
+  texts arrived with **zero** WordSem annotation (sole exception: Atharvaveda
+  Paippalāda) — the Vedic wave added raw tokens without the semantic layer.
+  Per-text CSV + reproducibility script ([PR #41](https://github.com/gasyoun/VisualDCS/pull/41)).
+
 ## [2026-07-12] — 2021→2026 delta: drift-interpretation supplement (H686 completed)
 
 ### Added
