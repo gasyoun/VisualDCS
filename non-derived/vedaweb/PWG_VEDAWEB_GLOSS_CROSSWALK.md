@@ -17,7 +17,7 @@ Rights: both translations were unconfirmed ("DECIDE") at
 [H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)'s
 outreach got an explicit written reply (Prof. Daniel Kölligan, 08-07-2026) confirming both
 as **CC BY 4.0** — see
-[`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md).
+[`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/outreach/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md).
 
 ## Confirming the ID scheme — `id_pwg` is the PWG `<L>` entry number
 
@@ -27,7 +27,7 @@ block showing the live kosh lookup
 `id_pwg` array per token. A live probe of that endpoint for IDs `349` and `80913` returned
 `headword: "agni"` and `headword: "yajYa"` respectively — which match exactly the
 `<L>349<pc>1-0028<k1>agni<k2>agni/` and `<L>80913<pc>6-0014<k1>yajYa<k2>yajYa/` entry headers
-already in [`csl-orig/v02/pwg/pwg.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/master/v02/pwg/pwg.txt).
+already in [`csl-orig/v02/pwg/pwg.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/main/v02/pwg/pwg.txt).
 **`id_pwg` is exactly the PWG `<L>` entry number** — the join was built entirely from local
 `csl-orig` data (123,366 `<L>` entries), with only the two-ID confirmation probe hitting the
 network.

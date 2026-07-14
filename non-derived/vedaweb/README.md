@@ -154,7 +154,7 @@ confirmed, [ROADMAP_VEDAWEB_REUSE.md](https://github.com/gasyoun/SanskritLexicog
   for Old Indic Texts. University of Cologne. **CC BY 4.0 explicitly confirmed**
   08-07-2026 by Prof. Daniel Kölligan (also for Prof. Uta Reinöhl) in reply to org
   rights outreach — see
-  [`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md)
+  [`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/outreach/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md)
   and [`LAYERS_TRIAGE.md`](LAYERS_TRIAGE.md) row #20. **This is a distinct rights
   posture from the same translator's text already present in
   [SamudraManthanam](https://github.com/gasyoun/SamudraManthanam)'s parallel corpus**

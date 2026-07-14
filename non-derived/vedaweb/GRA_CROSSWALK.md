@@ -27,7 +27,7 @@ occurrence counts per dictionary entry.
 (`GET https://kosh.uni-koeln.de/cdsd/gra/restful/ids?ids=79&ids=1824`) and returned
 `key1=agni` / `key1=Iq` (√īḍ) for those IDs — which matched exactly the `<L>79<pc>0008<k1>agni…`
 and `<L>1824<pc>0230<k1>Iq…` entry headers already sitting locally in this org's own
-[`csl-orig/v02/gra/gra.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/master/v02/gra/gra.txt).
+[`csl-orig/v02/gra/gra.txt`](https://github.com/sanskrit-lexicon/csl-orig/blob/main/v02/gra/gra.txt).
 **VedaWeb's `id_gra` is exactly the Grassmann `<L>` entry number** — so the ID→headword
 join was built entirely from local `csl-orig` data (12,785 `<L>` entries, including
 decimal-suffixed compound sub-entries like `<L>5833.1`), with zero live API calls needed

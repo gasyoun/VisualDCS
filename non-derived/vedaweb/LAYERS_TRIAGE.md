@@ -15,7 +15,7 @@ gap this triage found is a genuine metadata omission on their side, not an absen
 rights, and committed to backfilling all 34 entries with CC BY 4.0.** This retroactively
 confirms H096's own blanket claim for its 4 already-landed layers too — no longer an
 unverified assumption. Full reply text:
-[`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md).
+[`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/outreach/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md).
 Consumer handoffs minted: [H360](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H360-Sonnet_SanskritKaraoke_vedaweb_metrical_verse_seeds_08.07.26.md)
 (SanskritKaraoke meter), [H361](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H361-Sonnet_SanskritLexicography_vedaweb_elizarenkova_ru_witness_08.07.26.md)
 (RussianTranslation RU witness), [H362](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H362-Sonnet_VisualDCS_vedaweb_geldner_grassmann_pwg_gloss_08.07.26.md)
