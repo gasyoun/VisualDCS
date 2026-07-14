@@ -15,12 +15,19 @@ mapped per chapter file from lookup/chapter-info.xml.
 
 Source: DCS (Oliver Hellwig), CC BY 4.0. Pinned commit in ../PROVENANCE.md.
 Output: CSVs + provenance.json in this directory. Reproducible, no network.
+
+Phoneme classes + slp1_words()/segment()/load_slots() live in the shared
+`dcs_phono_engine` module (H926), co-located in this directory — also
+consumed by SanskritGrammar's dcs_text_phonostats.py.
 """
-import sys, os, re, csv, json, unicodedata, collections, glob, time
+import sys, os, csv, json, unicodedata, collections, glob, time
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate as tr
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from dcs_phono_engine import VOWELS, MODIF, slp1_words, segment, load_slots
 
 ROOT = r"C:/Users/user/Documents/GitHub/VisualDCS/src/DCS-data-2026/conllu"
 FILES = os.path.join(ROOT, "files")
@@ -28,83 +35,9 @@ CHAPTER_INFO = os.path.join(ROOT, "lookup", "chapter-info.xml")
 OUT = r"C:/Users/user/Documents/GitHub/VisualDCS/derived-data/Fonetika/regen-2026"
 os.makedirs(OUT, exist_ok=True)
 
-# --- SLP1 phoneme classes ---------------------------------------------------
-VOWELS = set("aAiIuUfFxXeEoO")
-CONS = set("kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzshL")
-MODIF = set("MH~")          # anusvāra, visarga, candrabindu (attach to preceding akshara)
-# avagraha ' and anything else -> ignored / boundary
-
-_SPLIT = re.compile(r"[^kKgGNcCjJYwWqQRtTdDnpPbBmyrlvSzshLaAiIuUfFxXeEoOMH~]+")
-
-def slp1_words(text_iast):
-    """IAST surface line -> list of SLP1 word strings (recognised phonemes only).
-
-    Transliterate the whole line once (avagraha ' , daṇḍa, digits become
-    separators), then split into maximal phoneme runs.
-    """
-    slp = tr(text_iast, sanscript.IAST, sanscript.SLP1)
-    return [c for c in _SPLIT.split(slp) if c]
-
-def segment(word):
-    """Return (aksharas, varnas, ligatures, ligatures2) as SLP1-string lists.
-
-    akshara = maximal run of consonants + one vowel + trailing modifiers,
-              OR a word-final consonant run with no following vowel (coda).
-    varna   = every phoneme (consonant / vowel / modifier) individually.
-    ligature= a consonant run of length >= 2 (rendered as a conjunct).
-    """
-    aksharas, varnas, ligs, ligs2 = [], [], [], []
-    i, n = 0, len(word)
-    while i < n:
-        c = word[i]
-        if c in CONS:
-            j = i
-            while j < n and word[j] in CONS:
-                j += 1
-            cluster = word[i:j]            # one or more consonants
-            varnas.extend(cluster)
-            if len(cluster) >= 2:
-                ligs.append(cluster)
-                if len(cluster) == 2:
-                    ligs2.append(cluster)
-            if j < n and word[j] in VOWELS:  # onset + vowel -> akshara
-                k = j + 1
-                while k < n and word[k] in MODIF:
-                    k += 1
-                aksharas.append(word[i:k])
-                varnas.append(word[j])
-                varnas.extend(m for m in word[j+1:k])
-                i = k
-            else:                            # word-final consonant coda -> its own unit
-                aksharas.append(cluster)     # rendered with halanta
-                i = j
-        elif c in VOWELS:                    # independent vowel akshara
-            k = i + 1
-            while k < n and word[k] in MODIF:
-                k += 1
-            aksharas.append(word[i:k])
-            varnas.append(c)
-            varnas.extend(m for m in word[i+1:k])
-            i = k
-        else:                                # stray modifier or unknown -> count as varna, skip
-            if c in MODIF:
-                varnas.append(c)
-            i += 1
-    return aksharas, varnas, ligs, ligs2
-
-# --- period map: chapter path -> dcsTimeSlot --------------------------------
-def load_slots():
-    txt = open(CHAPTER_INFO, encoding="utf-8").read()
-    slot = {}
-    for m in re.finditer(r"<path>(.*?)</path>\s*.*?<dcsTimeSlot>(.*?)</dcsTimeSlot>", txt, re.S):
-        path, s = m.group(1), m.group(2)
-        base = unicodedata.normalize("NFC", os.path.basename(path))
-        slot[base] = s
-    return slot
-
 def main():
     t0 = time.time()
-    slots = load_slots()
+    slots = load_slots(CHAPTER_INFO)
     print(f"chapter->slot entries: {len(slots)}", file=sys.stderr)
 
     SLOT_KEYS = ["1", "2", "3", "4", "5"]
