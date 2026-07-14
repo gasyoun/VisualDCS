@@ -57,6 +57,69 @@ durable, user-facing milestones.
   decimal homonym suffix (`gra:5833.1`) the `gra:` regex rejected — widened to
   `^\d+(\.\d+)?$` (landed alongside PR #36, see [kosha PR #59](https://github.com/gasyoun/kosha/pull/59)).
 
+## [2026-07-10] — VedaWeb feeds, A38 data-paper progress, M9 research archive, dictionary/corpus cross-checks (H790 backfill)
+
+_(Backfilled 14-07-2026, H790 changelog-backfill pass, Sonnet 5 (`claude-sonnet-5`) —
+27 substantive commits from 02–10.07.2026 had no changelog record. The prior H790
+pass on this repo checked against the wrong "last tag" — `dcs-full-2026-03-05`
+instead of the chronologically later `archive-2026-07` (2026-07-02) — and so missed
+this window entirely.)_
+
+### Added
+- **M9: research-archive parallels loader** ([PR #8](https://github.com/gasyoun/VisualDCS/pull/8)):
+  `import_archive.py parallels` ingests 245 Polnorazmernye CSVs into a queryable
+  `archive.sqlite` — 154,304 matches (14,702 GOOD / 139,602 PARTLY), a
+  quality-anchored parser recovering 271 malformed rows with zero silent loss, and
+  a `parallel_text` crosswalk linking 140/146 texts (95.9%) to `dcs_full.text`.
+- **Corpus-verified PPP list** (5,181 forms) derived from the verbal-forms DB, plus
+  a subhashita export script feeding SanskritLexicography's `IndischeSprueche`.
+- **A38 DCS-2026 release paper**: skeleton expanded to 3/5
+  ([PR #11](https://github.com/gasyoun/VisualDCS/pull/11), H156); Hellwig cluster +
+  ISCLS 2026 added to Related Work via an ACL Anthology scan
+  ([PR #13](https://github.com/gasyoun/VisualDCS/pull/13)); venue locked to
+  *Research Data Journal*, byline/ORCID confirmed, Hellwig CC-BY sign-off recorded
+  ([PR #24](https://github.com/gasyoun/VisualDCS/pull/24)).
+- **VedaWeb 2.0 Rig-Veda feeds**: bulk export of the 4 core RV annotation layers
+  (Casaretto et al. 2025 accented word-split + morphology, lemmatization + CDSD
+  cross-refs, Scarlata & Widmer accented text, Lubotsky padapatha — all 10,552
+  stanzas, CC BY 4.0, H096); the GRA↔VedaWeb crosswalk linking 9,945/12,785
+  Grassmann `<L>` entries (77.8%) to 192,637 attested RV token occurrences
+  ([PR #18](https://github.com/gasyoun/VisualDCS/pull/18), H097); meter/translation
+  layers triage ([PR #19](https://github.com/gasyoun/VisualDCS/pull/19), H098) then
+  rights-confirmed GO on all 4 DECIDE-tier layers
+  ([PR #20](https://github.com/gasyoun/VisualDCS/pull/20), H359); VedaWeb Metrical
+  Data (2024) export (H360); Elizarenkova's RU RV translation landed as a feed
+  (H361); Geldner + Grassmann PWG gloss cross-check (H362).
+- **H457 — dictionary-side Titov parametric core for Sanskrit**: first application
+  of the Voronezh-school (V.T. Titov) parametric analysis to Sanskrit from the
+  dictionary side, cross-checked against Leonchenko's 435-lemma corpus core —
+  `pwg_parametric_core.tsv` (106,082 PWG headwords × 13 cols)
+  ([PR #27](https://github.com/gasyoun/VisualDCS/pull/27)).
+- **H203/F4-DCS — shared-erroneous-citation test**: resolver + report over 587
+  shared rare PWG/PW∩MW citations vs. the DCS passage corpus; 0 adjudicated
+  genuine shared errors (96% of the pool is a Petersburg continuous-numbering vs.
+  DCS critical-edition Harivaṃśa mismatch, not a copied error) — A10 evidence
+  stays F1+F5, readiness unchanged at 3/5.
+- **H728 — Sanskrit LSC pilot**: first Lexical Semantic Change derivation for
+  Sanskrit in the ACL Anthology's LSC family (0 prior hits) — deterministic
+  PPMI-cosine over dcs-conllu (5.69M tokens), 3,049 lemmas scored, 1,258 on the
+  primary Vedic→Epic pair, freq-shift-controlled (Spearman −0.013), stratified
+  60-lemma target set for a future ChiWUG-style gold.
+- **H589 — dark-mode data-app mockups** for the 3 dashboards (CSS-only restyle,
+  scripts byte-identical, per the H563 winner-only rollout).
+- DCS akshara/varṇa/ligature frequency regen (H237) + Fonetika varga-series-
+  diachrony (5 consonant series by period, Cramér's V).
+- Per-subfolder `README.md` across `derived-data/`
+  ([PR #15](https://github.com/gasyoun/VisualDCS/pull/15)) and a new
+  Lexical-Cores README with a word-count table
+  ([PR #14](https://github.com/gasyoun/VisualDCS/pull/14)).
+
+### Fixed
+- CI: renamed over-long filenames that broke `actions/checkout`
+  ([PR #28](https://github.com/gasyoun/VisualDCS/pull/28)).
+- Pages: escaped literal Liquid tokens that were failing the Jekyll build
+  ([PR #29](https://github.com/gasyoun/VisualDCS/pull/29)).
+
 ## [2026-06-06] — DCS CoNLL-U import pipeline (M1–M8) ✅
 
 Imported the **current** DCS distribution (CoNLL-U / Universal Dependencies) alongside the 2021
