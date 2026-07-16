@@ -2,6 +2,9 @@
 .contributing_old.md
 .contributing_audit.txt
 
+# machine-local Claude Code settings, not a repo deliverable
+non-derived/.claude/
+
 # scratch / stray, not part of the tracked archive
 /merge_log.txt
 /src/dcs_full.sqlite
