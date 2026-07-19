@@ -146,6 +146,11 @@ relational dump, as a queryable, validated SQLite master. The 2021 dashboards ar
 ## [Unreleased]
 
 ### Added
+- **Paradigm-trainer scale-up staged (queued, docs-only, via [`/ask-batch`](https://github.com/gasyoun/claude-config/blob/main/commands/ask-batch.md), Fable 5 `claude-fable-5`):**
+  new [`docs/PLAN_VISUALDCS_PARADIGM_TRAINER_ATTESTED_SCALEUP_2026H2.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/PLAN_VISUALDCS_PARADIGM_TRAINER_ATTESTED_SCALEUP_2026H2.md)
+  (+ metadoc) staging the 6-root [`sanskrit_pxn_v4.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_pxn_v4.html)
+  browser's generalisation to the whole attested verb space with a trainer mode
+  ([H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md), Sonnet, queued).
 - Documentation and tooling for the DCS data and its lineage:
   - `src/DCS-data-2021/README.md` — provenance of the 2021 relational-DB export (Oliver Hellwig's
     Digital Corpus of Sanskrit), license/citation, and an inventory of raw tables vs. derived
