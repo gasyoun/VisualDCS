@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
+## [2026-07-19] — paradigm trainer scale-up: 6 roots -> the attested verb space (H1299)
+
+### Added
+- **`sanskrit_paradigm_trainer.html`** — root picker + search, attested-only cell grid
+  (every cell shown carries >=1 real corpus form+count, no fabricated textbook cells),
+  frequency-weighted flashcard trainer mode, JSON deck export for downstream SRS.
+  Scales the 6-hand-picked-root paradigm browser to **7,689 corpus-attested roots**
+  (frequency floor >=2 total VERB tokens; top 100 = "full" tier, the rest =
+  "attested"-only long tail per the H1299 plan's decision #3). `sanskrit_pxn_v4.html`
+  (the 6-root deep view) is untouched.
+- **`src/DCS-data-2026/gen_paradigm_attested.py`** — the data build, over the full 2026
+  DCS master (`dcs_full.sqlite`, 270 texts, 1,007,361 VERB tokens); reuses
+  `regen_widgets.ud_to_category`/`participle_cat` rather than re-deriving the
+  tense/mood category map or the participle heuristic. Writes
+  `visual/paradigm_attested.json` + `paradigm_attested_data.js` (same aggregation
+  pass, byte-stable rerun verified) and a build report.
+- **`src/DCS-data-2026/test_paradigm_attested.py`** — regression: pins the top-100
+  root list, spot-checks 10 roots (the 6 hand-picked + 4 more high-rank), and
+  enforces the never-fabricate-class discipline (no root record may carry a Panini
+  class number; DCS's unaccented tagging cannot resolve verb class I vs VI or IV vs
+  passive at the root-class level, and `Tense=Past` conflates aorist/perfect — both
+  carried through honestly, never resolved).
+- **E46 reconciliation** — cross-checked this build's per-root finite-cell counts
+  against csl-observatory's `paradigm_cell_coverage_per_root.tsv` (H817, same DB,
+  identical SQL filter): **0 mismatches**, 6,454 roots match exactly
+  (`reports/e46_reconciliation.md`).
+- Landing page (`sanskrit_index.html`) gained a card for the new trainer.
+
 ## [2026-07-12] — annotation-layer census supplement (H686 §3b)
 
 ### Added

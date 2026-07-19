@@ -21,12 +21,17 @@ The deliverable matches two items on VisualDCS's own README future-work list
 
 ## Improvement backlog (ranked)
 
-1. After ship: register the trainer JSON in kosha's manifest and offer it to Systema's
-   SRS as a deck source (plan decision 5).
+1. Register the trainer JSON in kosha's manifest and offer it to Systema's SRS as a
+   deck source — a human should decide the SRS integration shape (import format, card
+   scheduling) before wiring it; not done automatically by H1299.
 2. The nominal-paradigm dashboard (README's "biggest unbuilt item") is deliberately NOT
    in this plan — revisit as its own staged deliverable when the verbal trainer proves.
-3. E46 reconciliation findings may warrant a FINDINGS append if disagreements are
-   systematic.
+3. E46 reconciliation: 0 mismatches (6,454 exact matches) — no FINDINGS append needed,
+   the disagreement condition never triggered.
+4. Top-100/attested-tier UI split is currently a badge only (same rendering); a future
+   pass could give the long tail a lighter "card" layout as the plan's decision #3
+   originally envisioned, if usage shows the dense grid doesn't scale well past ~50
+   attested cells for a single root.
 
 ## Limitations
 
@@ -38,5 +43,6 @@ The deliverable matches two items on VisualDCS's own README future-work list
 | Date | Change | Model |
 |---|---|---|
 | 19-07-2026 | Created with the plan (H1299 staged queued) | Fable 5 (`claude-fable-5`) |
+| 19-07-2026 | H1299 executed: data build (7,689 roots) + trainer HTML + E46 reconciliation (0 mismatches) + regression pin. See CHANGELOG. | Sonnet 5 (`claude-sonnet-5`) |
 
 _Dr. Mārcis Gasūns_
