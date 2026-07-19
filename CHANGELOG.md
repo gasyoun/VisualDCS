@@ -143,7 +143,7 @@ relational dump, as a queryable, validated SQLite master. The 2021 dashboards ar
 - `src/DCS-data` split into `DCS-data-2021` (relational dump, converted out of Git LFS to plain blobs)
   and `DCS-data-2026` (CoNLL-U submodule + pipeline); README gained the 2026 source entry.
 
-## [Unreleased]
+## [2026-07-19] — paradigm-trainer attested scale-up staged (H1299 queued)
 
 ### Added
 - **Paradigm-trainer scale-up staged (queued, docs-only, via [`/ask-batch`](https://github.com/gasyoun/claude-config/blob/main/commands/ask-batch.md), Fable 5 `claude-fable-5`):**
