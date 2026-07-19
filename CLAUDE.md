@@ -60,6 +60,7 @@ Excel's 38-category 781,616, so the two headline totals are expected to differ.
 | `sanskrit_verb_form_dashboard.html` | Frequency distribution dashboard with Pareto curve, bar charts, lemma density (781,616 examples) |
 | `sanskrit_pxn_v4.html` | Interactive paradigm browser: **6 roots (√kṛ √bhū √as √gam √vac √dā) × 9 tenses × 9 person/number cells** (87 cells), corpus color-coding, examples panel, root comparison, stem+ending split, flashcard mode, zero-filter, CSV/MD export |
 | `sanskrit_pxn_v4_docs.md` | Feature-by-feature documentation for the paradigm browser (Russian) |
+| `sanskrit_paradigm_trainer.html` | H1299: attested-verb-space paradigm trainer, 7,689 roots (top-100 full tier + attested-only long tail), frequency-weighted flashcards, JSON deck export |
 | `visual/` | Derived JSON data assets (concordance, genres, texts, collocates, …) |
 | `*.json` (repo root) | Derived JSON assets read by the dashboards: `morph_pn`, `tense_case_data`, `verb_classes`, `prefix_clean`, `passage_library` |
 | `pareto.md` | Methodology documentation for Pareto % calculation |
@@ -77,6 +78,7 @@ In `visual/`:
 |---|---|---|
 | `form_lookup.json` | 7,873 forms → root / tense / rank | paradigm browser |
 | `paradigm_endings.json` | 25 tenses × attested endings from corpus | paradigm browser |
+| `paradigm_attested.json` / `paradigm_attested_data.js` | H1299: per-root (7,689) attested finite/non-finite cells, full corpus scale | paradigm trainer |
 | `dcs_texts_clean.json` | 288 texts with tense profiles | diachronic analysis |
 | `dcs_genres.json` | 18 genre profiles — 17 named families + `Other` (weighted averages) | genre comparison |
 | `dcs_scatter.json` | 170 diachronic data points | timeline charts |
@@ -187,13 +189,14 @@ See `roadmap.md` for the original discussion (Russian). Much of it has since shi
 - Flashcard mode with shuffle + self-scoring
 - Attested-only / zero-cell filter
 - CSV + Markdown export
+- **Per-root attestation counts, scaled to the whole attested verb space (H1299)** — 7,689 roots
+  (not just the 6 hand-picked ones) via `sanskrit_paradigm_trainer.html` + `gen_paradigm_attested.py`;
+  attested-only by construction, frequency-weighted trainer mode, JSON deck export. See its own
+  README section for the data ceiling (no verb-class numbers, P./A. pooled, Tense=Past conflated).
 
 **🔴 Still pending — high priority (new functionality):**
 - **Nominal paradigm dashboard** — case × number heatmap for noun/adjective stems
   (2.28M nominal tokens vs 781k verbal). The biggest unbuilt tool.
-- **Per-root attestation counts** — how many times a *specific* form of a *specific* root occurs
-  (e.g. jagāma = √gam 3sg Perfect) from `12.csv`/`15.csv`, distinct from tense-level totals.
-  (The concordance already gives per-form totals; per-root-per-cell counts are not yet wired in.)
 
 **🟡 Pending — polish:**
 - Print/PDF export with clean CSS (current export is CSV + Markdown only)
