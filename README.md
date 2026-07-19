@@ -138,6 +138,35 @@ coverage route, flashcard mode, a zero-cell filter, and CSV/Markdown export. Ful
 documentation is in [`sanskrit_pxn_v4_docs.md`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_pxn_v4_docs.md)
 (Russian).
 
+### [`sanskrit_paradigm_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_trainer.html) — paradigm trainer, attested verb space (H1299)
+
+Scales the paradigm browser from 6 hand-picked roots to **7,689 corpus-attested roots**
+(frequency floor >=2 total VERB tokens; top 100 = "full" tier, the rest = "attested-only"
+long tail, cards with no hand-curated notes). Root picker with search + frequency rank,
+attested-only cell rendering by construction (every cell shown carries at least one real
+corpus form + count), and a frequency-weighted flashcard trainer mode with a JSON deck
+export for downstream SRS. Built by
+[`src/DCS-data-2026/gen_paradigm_attested.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/gen_paradigm_attested.py)
+from the full 2026 DCS master (`dcs_full.sqlite`, 270 texts, 1,007,361 VERB tokens);
+regression-pinned by
+[`src/DCS-data-2026/test_paradigm_attested.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/test_paradigm_attested.py).
+Loads `visual/paradigm_attested_data.js` via a plain `<script src>` (no `fetch()`, no
+server) -- keep both files together when copying. The 6-root deep view
+(`sanskrit_pxn_v4.html`) is untouched and still the tool for those 6 roots' full
+textbook paradigm with P./A. columns.
+
+**Data ceiling -- read before trusting a cell as "resolved":** DCS tags unaccented text,
+so it cannot distinguish verb class I vs VI, or class IV vs the passive formation, at
+the root-class level -- **no Panini class number is shown anywhere in this dataset**.
+`Tense=Past` conflates aorist and perfect into one "Perfect/Aorist" bucket. `feat_voice`
+only tags Passive vs non-passive -- parasmaipada vs atmanepada is **not** separately
+tagged by DCS, so non-passive finite forms for a cell are pooled together (unlike the
+6-root RD grid's P./A. columns, which come from external grammatical knowledge, not
+this corpus tag set). Full report:
+[`reports/paradigm_attested_build.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_attested_build.md);
+cross-check against csl-observatory's E46 paradigm-cell-coverage census:
+[`reports/e46_reconciliation.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/e46_reconciliation.md).
+
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
 **DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
@@ -167,6 +196,7 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/form_lookup.json` | 7,873 verb forms → root / tense / rank |
 | `visual/coll_compact.json` | 800 lemmas × collocates by part of speech |
 | `visual/paradigm_endings.json` | 25 tenses × attested endings from the corpus |
+| `visual/paradigm_attested.json` / `paradigm_attested_data.js` | H1299: 7,689 roots × attested finite/non-finite cells (top-100 full tier + long tail), consumed by `sanskrit_paradigm_trainer.html` |
 | `visual/corpus_stats_widget.json` | Summary morpho-statistics for widgets |
 | `visual/anki_compact.json` | 200 Anki flashcards |
 | `visual/conc_totals.json` | 6,423 forms → total occurrences in corpus |
@@ -241,10 +271,14 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
 - **"What to study next" route** — slider-driven, by corpus coverage gain
 - **Attested-only filter** — hide paradigm cells with zero corpus examples
 - **CSV / Markdown export**
+- **Per-root attestation counts, scaled to the whole attested verb space (H1299)** — done via
+  [`sanskrit_paradigm_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_trainer.html)
+  (7,689 roots, not just the 6 hand-picked ones; attested-only by construction, frequency-weighted
+  trainer mode, JSON deck export). Supersedes the "Per-root attestation counts" item below for the
+  general case; the 6-root deep view keeps its own richer P./Ā.-split cells for those 6 roots.
 
 **🔴 Still planned — high priority**
 - **Nominal paradigm dashboard** — the corpus contains 2.28M nominal tokens vs 781k verbal. A case × number heatmap for the major stem classes (-a, -ā, -i, -u, -an, -in, -ant) is the most natural next tool. *(biggest unbuilt item)*
-- **Per-root attestation counts** — how many times a specific form of a specific root (e.g. *jagāma* √gam 3sg Perfect) appears, distinct from the general tense frequency, from `12.csv`/`15.csv`.
 
 **🟢 Still planned — polish**
 - **Print/PDF export** — clean CSS print stylesheet for the paradigm table (current export is CSV + Markdown).

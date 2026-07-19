@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Paradigm trainer — attested verb space (DCS)</title>
+<style>
+body{font-family:system-ui,sans-serif;padding:1rem;max-width:1100px;margin:0 auto;color:#1a1a1a;background:#fff}
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e8e8e8}
+  .panel{background:#242424!important;border-color:#3a3a3a!important}
+  .hdrnote{background:#242424!important;color:#bbb!important}
+  .root-item:hover{background:#2a2a2a!important}
+  .root-item.sel{background:#3266ad33!important}
+  input,select{background:#242424;color:#e8e8e8;border-color:#444!important}
+  th{background:#242424!important}
+  td.cell{background:#242424!important;border-color:#3a3a3a!important}
+  .card{background:#242424!important;border-color:#3a3a3a!important}
+}
+a.d{color:inherit;text-decoration:underline;text-decoration-color:rgba(100,130,180,.35);text-underline-offset:2px}
+.rb{padding:4px 9px;font-size:12px;border-radius:6px;border:0.5px solid #ccc;background:#fff;cursor:pointer;color:#555}
+.rb.on{background:#3266ad22;border-color:#3266ad;color:#3266ad;font-weight:500}
+.tab{padding:6px 14px;font-size:13px;border:none;background:none;cursor:pointer;color:#888;border-bottom:2px solid transparent}
+.tab.on{color:#3266ad;border-bottom-color:#3266ad;font-weight:600}
+.root-item{padding:4px 8px;font-size:12px;cursor:pointer;border-radius:4px;display:flex;justify-content:space-between;gap:6px}
+.root-item:hover{background:#f0f0f0}
+.root-item.sel{background:#3266ad18;font-weight:600}
+.panel{border:0.5px solid #ddd;border-radius:8px;padding:10px}
+th,td{box-sizing:border-box;font-size:11px}
+th{position:sticky;top:0;background:#fff;text-align:left;padding:4px 6px;border-bottom:1px solid #ccc}
+td.cell{padding:3px 6px;border:0.5px solid #eee;white-space:nowrap;border-radius:3px}
+.hdrnote{background:#f5f5f5;border-radius:8px;padding:8px 14px;margin-bottom:1rem;font-size:12px;color:#555;line-height:1.5}
+.badge{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
+.badge.full{background:#1d9e7522;color:#1d9e75}
+.badge.attested{background:#ba751722;color:#ba7517}
+.card{cursor:pointer;border:1px solid #ddd;border-radius:12px;min-height:140px;padding:24px;text-align:center;background:#fafbfc;user-select:none}
+input[type=text]{font-size:12px;padding:4px 8px;border:0.5px solid #ccc;border-radius:6px;outline:none}
+</style>
+</head><body>
+
+<h2 style="font-size:16px;margin:0 0 6px">Paradigm trainer — the attested verb space</h2>
+<div class="hdrnote" id="hdrnote">loading…</div>
+
+<div style="margin-bottom:10px">
+  <button class="tab on" id="tab-browse" onclick="setTab('browse')">Обзор / Browse</button>
+  <button class="tab" id="tab-train" onclick="setTab('train')">Тренажёр / Trainer</button>
+</div>
+
+<!-- BROWSE TAB -->
+<div id="view-browse">
+  <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+    <div class="panel" style="width:260px;flex-shrink:0">
+      <input type="text" id="root-search" placeholder="Поиск корня: kṛ, gam, 45…" style="width:100%;margin-bottom:8px" oninput="renderRootList()">
+      <div style="font-size:10px;color:#888;margin-bottom:6px">
+        <span id="root-count-note"></span>
+      </div>
+      <div id="root-list" style="max-height:560px;overflow-y:auto"></div>
+    </div>
+    <div class="panel" style="flex:1;min-width:420px" id="root-detail">
+      <em style="color:#888;font-size:12px">Выберите корень слева.</em>
+    </div>
+  </div>
+</div>
+
+<!-- TRAINER TAB -->
+<div id="view-train" style="display:none">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+    <span style="font-size:12px;color:#888">Колода:</span>
+    <button class="rb on" id="deck-top" onclick="setDeckScope('top',this)">Топ-100 (полный охват)</button>
+    <button class="rb" id="deck-all" onclick="setDeckScope('all',this)">Все допущенные корни (attested-only)</button>
+    <button class="rb" id="deck-root" onclick="setDeckScope('root',this)">Только: <span id="deck-root-name">—</span></button>
+    <span style="flex:1"></span>
+    <button onclick="exportDeck()" style="font-size:11px;padding:4px 10px;border:0.5px solid #3266ad;border-radius:6px;background:#3266ad18;cursor:pointer;color:#3266ad">↓ Экспорт колоды JSON</button>
+  </div>
+  <div style="font-size:11px;color:#888;margin-bottom:10px" id="deck-stats"></div>
+
+  <div id="fc-card" class="card" onclick="fcReveal()">
+    <div id="fc-q" style="font-size:19px;font-weight:500;margin-bottom:6px"></div>
+    <div id="fc-hint" style="font-size:12px;color:#aaa;margin-bottom:14px"></div>
+    <div id="fc-a" style="display:none">
+      <div id="fc-ans" style="font-size:22px;font-style:italic;color:#3266ad;margin-bottom:6px"></div>
+      <div id="fc-ans2" style="font-size:12px;color:#888"></div>
+    </div>
+    <div id="fc-tap" style="font-size:12px;color:#bbb;margin-top:10px">нажмите чтобы показать ответ</div>
+  </div>
+  <div id="fc-rating" style="display:none;justify-content:center;gap:8px;margin-top:10px">
+    <button onclick="fcRate(0)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #e24b4a;background:#e24b4a18;cursor:pointer;color:#e24b4a;font-size:12px">✗ Не знал</button>
+    <button onclick="fcRate(1)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #ba7517;background:#ba751718;cursor:pointer;color:#ba7517;font-size:12px">~ Вспомнил</button>
+    <button onclick="fcRate(2)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #1d9e75;background:#1d9e7518;cursor:pointer;color:#1d9e75;font-size:12px">✓ Знал</button>
+  </div>
+  <div style="text-align:center;font-size:11px;color:#aaa;margin-top:8px" id="fc-session"></div>
+</div>
+
+<div style="font-size:10px;color:#999;margin-top:1.5rem;border-top:1px solid #eee;padding-top:8px">
+  Данные: Oliver Hellwig, <a class="d" href="http://www.sanskrit-linguistics.org/dcs/index.php" target="_blank">Digital Corpus of Sanskrit</a> (2026 master, 270 текстов).
+  Кросс-проверка охвата ячеек: <a class="d" href="https://github.com/sanskrit-lexicon/csl-observatory/blob/main/reports/paradigm_cell_coverage.md" target="_blank">csl-observatory E46</a>.
+  Шесть эталонных корней (kṛ/bhū/as/gam/vac/dā, традиционная парадигма) — <a class="d" href="sanskrit_pxn_v4.html">sanskrit_pxn_v4.html</a>.
+</div>
+
+<script src="visual/paradigm_attested_data.js"></script>
+<script>
+const D = window.PARADIGM_ATTESTED;
+const NUML = {sg:'sg',du:'du',pl:'pl'};
+const PERSL = {1:'1',2:'2',3:'3'};
+const NFLABEL = {PPP:'PPP (прош. страд. прич.)', Abs:'Absolutive (деепричастие)', Inf:'Infinitive',
+  FPP:'Gerundive / FPP (буд. страд. прич.)', PresPart:'Present Participle', FutPart:'Future Participle',
+  PartOther:'Participle (unclassified)', Other:'Other non-finite'};
+
+function initHeader(){
+  const el = document.getElementById('hdrnote');
+  if(!D){ el.innerHTML = '<strong style="color:#e24b4a">visual/paradigm_attested_data.js не найден.</strong> Запустите src/DCS-data-2026/gen_paradigm_attested.py.'; return; }
+  el.innerHTML = `<strong style="color:#1a1a1a">${D.rootCount.toLocaleString()} корней</strong>`+
+    ` (порог допуска: &ge;${D.frequencyFloor} токенов; топ-${D.tierBoundary} = «full», остальное = «attested»-only) · `+
+    `источник: ${D.source.verbTokensTotal.toLocaleString()} VERB-токенов, ${D.corpusRelease}.<br>`+
+    `<strong style="color:#ba7517">Границы данных:</strong> ${D.ceilingNote}`;
+}
+
+// ---------- BROWSE ----------
+let rootIds = [];
+let curRoot = null;
+
+function buildRootIndex(){
+  rootIds = Object.keys(D.roots).sort((a,b)=>D.roots[a].rank-D.roots[b].rank);
+}
+
+function renderRootList(){
+  const q = document.getElementById('root-search').value.trim().toLowerCase();
+  const list = document.getElementById('root-list');
+  const filtered = q ? rootIds.filter(r=>r.toLowerCase().includes(q)) : rootIds;
+  document.getElementById('root-count-note').textContent = `${filtered.length} из ${rootIds.length}`;
+  const shown = filtered.slice(0,300);
+  list.innerHTML = shown.map(r=>{
+    const rec = D.roots[r];
+    return `<div class="root-item${r===curRoot?' sel':''}" onclick="selectRoot('${r.replace(/'/g,"\\'")}')">`+
+      `<span>#${rec.rank} √${r}</span><span style="color:#aaa">${rec.totalTokens.toLocaleString()}</span></div>`;
+  }).join('') + (filtered.length>300?`<div style="font-size:10px;color:#aaa;padding:4px">…и ещё ${filtered.length-300} (уточните поиск)</div>`:'');
+}
+
+function selectRoot(r){
+  curRoot = r;
+  renderRootList();
+  renderRootDetail(r);
+  document.getElementById('deck-root-name').textContent = '√'+r;
+}
+
+function cellColor(n, max){
+  const t = Math.min(1, Math.log(n+1)/Math.log(max+1));
+  const c = Math.round(255 - t*180);
+  return `rgb(${c},${Math.round(c+ (255-c)*0.3)},255)`;
+}
+
+function renderRootDetail(r){
+  const rec = D.roots[r];
+  const panel = document.getElementById('root-detail');
+  let maxN = 1;
+  for(const cat in rec.finite){ for(const nk of ['sg','du','pl']){ for(const p in rec.finite[cat][nk]){
+    maxN = Math.max(maxN, rec.finite[cat][nk][p][0][0]); } } }
+
+  let html = `<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">`+
+    `<span style="font-size:16px;font-weight:600">√${r}</span>`+
+    `<span class="badge ${rec.tier}">${rec.tier==='full'?'top-100 · full':'attested-only'}</span>`+
+    `<span style="font-size:11px;color:#888">rank #${rec.rank} · ${rec.totalTokens.toLocaleString()} токенов в корпусе</span>`+
+    `<span style="flex:1"></span>`+
+    `<a class="d" style="font-size:11px" href="http://www.sanskrit-linguistics.org/dcs/index.php?contents=lemma&IDLemma=${r}" target="_blank">DCS →</a>`+
+    `</div>`;
+
+  const cats = Object.keys(rec.finite);
+  if(cats.length){
+    html += `<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%"><thead><tr><th>Категория (finite)</th>`+
+      `<th>1sg</th><th>2sg</th><th>3sg</th><th>1du</th><th>2du</th><th>3du</th><th>1pl</th><th>2pl</th><th>3pl</th></tr></thead><tbody>`;
+    for(const cat of cats){
+      html += `<tr><td style="padding:3px 6px;font-size:11px;color:#555">${cat}</td>`;
+      for(const nk of ['sg','du','pl']){
+        for(const p of ['1','2','3']){
+          const arr = rec.finite[cat][nk][p];
+          if(!arr){ html += `<td class="cell" style="color:#ddd">—</td>`; continue; }
+          const [n,form] = arr[0];
+          const extra = arr.length>1 ? ` <span style="color:#aaa">+${arr.length-1}</span>` : '';
+          html += `<td class="cell" style="background:${cellColor(n,maxN)}" title="${arr.map(x=>x[1]+' ('+x[0]+')').join(', ')}">`+
+            `<span style="font-style:italic">${form}</span><span style="color:#888;font-size:9px"> ${n}${extra}</span></td>`;
+        }
+      }
+      html += `</tr>`;
+    }
+    html += `</tbody></table></div>`;
+  } else {
+    html += `<div style="font-size:12px;color:#888">Нет допущенных finite-ячеек (только non-finite формы).</div>`;
+  }
+
+  const nfKeys = Object.keys(rec.nonfinite);
+  if(nfKeys.length){
+    html += `<div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">`;
+    for(const k of nfKeys){
+      const arr = rec.nonfinite[k];
+      html += `<div style="border:0.5px solid #ddd;border-radius:6px;padding:6px 10px;font-size:11px">`+
+        `<div style="color:#888">${NFLABEL[k]||k}</div>`+
+        `<div style="font-style:italic;font-size:13px">${arr[0][1]}</div>`+
+        `<div style="color:#aaa">${arr[0][0].toLocaleString()}</div></div>`;
+    }
+    html += `</div>`;
+  }
+  panel.innerHTML = html;
+}
+
+// ---------- TABS ----------
+function setTab(t){
+  document.getElementById('tab-browse').classList.toggle('on', t==='browse');
+  document.getElementById('tab-train').classList.toggle('on', t==='train');
+  document.getElementById('view-browse').style.display = t==='browse'?'':'none';
+  document.getElementById('view-train').style.display = t==='train'?'':'none';
+  if(t==='train' && !deck.length) buildDeck();
+}
+
+// ---------- TRAINER ----------
+let deckScope = 'top';
+let deck = [];
+let deckIdx = 0;
+let session = {seen:0, know:0};
+
+function setDeckScope(s, btn){
+  deckScope = s;
+  document.querySelectorAll('#deck-top,#deck-all,#deck-root').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  buildDeck();
+}
+
+function buildDeck(){
+  deck = [];
+  const roots = deckScope==='root' && curRoot ? [curRoot]
+    : rootIds.filter(r => deckScope==='top' ? D.roots[r].tier==='full' : true);
+  for(const r of roots){
+    const rec = D.roots[r];
+    for(const cat in rec.finite){
+      for(const nk of ['sg','du','pl']){
+        for(const p in rec.finite[cat][nk]){
+          const arr = rec.finite[cat][nk][p];
+          const n = arr[0][0];
+          deck.push({root:r, cat, nk, p, forms:arr, n});
+        }
+      }
+    }
+  }
+  // frequency-weighted shuffle: sample without replacement, weight = n
+  const pool = deck.slice();
+  const ordered = [];
+  while(pool.length){
+    const total = pool.reduce((s,c)=>s+c.n,0);
+    let x = Math.random()*total, i=0;
+    while(x > pool[i].n){ x -= pool[i].n; i++; }
+    ordered.push(pool.splice(i,1)[0]);
+  }
+  deck = ordered;
+  deckIdx = 0;
+  session = {seen:0, know:0};
+  document.getElementById('deck-stats').textContent = `${deck.length.toLocaleString()} карточек (частотно-взвешенная выборка без повторов)`;
+  fcShow();
+}
+
+function fcShow(){
+  if(!deck.length){ document.getElementById('fc-q').textContent = 'Колода пуста.'; return; }
+  const c = deck[deckIdx % deck.length];
+  document.getElementById('fc-q').textContent = `√${c.root} — ${c.cat}`;
+  document.getElementById('fc-hint').textContent = `${c.p} л., ${c.nk} (person ${c.p}, number ${c.nk})`;
+  document.getElementById('fc-a').style.display = 'none';
+  document.getElementById('fc-rating').style.display = 'none';
+  document.getElementById('fc-tap').style.display = '';
+}
+
+function fcReveal(){
+  const c = deck[deckIdx % deck.length];
+  if(!c) return;
+  document.getElementById('fc-ans').textContent = c.forms.map(f=>f[1]).join(' / ');
+  document.getElementById('fc-ans2').textContent = c.forms.map(f=>`${f[1]} (${f[0].toLocaleString()})`).join(', ');
+  document.getElementById('fc-a').style.display = '';
+  document.getElementById('fc-rating').style.display = 'flex';
+  document.getElementById('fc-tap').style.display = 'none';
+}
+
+function fcRate(score){
+  session.seen++;
+  if(score>=1) session.know++;
+  document.getElementById('fc-session').textContent = `сессия: ${session.know}/${session.seen} знал(а)`;
+  deckIdx++;
+  fcShow();
+}
+
+function exportDeck(){
+  const payload = {
+    schemaVersion: "1.0.0",
+    exportedAt: new Date().toISOString(),
+    scope: deckScope,
+    source: "VisualDCS paradigm trainer (H1299)",
+    cardCount: deck.length,
+    cards: deck.map(c=>({root:c.root, category:c.cat, person:c.p, number:c.nk, forms:c.forms}))
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 1)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `paradigm_trainer_deck_${deckScope}.json`;
+  a.click();
+}
+
+// ---------- init ----------
+initHeader();
+if(D){
+  buildRootIndex();
+  renderRootList();
+  selectRoot(rootIds[0]);
+}
+</script>
+</body></html>
