@@ -6,6 +6,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
+## [2026-07-20] — MW uttarapada index × DCS Kompozity: dictionary productivity vs corpus attestation (H1328)
+
+### Added
+- **[`derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv)**
+  — the join, 19,177 rows (one per MW-kept compound final member), giving for each:
+  MW first-member productivity (type count), corpus compound-form count, summed DCS
+  token frequency, corpus first-member count, the MW∩corpus / MW-only / corpus-only
+  first-member set arithmetic, and a `corpus_status` (final / form_variant /
+  nonfinal_only / absent). Joins the
+  [MWderivations issue15 reverse index](https://github.com/gasyoun/MWderivations/blob/master/issue15/compounds_reverse_classified.tsv)
+  (dictionary side) to
+  [`Kompozity/cmps.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmps.csv)
+  × [`names.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/names.csv)
+  (corpus side).
+- **[`derived-data/Kompozity/build_uttarapada_dict_vs_corpus.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/build_uttarapada_dict_vs_corpus.py)**
+  — the reproducible build. Folds the two orthographic mismatches between the sides
+  (anusvāra `ṃ`/`ṁ`; MW markup `@`/`-`/avagraha) but deliberately does **not** fold
+  vowel-length / gender / junction-sandhi differences, diagnosing those as
+  `form_variant` rather than asserting a false absence.
+- **[`reports/uttarapada_dict_vs_corpus_divergence.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/uttarapada_dict_vs_corpus_divergence.md)**
+  — the divergence report with both directions. Headline: even where MW **and** the
+  corpus attest a final member, their first-member vocabularies are near-disjoint
+  (median Jaccard 0.00; 56 % of matched finals share zero first members —
+  e.g. `-indra`, MW 2 vs corpus 286, overlap 0). Direction A (dictionary-only,
+  10,387 finals, 86 % MW-hapax) is framed as a corpus-unattested *stratum*, not
+  "ghost words" (per [SanskritLexicography FINDINGS §86](https://github.com/gasyoun/SanskritLexicography/blob/master/FINDINGS.md)
+  and the pwg/mw ghost-word work). Direction B surfaces the productive
+  enumeration/comparison heads the corpus over-attests and MW under-lists
+  (`-ādi`, `-ādya`, `-ābha`, `-uttama`, `-vyāghra`, `-indra`).
+
 ## [2026-07-19] — paradigm trainer scale-up: 6 roots -> the attested verb space (H1299)
 
 ### Added
