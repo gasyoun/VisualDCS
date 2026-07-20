@@ -35,6 +35,12 @@ durable, user-facing milestones.
   and the pwg/mw ghost-word work). Direction B surfaces the productive
   enumeration/comparison heads the corpus over-attests and MW under-lists
   (`-ādi`, `-ādya`, `-ābha`, `-uttama`, `-vyāghra`, `-indra`).
+- **[`visual/kompozity_dict_vs_corpus.html`](https://github.com/gasyoun/VisualDCS/blob/main/visual/kompozity_dict_vs_corpus.html)**
+  — a self-contained interactive visualization of the divergence: a log-log scatter of
+  dictionary productivity × corpus attestation for the 6,249 shared final members, coloured
+  by first-member overlap (the "same finals, different words" story made visible), plus the
+  four-strata bar, the Jaccard-overlap histogram, both divergence tables, and the twin
+  junk-heads. Theme-aware, no external assets; palette CVD-validated.
 
 ## [2026-07-19] — paradigm trainer scale-up: 6 roots -> the attested verb space (H1299)
 
