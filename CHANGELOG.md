@@ -6,6 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
+## [2026-07-26] — DCS data-layer doc-of-record: consumer deep manual (H1407, Wave 4)
+
+### Added
+- **[`docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md)**
+  (+ [`.meta.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.meta.md))
+  — the org-wide doc-of-record for the `dcs_full.sqlite` corpus layer: as-built schema
+  (live `PRAGMA`, 26-07-2026), 2021↔2026↔M9-archive generational boundaries with the
+  `LemmaId` bridge and a live vintage-mismatch demonstration, the anusvāra census +
+  fold vs DO-NOT-fold rule (the H1328 29%→33% worked example), one executed join
+  recipe per consumer repo (VisualDCS, WhitneyRoots, kosha, csl-guides, csl-atlas),
+  the G1–G18 gotcha registry, and silent-join-failure symptoms. All 64 recorded
+  numbers executed live against the real 920 MB DB.
+
+### Changed
+- **[`docs/csl-atlas-migration/DCS_SCHEMA.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/csl-atlas-migration/DCS_SCHEMA.md)**
+  — deprecation banner: it documents the superseded pre-import three-file reference
+  export; its "no passage-level data" conclusion no longer holds.
+
+### Fixed
+- Removed the 0-byte decoy `src/dcs_full.sqlite` from the canonical checkout after an
+  org-wide grep confirmed only prose (no code) referenced the path; the `.gitignore`
+  guard rule stays so the decoy can never be committed if recreated.
+
 ## [2026-07-20] — MW uttarapada index × DCS Kompozity: dictionary productivity vs corpus attestation (H1328)
 
 ### Added
