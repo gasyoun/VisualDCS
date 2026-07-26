@@ -6,6 +6,49 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
+## [Unreleased]
+
+### Added
+- **[`sanskrit_nominal_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_dashboard.html)
+  — the nominal paradigm dashboard (H1472)**, the roadmap's long-standing "biggest unbuilt
+  tool" and the nominal twin of the verb paradigm browser: the 8 case × 3 number grid per
+  declension class over **2,263,192 cased NOUN + ADJ tokens**, 14 stem classes × token
+  gender × 24 cells, each cell colour-coded by frequency and opening its attested surface
+  endings, top attested forms, and real corpus sentences with text + reference.
+- **[`src/DCS-data-2026/gen_paradigm_nominal.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/gen_paradigm_nominal.py)**
+  — the reproducible generator over the pinned `dcs_full.sqlite`, emitting
+  [`visual/paradigm_nominal.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_nominal.json)
+  + its `window.*` `.js` twin and
+  [`reports/paradigm_nominal_build.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_nominal_build.md)
+  from one aggregation pass. Declension-class bucketing **reuses** SanskritGrammar's Sangram
+  G2 tag list (H1048) rather than inventing a second taxonomy, extended with the `-ant`
+  class G2 leaves in its `other_consonant` residue.
+- **[`reports/nominal_g2_reconciliation.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_g2_reconciliation.md)**
+  — cross-check against Sangram G2's per-lemma coverage asset: **57,144 lemma_ids agree
+  exactly** on both token and attested-cell counts, 0 disagreements, and the only class
+  re-bucketing is the intended `-ant` extension (279 lemma_ids).
+- **[`tests/test_nominal_dashboard.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_nominal_dashboard.js)**
+  — headless render test: executes the page's own inline script against a DOM stub with the
+  real generated data, then asserts the data contract (denominator closure, per-cell sums,
+  pinned checksum, examples resolving to real forms of their own cell). 21 checks.
+
+### Changed
+- **[`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)**
+  — new starred card for the nominal dashboard; the morpho-statistics card's stale
+  `Nom.Sg = 34.6% · Dual < 1% везде` fact recomputed on the 2026 master.
+- **[`roadmap.md`](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md)** — its two
+  headline nominal numbers, recomputed on DCS-2026, **do not reproduce verbatim**: Nom.Sg is
+  **33.7%** of cased tokens (not 34.6%), and "Dual < 1% everywhere" holds only per cell
+  (largest dual cell 0.91%) — pooled across all cases the dual is **2.07%**.
+
+### Fixed
+- A `NOT (feat_case IN (…) AND feat_number IN (…))` complement in the generator silently lost
+  every case-untagged token to SQL three-valued logic (`NULL IN (…)` → `NULL`, `NOT NULL` →
+  `NULL`), so 8,542 tokens matched neither the grid query nor its supposed complement and
+  vanished from both denominators. Spelled out NULL-safely and backed by a build-time
+  assertion that grid + `Cpd` + unplaceable must equal the whole NOUN/ADJ universe
+  (2,996,410) — the assertion is what caught it.
+
 ## [2026-07-26] — DCS data-layer doc-of-record: consumer deep manual (H1407, Wave 4)
 
 ### Added

@@ -167,6 +167,50 @@ this corpus tag set). Full report:
 cross-check against csl-observatory's E46 paradigm-cell-coverage census:
 [`reports/e46_reconciliation.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/e46_reconciliation.md).
 
+### [`sanskrit_nominal_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_dashboard.html) — nominal paradigm, case × number (H1472)
+
+The nominal twin of the verb paradigm browser, and the tool `roadmap.md` had been calling
+"the most obvious next step" since 2026-06: the **8 case × 3 number grid per declension
+class**, over **2,263,192 cased NOUN + ADJ tokens** (against 781k verbal ones). Pick a stem
+class (`-a`, `-ā`, `-i`, `-ī`, `-u`, `-ū`, `-ṛ`, `-an`, `-in`, `-ant`, `-as`, `-is`, `-us`,
+plus an explicit `other consonant` residue) and a token gender; each cell is colour-coded by
+its share within that gender and opens the attested surface endings, the top attested forms,
+and real corpus sentences with text + reference. Built by
+[`src/DCS-data-2026/gen_paradigm_nominal.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/gen_paradigm_nominal.py)
+from the pinned 2026 DCS master; render-tested headlessly by
+[`tests/test_nominal_dashboard.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_nominal_dashboard.js)
+(`node tests/test_nominal_dashboard.js`). Loads `visual/paradigm_nominal_data.js` via a plain
+`<script src>` (no `fetch()`, no server) — keep both files together when copying.
+
+**Data ceiling — read before trusting a cell:**
+
+- **Declension class is not a corpus tag.** DCS tags case, number and gender, never a
+  declension class. Every class label here is an orthographic heuristic over the lemma's
+  citation form, reusing the tag list of SanskritGrammar's Sangram G2 asset (H1048) and its
+  "citation form ≠ stem" caveat, extended with the `-ant` class G2 leaves in its residue.
+- **Compound members are not a case.** 724,676 NOUN/ADJ tokens carry `feat_case='Cpd'` — no
+  case at all. They are excluded from the grid and counted separately per class, so the
+  dashboard can never pass the grid off as the whole nominal picture. Grid + Cpd +
+  case-untagged = 2,996,410 = the entire NOUN/ADJ universe, asserted at build time.
+- **A gender column is not a gender paradigm.** The axis is the *token's* tagged gender: an
+  adjective cited in its masculine `-a` form contributes its feminine tokens (`paramayā`) to
+  the `-a` class's Fem column, where they inflect as ā-/ī-stems.
+- **Endings are surface residues, not morphemes** — what is left after stripping the
+  class-marked stem; where the form does not start with that stem (strong/weak alternation,
+  `rājan` → `rājñā`) the token is counted as not segmentable and left out of the endings
+  view rather than force-split. The segmentable share is shown per class and per cell.
+- **The form shown is DCS's unsandhied analysis, not manuscript surface** — 68.0% of grid
+  tokens are flagged `m_unsandhiedreconstructed`.
+- Known unsplit conflations, labelled per class: `-ī` pools the `devī`/`nadī` type with the
+  monosyllabic `śrī`/`strī` type; `-an` pools `-an`/`-man`/`-van`; `-ant` pools
+  `-ant`/`-vant`/`-mant` with the master's own `-at`/`-vat`/`-mat` citations of the same
+  stems; `other consonant` is a residue bucket, not a class.
+
+Full report:
+[`reports/paradigm_nominal_build.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_nominal_build.md);
+cross-check against Sangram G2's declension-cell coverage (57,144 lemma_ids, exact agreement
+on tokens and attested cells): [`reports/nominal_g2_reconciliation.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_g2_reconciliation.md).
+
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
 **DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
@@ -197,6 +241,7 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/coll_compact.json` | 800 lemmas × collocates by part of speech |
 | `visual/paradigm_endings.json` | 25 tenses × attested endings from the corpus |
 | `visual/paradigm_attested.json` / `paradigm_attested_data.js` | H1299: 7,689 roots × attested finite/non-finite cells (top-100 full tier + long tail), consumed by `sanskrit_paradigm_trainer.html` |
+| `visual/paradigm_nominal.json` / `paradigm_nominal_data.js` | H1472: 14 declension classes × token gender × 24 case·number cells — counts, surface endings, top forms, corpus examples; consumed by `sanskrit_nominal_dashboard.html` |
 | `visual/corpus_stats_widget.json` | Summary morpho-statistics for widgets |
 | `visual/anki_compact.json` | 200 Anki flashcards |
 | `visual/conc_totals.json` | 6,423 forms → total occurrences in corpus |
@@ -277,8 +322,19 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
   trainer mode, JSON deck export). Supersedes the "Per-root attestation counts" item below for the
   general case; the 6-root deep view keeps its own richer P./Ā.-split cells for those 6 roots.
 
+- **Nominal paradigm dashboard, case × number per declension class (H1472)** — done via
+  [`sanskrit_nominal_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_dashboard.html)
+  (2,263,192 cased NOUN + ADJ tokens, 14 stem classes × token gender × 24 cells, surface
+  endings + corpus examples per cell). This was the roadmap's "biggest unbuilt item".
+
 **🔴 Still planned — high priority**
-- **Nominal paradigm dashboard** — the corpus contains 2.28M nominal tokens vs 781k verbal. A case × number heatmap for the major stem classes (-a, -ā, -i, -u, -an, -in, -ant) is the most natural next tool. *(biggest unbuilt item)*
+- **Per-lemma nominal drill-down** — the grid aggregates a whole class; the natural next step
+  is the nominal equivalent of `sanskrit_paradigm_trainer.html`, i.e. per-lemma attested
+  cells with a frequency-weighted trainer. The per-lemma coverage layer already exists as
+  SanskritGrammar's Sangram G2 asset (H1048) and would be consumed, not rebuilt.
+- **Split the `-ī` and `-ant` conflations** — needs an external lexical signal (stem
+  syllable count / a dictionary class tag); DCS alone cannot separate `devī` from `śrī`,
+  and no guess is made in the current asset.
 
 **🟢 Still planned — polish**
 - **Print/PDF export** — clean CSS print stylesheet for the paradigm table (current export is CSV + Markdown).
