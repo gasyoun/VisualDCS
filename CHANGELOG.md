@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
-## [Unreleased]
+## [2026-07-27] — Nominal paradigm dashboard: case × number per declension class (H1472)
 
 ### Added
 - **[`sanskrit_nominal_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_dashboard.html)
