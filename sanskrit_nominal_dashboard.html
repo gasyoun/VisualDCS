@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Именная парадигма — падеж × число по корпусу DCS</title>
+<style>
+:root{
+  --blue:#3266ad; --red:#e24b4a; --teal:#1d9e75;
+  --bg:#fdfdfc; --fg:#1c1c1a; --muted:#6b6b66; --line:#dedcd6; --panel:#fff;
+  --warn-bg:#fdf6e3; --warn-line:#e0d4a8; --warn-fg:#6b5a20;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#16161a; --fg:#e8e8e4; --muted:#9a9a94; --line:#33333a; --panel:#1e1e24;
+        --warn-bg:#2a2416; --warn-line:#4d4326; --warn-fg:#d8c890;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 18px 80px}
+h1{font-size:1.6rem;margin:0 0 4px}
+h2{font-size:1.15rem;margin:32px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+.sub{color:var(--muted);margin:0 0 20px;font-size:.95rem}
+a{color:var(--blue)}
+code,.mono{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:10px 14px;min-width:130px;flex:1 1 130px}
+.stat b{display:block;font-size:1.25rem;color:var(--blue)}
+.stat span{color:var(--muted);font-size:.8rem}
+
+.controls{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start;margin:18px 0}
+.ctl{flex:1 1 260px;min-width:240px}
+.ctl label{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;
+  letter-spacing:.05em;margin-bottom:6px}
+select,button{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:6px;
+  background:var(--panel);color:var(--fg)}
+select{width:100%}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel);
+  color:var(--fg);cursor:pointer;font-size:.88rem}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.chip[disabled]{opacity:.35;cursor:not-allowed}
+
+.classnote{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-fg);
+  border-radius:8px;padding:11px 14px;margin:14px 0;font-size:.9rem}
+
+.gridwrap{overflow-x:auto;margin:14px 0}
+table.grid{border-collapse:collapse;width:100%;min-width:640px}
+table.grid th,table.grid td{border:1px solid var(--line);padding:0;text-align:center}
+table.grid th{background:var(--panel);font-size:.85rem;padding:8px 6px;font-weight:600}
+table.grid th.case{text-align:left;padding-left:10px;white-space:nowrap}
+td.cell{cursor:pointer;position:relative;height:62px;min-width:120px}
+td.cell:hover{outline:2px solid var(--blue);outline-offset:-2px}
+td.cell[aria-selected="true"]{outline:3px solid var(--red);outline-offset:-3px}
+td.cell .n{display:block;font-size:.95rem;font-weight:600}
+td.cell .e{display:block;font-size:.85rem;opacity:.85}
+td.zero{background:transparent;color:var(--muted);cursor:default}
+td.zero:hover{outline:none}
+
+.legend{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin:6px 0 0}
+.legend i{display:inline-block;width:26px;height:12px;border:1px solid var(--line)}
+
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:16px 18px;margin:18px 0;min-height:120px}
+.detail h3{margin:0 0 4px;font-size:1.05rem}
+.detail .meta{color:var(--muted);font-size:.85rem;margin:0 0 12px}
+.cols{display:flex;flex-wrap:wrap;gap:26px}
+.col{flex:1 1 240px;min-width:220px}
+.col h4{margin:0 0 6px;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+ul.bare{list-style:none;margin:0;padding:0}
+ul.bare li{display:flex;justify-content:space-between;gap:12px;padding:2px 0;border-bottom:1px dotted var(--line)}
+ul.bare li span.f{font-weight:600}
+ul.bare li span.c{color:var(--muted);font-variant-numeric:tabular-nums}
+.ex{margin:10px 0 0;padding:10px 12px;border-left:3px solid var(--teal);background:var(--bg);
+  border-radius:0 6px 6px 0}
+.ex .s{font-style:italic}
+.ex .src{display:block;color:var(--muted);font-size:.82rem;margin-top:3px}
+
+table.plain{border-collapse:collapse;width:100%;font-size:.9rem}
+table.plain th,table.plain td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left}
+table.plain td.num,table.plain th.num{text-align:right;font-variant-numeric:tabular-nums}
+.limits{font-size:.92rem}
+.limits li{margin-bottom:9px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:.85rem}
+.err{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-fg);
+  padding:14px 16px;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Именная парадигма: падеж × число</h1>
+<p class="sub">Ячейки — по 8 падежам и 3 числам, цвет по корпусной частоте, примеры из реальных
+текстов. Существительные и прилагательные корпуса
+<a href="http://www.sanskrit-linguistics.org/dcs/">DCS</a> (релиз 2026),
+сгруппированные по типу основы. Глагольный близнец —
+<a href="sanskrit_pxn_v4.html">sanskrit_pxn_v4.html</a>; общая карта инструментов —
+<a href="sanskrit_index.html">sanskrit_index.html</a>.</p>
+
+<div id="app"><p class="err">Загрузка данных…</p></div>
+
+<script src="visual/paradigm_nominal_data.js"></script>
+<script>
+(function(){
+  var D = window.PARADIGM_NOMINAL;
+  var app = document.getElementById('app');
+  if(!D){
+    app.innerHTML = '<p class="err"><b>Данные не загрузились.</b> Ожидается файл '+
+      '<code>visual/paradigm_nominal_data.js</code> рядом с этой страницей. '+
+      'Пересобрать: <code>python src/DCS-data-2026/gen_paradigm_nominal.py</code>.</p>';
+    return;
+  }
+
+  var CASES = D.cases, NUMBERS = D.numbers;
+  var CASE_RU = {Nom:'Nom · именительный', Acc:'Acc · винительный', Ins:'Ins · творительный',
+                 Dat:'Dat · дательный', Abl:'Abl · отложительный', Gen:'Gen · родительный',
+                 Loc:'Loc · местный', Voc:'Voc · звательный'};
+  var NUM_RU = {Sing:'Sg · ед.', Dual:'Du · дв.', Plur:'Pl · мн.'};
+  var GEN_RU = {Masc:'муж.', Fem:'жен.', Neut:'ср.', '?':'без пометы'};
+
+  var classKeys = Object.keys(D.classes).sort(function(a,b){
+    return D.classes[b].n - D.classes[a].n; });
+  var state = {cls: classKeys[0], gen: null, cell: null};
+
+  function fmt(n){ return (n||0).toLocaleString('ru-RU').replace(/ /g,' '); }
+  function pct(n,d){ return d ? (100*n/d).toFixed(1)+'%' : '0%'; }
+
+  // Colour ramp: share of the currently shown gender's tokens, sqrt-scaled so that the
+  // long tail of small cells stays visible next to Nom.Sg, which alone can hold a third
+  // of the class. Never a rank colouring — the number in the cell is the ground truth.
+  function ramp(share){
+    var t = Math.sqrt(Math.min(share,1));
+    var a = 0.08 + 0.82*t;
+    return 'rgba(50,102,173,'+a.toFixed(3)+')';
+  }
+  function fg(share){
+    return Math.sqrt(Math.min(share,1)) > 0.55 ? '#fff' : 'inherit';
+  }
+
+  function genderList(cls){
+    var g = D.classes[cls].genders;
+    return ['Masc','Fem','Neut','?'].filter(function(k){ return g[k]; });
+  }
+
+  function render(){
+    var c = D.classes[state.cls];
+    var gens = genderList(state.cls);
+    if(gens.indexOf(state.gen) === -1) state.gen = gens[0];
+    var gd = c.genders[state.gen];
+    var maxShare = 0;
+    Object.keys(gd.cells).forEach(function(k){
+      var s = gd.cells[k].n / gd.n; if(s > maxShare) maxShare = s; });
+
+    var h = [];
+
+    // --- headline stats -------------------------------------------------------
+    h.push('<div class="stats">');
+    h.push(stat(fmt(D.totals.gridTokens), 'токенов в сетке (8 падежей × 3 числа)'));
+    h.push(stat(fmt(D.totals.cpdTokens), 'членов сложных слов — <b style="color:var(--red);font-size:inherit;display:inline">без падежа</b>, вне сетки'));
+    h.push(stat(fmt(D.totals.lemmaIds), 'лемм (по <code>lemma_id</code>)'));
+    h.push(stat(classKeys.length, 'типов основы (эвристика по цитатной форме)'));
+    h.push('</div>');
+
+    // --- controls -------------------------------------------------------------
+    h.push('<div class="controls">');
+    h.push('<div class="ctl"><label for="clsSel">Тип основы</label><select id="clsSel">');
+    classKeys.forEach(function(k){
+      var cc = D.classes[k];
+      h.push('<option value="'+k+'"'+(k===state.cls?' selected':'')+'>'+
+        cc.label+'  ('+cc.exemplar+') — '+fmt(cc.n)+' токенов, '+fmt(cc.lemmas)+' лемм'+
+        (cc.extendsG2 ? '  ★' : '')+'</option>');
+    });
+    h.push('</select></div>');
+    h.push('<div class="ctl"><label>Род токена</label><div class="chips" id="genChips">');
+    ['Masc','Fem','Neut','?'].forEach(function(k){
+      var on = c.genders[k];
+      h.push('<button class="chip" data-gen="'+k+'" aria-pressed="'+(k===state.gen)+'"'+
+        (on?'':' disabled')+'>'+GEN_RU[k]+(on?' · '+fmt(on.n):' · 0')+'</button>');
+    });
+    h.push('</div></div>');
+    h.push('</div>');
+
+    // --- class caveat ---------------------------------------------------------
+    h.push('<div class="classnote"><b>'+c.label+'</b> — '+esc(c.note)+
+      (c.extendsG2 ? ' <b>★ Класс добавлен в H1472</b> поверх набора Sangram G2, где эти основы лежат в остатке <code>other_consonant</code>.' : '')+
+      '<br>Тип основы — <b>эвристика по цитатной форме леммы, а не корпусная помета</b>: '+
+      'DCS размечает падеж, число и род, но никогда не размечает тип склонения.</div>');
+
+    // --- the grid -------------------------------------------------------------
+    h.push('<h2>'+c.label+' · '+GEN_RU[state.gen]+' — '+fmt(gd.n)+' токенов, '+
+      gd.cellsAttested+' из 24 ячеек засвидетельствовано</h2>');
+    h.push('<div class="gridwrap"><table class="grid"><thead><tr><th class="case">Падеж</th>');
+    NUMBERS.forEach(function(n){ h.push('<th>'+NUM_RU[n]+'</th>'); });
+    h.push('</tr></thead><tbody>');
+    CASES.forEach(function(cs){
+      h.push('<tr><th class="case">'+CASE_RU[cs]+'</th>');
+      NUMBERS.forEach(function(nu){
+        var key = cs+'.'+nu, cd = gd.cells[key];
+        if(!cd){ h.push('<td class="zero">—</td>'); return; }
+        var share = cd.n/gd.n;
+        var top = cd.endings.length ? cd.endings[0][1] : (cd.forms.length ? cd.forms[0][1] : '');
+        h.push('<td class="cell" data-cell="'+key+'" aria-selected="'+(state.cell===key)+'"'+
+          ' style="background:'+ramp(share/Math.max(maxShare,1e-9))+';color:'+fg(share/Math.max(maxShare,1e-9))+'"'+
+          ' title="'+key+' — '+fmt(cd.n)+' токенов ('+pct(cd.n,gd.n)+')">'+
+          '<span class="n">'+fmt(cd.n)+'</span><span class="e">'+esc(top)+'</span></td>');
+      });
+      h.push('</tr>');
+    });
+    h.push('</tbody></table></div>');
+    h.push('<p class="legend"><i style="background:'+ramp(0.05)+'"></i>'+
+      '<i style="background:'+ramp(0.35)+'"></i><i style="background:'+ramp(1)+'"></i>'+
+      ' — доля ячейки внутри выбранного рода (√-шкала). Под числом — самое частое окончание. '+
+      'Кликните ячейку.</p>');
+
+    // --- detail panel ---------------------------------------------------------
+    h.push('<div class="detail" id="detail">'+detailHTML(c, gd)+'</div>');
+
+    // --- excluded mass --------------------------------------------------------
+    h.push('<h2>Что осталось за пределами сетки</h2>');
+    h.push('<p class="sub">Сетка описывает только падежные формы. Ниже — то, что в неё '+
+      'принципиально не попадает, чтобы дашборд не выдавал часть за целое.</p>');
+    h.push('<table class="plain"><thead><tr><th>слой</th><th class="num">токенов</th>'+
+      '<th class="num">доля именных</th><th>почему вне сетки</th></tr></thead><tbody>');
+    var uni = D.totals.nominalUniverseTokens;
+    h.push(row('в сетке (8 падежей × 3 числа)', D.totals.gridTokens, uni, 'основной слой'));
+    h.push(row('члены сложных слов (<code>feat_case=Cpd</code>)', D.totals.cpdTokens, uni,
+      '<b>у члена композита нет падежа</b> — это не 9-й падеж, а отсутствие падежной формы'));
+    h.push(row('падеж не размечен', D.totals.unplaceableTokens, uni,
+      'токен именной, но падежной пометы у него нет'));
+    h.push('</tbody></table>');
+    h.push('<p class="sub">Знаменатели сходятся: '+fmt(D.totals.gridTokens)+' + '+
+      fmt(D.totals.cpdTokens)+' + '+fmt(D.totals.unplaceableTokens)+' = '+fmt(uni)+
+      ' — это проверяется утверждением при сборке, а не на глаз.</p>');
+
+    // --- per-class table ------------------------------------------------------
+    h.push('<h2>Все типы основ</h2>');
+    h.push('<table class="plain"><thead><tr><th>тип</th><th>пример</th>'+
+      '<th class="num">в сетке</th><th class="num">лемм</th><th class="num">NOUN</th>'+
+      '<th class="num">ADJ</th><th class="num">Cpd (вне сетки)</th>'+
+      '<th class="num">сегментируемо</th></tr></thead><tbody>');
+    classKeys.forEach(function(k){
+      var cc = D.classes[k], seg = 0, tot = 0;
+      Object.keys(cc.genders).forEach(function(g){
+        var gg = cc.genders[g];
+        Object.keys(gg.cells).forEach(function(cl){
+          seg += gg.cells[cl].segmentable; tot += gg.cells[cl].n; });
+      });
+      h.push('<tr'+(k===state.cls?' style="font-weight:600"':'')+'><td>'+cc.label+
+        (cc.extendsG2?' ★':'')+'</td><td><i>'+cc.exemplar+'</i></td>'+
+        '<td class="num">'+fmt(cc.n)+'</td><td class="num">'+fmt(cc.lemmas)+'</td>'+
+        '<td class="num">'+fmt(cc.upos.NOUN||0)+'</td><td class="num">'+fmt(cc.upos.ADJ||0)+'</td>'+
+        '<td class="num">'+fmt(cc.cpdTokens)+'</td>'+
+        '<td class="num">'+(tot?pct(seg,tot):'—')+'</td></tr>');
+    });
+    h.push('</tbody></table>');
+
+    // --- limits ---------------------------------------------------------------
+    h.push('<h2>Границы данных — читать до выводов</h2>');
+    h.push('<ul class="limits">');
+    [['Тип склонения не размечен в корпусе.',
+      'DCS размечает падеж, число и род. Тип основы здесь — задокументированная '+
+      'эвристика по последним буквам цитатной формы леммы, унаследованная от актива '+
+      'Sangram G2 (H1048) вместе с его оговоркой «цитатная форма ≠ основа».'],
+     ['Род колонки — род токена, а не леммы.',
+      'Прилагательное с цитатной формой на -a отдаёт свои женские токены (paramayā) '+
+      'в колонку «жен.» класса -a, где они склоняются как ā-/ī-основы. Колонка рода — '+
+      'это «токены класса с такой пометой рода», а не «парадигма класса в этом роде».'],
+     ['Внутри классов есть неразделённые слияния.',
+      '-ī объединяет тип devī/nadī с односложным śrī/strī, который склоняется иначе; '+
+      '-an объединяет -an/-man/-van; -ant объединяет -ant/-vant/-mant и собственные '+
+      'варианты цитирования тех же основ в мастере (-at/-vat/-mat). Корпус не даёт '+
+      'признака для разделения, и здесь оно не выдумывается.'],
+     ['<code>other cons.</code> — не класс, а остаток.',
+      'Корневые имена (marut, vidyut, sarit), выпавшие в инвентарь лемм паниниевские '+
+      'аффиксы (vun, tosun, kasun) и одиночки (puṃs) лежат там вместе.'],
+     ['Окончание — поверхностный остаток, а не морфема.',
+      'Это то, что осталось от несандхированной формы после снятия основы класса. '+
+      'Где форма не начинается с этой основы (сильная/слабая ступень: rājan → rājñā), '+
+      'токен считается несегментируемым и в список окончаний не попадает — доля '+
+      'сегментируемых показана в таблице выше.'],
+     ['Показанная форма — реконструкция DCS, а не поверхность рукописи.',
+      fmt(D.totals.reconstructedUnsandhiedTokens)+' из '+fmt(D.totals.gridTokens)+
+      ' токенов сетки ('+pct(D.totals.reconstructedUnsandhiedTokens,D.totals.gridTokens)+
+      ') помечены в мастере как <code>m_unsandhiedreconstructed</code>: несандхированная '+
+      'строка вычислена, а не прочитана в тексте.']
+    ].forEach(function(p){ h.push('<li><b>'+p[0]+'</b> '+p[1]+'</li>'); });
+    h.push('</ul>');
+
+    app.innerHTML = h.join('');
+    wire();
+  }
+
+  function stat(v, label){ return '<div class="stat"><b>'+v+'</b><span>'+label+'</span></div>'; }
+  function row(name, n, uni, why){
+    return '<tr><td>'+name+'</td><td class="num">'+fmt(n)+'</td><td class="num">'+
+      pct(n,uni)+'</td><td>'+why+'</td></tr>';
+  }
+  function esc(s){
+    return String(s==null?'':s).replace(/[&<>"]/g, function(ch){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; });
+  }
+
+  function detailHTML(c, gd){
+    if(!state.cell || !gd.cells[state.cell]){
+      return '<h3>Выберите ячейку</h3><p class="meta">Клик по ячейке сетки покажет '+
+        'засвидетельствованные формы, окончания и примеры из корпуса.</p>';
+    }
+    var cd = gd.cells[state.cell];
+    var parts = state.cell.split('.');
+    var h = ['<h3>'+CASE_RU[parts[0]]+' · '+NUM_RU[parts[1]]+' — '+c.label+' · '+
+             GEN_RU[state.gen]+'</h3>'];
+    h.push('<p class="meta">'+fmt(cd.n)+' токенов ('+pct(cd.n,gd.n)+' этого рода в классе) · '+
+      fmt(cd.lemmas)+' лемм · сегментируемо '+pct(cd.segmentable,cd.n)+
+      ' (остальное — чередование основы, окончание не выделяется)</p>');
+    h.push('<div class="cols">');
+    h.push('<div class="col"><h4>Окончания (поверхностный остаток)</h4><ul class="bare">');
+    if(cd.endings.length){
+      cd.endings.forEach(function(e){
+        h.push('<li><span class="f">-'+esc(e[1])+'</span><span class="c">'+fmt(e[0])+'</span></li>'); });
+    } else { h.push('<li><span class="c">нет сегментируемых токенов</span></li>'); }
+    h.push('</ul></div>');
+    h.push('<div class="col"><h4>Засвидетельствованные формы</h4><ul class="bare">');
+    cd.forms.forEach(function(f){
+      h.push('<li><span class="f">'+esc(f[1])+'</span><span class="c">'+fmt(f[0])+'</span></li>'); });
+    h.push('</ul></div>');
+    h.push('<div class="col"><h4>Примеры из корпуса</h4>');
+    if(cd.examples.length){
+      cd.examples.forEach(function(e){
+        h.push('<div class="ex"><span class="s">'+esc(e.sent)+'</span>'+
+          '<span class="src">'+esc(e.form)+' — '+esc(e.text)+(e.ref?', '+esc(e.ref):'')+'</span></div>');
+      });
+    } else { h.push('<p class="meta">примеров нет</p>'); }
+    h.push('</div></div>');
+    return h.join('');
+  }
+
+  function wire(){
+    var sel = document.getElementById('clsSel');
+    sel.addEventListener('change', function(){
+      state.cls = sel.value; state.gen = null; state.cell = null; render(); });
+    Array.prototype.forEach.call(document.querySelectorAll('#genChips .chip'), function(b){
+      if(b.disabled) return;
+      b.addEventListener('click', function(){
+        state.gen = b.getAttribute('data-gen'); state.cell = null; render(); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('td.cell'), function(td){
+      td.addEventListener('click', function(){
+        state.cell = td.getAttribute('data-cell');
+        var c = D.classes[state.cls];
+        document.getElementById('detail').innerHTML = detailHTML(c, c.genders[state.gen]);
+        Array.prototype.forEach.call(document.querySelectorAll('td.cell'), function(o){
+          o.setAttribute('aria-selected', o === td); });
+        document.getElementById('detail').scrollIntoView({behavior:'smooth', block:'nearest'});
+      });
+    });
+  }
+
+  render();
+
+  var f = document.createElement('footer');
+  f.innerHTML = 'Источник: <code>'+esc(D.source.db)+'</code> ('+esc(D.corpusRelease)+
+    ', пин <code>'+esc(String(D.source.sourceCommit).slice(0,7))+'</code>, SHA-256 <code>'+
+    esc(String(D.source.sha256).slice(0,16))+'…</code>). Сборка: '+
+    '<code>python src/DCS-data-2026/gen_paradigm_nominal.py</code> → '+
+    '<code>visual/paradigm_nominal.json</code>. Отчёт сборки — '+
+    '<a href="reports/paradigm_nominal_build.md">reports/paradigm_nominal_build.md</a>, '+
+    'сверка с Sangram G2 — <a href="reports/nominal_g2_reconciliation.md">reports/nominal_g2_reconciliation.md</a>.';
+  document.querySelector('.wrap').appendChild(f);
+})();
+</script>
+</div>
+</body>
+</html>

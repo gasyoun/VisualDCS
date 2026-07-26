@@ -175,6 +175,15 @@ const TOOLS = [
     note:'Автономный HTML-файл + visual/paradigm_attested_data.js (≈ 3.5 MB) — сохрани обе рядом с sanskrit_paradigm_trainer.html'
   },
   {
+    id:'nominal', icon:'🏛️', name:'Именная парадигма', file:'sanskrit_nominal_dashboard.html',
+    desc:'Падеж × число (8 × 3) по типам основы (-a, -ā, -i, -u, -an, -in, -ant, …) для существительных и прилагательных. Цвет по корпусной частоте, окончания, примеры из текстов. H1472 — именной близнец глагольной парадигмы.',
+    fact:'2 263 192 падежных токена · Nom.Sg = 33.7% · члены композитов (724 676) — вне сетки, у них нет падежа.',
+    tags:['парадигма','падежи','склонение','DCS','H1472'],
+    stages:['1','2','3'],
+    type:'file', star:true,
+    note:'Автономный HTML-файл + visual/paradigm_nominal_data.js (≈ 620 KB) — сохрани обе рядом с sanskrit_nominal_dashboard.html'
+  },
+  {
     id:'D3', icon:'📖', name:'Анализатор текстов',
     desc:'40 куратированных пассажей из DCS 0.csv: Hitopadeśa, Mahābhārata, Upaniṣads, Arthaśāstra, Kālidāsa. Фильтр по жанру и сложности. Вставка своего IAST.',
     fact:'Verb forms colour-coded by corpus frequency rank. Stage 1→4.',
@@ -219,7 +228,7 @@ const TOOLS = [
   {
     id:'morph', icon:'📐', name:'Морфостатистика',
     desc:'Лицо × число по временам из 4.57M токенов 10.csv. Падежная система (cs.csv). Продуктивность приставок (9.txt).',
-    fact:'Nom.Sg = 34.6% всех именных · Dual < 1% везде.',
+    fact:'Nom.Sg = 33.7% падежных токенов · каждая ячейка дв. ч. < 1% (пересчитано на DCS-2026, H1472).',
     tags:['морфология','падежи','приставки'],
     stages:['ref'], type:'widget'
   },
