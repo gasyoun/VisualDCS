@@ -1,5 +1,15 @@
 # DCS Export — Schema As Found (Phase 3a)
 
+> ⚠️ **DEPRECATED (26-07-2026, H1407).** This document describes a **superseded export** — the
+> three-file reference mirror (`DCS-72034-gramm-tag-stats.csv`, abbreviation list, bibliography)
+> that predates the full corpus import. Its headline conclusion ("no passage-level data is
+> available; `CorpusOccurrence` is not buildable") **no longer holds**: the passage-level corpus
+> master now exists as `src/DCS-data-2026/dcs_full.sqlite` (270 texts, 5,688,416 tokens). None of
+> this file's claims were merged into the current doc-of-record. For the as-built schema, join
+> recipes, and gotchas, read
+> [DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md).
+> Kept only as a historical record of the Phase 3a state.
+
 Date: 2026-05-30
 
 Status: the Phase 3a schema-inspection gate from `docs/DCS_CORPUS_INGESTION_PLAN.md`. This documents what the **actual** local DCS export contains, before any ingestion code, and revises the plan's assumption that DCS would arrive as passage-level occurrences.
