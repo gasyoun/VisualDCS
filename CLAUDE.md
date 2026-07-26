@@ -61,6 +61,7 @@ Excel's 38-category 781,616, so the two headline totals are expected to differ.
 | `sanskrit_pxn_v4.html` | Interactive paradigm browser: **6 roots (√kṛ √bhū √as √gam √vac √dā) × 9 tenses × 9 person/number cells** (87 cells), corpus color-coding, examples panel, root comparison, stem+ending split, flashcard mode, zero-filter, CSV/MD export |
 | `sanskrit_pxn_v4_docs.md` | Feature-by-feature documentation for the paradigm browser (Russian) |
 | `sanskrit_paradigm_trainer.html` | H1299: attested-verb-space paradigm trainer, 7,689 roots (top-100 full tier + attested-only long tail), frequency-weighted flashcards, JSON deck export |
+| `sanskrit_nominal_dashboard.html` | H1472: **nominal** paradigm — 8 case × 3 number grid per declension class (14 heuristic stem classes × token gender), surface endings + attested forms + corpus examples per cell, over 2.26M cased NOUN/ADJ tokens |
 | `visual/` | Derived JSON data assets (concordance, genres, texts, collocates, …) |
 | `*.json` (repo root) | Derived JSON assets read by the dashboards: `morph_pn`, `tense_case_data`, `verb_classes`, `prefix_clean`, `passage_library` |
 | `pareto.md` | Methodology documentation for Pareto % calculation |
@@ -79,6 +80,7 @@ In `visual/`:
 | `form_lookup.json` | 7,873 forms → root / tense / rank | paradigm browser |
 | `paradigm_endings.json` | 25 tenses × attested endings from corpus | paradigm browser |
 | `paradigm_attested.json` / `paradigm_attested_data.js` | H1299: per-root (7,689) attested finite/non-finite cells, full corpus scale | paradigm trainer |
+| `paradigm_nominal.json` / `paradigm_nominal_data.js` | H1472: 14 declension classes × token gender × 24 case·number cells (counts, surface endings, attested forms, corpus examples) | nominal dashboard |
 | `dcs_texts_clean.json` | 288 texts with tense profiles | diachronic analysis |
 | `dcs_genres.json` | 18 genre profiles — 17 named families + `Other` (weighted averages) | genre comparison |
 | `dcs_scatter.json` | 170 diachronic data points | timeline charts |
@@ -194,9 +196,19 @@ See `roadmap.md` for the original discussion (Russian). Much of it has since shi
   attested-only by construction, frequency-weighted trainer mode, JSON deck export. See its own
   README section for the data ceiling (no verb-class numbers, P./A. pooled, Tense=Past conflated).
 
+- **Nominal paradigm dashboard — case × number per declension class (H1472)** —
+  `sanskrit_nominal_dashboard.html` + `gen_paradigm_nominal.py`: 2,263,192 cased NOUN + ADJ
+  tokens over 14 heuristic stem classes × token gender × 24 cells, with surface endings,
+  attested forms and corpus examples per cell. Reuses (does not rebuild) SanskritGrammar's
+  Sangram G2 stem tags and reconciles against its per-lemma coverage asset — 57,144
+  lemma_ids agree exactly. Read its README section for the data ceiling (class is a
+  citation-form heuristic, not a corpus tag; `Cpd` members have no case and are excluded;
+  a gender column is not a gender paradigm; endings are surface residues).
+
 **🔴 Still pending — high priority (new functionality):**
-- **Nominal paradigm dashboard** — case × number heatmap for noun/adjective stems
-  (2.28M nominal tokens vs 781k verbal). The biggest unbuilt tool.
+- **Per-lemma nominal drill-down** — the nominal twin of `sanskrit_paradigm_trainer.html`
+  (per-lemma attested cells + frequency-weighted trainer), consuming Sangram G2's
+  `lemma_cell_coverage.csv` rather than recomputing it.
 
 **🟡 Pending — polish:**
 - Print/PDF export with clean CSS (current export is CSV + Markdown only)
