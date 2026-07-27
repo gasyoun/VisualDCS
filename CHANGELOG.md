@@ -15,11 +15,26 @@ durable, user-facing milestones.
   companion file, no `fetch()`), so the file is fully self-contained. Stage filter,
   click-to-flip cards, CSV export in Anki's plain-text import format, and a Markdown export
   grouped by stage for Obsidian.
+- **[`sanskrit_morphostatistics.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_morphostatistics.html)
+  — standalone morphostatistics reference widget (H1538)**, joining three previously-orphaned
+  root-level JSON assets: a person × number heatmap for 16 finite tense/mood categories
+  (`morph_pn.json` — non-finite categories like PPP/absolutive/infinitive are excluded from
+  the grid and called out separately, since person/number don't apply to them), a case ×
+  number table (`tense_case_data.json`, derived from `src/DCS-data-2021/cs.csv` — including
+  recomputing the one cell the source CSV itself shows as a literal spreadsheet error string
+  for Loc.Pl), and a prefix-productivity chart (`prefix_clean.json`, top 25 preverbs with
+  glosses). Data embedded inline (~21 KB), no companion file, no `fetch()`.
+- **[`tests/test_morphostatistics.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_morphostatistics.js)**
+  — headless render test for the new widget (`node tests/test_morphostatistics.js`), same
+  pattern as `tests/test_concordance.js`.
 
 ### Changed
 - **[`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)**
   — the *Anki-деки* (D2) card flipped from `type:'widget'` to `type:'file'`, now linking
   directly to `sanskrit_anki_decks.html`.
+- **[`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)**
+  — the *Морфостатистика* card flipped from `type:'widget'` to `type:'file'`, now linking
+  directly to `sanskrit_morphostatistics.html`.
 
 ## [2026-07-27] — Concordance search widget (H1505)
 
