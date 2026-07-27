@@ -223,6 +223,20 @@ is self-contained and opens directly from disk. Stage filter, click-to-flip card
 export** grouped by stage for Obsidian. The landing page's *Anki-деки* (D2) card links to it
 directly.
 
+### [`sanskrit_concordance.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_concordance.html) — concordance search (H1505)
+
+A standalone search widget over the 6,423-form concordance that had, until now, only been
+consumed inline by other dashboards' example panels. Type a root or an inflected form
+(diacritic-insensitive, so ASCII `kuryat` matches `kuryāt`) and get every matching form with
+its total corpus occurrence count and up to 5 real example strophes, each with a source
+citation and the query highlighted in place. Built by
+[`gen_concordance_data.py`](https://github.com/gasyoun/VisualDCS/blob/main/gen_concordance_data.py),
+which packs the existing `visual/conc_part1/2/3.json` into a single
+`visual/conc_data.js` `window.*` script twin (≈5.3 MB, no `fetch()`, no server — works from a
+double-clicked `file://` page); render-tested headlessly by
+[`tests/test_concordance.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_concordance.js)
+(`node tests/test_concordance.js`). The landing page's "Конкорданс" card now opens it directly.
+
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
 **DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
@@ -257,7 +271,7 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/corpus_stats_widget.json` | Summary morpho-statistics for widgets |
 | `visual/anki_compact.json` | 200 Anki flashcards |
 | `visual/conc_totals.json` | 6,423 forms → total occurrences in corpus |
-| `visual/conc_part1/2/3.json` | Concordance: 6,423 forms × ≤5 examples (2,141 forms per part) |
+| `visual/conc_part1/2/3.json` / `conc_data.js` | Concordance: 6,423 forms × ≤5 examples (2,141 forms per part); `conc_data.js` is the packed `window.*` twin consumed by `sanskrit_concordance.html` (H1505) |
 | `verb_classes.json` | 13 verb classes with P/Ā distribution |
 | `tense_case_data.json` | Form frequencies + case data (from cs.csv) |
 | `morph_pn.json` | Person × number by tense (from 10.csv) |
@@ -344,6 +358,12 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
   (200 cards, 4 learning stages, stage filter, CSV export for Anki + Markdown export for
   Obsidian, data embedded so no companion file is needed). Landing page's D2 card flipped
   from `type:'widget'` to `type:'file'`.
+
+- **Concordance search widget (H1505)** — done via
+  [`sanskrit_concordance.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_concordance.html)
+  (6,423 forms, diacritic-insensitive search, total occurrence count + up to 5 example
+  strophes with citation per form). The landing page's "Конкорданс" card flipped from
+  `type:'widget'` to `type:'file'`.
 
 **🔴 Still planned — high priority**
 - **Per-lemma nominal drill-down** — the grid aggregates a whole class; the natural next step

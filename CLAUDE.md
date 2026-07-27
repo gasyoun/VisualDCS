@@ -63,6 +63,7 @@ Excel's 38-category 781,616, so the two headline totals are expected to differ.
 | `sanskrit_paradigm_trainer.html` | H1299: attested-verb-space paradigm trainer, 7,689 roots (top-100 full tier + attested-only long tail), frequency-weighted flashcards, JSON deck export |
 | `sanskrit_nominal_dashboard.html` | H1472: **nominal** paradigm — 8 case × 3 number grid per declension class (14 heuristic stem classes × token gender), surface endings + attested forms + corpus examples per cell, over 2.26M cased NOUN/ADJ tokens |
 | `sanskrit_anki_decks.html` | H1504: Anki-deck flashcard widget — 200 cards across 4 learning stages (data embedded, no companion file), stage filter, CSV export (Anki-importable) + Markdown export (Obsidian) |
+| `sanskrit_concordance.html` | H1505: standalone **concordance search** — type a root/form, get every match's total corpus count + up to 5 example strophes with citation, diacritic-insensitive, fully client-side |
 | `visual/` | Derived JSON data assets (concordance, genres, texts, collocates, …) |
 | `*.json` (repo root) | Derived JSON assets read by the dashboards: `morph_pn`, `tense_case_data`, `verb_classes`, `prefix_clean`, `passage_library` |
 | `pareto.md` | Methodology documentation for Pareto % calculation |
@@ -88,6 +89,7 @@ In `visual/`:
 | `coll_compact.json` | 800 lemmas × collocates by POS | collocate explorer |
 | `conc_part1/2/3.json` | Concordance: 6,423 forms × ≤5 examples (2,141 each) | example lookup |
 | `conc_totals.json` | 6,423 forms → total corpus occurrences | example lookup |
+| `conc_data.js` | H1505: packed `window.CONC_DATA` twin of `conc_part1/2/3.json` (all 6,423 forms, one file) | concordance search widget |
 | `anki_compact.json` | 200 Anki flashcard definitions | flashcard mode |
 | `corpus_stats_widget.json` | Morpho-statistics summary | dashboard widgets |
 
@@ -228,6 +230,13 @@ See `roadmap.md` for the original discussion (Russian). Much of it has since shi
   embedded inline so it needs no companion file. Stage filter, click-to-flip cards, CSV export
   (Anki-importable plain-text format) and Markdown export (Obsidian). `sanskrit_index.html`'s
   D2 card now points at it (`type:'file'`, opens directly).
+
+- **Concordance search widget (H1505)** — `sanskrit_concordance.html` +
+  `gen_concordance_data.py`: standalone, diacritic-insensitive search over the 6,423-form
+  concordance (`visual/conc_part1/2/3.json`, packed into `visual/conc_data.js`). Typing a
+  root or inflected form returns every match with its total corpus occurrence count and up
+  to 5 example strophes with source citation. `sanskrit_index.html`'s "Конкорданс" card
+  flipped from `type:'widget'` to `type:'file'`.
 
 **🔴 Still pending — high priority (new functionality):**
 - **Per-lemma nominal drill-down** — the nominal twin of `sanskrit_paradigm_trainer.html`

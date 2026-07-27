@@ -2,6 +2,9 @@
 .contributing_old.md
 .contributing_audit.txt
 
+# Python bytecode cache
+__pycache__/
+
 # machine-local Claude Code settings, not a repo deliverable
 non-derived/.claude/
 
