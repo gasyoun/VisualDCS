@@ -206,11 +206,12 @@ const TOOLS = [
     stages:['1','2'], type:'widget'
   },
   {
-    id:'conc', icon:'🔍', name:'Конкорданс',
+    id:'conc', icon:'🔍', name:'Конкорданс', file:'sanskrit_concordance.html',
     desc:'Поиск по 6423 глагольным формам в 621 109 строфах DCS (7.txt). Примеры с источником. Автодополнение по корню.',
     fact:'uvāca: 10 368 строф · kuryāt: 1 080 · dṛṣṭvā: 4 424',
-    tags:['конкорданс','формы','DCS'],
-    stages:['2','3','4'], type:'widget'
+    tags:['конкорданс','формы','DCS','H1505'],
+    stages:['2','3','4'], type:'file',
+    note:'Автономный HTML-файл + visual/conc_data.js (≈ 5.3 MB) — сохрани обе рядом с sanskrit_concordance.html'
   },
   {
     id:'coll', icon:'🔗', name:'Коллокации',
