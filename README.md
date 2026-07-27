@@ -237,6 +237,23 @@ double-clicked `file://` page); render-tested headlessly by
 [`tests/test_concordance.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_concordance.js)
 (`node tests/test_concordance.js`). The landing page's "Конкорданс" card now opens it directly.
 
+### [`sanskrit_passage_reader.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_passage_reader.html) — curated-passage browser (H1537)
+
+A standalone reader over the 40 curated passages already in `passage_library.json`
+(Hitopadeśa, Aṣṭāvakragīta, Manusmṛti, Mahābhārata, Rāmāyaṇa, Upaniṣads, Arthaśāstra,
+Carakasaṃhitā, Kāvya, …). Filter by **genre** (9) and **difficulty** (1–4, combined as AND);
+each verb form found in the text is colour-coded by corpus frequency using the same
+log-scaled blue palette as `sanskrit_paradigm_trainer.html`'s `cellColor`, sourced from
+`visual/form_lookup.json` (230 of the 40 passages' ~2,168 word-tokens match a known verb
+form), with a `√root · tense · count` tooltip on hover. Data is embedded inline — no
+`fetch()`, no companion file. This covers only the curated-corpus half of the original 'D3'
+card spec; **freeform-IAST paste-and-parse is explicitly out of scope** (an in-page note
+says so) — it needs a tokenization/sandhi-matching design call a human should make first.
+Render-tested headlessly by
+[`tests/test_passage_reader.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_passage_reader.js)
+(`node tests/test_passage_reader.js`). The landing page's D3 card — renamed "Читатель
+пассажей" — now opens it directly.
+
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
 **DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
@@ -364,6 +381,18 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
   (6,423 forms, diacritic-insensitive search, total occurrence count + up to 5 example
   strophes with citation per form). The landing page's "Конкорданс" card flipped from
   `type:'widget'` to `type:'file'`.
+
+- **Curated-passage browser widget (H1537)** — done via
+  [`sanskrit_passage_reader.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_passage_reader.html)
+  (40 curated passages, genre + difficulty filters, verb forms colour-coded by corpus
+  frequency). Covers only the curated-corpus half of the original 'D3' card spec — see
+  "Still pending" below for the freeform-IAST half. The landing page's D3 card (renamed
+  "Читатель пассажей") flipped from `type:'widget'` to `type:'file'`.
+
+**🔴 Still pending — high priority (new functionality):**
+- **Freeform-IAST passage analysis** — paste your own IAST text and have it parsed/matched
+  against corpus forms. Needs a human design call on tokenization and sandhi-matching before
+  it's buildable; explicitly out of scope for H1537's `sanskrit_passage_reader.html`.
 
 **🔴 Still planned — high priority**
 - **Per-lemma nominal drill-down** — the grid aggregates a whole class; the natural next step
