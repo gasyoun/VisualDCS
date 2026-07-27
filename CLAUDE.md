@@ -65,6 +65,7 @@ Excel's 38-category 781,616, so the two headline totals are expected to differ.
 | `sanskrit_anki_decks.html` | H1504: Anki-deck flashcard widget — 200 cards across 4 learning stages (data embedded, no companion file), stage filter, CSV export (Anki-importable) + Markdown export (Obsidian) |
 | `sanskrit_concordance.html` | H1505: standalone **concordance search** — type a root/form, get every match's total corpus count + up to 5 example strophes with citation, diacritic-insensitive, fully client-side |
 | `sanskrit_passage_reader.html` | H1537: **curated-passage browser** — the 40 passages in `passage_library.json`, filterable by genre and difficulty, verb forms colour-coded by corpus frequency (`visual/form_lookup.json`, same palette as the paradigm trainer). Data embedded inline. Freeform-IAST analysis is explicitly out of scope (in-page note) |
+| `sanskrit_morphostatistics.html` | H1538: standalone **morphostatistics reference** — person × number heatmap for 16 finite tense/mood categories, case × number table (8×3), prefix-productivity chart; joins `morph_pn.json` + `tense_case_data.json` + `prefix_clean.json`, data embedded, no companion file |
 | `visual/` | Derived JSON data assets (concordance, genres, texts, collocates, …) |
 | `*.json` (repo root) | Derived JSON assets read by the dashboards: `morph_pn`, `tense_case_data`, `verb_classes`, `prefix_clean`, `passage_library` |
 | `pareto.md` | Methodology documentation for Pareto % calculation |
@@ -98,10 +99,10 @@ At the repo root:
 
 | File | Contents | Primary User |
 |---|---|---|
-| `tense_case_data.json` | Form frequencies + case data | (future nominal dashboard) |
-| `morph_pn.json` | Person × number distribution per tense | paradigm display |
+| `tense_case_data.json` | Form frequencies + case data | H1538: morphostatistics reference (case × number) |
+| `morph_pn.json` | Person × number distribution per tense | paradigm display; H1538: morphostatistics reference |
 | `passage_library.json` | 40 curated passages from corpus | `sanskrit_passage_reader.html` (H1537) |
-| `prefix_clean.json` | Prefix productivity scores | affix analysis |
+| `prefix_clean.json` | Prefix productivity scores | H1538: morphostatistics reference |
 | `verb_classes.json` | 13 verb classes with P/Ā distribution | paradigm context |
 
 ---
@@ -247,6 +248,18 @@ See `roadmap.md` for the original discussion (Russian). Much of it has since shi
   remains unbuilt (needs a tokenization/sandhi-matching design call a human should make
   first) and the page states this explicitly. `sanskrit_index.html`'s D3 card renamed
   "Читатель пассажей" and flipped from `type:'widget'` to `type:'file'`.
+
+- **Morphostatistics reference widget (H1538)** — `sanskrit_morphostatistics.html`: joins
+  three previously-orphaned root-level JSON assets onto one standalone page — person ×
+  number heatmap for 16 finite tense/mood categories (`morph_pn.json`; 5 non-finite
+  categories are excluded from the grid and called out separately, since person/number
+  don't apply to participles/absolutive/infinitive/gerundive), a case × number table
+  (`tense_case_data.json`, derived from `src/DCS-data-2021/cs.csv` — including recomputing
+  the one cell the source CSV itself shows as a literal spreadsheet error string for
+  Loc.Pl), and a prefix-productivity chart (`prefix_clean.json`, top 25 preverbs with
+  glosses). Data embedded inline (~21 KB), no companion file, headless-tested by
+  `tests/test_morphostatistics.js`. `sanskrit_index.html`'s "Морфостатистика" card flipped
+  from `type:'widget'` to `type:'file'`.
 
 **🔴 Still pending — high priority (new functionality):**
 - **Freeform-IAST passage analysis** — the other half of the original 'D3' card spec: paste
