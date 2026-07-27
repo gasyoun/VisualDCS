@@ -62,6 +62,7 @@ Excel's 38-category 781,616, so the two headline totals are expected to differ.
 | `sanskrit_pxn_v4_docs.md` | Feature-by-feature documentation for the paradigm browser (Russian) |
 | `sanskrit_paradigm_trainer.html` | H1299: attested-verb-space paradigm trainer, 7,689 roots (top-100 full tier + attested-only long tail), frequency-weighted flashcards, JSON deck export |
 | `sanskrit_nominal_dashboard.html` | H1472: **nominal** paradigm — 8 case × 3 number grid per declension class (14 heuristic stem classes × token gender), surface endings + attested forms + corpus examples per cell, over 2.26M cased NOUN/ADJ tokens |
+| `sanskrit_anki_decks.html` | H1504: Anki-deck flashcard widget — 200 cards across 4 learning stages (data embedded, no companion file), stage filter, CSV export (Anki-importable) + Markdown export (Obsidian) |
 | `visual/` | Derived JSON data assets (concordance, genres, texts, collocates, …) |
 | `*.json` (repo root) | Derived JSON assets read by the dashboards: `morph_pn`, `tense_case_data`, `verb_classes`, `prefix_clean`, `passage_library` |
 | `pareto.md` | Methodology documentation for Pareto % calculation |
@@ -221,6 +222,12 @@ See `roadmap.md` for the original discussion (Russian). Much of it has since shi
   lemma_ids agree exactly. Read its README section for the data ceiling (class is a
   citation-form heuristic, not a corpus tag; `Cpd` members have no case and are excluded;
   a gender column is not a gender paradigm; endings are surface residues).
+
+- **Anki-deck flashcard widget (H1504)** — `sanskrit_anki_decks.html`: standalone card viewer
+  over the already-computed `visual/anki_compact.json` (200 cards, 4 learning stages), data
+  embedded inline so it needs no companion file. Stage filter, click-to-flip cards, CSV export
+  (Anki-importable plain-text format) and Markdown export (Obsidian). `sanskrit_index.html`'s
+  D2 card now points at it (`type:'file'`, opens directly).
 
 **🔴 Still pending — high priority (new functionality):**
 - **Per-lemma nominal drill-down** — the nominal twin of `sanskrit_paradigm_trainer.html`

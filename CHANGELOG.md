@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
 durable, user-facing milestones.
 
+## [Unreleased]
+
+### Added
+- **[`sanskrit_anki_decks.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_anki_decks.html)
+  — standalone Anki-deck flashcard widget (H1504)**, consuming the already-computed
+  `visual/anki_compact.json` (200 cards, 4 learning stages). Data is embedded inline (no
+  companion file, no `fetch()`), so the file is fully self-contained. Stage filter,
+  click-to-flip cards, CSV export in Anki's plain-text import format, and a Markdown export
+  grouped by stage for Obsidian.
+
+### Changed
+- **[`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)**
+  — the *Anki-деки* (D2) card flipped from `type:'widget'` to `type:'file'`, now linking
+  directly to `sanskrit_anki_decks.html`.
+
 ## [2026-07-27] — Nominal paradigm dashboard: case × number per declension class (H1472)
 
 ### Changed (propagation pass, 27-07-2026)

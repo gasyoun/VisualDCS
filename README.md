@@ -211,6 +211,18 @@ Full report:
 cross-check against Sangram G2's declension-cell coverage (57,144 lemma_ids, exact agreement
 on tokens and attested cells): [`reports/nominal_g2_reconciliation.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_g2_reconciliation.md).
 
+### [`sanskrit_anki_decks.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_anki_decks.html) — Anki-deck flashcard widget (H1504)
+
+A standalone flashcard viewer over the already-computed `visual/anki_compact.json` — **200
+cards across 4 learning stages** (Stage 1: √kṛ, √vac, √bhū, √as; Stage 2: √gam, √dṛś, √dā,
+√śru, √sthā, √brū, √ah; Stage 3 and 4 widen to the long tail). Data is embedded directly in
+the page (no `fetch()`, no companion file — the whole deck is ~16 KB of JSON), so the file
+is self-contained and opens directly from disk. Stage filter, click-to-flip cards, a
+**CSV export** in Anki's plain-text import format (`#separator:Comma` / `#html:true` /
+`#columns:Front,Back,Tags` header, HTML-formatted backs, per-card tags), and a **Markdown
+export** grouped by stage for Obsidian. The landing page's *Anki-деки* (D2) card links to it
+directly.
+
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
 **DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
@@ -326,6 +338,12 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
   [`sanskrit_nominal_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_dashboard.html)
   (2,263,192 cased NOUN + ADJ tokens, 14 stem classes × token gender × 24 cells, surface
   endings + corpus examples per cell). This was the roadmap's "biggest unbuilt item".
+
+- **Anki-deck flashcard widget (H1504)** — done via
+  [`sanskrit_anki_decks.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_anki_decks.html)
+  (200 cards, 4 learning stages, stage filter, CSV export for Anki + Markdown export for
+  Obsidian, data embedded so no companion file is needed). Landing page's D2 card flipped
+  from `type:'widget'` to `type:'file'`.
 
 **🔴 Still planned — high priority**
 - **Per-lemma nominal drill-down** — the grid aggregates a whole class; the natural next step
