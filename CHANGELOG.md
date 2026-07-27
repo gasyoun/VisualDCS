@@ -21,6 +21,27 @@ durable, user-facing milestones.
   — the *Anki-деки* (D2) card flipped from `type:'widget'` to `type:'file'`, now linking
   directly to `sanskrit_anki_decks.html`.
 
+## [2026-07-27] — Concordance search widget (H1505)
+
+### Added
+- **[`sanskrit_concordance.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_concordance.html)**
+  — standalone client-side search over the 6,423-form concordance: typing a root or
+  inflected form (diacritic-insensitive — ASCII `kuryat` matches `kuryāt`) returns every
+  matching form with its total corpus occurrence count and up to 5 example strophes with
+  source citation, highlighted inline. No server, no `fetch()` — works from a
+  double-clicked `file://` page. `sanskrit_index.html`'s "Конкорданс" card flips from
+  `type:'widget'` to `type:'file'`.
+- **[`gen_concordance_data.py`](https://github.com/gasyoun/VisualDCS/blob/main/gen_concordance_data.py)**
+  — packs the existing `visual/conc_part{1,2,3}.json` into
+  [`visual/conc_data.js`](https://github.com/gasyoun/VisualDCS/blob/main/visual/conc_data.js)
+  (a `window.CONC_DATA` script twin, ≈5.3 MB), verifying the three parts don't re-key the
+  same form and that each form's count agrees with `visual/conc_totals.json`.
+- **[`tests/test_concordance.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_concordance.js)**
+  — headless render test (`node tests/test_concordance.js`), same pattern as
+  `tests/test_nominal_dashboard.js`: runs the page's own inline script against the real
+  data and asserts on exact-match, substring/root-match, diacritic-insensitive-match, and
+  no-results behaviour.
+
 ## [2026-07-27] — Nominal paradigm dashboard: case × number per declension class (H1472)
 
 ### Changed (propagation pass, 27-07-2026)

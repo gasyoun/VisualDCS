@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Конкорданс — поиск по формам (DCS)</title>
+<style>
+body{font-family:system-ui,sans-serif;padding:1rem;max-width:900px;margin:0 auto;color:#1a1a1a;background:#fff}
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e8e8e8}
+  .panel{background:#242424!important;border-color:#3a3a3a!important}
+  .hdrnote{background:#242424!important;color:#bbb!important}
+  input[type=text]{background:#242424;color:#e8e8e8;border-color:#444!important}
+  .result{background:#242424!important;border-color:#3a3a3a!important}
+  .example{border-left-color:#3a3a3a!important}
+  mark{background:#5a4a1a!important;color:#f5deb3!important}
+}
+a.d{color:inherit;text-decoration:underline;text-decoration-color:rgba(100,130,180,.35);text-underline-offset:2px}
+.hdrnote{background:#f5f5f5;border-radius:8px;padding:8px 14px;margin-bottom:1rem;font-size:12px;color:#555;line-height:1.5}
+input[type=text]{font-size:15px;padding:8px 12px;border:0.5px solid #ccc;border-radius:8px;outline:none;width:100%;box-sizing:border-box}
+input[type=text]:focus{border-color:#3266ad}
+.panel{border:0.5px solid #ddd;border-radius:8px;padding:10px}
+.result{border:0.5px solid #ddd;border-radius:8px;padding:10px 14px;margin-bottom:10px}
+.result-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.form-name{font-size:16px;font-style:italic;color:#3266ad;font-weight:600}
+.count-badge{font-size:11px;color:#888}
+.example{font-size:12px;color:#555;padding:4px 0 4px 10px;border-left:2px solid #e0e0e0;margin-bottom:4px;line-height:1.5}
+.example .src{font-size:10px;color:#aaa;display:block;margin-top:2px}
+mark{background:#fef3cd;border-radius:2px;padding:0 1px}
+.meta-row{font-size:11px;color:#888;margin:6px 0 10px}
+</style>
+</head><body>
+
+<h2 style="font-size:16px;margin:0 0 6px">Конкорданс — поиск по глагольным формам</h2>
+<div class="hdrnote" id="hdrnote">loading…</div>
+
+<input type="text" id="q" placeholder="Введите корень или словоформу: gam, uvāca, kuryāt…" autocomplete="off" oninput="onQuery()">
+<div class="meta-row" id="meta-row"></div>
+<div id="results"></div>
+
+<div style="font-size:10px;color:#999;margin-top:1.5rem;border-top:1px solid #eee;padding-top:8px">
+  Данные: Oliver Hellwig, <a class="d" href="http://www.sanskrit-linguistics.org/dcs/index.php" target="_blank">Digital Corpus of Sanskrit</a> (raw dump, src/DCS-data-2021/7.txt).
+  Полностью офлайн: поиск и подсветка выполняются в браузере, без сервера и без сети.
+  &larr; <a class="d" href="sanskrit_index.html">Назад к карте инструментов</a>
+</div>
+
+<script src="visual/conc_data.js"></script>
+<script>
+const D = window.CONC_DATA;
+
+// Diacritic-insensitive matching: lets a query typed in plain ASCII ("krishna",
+// "shru") still hit IAST-keyed forms ("kṛṣṇa", "śru") without requiring the user
+// to type diacritics.
+function normalize(s){
+  return String(s).toLowerCase()
+    .replace(/[āàá]/g,'a').replace(/[īìí]/g,'i').replace(/[ūùú]/g,'u')
+    .replace(/[ṛṝ]/g,'r').replace(/ḷ/g,'l').replace(/ṃ/g,'m').replace(/ḥ/g,'h')
+    .replace(/ś/g,'s').replace(/ṣ/g,'s').replace(/ṅ/g,'n').replace(/ñ/g,'n')
+    .replace(/ṭ/g,'t').replace(/ḍ/g,'d');
+}
+
+let FORMS = [];
+let NORM = {};
+let TOTAL_OCC = 0;
+
+function initHeader(){
+  const el = document.getElementById('hdrnote');
+  if(!D || !D.forms){
+    el.innerHTML = '<strong style="color:#e24b4a">visual/conc_data.js не найден или пуст.</strong> Запустите gen_concordance_data.py и сохраните visual/conc_data.js рядом с этим файлом.';
+    document.getElementById('q').disabled = true;
+    return;
+  }
+  FORMS = Object.keys(D.forms);
+  FORMS.forEach(f => NORM[f] = normalize(f));
+  TOTAL_OCC = FORMS.reduce((s,f) => s + D.forms[f][0], 0);
+  el.innerHTML = `<strong style="color:#1a1a1a">${D.formCount.toLocaleString()} форм</strong>`+
+    ` · ${TOTAL_OCC.toLocaleString()} засвидетельствованных употреблений в корпусе`+
+    ` · до 5 примерных строф с указанием источника на форму.`;
+}
+
+const MAX_SHOWN = 40;
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+}
+function escapeRe(s){
+  return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+function highlight(text, needle){
+  if(!needle) return escapeHtml(text);
+  const re = new RegExp('('+escapeRe(needle)+')', 'gi');
+  return escapeHtml(text).replace(re, '<mark>$1</mark>');
+}
+
+function renderResults(query){
+  const box = document.getElementById('results');
+  const metaRow = document.getElementById('meta-row');
+  if(!query){
+    box.innerHTML = '';
+    metaRow.textContent = '';
+    return;
+  }
+  const nq = normalize(query);
+  const matches = FORMS.filter(f => NORM[f].includes(nq));
+  matches.sort((a,b) => {
+    const ea = NORM[a] === nq, eb = NORM[b] === nq;
+    if(ea !== eb) return ea ? -1 : 1;
+    return D.forms[b][0] - D.forms[a][0];
+  });
+
+  if(!matches.length){
+    box.innerHTML = '<p style="font-size:12px;color:#aaa">Ничего не найдено. Попробуйте другую форму или часть корня.</p>';
+    metaRow.textContent = '';
+    return;
+  }
+
+  const shown = matches.slice(0, MAX_SHOWN);
+  metaRow.textContent = matches.length > MAX_SHOWN
+    ? `Показаны топ-${MAX_SHOWN} из ${matches.length} совпадений (по частоте в корпусе)`
+    : `${matches.length} совпадени${matches.length===1?'е':(matches.length<5?'я':'й')}`;
+
+  box.innerHTML = shown.map(form => {
+    const [count, examples] = D.forms[form];
+    const exHtml = examples.map(ex => {
+      const [citation, ...lines] = ex;
+      const body = lines.map(l => highlight(l, form)).join('<br>');
+      return `<div class="example">${body}<span class="src">${escapeHtml(citation)}</span></div>`;
+    }).join('');
+    return `<div class="result">
+      <div class="result-head">
+        <span class="form-name">${highlight(form, query)}</span>
+        <span class="count-badge">${count.toLocaleString()} употреблени${count===1?'е':(count<5?'я':'й')} в корпусе</span>
+      </div>
+      ${exHtml}
+    </div>`;
+  }).join('');
+}
+
+function onQuery(){
+  renderResults(document.getElementById('q').value.trim());
+}
+
+initHeader();
+</script>
+</body></html>
