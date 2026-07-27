@@ -167,6 +167,23 @@ This project uses `.ai_state.md` for multi-session continuity:
 - Responsive design via CSS Grid and Flexbox
 - Dark mode support via `@media(prefers-color-scheme:dark)` in `<style>` blocks
 
+### Sync rules — change one side, change the other in the same PR
+
+- **`gen_paradigm_nominal.py` → regenerate → re-run the test.** Any edit to the generator or to
+  `sanskrit_nominal_dashboard.html` means `python src/DCS-data-2026/gen_paradigm_nominal.py`
+  (full run, real SHA-256 — never ship `--skip-checksum` output) **and**
+  `node tests/test_nominal_dashboard.js` in the same PR. The test executes the page's own
+  inline script against the real data, so a page/data contract break fails there and nowhere
+  else.
+- **Never weaken the denominator-closure assertion.** The generator exits non-zero unless
+  grid + `Cpd` + unplaceable equals the whole NOUN/ADJ universe. It exists because a
+  `NOT (feat_case IN (…) AND feat_number IN (…))` complement silently lost 8,542 case-untagged
+  tokens to SQL three-valued logic. Any new per-slice query here needs the same closure check.
+- **The declension-class taxonomy is shared, not local.** `STEM_TAGS` is SanskritGrammar
+  Sangram G2's list (`scripts/sg_g2_declension_cell_coverage.py`, H1048). Changing a tag here
+  without changing it there silently desynchronises two published assets — the build's G2
+  reconciliation is what catches it, and it must stay at 0 disagreements.
+
 ### Modifying Data Assets
 
 JSON files in `visual/` are manually curated or semi-automated from the Excel source or `conc_*.json` concordance splits. Before editing:
