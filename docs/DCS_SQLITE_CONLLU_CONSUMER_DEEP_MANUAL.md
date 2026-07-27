@@ -1,6 +1,6 @@
 # DCS `dcs_full.sqlite` / CoNLL-U consumer deep manual — the org data layer, as built
 
-_Created: 26-07-2026 · Last updated: 26-07-2026_
+_Created: 26-07-2026 · Last updated: 27-07-2026_
 
 **Doc-of-record for the DCS corpus data layer.** Every schema claim and join recipe below was
 executed live against the real database on 26-07-2026 (Fable 5, `claude-fable-5`, H1407); the
@@ -234,6 +234,33 @@ WHERE upos='VERB'` → **1,007,361** (matches the committed H1299/M7 number exac
 caveat it recorded) and the `derived-lsc/` pilot (per-period slices via the curated text→period
 map, FINDINGS §87).
 
+**The nominal side (added 27-07-2026, H1472).**
+[`gen_paradigm_nominal.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/gen_paradigm_nominal.py)
+is the NOUN/ADJ counterpart, and its universe is **not** the mirror image of the verbal one —
+copying the `upos='VERB'` shape across is the first mistake to avoid:
+
+```sql
+-- the grid: 8 real cases x 3 numbers
+SELECT lemma_id, lemma, upos, feat_case, feat_number, feat_gender,
+       COALESCE(m_unsandhied, form), m_unsandhiedreconstructed
+FROM token
+WHERE upos IN ('NOUN','ADJ') AND lemma IS NOT NULL
+  AND feat_case IN ('Nom','Acc','Ins','Dat','Abl','Gen','Loc','Voc')
+  AND feat_number IN ('Sing','Dual','Plur');
+```
+
+Live totals (27-07-2026): NOUN 2,395,188 + ADJ 601,222 = **2,996,410** tokens, of which
+**2,263,192** are placed on the grid, **724,676** are `feat_case='Cpd'` compound members carrying
+no case (G19), and **8,542** carry no case tag at all. Any consumer slicing the nominal layer
+owes the same three-way closure check — the buckets must sum back to the universe, or one is
+being dropped (G20). Lexical gender for a lemma comes from the master's own dictionary-derived
+`lemma.grammar` column (`m`/`f`/`n`/`adj`/`mn`/`mf`/`fn`/`mfn`), joined on `lemma_id`; it is a
+different fact from the token's `feat_gender` and the two must not be conflated. Declension class
+is **not in the corpus at all** — the shared heuristic taxonomy lives in SanskritGrammar's
+[`sg_g2_declension_cell_coverage.py`](https://github.com/gasyoun/SanskritGrammar/blob/main/scripts/sg_g2_declension_cell_coverage.py)
+(H1048) and is reused, not re-derived; the two assets reconcile at 57,144 lemma_ids with 0
+disagreements.
+
 ### 6.2 WhitneyRoots — IAST lemma-string join, no SQL JOIN
 
 WhitneyRoots links Whitney's 935 roots to the corpus **in Python on the IAST `lemma` string**
@@ -326,6 +353,9 @@ longer holds.
 | G16 | **`m_unsandhied` is mostly reconstructed** — `m_unsandhiedreconstructed` flags machine reconstruction (1,019/1,034 tokens in the format-comparison sample); treat unsandhied forms as analysis, not attestation. | `DCS_FORMAT_COMPARISON.md` |
 | G17 | **UPOS inventory is not sample-stable**: `SCONJ` = 31,499 corpus-wide despite the sample doc's "older inventory, no SCONJ" claim. Enumerate from the DB. | live; §4.2 |
 | G18 | **M9 archive text ids ≠ DCS `text_id`** (parallel-project ids are project-internal: Acintyastava=10≠415). Crosswalk by text *name*. | [m9_archive_ingest.md](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/m9_archive_ingest.md) |
+| G19 | **`feat_case='Cpd'` is not a ninth case** — it marks a compound *member*, which has no case and (almost always) no `feat_number`. It is **724,676 tokens = 24.2% of all NOUN/ADJ**, so a "case distribution" that silently includes or silently drops it is wrong either way: exclude it from case grids and report it as its own bucket. Same trap for `feat_number IS NULL` (733,218). | H1472; [paradigm_nominal_build.md](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_nominal_build.md) |
+| G20 | **The complement of a multi-column `IN` filter must be spelled out NULL-safely.** `NOT (feat_case IN (…) AND feat_number IN (…))` evaluates to `NULL` — not `TRUE` — for every case-untagged row (`NULL IN (…)` → `NULL`; `NULL AND TRUE` → `NULL`; `NOT NULL` → `NULL`), so those rows match **neither** the filter nor its supposed complement and vanish from both denominators. Cost the H1472 build 8,542 tokens until a closure assertion caught it. Write `feat_case IS NULL OR feat_case NOT IN (…) OR …`, and assert that the buckets sum to the universe. | H1472; [gen_paradigm_nominal.py](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/gen_paradigm_nominal.py) |
+| G21 | **`token.feat_gender` (usage) ≠ `lemma.grammar` (lexical gender).** An adjective cited in its masculine `-a` form contributes feminine-tagged tokens (`paramayā`) that inflect as ā-/ī-stems. Grouping by token gender gives "tokens of this class tagged with this gender", never "this class's paradigm in this gender". | H1472 |
 
 ## 8. Silent-join-failure symptoms — the checklist
 

@@ -8,6 +8,17 @@ durable, user-facing milestones.
 
 ## [2026-07-27] — Nominal paradigm dashboard: case × number per declension class (H1472)
 
+### Changed (propagation pass, 27-07-2026)
+- **[`docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md)**
+  — §6.1 gains the NOUN/ADJ join recipe with live totals and the `lemma.grammar` vs
+  `feat_gender` distinction; the gotcha registry grows **G18 → G21**: `Cpd` is not a ninth case
+  (G19), the NULL-complement trap that silently dropped 8,542 tokens (G20), token gender ≠
+  lexical gender (G21). Metadoc revision row added.
+- **[`CLAUDE.md`](https://github.com/gasyoun/VisualDCS/blob/main/CLAUDE.md)** — new "Sync rules"
+  section: regenerate ⇒ re-run the node test in the same PR; never ship `--skip-checksum`
+  output; never weaken the denominator-closure assertion; `STEM_TAGS` is shared with
+  SanskritGrammar and must not drift.
+
 ### Added
 - **[`sanskrit_nominal_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_dashboard.html)
   — the nominal paradigm dashboard (H1472)**, the roadmap's long-standing "biggest unbuilt

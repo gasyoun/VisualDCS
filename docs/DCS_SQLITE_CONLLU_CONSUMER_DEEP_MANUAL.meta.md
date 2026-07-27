@@ -1,6 +1,6 @@
 # Metadoc — DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md
 
-_Created: 26-07-2026 · Last updated: 26-07-2026_
+_Created: 26-07-2026 · Last updated: 27-07-2026_
 
 ## Staleness block
 
@@ -16,7 +16,7 @@ COMMANDS_SPOT_RUN: 64
 Doc-of-record for the org's DCS corpus data layer: the as-built schema of
 `src/DCS-data-2026/dcs_full.sqlite`, the 2021↔2026↔M9 generational boundaries, the
 fold vs DO-NOT-fold encoding rule, one executed join recipe per consumer repo, and the
-G1–G18 gotcha registry. Written so a fresh session (or external consumer) can join
+G1–G21 gotcha registry. Written so a fresh session (or external consumer) can join
 against the corpus without rediscovering any of the recorded traps.
 
 ## Audience
@@ -81,5 +81,6 @@ IAST; assumes nothing about DCS internals.
 | Date | Change | By |
 |---|---|---|
 | 26-07-2026 | Created with the manual (H1407, Wave 4) | Fable 5 (`claude-fable-5`) |
+| 27-07-2026 | H1472 nominal layer: §6.1 gains the NOUN/ADJ join recipe with live totals (2,996,410 = 2,263,192 grid + 724,676 `Cpd` + 8,542 untagged) and the `lemma.grammar` vs `feat_gender` distinction; gotcha registry extended G18→**G21** (G19 `Cpd` is not a case · G20 the NULL-complement trap that silently dropped 8,542 tokens · G21 token gender ≠ lexical gender) | Opus 5 (`claude-opus-5[1m]`) |
 
 _Dr. Mārcis Gasūns_
