@@ -237,6 +237,27 @@ double-clicked `file://` page); render-tested headlessly by
 [`tests/test_concordance.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_concordance.js)
 (`node tests/test_concordance.js`). The landing page's "Конкорданс" card now opens it directly.
 
+### [`sanskrit_morphostatistics.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_morphostatistics.html) — morphostatistics reference (H1538)
+
+A standalone reference page joining three already-computed root-level JSON assets that had
+no dashboard of their own: **person × number by tense** (`morph_pn.json`, 16 finite
+categories — non-finite ones like PPP/absolutive/infinitive are excluded from the grid
+because person/number don't apply to them, and are called out separately with their
+totals), **case × number** (`tense_case_data.json`, derived from `src/DCS-data-2021/cs.csv`
+— including recomputing the one cell the source CSV itself shows as a literal spreadsheet
+error string, `Ошибка:509`, for Loc.Pl), and **prefix productivity** (`prefix_clean.json`,
+top 25 preverbs by lemma count with English glosses). All data is embedded inline (~21 KB
+total, no `fetch()`, no companion file — works from a double-clicked `file://` page);
+render-tested headlessly by
+[`tests/test_morphostatistics.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_morphostatistics.js)
+(`node tests/test_morphostatistics.js`). The landing page's "Морфостатистика" card now opens
+it directly.
+
+> The case-frequency numbers here are a 2021 corpus snapshot (2,277,509 tokens); the richer
+> 2026-snapshot breakdown by declension class (2,263,192 tokens) lives in
+> `sanskrit_nominal_dashboard.html` (H1472) — the two are close but not identical because
+> they're different corpus vintages, not a discrepancy to reconcile.
+
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
 **DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
@@ -273,9 +294,9 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/conc_totals.json` | 6,423 forms → total occurrences in corpus |
 | `visual/conc_part1/2/3.json` / `conc_data.js` | Concordance: 6,423 forms × ≤5 examples (2,141 forms per part); `conc_data.js` is the packed `window.*` twin consumed by `sanskrit_concordance.html` (H1505) |
 | `verb_classes.json` | 13 verb classes with P/Ā distribution |
-| `tense_case_data.json` | Form frequencies + case data (from cs.csv) |
-| `morph_pn.json` | Person × number by tense (from 10.csv) |
-| `prefix_clean.json` | Prefix productivity scores |
+| `tense_case_data.json` | Form frequencies + case data (from cs.csv); case × number consumed by `sanskrit_morphostatistics.html` (H1538) |
+| `morph_pn.json` | Person × number by tense (from 10.csv); consumed by `sanskrit_morphostatistics.html` (H1538) |
+| `prefix_clean.json` | Prefix productivity scores; consumed by `sanskrit_morphostatistics.html` (H1538) |
 | `passage_library.json` | 40 curated passages from the corpus |
 
 > JSON files live in two places — most under `visual/`, but `verb_classes`, `tense_case_data`,
@@ -364,6 +385,12 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
   (6,423 forms, diacritic-insensitive search, total occurrence count + up to 5 example
   strophes with citation per form). The landing page's "Конкорданс" card flipped from
   `type:'widget'` to `type:'file'`.
+
+- **Morphostatistics reference widget (H1538)** — done via
+  [`sanskrit_morphostatistics.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_morphostatistics.html)
+  (person × number by tense, case × number, prefix productivity — three previously-orphaned
+  root-level JSON assets joined onto one page, data embedded). The landing page's
+  "Морфостатистика" card flipped from `type:'widget'` to `type:'file'`.
 
 **🔴 Still planned — high priority**
 - **Per-lemma nominal drill-down** — the grid aggregates a whole class; the natural next step

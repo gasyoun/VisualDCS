@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Морфостатистика — лицо × число, падежи, приставки (DCS)</title>
+<style>
+:root{
+  --blue:#3266ad; --red:#e24b4a; --teal:#1d9e75;
+  --bg:#fdfdfc; --fg:#1c1c1a; --muted:#6b6b66; --line:#dedcd6; --panel:#fff;
+  --warn-bg:#fdf6e3; --warn-line:#e0d4a8; --warn-fg:#6b5a20;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#16161a; --fg:#e8e8e4; --muted:#9a9a94; --line:#33333a; --panel:#1e1e24;
+        --warn-bg:#2a2416; --warn-line:#4d4326; --warn-fg:#d8c890;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 18px 80px}
+h1{font-size:1.6rem;margin:0 0 4px}
+h2{font-size:1.15rem;margin:32px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+.sub{color:var(--muted);margin:0 0 20px;font-size:.95rem}
+a{color:var(--blue)}
+code,.mono{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:10px 14px;min-width:150px;flex:1 1 150px}
+.stat b{display:block;font-size:1.25rem;color:var(--blue)}
+.stat span{color:var(--muted);font-size:.8rem}
+
+.gridwrap{overflow-x:auto;margin:14px 0}
+table.grid{border-collapse:collapse;width:100%;min-width:760px}
+table.grid th,table.grid td{border:1px solid var(--line);padding:0;text-align:center}
+table.grid th{background:var(--panel);font-size:.8rem;padding:7px 6px;font-weight:600}
+table.grid th.rowh{text-align:left;padding-left:10px;white-space:nowrap;min-width:160px}
+table.grid th.grp{background:transparent;border:none;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--muted);padding-bottom:2px}
+td.cell{position:relative;height:52px;min-width:74px;cursor:default}
+td.cell .n{display:block;font-size:.92rem;font-weight:600}
+td.cell .c{display:block;font-size:.72rem;opacity:.8}
+td.total{font-weight:600;background:var(--panel)}
+tr.sep td,tr.sep th{border-top:2px solid var(--line)}
+
+.legend{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin:6px 0 0}
+.legend i{display:inline-block;width:26px;height:12px;border:1px solid var(--line)}
+
+.note{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-fg);
+  border-radius:8px;padding:11px 14px;margin:14px 0;font-size:.88rem}
+.note b{color:inherit}
+
+.bars{margin:14px 0}
+.barrow{display:flex;align-items:center;gap:10px;padding:4px 0}
+.barrow .lbl{width:150px;flex-shrink:0;text-align:right;font-size:.88rem}
+.barrow .lbl .m{display:block;color:var(--muted);font-size:.72rem;font-weight:400}
+.barrow .track{flex:1;background:var(--bg);border-radius:4px;overflow:hidden;height:18px;border:1px solid var(--line)}
+.barrow .fill{height:100%;background:var(--teal);border-radius:4px 0 0 4px}
+.barrow .val{width:56px;flex-shrink:0;font-size:.82rem;font-variant-numeric:tabular-nums;color:var(--muted)}
+
+ul.limits{font-size:.92rem}
+ul.limits li{margin-bottom:9px}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:.85rem}
+.err{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-fg);
+  padding:14px 16px;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Морфостатистика: лицо × число, падежи, приставки</h1>
+<p class="sub">Три справочных среза корпуса <a href="http://www.sanskrit-linguistics.org/dcs/">DCS</a>
+на одной странице: личные глагольные формы по лицу и числу, падежная система, продуктивность
+превербов. Глагольная парадигма 6 корней — <a href="sanskrit_pxn_v4.html">sanskrit_pxn_v4.html</a>;
+именная парадигма по типам основы (2026, richer) — <a href="sanskrit_nominal_dashboard.html">sanskrit_nominal_dashboard.html</a>;
+карта всех инструментов — <a href="sanskrit_index.html">sanskrit_index.html</a>.</p>
+
+<div id="app"><p class="err">Загрузка…</p></div>
+
+<script>
+// --- embedded data (repo-root JSON assets, copied verbatim; H1538) -----------------
+
+// morph_pn.json — finite-verb person x number per 38-category tense/mood id (tcN).
+// Source: legacy 2021 DCS export (same family as timws.csv / cs.csv below).
+var MORPH_PN = {"tc24":{"total":24948,"person":{"1":113,"2":278,"3":19432,"?":0},"number":{"sg":17170,"du":136,"pl":2517,"?":5125},"voice":{"P":19818,"Ā":5130,"nf":0}},"tc1":{"total":156844,"person":{"1":14244,"2":9688,"3":123442,"?":0},"number":{"sg":119608,"du":1403,"pl":26363,"?":8855},"voice":{"P":113771,"Ā":42458,"nf":615}},"tc3":{"total":32717,"person":{"1":698,"2":24085,"3":7934,"?":0},"number":{"sg":26105,"du":1067,"pl":5545,"?":0},"voice":{"P":32717,"Ā":0,"nf":0}},"tc15":{"total":61978,"person":{"1":562,"2":702,"3":58948,"?":0},"number":{"sg":46304,"du":1406,"pl":12502,"?":560},"voice":{"P":60187,"Ā":585,"nf":1206}},"tc2":{"total":72812,"person":{"1":2265,"2":787,"3":69751,"?":0},"number":{"sg":68914,"du":292,"pl":3597,"?":9},"voice":{"P":72802,"Ā":10,"nf":0}},"tc5":{"total":18003,"person":{"1":6705,"2":2026,"3":8993,"?":0},"number":{"sg":13495,"du":229,"pl":4000,"?":279},"voice":{"P":17149,"Ā":854,"nf":0}},"tc26":{"total":2948,"person":{"1":2,"2":43,"3":2903,"?":0},"number":{"sg":2763,"du":8,"pl":177,"?":0},"voice":{"P":2948,"Ā":0,"nf":0}},"tc7":{"total":1290,"person":{"1":147,"2":143,"3":1000,"?":0},"number":{"sg":1204,"du":9,"pl":77,"?":0},"voice":{"P":1290,"Ā":0,"nf":0}},"tc4":{"total":35913,"person":{"1":1414,"2":1057,"3":33442,"?":0},"number":{"sg":28074,"du":714,"pl":7125,"?":0},"voice":{"P":35913,"Ā":0,"nf":0}},"tc16":{"total":3668,"person":{"1":8,"2":0,"3":3660,"?":0},"number":{"sg":3202,"du":70,"pl":396,"?":0},"voice":{"P":3668,"Ā":0,"nf":0}},"tc8":{"total":4442,"person":{"1":301,"2":168,"3":3836,"?":0},"number":{"sg":3556,"du":50,"pl":699,"?":136},"voice":{"P":4293,"Ā":148,"nf":1}},"tc11":{"total":1056,"person":{"1":320,"2":96,"3":629,"?":0},"number":{"sg":817,"du":9,"pl":219,"?":11},"voice":{"P":1039,"Ā":17,"nf":0}},"tc30":{"total":2366,"person":{"1":236,"2":1208,"3":922,"?":0},"number":{"sg":1993,"du":47,"pl":326,"?":0},"voice":{"P":2366,"Ā":0,"nf":0}},"tc9":{"total":2440,"person":{"1":368,"2":71,"3":1880,"?":0},"number":{"sg":2016,"du":20,"pl":283,"?":121},"voice":{"P":2276,"Ā":164,"nf":0}},"tc27":{"total":1082,"person":{"1":9,"2":0,"3":1073,"?":0},"number":{"sg":780,"du":17,"pl":285,"?":0},"voice":{"P":1082,"Ā":0,"nf":0}},"tc25":{"total":1264,"person":{"1":180,"2":301,"3":783,"?":0},"number":{"sg":971,"du":51,"pl":242,"?":0},"voice":{"P":1264,"Ā":0,"nf":0}},"tc23":{"total":81243,"person":{"1":81243,"2":0,"3":0,"?":0},"number":{"sg":81243,"du":0,"pl":0,"?":0},"voice":{"P":81243,"Ā":0,"nf":0}},"tc19":{"total":232943,"person":{"1":0,"2":0,"3":0,"?":0},"number":{"sg":0,"du":0,"pl":0,"?":232943},"voice":{"P":0,"Ā":232943,"nf":0}},"tc21":{"total":23941,"person":{"1":0,"2":0,"3":0,"?":0},"number":{"sg":0,"du":0,"pl":0,"?":23941},"voice":{"P":0,"Ā":23941,"nf":0}},"tc22":{"total":10378,"person":{"1":10378,"2":0,"3":0,"?":0},"number":{"sg":10378,"du":0,"pl":0,"?":0},"voice":{"P":10378,"Ā":0,"nf":0}},"tc20":{"total":2350,"person":{"1":0,"2":0,"3":2331,"?":0},"number":{"sg":2331,"du":0,"pl":0,"?":18},"voice":{"P":0,"Ā":2349,"nf":1}}};
+
+// tcN -> clean label + finite/infinite, matched by count against timws.csv (src/DCS-data-2021/)
+// and tense_case_data.json's own cleaned labels for the same 38-category system.
+var TENSE_META = {
+  tc1:{name:'Present Ind.',cat:'finite'}, tc2:{name:'Optative',cat:'finite'},
+  tc3:{name:'Imperative',cat:'finite'}, tc4:{name:'Imperfect',cat:'finite'},
+  tc5:{name:'Future Ind.',cat:'finite'}, tc7:{name:'Periph. Future',cat:'finite'},
+  tc8:{name:'Imperfect (alt.)',cat:'finite'}, tc9:{name:'Imperfect Med.',cat:'finite'},
+  tc11:{name:'Aorist Med.',cat:'finite'}, tc15:{name:'Perfect',cat:'finite'},
+  tc16:{name:'Augmentless Ipf.',cat:'finite'}, tc19:{name:'PPP',cat:'infinite'},
+  tc20:{name:'Past Act. Part.',cat:'infinite'}, tc21:{name:'Fut. Pass. Part.',cat:'infinite'},
+  tc22:{name:'Infinitive',cat:'infinite'}, tc23:{name:'Absolutive',cat:'infinite'},
+  tc24:{name:'Pres. Passive',cat:'finite'}, tc25:{name:'Imper. Passive (alt.)',cat:'finite'},
+  tc26:{name:'Imper. Passive',cat:'finite'}, tc27:{name:'Impf. Passive',cat:'finite'},
+  tc30:{name:'Injunctive',cat:'finite'}
+};
+
+// tense_case_data.json — case x number, derived from src/DCS-data-2021/cs.csv (verified:
+// the file's own numbers reproduce cs.csv's percentages exactly, incl. fixing one corrupted
+// spreadsheet-error cell that cs.csv itself shows as literal text "Ошибка:509" for L.Pl).
+var CASES = [
+  {case:'Nominative',abbr:'Nom',sg:788742,du:20807,pl:174042,total:983591},
+  {case:'Accusative',abbr:'Acc',sg:432746,du:9570,pl:87081,total:529397},
+  {case:'Instrumental',abbr:'Ins',sg:132867,du:3804,pl:79635,total:216306},
+  {case:'Genitive',abbr:'Gen',sg:133953,du:6678,pl:61805,total:202436},
+  {case:'Locative',abbr:'Loc',sg:154046,du:1935,pl:26248,total:182229},
+  {case:'Vocative',abbr:'Voc',sg:62123,du:1297,pl:3780,total:67200},
+  {case:'Ablative',abbr:'Abl',sg:56985,du:465,pl:3598,total:61048},
+  {case:'Dative',abbr:'Dat',sg:30011,du:376,pl:4915,total:35302}
+];
+var TOTAL_NOMINAL = 2277509;
+
+// prefix_clean.json — verbatim (top 25 preverbs by lemma count + meanings).
+var PREFIX = {
+  top:[{"prefix":"sam","count":567},{"prefix":"pra","count":561},{"prefix":"vi","count":531},
+  {"prefix":"ā","count":451},{"prefix":"pari","count":430},{"prefix":"abhi","count":396},
+  {"prefix":"anu","count":309},{"prefix":"upa","count":286},{"prefix":"prati","count":286},
+  {"prefix":"ava","count":281},{"prefix":"ut","count":242},{"prefix":"ni","count":240},
+  {"prefix":"niḥ","count":205},{"prefix":"ati","count":156},{"prefix":"apa","count":154},
+  {"prefix":"samā","count":146},{"prefix":"ud","count":106},{"prefix":"sampra","count":94},
+  {"prefix":"abhipra","count":93},{"prefix":"abhisam","count":91},{"prefix":"adhi","count":89},
+  {"prefix":"vyā","count":80},{"prefix":"samut","count":73},{"prefix":"saṃpra","count":72},
+  {"prefix":"pravi","count":70}],
+  meanings:{"pra":"forth, forward","sam":"together, completely","vi":"apart, asunder",
+    "ā":"hither, towards","pari":"around, fully","abhi":"towards, against","anu":"after, along",
+    "upa":"near, under","prati":"back, against","ava":"down, away","ut":"up, out","ni":"down, into",
+    "niḥ":"out, without","ati":"over, beyond","apa":"away, off","adhi":"over, upon","su":"well, good",
+    "dur":"ill, bad","accha":"towards","api":"also, even"},
+  totalWithPrefix:923, totalTokens:9435
+};
+
+// --- helpers -------------------------------------------------------------------------
+function fmt(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+function pct(n,d){ return d ? (100*n/d).toFixed(1)+'%' : '0%'; }
+function esc(s){
+  return String(s==null?'':s).replace(/[&<>"]/g, function(ch){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]; });
+}
+function ramp(share){
+  var t = Math.sqrt(Math.max(0,Math.min(share,1)));
+  var a = 0.08 + 0.82*t;
+  return 'rgba(50,102,173,'+a.toFixed(3)+')';
+}
+function fg(share){
+  return Math.sqrt(Math.max(0,Math.min(share,1))) > 0.55 ? '#fff' : 'inherit';
+}
+function cell(n, tot){
+  var share = tot ? n/tot : 0;
+  return '<td class="cell" style="background:'+ramp(share)+';color:'+fg(share)+'"'+
+    ' title="'+fmt(n)+' токенов ('+pct(n,tot)+')">'+
+    '<span class="n">'+pct(n,tot)+'</span><span class="c">'+fmt(n)+'</span></td>';
+}
+
+var PERSON_RU = {'1':'1-е','2':'2-е','3':'3-е','?':'н/д'};
+var NUMBER_RU = {sg:'ед.',du:'дв.',pl:'мн.'};
+
+// --- section 1: person x number by finite tense ---------------------------------------
+function renderPersonNumber(){
+  var rows = Object.keys(MORPH_PN)
+    .filter(function(tc){ return TENSE_META[tc] && TENSE_META[tc].cat === 'finite'; })
+    .map(function(tc){ return {tc:tc, meta:TENSE_META[tc], d:MORPH_PN[tc]}; })
+    .sort(function(a,b){ return b.d.total - a.d.total; });
+
+  var nonfinite = Object.keys(MORPH_PN)
+    .filter(function(tc){ return TENSE_META[tc] && TENSE_META[tc].cat === 'infinite'; })
+    .map(function(tc){ return {tc:tc, meta:TENSE_META[tc], total:MORPH_PN[tc].total}; })
+    .sort(function(a,b){ return b.total - a.total; });
+  var nfTotal = nonfinite.reduce(function(s,r){ return s+r.total; }, 0);
+  var finTotal = rows.reduce(function(s,r){ return s+r.d.total; }, 0);
+
+  var h = [];
+  h.push('<div class="gridwrap"><table class="grid"><thead>');
+  h.push('<tr><th class="rowh" rowspan="2">Форма</th><th class="grp" colspan="4">Лицо</th>'+
+    '<th class="grp" colspan="3">Число</th><th class="grp" rowspan="2" style="vertical-align:bottom">Всего</th></tr>');
+  h.push('<tr><th>1-е</th><th>2-е</th><th>3-е</th><th>н/д</th><th>ед.</th><th>дв.</th><th>мн.</th></tr>');
+  h.push('</thead><tbody>');
+  rows.forEach(function(r){
+    var d = r.d, v = d.voice;
+    var voiceTitle = 'Voice: P '+fmt(v.P)+' · Ā '+fmt(v.Ā)+(v.nf?' · nf '+fmt(v.nf):'');
+    h.push('<tr><th class="rowh" title="'+esc(voiceTitle)+'">'+esc(r.meta.name)+'</th>');
+    ['1','2','3','?'].forEach(function(p){ h.push(cell(d.person[p], d.total)); });
+    ['sg','du','pl'].forEach(function(n){ h.push(cell(d.number[n], d.total)); });
+    h.push('<td class="total">'+fmt(d.total)+'</td></tr>');
+  });
+  h.push('</tbody></table></div>');
+  h.push('<p class="legend"><i style="background:'+ramp(0.05)+'"></i>'+
+    '<i style="background:'+ramp(0.35)+'"></i><i style="background:'+ramp(1)+'"></i>'+
+    ' — доля от суммы строки (<code>total</code> этого времени/наклонения). Наведите курсор '+
+    'на строку — раскладка по залогу (P/Ā/nf), на ячейку — точное число токенов.</p>');
+
+  h.push('<div class="note"><b>'+fmt(finTotal)+'</b> личных (person-tagged) токенов в '+
+    rows.length+' категориях выше. Вне сетки — '+nonfinite.length+' неличных категорий ('+
+    fmt(nfTotal)+' токенов: '+nonfinite.map(function(r){ return esc(r.meta.name)+' '+fmt(r.total); }).join(', ')+
+    ') — у причастий, абсолютива, инфинитива и герундива нет грамматического лица/числа, '+
+    'поэтому их нет смысла класть в эту сетку; их частоты — в «Корпусная статистика».</p></div>');
+  return h.join('');
+}
+
+// --- section 2: case x number ----------------------------------------------------------
+function renderCases(){
+  var sorted = CASES.slice().sort(function(a,b){ return b.total - a.total; });
+  var maxCell = 0;
+  sorted.forEach(function(c){ [c.sg,c.du,c.pl].forEach(function(n){ if(n>maxCell) maxCell=n; }); });
+
+  var h = [];
+  h.push('<div class="gridwrap"><table class="grid"><thead><tr>'+
+    '<th class="rowh">Падеж</th><th>ед.</th><th>дв.</th><th>мн.</th><th>Всего</th><th>% корпуса</th></tr></thead><tbody>');
+  sorted.forEach(function(c){
+    h.push('<tr><th class="rowh">'+c.abbr+' · '+c.case+'</th>');
+    [c.sg,c.du,c.pl].forEach(function(n){
+      var share = n/maxCell;
+      h.push('<td class="cell" style="background:'+ramp(share)+';color:'+fg(share)+'"'+
+        ' title="'+pct(n,TOTAL_NOMINAL)+' от '+fmt(TOTAL_NOMINAL)+'">'+
+        '<span class="n">'+fmt(n)+'</span><span class="c">'+pct(n,TOTAL_NOMINAL)+'</span></td>');
+    });
+    h.push('<td class="total">'+fmt(c.total)+'</td><td class="total">'+pct(c.total,TOTAL_NOMINAL)+'</td></tr>');
+  });
+  h.push('</tbody></table></div>');
+  h.push('<p class="legend"><i style="background:'+ramp(0.05)+'"></i>'+
+    '<i style="background:'+ramp(0.35)+'"></i><i style="background:'+ramp(1)+'"></i>'+
+    ' — доля ячейки от самой частой ячейки сетки (Nom.ед.). Подпись под числом — доля от всех '+
+    fmt(TOTAL_NOMINAL)+' падежных токенов.</p>');
+  return h.join('');
+}
+
+// --- section 3: prefix productivity ------------------------------------------------------
+function renderPrefixes(){
+  var max = PREFIX.top.reduce(function(m,p){ return Math.max(m,p.count); }, 0);
+  var h = ['<div class="bars">'];
+  PREFIX.top.forEach(function(p){
+    var w = (100*p.count/max).toFixed(1);
+    var m = PREFIX.meanings[p.prefix];
+    h.push('<div class="barrow"><div class="lbl">'+esc(p.prefix)+
+      (m?'<span class="m">'+esc(m)+'</span>':'')+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+w+'%"></div></div>'+
+      '<div class="val">'+fmt(p.count)+'</div></div>');
+  });
+  h.push('</div>');
+  h.push('<p class="sub" style="margin-top:10px">'+fmt(PREFIX.totalWithPrefix)+' из '+
+    fmt(PREFIX.totalTokens)+' сэмплированных глагольных лемм несут хотя бы один преверб. '+
+    'Столбик — число лемм с этим превербом (<b>не токенов</b>); часть записей — уже составные '+
+    'цепочки (sampra, abhipra, abhisam, samut, samā, saṃpra, pravi), поэтому бары не эксклюзивны '+
+    'и не суммируются в '+fmt(PREFIX.totalWithPrefix)+'.</p>');
+  return h.join('');
+}
+
+// --- assemble ------------------------------------------------------------------------
+function render(){
+  var finTotal = 0, nfTotal = 0;
+  Object.keys(MORPH_PN).forEach(function(tc){
+    var meta = TENSE_META[tc];
+    if(!meta) return;
+    if(meta.cat === 'finite') finTotal += MORPH_PN[tc].total; else nfTotal += MORPH_PN[tc].total;
+  });
+
+  var h = [];
+  h.push('<div class="stats">');
+  h.push('<div class="stat"><b>'+fmt(finTotal)+'</b><span>личных глагольных токенов, 16 категорий</span></div>');
+  h.push('<div class="stat"><b>'+fmt(TOTAL_NOMINAL)+'</b><span>падежных токенов, 8 падежей × 3 числа</span></div>');
+  h.push('<div class="stat"><b>'+fmt(PREFIX.totalWithPrefix)+'</b><span>из '+fmt(PREFIX.totalTokens)+' лемм несут преверб</span></div>');
+  h.push('</div>');
+
+  h.push('<h2>Лицо × число по временам</h2>');
+  h.push('<p class="sub">16 личных категорий из <code>morph_pn.json</code> (2021 export, тот же '+
+    'источник, что и у карточки «Opt. 3sg = 95.8%» на глагольной парадигме). Проценты в строке — '+
+    'от <code>total</code> этой категории; сумма 1+2+3+н/д по лицу не всегда точно 100% — в '+
+    'исходном файле часть токенов не размечена ни по одной из категорий (видно по разнице между '+
+    'суммой ячеек и total).</p>');
+  h.push(renderPersonNumber());
+
+  h.push('<h2>Падежи × число</h2>');
+  h.push('<p class="sub">2021 корпусный срез (<code>src/DCS-data-2021/cs.csv</code>, через '+
+    '<code>tense_case_data.json</code>). Другая, более крупная выборка 2026 г. с разбивкой по '+
+    'типу основы — <a href="sanskrit_nominal_dashboard.html">sanskrit_nominal_dashboard.html</a> '+
+    '(H1472, 2 263 192 токена) — цифры двух срезов близки, но не совпадают, это два разных '+
+    'снимка корпуса, см. CLAUDE.md.</p>');
+  h.push(renderCases());
+
+  h.push('<h2>Продуктивность приставок (превербов)</h2>');
+  h.push('<p class="sub">Топ-25 превербов по числу лемм из <code>prefix_clean.json</code>, с '+
+    'переводом значения преверба, где известно.</p>');
+  h.push(renderPrefixes());
+
+  h.push('<footer>Данные: Oliver Hellwig, <a href="http://www.sanskrit-linguistics.org/dcs/index.php">'+
+    'Digital Corpus of Sanskrit</a>. Встроены из репозиторных <code>morph_pn.json</code>, '+
+    '<code>tense_case_data.json</code>, <code>prefix_clean.json</code> (корень репозитория) — '+
+    'страница не требует дополнительных файлов. Карта инструментов — '+
+    '<a href="sanskrit_index.html">sanskrit_index.html</a>.</footer>');
+
+  document.getElementById('app').innerHTML = h.join('');
+}
+
+render();
+</script>
+</div>
+</body>
+</html>

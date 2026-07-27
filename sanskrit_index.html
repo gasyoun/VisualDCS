@@ -228,11 +228,12 @@ const TOOLS = [
     stages:['1','2'], type:'widget'
   },
   {
-    id:'morph', icon:'📐', name:'Морфостатистика',
-    desc:'Лицо × число по временам из 4.57M токенов 10.csv. Падежная система (cs.csv). Продуктивность приставок (9.txt).',
-    fact:'Nom.Sg = 33.7% падежных токенов · каждая ячейка дв. ч. < 1% (пересчитано на DCS-2026, H1472).',
-    tags:['морфология','падежи','приставки'],
-    stages:['ref'], type:'widget'
+    id:'morph', icon:'📐', name:'Морфостатистика', file:'sanskrit_morphostatistics.html', open:true,
+    desc:'Лицо × число по 16 личным категориям (morph_pn.json). Падежная система, 8 × 3 (cs.csv). Продуктивность приставок (prefix_clean.json).',
+    fact:'Opt. 3sg = 95.8% · Imper. 2sg = 73.6% · Nom = 43.2% падежных токенов · sam/pra/vi — топ-3 преверба.',
+    tags:['морфология','падежи','приставки','H1538'],
+    stages:['ref'], type:'file',
+    note:'Автономный HTML-файл (данные встроены, ≈ 21 KB) — не требует дополнительных файлов.'
   },
   {
     id:'A', icon:'📈', name:'Корпусная статистика', file:'dcs_corpus_dashboard.html', open:true,
