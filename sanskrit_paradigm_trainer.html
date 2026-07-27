@@ -31,13 +31,23 @@ td.cell{padding:3px 6px;border:0.5px solid #eee;white-space:nowrap;border-radius
 .badge.attested{background:#ba751722;color:#ba7517}
 .card{cursor:pointer;border:1px solid #ddd;border-radius:12px;min-height:140px;padding:24px;text-align:center;background:#fafbfc;user-select:none}
 input[type=text]{font-size:12px;padding:4px 8px;border:0.5px solid #ccc;border-radius:6px;outline:none}
+#print-btn{white-space:nowrap}
+@media print{
+  body{padding:0;max-width:none}
+  .no-print,#print-btn{display:none!important}
+  table,th,td.cell{-webkit-print-color-adjust:exact;print-color-adjust:exact;color-adjust:exact}
+  @page{margin:10mm}
+}
 </style>
 </head><body>
 
-<h2 style="font-size:16px;margin:0 0 6px">Paradigm trainer — the attested verb space</h2>
-<div class="hdrnote" id="hdrnote">loading…</div>
+<div class="no-print" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+  <h2 style="font-size:16px;margin:0 0 6px">Paradigm trainer — the attested verb space</h2>
+  <button id="print-btn" class="rb" onclick="window.print()">🖨 Печать / PDF</button>
+</div>
+<div class="hdrnote no-print" id="hdrnote">loading…</div>
 
-<div style="margin-bottom:10px">
+<div class="no-print" style="margin-bottom:10px">
   <button class="tab on" id="tab-browse" onclick="setTab('browse')">Обзор / Browse</button>
   <button class="tab" id="tab-train" onclick="setTab('train')">Тренажёр / Trainer</button>
 </div>
@@ -45,7 +55,7 @@ input[type=text]{font-size:12px;padding:4px 8px;border:0.5px solid #ccc;border-r
 <!-- BROWSE TAB -->
 <div id="view-browse">
   <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
-    <div class="panel" style="width:260px;flex-shrink:0">
+    <div class="panel no-print" style="width:260px;flex-shrink:0">
       <input type="text" id="root-search" placeholder="Поиск корня: kṛ, gam, 45…" style="width:100%;margin-bottom:8px" oninput="renderRootList()">
       <div style="font-size:10px;color:#888;margin-bottom:6px">
         <span id="root-count-note"></span>
@@ -87,7 +97,7 @@ input[type=text]{font-size:12px;padding:4px 8px;border:0.5px solid #ccc;border-r
   <div style="text-align:center;font-size:11px;color:#aaa;margin-top:8px" id="fc-session"></div>
 </div>
 
-<div style="font-size:10px;color:#999;margin-top:1.5rem;border-top:1px solid #eee;padding-top:8px">
+<div class="no-print" style="font-size:10px;color:#999;margin-top:1.5rem;border-top:1px solid #eee;padding-top:8px">
   Данные: Oliver Hellwig, <a class="d" href="http://www.sanskrit-linguistics.org/dcs/index.php" target="_blank">Digital Corpus of Sanskrit</a> (2026 master, 270 текстов).
   Кросс-проверка охвата ячеек: <a class="d" href="https://github.com/sanskrit-lexicon/csl-observatory/blob/main/reports/paradigm_cell_coverage.md" target="_blank">csl-observatory E46</a>.
   Шесть эталонных корней (kṛ/bhū/as/gam/vac/dā, традиционная парадигма) — <a class="d" href="sanskrit_pxn_v4.html">sanskrit_pxn_v4.html</a>.

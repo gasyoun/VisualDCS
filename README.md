@@ -237,44 +237,6 @@ double-clicked `file://` page); render-tested headlessly by
 [`tests/test_concordance.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_concordance.js)
 (`node tests/test_concordance.js`). The landing page's "Конкорданс" card now opens it directly.
 
-### [`sanskrit_passage_reader.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_passage_reader.html) — curated-passage browser (H1537)
-
-A standalone reader over the 40 curated passages already in `passage_library.json`
-(Hitopadeśa, Aṣṭāvakragīta, Manusmṛti, Mahābhārata, Rāmāyaṇa, Upaniṣads, Arthaśāstra,
-Carakasaṃhitā, Kāvya, …). Filter by **genre** (9) and **difficulty** (1–4, combined as AND);
-each verb form found in the text is colour-coded by corpus frequency using the same
-log-scaled blue palette as `sanskrit_paradigm_trainer.html`'s `cellColor`, sourced from
-`visual/form_lookup.json` (230 of the 40 passages' ~2,168 word-tokens match a known verb
-form), with a `√root · tense · count` tooltip on hover. Data is embedded inline — no
-`fetch()`, no companion file. This covers only the curated-corpus half of the original 'D3'
-card spec; **freeform-IAST paste-and-parse is explicitly out of scope** (an in-page note
-says so) — it needs a tokenization/sandhi-matching design call a human should make first.
-Render-tested headlessly by
-[`tests/test_passage_reader.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_passage_reader.js)
-(`node tests/test_passage_reader.js`). The landing page's D3 card — renamed "Читатель
-пассажей" — now opens it directly.
-
-### [`sanskrit_morphostatistics.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_morphostatistics.html) — morphostatistics reference (H1538)
-
-A standalone reference page joining three already-computed root-level JSON assets that had
-no dashboard of their own: **person × number by tense** (`morph_pn.json`, 16 finite
-categories — non-finite ones like PPP/absolutive/infinitive are excluded from the grid
-because person/number don't apply to them, and are called out separately with their
-totals), **case × number** (`tense_case_data.json`, derived from `src/DCS-data-2021/cs.csv`
-— including recomputing the one cell the source CSV itself shows as a literal spreadsheet
-error string, `Ошибка:509`, for Loc.Pl), and **prefix productivity** (`prefix_clean.json`,
-top 25 preverbs by lemma count with English glosses). All data is embedded inline (~21 KB
-total, no `fetch()`, no companion file — works from a double-clicked `file://` page);
-render-tested headlessly by
-[`tests/test_morphostatistics.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_morphostatistics.js)
-(`node tests/test_morphostatistics.js`). The landing page's "Морфостатистика" card now opens
-it directly.
-
-> The case-frequency numbers here are a 2021 corpus snapshot (2,277,509 tokens); the richer
-> 2026-snapshot breakdown by declension class (2,263,192 tokens) lives in
-> `sanskrit_nominal_dashboard.html` (H1472) — the two are close but not identical because
-> they're different corpus vintages, not a discrepancy to reconcile.
-
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
 **DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
@@ -311,9 +273,9 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/conc_totals.json` | 6,423 forms → total occurrences in corpus |
 | `visual/conc_part1/2/3.json` / `conc_data.js` | Concordance: 6,423 forms × ≤5 examples (2,141 forms per part); `conc_data.js` is the packed `window.*` twin consumed by `sanskrit_concordance.html` (H1505) |
 | `verb_classes.json` | 13 verb classes with P/Ā distribution |
-| `tense_case_data.json` | Form frequencies + case data (from cs.csv); case × number consumed by `sanskrit_morphostatistics.html` (H1538) |
-| `morph_pn.json` | Person × number by tense (from 10.csv); consumed by `sanskrit_morphostatistics.html` (H1538) |
-| `prefix_clean.json` | Prefix productivity scores; consumed by `sanskrit_morphostatistics.html` (H1538) |
+| `tense_case_data.json` | Form frequencies + case data (from cs.csv) |
+| `morph_pn.json` | Person × number by tense (from 10.csv) |
+| `prefix_clean.json` | Prefix productivity scores |
 | `passage_library.json` | 40 curated passages from the corpus |
 
 > JSON files live in two places — most under `visual/`, but `verb_classes`, `tense_case_data`,
@@ -403,23 +365,14 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
   strophes with citation per form). The landing page's "Конкорданс" card flipped from
   `type:'widget'` to `type:'file'`.
 
-- **Curated-passage browser widget (H1537)** — done via
-  [`sanskrit_passage_reader.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_passage_reader.html)
-  (40 curated passages, genre + difficulty filters, verb forms colour-coded by corpus
-  frequency). Covers only the curated-corpus half of the original 'D3' card spec — see
-  "Still planned" below for the freeform-IAST half. The landing page's D3 card (renamed
-  "Читатель пассажей") flipped from `type:'widget'` to `type:'file'`.
-
-- **Morphostatistics reference widget (H1538)** — done via
-  [`sanskrit_morphostatistics.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_morphostatistics.html)
-  (person × number by tense, case × number, prefix productivity — three previously-orphaned
-  root-level JSON assets joined onto one page, data embedded). The landing page's
-  "Морфостатистика" card flipped from `type:'widget'` to `type:'file'`.
+- **Print / PDF one-page export (H1536)** — an on-screen "🖨 Печать / PDF" button (`window.print()`)
+  plus an `@media print` stylesheet in
+  [`sanskrit_pxn_v4.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_pxn_v4.html) and
+  [`sanskrit_paradigm_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_trainer.html):
+  Ctrl+P / clicking the button hides all nav/controls/side panels and prints only the current
+  paradigm grid, one page.
 
 **🔴 Still planned — high priority**
-- **Freeform-IAST passage analysis** — paste your own IAST text and have it parsed/matched
-  against corpus forms. Needs a human design call on tokenization and sandhi-matching before
-  it's buildable; explicitly out of scope for H1537's `sanskrit_passage_reader.html`.
 - **Per-lemma nominal drill-down** — the grid aggregates a whole class; the natural next step
   is the nominal equivalent of `sanskrit_paradigm_trainer.html`, i.e. per-lemma attested
   cells with a frequency-weighted trainer. The per-lemma coverage layer already exists as
@@ -427,9 +380,6 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
 - **Split the `-ī` and `-ant` conflations** — needs an external lexical signal (stem
   syllable count / a dictionary class tag); DCS alone cannot separate `devī` from `śrī`,
   and no guess is made in the current asset.
-
-**🟢 Still planned — polish**
-- **Print/PDF export** — clean CSS print stylesheet for the paradigm table (current export is CSV + Markdown).
 
 See [`roadmap.md`](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md) for the original discussion.
 
