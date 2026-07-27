@@ -15,6 +15,19 @@ durable, user-facing milestones.
   companion file, no `fetch()`), so the file is fully self-contained. Stage filter,
   click-to-flip cards, CSV export in Anki's plain-text import format, and a Markdown export
   grouped by stage for Obsidian.
+- **[`sanskrit_passage_reader.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_passage_reader.html)
+  — curated-passage browser widget (H1537)**, covering only the curated-corpus half of the
+  'D3' card spec: the 40 passages already in `passage_library.json`, filterable by genre and
+  difficulty, each verb form colour-coded by corpus frequency (same log-scaled blue palette
+  as `sanskrit_paradigm_trainer.html`'s `cellColor`) via `visual/form_lookup.json`. Data is
+  embedded inline, fully self-contained. The card's freeform-IAST-analysis half is explicitly
+  out of scope — it needs a tokenization/sandhi-matching design call a human should make
+  first — and the page carries an in-page note saying so.
+- **[`tests/test_passage_reader.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_passage_reader.js)**
+  — headless render test (`node tests/test_passage_reader.js`), same pattern as
+  `tests/test_concordance.js`: runs the page's own inline script and asserts on passage
+  count, verb-form highlighting, genre/difficulty filtering (incl. combined AND), and the
+  freeform-IAST-unbuilt note.
 - **[`sanskrit_morphostatistics.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_morphostatistics.html)
   — standalone morphostatistics reference widget (H1538)**, joining three previously-orphaned
   root-level JSON assets: a person × number heatmap for 16 finite tense/mood categories
@@ -31,7 +44,9 @@ durable, user-facing milestones.
 ### Changed
 - **[`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)**
   — the *Anki-деки* (D2) card flipped from `type:'widget'` to `type:'file'`, now linking
-  directly to `sanskrit_anki_decks.html`.
+  directly to `sanskrit_anki_decks.html`. The *D3* card ("Анализатор текстов" → "Читатель
+  пассажей") flipped from `type:'widget'` to `type:'file'`, now linking directly to
+  `sanskrit_passage_reader.html`.
 - **[`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)**
   — the *Морфостатистика* card flipped from `type:'widget'` to `type:'file'`, now linking
   directly to `sanskrit_morphostatistics.html`.

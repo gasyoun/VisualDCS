@@ -136,13 +136,13 @@ a{color:inherit;text-decoration:none}
   Показаны все 11 инструментов. Выберите этап обучения чтобы увидеть рекомендованные для него.
 </div>
 <div class="stage-info" id="si-1">
-  <b>Stage 1</b> — 4 корня, ~70% корпуса. Начните с <b>Парадигмы</b> (√kṛ, √bhū, √as), затем <b>D3 Анализатор</b> (Hitopadeśa ★), затем <b>Anki-деки</b> для повторения.
+  <b>Stage 1</b> — 4 корня, ~70% корпуса. Начните с <b>Парадигмы</b> (√kṛ, √bhū, √as), затем <b>Читатель пассажей</b> (Hitopadeśa ★), затем <b>Anki-деки</b> для повторения.
 </div>
 <div class="stage-info" id="si-2">
   <b>Stage 2</b> — ещё 6 корней, охват 85%. Добавьте <b>Whitney Roots</b> для понимания системы корней, используйте <b>Конкорданс</b> для поиска форм в реальных текстах.
 </div>
 <div class="stage-info" id="si-3">
-  <b>Stage 3</b> — 92% корпуса. Работайте с <b>Анализатором текстов</b> (★★★ пассажи), изучайте <b>Коллокации</b> для семантических связей слова.
+  <b>Stage 3</b> — 92% корпуса. Работайте с <b>Читателем пассажей</b> (★★★ пассажи), изучайте <b>Коллокации</b> для семантических связей слова.
 </div>
 <div class="stage-info" id="si-4">
   <b>Stage 4</b> — 97%+. Жанровые профили DCS (<b>Track C</b>), диахронический анализ, специализированная лексика Arthaśāstra и Kāvya.
@@ -184,11 +184,11 @@ const TOOLS = [
     note:'Автономный HTML-файл + visual/paradigm_nominal_data.js (≈ 620 KB) — сохрани обе рядом с sanskrit_nominal_dashboard.html'
   },
   {
-    id:'D3', icon:'📖', name:'Анализатор текстов',
-    desc:'40 куратированных пассажей из DCS 0.csv: Hitopadeśa, Mahābhārata, Upaniṣads, Arthaśāstra, Kālidāsa. Фильтр по жанру и сложности. Вставка своего IAST.',
-    fact:'Verb forms colour-coded by corpus frequency rank. Stage 1→4.',
-    tags:['тексты','пассажи','разбор'],
-    stages:['2','3','4'], type:'widget'
+    id:'D3', icon:'📖', name:'Читатель пассажей', file:'sanskrit_passage_reader.html',
+    desc:'40 куратированных пассажей из DCS 0.csv: Hitopadeśa, Mahābhārata, Upaniṣads, Arthaśāstra, Kālidāsa. Фильтр по жанру и сложности, глагольные формы подсвечены по корпусной частоте.',
+    fact:'230 глагольных форм подсвечены. Вставка своего IAST не реализована (H1537) — токенизация/сандхи ждут отдельного дизайн-решения.',
+    tags:['тексты','пассажи','разбор','H1537'],
+    stages:['2','3','4'], type:'file'
   },
   {
     id:'D2', icon:'🃏', name:'Anki-деки', file:'sanskrit_anki_decks.html', open:true,
