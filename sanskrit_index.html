@@ -191,11 +191,12 @@ const TOOLS = [
     stages:['2','3','4'], type:'widget'
   },
   {
-    id:'D2', icon:'🃏', name:'Anki-деки',
+    id:'D2', icon:'🃏', name:'Anki-деки', file:'sanskrit_anki_decks.html', open:true,
     desc:'200 карточек по 4 этапам обучения. Скачивание CSV для Anki + .md для Obsidian. Фильтр по стадии.',
     fact:'Stage 1: kṛ,vac,bhū,as · Stage 2: gam,dṛś,dā,śru,sthā,brū…',
     tags:['Anki','карточки','экспорт'],
-    stages:['1','2'], type:'widget'
+    stages:['1','2'], type:'file',
+    note:'Автономный HTML-файл (данные встроены, ≈ 22 KB) — не требует дополнительных файлов.'
   },
   {
     id:'D1', icon:'🔢', name:'Парадигм-строитель',
