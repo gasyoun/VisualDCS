@@ -15,41 +15,20 @@ durable, user-facing milestones.
   companion file, no `fetch()`), so the file is fully self-contained. Stage filter,
   click-to-flip cards, CSV export in Anki's plain-text import format, and a Markdown export
   grouped by stage for Obsidian.
-- **[`sanskrit_passage_reader.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_passage_reader.html)
-  — curated-passage browser widget (H1537)**, covering only the curated-corpus half of the
-  'D3' card spec: the 40 passages already in `passage_library.json`, filterable by genre and
-  difficulty, each verb form colour-coded by corpus frequency (same log-scaled blue palette
-  as `sanskrit_paradigm_trainer.html`'s `cellColor`) via `visual/form_lookup.json`. Data is
-  embedded inline, fully self-contained. The card's freeform-IAST-analysis half is explicitly
-  out of scope — it needs a tokenization/sandhi-matching design call a human should make
-  first — and the page carries an in-page note saying so.
-- **[`tests/test_passage_reader.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_passage_reader.js)**
-  — headless render test (`node tests/test_passage_reader.js`), same pattern as
-  `tests/test_concordance.js`: runs the page's own inline script and asserts on passage
-  count, verb-form highlighting, genre/difficulty filtering (incl. combined AND), and the
-  freeform-IAST-unbuilt note.
-- **[`sanskrit_morphostatistics.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_morphostatistics.html)
-  — standalone morphostatistics reference widget (H1538)**, joining three previously-orphaned
-  root-level JSON assets: a person × number heatmap for 16 finite tense/mood categories
-  (`morph_pn.json` — non-finite categories like PPP/absolutive/infinitive are excluded from
-  the grid and called out separately, since person/number don't apply to them), a case ×
-  number table (`tense_case_data.json`, derived from `src/DCS-data-2021/cs.csv` — including
-  recomputing the one cell the source CSV itself shows as a literal spreadsheet error string
-  for Loc.Pl), and a prefix-productivity chart (`prefix_clean.json`, top 25 preverbs with
-  glosses). Data embedded inline (~21 KB), no companion file, no `fetch()`.
-- **[`tests/test_morphostatistics.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_morphostatistics.js)**
-  — headless render test for the new widget (`node tests/test_morphostatistics.js`), same
-  pattern as `tests/test_concordance.js`.
 
 ### Changed
 - **[`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)**
   — the *Anki-деки* (D2) card flipped from `type:'widget'` to `type:'file'`, now linking
-  directly to `sanskrit_anki_decks.html`. The *D3* card ("Анализатор текстов" → "Читатель
-  пассажей") flipped from `type:'widget'` to `type:'file'`, now linking directly to
-  `sanskrit_passage_reader.html`.
-- **[`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)**
-  — the *Морфостатистика* card flipped from `type:'widget'` to `type:'file'`, now linking
-  directly to `sanskrit_morphostatistics.html`.
+  directly to `sanskrit_anki_decks.html`.
+- **Print / PDF one-page export (H1536)** —
+  [`sanskrit_pxn_v4.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_pxn_v4.html)
+  and
+  [`sanskrit_paradigm_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_trainer.html)
+  gain an on-screen "🖨 Печать / PDF" button (`window.print()`) and an `@media print`
+  stylesheet: nav/controls/side panels get a shared `.no-print` class hidden at print time
+  (`display:none`, including the trigger button itself), so Ctrl+P prints only the current
+  paradigm grid on one page. Verified headless via `chrome --headless --print-to-pdf`
+  (1-page PDF, chrome/controls text absent from the extracted text).
 
 ## [2026-07-27] — Concordance search widget (H1505)
 
