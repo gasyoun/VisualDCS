@@ -1,0 +1,34 @@
+name: Link check
+
+# Markdown link rot check, split out of ci.yml (H1743). Runs weekly + on demand instead
+# of on every push/PR, so third-party link flakiness never blocks main. Uses lychee
+# (a plain binary) instead of the old Docker-based gaurav-nelson action, which pulled
+# node:lts-alpine from Docker Hub on every run and failed the whole branch outright on
+# a registry timeout — continue-on-error did not catch that, since the failure was in
+# the action's own Docker image build step, not the check itself.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    name: Check markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --accept "200..=299, 429"
+            --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            "./**/*.md"
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
