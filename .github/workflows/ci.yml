@@ -1,8 +1,12 @@
 name: CI
 
 # Baseline CI for generic / satellite repos.
-# Language-agnostic checks: markdown lint, link check, YAML lint,
+# Language-agnostic checks: markdown lint, YAML lint,
 # plus opportunistic language-specific lint if package.json/requirements.txt present.
+# Markdown link check moved to its own scheduled workflow (link-check.yml, H1743) —
+# the Docker-based gaurav-nelson action pulled node:lts-alpine from Docker Hub on every
+# run and failed the branch outright on registry timeouts even with continue-on-error,
+# since a Docker build failure of the action image isn't caught by that setting.
 
 on:
   push:
@@ -27,18 +31,6 @@ jobs:
         run: npm install -g markdownlint-cli2
       - name: Lint markdown (warnings only)
         run: markdownlint-cli2 "**/*.md" "#node_modules" || echo "::warning::Markdown lint issues found"
-
-  link-check:
-    name: Markdown link check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
-        with:
-          use-quiet-mode: "yes"
-          use-verbose-mode: "yes"
-          config-file: ".github/mlc_config.json"
-        continue-on-error: true
 
   yaml-lint:
     name: YAML lint
