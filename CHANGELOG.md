@@ -8,6 +8,8 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-07-31] - Standalone widgets wave (H1504–H1538) + lychee (H1743)
+
 ### Added
 - **[`sanskrit_anki_decks.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_anki_decks.html)
   — standalone Anki-deck flashcard widget (H1504)**, consuming the already-computed
@@ -29,6 +31,18 @@ durable, user-facing milestones.
   (`display:none`, including the trigger button itself), so Ctrl+P prints only the current
   paradigm grid on one page. Verified headless via `chrome --headless --print-to-pdf`
   (1-page PDF, chrome/controls text absent from the extracted text).
+
+### Added
+- **Standalone concordance search widget (H1505).**
+- **Curated-passage browser widget — standalone HTML (H1537).**
+- **Morphostatistics reference widget — person×number, cases, prefixes (H1538).**
+
+### Fixed
+- **Markdown link check: replace Docker-based checker with lychee + scheduled run (H1743).**
+
+### Changed
+- **Roadmap truth-pass:** inline done markers for items 1–8 + integration section (H1878).
+
 
 ## [2026-07-27] — Concordance search widget (H1505)
 
