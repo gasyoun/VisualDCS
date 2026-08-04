@@ -33,6 +33,13 @@ counts can be reconciled against E46's committed TSV without re-deriving it.
     grammatical knowledge. This script never claims a P./A. split it cannot see.
   - UD Tense=Past conflates aorist + perfect (no UD value separates them) -- carried
     through via ud_to_category's own "Perfect/Aorist" label, never split further.
+    NB (H1486): that is a scoping decision for THIS asset, not a corpus limit. DCS's own
+    feat_formation does re-split the finite past indicative, and regen_widgets.py's
+    verb_forms() now applies it (past_class()); ud_to_category deliberately still returns
+    the merged label so this generator's committed 7,689-root output does not silently
+    change shape. Propagating the split here means regenerating that asset AND redoing the
+    csl-observatory E46 reconciliation -- both or neither. See
+    reports/past_tense_resplit_validation.md for the split's measured error bars.
 
 Output (both from ONE aggregation pass, so they can never drift apart):
   visual/paradigm_attested.json   pure JSON (downstream/kosha-consumable export)

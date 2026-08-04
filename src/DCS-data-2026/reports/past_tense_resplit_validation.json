@@ -1,0 +1,546 @@
+{
+ "db": "dcs_full.sqlite",
+ "sha256": "8f3b06bd6ef0e47a9ccf81d147e73d5d240d64e0c12f6d789262eb422ebb23bc",
+ "source_commit": "04e0778d3dc971030229179e25eea043d06ff397",
+ "universe": 93329,
+ "classes": {
+  "Perfect": 77229,
+  "Aorist": 12054,
+  "Periphrastic Perfect": 4046
+ },
+ "by_formation": {
+  "null": 77229,
+  "is": 1077,
+  "peri": 4046,
+  "red": 833,
+  "root": 5690,
+  "s": 1508,
+  "sa": 124,
+  "sis": 41,
+  "them": 2781
+ },
+ "v1": {
+  "status": "PASS",
+  "instrument": "visual/paradigm_endings.json (2021 DCS dump)",
+  "aorist_categories_found": [
+   "Aorist Ind. Is.",
+   "Aorist Ind. Red.",
+   "Aorist Ind. Root.",
+   "Aorist Ind. S.",
+   "Aorist Ind. Sa.",
+   "Aorist Ind. Sis.",
+   "Aorist Ind. Them."
+  ],
+  "perfect_categories_found": [
+   "Perfect Ind.",
+   "Perfect Ind. Peri."
+  ],
+  "missing": {}
+ },
+ "v2": {
+  "top_n": 50,
+  "covered": 45503,
+  "untagged": 77229,
+  "covered_pct": 58.92,
+  "forms": [
+   {
+    "form": "uvāca",
+    "lemma": "vac",
+    "person": "3",
+    "number": "Sing",
+    "count": 13880
+   },
+   {
+    "form": "āha",
+    "lemma": "ah",
+    "person": "3",
+    "number": "Sing",
+    "count": 6731
+   },
+   {
+    "form": "veda",
+    "lemma": "vid",
+    "person": "3",
+    "number": "Sing",
+    "count": 2358
+   },
+   {
+    "form": "āhuḥ",
+    "lemma": "ah",
+    "person": "3",
+    "number": "Plur",
+    "count": 1800
+   },
+   {
+    "form": "babhūva",
+    "lemma": "bhū",
+    "person": "3",
+    "number": "Sing",
+    "count": 1220
+   },
+   {
+    "form": "jagāma",
+    "lemma": "gam",
+    "person": "3",
+    "number": "Sing",
+    "count": 1140
+   },
+   {
+    "form": "dadarśa",
+    "lemma": "dṛś",
+    "person": "3",
+    "number": "Sing",
+    "count": 1083
+   },
+   {
+    "form": "yayau",
+    "lemma": "yā",
+    "person": "3",
+    "number": "Sing",
+    "count": 970
+   },
+   {
+    "form": "ūcuḥ",
+    "lemma": "vac",
+    "person": "3",
+    "number": "Plur",
+    "count": 889
+   },
+   {
+    "form": "prāha",
+    "lemma": "prāh",
+    "person": "3",
+    "number": "Sing",
+    "count": 871
+   },
+   {
+    "form": "cakāra",
+    "lemma": "kṛ",
+    "person": "3",
+    "number": "Sing",
+    "count": 871
+   },
+   {
+    "form": "cakre",
+    "lemma": "kṛ",
+    "person": "3",
+    "number": "Sing",
+    "count": 852
+   },
+   {
+    "form": "āhur",
+    "lemma": "ah",
+    "person": "3",
+    "number": "Plur",
+    "count": 704
+   },
+   {
+    "form": "dadau",
+    "lemma": "dā",
+    "person": "3",
+    "number": "Sing",
+    "count": 699
+   },
+   {
+    "form": "viduḥ",
+    "lemma": "vid",
+    "person": "3",
+    "number": "Plur",
+    "count": 646
+   },
+   {
+    "form": "jajñe",
+    "lemma": "jan",
+    "person": "3",
+    "number": "Sing",
+    "count": 556
+   },
+   {
+    "form": "vivyādha",
+    "lemma": "vyadh",
+    "person": "3",
+    "number": "Sing",
+    "count": 511
+   },
+   {
+    "form": "jaghāna",
+    "lemma": "han",
+    "person": "3",
+    "number": "Sing",
+    "count": 473
+   },
+   {
+    "form": "cicheda",
+    "lemma": "chid",
+    "person": "3",
+    "number": "Sing",
+    "count": 469
+   },
+   {
+    "form": "jagrāha",
+    "lemma": "grah",
+    "person": "3",
+    "number": "Sing",
+    "count": 452
+   },
+   {
+    "form": "papraccha",
+    "lemma": "pracch",
+    "person": "3",
+    "number": "Sing",
+    "count": 427
+   },
+   {
+    "form": "pratyuvāca",
+    "lemma": "prativac",
+    "person": "3",
+    "number": "Sing",
+    "count": 423
+   },
+   {
+    "form": "provāca",
+    "lemma": "pravac",
+    "person": "3",
+    "number": "Sing",
+    "count": 421
+   },
+   {
+    "form": "tasthau",
+    "lemma": "sthā",
+    "person": "3",
+    "number": "Sing",
+    "count": 419
+   },
+   {
+    "form": "papāta",
+    "lemma": "pat",
+    "person": "3",
+    "number": "Sing",
+    "count": 419
+   },
+   {
+    "form": "praviveśa",
+    "lemma": "praviś",
+    "person": "3",
+    "number": "Sing",
+    "count": 359
+   },
+   {
+    "form": "viveśa",
+    "lemma": "viś",
+    "person": "3",
+    "number": "Sing",
+    "count": 347
+   },
+   {
+    "form": "cakruḥ",
+    "lemma": "kṛ",
+    "person": "3",
+    "number": "Plur",
+    "count": 322
+   },
+   {
+    "form": "prayayau",
+    "lemma": "prayā",
+    "person": "3",
+    "number": "Sing",
+    "count": 314
+   },
+   {
+    "form": "ājagāma",
+    "lemma": "āgam",
+    "person": "3",
+    "number": "Sing",
+    "count": 309
+   },
+   {
+    "form": "anvāha",
+    "lemma": "anvah",
+    "person": "3",
+    "number": "Sing",
+    "count": 293
+   },
+   {
+    "form": "jagāda",
+    "lemma": "gad",
+    "person": "3",
+    "number": "Sing",
+    "count": 286
+   },
+   {
+    "form": "yayuḥ",
+    "lemma": "yā",
+    "person": "3",
+    "number": "Plur",
+    "count": 263
+   },
+   {
+    "form": "lebhe",
+    "lemma": "labh",
+    "person": "3",
+    "number": "Sing",
+    "count": 262
+   },
+   {
+    "form": "jagmuḥ",
+    "lemma": "gam",
+    "person": "3",
+    "number": "Plur",
+    "count": 253
+   },
+   {
+    "form": "cacāra",
+    "lemma": "car",
+    "person": "3",
+    "number": "Sing",
+    "count": 247
+   },
+   {
+    "form": "babhau",
+    "lemma": "bhā",
+    "person": "3",
+    "number": "Sing",
+    "count": 244
+   },
+   {
+    "form": "mumoca",
+    "lemma": "muc",
+    "person": "3",
+    "number": "Sing",
+    "count": 237
+   },
+   {
+    "form": "babhūvuḥ",
+    "lemma": "bhū",
+    "person": "3",
+    "number": "Plur",
+    "count": 236
+   },
+   {
+    "form": "āsa",
+    "lemma": "as",
+    "person": "3",
+    "number": "Sing",
+    "count": 233
+   },
+   {
+    "form": "dadṛśuḥ",
+    "lemma": "dṛś",
+    "person": "3",
+    "number": "Plur",
+    "count": 216
+   },
+   {
+    "form": "cikṣepa",
+    "lemma": "kṣip",
+    "person": "3",
+    "number": "Sing",
+    "count": 216
+   },
+   {
+    "form": "dadṛśe",
+    "lemma": "dṛś",
+    "person": "3",
+    "number": "Sing",
+    "count": 215
+   },
+   {
+    "form": "vettha",
+    "lemma": "vid",
+    "person": "2",
+    "number": "Sing",
+    "count": 203
+   },
+   {
+    "form": "pradadau",
+    "lemma": "pradā",
+    "person": "3",
+    "number": "Sing",
+    "count": 201
+   },
+   {
+    "form": "prāhuḥ",
+    "lemma": "prāh",
+    "person": "3",
+    "number": "Plur",
+    "count": 199
+   },
+   {
+    "form": "mene",
+    "lemma": "man",
+    "person": "3",
+    "number": "Sing",
+    "count": 197
+   },
+   {
+    "form": "avāpa",
+    "lemma": "avāp",
+    "person": "3",
+    "number": "Sing",
+    "count": 193
+   },
+   {
+    "form": "jagmur",
+    "lemma": "gam",
+    "person": "3",
+    "number": "Plur",
+    "count": 189
+   },
+   {
+    "form": "prāpa",
+    "lemma": "prāp",
+    "person": "3",
+    "number": "Sing",
+    "count": 185
+   }
+  ]
+ },
+ "v3": {
+  "leaked": 869,
+  "untagged": 77229,
+  "leaked_pct": 1.13,
+  "examples": [
+   {
+    "form": "ajani",
+    "untagged_count": 52
+   },
+   {
+    "form": "abhūt",
+    "untagged_count": 38
+   },
+   {
+    "form": "agāt",
+    "untagged_count": 20
+   },
+   {
+    "form": "upāsarat",
+    "untagged_count": 18
+   },
+   {
+    "form": "avocat",
+    "untagged_count": 18
+   },
+   {
+    "form": "asthāt",
+    "untagged_count": 16
+   },
+   {
+    "form": "āgāt",
+    "untagged_count": 15
+   },
+   {
+    "form": "akaḥ",
+    "untagged_count": 15
+   },
+   {
+    "form": "agan",
+    "untagged_count": 15
+   },
+   {
+    "form": "ahan",
+    "untagged_count": 13
+   },
+   {
+    "form": "aganma",
+    "untagged_count": 13
+   },
+   {
+    "form": "āgan",
+    "untagged_count": 9
+   },
+   {
+    "form": "asṛgram",
+    "untagged_count": 9
+   },
+   {
+    "form": "anūṣata",
+    "untagged_count": 9
+   },
+   {
+    "form": "akaram",
+    "untagged_count": 9
+   }
+  ]
+ },
+ "v4": {
+  "by_class": {
+   "Aorist": {
+    "total": 12054,
+    "impf_shaped": 283,
+    "pct": 2.35
+   },
+   "Periphrastic Perfect": {
+    "total": 4046,
+    "impf_shaped": 0,
+    "pct": 0.0
+   },
+   "Perfect": {
+    "total": 77229,
+    "impf_shaped": 2733,
+    "pct": 3.54
+   }
+  },
+  "examples": [
+   {
+    "form": "abravīt",
+    "count": 148
+   },
+   {
+    "form": "abhavat",
+    "count": 145
+   },
+   {
+    "form": "āsīt",
+    "count": 141
+   },
+   {
+    "form": "asṛjata",
+    "count": 96
+   },
+   {
+    "form": "abruvan",
+    "count": 77
+   },
+   {
+    "form": "abhavan",
+    "count": 48
+   },
+   {
+    "form": "āyan",
+    "count": 45
+   },
+   {
+    "form": "ajāyata",
+    "count": 38
+   },
+   {
+    "form": "akāmayata",
+    "count": 34
+   },
+   {
+    "form": "apaśyat",
+    "count": 33
+   },
+   {
+    "form": "udakrāmat",
+    "count": 32
+   },
+   {
+    "form": "āsan",
+    "count": 31
+   },
+   {
+    "form": "ajuhot",
+    "count": 28
+   },
+   {
+    "form": "samabhavat",
+    "count": 28
+   },
+   {
+    "form": "prāviśat",
+    "count": 26
+   }
+  ]
+ }
+}
