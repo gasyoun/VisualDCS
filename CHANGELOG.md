@@ -8,6 +8,25 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-04] — Russian roadmap of record rewrite + figure corrections (H1855)
+
+### Fixed
+- **Russian roadmap of record rewritten; the two mis-published figures corrected in every
+  remaining publish site (H1855,
+  [issue #66](https://github.com/gasyoun/VisualDCS/issues/66)).**
+  [`roadmap.md`](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md) is now a
+  document-of-record (dated header, inline ✅ markers incl. item 9 / H1536, open items
+  listed): the body itself — not just the banner — states **Nom.Sg = 761,605 = 33.7 %** of
+  the 2,263,192 cased grid tokens (was "34.6 % of all nominal forms") and **dual pooled =
+  46,909 = 2.07 %** with the per-cell spread (max Nom.Dual 0.91 %, all 8 dual cells < 1 %)
+  instead of "Dual < 1 % везде", each with the recomputation path
+  (`gen_paradigm_nominal.py` over `dcs_full.sqlite`, pin `04e0778d…` →
+  [`reports/paradigm_nominal_build.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_nominal_build.md)).
+  The last stale publish site,
+  [`mockups/index-dark.html`](https://github.com/gasyoun/VisualDCS/blob/main/mockups/index-dark.html)'s
+  «Морфостатистика» `fact:` line, corrected likewise (`sanskrit_index.html` was already
+  fixed earlier).
+
 ## [2026-07-31] - Standalone widgets wave (H1504–H1538) + lychee (H1743)
 
 ### Added
