@@ -223,7 +223,8 @@ const TOOLS = [
   {
     id:'morph', icon:'📐', name:'Морфостатистика',
     desc:'Лицо × число по временам из 4.57M токенов 10.csv. Падежная система (cs.csv). Продуктивность приставок (9.txt).',
-    fact:'Nom.Sg = 34.6% всех именных · Dual < 1% везде.',
+    fact:'Nom.Sg = 33.7% падежных токенов · Dual в сумме 2.07%, по-ячеечно < 1% (макс. Nom.Dual 0.91%).',
+    // пересчёт DCS-2026 (H1855): gen_paradigm_nominal.py над dcs_full.sqlite, сетка 2 263 192 токена — reports/paradigm_nominal_build.md
     tags:['морфология','падежи','приставки'],
     stages:['ref'], type:'widget'
   },
