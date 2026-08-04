@@ -1,6 +1,6 @@
 # VisualDCS
 
-_Created: 20-04-2026 · Last updated: 11-07-2026_
+_Created: 20-04-2026 · Last updated: 04-08-2026_
 
 Interactive frequency dashboards for the [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/), built from corpus frequency data and rendered as standalone HTML files — no build step, no server, open directly in a browser.
 
@@ -97,6 +97,36 @@ from the DCS-2026 master and checked by
 (CI-gated via [`validate-lemma-summary.yml`](https://github.com/gasyoun/VisualDCS/blob/main/.github/workflows/validate-lemma-summary.yml)).
 It is the feed behind the `csl-atlas` DCS adapter.
 
+### Aorist ≠ Perfect — the `Tense=Past` re-split (H1486)
+
+UD's `Tense` inventory has no Aorist or Perfect value, so Sanskrit's two past tenses both
+surface as `Tense=Past` (111,167 tokens). DCS's own `feat_formation` carries the past-stem
+formation, and `regen_widgets.py` now uses it to re-separate them inside the finite past
+indicative (93,329 tokens — the only sub-bucket where the feature is populated):
+
+| class | rule | tokens | % of bucket |
+|---|---|---:|---:|
+| Aorist | `feat_formation` ∈ `root`·`them`·`red`·`s`·`is`·`sis`·`sa` (Whitney's seven aorist types) | 12,054 | 12.92% |
+| Periphrastic Perfect | `feat_formation = peri` | 4,046 | 4.34% |
+| Perfect | `feat_formation IS NULL` — DCS leaves the simple perfect unmarked | 77,229 | 82.75% |
+
+Only the last row is a **default** rather than an observation, so it is measured, not
+assumed: [`validate_past_tense_resplit.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/validate_past_tense_resplit.py)
+runs four independent checks and writes
+[`reports/past_tense_resplit_validation.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/past_tense_resplit_validation.md).
+
+**Read this before quoting either number.** Both classes are **bounds, not exact counts**:
+Aorist is a *lower* bound (≥1.13% more aorists sit untagged inside Perfect, provably — the
+same surface forms appear tagged elsewhere in the same bucket), and Perfect is an *upper*
+bound additionally carrying ≥3.54% forms attested elsewhere as `Tense=Impf`, an upstream
+tense-tagging inconsistency the re-split cannot repair.
+
+This supersedes the repo's former claim that `feat_formation` is "present on <2% of verbs,
+too sparse to re-split them". That divided 16,100 tags by *all* ~1.01M verb tokens; against
+the finite past indicative — the only bucket the feature applies to — coverage is **17.25%**.
+The split is applied in `verb_forms_ud.json` / `verb_forms_38cat.json`; it is deliberately
+**not** propagated into `visual/paradigm_attested.json` (see the paradigm-trainer section).
+
 ---
 
 ## Dashboards
@@ -158,7 +188,11 @@ textbook paradigm with P./A. columns.
 **Data ceiling -- read before trusting a cell as "resolved":** DCS tags unaccented text,
 so it cannot distinguish verb class I vs VI, or class IV vs the passive formation, at
 the root-class level -- **no Panini class number is shown anywhere in this dataset**.
-`Tense=Past` conflates aorist and perfect into one "Perfect/Aorist" bucket. `feat_voice`
+`Tense=Past` conflates aorist and perfect into one "Perfect/Aorist" bucket **in this
+dataset** — DCS's `feat_formation` can re-split that bucket and the widget layer now does
+so (see below), but the split is deliberately **not** propagated into
+`paradigm_attested.json`, whose per-root cells stay merged pending a regeneration and a
+fresh reconciliation against csl-observatory's E46 census. `feat_voice`
 only tags Passive vs non-passive -- parasmaipada vs atmanepada is **not** separately
 tagged by DCS, so non-passive finite forms for a cell are pooled together (unlike the
 6-root RD grid's P./A. columns, which come from external grammatical knowledge, not

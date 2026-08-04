@@ -10,7 +10,7 @@ data_source: "src/DCS-data-2026/ (master built M0–M8; figures verified against
 
 # The Digital Corpus of Sanskrit 2026: An Open Treebank-and-Morphology SQLite Release with a Validated 2021→2026 Cross-Walk
 
-_Created: 26-06-2026 · Last updated: 04-07-2026_
+_Created: 26-06-2026 · Last updated: 04-08-2026_
 
 > **Draft status (2026-07-04, readiness 3/5).** Manuscript built directly on the completed
 > data work in [`src/DCS-data-2026/`](https://github.com/gasyoun/VisualDCS/tree/main/src/DCS-data-2026)
@@ -249,6 +249,9 @@ The high-frequency codes resolve exactly; 31 of 33 attested codes resolve overal
 
 The Perfect and Aorist rows landing in the *same* UD bucket is not a mapping error — it is the
 UD `Tense=Past` collapse documented in §6, and the map is the concrete evidence for it. The map
+resolves that collapse only as far as the *UD* feature set goes: DCS's own `feat_formation`
+re-separates the two inside the finite past indicative, which is why §6 now reports the collapse
+as partially recoverable rather than terminal. The map
 is learned on the pilot scope (13 texts) and covers the tense-codes attested there; two rare
 codes (35, 37) had no pilot match. Old per-row PKs (`10.txt`) occupy a *different* ID space from
 CoNLL-U `OccId`, so individual 2021 rows cannot be patched — the refresh rebuilds wholesale
@@ -315,12 +318,25 @@ the database built twice yields an identical data hash (`60a4d07156ad9d30…`).
 
 ### 4.4 Verb-form distribution (verified, with caveats)
 The 2026 master has **1,007,361** UPOS=VERB tokens vs the 2021 `timws.csv`-binned extract's
-741,782 verbal examples (30 attested categories; the Excel-derived 38-category dashboard total,
-781,616, is a separate aggregation of the same 2021 vintage and is not the comparandum here); the
-increase is corpus growth plus a methodological difference (2026 counts every VERB token
-directly). The largest UD-feature buckets: Past Passive Participle 216,803; Present Active
-180,040; Absolutive 102,054; the combined **Perfect/Aorist Active 92,570** (see §6). A Pareto view
+**781,618** verbal examples; the increase is corpus growth plus a methodological difference
+(2026 counts every VERB token directly). The largest UD-feature buckets: Past Passive Participle
+216,803; Present Active 180,040; Absolutive 102,054; and — no longer merged (§6) — **Perfect
+Active 76,470**, **Aorist Active 12,054** and **Periphrastic Perfect Active 4,046**, which together
+reconstitute the 92,570 previously reported as one `Perfect/Aorist Active` bucket. A Pareto view
 of the 38-category map: the top 5 forms cover 67.65% and the top 11 cover 94.6% of verbal tokens.
+
+> **Correction (04-08-2026).** Earlier editions gave the 2021 comparandum as 741,782 and explained
+> the gap to the Excel-derived dashboard total of 781,616 as "a separate aggregation of the same
+> 2021 vintage". That explanation was wrong: both are the *same* aggregation, and 741,782 was a
+> mis-sum. `timws.csv` binds 42 category **codes** to only 30 distinct category **names** — two
+> codes each read `Imperfect Active` (35,921 + 4,442), `Aorist Active` (583 + 721), `Aorist Medium`
+> (1,056 + 92), `Imperative Passive`, `Present Active Participle?` and `36`, and four read
+> `Subjunctive ?`. The reader keyed its map on the name, so each collision kept only the last code
+> and silently dropped the rest — **39,836 examples**, of which 35,921 were a single Imperfect
+> Active row. Summing collisions instead yields 781,618, reconciling with the documented 781,616
+> to within 2. Fixed in `regen_widgets.py::read_2021_verbcats`; the affected per-category 2021
+> figures (Imperfect Active 4,442 → 40,363; Aorist Active 721 → 1,304) are corrected in
+> [`reports/m7_widgets.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/m7_widgets.md).
 
 ### 4.5 Claim-to-artifact inventory
 
@@ -383,11 +399,22 @@ the tagset vintage and legacy-export limits in
 [`DCS_FORMAT_COMPARISON.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_FORMAT_COMPARISON.md)
 and [`reports/m4_exports.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/m4_exports.md):
 
-- **Aorist/perfect collapse under UD `Tense`.** UD's `Tense` inventory has no Aorist or Perfect
-  value, so both surface as a single `Tense=Past` bucket (≈102k tokens), distinct only from
-  `Tense=Impf` (≈47k). The DCS-specific `feat_formation` (root/peri/s/red…) that could re-split
-  them is present on **<2%** of verbs — too sparse. Consumers needing the aorist≠perfect distinction
-  must not read it off `Tense=Past`.
+- **Aorist/perfect collapse under UD `Tense` — partially recoverable.** UD's `Tense` inventory has
+  no Aorist or Perfect value, so both surface as a single `Tense=Past` bucket (111,167 tokens),
+  distinct only from `Tense=Impf` (≈47k). The distinction is nonetheless **partially recoverable
+  from the corpus itself**, via the DCS-specific `feat_formation`: within the finite past
+  indicative (93,329 tokens — the sub-bucket where the feature is populated at all), the seven
+  traditional aorist formations (`root`, `them`, `red`, `s`, `is`, `sis`, `sa`) mark **12,054**
+  aorists and `peri` marks **4,046** periphrastic perfects, i.e. **17.25%** coverage; DCS leaves
+  the simple perfect unmarked, so the untagged remainder defaults to perfect. Both resulting
+  classes are **bounds, not exact counts** — the aorist a lower bound, the perfect an upper bound
+  carrying ≥1.13% misfiled aorists and ≥3.54% forms attested elsewhere as `Tense=Impf`. Consumers
+  needing the aorist≠perfect distinction must therefore read it off `feat_formation` with those
+  bounds, never off `Tense=Past` alone. Method and error bars:
+  [`reports/past_tense_resplit_validation.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/past_tense_resplit_validation.md).
+  (A previous edition of this paper reported `feat_formation` as "present on <2% of verbs — too
+  sparse". That figure divided the 16,100 tags by *all* ~1.01M verb tokens; against the finite
+  past indicative, the only bucket the feature applies to, coverage is 17.25%.)
 - **Non-unique corpus IDs → synthetic PKs.** The corpus reuses `OccId` across a line's
   sub-sentences, and `sent_id` collides *within* chapters (≈449 sentences would have been silently
   dropped if keyed on it). The master therefore keys both `token` and `sentence` on a **synthetic

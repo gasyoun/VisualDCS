@@ -8,7 +8,8 @@ dcs_full.sqlite) and writes a 2021->2026 deltas report. Does NOT touch the HTML.
 
 Outputs (to ./widgets/, gitignored — regenerable):
   corpus_stats.json        summary morpho-statistics
-  verb_forms_ud.json       verb distribution by native UD (Tense/Voice/Mood/VerbForm) + Pareto
+  verb_forms_ud.json       verb distribution by native UD (Tense/Voice/Mood/VerbForm) plus DCS's
+                           own Formation feature + Pareto
   verb_forms_38cat.json    verb distribution mapped to the legacy 38 DCS categories + Pareto
   morph_pn.json            finite-verb person x number per tense
   tense_case.json          nominal case x number distribution
@@ -93,10 +94,39 @@ def ud_to_category(conn):
                 m.setdefault(key, name)               # first (most frequent code) wins
     # UD Tense=Past conflates Sanskrit aorist+perfect (no UD value separates them), and the auto-map
     # mislabels Past-indicative as "Imperfect"; override with honest labels, keep true Impf distinct.
+    # The Past-Ind entry is the PRE-re-split label: verb_forms() overrides it per token via
+    # past_class() (feat_formation), but gen_paradigm_attested.py consumes this map unsplit, so
+    # the merged label stays here deliberately. See reports/past_tense_resplit_validation.md.
     for voice, lab in ((None, "Active"), ("Pass", "Passive"), ("Mid", "Middle")):
         m[("Past", voice, "Ind")] = f"Perfect/Aorist {lab}"
         m[("Impf", voice, "Ind")] = f"Imperfect {lab}"
     return m
+
+
+# -- the aorist/perfect re-split (H1486) ------------------------------------------
+# UD has no Aorist tense value, but DCS's own `feat_formation` does carry the traditional
+# past-stem formation on the finite past indicative. The seven values below are Whitney's
+# seven aorist types (ch. IX §§824-930); `peri` on Tense=Past is the PERIPHRASTIC PERFECT
+# (on Tense=Fut the same string is the periphrastic future — hence the tense guard).
+# The simple (reduplicated) perfect is DCS's UNMARKED past formation and carries no tag,
+# so NULL -> Perfect is a default, not an observation. It is validated — not assumed — by
+# validate_past_tense_resplit.py; read its report for the measured error bars before
+# quoting either class as exact.
+AORIST_FORMATIONS = ("root", "them", "red", "s", "is", "sis", "sa")
+
+
+def past_class(formation):
+    """feat_formation -> the past-stem class, for a Tense=Past Mood=Ind finite token."""
+    if formation in AORIST_FORMATIONS:
+        return "Aorist"
+    if formation == "peri":
+        return "Periphrastic Perfect"
+    return "Perfect"                 # unmarked default — the simple/reduplicated perfect
+
+
+def is_past_indicative(tense, mood, verbform):
+    """The one bucket feat_formation actually populates (16,100 of its 93,329 tokens)."""
+    return tense == "Past" and mood == "Ind" and verbform is None
 
 
 # participle morphology heuristic (for VerbForm=Part tokens that carry no Tense tag) --
@@ -120,26 +150,33 @@ def participle_cat(form):
 
 def verb_forms(conn):
     """Verb distribution two ways: native UD, and mapped to the 38 DCS categories."""
-    # native UD: (VerbForm, Tense, Mood, Voice)
+    # native UD: (VerbForm, Tense, Mood, Voice) + DCS's own Formation, which is what
+    # separates aorist from perfect inside Tense=Past (H1486).
     ud_rows = conn.execute(
-        "SELECT feat_verbform, feat_tense, feat_mood, feat_voice, COUNT(*) "
-        "FROM token WHERE upos='VERB' GROUP BY 1,2,3,4 ORDER BY 5 DESC").fetchall()
-    ud_pairs = [(f"VerbForm={vf or '-'}|Tense={te or '-'}|Mood={mo or '-'}|Voice={vo or '-'}", c)
-                for vf, te, mo, vo, c in ud_rows]
+        "SELECT feat_verbform, feat_tense, feat_mood, feat_voice, feat_formation, COUNT(*) "
+        "FROM token WHERE upos='VERB' GROUP BY 1,2,3,4,5 ORDER BY 6 DESC").fetchall()
+    ud_pairs = [(f"VerbForm={vf or '-'}|Tense={te or '-'}|Mood={mo or '-'}|Voice={vo or '-'}"
+                 f"|Formation={fm or '-'}", c)
+                for vf, te, mo, vo, fm, c in ud_rows]
     ud_pareto, ud_total = pareto(ud_pairs)
 
     cat_map = ud_to_category(conn)
     cats = Counter()
-    # non-participle verbs: bin at the (tense, voice, mood) group level
-    for vf, te, mo, vo, c in conn.execute(
-            "SELECT feat_verbform, feat_tense, feat_mood, feat_voice, COUNT(*) FROM token "
-            "WHERE upos='VERB' AND (feat_verbform IS NULL OR feat_verbform != 'Part') GROUP BY 1,2,3,4"):
+    voice_label = {None: "Active", "Pass": "Passive", "Mid": "Middle"}
+    # non-participle verbs: bin at the (tense, voice, mood) group level, except the finite
+    # past indicative, which additionally splits on feat_formation (aorist vs perfect).
+    for vf, te, mo, vo, fm, c in conn.execute(
+            "SELECT feat_verbform, feat_tense, feat_mood, feat_voice, feat_formation, COUNT(*) "
+            "FROM token WHERE upos='VERB' AND (feat_verbform IS NULL OR feat_verbform != 'Part') "
+            "GROUP BY 1,2,3,4,5"):
         if vf == "Conv":
             name = "Absolutive"
         elif vf == "Inf":
             name = "Infinitive"
         elif vf == "Gdv":
             name = "Future passive participle"
+        elif is_past_indicative(te, mo, vf):             # the re-split bucket
+            name = f"{past_class(fm)} {voice_label.get(vo, vo)}"
         else:                                            # finite -> learned (Tense,Voice,Mood) map
             name = cat_map.get((te, vo, mo)) or f"({te or '-'}/{mo or '-'}/{vo or '-'})"
         cats[name] += c
@@ -217,7 +254,15 @@ def collocations(conn, top_lemmas=400, per=20):
 
 
 def read_2021_verbcats(path):
-    """timws.csv -> {category_name: 2021 frequency}."""
+    """timws.csv -> {category_name: 2021 frequency}.
+
+    Category NAMES repeat in timws.csv — it has two `Aorist Active` codes (583 + 721),
+    two `Aorist Medium` (1,056 + 92) and two `Imperfect Active` (35,921 + 4,442), because
+    a 38-CODE inventory is being read into a name-keyed map. Sum the collisions; the
+    earlier last-wins assignment silently reported 2021 Imperfect Active as 4,442 instead
+    of 40,363 and Aorist Active as 721 instead of 1,304 (H1486 — surfaced once the
+    re-split gave the 2026 side a matching `Aorist Active` row to compare against).
+    """
     out = {}
     p = os.path.join(path, "timws.csv")
     if not os.path.isfile(p):
@@ -226,7 +271,9 @@ def read_2021_verbcats(path):
         for line in fh:
             parts = line.rstrip("\n").split(":")
             if len(parts) >= 3 and parts[0].strip().isdigit():
-                out[parts[1].strip()] = int(parts[2].strip()) if parts[2].strip().isdigit() else 0
+                name = parts[1].strip()
+                n = int(parts[2].strip()) if parts[2].strip().isdigit() else 0
+                out[name] = out.get(name, 0) + n
     return out
 
 
@@ -287,10 +334,16 @@ def main():
           "- **Corpus growth:** 2026 totals exceed 2021's — the corpus grew (5.69M tokens, +Vedic) and "
           "2026 counts every UPOS=VERB token directly, vs 2021's category-binned extract. Δ = growth + "
           "methodology, not error.",
-          "- **UD past-tense conflation:** UD `Tense` has no Aorist/Perfect value — both surface as "
-          "`Tense=Past` (102k), distinct only from `Tense=Impf` (47k). So 2026 reports **Perfect/Aorist** "
-          "as one bucket where 2021 split aorist vs perfect; `feat_formation` (root/peri/s/red…) is present "
-          "on <2% of verbs, too sparse to re-split them.",
+          "- **UD past-tense conflation — re-split, with bounds (H1486):** UD `Tense` has no "
+          "Aorist/Perfect value; both surface as `Tense=Past`, distinct only from `Tense=Impf` "
+          "(47k). DCS's own `feat_formation` does carry the past-stem formation, so the bucket is "
+          "no longer reported merged: the seven Whitney aorist formations (root/them/red/s/is/sis/"
+          "sa) give **Aorist**, `peri` gives **Periphrastic Perfect**, and the untagged remainder "
+          "defaults to **Perfect** (DCS leaves the simple perfect unmarked). The tag covers 17.25% "
+          "of the finite past indicative — the superseded '<2% of verbs, too sparse' claim divided "
+          "by ALL verbs (1.60%) instead of by the bucket it has to split. **Both classes are "
+          "bounds, not exact counts:** Aorist is a lower bound and Perfect an upper bound. See "
+          "`reports/past_tense_resplit_validation.md` for the measured error bars.",
           "- **Participles:** present participles carry `Tense=Pres`; the no-Tense bucket is split by a "
           "form-ending heuristic (-ta/-na → PPP, -māna/-māṇa/-ant → present). ~58k compound-member "
           "participles whose surface form lacks a clean ending fall to *Participle (unclassified)*.\n"]

@@ -8,6 +8,48 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+### Added
+- **Aorist and Perfect are separate categories again — the `Tense=Past` re-split (H1486).**
+  UD has no Aorist tense value, so both Sanskrit past tenses collapsed into one
+  `Perfect/Aorist` bucket. DCS's own `feat_formation` carries the past-stem formation, and
+  [`regen_widgets.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/regen_widgets.py)
+  now uses it: within the finite past indicative (93,329 tokens) the seven Whitney aorist
+  formations give **Aorist 12,054**, `peri` gives **Periphrastic Perfect 4,046**, and the
+  untagged remainder defaults to **Perfect 77,229** — reconstituting the former merged
+  92,570 + 759 exactly. `verb_forms_38cat.json` gains `Aorist Active` / `Perfect Active` /
+  `Periphrastic Perfect Active` / `Perfect Passive`; `verb_forms_ud.json` gains a
+  `Formation=` axis.
+- **`validate_past_tense_resplit.py` — the re-split's error bars, measured not assumed.**
+  Only one step of the split is a default (`feat_formation IS NULL` → Perfect, because DCS
+  leaves the simple perfect unmarked), and a published Limitations claim now rests on it, so
+  four independent checks report on it and emit
+  [`reports/past_tense_resplit_validation.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/past_tense_resplit_validation.md):
+  taxonomy agreement with the independent 2021 asset `visual/paradigm_endings.json` (PASS —
+  the unmarked past category there is the simple perfect, so the default reproduces that
+  annotation's own default); frequency-weighted adjudication of the 50 commonest untagged
+  forms (58.92% of the defaulted mass, all textbook perfects); an aorist-leakage floor of
+  1.13%; and 3.54% imperfect contamination. **Aorist is therefore a lower bound and Perfect
+  an upper bound** — the script asserts denominator closure and imports its rules from
+  `regen_widgets.py` so validator and validated cannot drift.
+
+### Fixed
+- **The "`feat_formation` is present on <2% of verbs — too sparse" claim was wrong and is
+  retracted (H1486).** The arithmetic was right and the denominator was not: 16,100 tags
+  against all ~1.01M verb tokens is 1.60%, but the feature only ever applies to the finite
+  past indicative, where coverage is **17.25%**. Corrected in
+  [`README.md`](https://github.com/gasyoun/VisualDCS/blob/main/README.md),
+  [`CLAUDE.md`](https://github.com/gasyoun/VisualDCS/blob/main/CLAUDE.md),
+  `reports/m7_widgets.md` and the A38 paper's §6 Limitations.
+- **2021 comparison figures under-counted by 39,836 examples (H1486).** `timws.csv` binds 42
+  category *codes* to 30 distinct category *names*, and `read_2021_verbcats` keyed its map on
+  the name — so each of the 8 collisions kept only the last code and silently dropped the
+  rest (`Imperfect Active` 35,921 + 4,442 → 4,442; `Aorist Active` 583 + 721 → 721). Summing
+  collisions yields **781,618**, reconciling with the documented Excel headline 781,616 to
+  within 2. This also retracts A38 §4.4's explanation that 741,782 and 781,616 were "separate
+  aggregations of the same 2021 vintage" — they are the same aggregation, one of them
+  mis-summed. Surfaced only because the re-split gave the 2026 side a matching `Aorist Active`
+  row to compare against.
+
 ## [2026-08-04] — Russian roadmap of record rewrite + figure corrections (H1855)
 
 ### Fixed
