@@ -182,6 +182,19 @@ This project uses `.ai_state.md` for multi-session continuity:
   grid + `Cpd` + unplaceable equals the whole NOUN/ADJ universe. It exists because a
   `NOT (feat_case IN (…) AND feat_number IN (…))` complement silently lost 8,542 case-untagged
   tokens to SQL three-valued logic. Any new per-slice query here needs the same closure check.
+- **`past_class()` → re-run the validator, and never quote its output as exact.** The
+  aorist/perfect re-split in `regen_widgets.py` (`AORIST_FORMATIONS`, `past_class`,
+  `is_past_indicative`) rests on one default — `feat_formation IS NULL` → Perfect, because DCS
+  leaves the simple perfect unmarked. Any edit to those rules means re-running
+  `python src/DCS-data-2026/validate_past_tense_resplit.py` in the same PR; it re-measures the
+  default's error bars and asserts denominator closure. `validate_past_tense_resplit.py`
+  **imports** the rules rather than restating them, so the validator cannot drift from what it
+  validates — keep it that way. The resulting Aorist count is a **lower** bound and Perfect an
+  **upper** bound; prose that quotes either as an exact corpus count is a defect (H1486).
+- **The re-split is NOT propagated to `paradigm_attested.json`.** `gen_paradigm_attested.py`
+  imports `ud_to_category`, whose `Past/Ind` entry is deliberately still the merged
+  `Perfect/Aorist` label. Splitting it there means regenerating a committed 7,689-root asset and
+  redoing the csl-observatory E46 reconciliation — do both or neither, never a half-migration.
 - **The declension-class taxonomy is shared, not local.** `STEM_TAGS` is SanskritGrammar
   Sangram G2's list (`scripts/sg_g2_declension_cell_coverage.py`, H1048). Changing a tag here
   without changing it there silently desynchronises two published assets — the build's G2
@@ -214,7 +227,9 @@ See `roadmap.md` for the original discussion (Russian). Much of it has since shi
 - **Per-root attestation counts, scaled to the whole attested verb space (H1299)** — 7,689 roots
   (not just the 6 hand-picked ones) via `sanskrit_paradigm_trainer.html` + `gen_paradigm_attested.py`;
   attested-only by construction, frequency-weighted trainer mode, JSON deck export. See its own
-  README section for the data ceiling (no verb-class numbers, P./A. pooled, Tense=Past conflated).
+  README section for the data ceiling (no verb-class numbers, P./A. pooled, Tense=Past conflated
+  **in this asset** — H1486 re-split the widget layer via `feat_formation`, but deliberately did
+  not regenerate `paradigm_attested.json`; see the aorist/perfect note below).
 
 - **Nominal paradigm dashboard — case × number per declension class (H1472)** —
   `sanskrit_nominal_dashboard.html` + `gen_paradigm_nominal.py`: 2,263,192 cased NOUN + ADJ
