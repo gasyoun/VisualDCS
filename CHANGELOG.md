@@ -8,6 +8,8 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-04] — Aorist ≠ Perfect: the `Tense=Past` re-split (H1486)
+
 ### Added
 - **Aorist and Perfect are separate categories again — the `Tense=Past` re-split (H1486).**
   UD has no Aorist tense value, so both Sanskrit past tenses collapsed into one
