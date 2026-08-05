@@ -8,6 +8,42 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+### Changed
+- **The H1486 aorist/perfect re-split now reaches `paradigm_attested.json` (H2294).** The
+  per-root paradigm dataset's finite past indicative is split into **`Aorist`**,
+  **`Periphrastic Perfect`** and **`Perfect`** cell categories; the merged `Perfect/Aorist`
+  label is gone (**2,422 → 0** occurrences in both
+  [`visual/paradigm_attested.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_attested.json)
+  and its `_data.js` twin, regenerated in one pass as always). Schema **1.0.0 → 1.1.0**.
+  **This was not a regeneration:** `ud_to_category` is keyed on `(Tense,Voice,Mood)` and
+  structurally cannot carry per-token `feat_formation`, so re-running the old generator
+  reproduced the merged bucket verbatim — the finite-cell aggregation loop now applies
+  `past_class()` per token, the same expression `regen_widgets.verb_forms()` uses.
+  The csl-observatory **E46 reconciliation is unchanged** (6,454 roots match, 0 disagree):
+  the split touches the display category only, never the E46 5-tuple.
+
+### Added
+- **`cellEvidence` — the bound ships with the data, not just with the docs (H2294).** Each
+  split past category declares `formation-attested` (read off `feat_formation`) or
+  `defaulted` (the untagged residue, i.e. **inferred**). Measured: the per-cell defaulted
+  share is **exactly 0% or 100%, never in between** (1,955 attested cells vs 3,229
+  defaulted) — degenerate *by construction*, since `Perfect` is defined as the untagged
+  residue. That is what makes a per-category flag exact at per-cell granularity instead of
+  an approximation, and `assert_evidence_degenerate()` fails the build if it ever stops
+  holding. [`sanskrit_paradigm_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_trainer.html)
+  badges it on the browse grid, the flashcard, and every exported deck card (deck schema
+  1.1.0), so a learner is never shown an inferred `Perfect` as though the corpus asserted
+  it. Aorist remains a **lower** bound and Perfect an **upper** bound.
+- **`--e46-tsv` on `gen_paradigm_attested.py`.** The csl-observatory TSV path was resolved
+  relative to the checkout, which is correct for `GitHub/VisualDCS` and wrong for any linked
+  git worktree — regenerating from a worktree would have rewritten a committed
+  reconciliation report as **BLOCKED** purely because of where the tree lives.
+- **Regression coverage for the split** in
+  [`test_paradigm_attested.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/test_paradigm_attested.py):
+  no merged label may be emitted, every split category must carry a `cellEvidence` verdict,
+  `Perfect *` may only ever be `defaulted`, and `Aorist`/`Periphrastic Perfect` only ever
+  `formation-attested`. Each check was verified to go **red** against an injected defect.
+
 ## [2026-08-05] — Name-keyed-reader sweep across the 2021 dump (H2293, issue #70)
 
 ### Added

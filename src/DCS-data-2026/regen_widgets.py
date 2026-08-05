@@ -101,9 +101,13 @@ def ud_to_category(conn):
                 m.setdefault(key, name)               # first (most frequent code) wins
     # UD Tense=Past conflates Sanskrit aorist+perfect (no UD value separates them), and the auto-map
     # mislabels Past-indicative as "Imperfect"; override with honest labels, keep true Impf distinct.
-    # The Past-Ind entry is the PRE-re-split label: verb_forms() overrides it per token via
-    # past_class() (feat_formation), but gen_paradigm_attested.py consumes this map unsplit, so
-    # the merged label stays here deliberately. See reports/past_tense_resplit_validation.md.
+    # The Past-Ind entry is the PRE-re-split label, and as of H2294 it is DEAD for finite
+    # past-indicative rows in BOTH consumers: verb_forms() and gen_paradigm_attested.py each
+    # override it per token via past_class() (feat_formation), because this map is keyed on
+    # (Tense,Voice,Mood) and structurally cannot carry a per-token feature. It stays only as
+    # the honest fallback for a consumer that does not apply the split -- do not "fix" it to
+    # a split label, which would silently claim a resolution this key cannot make.
+    # See reports/past_tense_resplit_validation.md for the split's measured error bars.
     for voice, lab in ((None, "Active"), ("Pass", "Passive"), ("Mid", "Middle")):
         m[("Past", voice, "Ind")] = f"Perfect/Aorist {lab}"
         m[("Impf", voice, "Ind")] = f"Imperfect {lab}"

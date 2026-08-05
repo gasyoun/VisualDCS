@@ -16,6 +16,12 @@ regression is caught, not silently shipped:
   3. The DCS-class-ambiguity discipline: no root record anywhere may carry a
      Panini class number (never fabricate cell resolution the corpus can't
      give -- the H1299 target-specific constraint).
+  4. The H1486/H2294 past-tense re-split contract: the merged "Perfect/Aorist"
+     label is gone; the split categories are present; and EVERY emitted past
+     category carries a cellEvidence verdict, with "Perfect *" marked
+     `defaulted` (it is the untagged residue -- an inference, not an
+     attestation). This is the check that stops a future regeneration from
+     silently shipping an inferred category to a learner as an attested one.
 
 Run from repo root:  python src/DCS-data-2026/test_paradigm_attested.py
 Exits 1 on any failure, printing every mismatch (never silently passes).
@@ -132,6 +138,51 @@ def main():
                          "no root record may claim a Panini class number (DCS cannot resolve I/VI or IV/passive).")
     else:
         print(f"OK: no root record claims a Panini class number ({len(roots)} roots checked).")
+
+    # ---- 4. past-tense re-split contract (H1486 -> H2294) ----
+    all_cats = set()
+    for rec in roots.values():
+        all_cats.update(rec.get("finite", {}).keys())
+    merged = sorted(c for c in all_cats if "Perfect/Aorist" in c)
+    if merged:
+        failures.append(f"the merged pre-H2294 label is still emitted: {merged} -- "
+                         "gen_paradigm_attested.py must apply past_class() per token, not read "
+                         "the (Tense,Voice,Mood)-keyed ud_to_category label (a re-run alone "
+                         "reproduces the merged bucket verbatim).")
+    else:
+        print("OK: no 'Perfect/Aorist' merged category remains.")
+
+    evidence = d.get("cellEvidence")
+    if not evidence:
+        failures.append("cellEvidence missing from dataset root -- the bound on the past-tense "
+                         "split must ship WITH the data. A consumer cannot tell an inferred "
+                         "'Perfect' cell from an attested 'Aorist' one without it.")
+    else:
+        past_cats = sorted(c for c in all_cats
+                            if c.startswith(("Aorist ", "Perfect ", "Periphrastic Perfect ")))
+        if not past_cats:
+            failures.append("no split past-indicative category (Aorist/Perfect/Periphrastic "
+                             "Perfect) present at all -- the H1486 re-split did not propagate.")
+        for cat in past_cats:
+            verdict = evidence.get(cat)
+            if verdict not in ("formation-attested", "defaulted"):
+                failures.append(f"past category {cat!r} carries no cellEvidence verdict "
+                                 f"(got {verdict!r}) -- every split category must declare "
+                                 "whether it was read off feat_formation or defaulted.")
+            elif cat.startswith("Perfect ") and verdict != "defaulted":
+                failures.append(f"{cat!r} is marked {verdict!r}, but 'Perfect' IS the untagged "
+                                 "residue (feat_formation IS NULL) and can only ever be "
+                                 "'defaulted'. Marking it attested would present an assumption "
+                                 "to a learner as an attestation.")
+            elif cat.startswith(("Aorist ", "Periphrastic Perfect ")) and verdict != "formation-attested":
+                failures.append(f"{cat!r} is marked {verdict!r}, but it is read directly off "
+                                 "feat_formation and must be 'formation-attested'.")
+        if not [f for f in failures if "cellEvidence" in f or "past category" in f]:
+            print(f"OK: past-split evidence contract holds for {len(past_cats)} categories "
+                  f"({', '.join(past_cats)}).")
+    if not d.get("cellEvidenceNote"):
+        failures.append("cellEvidenceNote missing -- the defaulted/attested distinction must "
+                         "ship with a prose explanation, not just a bare enum.")
 
     if d.get("ceilingNote", "") == "":
         failures.append("ceilingNote missing from dataset root -- the I/VI, IV/passive, Tense=Past "

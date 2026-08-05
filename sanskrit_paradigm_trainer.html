@@ -29,6 +29,10 @@ td.cell{padding:3px 6px;border:0.5px solid #eee;white-space:nowrap;border-radius
 .badge{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
 .badge.full{background:#1d9e7522;color:#1d9e75}
 .badge.attested{background:#ba751722;color:#ba7517}
+/* H2294 -- the past-split evidence marker. "Perfect" is DCS's UNMARKED default, i.e.
+   inferred, not attested; a learner must never read it as though the corpus said so. */
+.badge.inferred{background:#ba751722;color:#ba7517;cursor:help}
+.badge.attestedform{background:#1d9e7522;color:#1d9e75;cursor:help}
 .card{cursor:pointer;border:1px solid #ddd;border-radius:12px;min-height:140px;padding:24px;text-align:center;background:#fafbfc;user-select:none}
 input[type=text]{font-size:12px;padding:4px 8px;border:0.5px solid #ccc;border-radius:6px;outline:none}
 #print-btn{white-space:nowrap}
@@ -107,6 +111,29 @@ input[type=text]{font-size:12px;padding:4px 8px;border:0.5px solid #ccc;border-r
 <script>
 const D = window.PARADIGM_ATTESTED;
 const NUML = {sg:'sg',du:'du',pl:'pl'};
+
+// ---------- H2294: past-split evidence marker ----------
+// UD's Tense=Past is re-split on DCS's feat_formation (H1486). Aorist and Periphrastic
+// Perfect are READ off the corpus; "Perfect" is the UNMARKED default — every such cell is
+// 100% defaulted, so rendering it as a plain attested label would present an assumption as
+// an attestation. The share is 0% or 100% per cell by construction, so a per-CATEGORY
+// badge is exact here, not an approximation. Absent key = not part of the bounded split.
+const EV = D ? (D.cellEvidence || {}) : {};
+const EV_TITLE = {
+  'defaulted': 'Выведено по умолчанию, не засвидетельствовано: DCS не помечает простой '
+    + '(редуплицированный) перфект — эта ячейка целиком состоит из токенов без feat_formation. '
+    + 'Верхняя граница: ≥1,13 % аористов и ≥3,54 % имперфектов ошибочно попадают сюда.',
+  'formation-attested': 'Засвидетельствовано: формация основы прошедшего времени прочитана '
+    + 'из DCS (feat_formation) для каждого токена ячейки. Аорист — нижняя граница.'
+};
+const EV_LABEL = {'defaulted':'по умолчанию', 'formation-attested':'засвидетельствовано'};
+const EV_CLASS = {'defaulted':'inferred', 'formation-attested':'attestedform'};
+
+function evBadge(cat){
+  const e = EV[cat];
+  if(!e) return '';
+  return ` <span class="badge ${EV_CLASS[e]}" title="${EV_TITLE[e]}">${EV_LABEL[e]}</span>`;
+}
 const PERSL = {1:'1',2:'2',3:'3'};
 const NFLABEL = {PPP:'PPP (прош. страд. прич.)', Abs:'Absolutive (деепричастие)', Inf:'Infinitive',
   FPP:'Gerundive / FPP (буд. страд. прич.)', PresPart:'Present Participle', FutPart:'Future Participle',
@@ -119,6 +146,15 @@ function initHeader(){
     ` (порог допуска: &ge;${D.frequencyFloor} токенов; топ-${D.tierBoundary} = «full», остальное = «attested»-only) · `+
     `источник: ${D.source.verbTokensTotal.toLocaleString()} VERB-токенов, ${D.corpusRelease}.<br>`+
     `<strong style="color:#ba7517">Границы данных:</strong> ${D.ceilingNote}`;
+  if(Object.keys(EV).length){
+    const nd = (D.cellEvidenceCells||{}).defaulted, na = (D.cellEvidenceCells||{}).formationAttested;
+    el.innerHTML += `<br><strong style="color:#ba7517">Прошедшее время:</strong> `+
+      `<span class="badge attestedform">засвидетельствовано</span> — формация основы прочитана из DCS `+
+      `(${(na||0).toLocaleString()} ячеек); `+
+      `<span class="badge inferred">по умолчанию</span> — категория выведена из отсутствия пометы `+
+      `(${(nd||0).toLocaleString()} ячеек): простой перфект DCS не помечает. `+
+      `Доля «по умолчанию» в каждой ячейке равна 0 % или 100 %, промежуточных нет — поэтому значок точен, а не приблизителен.`;
+  }
 }
 
 // ---------- BROWSE ----------
@@ -175,7 +211,7 @@ function renderRootDetail(r){
     html += `<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%"><thead><tr><th>Категория (finite)</th>`+
       `<th>1sg</th><th>2sg</th><th>3sg</th><th>1du</th><th>2du</th><th>3du</th><th>1pl</th><th>2pl</th><th>3pl</th></tr></thead><tbody>`;
     for(const cat of cats){
-      html += `<tr><td style="padding:3px 6px;font-size:11px;color:#555">${cat}</td>`;
+      html += `<tr><td style="padding:3px 6px;font-size:11px;color:#555">${cat}${evBadge(cat)}</td>`;
       for(const nk of ['sg','du','pl']){
         for(const p of ['1','2','3']){
           const arr = rec.finite[cat][nk][p];
@@ -265,8 +301,11 @@ function buildDeck(){
 function fcShow(){
   if(!deck.length){ document.getElementById('fc-q').textContent = 'Колода пуста.'; return; }
   const c = deck[deckIdx % deck.length];
-  document.getElementById('fc-q').textContent = `√${c.root} — ${c.cat}`;
-  document.getElementById('fc-hint').textContent = `${c.p} л., ${c.nk} (person ${c.p}, number ${c.nk})`;
+  // innerHTML, not textContent: a "Perfect" card must carry its evidence badge, or the
+  // flashcard asserts to a learner exactly the inference H1486 measured bounds on.
+  document.getElementById('fc-q').innerHTML = `√${c.root} — ${c.cat}${evBadge(c.cat)}`;
+  document.getElementById('fc-hint').textContent = `${c.p} л., ${c.nk} (person ${c.p}, number ${c.nk})`
+    + (EV[c.cat]==='defaulted' ? ' · категория выведена по умолчанию (см. значок)' : '');
   document.getElementById('fc-a').style.display = 'none';
   document.getElementById('fc-rating').style.display = 'none';
   document.getElementById('fc-tap').style.display = '';
@@ -292,12 +331,19 @@ function fcRate(score){
 
 function exportDeck(){
   const payload = {
-    schemaVersion: "1.0.0",
+    // 1.1.0 (H2294): finite past indicative split Aorist/Perfect/Periphrastic Perfect;
+    // every card carries `evidence`, so the bound travels with the deck into whatever
+    // SRS consumes it — an exported "Perfect" card is otherwise indistinguishable from
+    // an attested one the moment it leaves this page.
+    schemaVersion: "1.1.0",
     exportedAt: new Date().toISOString(),
     scope: deckScope,
-    source: "VisualDCS paradigm trainer (H1299)",
+    source: "VisualDCS paradigm trainer (H1299, past-split H1486/H2294)",
+    cellEvidence: D.cellEvidence || {},
+    cellEvidenceNote: D.cellEvidenceNote || "",
     cardCount: deck.length,
-    cards: deck.map(c=>({root:c.root, category:c.cat, person:c.p, number:c.nk, forms:c.forms}))
+    cards: deck.map(c=>({root:c.root, category:c.cat, person:c.p, number:c.nk,
+                          evidence: EV[c.cat] || null, forms:c.forms}))
   };
   const blob = new Blob([JSON.stringify(payload, null, 1)], {type:'application/json'});
   const a = document.createElement('a');
