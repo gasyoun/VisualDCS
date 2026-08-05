@@ -8,6 +8,8 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-05] — Aorist/perfect re-split propagated into `paradigm_attested.json` (H2294)
+
 ### Changed
 - **The H1486 aorist/perfect re-split now reaches `paradigm_attested.json` (H2294).** The
   per-root paradigm dataset's finite past indicative is split into **`Aorist`**,
