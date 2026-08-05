@@ -191,10 +191,26 @@ This project uses `.ai_state.md` for multi-session continuity:
   **imports** the rules rather than restating them, so the validator cannot drift from what it
   validates — keep it that way. The resulting Aorist count is a **lower** bound and Perfect an
   **upper** bound; prose that quotes either as an exact corpus count is a defect (H1486).
-- **The re-split is NOT propagated to `paradigm_attested.json`.** `gen_paradigm_attested.py`
-  imports `ud_to_category`, whose `Past/Ind` entry is deliberately still the merged
-  `Perfect/Aorist` label. Splitting it there means regenerating a committed 7,689-root asset and
-  redoing the csl-observatory E46 reconciliation — do both or neither, never a half-migration.
+- **The re-split IS in `paradigm_attested.json` (H2294) — and it is applied per token, not
+  looked up.** `gen_paradigm_attested.py` calls `past_class()` itself on the finite past
+  indicative; it does **not** get the split from `ud_to_category`, which is keyed on
+  `(Tense,Voice,Mood)` and structurally cannot carry a per-token feature. So **re-running the
+  generator is not how you propagate a change to the split** — anyone planning that as "just
+  re-run it" has mis-scoped the work. The merged `Perfect/Aorist` entry still sitting in
+  `ud_to_category` is now dead for finite-past rows; leave it as the fallback label, don't
+  "fix" it. Regenerating means re-running the E46 reconciliation in the same PR and confirming
+  per-root distinct-cell counts are **unchanged** (6,454 match / 0 disagree) — the split
+  touches the **display** category only, never the E46 5-tuple, which is byte-identical to
+  csl-observatory's census by design.
+- **`cellEvidence` must ship with the data, and its degeneracy is asserted, not assumed.**
+  `Perfect` IS the untagged residue (`feat_formation IS NULL`), so no `Perfect` cell can carry
+  formation evidence and no `Aorist`/`Periphrastic Perfect` cell can lack it — the per-cell
+  defaulted share is exactly 0% or 100%. That is the only reason a per-CATEGORY evidence flag
+  is honest at per-cell granularity. `assert_evidence_degenerate()` fails the build if it ever
+  stops holding; **do not weaken or delete it** — at that point per-cell marking becomes
+  mandatory, and a category flag would start quietly misdescribing individual cells. Any
+  consumer rendering a `defaulted` category to a learner must mark it (the trainer badges the
+  browse grid, the flashcard, and the exported deck).
 - **The declension-class taxonomy is shared, not local.** `STEM_TAGS` is SanskritGrammar
   Sangram G2's list (`scripts/sg_g2_declension_cell_coverage.py`, H1048). Changing a tag here
   without changing it there silently desynchronises two published assets — the build's G2
