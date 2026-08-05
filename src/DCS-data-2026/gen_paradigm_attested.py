@@ -31,15 +31,23 @@ counts can be reconciled against E46's committed TSV without re-deriving it.
     pooled together (both P. and A. surface forms, undistinguished), unlike the
     hand-curated 6-root RD grid, which shows separate P./A. columns from external
     grammatical knowledge. This script never claims a P./A. split it cannot see.
-  - UD Tense=Past conflates aorist + perfect (no UD value separates them) -- carried
-    through via ud_to_category's own "Perfect/Aorist" label, never split further.
-    NB (H1486): that is a scoping decision for THIS asset, not a corpus limit. DCS's own
-    feat_formation does re-split the finite past indicative, and regen_widgets.py's
-    verb_forms() now applies it (past_class()); ud_to_category deliberately still returns
-    the merged label so this generator's committed 7,689-root output does not silently
-    change shape. Propagating the split here means regenerating that asset AND redoing the
-    csl-observatory E46 reconciliation -- both or neither. See
-    reports/past_tense_resplit_validation.md for the split's measured error bars.
+  - UD Tense=Past conflates aorist + perfect (no UD value separates them), but DCS's own
+    feat_formation re-splits the FINITE PAST INDICATIVE, and since H2294 this generator
+    applies that split itself -- per token, via regen_widgets.past_class(), exactly as
+    verb_forms() does. It does NOT come from ud_to_category, whose (Tense,Voice,Mood) key
+    structurally cannot carry a per-token feature; that map's merged "Perfect/Aorist"
+    entry is now dead for this generator's finite-past rows.
+    The split is BOUNDED, and the bound is shipped with the data, not just documented:
+    Aorist and Periphrastic Perfect are read off feat_formation (attested); Perfect is
+    the UNMARKED DEFAULT (feat_formation IS NULL) and is therefore inferred, never
+    observed. Because "Perfect" is DEFINED as the untagged residue, the defaulted share
+    of every emitted cell is exactly 0% or 100% -- never in between -- so the evidence
+    status is a property of the CATEGORY, not of the cell, and is emitted as
+    `cellEvidence` for consumers to badge. That degeneracy is ASSERTED at build time
+    (assert_evidence_degenerate below), not assumed: if the corpus ever tags a simple
+    perfect, the build fails loudly and per-cell marking becomes mandatory.
+    Error bars: reports/past_tense_resplit_validation.md (H1486) -- Aorist is a LOWER
+    bound, Perfect an UPPER bound; neither is exact.
 
 Output (both from ONE aggregation pass, so they can never drift apart):
   visual/paradigm_attested.json   pure JSON (downstream/kosha-consumable export)
@@ -69,7 +77,8 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.abspath(os.path.join(HERE, "..", ".."))
 sys.path.insert(0, HERE)
-from regen_widgets import ud_to_category, participle_cat   # noqa: E402  (reuse, don't re-derive)
+from regen_widgets import (ud_to_category, participle_cat,      # noqa: E402  (reuse, don't re-derive)
+                            is_past_indicative, past_class)     # noqa: E402  (H1486 split, single source)
 
 DEFAULT_DB = os.path.join(HERE, "dcs_full.sqlite")
 OUT_JSON = os.path.join(REPO, "visual", "paradigm_attested.json")
@@ -78,21 +87,70 @@ OUT_REPORT = os.path.join(REPO, "reports", "paradigm_attested_build.md")
 E46_TSV = os.path.join(REPO, "..", "csl-observatory", "data", "paradigm_cell_coverage_per_root.tsv")
 E46_RECON = os.path.join(REPO, "reports", "e46_reconciliation.md")
 
-SCHEMA_VERSION = "1.0.0"
+SCHEMA_VERSION = "1.1.0"   # 1.1.0 (H2294): finite past indicative split Aorist/Perfect/
+                            # Periphrastic Perfect + `cellEvidence`; was "Perfect/Aorist"
 NS = ["Sing", "Dual", "Plur"]
 NS_KEY = {"Sing": "sg", "Dual": "du", "Plur": "pl"}
 TOP_FORMS_PER_CELL = 5   # matches paradigm_endings.json's top-5 convention
 
+# H1486 voice labels -- identical to regen_widgets.verb_forms(), so the two assets'
+# past-split category names cannot drift apart.
+VOICE_LABEL = {None: "Active", "Pass": "Passive", "Mid": "Middle"}
+
+# How each past-split class was arrived at. "attested" = read off DCS's feat_formation;
+# "defaulted" = the unmarked residue, i.e. INFERRED. Consumers must not render a
+# "defaulted" category to a learner as though the corpus asserted it.
+PAST_SPLIT_EVIDENCE = {
+    "Aorist": "formation-attested",
+    "Periphrastic Perfect": "formation-attested",
+    "Perfect": "defaulted",
+}
+
 CEILING_NOTE = (
     "DCS tags unaccented text: it cannot distinguish verb class I vs VI, or class IV "
     "vs the passive formation, at the root-class level, so no Panini class number is "
-    "assigned to any root here. Tense=Past conflates aorist and perfect into one "
-    "'Perfect/Aorist' bucket (no UD value separates them). feat_voice distinguishes "
-    "only Passive from non-passive -- parasmaipada vs atmanepada is NOT separately "
-    "tagged by DCS, so non-passive finite forms for a cell are pooled together "
-    "(unlike the hand-curated 6-root deep view, which shows P./A. columns from "
-    "external grammatical knowledge, not from this corpus tag set)."
+    "assigned to any root here. The finite past indicative IS split into Aorist / "
+    "Periphrastic Perfect / Perfect (H1486), but the split is BOUNDED and one-sided: "
+    "Aorist and Periphrastic Perfect are read off DCS's feat_formation, while Perfect "
+    "is the UNMARKED DEFAULT (feat_formation IS NULL) and is therefore inferred, not "
+    "observed -- every 'Perfect' cell here is 100% defaulted, so Aorist is a LOWER "
+    "bound and Perfect an UPPER bound (>=1.13% aorist leakage, >=3.54% imperfect "
+    "contamination; see reports/past_tense_resplit_validation.md). feat_voice "
+    "distinguishes only Passive from non-passive -- parasmaipada vs atmanepada is NOT "
+    "separately tagged by DCS, so non-passive finite forms for a cell are pooled "
+    "together (unlike the hand-curated 6-root deep view, which shows P./A. columns "
+    "from external grammatical knowledge, not from this corpus tag set)."
 )
+
+
+def assert_evidence_degenerate(cell_evidence_counts):
+    """H2294 discipline -- the same shape as gen_paradigm_nominal.py's denominator-closure
+    assertion, and for the same reason: a silent change of epistemic status is worse than
+    a failed build.
+
+    `Perfect` is DEFINED as `feat_formation IS NULL`, so no Perfect cell can carry
+    formation evidence and no Aorist/Periphrastic-Perfect cell can lack it. That makes the
+    per-cell defaulted share exactly 0.0 or 1.0. The whole per-CATEGORY evidence flag this
+    script emits is only honest while that holds. If DCS ever tags a simple perfect (or
+    leaves an aorist type untagged inside a tagged class), the share goes fractional, a
+    category-level flag starts lying about individual cells, and per-cell marking becomes
+    mandatory -- so fail here rather than ship a flag that quietly stopped being true.
+    Returns the {share_pct: n_cells} histogram for the build report.
+    """
+    hist = defaultdict(int)
+    offenders = []
+    for key, (defaulted, total) in cell_evidence_counts.items():
+        share = defaulted / total
+        hist[round(100 * share)] += 1
+        if share not in (0.0, 1.0):
+            offenders.append((key, defaulted, total))
+    if offenders:
+        raise SystemExit(
+            "FATAL (H2294): the per-cell defaulted share is no longer degenerate -- "
+            f"{len(offenders)} cell(s) are partly formation-attested and partly defaulted, "
+            f"e.g. {offenders[:5]}. A category-level `cellEvidence` flag would now "
+            "misdescribe individual cells. Emit per-cell evidence before shipping.")
+    return dict(sorted(hist.items()))
 
 
 def nonfinite_bucket(verbform, tense, form):
@@ -122,6 +180,11 @@ def main():
                      help="minimum total VERB-token count for a lemma to be admitted")
     ap.add_argument("--top", type=int, default=100,
                      help="rank cutoff for the 'full' tier (frequency-first)")
+    ap.add_argument("--e46-tsv", default=E46_TSV,
+                     help="csl-observatory paradigm_cell_coverage_per_root.tsv. The default "
+                          "assumes csl-observatory sits beside this checkout; a linked git "
+                          "worktree does NOT, and without this flag the reconciliation would "
+                          "be rewritten as BLOCKED purely because of where the tree lives.")
     args = ap.parse_args()
 
     if not os.path.exists(args.db):
@@ -153,26 +216,51 @@ def main():
     finite_cell_forms = defaultdict(lambda: defaultdict(int))   # (lemma,cellkey,nk,pers) -> {form: n}
     finite_cell_total = defaultdict(int)                        # (lemma,cellkey) -> n
     e46_style_cells = defaultdict(set)                          # lemma -> {E46 5-tuple} for recon
+    past_class_scope = defaultdict(int)                         # past-split class -> n (this filter's scope)
+    cell_evidence_counts = defaultdict(lambda: [0, 0])          # emitted past cell -> [defaulted, total]
+    past_cellkeys = set()                                       # display names actually emitted
 
-    for lemma, tense, mood, voice, person, number, form in conn.execute(
-            "SELECT lemma, feat_tense, feat_mood, feat_voice, feat_person, feat_number, form "
+    for lemma, tense, mood, voice, person, number, formation, form in conn.execute(
+            "SELECT lemma, feat_tense, feat_mood, feat_voice, feat_person, feat_number, "
+            "feat_formation, form "
             "FROM token WHERE upos='VERB' AND feat_verbform IS NULL AND lemma IS NOT NULL"):
         if lemma not in admitted_set:
             continue
+        # E46 cell identity -- deliberately IDENTICAL to csl-observatory's
+        # scripts/paradigm_cell_coverage.py. The re-split touches the DISPLAY category
+        # only; re-splitting this tuple would silently break the cross-repo
+        # reconciliation for a reason no reader of either repo could reconstruct.
         e46_tuple = (tense or "?", mood or "?", voice or "Act", person or "?", number or "?")
         e46_style_cells[lemma].add(e46_tuple)
+        # feat_verbform IS NULL for every row this query returns, hence the literal None.
+        past_split = is_past_indicative(tense, mood, None)
+        if past_split:
+            past_class_scope[past_class(formation)] += 1
         if person not in ("1", "2", "3") or number not in NS_KEY:
             continue   # can't place on the sg/du/pl x 1/2/3 grid -- still counted for E46 recon above
-        cat_name = cat_map.get((tense, voice, mood)) or f"({tense or '-'}/{mood or '-'}/{voice or '-'})"
-        if re.match(r"^\d+$", cat_name):
-            # timws.csv itself carries a handful of self-referential/garbled names
-            # (e.g. code 32's own name is literally "32") -- never surface a bare
-            # number as a tense label; fall back to the honest raw UD tuple instead
-            # of inventing a grammatical name the source doesn't actually give us.
-            cat_name = f"Unclassified (Tense={tense or '-'}|Mood={mood or '-'}|Voice={voice or '-'})"
+        if past_split:
+            # H2294: the per-token split, applied here rather than looked up. ud_to_category
+            # is keyed on (Tense,Voice,Mood) and structurally cannot carry feat_formation,
+            # so re-running the old code path would reproduce the merged bucket verbatim.
+            # Same expression as regen_widgets.verb_forms(), so the labels cannot drift.
+            cat_name = f"{past_class(formation)} {VOICE_LABEL.get(voice, voice)}"
+        else:
+            cat_name = cat_map.get((tense, voice, mood)) or f"({tense or '-'}/{mood or '-'}/{voice or '-'})"
+            if re.match(r"^\d+$", cat_name):
+                # timws.csv itself carries a handful of self-referential/garbled names
+                # (e.g. code 32's own name is literally "32") -- never surface a bare
+                # number as a tense label; fall back to the honest raw UD tuple instead
+                # of inventing a grammatical name the source doesn't actually give us.
+                cat_name = f"Unclassified (Tense={tense or '-'}|Mood={mood or '-'}|Voice={voice or '-'})"
         cellkey = cat_name
         finite_cell_forms[(lemma, cellkey, NS_KEY[number], person)][form] += 1
         finite_cell_total[(lemma, cellkey)] += 1
+        if past_split:
+            past_cellkeys.add(cellkey)
+            ev = cell_evidence_counts[(lemma, cellkey, NS_KEY[number], person)]
+            ev[1] += 1
+            if formation is None:
+                ev[0] += 1
 
     # ---- non-finite cells ----
     print("aggregating non-finite cells (participle/absolutive/infinitive/gerundive) ...")
@@ -186,6 +274,20 @@ def main():
         nf_forms[(lemma, bucket)][form] += 1
 
     conn.close()
+
+    # ---- past-split evidence: assert degeneracy BEFORE emitting a category-level flag ----
+    evidence_hist = assert_evidence_degenerate(cell_evidence_counts)
+    cell_evidence = {}
+    for ck in sorted(past_cellkeys):
+        # emitted display name is "<class> <voice>", built above from past_class()
+        cls = next(c for c in PAST_SPLIT_EVIDENCE if ck.startswith(c + " "))
+        cell_evidence[ck] = PAST_SPLIT_EVIDENCE[cls]
+    n_defaulted_cells = evidence_hist.get(100, 0)
+    n_attested_cells = evidence_hist.get(0, 0)
+    print(f"past-split evidence: {n_attested_cells:,} formation-attested cells, "
+          f"{n_defaulted_cells:,} defaulted cells (share histogram {evidence_hist}) -- degenerate OK")
+    print("past-split scope (this generator's filter): "
+          + ", ".join(f"{k}={v:,}" for k, v in sorted(past_class_scope.items())))
 
     # ---- assemble per-root JSON ----
     print("assembling per-root records ...")
@@ -237,6 +339,21 @@ def main():
                       "remaining admitted roots = tier 'attested' (long tail, attested cells "
                       "only, no hand-curated notes -- decision #3 of the H1299 plan)."),
         "ceilingNote": CEILING_NOTE,
+        "cellEvidence": cell_evidence,
+        "cellEvidenceNote": (
+            "H2294. Applies to the finite past indicative only, whose UD Tense=Past bucket "
+            "is re-split here on DCS's own feat_formation (H1486). 'formation-attested' = "
+            "the corpus tags the past-stem formation on every token in the cell "
+            "(Whitney's seven aorist types; 'peri' = periphrastic perfect). 'defaulted' = "
+            "the cell is entirely UNTAGGED and is read as the simple/reduplicated perfect, "
+            "which DCS leaves unmarked -- an inference, not an attestation. The defaulted "
+            "share of every cell is exactly 0% or 100% (asserted at build time), because "
+            "'Perfect' IS the untagged residue; so this flag is per-category by "
+            "construction, not a per-cell approximation. A consumer that renders a "
+            "'defaulted' category to a learner without marking it presents an assumption "
+            "as an attestation. Measured bounds: reports/past_tense_resplit_validation.md."),
+        "cellEvidenceCells": {"formationAttested": n_attested_cells,
+                              "defaulted": n_defaulted_cells},
         "rootCount": len(roots),
         "roots": roots,
     }
@@ -261,9 +378,9 @@ def main():
     # ---- E46 reconciliation (consume, don't rebuild; log disagreements, never resolve silently) ----
     print("reconciling against csl-observatory E46 (paradigm_cell_coverage_per_root.tsv) ...")
     e46_rows = {}
-    e46_found = os.path.isfile(E46_TSV)
+    e46_found = os.path.isfile(args.e46_tsv)
     if e46_found:
-        with open(E46_TSV, encoding="utf-8") as fh:
+        with open(args.e46_tsv, encoding="utf-8") as fh:
             next(fh)   # header
             for line in fh:
                 parts = line.rstrip("\n").split("\t")
@@ -283,7 +400,7 @@ def main():
         "never silently resolved.\n",
     ]
     if not e46_found:
-        recon_lines.append(f"**BLOCKED**: E46 TSV not found at {E46_TSV} -- reconciliation skipped, "
+        recon_lines.append(f"**BLOCKED**: E46 TSV not found at {args.e46_tsv} -- reconciliation skipped, "
                             "not silently passed. Run this script again once csl-observatory is "
                             "checked out alongside VisualDCS.\n")
         n_match = n_mismatch = n_missing_e46 = n_missing_mine = 0
@@ -336,6 +453,54 @@ def main():
         f"**{max(0, len(admitted)-args.top):,}** = 'attested' long tail.\n"
         f"- Output size: visual/paradigm_attested.json {json_size/1024:.0f} KB, "
         f"visual/paradigm_attested_data.js {js_size/1024:.0f} KB.\n",
+        "## Past-tense re-split (H1486 -> H2294)\n",
+        "UD has no Aorist value, so aorist and perfect both surface as `Tense=Past`. The "
+        "finite past indicative is re-split here on DCS's own `feat_formation`, per token, "
+        "via `regen_widgets.past_class()` -- the same expression `verb_forms()` uses, so "
+        "the two assets cannot drift. **This is not a re-run of the old code path:** "
+        "`ud_to_category` is keyed on `(Tense,Voice,Mood)` and structurally cannot carry a "
+        "per-token feature, so regenerating without this change reproduces the merged "
+        "`Perfect/Aorist` bucket verbatim.\n",
+        "| class | rule | evidence | tokens in THIS generator's scope |\n|---|---|---|--:|\n"
+        + "\n".join(
+            f"| {cls} | {rule} | {PAST_SPLIT_EVIDENCE[cls]} | {past_class_scope.get(cls, 0):,} |"
+            for cls, rule in (
+                ("Aorist", "`feat_formation` in {root, them, red, s, is, sis, sa}"),
+                ("Periphrastic Perfect", "`feat_formation = peri`"),
+                ("Perfect", "`feat_formation IS NULL` (**default** -- inferred)"),
+            ))
+        + f"\n| **total** | | | **{sum(past_class_scope.values()):,}** |\n",
+        "### Scope delta against the H1486 validation totals\n",
+        "H1486 measured the whole finite past indicative: Aorist **12,054**, Periphrastic "
+        "Perfect **4,046**, Perfect **77,229** (**93,329** total). This generator sees a "
+        f"**subset** -- it applies a lemma frequency floor of >={args.floor} on top of the "
+        "same `upos='VERB' AND feat_verbform IS NULL` filter -- so the totals above are "
+        "expected to be lower, and the delta is stated rather than assumed equal: "
+        + ", ".join(
+            f"{cls} {past_class_scope.get(cls, 0):,} vs {ref:,} (delta {past_class_scope.get(cls, 0) - ref:+,})"
+            for cls, ref in (("Aorist", 12054), ("Periphrastic Perfect", 4046), ("Perfect", 77229)))
+        + f"; total {sum(past_class_scope.values()):,} vs 93,329 "
+        f"(delta {sum(past_class_scope.values()) - 93329:+,}).\n",
+        "### Per-cell defaulted share -- the number that decides how this may be displayed\n",
+        f"Distribution over the **{sum(evidence_hist.values()):,}** emitted "
+        "(root, category, number, person) past-indicative cells:\n",
+        "| defaulted share | cells |\n|---|--:|\n"
+        + "\n".join(f"| {pct}% | {n:,} |" for pct, n in evidence_hist.items()) + "\n",
+        "The distribution is **degenerate: 0% or 100%, never in between** -- and it is "
+        "degenerate by construction, since `Perfect` is *defined* as the untagged residue. "
+        "So the epistemic status is a property of the CATEGORY, not of the cell, and is "
+        "shipped as the dataset's `cellEvidence` map rather than as a per-cell error bar "
+        "that could only ever read 0 or 100. `assert_evidence_degenerate()` fails the "
+        "build if that ever stops holding, at which point per-cell marking becomes "
+        "mandatory.\n",
+        "### Bound direction (do not quote either class as exact)\n",
+        "- **Aorist is a LOWER bound** -- only formation-tagged aorists are counted; "
+        "H1486 found >=869 more (1.13% of the default) sitting untagged inside Perfect.\n"
+        "- **Perfect is an UPPER bound** -- it is 100% defaulted, and carries >=1.13% "
+        "misfiled aorists plus >=3.54% misfiled imperfects (an upstream `Tense` tagging "
+        "inconsistency the re-split cannot repair).\n"
+        "- Full instruments and error bars: "
+        "[src/DCS-data-2026/reports/past_tense_resplit_validation.md](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/past_tense_resplit_validation.md).\n",
         "## Ceiling / discipline\n",
         CEILING_NOTE + "\n",
         "## E46 reconciliation\n",

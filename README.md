@@ -1,6 +1,6 @@
 # VisualDCS
 
-_Created: 20-04-2026 · Last updated: 04-08-2026_
+_Created: 20-04-2026 · Last updated: 05-08-2026_
 
 Interactive frequency dashboards for the [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/), built from corpus frequency data and rendered as standalone HTML files — no build step, no server, open directly in a browser.
 
@@ -188,11 +188,20 @@ textbook paradigm with P./A. columns.
 **Data ceiling -- read before trusting a cell as "resolved":** DCS tags unaccented text,
 so it cannot distinguish verb class I vs VI, or class IV vs the passive formation, at
 the root-class level -- **no Panini class number is shown anywhere in this dataset**.
-`Tense=Past` conflates aorist and perfect into one "Perfect/Aorist" bucket **in this
-dataset** — DCS's `feat_formation` can re-split that bucket and the widget layer now does
-so (see below), but the split is deliberately **not** propagated into
-`paradigm_attested.json`, whose per-root cells stay merged pending a regeneration and a
-fresh reconciliation against csl-observatory's E46 census. `feat_voice`
+`Tense=Past` conflates aorist and perfect in UD, but DCS's own `feat_formation` re-splits
+the finite past indicative, and **since H2294 this dataset carries that split too** —
+`Aorist` / `Periphrastic Perfect` / `Perfect` are separate per-root cell categories, and
+the E46 reconciliation was re-run unchanged (6,454 matching roots, 0 disagreements). The
+split is **bounded and one-sided, and the dataset says which way**: `Aorist` and
+`Periphrastic Perfect` are read off `feat_formation`, while `Perfect` is the **unmarked
+default** — DCS does not tag the simple perfect, so every `Perfect` cell is 100% inferred
+rather than observed. The dataset therefore ships a `cellEvidence` map
+(`formation-attested` vs `defaulted`) and the trainer badges it on every cell, flashcard
+and exported deck card: the defaulted share of a cell is exactly 0% or 100% — never in
+between, asserted at build time — which is what makes a per-category marker exact rather
+than an approximation. **Aorist is a lower bound, Perfect an upper bound** (>=1.13%
+aorist leakage, >=3.54% imperfect contamination); prose quoting either as an exact corpus
+count is a defect. `feat_voice`
 only tags Passive vs non-passive -- parasmaipada vs atmanepada is **not** separately
 tagged by DCS, so non-passive finite forms for a cell are pooled together (unlike the
 6-root RD grid's P./A. columns, which come from external grammatical knowledge, not
