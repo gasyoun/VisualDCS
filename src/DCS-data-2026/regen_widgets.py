@@ -48,6 +48,13 @@ OUT = os.path.join(HERE, "widgets")
 REPORT = os.path.join(HERE, "reports", "m7_widgets.md")
 REL_2021 = os.path.join(HERE, "..", "DCS-data-2021")
 
+# Independently documented 2021 verbal headline (README.md, CLAUDE.md), from the Excel
+# source rather than from timws.csv — so it is a real cross-check, not a restatement.
+# timws.csv's 42 codes sum to 781,618; the 2 difference is a source-side rounding the
+# A38 correction block documents. See read_2021_verbcats() guard 2.
+TIMWS_DOCUMENTED_TOTAL = 781_616
+TIMWS_TOTAL_TOLERANCE = 10
+
 
 def dump(name, obj):
     os.makedirs(OUT, exist_ok=True)
@@ -267,13 +274,40 @@ def read_2021_verbcats(path):
     p = os.path.join(path, "timws.csv")
     if not os.path.isfile(p):
         return out
+    collisions, n_codes, parsed_total = defaultdict(list), 0, 0
     with open(p, encoding="utf-8", errors="replace") as fh:
         for line in fh:
             parts = line.rstrip("\n").split(":")
             if len(parts) >= 3 and parts[0].strip().isdigit():
+                code = int(parts[0].strip())
                 name = parts[1].strip()
                 n = int(parts[2].strip()) if parts[2].strip().isdigit() else 0
+                n_codes += 1
+                parsed_total += n
+                collisions[name].append((code, n))
                 out[name] = out.get(name, 0) + n
+
+    # Guard 1 — name collisions are EXPECTED here, but they must be visible. A silent
+    # shrink from 42 codes to 30 names is exactly how H1486 shipped a wrong number:
+    # nothing in the output hinted that rows had been merged. Print, never swallow.
+    dupes = {k: v for k, v in collisions.items() if len(v) > 1}
+    if dupes:
+        print(f"  timws.csv: {n_codes} codes -> {len(out)} names; "
+              f"{len(dupes)} name(s) carry >1 code (summed, not overwritten):")
+        for name, hits in sorted(dupes.items(), key=lambda kv: -sum(n for _, n in kv[1])):
+            detail = " + ".join(f"{n:,}(code {c})" for c, n in hits)
+            print(f"    {name!r}: {detail} = {sum(n for _, n in hits):,}")
+
+    # Guard 2 — reconcile the reconstructed total against the independently documented
+    # headline (README.md / CLAUDE.md: 781,616 verbal examples from the Excel source).
+    # H1486's corrupted 741,782 sat 39,836 below this for years while a paper explained
+    # the gap away as "a separate aggregation"; the two agree to within 2 once summed.
+    if parsed_total and abs(parsed_total - TIMWS_DOCUMENTED_TOTAL) > TIMWS_TOTAL_TOLERANCE:
+        print(f"  WARNING: timws.csv sums to {parsed_total:,}, but README.md/CLAUDE.md "
+              f"document {TIMWS_DOCUMENTED_TOTAL:,} verbal examples "
+              f"(delta {parsed_total - TIMWS_DOCUMENTED_TOTAL:+,}, tolerance "
+              f"±{TIMWS_TOTAL_TOLERANCE}). Do NOT explain this gap away — reconcile it.",
+              file=sys.stderr)
     return out
 
 

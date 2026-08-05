@@ -124,10 +124,18 @@ def read_2021_sentences(path):
 
 
 def read_2021_freq(path):
-    """_8.csv -> (total_token_count, {lemma: total_count}, {lemma: bucket}, bucket_counts)."""
+    """_8.csv -> (total_token_count, {lemma: total_count}, bucket_counts).
+
+    `_8.csv` is keyed by (lemma, POS): 90,954 rows, 83,275 distinct lemma strings. Both
+    aggregates below therefore ACCUMULATE — `lemma_freq` sums a homograph's rows into one
+    lemma total, and `bucket_counts` is built per row so it never depends on the collapsed
+    key at all. A last-wins assignment here would drop 2,492,275 of 4,577,461 tokens (54%),
+    the H1486 / issue #70 lossy-aggregation class. A per-lemma `lemma_bucket` map was
+    removed in the #70 sweep: it was last-seen-wins, would have mislabelled every homograph
+    with its final row's POS, and was never returned or used.
+    """
     total = 0
     lemma_freq = {}
-    lemma_bucket = {}
     bucket_counts = {}
     with open(path, encoding="utf-8", errors="replace") as fh:
         for line in fh:
@@ -146,7 +154,6 @@ def read_2021_freq(path):
             b = bucket_2021(pos)
             total += cnt
             lemma_freq[lemma] = lemma_freq.get(lemma, 0) + cnt
-            lemma_bucket[lemma] = b  # last-seen bucket; fine for the coarse top-N table
             bucket_counts[b] = bucket_counts.get(b, 0) + cnt
     return total, lemma_freq, bucket_counts
 
