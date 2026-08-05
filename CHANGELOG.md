@@ -8,6 +8,35 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+### Added
+- **Collision + total-reconciliation guards on the `timws.csv` reader (H2293, issue #70).**
+  [`read_2021_verbcats`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/regen_widgets.py)
+  now prints every category name carrying more than one code with its per-code breakdown
+  (8 names, 42 codes → 30 names), and reconciles the parsed sum against the independently
+  documented 781,616 headline in README/CLAUDE (Excel-derived, ±10 tolerance). Checked against
+  the pre-H1486 value: 741,782 trips the guard, so the bug would have surfaced at parse time.
+- **[`reports/name_keyed_reader_sweep_2021_dump.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/name_keyed_reader_sweep_2021_dump.md)
+  — the issue #70 follow-up sweep.** All 12 readers of the DCS-2021 dump, here and in
+  SanskritGrammar, classified by source key vs dict key. **H1486 was the only materially-wrong
+  instance; no second corrupted number shipped.** Records that `_8.csv` is a 63× larger instance
+  of the same trap (a last-wins name-keyed read loses 2,492,275 of 4,577,461 tokens, 54%) which
+  every live consumer already avoids by summing, and that `tense_case_data.json` must stay a
+  duplicate-preserving list because four sibling verify scripts sum it by label.
+
+### Fixed
+- **`export_master.py::diff_8` no longer assigns `_8.csv` counts last-wins.** `_8.csv` is keyed
+  by (lemma, POS) — 90,954 rows, 83,275 distinct lemma strings — so the old assignment silently
+  discarded the counts of 6,340 homographs. Harmless in practice (only set membership and
+  `len()` were read) but armed for the next caller; now sums, and reports `old_rows`/`new_rows`
+  beside the lemma counts so the collapse is visible in the M4 report.
+- **`whitney_per_text_counts.py` no longer skips the first row of `15.csv`.** That table is
+  headerless — the `.splitlines()[1:]` slice was copied from a `timws.csv` reader (which does
+  have a header) and silently dropped a real finite-form row on every run. No published number
+  changes (690 aorist forms before and after).
+- **`delta_stats.py::read_2021_freq`** — removed a dead last-wins `lemma_bucket` map (computed,
+  never returned, would have mislabelled every homograph's POS) and corrected the docstring,
+  which advertised four return values for a three-value return.
+
 ## [2026-08-04] — Aorist ≠ Perfect: the `Tense=Past` re-split (H1486)
 
 ### Added

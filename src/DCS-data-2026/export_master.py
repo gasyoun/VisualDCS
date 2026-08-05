@@ -179,19 +179,34 @@ def learn_code_map(conn):
 # diffs vs 2021
 # --------------------------------------------------------------------------- #
 def diff_8(regen_rows):
-    """Compare regenerated _8.csv lemma set vs the 2021 _8.csv."""
+    """Compare regenerated _8.csv lemma set vs the 2021 _8.csv.
+
+    `_8.csv` is keyed by (lemma, POS), not by lemma alone: 90,954 rows carry only
+    83,275 distinct lemma strings, because homographs get one row per part of speech
+    (`vid` appears as 6.Ā., adj, 2.Ā., adj, f, …). This function compares lemma SETS,
+    so the collapse is intended — but the counts must still be SUMMED, not
+    last-wins-overwritten: a name-keyed last-wins read of this file loses 2,492,275 of
+    its 4,577,461 tokens (54%), the same silent lossy-aggregation class as H1486's
+    timws.csv bug (issue #70). `rows` vs `lemmas` below keeps the collapse visible.
+    """
     p = os.path.join(REL, "_8.csv")
     if not os.path.isfile(p):
         return None
-    old = {}
+    old, old_rows = {}, 0
     with open(p, encoding="utf-8", errors="replace") as fh:
         for line in fh:
             parts = line.rstrip("\n").split(",")
             if len(parts) >= 2 and parts[0].strip().isdigit():
-                old[parts[1]] = int(parts[0])
-    new = {lemma: c for c, lemma, _g in regen_rows}
+                old_rows += 1
+                old[parts[1]] = old.get(parts[1], 0) + int(parts[0])
+    new = {}
+    new_rows = 0
+    for c, lemma, _g in regen_rows:
+        new_rows += 1
+        new[lemma] = new.get(lemma, 0) + c
     shared = set(old) & set(new)
-    return {"old_lemmas": len(old), "new_lemmas": len(new), "shared": len(shared),
+    return {"old_rows": old_rows, "old_lemmas": len(old),
+            "new_rows": new_rows, "new_lemmas": len(new), "shared": len(shared),
             "only_old": len(set(old) - set(new)), "only_new": len(set(new) - set(old))}
 
 
@@ -227,7 +242,9 @@ def main():
     w(f"- `10.csv` — {n10:,} rows (**best-effort**, 2026-keyed — see limitation)\n")
     if d8:
         w("### `_8.csv` diff vs 2021\n")
-        w(f"- 2021 lemmas: **{d8['old_lemmas']:,}** · regenerated: **{d8['new_lemmas']:,}** · "
+        w(f"- 2021 lemmas: **{d8['old_lemmas']:,}** (from {d8['old_rows']:,} rows — `_8.csv` is "
+          f"keyed by (lemma, POS), so homographs share a lemma string) · regenerated: "
+          f"**{d8['new_lemmas']:,}** (from {d8['new_rows']:,} rows) · "
           f"shared: **{d8['shared']:,}** · only-2021: {d8['only_old']:,} · only-2026(pilot): {d8['only_new']:,}")
         w("- (the regenerated set is pilot-scope — 13 texts — so it's a subset; lemmas present overlap cleanly.)\n")
     if code_rows:
