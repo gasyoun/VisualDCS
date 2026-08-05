@@ -8,6 +8,8 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-05] — Name-keyed-reader sweep across the 2021 dump (H2293, issue #70)
+
 ### Added
 - **Collision + total-reconciliation guards on the `timws.csv` reader (H2293, issue #70).**
   [`read_2021_verbcats`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/regen_widgets.py)
