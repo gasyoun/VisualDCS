@@ -8,6 +8,26 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-06] — Per-lemma nominal drill-down trainer (H2321)
+
+### Added
+- **[`sanskrit_nominal_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_trainer.html)
+  — per-lemma nominal trainer (H2321).** The nominal twin of
+  [`sanskrit_paradigm_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_trainer.html):
+  browse any admitted NOUN lemma's 8 case × 3 number grid, then drill with a
+  frequency-weighted flashcard deck (top-100 / all admitted / current lemma) and JSON deck export.
+- **[`src/DCS-data-2026/gen_paradigm_nominal_lemmas.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/gen_paradigm_nominal_lemmas.py)**
+  → [`visual/paradigm_nominal_lemmas.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_nominal_lemmas.json)
+  + `_data.js` twin + [`reports/paradigm_nominal_lemmas_build.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_nominal_lemmas_build.md).
+  **Coverage is not re-derived:** every cell bit comes from SanskritGrammar Sangram G2
+  [`lemma_cell_coverage.csv`](https://github.com/gasyoun/SanskritGrammar/blob/main/sangram/data/declension_cell_coverage/lemma_cell_coverage.csv)
+  (57,144 lemmas); forms are filled from the pinned master only for G2-attested cells.
+  Build refuses on any token-count or cell-set drift vs G2 (0 mismatches on the pin).
+  Admission: floor ≥ 2 tokens → **31,753** lemmas / 1,764,879 tokens; top-100 = `full` tier.
+- **[`tests/test_nominal_trainer.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_nominal_trainer.js)**
+  — headless render of the page against the real data (G2 oracle marker, deva grid, deck build).
+- Landing-page card on `sanskrit_index.html` for the new trainer.
+
 ## [2026-08-06] — `dcs_published_figures.json`, the cross-repo figure contract (H2298)
 
 ### Added

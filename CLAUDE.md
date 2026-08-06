@@ -62,6 +62,7 @@ Excel's 38-category 781,616, so the two headline totals are expected to differ.
 | `sanskrit_pxn_v4_docs.md` | Feature-by-feature documentation for the paradigm browser (Russian) |
 | `sanskrit_paradigm_trainer.html` | H1299: attested-verb-space paradigm trainer, 7,689 roots (top-100 full tier + attested-only long tail), frequency-weighted flashcards, JSON deck export |
 | `sanskrit_nominal_dashboard.html` | H1472: **nominal** paradigm — 8 case × 3 number grid per declension class (14 heuristic stem classes × token gender), surface endings + attested forms + corpus examples per cell, over 2.26M cased NOUN/ADJ tokens |
+| `sanskrit_nominal_trainer.html` | H2321: per-lemma nominal trainer — 31,753 NOUN lemmas (G2 coverage oracle, floor ≥2), 8×3 grid + frequency-weighted flashcards + JSON deck export |
 | `sanskrit_anki_decks.html` | H1504: Anki-deck flashcard widget — 200 cards across 4 learning stages (data embedded, no companion file), stage filter, CSV export (Anki-importable) + Markdown export (Obsidian) |
 | `sanskrit_concordance.html` | H1505: standalone **concordance search** — type a root/form, get every match's total corpus count + up to 5 example strophes with citation, diacritic-insensitive, fully client-side |
 | `visual/` | Derived JSON data assets (concordance, genres, texts, collocates, …) |
@@ -83,6 +84,7 @@ In `visual/`:
 | `paradigm_endings.json` | 25 tenses × attested endings from corpus | paradigm browser |
 | `paradigm_attested.json` / `paradigm_attested_data.js` | H1299: per-root (7,689) attested finite/non-finite cells, full corpus scale | paradigm trainer |
 | `paradigm_nominal.json` / `paradigm_nominal_data.js` | H1472: 14 declension classes × token gender × 24 case·number cells (counts, surface endings, attested forms, corpus examples) | nominal dashboard |
+| `paradigm_nominal_lemmas.json` / `paradigm_nominal_lemmas_data.js` | H2321: 31,753 NOUN lemmas × G2-attested cells + top forms; coverage from G2, forms from pin | nominal trainer |
 | `dcs_texts_clean.json` | 288 texts with tense profiles | diachronic analysis |
 | `dcs_genres.json` | 18 genre profiles — 17 named families + `Other` (weighted averages) | genre comparison |
 | `dcs_scatter.json` | 170 diachronic data points | timeline charts |
@@ -274,13 +276,17 @@ See `roadmap.md` for the original discussion (Russian). Much of it has since shi
   `sanskrit_paradigm_trainer.html`: Ctrl+P (or the button) hides nav/controls/side panels
   via a shared `.no-print` class and prints only the current paradigm grid, one page.
 
-**🔴 Still pending — high priority (new functionality):**
-- **Per-lemma nominal drill-down** — the nominal twin of `sanskrit_paradigm_trainer.html`
-  (per-lemma attested cells + frequency-weighted trainer), consuming Sangram G2's
-  `lemma_cell_coverage.csv` rather than recomputing it.
+- **Per-lemma nominal drill-down trainer (H2321)** —
+  `sanskrit_nominal_trainer.html` + `gen_paradigm_nominal_lemmas.py`: 31,753 NOUN
+  lemmas (floor ≥2 tokens) with an 8×3 attested-cell grid and frequency-weighted
+  flashcards. **Coverage is Sangram G2's `lemma_cell_coverage.csv` (not re-derived)**;
+  forms come from the pinned master only for G2-attested cells. Build refuses on
+  token/cell drift vs G2. `node tests/test_nominal_trainer.js` headless-renders the page.
 
 **🟡 Pending — polish:**
 - Several landing-page tool cards are still aspirational widgets, not yet built as standalone files
+- **Split the `-ī` and `-ant` conflations** — still needs an external lexical signal (H1472
+  deliberately made no guess; class dashboard + per-lemma trainer both inherit the pool)
 
 ---
 
