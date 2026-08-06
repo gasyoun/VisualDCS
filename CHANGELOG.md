@@ -8,6 +8,8 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-06] — `dcs_published_figures.json`, the cross-repo figure contract (H2298)
+
 ### Added
 - **`dcs_published_figures.json` — a cross-repo figure contract asset (H2298).** The headline
   DCS-2021 verbal figures are now *published* as a committed, versioned file at the repo root
