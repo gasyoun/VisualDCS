@@ -254,6 +254,33 @@ Full report:
 cross-check against Sangram G2's declension-cell coverage (57,144 lemma_ids, exact agreement
 on tokens and attested cells): [`reports/nominal_g2_reconciliation.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_g2_reconciliation.md).
 
+### [`sanskrit_nominal_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_trainer.html) — per-lemma nominal trainer (H2321)
+
+The nominal twin of
+[`sanskrit_paradigm_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_trainer.html):
+**31,753 NOUN lemmas** (frequency floor ≥ 2 tokens; top-100 = `full` tier) with a search list,
+an 8 case × 3 number grid of *attested* cells only, frequency-weighted flashcards, and JSON
+deck export. Built by
+[`src/DCS-data-2026/gen_paradigm_nominal_lemmas.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/gen_paradigm_nominal_lemmas.py);
+render-tested by
+[`tests/test_nominal_trainer.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_nominal_trainer.js)
+(`node tests/test_nominal_trainer.js`). Loads
+`visual/paradigm_nominal_lemmas_data.js` via `<script src>` — keep both files together.
+
+**Load-bearing constraint — coverage is not re-derived.** The 24-cell bitstring for every
+lemma is taken from SanskritGrammar Sangram G2's
+[`lemma_cell_coverage.csv`](https://github.com/gasyoun/SanskritGrammar/blob/main/sangram/data/declension_cell_coverage/lemma_cell_coverage.csv)
+(H1048; 57,144 lemmas, already reconciled exactly against this repo's class dashboard). Forms
+and per-cell counts come from the pinned master, and only for cells G2 already marks attested.
+The generator **refuses** on any token-count or cell-set drift vs G2 (measured: 0 / 0).
+
+**Data ceiling:** same as G2 + H1472 — median cells/lemma is 1; a full 24-cell paradigm is
+almost never attested; `stem_final` is a citation-form tag; forms are DCS unsandhied analyses
+(often reconstructed). Hapax lemmas below the floor stay in G2 but are out of this trainer asset.
+
+Build report:
+[`reports/paradigm_nominal_lemmas_build.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_nominal_lemmas_build.md).
+
 ### [`sanskrit_anki_decks.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_anki_decks.html) — Anki-deck flashcard widget (H1504)
 
 A standalone flashcard viewer over the already-computed `visual/anki_compact.json` — **200
@@ -311,6 +338,7 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/paradigm_endings.json` | 25 tenses × attested endings from the corpus |
 | `visual/paradigm_attested.json` / `paradigm_attested_data.js` | H1299: 7,689 roots × attested finite/non-finite cells (top-100 full tier + long tail), consumed by `sanskrit_paradigm_trainer.html` |
 | `visual/paradigm_nominal.json` / `paradigm_nominal_data.js` | H1472: 14 declension classes × token gender × 24 case·number cells — counts, surface endings, top forms, corpus examples; consumed by `sanskrit_nominal_dashboard.html` |
+| `visual/paradigm_nominal_lemmas.json` / `paradigm_nominal_lemmas_data.js` | H2321: 31,753 NOUN lemmas × G2-attested cells + top forms; coverage from G2, forms from pin; consumed by `sanskrit_nominal_trainer.html` |
 | `visual/corpus_stats_widget.json` | Summary morpho-statistics for widgets |
 | `visual/anki_compact.json` | 200 Anki flashcards |
 | `visual/conc_totals.json` | 6,423 forms → total occurrences in corpus |
@@ -415,11 +443,11 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
   Ctrl+P / clicking the button hides all nav/controls/side panels and prints only the current
   paradigm grid, one page.
 
+- **Per-lemma nominal drill-down trainer (H2321)** — done via
+  [`sanskrit_nominal_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_trainer.html)
+  (31,753 NOUN lemmas, G2 coverage oracle, frequency-weighted trainer). See the section above.
+
 **🔴 Still planned — high priority**
-- **Per-lemma nominal drill-down** — the grid aggregates a whole class; the natural next step
-  is the nominal equivalent of `sanskrit_paradigm_trainer.html`, i.e. per-lemma attested
-  cells with a frequency-weighted trainer. The per-lemma coverage layer already exists as
-  SanskritGrammar's Sangram G2 asset (H1048) and would be consumed, not rebuilt.
 - **Split the `-ī` and `-ant` conflations** — needs an external lexical signal (stem
   syllable count / a dictionary class tag); DCS alone cannot separate `devī` from `śrī`,
   and no guess is made in the current asset.

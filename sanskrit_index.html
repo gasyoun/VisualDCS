@@ -184,6 +184,15 @@ const TOOLS = [
     note:'Автономный HTML-файл + visual/paradigm_nominal_data.js (≈ 620 KB) — сохрани обе рядом с sanskrit_nominal_dashboard.html'
   },
   {
+    id:'nominal-trainer', icon:'🏛️', name:'Именной тренажёр (per-lemma)', file:'sanskrit_nominal_trainer.html',
+    desc:'31 753 леммы NOUN × только засвидетельствованные клетки Sangram G2. Поиск леммы, сетка 8×3, частотно-взвешенные карточки, экспорт колоды JSON. H2321 — именной близнец глагольного тренажёра.',
+    fact:'Покрытие клеток = G2 (не пересчитывается) · топ-100 full · floor ≥2 токена · 0 drift vs pin.',
+    tags:['парадигма','склонение','карточки','DCS','H2321','G2'],
+    stages:['2','3','4'],
+    type:'file', star:true,
+    note:'Автономный HTML-файл + visual/paradigm_nominal_lemmas_data.js (≈ 8.3 MB) — сохрани обе рядом с sanskrit_nominal_trainer.html'
+  },
+  {
     id:'D3', icon:'📖', name:'Читатель пассажей', file:'sanskrit_passage_reader.html',
     desc:'40 куратированных пассажей из DCS 0.csv: Hitopadeśa, Mahābhārata, Upaniṣads, Arthaśāstra, Kālidāsa. Фильтр по жанру и сложности, глагольные формы подсвечены по корпусной частоте.',
     fact:'230 глагольных форм подсвечены. Вставка своего IAST не реализована (H1537) — токенизация/сандхи ждут отдельного дизайн-решения.',

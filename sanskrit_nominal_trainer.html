@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Именной тренажёр — леммы DCS (G2)</title>
+<style>
+body{font-family:system-ui,sans-serif;padding:1rem;max-width:1100px;margin:0 auto;color:#1a1a1a;background:#fff}
+@media(prefers-color-scheme:dark){body{background:#1a1a1a;color:#e8e8e8}
+  .panel{background:#242424!important;border-color:#3a3a3a!important}
+  .hdrnote{background:#242424!important;color:#bbb!important}
+  .lemma-item:hover{background:#2a2a2a!important}
+  .lemma-item.sel{background:#3266ad33!important}
+  input,select{background:#242424;color:#e8e8e8;border-color:#444!important}
+  th{background:#242424!important}
+  td.cell{background:#242424!important;border-color:#3a3a3a!important}
+  td.zero{background:#1a1a1a!important}
+  .card{background:#242424!important;border-color:#3a3a3a!important}
+}
+a.d{color:inherit;text-decoration:underline;text-decoration-color:rgba(100,130,180,.35);text-underline-offset:2px}
+.rb{padding:4px 9px;font-size:12px;border-radius:6px;border:0.5px solid #ccc;background:#fff;cursor:pointer;color:#555}
+.rb.on{background:#3266ad22;border-color:#3266ad;color:#3266ad;font-weight:500}
+.tab{padding:6px 14px;font-size:13px;border:none;background:none;cursor:pointer;color:#888;border-bottom:2px solid transparent}
+.tab.on{color:#3266ad;border-bottom-color:#3266ad;font-weight:600}
+.lemma-item{padding:4px 8px;font-size:12px;cursor:pointer;border-radius:4px;display:flex;justify-content:space-between;gap:6px}
+.lemma-item:hover{background:#f0f0f0}
+.lemma-item.sel{background:#3266ad18;font-weight:600}
+.panel{border:0.5px solid #ddd;border-radius:8px;padding:10px}
+th,td{box-sizing:border-box;font-size:11px}
+th{position:sticky;top:0;background:#fff;text-align:left;padding:4px 6px;border-bottom:1px solid #ccc}
+td.cell{padding:4px 6px;border:0.5px solid #eee;border-radius:3px;vertical-align:top}
+td.zero{color:#bbb;text-align:center}
+.hdrnote{background:#f5f5f5;border-radius:8px;padding:8px 14px;margin-bottom:1rem;font-size:12px;color:#555;line-height:1.5}
+.badge{display:inline-block;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:600}
+.badge.full{background:#1d9e7522;color:#1d9e75}
+.badge.attested{background:#ba751722;color:#ba7517}
+.card{cursor:pointer;border:1px solid #ddd;border-radius:12px;min-height:140px;padding:24px;text-align:center;background:#fafbfc;user-select:none}
+input[type=text]{font-size:12px;padding:4px 8px;border:0.5px solid #ccc;border-radius:6px;outline:none;width:100%}
+#print-btn{white-space:nowrap}
+@media print{
+  body{padding:0;max-width:none}
+  .no-print,#print-btn{display:none!important}
+  table,th,td.cell{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{margin:10mm}
+}
+</style>
+</head><body>
+
+<div class="no-print" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+  <h2 style="font-size:16px;margin:0 0 6px">Именной тренажёр — per-lemma (G2 coverage)</h2>
+  <button id="print-btn" class="rb" onclick="window.print()">🖨 Печать / PDF</button>
+</div>
+<div class="hdrnote no-print" id="hdrnote">loading…</div>
+
+<div class="no-print" style="margin-bottom:10px">
+  <button class="tab on" id="tab-browse" onclick="setTab('browse')">Обзор / Browse</button>
+  <button class="tab" id="tab-train" onclick="setTab('train')">Тренажёр / Trainer</button>
+</div>
+
+<div id="view-browse">
+  <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+    <div class="panel no-print" style="width:280px;flex-shrink:0">
+      <input type="text" id="lemma-search" placeholder="Лемма: deva, agni, rājan…" oninput="renderLemmaList()">
+      <div style="font-size:10px;color:#888;margin:6px 0" id="lemma-count-note"></div>
+      <div id="lemma-list" style="max-height:560px;overflow-y:auto"></div>
+    </div>
+    <div class="panel" style="flex:1;min-width:420px" id="lemma-detail">
+      <em style="color:#888;font-size:12px">Выберите лемму слева.</em>
+    </div>
+  </div>
+</div>
+
+<div id="view-train" style="display:none">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+    <span style="font-size:12px;color:#888">Колода:</span>
+    <button class="rb on" id="deck-top" onclick="setDeckScope('top',this)">Топ-100 (full)</button>
+    <button class="rb" id="deck-all" onclick="setDeckScope('all',this)">Все допущенные</button>
+    <button class="rb" id="deck-lemma" onclick="setDeckScope('lemma',this)">Только: <span id="deck-lemma-name">—</span></button>
+    <span style="flex:1"></span>
+    <button onclick="exportDeck()" style="font-size:11px;padding:4px 10px;border:0.5px solid #3266ad;border-radius:6px;background:#3266ad18;cursor:pointer;color:#3266ad">↓ Экспорт колоды JSON</button>
+  </div>
+  <div style="font-size:11px;color:#888;margin-bottom:10px" id="deck-stats"></div>
+  <div id="fc-card" class="card" onclick="fcReveal()">
+    <div id="fc-q" style="font-size:19px;font-weight:500;margin-bottom:6px"></div>
+    <div id="fc-hint" style="font-size:12px;color:#aaa;margin-bottom:14px"></div>
+    <div id="fc-a" style="display:none">
+      <div id="fc-ans" style="font-size:22px;font-style:italic;color:#3266ad;margin-bottom:6px"></div>
+      <div id="fc-ans2" style="font-size:12px;color:#888"></div>
+    </div>
+    <div id="fc-tap" style="font-size:12px;color:#bbb;margin-top:10px">нажмите чтобы показать ответ</div>
+  </div>
+  <div id="fc-rating" style="display:none;justify-content:center;gap:8px;margin-top:10px">
+    <button onclick="fcRate(0)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #e24b4a;background:#e24b4a18;cursor:pointer;color:#e24b4a;font-size:12px">✗ Не знал</button>
+    <button onclick="fcRate(1)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #ba7517;background:#ba751718;cursor:pointer;color:#ba7517;font-size:12px">~ Вспомнил</button>
+    <button onclick="fcRate(2)" style="padding:6px 16px;border-radius:6px;border:0.5px solid #1d9e75;background:#1d9e7518;cursor:pointer;color:#1d9e75;font-size:12px">✓ Знал</button>
+  </div>
+  <div style="font-size:11px;color:#888;margin-top:10px;text-align:center" id="fc-progress"></div>
+</div>
+
+<script src="visual/paradigm_nominal_lemmas_data.js"></script>
+<script>
+const D = window.PARADIGM_NOMINAL_LEMMAS;
+const CASE_RU = {Nom:'Nom',Acc:'Acc',Ins:'Ins',Dat:'Dat',Abl:'Abl',Gen:'Gen',Loc:'Loc',Voc:'Voc'};
+const NUM_RU = {Sing:'ед.',Dual:'дв.',Plur:'мн.'};
+const G_RU = {Masc:'m',Fem:'f',Neut:'n','?':'?'};
+
+let lemmaIds = [];
+let curId = null;
+let deckScope = 'top';
+let deck = [];
+let deckIdx = 0;
+
+function initHeader(){
+  const el = document.getElementById('hdrnote');
+  if(!D){ el.textContent = 'Данные не загрузились — нужен visual/paradigm_nominal_lemmas_data.js рядом с этой страницей.'; return; }
+  el.innerHTML =
+    `<b>${D.lemmaCount.toLocaleString('ru-RU')}</b> лемм NOUN (порог ≥${D.frequencyFloor} токенов; `+
+    `топ-${D.tierBoundary} = «full», остальное = «attested») · `+
+    `${D.totalTokens.toLocaleString('ru-RU')} токенов · `+
+    `покрытие клеток — <b>Sangram G2</b> (не пересчитывается) · `+
+    `пин ${D.source.commit.slice(0,12)} · `+
+    `<a class="d" href="sanskrit_nominal_dashboard.html">классовый дашборд</a> · `+
+    `<a class="d" href="sanskrit_paradigm_trainer.html">глагольный тренажёр</a>`;
+}
+
+function buildLemmaIndex(){
+  lemmaIds = Object.keys(D.lemmas).sort((a,b)=>{
+    const ra = D.lemmas[a].rank, rb = D.lemmas[b].rank;
+    return ra - rb;
+  });
+}
+
+function renderLemmaList(){
+  const q = document.getElementById('lemma-search').value.trim().toLowerCase();
+  const list = document.getElementById('lemma-list');
+  const filtered = q
+    ? lemmaIds.filter(id=>{
+        const r = D.lemmas[id];
+        return r.lemma.toLowerCase().includes(q) || id.includes(q) ||
+               (r.stemFinal||'').toLowerCase().includes(q);
+      })
+    : lemmaIds;
+  document.getElementById('lemma-count-note').textContent =
+    `${filtered.length.toLocaleString('ru-RU')} из ${lemmaIds.length.toLocaleString('ru-RU')}`;
+  const shown = filtered.slice(0, 400);
+  list.innerHTML = shown.map(id=>{
+    const r = D.lemmas[id];
+    const sel = id===curId ? ' sel' : '';
+    return `<div class="lemma-item${sel}" onclick="selectLemma('${id}')">`+
+      `<span><i>${r.lemma}</i> <span style="color:#888">(${G_RU[r.domGender]||r.domGender}, -${r.stemFinal})</span></span>`+
+      `<span style="color:#888">${r.tokens.toLocaleString('ru-RU')} · ${r.cellsAttested}/24</span></div>`;
+  }).join('') + (filtered.length>400
+    ? `<div style="font-size:11px;color:#888;padding:6px">…ещё ${filtered.length-400}. Уточните поиск.</div>` : '');
+}
+
+function selectLemma(id){
+  curId = id;
+  document.getElementById('deck-lemma-name').textContent = D.lemmas[id].lemma;
+  renderLemmaList();
+  renderLemmaDetail(id);
+}
+
+function cellColor(n, max){
+  if(!n) return '';
+  const t = Math.min(1, Math.log(n+1)/Math.log(max+1));
+  const c = Math.round(255 - t*180);
+  return `background:rgb(${c},${Math.round(c*0.97)},${Math.round(220+t*20)})`;
+}
+
+function renderLemmaDetail(id){
+  const rec = D.lemmas[id];
+  const panel = document.getElementById('lemma-detail');
+  let max = 1;
+  for(const cell in rec.cells){
+    const arr = rec.cells[cell];
+    if(arr && arr[0]) max = Math.max(max, arr[0][0]);
+  }
+  let html = `<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px">`+
+    `<span style="font-size:20px;font-weight:600;font-style:italic">${rec.lemma}</span>`+
+    `<span class="badge ${rec.tier}">${rec.tier}</span>`+
+    `<span style="font-size:12px;color:#888">#${rec.rank} · ${rec.domGender} · stem -${rec.stemFinal} · `+
+    `${rec.tokens.toLocaleString('ru-RU')} ток. · ${rec.cellsAttested}/24 клеток · id ${id}</span></div>`;
+  html += `<table style="width:100%;border-collapse:collapse"><thead><tr>`+
+    `<th style="width:70px"></th><th>Sg</th><th>Du</th><th>Pl</th></tr></thead><tbody>`;
+  for(const c of D.cases){
+    html += `<tr><th class="case">${CASE_RU[c]}</th>`;
+    for(const n of D.numbers){
+      const cell = c+'.'+n;
+      const arr = rec.cells[cell];
+      if(!arr || !arr.length){
+        html += `<td class="cell zero">—</td>`;
+      } else {
+        const [cnt, form] = arr[0];
+        const extra = arr.length>1 ? ` <span style="color:#aaa">+${arr.length-1}</span>` : '';
+        html += `<td class="cell" style="${cellColor(cnt,max)}">`+
+          `<div style="font-style:italic;font-weight:500">${form}${extra}</div>`+
+          `<div style="color:#888;font-size:10px">${cnt.toLocaleString('ru-RU')}</div></td>`;
+      }
+    }
+    html += `</tr>`;
+  }
+  html += `</tbody></table>`;
+  html += `<div style="font-size:11px;color:#888;margin-top:8px">Покрытие клеток — Sangram G2. `+
+    `Пустая клетка = не засвидетельствована в корпусе (не «ошибка парадигмы»). `+
+    `Формы — unsandhied анализ DCS.</div>`;
+  panel.innerHTML = html;
+}
+
+function setTab(t){
+  document.getElementById('view-browse').style.display = t==='browse'?'':'none';
+  document.getElementById('view-train').style.display = t==='train'?'':'none';
+  document.getElementById('tab-browse').classList.toggle('on', t==='browse');
+  document.getElementById('tab-train').classList.toggle('on', t==='train');
+  if(t==='train' && !deck.length) buildDeck();
+}
+
+function setDeckScope(s, btn){
+  deckScope = s;
+  document.querySelectorAll('#deck-top,#deck-all,#deck-lemma').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  buildDeck();
+}
+
+function buildDeck(){
+  deck = [];
+  const ids = deckScope==='lemma' && curId ? [curId]
+    : lemmaIds.filter(id => deckScope==='top' ? D.lemmas[id].tier==='full' : true);
+  for(const id of ids){
+    const rec = D.lemmas[id];
+    for(const cell in rec.cells){
+      const arr = rec.cells[cell];
+      if(!arr || !arr.length) continue;
+      const n = arr[0][0];
+      deck.push({id, lemma: rec.lemma, cell, forms: arr, n, gender: rec.domGender});
+    }
+  }
+  // frequency-weighted shuffle without replacement
+  const pool = deck.slice();
+  const ordered = [];
+  while(pool.length){
+    const total = pool.reduce((s,c)=>s+c.n, 0);
+    let r = Math.random()*total, i=0;
+    for(; i<pool.length; i++){ r -= pool[i].n; if(r<=0) break; }
+    ordered.push(pool.splice(Math.min(i, pool.length-1), 1)[0]);
+  }
+  deck = ordered;
+  deckIdx = 0;
+  document.getElementById('deck-stats').textContent =
+    `${deck.length.toLocaleString('ru-RU')} карточек (частотно-взвешенная выборка без повторов)`;
+  fcShow();
+}
+
+function cellLabel(cell){
+  const [c,n] = cell.split('.');
+  return `${CASE_RU[c]} · ${NUM_RU[n]||n}`;
+}
+
+function fcShow(){
+  if(!deck.length){ document.getElementById('fc-q').textContent = 'Колода пуста.'; return; }
+  const c = deck[deckIdx % deck.length];
+  document.getElementById('fc-q').textContent = c.lemma;
+  document.getElementById('fc-hint').textContent =
+    `${cellLabel(c.cell)} · ${c.gender} · #${D.lemmas[c.id].rank}`;
+  document.getElementById('fc-a').style.display = 'none';
+  document.getElementById('fc-tap').style.display = '';
+  document.getElementById('fc-rating').style.display = 'none';
+  document.getElementById('fc-progress').textContent =
+    `${(deckIdx%deck.length)+1} / ${deck.length}`;
+}
+
+function fcReveal(){
+  if(!deck.length) return;
+  const c = deck[deckIdx % deck.length];
+  const top = c.forms.map(([n,f])=>`${f} (${n})`).join(', ');
+  document.getElementById('fc-ans').textContent = c.forms[0][1];
+  document.getElementById('fc-ans2').textContent = top;
+  document.getElementById('fc-a').style.display = '';
+  document.getElementById('fc-tap').style.display = 'none';
+  document.getElementById('fc-rating').style.display = 'flex';
+}
+
+function fcRate(_score){
+  deckIdx++;
+  fcShow();
+}
+
+function exportDeck(){
+  const payload = {
+    source: 'sanskrit_nominal_trainer.html',
+    schemaVersion: D.schemaVersion,
+    coverageOracle: D.source.coverageOracle,
+    deckScope, n: deck.length,
+    cards: deck.map(c=>({
+      lemmaId: c.id, lemma: c.lemma, cell: c.cell, gender: c.gender,
+      forms: c.forms, tokens: c.n
+    }))
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `nominal_deck_${deckScope}_${deck.length}.json`;
+  a.click();
+}
+
+if(D){
+  initHeader();
+  buildLemmaIndex();
+  renderLemmaList();
+  // auto-select top lemma
+  if(lemmaIds.length) selectLemma(lemmaIds[0]);
+} else {
+  initHeader();
+}
+</script>
+</body></html>
