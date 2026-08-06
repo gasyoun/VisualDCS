@@ -264,6 +264,32 @@ def collocations(conn, top_lemmas=400, per=20):
     return out
 
 
+def _parse_timws(path):
+    """timws.csv -> ({category_name: [(code, freq), ...]}, n_codes, parsed_total).
+
+    The CODE-explicit view, and the ONLY place timws.csv is parsed. Both consumers read
+    it: `read_2021_verbcats` (the name-summed view the delta report needs) and
+    `published_figures` (which must name each figure's code set explicitly). Keep it that
+    way — a second parse is a second place for the name-collision handling to drift, and
+    that drift is exactly what H1486 shipped.
+    """
+    per_name, n_codes, parsed_total = defaultdict(list), 0, 0
+    p = os.path.join(path, "timws.csv")
+    if not os.path.isfile(p):
+        return per_name, n_codes, parsed_total
+    with open(p, encoding="utf-8", errors="replace") as fh:
+        for line in fh:
+            parts = line.rstrip("\n").split(":")
+            if len(parts) >= 3 and parts[0].strip().isdigit():
+                code = int(parts[0].strip())
+                name = parts[1].strip()
+                n = int(parts[2].strip()) if parts[2].strip().isdigit() else 0
+                n_codes += 1
+                parsed_total += n
+                per_name[name].append((code, n))
+    return per_name, n_codes, parsed_total
+
+
 def read_2021_verbcats(path):
     """timws.csv -> {category_name: 2021 frequency}.
 
@@ -274,22 +300,12 @@ def read_2021_verbcats(path):
     of 40,363 and Aorist Active as 721 instead of 1,304 (H1486 — surfaced once the
     re-split gave the 2026 side a matching `Aorist Active` row to compare against).
     """
+    collisions, n_codes, parsed_total = _parse_timws(path)
     out = {}
-    p = os.path.join(path, "timws.csv")
-    if not os.path.isfile(p):
+    for name, hits in collisions.items():
+        out[name] = sum(n for _, n in hits)
+    if not n_codes:
         return out
-    collisions, n_codes, parsed_total = defaultdict(list), 0, 0
-    with open(p, encoding="utf-8", errors="replace") as fh:
-        for line in fh:
-            parts = line.rstrip("\n").split(":")
-            if len(parts) >= 3 and parts[0].strip().isdigit():
-                code = int(parts[0].strip())
-                name = parts[1].strip()
-                n = int(parts[2].strip()) if parts[2].strip().isdigit() else 0
-                n_codes += 1
-                parsed_total += n
-                collisions[name].append((code, n))
-                out[name] = out.get(name, 0) + n
 
     # Guard 1 — name collisions are EXPECTED here, but they must be visible. A silent
     # shrink from 42 codes to 30 names is exactly how H1486 shipped a wrong number:
@@ -315,11 +331,130 @@ def read_2021_verbcats(path):
     return out
 
 
+# -- the published-figures contract asset (H2298) ---------------------------------
+# `widgets/` is gitignored and regenerable; this asset is NEITHER. It is committed at the
+# repo root beside `dcs_lemma_summary.json` (the csl-atlas contract) because a sibling repo
+# has to READ it: a GitHub workflow checks out ONE repo, so SanskritGrammar's
+# `check_claims_consistency.py` cannot reach a VisualDCS clone and must consume a published
+# file instead.
+PUBLISHED_FIGURES_OUT = os.path.join(HERE, "..", "..", "dcs_published_figures.json")
+PUBLISHED_SCHEMA_VERSION = "1.0.0"
+
+# The seeded 2021 rows: (id, timws.csv category name). Deliberately SHORT. Every row here is
+# a figure a consumer repo already cites, whose code set is unambiguous, and which measures
+# the same thing on both sides. Rows were rejected for being types-vs-tokens or
+# different-denominator — see docs/CROSSREPO_FIGURE_COMMENSURABILITY_DCS_2026.md in
+# SanskritGrammar for the full considered/rejected list. A gate seeded with one mismatched
+# pair fires false alarms, and the standing response to a noisy blocking gate is to switch
+# it off — so grow this list only with a written commensurability argument per row.
+PUBLISHED_2021_FIGURES = [
+    ("dcs2021_present_active",   "Present Active"),
+    ("dcs2021_imperfect_active", "Imperfect Active"),
+    ("dcs2021_aorist_active",    "Aorist Active"),
+    ("dcs2021_aorist_medium",    "Aorist Medium"),
+    ("dcs2021_perfect_active",   "Perfect Active"),
+]
+
+# `basis` is mandatory on every row and names the DENOMINATOR the figure lives in — the
+# check_denominator_commensurability.py principle ("a share is only meaningful once its
+# basis is named") carried across the repo boundary.
+BASIS_2021_VERBAL = ("DCS-2021 verbal examples: all 42 timws.csv tense/mood codes, "
+                     "summing to 781,618 tokens")
+
+
+def published_figures(rel_2021=REL_2021):
+    """Build the cross-repo figure contract: a LIST of self-describing records.
+
+    Shape is a list, never a `{name: value}` object — a name-keyed map is exactly how the
+    H1486 defect propagated (two `Imperfect Active` codes, last-wins, 4,442 published for
+    months instead of 40,363), and an asset built to detect that bug must not carry it.
+    `source_codes` keeps the code set explicit, so `Imperfect Active` is self-evidently
+    codes 4+8 rather than something a reader has to reconstruct.
+
+    Every record carries its own provenance (source_file / source_codes / corpus_release /
+    unit / basis), so a row stays honest if a consumer copies it out of the envelope.
+    """
+    per_name, n_codes, parsed_total = _parse_timws(rel_2021)
+    if not n_codes:
+        raise SystemExit(f"ERROR: no timws.csv codes parsed from {rel_2021}")
+
+    rows = []
+    for fid, name in PUBLISHED_2021_FIGURES:
+        hits = per_name.get(name)
+        if not hits:
+            raise SystemExit(f"ERROR: timws.csv has no category {name!r} — cannot publish {fid}")
+        rows.append({
+            "id": fid,
+            "label": name,
+            "value": sum(n for _, n in hits),
+            "unit": "tokens",
+            "basis": BASIS_2021_VERBAL,
+            "tolerance": 0,
+            "source_file": "src/DCS-data-2021/timws.csv",
+            "source_codes": sorted(c for c, _ in hits),
+            "corpus_release": "DCS-2021",
+            "generated_by": "src/DCS-data-2026/regen_widgets.py::published_figures",
+        })
+
+    # The corpus total gets a TOLERANCE, not an exact match: timws.csv's 42 codes sum to
+    # 781,618 while README.md/CLAUDE.md document 781,616 from the Excel source. The ±2 is a
+    # real source-side difference (see read_2021_verbcats guard 2), so pinning it exactly
+    # would make the gate fire on a known, documented fact rather than on drift.
+    rows.append({
+        "id": "dcs2021_verbal_total",
+        "label": "All verbal examples",
+        "value": parsed_total,
+        "unit": "tokens",
+        "basis": f"sum of all {n_codes} timws.csv codes; README.md/CLAUDE.md document "
+                 f"{TIMWS_DOCUMENTED_TOTAL:,} from the Excel source (delta "
+                 f"{parsed_total - TIMWS_DOCUMENTED_TOTAL:+,}, source-side, not drift)",
+        "tolerance": TIMWS_TOTAL_TOLERANCE,
+        "source_file": "src/DCS-data-2021/timws.csv",
+        "source_codes": sorted(c for hits in per_name.values() for c, _ in hits),
+        "corpus_release": "DCS-2021",
+        "generated_by": "src/DCS-data-2026/regen_widgets.py::published_figures",
+    })
+
+    # A list shape does not by itself stop a consumer building a name-keyed dict from it, so
+    # refuse duplicate ids at the source. This is the collision guard the 2021 dump lacked.
+    ids = [r["id"] for r in rows]
+    dupes = sorted({i for i in ids if ids.count(i) > 1})
+    if dupes:
+        raise SystemExit(f"ERROR: duplicate figure id(s) {dupes} — ids must be unique")
+    return rows
+
+
+def write_published_figures(rel_2021=REL_2021, out=PUBLISHED_FIGURES_OUT):
+    rows = published_figures(rel_2021)
+    doc = {
+        "schema_version": PUBLISHED_SCHEMA_VERSION,
+        "source_repo": "gasyoun/VisualDCS",
+        "generated_by": "src/DCS-data-2026/regen_widgets.py --figures-only",
+        "note": "`figures` is a LIST of self-describing records, never a name-keyed object "
+                "(H1486/H2298). Consumers must key on `id` and honour `unit` + `basis` + "
+                "`source_codes` before comparing any two values.",
+        "figures": rows,
+    }
+    with open(out, "w", encoding="utf-8") as fh:
+        json.dump(doc, fh, ensure_ascii=False, indent=2)
+        fh.write("\n")
+    print(f"wrote {os.path.relpath(out, HERE)} — {len(rows)} figure(s):")
+    for r in rows:
+        print(f"    {r['id']:<28} {r['value']:>9,} {r['unit']:<7} codes={r['source_codes']}")
+    return doc
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", default=os.path.join(HERE, "dcs.sqlite"))
     ap.add_argument("--no-coll", action="store_true", help="skip the (slow) collocations widget")
+    ap.add_argument("--figures-only", action="store_true",
+                    help="regenerate only the committed dcs_published_figures.json contract "
+                         "asset (reads timws.csv; needs no sqlite master)")
     args = ap.parse_args()
+    if args.figures_only:
+        write_published_figures()
+        return 0
     if not os.path.exists(args.db):
         print(f"ERROR: {args.db} not found.", file=sys.stderr)
         return 2
@@ -337,6 +472,10 @@ def main():
     if not args.no_coll:
         print("  collocations (streaming) ...")
         dump("coll_compact.json", collocations(conn))
+
+    # the committed cross-repo contract asset — refreshed on every full run too, so it can
+    # never silently lag the widgets it is published alongside
+    write_published_figures()
 
     # deltas vs 2021
     old = read_2021_verbcats(REL_2021)

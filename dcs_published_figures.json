@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0.0",
+  "source_repo": "gasyoun/VisualDCS",
+  "generated_by": "src/DCS-data-2026/regen_widgets.py --figures-only",
+  "note": "`figures` is a LIST of self-describing records, never a name-keyed object (H1486/H2298). Consumers must key on `id` and honour `unit` + `basis` + `source_codes` before comparing any two values.",
+  "figures": [
+    {
+      "id": "dcs2021_present_active",
+      "label": "Present Active",
+      "value": 157003,
+      "unit": "tokens",
+      "basis": "DCS-2021 verbal examples: all 42 timws.csv tense/mood codes, summing to 781,618 tokens",
+      "tolerance": 0,
+      "source_file": "src/DCS-data-2021/timws.csv",
+      "source_codes": [
+        1
+      ],
+      "corpus_release": "DCS-2021",
+      "generated_by": "src/DCS-data-2026/regen_widgets.py::published_figures"
+    },
+    {
+      "id": "dcs2021_imperfect_active",
+      "label": "Imperfect Active",
+      "value": 40363,
+      "unit": "tokens",
+      "basis": "DCS-2021 verbal examples: all 42 timws.csv tense/mood codes, summing to 781,618 tokens",
+      "tolerance": 0,
+      "source_file": "src/DCS-data-2021/timws.csv",
+      "source_codes": [
+        4,
+        8
+      ],
+      "corpus_release": "DCS-2021",
+      "generated_by": "src/DCS-data-2026/regen_widgets.py::published_figures"
+    },
+    {
+      "id": "dcs2021_aorist_active",
+      "label": "Aorist Active",
+      "value": 1304,
+      "unit": "tokens",
+      "basis": "DCS-2021 verbal examples: all 42 timws.csv tense/mood codes, summing to 781,618 tokens",
+      "tolerance": 0,
+      "source_file": "src/DCS-data-2021/timws.csv",
+      "source_codes": [
+        10,
+        12
+      ],
+      "corpus_release": "DCS-2021",
+      "generated_by": "src/DCS-data-2026/regen_widgets.py::published_figures"
+    },
+    {
+      "id": "dcs2021_aorist_medium",
+      "label": "Aorist Medium",
+      "value": 1148,
+      "unit": "tokens",
+      "basis": "DCS-2021 verbal examples: all 42 timws.csv tense/mood codes, summing to 781,618 tokens",
+      "tolerance": 0,
+      "source_file": "src/DCS-data-2021/timws.csv",
+      "source_codes": [
+        11,
+        13
+      ],
+      "corpus_release": "DCS-2021",
+      "generated_by": "src/DCS-data-2026/regen_widgets.py::published_figures"
+    },
+    {
+      "id": "dcs2021_perfect_active",
+      "label": "Perfect Active",
+      "value": 61986,
+      "unit": "tokens",
+      "basis": "DCS-2021 verbal examples: all 42 timws.csv tense/mood codes, summing to 781,618 tokens",
+      "tolerance": 0,
+      "source_file": "src/DCS-data-2021/timws.csv",
+      "source_codes": [
+        15
+      ],
+      "corpus_release": "DCS-2021",
+      "generated_by": "src/DCS-data-2026/regen_widgets.py::published_figures"
+    },
+    {
+      "id": "dcs2021_verbal_total",
+      "label": "All verbal examples",
+      "value": 781618,
+      "unit": "tokens",
+      "basis": "sum of all 42 timws.csv codes; README.md/CLAUDE.md document 781,616 from the Excel source (delta +2, source-side, not drift)",
+      "tolerance": 10,
+      "source_file": "src/DCS-data-2021/timws.csv",
+      "source_codes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "corpus_release": "DCS-2021",
+      "generated_by": "src/DCS-data-2026/regen_widgets.py::published_figures"
+    }
+  ]
+}
