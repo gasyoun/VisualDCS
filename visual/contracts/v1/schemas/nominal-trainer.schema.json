@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/gasyoun/VisualDCS/visual/contracts/v1/schemas/nominal-trainer.schema.json",
+  "title": "VisualDCS v1 nominal-trainer learner contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion", "corpusRelease", "generatedBy", "frequencyFloor",
+    "tierBoundary", "cases", "numbers", "cellNames", "lemmaCount", "ceilingNote", "lemmas"
+  ],
+  "properties": {
+    "contractVersion": { "type": "string", "pattern": "^1\\.\\d+\\.\\d+$" },
+    "corpusRelease": { "type": "string" },
+    "generatedBy": { "type": "string" },
+    "frequencyFloor": { "type": "integer", "minimum": 0 },
+    "tierBoundary": { "type": "integer", "minimum": 0 },
+    "ceilingNote": { "type": "string" },
+    "cases": { "type": "array", "items": { "type": "string" } },
+    "numbers": { "type": "array", "items": { "type": "string" } },
+    "cellNames": { "type": "array", "items": { "type": "string" } },
+    "lemmaCount": { "type": "integer", "minimum": 0 },
+    "lemmas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "lemmaId", "lemma", "domGender", "stemFinal", "tokens",
+          "cellsAttested", "rank", "tier", "cells"
+        ],
+        "properties": {
+          "lemmaId": { "type": "string", "minLength": 1 },
+          "lemma": { "type": "string", "minLength": 1 },
+          "domGender": { "type": "string" },
+          "stemFinal": { "type": "string" },
+          "tokens": { "type": "integer", "minimum": 0 },
+          "cellsAttested": { "type": "integer", "minimum": 0 },
+          "rank": { "type": "integer", "minimum": 1 },
+          "tier": { "type": "string", "enum": ["full", "attested"] },
+          "cells": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["cellId", "cell", "forms"],
+              "properties": {
+                "cellId": { "type": "string", "pattern": "^vdcs:v1:nominal:[^:]+:.+$" },
+                "cell": { "type": "string", "minLength": 1 },
+                "forms": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": [
+                      { "type": "integer", "minimum": 0 },
+                      { "type": "string", "minLength": 1 }
+                    ],
+                    "additionalItems": false,
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
