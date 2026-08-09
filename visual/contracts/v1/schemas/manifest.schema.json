@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/gasyoun/VisualDCS/visual/contracts/v1/schemas/manifest.schema.json",
+  "title": "VisualDCS v1 learner-contract release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion", "releaseId", "generatedAt", "sourcePins", "files",
+    "schemas", "sha256", "bytes", "recordCount", "compatibility", "provenance"
+  ],
+  "properties": {
+    "contractVersion": { "type": "string", "pattern": "^1\\.\\d+\\.\\d+$" },
+    "releaseId": { "type": "string", "minLength": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "sourcePins": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "files": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "schemas": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "sha256": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+    },
+    "bytes": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
+    "recordCount": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy", "previousRelease"],
+      "properties": {
+        "policy": { "type": "string" },
+        "previousRelease": { "type": ["string", "null"] }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["handoff", "builtBy", "plan"],
+      "properties": {
+        "handoff": { "type": "string" },
+        "builtBy": { "type": "string" },
+        "plan": { "type": "string" }
+      }
+    }
+  }
+}
