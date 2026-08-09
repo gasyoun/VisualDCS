@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/gasyoun/VisualDCS/visual/contracts/v1/schemas/verb-trainer.schema.json",
+  "title": "VisualDCS v1 verb-trainer learner contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contractVersion", "corpusRelease", "generatedBy", "tierBoundary",
+    "frequencyFloor", "cellEvidenceNote", "rootCount", "roots"
+  ],
+  "properties": {
+    "contractVersion": { "type": "string", "pattern": "^1\\.\\d+\\.\\d+$" },
+    "corpusRelease": { "type": "string" },
+    "generatedBy": { "type": "string" },
+    "tierBoundary": { "type": "integer", "minimum": 0 },
+    "frequencyFloor": { "type": "integer", "minimum": 0 },
+    "ceilingNote": { "type": "string" },
+    "cellEvidenceNote": { "type": "string" },
+    "rootCount": { "type": "integer", "minimum": 0 },
+    "roots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rootId", "rank", "tier", "totalTokens", "cells"],
+        "properties": {
+          "rootId": { "type": "string", "minLength": 1 },
+          "rank": { "type": "integer", "minimum": 1 },
+          "tier": { "type": "string", "enum": ["full", "attested"] },
+          "totalTokens": { "type": "integer", "minimum": 0 },
+          "cells": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["cellId", "kind", "category", "totalTokens", "forms"],
+              "properties": {
+                "cellId": { "type": "string", "pattern": "^vdcs:v1:verb:[^:]+:.+$" },
+                "kind": { "type": "string", "enum": ["finite", "nonfinite"] },
+                "category": { "type": "string", "minLength": 1 },
+                "number": { "type": ["string", "null"], "enum": ["sg", "du", "pl", null] },
+                "person": { "type": ["string", "null"], "enum": ["1", "2", "3", null] },
+                "evidence": {
+                  "type": ["string", "null"],
+                  "enum": ["formation-attested", "defaulted", null]
+                },
+                "totalTokens": { "type": "integer", "minimum": 0 },
+                "forms": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": [
+                      { "type": "integer", "minimum": 0 },
+                      { "type": "string", "minLength": 1 }
+                    ],
+                    "additionalItems": false,
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
