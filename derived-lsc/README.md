@@ -1,6 +1,6 @@
 # Sanskrit lexical semantic change pilot (LSC) — eval protocol + scores
 
-_Created: 11-07-2026 · Last updated: 11-07-2026_
+_Created: 11-07-2026 · Last updated: 09-08-2026_
 
 First lexical-semantic-change derivation for Sanskrit: the ACL Anthology's 81-paper LSC family
 (73 papers since 2020) contains **no Sanskrit work** as of 11-07-2026 — measured in
@@ -19,6 +19,8 @@ metric caveats per [Goworek & Dubossarsky 2026](https://aclanthology.org/2026.lc
 | [lsc_scores.tsv](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_scores.tsv) | 3,049 lemmas scoreable on ≥1 slot pair: per-slot counts, cosine distances, frequency-shift baseline, graded rank + binary flag (primary pair) |
 | [lsc_targets.tsv](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_targets.tsv) | frequency-stratified 60-lemma target set (3 terciles × 10 top + 10 bottom graded) |
 | [lsc_stats.json](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_stats.json) | build census + thresholds + control statistic |
+| [build_lsc_gold_sample.py](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/build_lsc_gold_sample.py) | stratified sampler: 5 per cell × 6 cells (3 terciles × binary) → `lsc_human_gold_sample.tsv`; `--selftest` enforced (H2399) |
+| [lsc_human_gold_sample.tsv](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_human_gold_sample.tsv) | n=30 human-annotation sheet — empty `gold_binary`, `gold_graded`, `change_type`, `annotator_notes` columns (H2399) |
 
 ## Data (all local, canonical — nothing re-derived)
 
@@ -100,12 +102,44 @@ changed):
   narrative vs śāstra); genre confounds semantic-change signal — flag any per-lemma claim
   against the top context words before publishing it.
 
+## Human-gold annotation schema (H2399, 09-08-2026)
+
+### Sampling design
+
+6 cells: 3 frequency terciles × 2 binary classes, 5 lemmas per cell (n = 30).
+
+| Cell | Tercile | Class | Selection rule |
+|---|---|---|---|
+| 1 | 1 (lowest freq) | changed (binary=1) | top 5 by `dist_12` descending |
+| 2 | 1 | stable (binary=0) | top 5 by `dist_12` ascending |
+| 3 | 2 | changed (binary=1) | top 5 by `dist_12` descending |
+| 4 | 2 | stable (binary=0) | top 5 by `dist_12` ascending |
+| 5 | 3 (highest freq) | changed (binary=1) | top 5 by `dist_12` descending |
+| 6 | 3 | stable (binary=0) | top 5 by `dist_12` ascending |
+
+### Annotation columns
+
+| Column | Type | Values | Note |
+|---|---|---|---|
+| `gold_binary` | int | 0 / 1 | 1 = changed; inter-annotator κ target ≥ 0.6 |
+| `gold_graded` | float | 0.0–1.0 | degree of change (0 = identical usage, 1 = fully distinct) |
+| `change_type` | enum | `broadening` / `narrowing` / `pejoration` / `amelioration` / `shift` / `stable` / `unclear` | coarsest interpretable category |
+| `annotator_notes` | text | free text | usage-pair observations, context quotes, confidence caveats |
+
+### Annotator protocol (usage-pair style)
+
+1. For each lemma, retrieve ≥5 usage pairs from slots 1 and 2 in dcs-conllu (slot 1 = Vedic, slot 2 = Epic).
+2. Judge whether the **meaning** has shifted between the two slot usages (not frequency, not syntax).
+3. Assign `gold_binary` (1 if shifted, 0 if stable) and `gold_graded` (0.0–1.0).
+4. Pick the best-fit `change_type` label; use `unclear` if the signal is weak.
+5. Note supporting context in `annotator_notes`.
+
 ## Next steps
 
-- ChiWUG-style human gold over `lsc_targets.tsv` → real binary/graded evaluation
-  (κ-reported, per the org's MWSA-discipline instruments).
-- Venue: LChange'27 (CfP expected ~Oct–Dec 2026, watched in
+- **Annotate [`lsc_human_gold_sample.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_human_gold_sample.tsv)** (n=30) following the protocol above; target inter-annotator κ ≥ 0.6.
+- Once gold is complete: compute κ, recalibrate the binary threshold, expand to all 60 target lemmas.
+- Venue: **LChange'27** (CfP expected ~Oct–Dec 2026, watched in
   [GTD](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)) or NLP4DH.
-  Registered as a paper candidate in [ARTICLES.md](https://github.com/gasyoun/Uprava/blob/main/ARTICLES.md).
+  Registered as paper candidate A57 in [ARTICLES.md](https://github.com/gasyoun/Uprava/blob/main/ARTICLES.md).
 
 _Dr. Mārcis Gasūns_

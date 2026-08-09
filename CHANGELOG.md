@@ -8,6 +8,19 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-09] — A57 stratified human-gold annotation sample, n=30 (H2399)
+
+### Added
+- **[`derived-lsc/lsc_human_gold_sample.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_human_gold_sample.tsv)
+  — n=30 human-gold annotation sheet (H2399).** Stratified 6-cell design: 3 frequency
+  terciles × binary_changed_12, 5 lemmas per cell. Columns: `gold_binary`, `gold_graded`,
+  `change_type`, `annotator_notes` (empty — ready for annotation).
+- **[`derived-lsc/build_lsc_gold_sample.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/build_lsc_gold_sample.py)**
+  — deterministic stratified sampler from `lsc_targets.tsv`; `--selftest` verifies n=30,
+  5 per cell, min_changed > max_stable per tercile.
+- **`derived-lsc/README.md`** — human-gold annotation schema section: sampling design table,
+  annotation columns table (types/values/rationale), usage-pair annotator protocol (5 steps).
+
 ## [2026-08-06] — Per-lemma nominal drill-down trainer (H2321)
 
 ### Added
