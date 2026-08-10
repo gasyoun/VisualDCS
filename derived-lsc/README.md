@@ -1,11 +1,20 @@
 # Sanskrit lexical semantic change pilot (LSC) — eval protocol + scores
 
-_Created: 11-07-2026 · Last updated: 09-08-2026_
+_Created: 11-07-2026 · Last updated: 10-08-2026_
 
-First lexical-semantic-change derivation for Sanskrit: the ACL Anthology's 81-paper LSC family
-(73 papers since 2020) contains **no Sanskrit work** as of 11-07-2026 — measured in
+First **lexical-semantic**-change derivation for Sanskrit. The gap claim was originally
+recorded as "the ACL Anthology's 81-paper LSC family contains no Sanskrit work" (11-07-2026,
 [ACL_METHOD_OPPORTUNITIES_SANSKRIT_2026.md](https://github.com/gasyoun/Uprava/blob/main/ACL_METHOD_OPPORTUNITIES_SANSKRIT_2026.md)
-(opportunity #1). Built by
+opportunity #1) — **superseded 10-08-2026 (H2400):** re-measured against the 08-08-2026
+Anthology dump the family is 236 papers (160 since 2020) and contains **one** Sanskrit entry,
+[Hariharan & Mortensen 2026](https://aclanthology.org/2026.lrec-1.81/) (LREC), on
+**morphological** change via weak supervision + fine-tuned mBERT — not sense-level change, no
+per-lemma ranking released, no human sense-gold. The defensible claim is therefore narrower
+and stated that way: first *lexical semantic change* (sense-level, SemEval-2020-Task-1-shaped)
+study of Sanskrit and first released per-lemma graded ranking over a dated Sanskrit corpus.
+Full comparison + 46 verified citations:
+[papers/A57_lsc_related_work.md](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md).
+Built by
 [H728](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H728-Fable_VisualDCS_sanskrit-lsc-pilot_11.07.26.md),
 Fable 5 (`claude-fable-5`). Task shape:
 [SemEval-2020 Task 1](https://aclanthology.org/2020.semeval-1.1/) (binary + graded change);
@@ -21,6 +30,9 @@ metric caveats per [Goworek & Dubossarsky 2026](https://aclanthology.org/2026.lc
 | [lsc_stats.json](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_stats.json) | build census + thresholds + control statistic |
 | [build_lsc_gold_sample.py](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/build_lsc_gold_sample.py) | stratified sampler: 5 per cell × 6 cells (3 terciles × binary) → `lsc_human_gold_sample.tsv`; `--selftest` enforced (H2399) |
 | [lsc_human_gold_sample.tsv](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_human_gold_sample.tsv) | n=30 human-annotation sheet — empty `gold_binary`, `gold_graded`, `change_type`, `annotator_notes` columns (H2399) |
+| [mine_lsc_related_work.py](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/mine_lsc_related_work.py) | LSC-family census + per-theme candidate harvest from `anthology.bib.gz`; `--query` searches the whole dump (H2400) |
+| [verify_related_work_citations.py](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/verify_related_work_citations.py) | acceptance gate: every `aclanthology.org` URL in the draft must exist in the dump, else exit 1 (H2400) |
+| [../papers/A57_lsc_related_work.md](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md) | related-work section draft — 46 verified Anthology citations, 26 in-family (H2400) |
 
 ## Data (all local, canonical — nothing re-derived)
 
@@ -138,6 +150,11 @@ changed):
 
 - **Annotate [`lsc_human_gold_sample.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_human_gold_sample.tsv)** (n=30) following the protocol above; target inter-annotator κ ≥ 0.6.
 - Once gold is complete: compute κ, recalibrate the binary threshold, expand to all 60 target lemmas.
+- **Read the full text of [Hariharan & Mortensen 2026](https://aclanthology.org/2026.lrec-1.81/)**
+  (ELRA PDF; the Anthology landing page does not name its corpus). If it is DCS-derived, the
+  overlap discussion in
+  [papers/A57_lsc_related_work.md](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md)
+  §Novelty needs strengthening before submission.
 - Venue: **LChange'27** (CfP expected ~Oct–Dec 2026, watched in
   [GTD](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)) or NLP4DH.
   Registered as paper candidate A57 in [ARTICLES.md](https://github.com/gasyoun/Uprava/blob/main/ARTICLES.md).
