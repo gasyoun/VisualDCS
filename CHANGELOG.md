@@ -8,6 +8,29 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+### Added
+- **[`papers/A57_lsc_related_work.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md)
+  — A57 related-work section draft, 46 verified ACL Anthology citations (H2400).** Six themed
+  sections (shared tasks · method precedents · annotated gold · metric critique · low-resource
+  historical LSC · computational Sanskrit) built from the Anthology's own `anthology.bib.gz`
+  dump (generated 08-08-2026), not from recall. Ships two reusable tools:
+  [`derived-lsc/mine_lsc_related_work.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/mine_lsc_related_work.py)
+  (family census + per-theme harvest + whole-dump `--query`, `--selftest`) and
+  [`derived-lsc/verify_related_work_citations.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/verify_related_work_citations.py)
+  (exits non-zero on any cited URL absent from the dump — the hallucinated-citation gate).
+  46/46 URLs resolve; 26 are in the LSC title-family against a required minimum of 8.
+
+### Changed
+- **A57's novelty claim narrowed from "first Sanskrit LSC work" to "first *lexical-semantic*
+  (sense-level) study" (H2400).** Re-measuring the Anthology LSC family against the 08-08-2026
+  dump returns 236 papers (160 since 2020) and **one** Sanskrit entry —
+  [Hariharan & Mortensen 2026](https://aclanthology.org/2026.lrec-1.81/) (LREC), on
+  morphological change via weak supervision + fine-tuned mBERT — where
+  [`derived-lsc/README.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/README.md)
+  and the Uprava mining sweep both recorded zero as of 11-07-2026. The stale claim is corrected
+  in place with the supersession noted; A57 remains first for sense-level change and first to
+  release a per-lemma graded ranking over a dated Sanskrit corpus.
+
 ## [2026-08-09] — v1 versioned learner contracts (H2481)
 
 ### Added
