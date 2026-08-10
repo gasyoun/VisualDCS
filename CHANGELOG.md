@@ -8,6 +8,8 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-10] — A57 LSC related-work draft, 46 verified Anthology citations (H2400)
+
 ### Added
 - **[`papers/A57_lsc_related_work.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md)
   — A57 related-work section draft, 46 verified ACL Anthology citations (H2400).** Six themed
