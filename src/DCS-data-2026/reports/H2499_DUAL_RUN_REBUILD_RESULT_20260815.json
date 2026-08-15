@@ -1,0 +1,112 @@
+{
+  "handoff": "H2499",
+  "lane": "Grok 4.6 (grok-4.6)",
+  "override_lane": "Claude Sonnet 5 (claude-sonnet-5) / VisualDCS #110",
+  "scratch": "C:\\Users\\user\\AppData\\Local\\Temp\\h2499-rebuild",
+  "published_dir": "C:\\Users\\user\\Documents\\GitHub\\VisualDCS-2499-30292\\visual\\contracts\\v1",
+  "published_releaseId": "vdcs-learner-v1-20260809",
+  "source_pins": {
+    "paradigm_attested": {
+      "path": "visual/paradigm_attested.json",
+      "sha256": "e69972e6784b99628cb386572e6d2306c034b050aae63d3980ed093d03e63424",
+      "bytes": 3710411,
+      "schemaVersion": "1.1.0",
+      "corpusRelease": "DCS-2026",
+      "generatedBy": "gen_paradigm_attested.py (H1299)",
+      "rootCount": 7689
+    },
+    "paradigm_nominal_lemmas": {
+      "path": "visual/paradigm_nominal_lemmas.json",
+      "sha256": "30027b5f90cf79310f6f0cad4717183226d9f23a5e6adb5764dcb6cadc9e6384",
+      "bytes": 8283012,
+      "corpusRelease": "DCS-2026",
+      "generatedBy": "src/DCS-data-2026/gen_paradigm_nominal_lemmas.py (H2321)",
+      "lemmaCount": 31753
+    },
+    "conc_data": {
+      "path": "visual/conc_data.js",
+      "sha256": "172a3c7355d9418caebfea4b4bffb1a46a815a3674bf22298bac34fbe08f1ad3",
+      "bytes": 5460864,
+      "generatedBy": "gen_concordance_data.py (H1505)",
+      "formCount": 6423
+    },
+    "passage_library": {
+      "path": "passage_library.json",
+      "sha256": "9389e6dd02e283046d6757423ef5c5c9975a04c77808a3f9a23b28287909b4d3",
+      "bytes": 29969,
+      "passageCount": 40
+    }
+  },
+  "hash_table": [
+    {
+      "file": "verb-trainer.json",
+      "run_a_sha256": "5276b7d04ee409c58c8fe7426b26efdabc2cbc1d3d4d05082f5ed1d593f2d4f6",
+      "run_b_sha256": "5276b7d04ee409c58c8fe7426b26efdabc2cbc1d3d4d05082f5ed1d593f2d4f6",
+      "run_a_bytes": 11219452,
+      "run_b_bytes": 11219452,
+      "two_runs_identical": true,
+      "published_sha256": "5276b7d04ee409c58c8fe7426b26efdabc2cbc1d3d4d05082f5ed1d593f2d4f6",
+      "published_bytes": 11219452,
+      "rebuild_vs_published_identical": true
+    },
+    {
+      "file": "nominal-trainer.json",
+      "run_a_sha256": "13b5a16f5b45e886744f56f3464e8122730d60e1a677323f5b67024684de6663",
+      "run_b_sha256": "13b5a16f5b45e886744f56f3464e8122730d60e1a677323f5b67024684de6663",
+      "run_a_bytes": 15591893,
+      "run_b_bytes": 15591893,
+      "two_runs_identical": true,
+      "published_sha256": "13b5a16f5b45e886744f56f3464e8122730d60e1a677323f5b67024684de6663",
+      "published_bytes": 15591893,
+      "rebuild_vs_published_identical": true
+    },
+    {
+      "file": "concordance-passage.json",
+      "run_a_sha256": "b1d676e358e20d12eee85817c9fc9c32e735dfb050019ecece88d08f1912a08d",
+      "run_b_sha256": "b1d676e358e20d12eee85817c9fc9c32e735dfb050019ecece88d08f1912a08d",
+      "run_a_bytes": 45833,
+      "run_b_bytes": 45833,
+      "two_runs_identical": true,
+      "published_sha256": "b1d676e358e20d12eee85817c9fc9c32e735dfb050019ecece88d08f1912a08d",
+      "published_bytes": 45833,
+      "rebuild_vs_published_identical": true
+    }
+  ],
+  "two_rebuilds_match": true,
+  "rebuild_vs_published": {
+    "verb-trainer.json": true,
+    "nominal-trainer.json": true,
+    "concordance-passage.json": true
+  },
+  "empty_delta_keep_110": true,
+  "parity_error_count": 0,
+  "parity_errors_head": [],
+  "packed_counts": {
+    "verb_roots": 7689,
+    "nominal_lemmas": 31753,
+    "passages": 40,
+    "links": 64,
+    "resolvedCitations": 60,
+    "unresolvedCitations": 26641,
+    "zeroLinkPassages": [
+      10,
+      11,
+      12,
+      15,
+      17,
+      18,
+      19,
+      20,
+      25,
+      26,
+      27,
+      28,
+      30,
+      31,
+      32,
+      33,
+      37,
+      38
+    ]
+  }
+}

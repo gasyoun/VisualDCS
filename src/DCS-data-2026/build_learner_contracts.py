@@ -6,6 +6,7 @@ release manifest with SHA-256 and byte-size checksums.
 Usage:
     python src/DCS-data-2026/build_learner_contracts.py          # full build
     python src/DCS-data-2026/build_learner_contracts.py --check  # validate existing files only
+    python src/DCS-data-2026/build_learner_contracts.py --out-dir DIR  # scratch rebuild; never touches v1/
     python src/DCS-data-2026/build_learner_contracts.py --verb-only | --nominal-only | --conc-only
 """
 import argparse
@@ -261,12 +262,22 @@ def build_manifest(source_pins, payloads, schemas):
 def main():
     ap = argparse.ArgumentParser(description="Build VisualDCS v1 learner contracts (H2481)")
     ap.add_argument("--check", action="store_true", help="Validate existing files only; do not write")
+    ap.add_argument(
+        "--out-dir",
+        type=Path,
+        default=None,
+        help="Write payloads here instead of visual/contracts/v1/ (never touches published v1)",
+    )
     ap.add_argument("--verb-only", action="store_true")
     ap.add_argument("--nominal-only", action="store_true")
     ap.add_argument("--conc-only", action="store_true")
     args = ap.parse_args()
 
     do_all = not (args.verb_only or args.nominal_only or args.conc_only)
+    scratch = args.out_dir is not None
+    out_dir = args.out_dir.resolve() if scratch else CONTRACTS_DIR
+    if scratch:
+        out_dir.mkdir(parents=True, exist_ok=True)
 
     print("Loading source assets...", flush=True)
     attested_data = json.loads(ATTESTED_JSON.read_text(encoding="utf-8"))
@@ -285,40 +296,45 @@ def main():
         "passage_library_count": str(len(passages)),
     }
 
-    verb_path = CONTRACTS_DIR / "verb-trainer.json"
-    nominal_path = CONTRACTS_DIR / "nominal-trainer.json"
-    conc_path = CONTRACTS_DIR / "concordance-passage.json"
-    manifest_path = CONTRACTS_DIR / "manifest.json"
+    verb_path = out_dir / "verb-trainer.json"
+    nominal_path = out_dir / "nominal-trainer.json"
+    conc_path = out_dir / "concordance-passage.json"
+    manifest_path = out_dir / "manifest.json"
 
     if not args.check:
         if do_all or args.verb_only:
             print("Packaging verb-trainer...", flush=True)
             vp = pack_verb(attested_data)
             write_json(verb_path, vp)
-            print(f"  wrote {verb_path.relative_to(REPO)}, rootCount={vp['rootCount']}")
+            shown = verb_path if scratch else verb_path.relative_to(REPO)
+            print(f"  wrote {shown}, rootCount={vp['rootCount']}")
 
         if do_all or args.nominal_only:
             print("Packaging nominal-trainer...", flush=True)
             np_ = pack_nominal(nominal_data)
             write_json(nominal_path, np_)
-            print(f"  wrote {nominal_path.relative_to(REPO)}, lemmaCount={np_['lemmaCount']}")
+            shown = nominal_path if scratch else nominal_path.relative_to(REPO)
+            print(f"  wrote {shown}, lemmaCount={np_['lemmaCount']}")
 
         if do_all or args.conc_only:
             print("Packaging concordance-passage...", flush=True)
             cp = pack_concordance(conc_raw, passages)
             write_json(conc_path, cp)
             u = cp["unresolved"]
-            print(f"  wrote {conc_path.relative_to(REPO)}, passages={cp['passageCount']}, "
+            shown = conc_path if scratch else conc_path.relative_to(REPO)
+            print(f"  wrote {shown}, passages={cp['passageCount']}, "
                   f"links={len(cp['links'])}, resolved={u['resolvedCitations']}, "
                   f"unresolved={u['unresolvedCitations']}, zeroLinkPassages={len(u['passagesWithZeroLinks'])}")
 
-        if do_all:
+        if do_all and not scratch:
             print("Building manifest...", flush=True)
             schemas = sorted(SCHEMA_DIR.glob("*.schema.json"))
             payloads = [verb_path, nominal_path, conc_path]
             mf = build_manifest(source_pins, payloads, schemas)
             write_json(manifest_path, mf)
             print(f"  wrote {manifest_path.relative_to(REPO)}, releaseId={mf['releaseId']}")
+        elif do_all and scratch:
+            print("Scratch --out-dir: skipping dated manifest (compare payloads only).", flush=True)
 
     # always validate when all payloads present
     if do_all:
@@ -327,8 +343,9 @@ def main():
             (verb_path, SCHEMA_DIR / "verb-trainer.schema.json"),
             (nominal_path, SCHEMA_DIR / "nominal-trainer.schema.json"),
             (conc_path, SCHEMA_DIR / "concordance-passage.schema.json"),
-            (manifest_path, SCHEMA_DIR / "manifest.schema.json"),
         ]
+        if not scratch:
+            pairs.append((manifest_path, SCHEMA_DIR / "manifest.schema.json"))
         all_ok = True
         for p, s in pairs:
             if not p.exists():
