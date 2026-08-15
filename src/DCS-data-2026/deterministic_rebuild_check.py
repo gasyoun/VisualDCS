@@ -1,8 +1,12 @@
-"""deterministic_rebuild_check.py — verify two sequential builds of the v1 contracts are byte-identical (manifest excluded)."""
+"""deterministic_rebuild_check.py — rebuild v1 payloads to scratch and compare to published.
+
+Never writes visual/contracts/v1/. H2499: the previous in-place rebuild could clobber
+the published release on a failed or interrupted run.
+"""
 import hashlib
-import json
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -17,18 +21,15 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def snapshot():
-    return {f: sha(CONTRACTS / f) for f in PAYLOADS}
-
-
-print("Pass 1: capturing hashes of existing build...")
-before = snapshot()
-for f, h in before.items():
+print("Pass 1: capturing hashes of published v1/...")
+published = {f: sha(CONTRACTS / f) for f in PAYLOADS}
+for f, h in published.items():
     print(f"  {f}: {h[:16]}...")
 
-print("Pass 2: rebuilding...")
+scratch = Path(tempfile.mkdtemp(prefix="vdcs-v1-rebuild-"))
+print(f"Pass 2: rebuilding to scratch {scratch} (published v1/ untouched)...")
 result = subprocess.run(
-    [sys.executable, "src/DCS-data-2026/build_learner_contracts.py"],
+    [sys.executable, "src/DCS-data-2026/build_learner_contracts.py", "--out-dir", str(scratch)],
     capture_output=True,
     text=True,
     encoding="utf-8",
@@ -40,20 +41,20 @@ if result.returncode != 0:
     print(result.stderr)
     sys.exit(1)
 
-after = snapshot()
 all_ok = True
 for f in PAYLOADS:
-    if before[f] == after[f]:
+    rebuilt = sha(scratch / f)
+    if published[f] == rebuilt:
         print(f"  ok  {f}")
     else:
         print(f"  MISMATCH {f}")
-        print(f"    before: {before[f]}")
-        print(f"    after:  {after[f]}")
+        print(f"    published: {published[f]}")
+        print(f"    rebuilt:   {rebuilt}")
         all_ok = False
 
 if all_ok:
-    print("PASS — two sequential builds are byte-identical.")
+    print("PASS — scratch rebuild is byte-identical to published v1/ (v1/ not written).")
     sys.exit(0)
 else:
-    print("FAIL — builds differ; check non-determinism in packager.")
+    print("FAIL — rebuild differs from published v1/; check packager or source-pin drift.")
     sys.exit(1)
