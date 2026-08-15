@@ -1,4 +1,4 @@
-_Created: 09-08-2026 · Last updated: 09-08-2026_
+_Created: 09-08-2026 · Last updated: 15-08-2026_
 
 # VisualDCS Learner Contracts — v1
 
@@ -7,7 +7,7 @@ consumers (Systema-Sanscriticum and future cabinet integrations).
 
 **Producer:** `VisualDCS` (this repo, `visual/contracts/v1/`)  
 **Consumer:** `Systema-Sanscriticum` (owns identity, entitlements, progress, UI, commerce)  
-**Handoff:** H2481 (Grok 4.5) — VisualDCS learner-contract release
+**Handoff:** [H2481 (Grok 4.5) — Publish versioned VisualDCS learner contracts](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H2481-Grok_VisualDCS_visualdcs-systema-learner-contract-release_08.08.26.md), shipped by Claude Sonnet 5 (`claude-sonnet-5`) as [VisualDCS #110](https://github.com/gasyoun/VisualDCS/pull/110). Independent Grok 4.6 (`grok-4.6`) dual-run ([H2499](https://github.com/gasyoun/Uprava/blob/main/handoffs/H2499-Grok_VisualDCS_h2481-grok-dual-run-compare_09.08.26.md)) confirmed the three payloads byte-identical to this tree — see [the compare memo](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/H2499_DUAL_RUN_LEARNER_CONTRACTS_20260815.md).
 
 ---
 
