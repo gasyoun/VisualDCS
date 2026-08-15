@@ -8,6 +8,8 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-15] — H2499 dual-run compare of v1 learner contracts (keep #110)
+
 ### Added
 - **H2499 dual-run compare of the v1 learner contracts** ([`src/DCS-data-2026/reports/H2499_DUAL_RUN_LEARNER_CONTRACTS_20260815.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/H2499_DUAL_RUN_LEARNER_CONTRACTS_20260815.md)). Independent Grok 4.6 (`grok-4.6`) rebuild of the three payloads against the four H2481 source pins; two serializations and the published [VisualDCS #110](https://github.com/gasyoun/VisualDCS/pull/110) tree are byte-identical. Salvage verdict: keep #110 payloads and manifest.
 
