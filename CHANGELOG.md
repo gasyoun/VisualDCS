@@ -8,6 +8,36 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-08-16] — H2822 slim VisualDCS CLAUDE.md (4,637→1,370 tok)
+
+### Changed
+- **[`CLAUDE.md`](https://github.com/gasyoun/VisualDCS/blob/main/CLAUDE.md)
+  slimmed 4,637 → 1,370 ~tok (H2822).** Always-on now holds the decoy vs real
+  `dcs_full.sqlite` path, IAST-lemma / SLP1-summary join trap, the H1407 Gītā
+  correction (`MBh, 6, BhaGī 1–18` is present), how to run the HTML app and
+  tests, and the do-not-rebuild / do-not-weaken sync rules. Long file/JSON
+  tables, Pareto essay, shipped-roadmap novel, and `.ai_state` procedure moved
+  to existing [README.md](https://github.com/gasyoun/VisualDCS/blob/main/README.md),
+  [pareto.md](https://github.com/gasyoun/VisualDCS/blob/main/pareto.md),
+  [roadmap.md](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md), and
+  [docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md).
+  Scheme table is a pointer to
+  [SANSKRIT_CONTEXT_PRIMER.md](https://github.com/gasyoun/github-spine/blob/main/SANSKRIT_CONTEXT_PRIMER.md),
+  not a restatement.
+
+  | Path | Before | After |
+  |---|---:|---:|
+  | `CLAUDE.md` | 18,866 B · 299 L · **4,637** ~tok | 5,533 B · 107 L · **1,370** ~tok |
+
+  Classification: Project Overview → kept (3 lines). Architecture / file / JSON
+  tables → README. Pareto / paradigm / flashcard essays → `pareto.md` + widget
+  docs. Session-state procedure → one `.ai_state.md` pointer (org-wide). New
+  dashboard + HTML conventions → 4 lines. Sync rules → kept, compressed.
+  Roadmap shipped list → `roadmap.md` / this changelog. Notes → folded into
+  Danger. **Added** (were missing from the 4,637-tok file): decoy vs
+  `src/DCS-data-2026/dcs_full.sqlite`, IAST-lemma fact, Gītā-is-present
+  correction. Tokens = `chars/4` (census contract).
+
 ## [2026-08-15] — H2499 dual-run compare of v1 learner contracts (keep #110)
 
 ### Added
