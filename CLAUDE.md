@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 15-05-2026 · Last updated: 16-08-2026_
+_Created: 15-05-2026 · Last updated: 02-09-2026_
 
 **VisualDCS** is standalone HTML frequency dashboards for the
 [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/).
@@ -65,6 +65,7 @@ hits Gītagovinda / Aṣṭāvakragīta. Match `chapter.ref`, never just `text.n
   `python src/DCS-data-2026/test_learner_contracts.py` ·
   `python src/DCS-data-2026/validate.py` ·
   `python src/DCS-data-2026/validate_past_tense_resplit.py` ·
+  `python src/DCS-data-2026/test_past_nonindicative_formation.py` ·
   `python validate_dcs_lemma_summary.py`
 - Session journal:
   [`.ai_state.md`](https://github.com/gasyoun/VisualDCS/blob/main/.ai_state.md).
@@ -83,6 +84,15 @@ hits Gītagovinda / Aṣṭāvakragīta. Match `chapter.ref`, never just `text.n
   `python src/DCS-data-2026/validate_past_tense_resplit.py`. Aorist is a
   **lower** bound, Perfect an **upper** bound — quoting either as exact is a
   defect (H1486).
+- Edit
+  [`audit_past_nonindicative_formation.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/audit_past_nonindicative_formation.py)
+  or its fixture →
+  `python src/DCS-data-2026/test_past_nonindicative_formation.py`. The fixture is
+  real corpus sentences, regenerable by
+  [`build_past_nonindicative_fixture.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/fixtures/build_past_nonindicative_fixture.py)
+  — never hand-edit it. `Formation` is absent **upstream** on all 8,726
+  non-indicative past tokens (H3878, G22); do not widen `is_past_indicative`
+  to "recover" tags that do not exist.
 - The Aorist/Perfect split in
   [`paradigm_attested.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_attested.json)
   is applied **per token** via `past_class()`, not via `ud_to_category`. Do not
@@ -98,7 +108,7 @@ hits Gītagovinda / Aṣṭāvakragīta. Match `chapter.ref`, never just `text.n
 | Dashboards, JSON inventory, 2021 vs 2026 sources | [README.md](https://github.com/gasyoun/VisualDCS/blob/main/README.md) |
 | Pareto methodology | [pareto.md](https://github.com/gasyoun/VisualDCS/blob/main/pareto.md) |
 | Shipped vs pending | [roadmap.md](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md) · [CHANGELOG.md](https://github.com/gasyoun/VisualDCS/blob/main/CHANGELOG.md) |
-| Schema, gotchas G1–G21, join recipes | [docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md) |
+| Schema, gotchas G1–G22, join recipes | [docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md) |
 
 New dashboard: write JSON under `visual/`, add a standalone `.html`, update
 README, commit both. JS is inline; Chart.js 4.4.1 from cdnjs; colors
