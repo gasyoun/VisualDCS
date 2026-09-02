@@ -1,6 +1,6 @@
 # VisualDCS
 
-_Created: 20-04-2026 · Last updated: 05-08-2026_
+_Created: 20-04-2026 · Last updated: 02-09-2026_
 
 Interactive frequency dashboards for the [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/), built from corpus frequency data and rendered as standalone HTML files — no build step, no server, open directly in a browser.
 
@@ -126,6 +126,23 @@ too sparse to re-split them". That divided 16,100 tags by *all* ~1.01M verb toke
 the finite past indicative — the only bucket the feature applies to — coverage is **17.25%**.
 The split is applied in `verb_forms_ud.json` / `verb_forms_38cat.json`; it is deliberately
 **not** propagated into `visual/paradigm_attested.json` (see the paradigm-trainer section).
+
+**The other past moods cannot be split at all (H3878).** The re-split stops at
+`Mood=Ind` because that is where the data stops: across the whole pinned distribution
+`Formation` occurs 17,440 times and **never once outside `Mood=Ind`** — 16,100 on
+`Tense=Past` and 1,340 on `Tense=Fut` (the periphrastic *future*, a different feature that
+must never be summed with the periphrastic perfect). The 8,726 non-indicative past tokens
+(Jus 4,067 · Imp 1,700 · Sub 1,317 · Opt 1,065 · Prec 577) and the 9,112 past participles
+are unformationed **upstream**, so no query change here can recover a tag. Propagating from
+identical surface forms attested elsewhere would reach 296 of them (3.39%), which is why
+that inference layer was measured and rejected rather than built. Quote these moods by mood
+only — `Mood=Jus` on `Tense=Past` is the augmentless injunctive, and whether it rests on an
+aorist or an imperfect stem is exactly what DCS declines to say. Evidence and method:
+[reports/past_nonindicative_formation_audit.md](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/past_nonindicative_formation_audit.md),
+regenerable by
+[`audit_past_nonindicative_formation.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/audit_past_nonindicative_formation.py)
+and guarded by
+[`test_past_nonindicative_formation.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/test_past_nonindicative_formation.py).
 
 ---
 
