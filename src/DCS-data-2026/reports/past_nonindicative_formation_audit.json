@@ -1,0 +1,410 @@
+{
+ "corpus": "dcs-conllu/files",
+ "source_commit": "04e0778d3dc971030229179e25eea043d06ff397",
+ "files_scanned": 15900,
+ "verdict": "UPSTREAM ANNOTATION LIMIT",
+ "census": {
+  "VERB|Past|Ind|None": 16100,
+  "VERB|Fut|Ind|None": 1340
+ },
+ "values": {
+  "peri|Past|Ind": 4046,
+  "is|Past|Ind": 1077,
+  "root|Past|Ind": 5690,
+  "peri|Fut|Ind": 1340,
+  "red|Past|Ind": 833,
+  "them|Past|Ind": 2781,
+  "sa|Past|Ind": 124,
+  "s|Past|Ind": 1508,
+  "sis|Past|Ind": 41
+ },
+ "census_offenders": {},
+ "formation_total": 17440,
+ "formation_total_past": 16100,
+ "past_universe": 111167,
+ "past_tagged": 16100,
+ "past_partition": {
+  "Ind (finite)": {
+   "tokens": 93329,
+   "tagged": 16100
+  },
+  "(no mood) VerbForm=Part": {
+   "tokens": 9112,
+   "tagged": 0
+  },
+  "Jus": {
+   "tokens": 4067,
+   "tagged": 0
+  },
+  "Imp": {
+   "tokens": 1700,
+   "tagged": 0
+  },
+  "Sub": {
+   "tokens": 1317,
+   "tagged": 0
+  },
+  "Opt": {
+   "tokens": 1065,
+   "tagged": 0
+  },
+  "Prec": {
+   "tokens": 577,
+   "tagged": 0
+  }
+ },
+ "by_mood": {
+  "Jus": 4067,
+  "Imp": 1700,
+  "Sub": 1317,
+  "Opt": 1065,
+  "Prec": 577
+ },
+ "nonindicative_total": 8726,
+ "nonindicative_tagged": 0,
+ "top_forms": {
+  "Jus": [
+   {
+    "form": "bhūt",
+    "count": 156
+   },
+   {
+    "form": "kṛthāḥ",
+    "count": 151
+   },
+   {
+    "form": "hiṃsīḥ",
+    "count": 121
+   },
+   {
+    "form": "hiṃsīr",
+    "count": 93
+   },
+   {
+    "form": "dhīmahi",
+    "count": 84
+   },
+   {
+    "form": "bhūd",
+    "count": 81
+   },
+   {
+    "form": "dhāḥ",
+    "count": 49
+   },
+   {
+    "form": "śucaḥ",
+    "count": 41
+   }
+  ],
+  "Imp": [
+   {
+    "form": "kṛdhi",
+    "count": 219
+   },
+   {
+    "form": "gahi",
+    "count": 88
+   },
+   {
+    "form": "gatam",
+    "count": 65
+   },
+   {
+    "form": "bodhi",
+    "count": 47
+   },
+   {
+    "form": "pāhi",
+    "count": 42
+   },
+   {
+    "form": "kṛdhī",
+    "count": 42
+   },
+   {
+    "form": "rāsva",
+    "count": 34
+   },
+   {
+    "form": "bhūtu",
+    "count": 34
+   }
+  ],
+  "Sub": [
+   {
+    "form": "yakṣad",
+    "count": 51
+   },
+   {
+    "form": "karat",
+    "count": 46
+   },
+   {
+    "form": "dāḥ",
+    "count": 36
+   },
+   {
+    "form": "manāmahe",
+    "count": 27
+   },
+   {
+    "form": "parṣad",
+    "count": 22
+   },
+   {
+    "form": "bhuvat",
+    "count": 22
+   },
+   {
+    "form": "karad",
+    "count": 21
+   },
+   {
+    "form": "yakṣat",
+    "count": 18
+   }
+  ],
+  "Opt": [
+   {
+    "form": "aśīya",
+    "count": 105
+   },
+   {
+    "form": "śakeyam",
+    "count": 51
+   },
+   {
+    "form": "bhūyāsam",
+    "count": 47
+   },
+   {
+    "form": "bhakṣīya",
+    "count": 32
+   },
+   {
+    "form": "aśyāma",
+    "count": 30
+   },
+   {
+    "form": "bhūyāt",
+    "count": 30
+   },
+   {
+    "form": "huvema",
+    "count": 25
+   },
+   {
+    "form": "aśīmahi",
+    "count": 24
+   }
+  ],
+  "Prec": [
+   {
+    "form": "bhūyāsam",
+    "count": 172
+   },
+   {
+    "form": "bhūyāsaṃ",
+    "count": 74
+   },
+   {
+    "form": "bhūyāt",
+    "count": 46
+   },
+   {
+    "form": "bhūyā",
+    "count": 28
+   },
+   {
+    "form": "bhūyāsma",
+    "count": 27
+   },
+   {
+    "form": "bhūyāḥ",
+    "count": 20
+   },
+   {
+    "form": "bhūyān",
+    "count": 18
+   },
+   {
+    "form": "bhūyād",
+    "count": 16
+   }
+  ]
+ },
+ "a3": {
+  "total": 8726,
+  "recoverable": 301,
+  "strict": 296,
+  "ambiguous": 4,
+  "pct": 3.45,
+  "pct_strict": 3.39,
+  "by_mood": {
+   "Jus": {
+    "tokens": 4067,
+    "recoverable": 242,
+    "strict": 238,
+    "ambiguous": 0,
+    "pct": 5.95,
+    "pct_strict": 5.85
+   },
+   "Imp": {
+    "tokens": 1700,
+    "recoverable": 4,
+    "strict": 3,
+    "ambiguous": 0,
+    "pct": 0.24,
+    "pct_strict": 0.18
+   },
+   "Sub": {
+    "tokens": 1317,
+    "recoverable": 51,
+    "strict": 51,
+    "ambiguous": 4,
+    "pct": 3.87,
+    "pct_strict": 3.87
+   },
+   "Opt": {
+    "tokens": 1065,
+    "recoverable": 4,
+    "strict": 4,
+    "ambiguous": 0,
+    "pct": 0.38,
+    "pct_strict": 0.38
+   },
+   "Prec": {
+    "tokens": 577,
+    "recoverable": 0,
+    "strict": 0,
+    "ambiguous": 0,
+    "pct": 0.0,
+    "pct_strict": 0.0
+   }
+  },
+  "examples": [
+   {
+    "mood": "Jus",
+    "form": "dhīmahi",
+    "lemma": "dhā",
+    "tokens": 84,
+    "lemma_agrees": true,
+    "evidence": {
+     "root": 32
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "vadhīḥ",
+    "lemma": "vadh",
+    "tokens": 24,
+    "lemma_agrees": true,
+    "evidence": {
+     "is": 1
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "bhuvat",
+    "lemma": "bhū",
+    "tokens": 21,
+    "lemma_agrees": true,
+    "evidence": {
+     "them": 3
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "vadhīr",
+    "lemma": "vadh",
+    "tokens": 13,
+    "lemma_agrees": true,
+    "evidence": {
+     "is": 1
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "riṣam",
+    "lemma": "riṣ",
+    "tokens": 10,
+    "lemma_agrees": true,
+    "evidence": {
+     "them": 1
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "dīdharat",
+    "lemma": "dhṛ",
+    "tokens": 9,
+    "lemma_agrees": true,
+    "evidence": {
+     "red": 1
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "prāpad",
+    "lemma": "prāp",
+    "tokens": 7,
+    "lemma_agrees": true,
+    "evidence": {
+     "them": 8
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "prāpat",
+    "lemma": "prāp",
+    "tokens": 6,
+    "lemma_agrees": true,
+    "evidence": {
+     "them": 14
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "ādita",
+    "lemma": "ādā",
+    "tokens": 2,
+    "lemma_agrees": true,
+    "evidence": {
+     "root": 1
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "āsiṣata",
+    "lemma": "ās",
+    "tokens": 1,
+    "lemma_agrees": true,
+    "evidence": {
+     "is": 2
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "ārad",
+    "lemma": "ārch",
+    "tokens": 1,
+    "lemma_agrees": false,
+    "evidence": {
+     "them": 5
+    }
+   },
+   {
+    "mood": "Jus",
+    "form": "āpat",
+    "lemma": "āp",
+    "tokens": 1,
+    "lemma_agrees": true,
+    "evidence": {
+     "them": 5
+    }
+   }
+  ]
+ },
+ "a4": null
+}

@@ -8,6 +8,50 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-09-02] — H3878 non-indicative past moods: formation is absent upstream (NO-GO)
+
+### Added
+- **Formation audit for the non-indicative past moods
+  ([`src/DCS-data-2026/audit_past_nonindicative_formation.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/audit_past_nonindicative_formation.py),
+  H3878).** Answers whether the 8,726 `Tense=Past` Jus/Imp/Sub/Opt/Prec tokens
+  lack a `Formation` tag because DCS never assigns one or because our predicate
+  hides it. **Verdict: upstream annotation limit.** Across all 15,900 files of
+  the pinned corpus the feature occurs **17,440 times and never once outside
+  `Mood=Ind`** — 16,100 on `Tense=Past`, 1,340 on `Tense=Fut`, zero on
+  participles, zero on all five non-indicative moods. The baseline is
+  reproduced, not quoted: Jus 4,067 + Imp 1,700 + Sub 1,317 + Opt 1,065 +
+  Prec 577 = 8,726, and H1486's 93,329 / 16,100 indicative bucket comes back
+  identical. Twin reports at
+  [`reports/past_nonindicative_formation_audit.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/past_nonindicative_formation_audit.md)
+  + `.json`.
+- **Recoverability measured before the NO-GO was recorded.** H1486's same-form
+  instrument pointed the other way, plus a lemma dimension: **296 of 8,726
+  tokens (3.39%)** could inherit a formation from an attestation with the same
+  form *and* lemma, 301 (3.45%) on the homograph-tolerant form-only test. An
+  inference layer would therefore leave 96.61% exactly as unresolved as now, so
+  none was built.
+- **[`test_past_nonindicative_formation.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/test_past_nonindicative_formation.py)
+  + a real-sentence fixture.** 37 checks: the scanner is re-run against 14
+  branches of unmodified corpus sentences (every guarded formation, both senses
+  of `peri`, multiword range lines), and the committed report is checked for
+  denominator closure. The fixture is regenerable by
+  [`fixtures/build_past_nonindicative_fixture.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/fixtures/build_past_nonindicative_fixture.py)
+  — nothing in it is synthesised.
+
+### Changed
+- **Gotcha G22** in
+  [docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md):
+  `feat_formation` exists only on finite `Mood=Ind` verbs and its meaning is
+  tense-dependent (`peri` = periphrastic perfect under `Past`, periphrastic
+  future under `Fut`), so any `feat_formation` predicate must guard on tense —
+  and the non-indicative past moods cannot be split by formation at all.
+  Quoting them as aorist/perfect-resolved is a defect.
+- `.ai_state.md` queue item *"Audit the other `Tense=Past` moods for formation
+  data"* **resolved and retired**; `CLAUDE.md` gains the new test and a sync
+  rule. No change was made to `past_class()`, `AORIST_FORMATIONS` or
+  `is_past_indicative` — H1486's scope was already correct.
+
+
 ## [2026-08-16] — H2822 slim VisualDCS CLAUDE.md (4,637→1,370 tok)
 
 ### Changed
