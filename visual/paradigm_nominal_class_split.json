@@ -1,0 +1,5105 @@
+{
+ "after": {
+  "ant_by_dictionary_verdict": {
+   "ant_only": {
+    "exemplars": [
+     "āmayant"
+    ],
+    "lemmas": 1,
+    "tokens": 1
+   },
+   "at_only": {
+    "exemplars": [
+     "jagant",
+     "parāvat",
+     "arvant",
+     "vāghant",
+     "saṃyat",
+     "vehat",
+     "nivat",
+     "trijagant",
+     "jāgrant",
+     "udvat",
+     "sthavimant",
+     "purītat"
+    ],
+    "lemmas": 51,
+    "tokens": 2384
+   },
+   "one_lexeme_two_spellings": {
+    "exemplars": [
+     "bhagavant",
+     "hanumant",
+     "arhant",
+     "bṛhant",
+     "himavant",
+     "vivasvant",
+     "mahant",
+     "aṃśumant",
+     "viṣuvant",
+     "garutmant",
+     "jāmbavant",
+     "satyavant"
+    ],
+    "lemmas": 191,
+    "tokens": 8851
+   },
+   "two_headwords": {
+    "exemplars": [],
+    "lemmas": 0,
+    "tokens": 0
+   },
+   "unresolved": {
+    "exemplars": [
+     "ekonapañcāśat",
+     "aṇimant",
+     "ṇyat",
+     "rākṣasavaktravant",
+     "purutvant",
+     "cārvarīvant",
+     "yonorvant",
+     "abhiṣvant",
+     "vilikhant",
+     "hiraṇmant",
+     "jīhvāvant",
+     "satvavant"
+    ],
+    "lemmas": 36,
+    "tokens": 70
+   }
+  },
+  "ii_monosyllabic": {
+   "exemplars": [
+    "strī",
+    "śrī",
+    "dhī",
+    "bhī",
+    "hrī",
+    "ī",
+    "nī",
+    "gī",
+    "kī",
+    "ṅī",
+    "prī",
+    "krī"
+   ],
+   "lemmas": 17,
+   "tokens": 6373
+  },
+  "ii_polysyllabic": {
+   "exemplars": [
+    "devī",
+    "pṛthivī",
+    "patnī",
+    "nadī",
+    "gāyatrī",
+    "sarasvatī",
+    "nārī",
+    "mahī",
+    "purī",
+    "lakṣmī",
+    "dyāvāpṛthivī",
+    "sakhī"
+   ],
+   "lemmas": 4477,
+   "tokens": 58295
+  }
+ },
+ "before": {
+  "ant": {
+   "lemmas": 2159,
+   "n": 48074,
+   "upos": {
+    "ADJ": 36768,
+    "NOUN": 11306
+   }
+  },
+  "ii": {
+   "lemmas": 4548,
+   "n": 65332,
+   "upos": {
+    "ADJ": 664,
+    "NOUN": 64668
+   }
+  }
+ },
+ "generatedBy": "src/DCS-data-2026/split_pooled_nominal_classes.py (H3984, GAPS 14)",
+ "mergedPairs": [
+  {
+   "kind": "duplicate_lemma_id",
+   "lemma_ids": [
+    {
+     "lemma": "bṛhant",
+     "lemma_id": 149087,
+     "tokens": 352
+    },
+    {
+     "lemma": "bṛhant",
+     "lemma_id": 149086,
+     "tokens": 4
+    }
+   ],
+   "stem": "bṛhat",
+   "tokens": 356,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "kind": "spelling_pair",
+   "lemma_ids": [
+    {
+     "lemma": "saṃvat",
+     "lemma_id": 42263,
+     "tokens": 18
+    },
+    {
+     "lemma": "saṃvant",
+     "lemma_id": 42311,
+     "tokens": 2
+    }
+   ],
+   "stem": "saṃvat",
+   "tokens": 20,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "kind": "duplicate_lemma_id",
+   "lemma_ids": [
+    {
+     "lemma": "dhṛtimant",
+     "lemma_id": 43025,
+     "tokens": 14
+    },
+    {
+     "lemma": "dhṛtimant",
+     "lemma_id": 208551,
+     "tokens": 2
+    }
+   ],
+   "stem": "dhṛtimat",
+   "tokens": 16,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "kind": "duplicate_lemma_id",
+   "lemma_ids": [
+    {
+     "lemma": "gabhastimant",
+     "lemma_id": 130079,
+     "tokens": 6
+    },
+    {
+     "lemma": "gabhastimant",
+     "lemma_id": 130080,
+     "tokens": 5
+    }
+   ],
+   "stem": "gabhastimat",
+   "tokens": 11,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "kind": "duplicate_lemma_id",
+   "lemma_ids": [
+    {
+     "lemma": "rājīmant",
+     "lemma_id": 206679,
+     "tokens": 4
+    },
+    {
+     "lemma": "rājīmant",
+     "lemma_id": 168874,
+     "tokens": 1
+    }
+   ],
+   "stem": "rājīmat",
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "kind": "duplicate_lemma_id",
+   "lemma_ids": [
+    {
+     "lemma": "dyumant",
+     "lemma_id": 90278,
+     "tokens": 1
+    },
+    {
+     "lemma": "dyumant",
+     "lemma_id": 90279,
+     "tokens": 1
+    }
+   ],
+   "stem": "dyumat",
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  }
+ ],
+ "perLemmaAnt": [
+  {
+   "ant_devanagari": "अंशवन्त्",
+   "ant_form": "aṃśavant",
+   "at_devanagari": "अंशवत्",
+   "at_form": "aṃśavat",
+   "dcsSpelling": "ant",
+   "lemma": "aṃśavant",
+   "lemma_id": 21,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ककुद्मन्त्",
+   "ant_form": "kakudmant",
+   "at_devanagari": "ककुद्मत्",
+   "at_form": "kakudmat",
+   "dcsSpelling": "ant",
+   "lemma": "kakudmant",
+   "lemma_id": 447,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 15,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ककुद्वन्त्",
+   "ant_form": "kakudvant",
+   "at_devanagari": "ककुद्वत्",
+   "at_form": "kakudvat",
+   "dcsSpelling": "ant",
+   "lemma": "kakudvant",
+   "lemma_id": 453,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "कक्षीवन्त्",
+   "ant_form": "kakṣīvant",
+   "at_devanagari": "कक्षीवत्",
+   "at_form": "kakṣīvat",
+   "dcsSpelling": "ant",
+   "lemma": "kakṣīvant",
+   "lemma_id": 522,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 36,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अंशुमन्त्",
+   "ant_form": "aṃśumant",
+   "at_devanagari": "अंशुमत्",
+   "at_form": "aṃśumat",
+   "dcsSpelling": "ant",
+   "lemma": "aṃśumant",
+   "lemma_id": 1165,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 130,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अकपीवन्त्",
+   "ant_form": "akapīvant",
+   "at_devanagari": "अकपीवत्",
+   "at_form": "akapīvat",
+   "dcsSpelling": "ant",
+   "lemma": "akapīvant",
+   "lemma_id": 1218,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "कतरन्त्",
+   "ant_form": "katarant",
+   "at_devanagari": "कतरत्",
+   "at_form": "katarat",
+   "dcsSpelling": "at",
+   "lemma": "katarat",
+   "lemma_id": 1262,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "कन्यावन्त्",
+   "ant_form": "kanyāvant",
+   "at_devanagari": "कन्यावत्",
+   "at_form": "kanyāvat",
+   "dcsSpelling": "ant",
+   "lemma": "kanyāvant",
+   "lemma_id": 1592,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "कन्दवन्त्",
+   "ant_form": "kandavant",
+   "at_devanagari": "कन्दवत्",
+   "at_form": "kandavat",
+   "dcsSpelling": "ant",
+   "lemma": "kandavant",
+   "lemma_id": 1634,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "कपीवन्त्",
+   "ant_form": "kapīvant",
+   "at_devanagari": "कपीवत्",
+   "at_form": "kapīvat",
+   "dcsSpelling": "ant",
+   "lemma": "kapīvant",
+   "lemma_id": 1870,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "कृतिमन्त्",
+   "ant_form": "kṛtimant",
+   "at_devanagari": "कृतिमत्",
+   "at_form": "kṛtimat",
+   "dcsSpelling": "ant",
+   "lemma": "kṛtimant",
+   "lemma_id": 3723,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "केतुमन्त्",
+   "ant_form": "ketumant",
+   "at_devanagari": "केतुमत्",
+   "at_form": "ketumat",
+   "dcsSpelling": "ant",
+   "lemma": "ketumant",
+   "lemma_id": 4416,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 42,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सश्चन्त्",
+   "ant_form": "saścant",
+   "at_devanagari": "सश्चत्",
+   "at_form": "saścat",
+   "dcsSpelling": "ant",
+   "lemma": "saścant",
+   "lemma_id": 9162,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 4,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अनन्तवन्त्",
+   "ant_form": "anantavant",
+   "at_devanagari": "अनन्तवत्",
+   "at_form": "anantavat",
+   "dcsSpelling": "ant",
+   "lemma": "anantavant",
+   "lemma_id": 9878,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "कलावन्त्",
+   "ant_form": "kalāvant",
+   "at_devanagari": "कलावत्",
+   "at_form": "kalāvat",
+   "dcsSpelling": "ant",
+   "lemma": "kalāvant",
+   "lemma_id": 12594,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "कशेरुमन्त्",
+   "ant_form": "kaśerumant",
+   "at_devanagari": "कशेरुमत्",
+   "at_form": "kaśerumat",
+   "dcsSpelling": "ant",
+   "lemma": "kaśerumant",
+   "lemma_id": 12959,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "नौचक्रीवन्त्",
+   "ant_form": "naucakrīvant",
+   "at_devanagari": "नौचक्रीवत्",
+   "at_form": "naucakrīvat",
+   "dcsSpelling": "ant",
+   "lemma": "naucakrīvant",
+   "lemma_id": 14384,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पटुमन्त्",
+   "ant_form": "paṭumant",
+   "at_devanagari": "पटुमत्",
+   "at_form": "paṭumat",
+   "dcsSpelling": "ant",
+   "lemma": "paṭumant",
+   "lemma_id": 15297,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सत्यवन्त्",
+   "ant_form": "satyavant",
+   "at_devanagari": "सत्यवत्",
+   "at_form": "satyavat",
+   "dcsSpelling": "ant",
+   "lemma": "satyavant",
+   "lemma_id": 16749,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 69,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सदसन्त्",
+   "ant_form": "sadasant",
+   "at_devanagari": "सदसत्",
+   "at_form": "sadasat",
+   "dcsSpelling": "ant",
+   "lemma": "sadasant",
+   "lemma_id": 16875,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सत्वन्त्",
+   "ant_form": "satvant",
+   "at_devanagari": "सत्वत्",
+   "at_form": "satvat",
+   "dcsSpelling": "ant",
+   "lemma": "satvant",
+   "lemma_id": 17051,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "संधिमन्त्",
+   "ant_form": "saṃdhimant",
+   "at_devanagari": "संधिमत्",
+   "at_form": "saṃdhimat",
+   "dcsSpelling": "ant",
+   "lemma": "saṃdhimant",
+   "lemma_id": 17690,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "ant_only"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सप्तपञ्चाशन्त्",
+   "ant_form": "saptapañcāśant",
+   "at_devanagari": "सप्तपञ्चाशत्",
+   "at_form": "saptapañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "saptapañcāśat",
+   "lemma_id": 18124,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "परश्वन्त्",
+   "ant_form": "paraśvant",
+   "at_devanagari": "परश्वत्",
+   "at_form": "paraśvat",
+   "dcsSpelling": "ant",
+   "lemma": "paraśvant",
+   "lemma_id": 18682,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "परस्वन्त्",
+   "ant_form": "parasvant",
+   "at_devanagari": "परस्वत्",
+   "at_form": "parasvat",
+   "dcsSpelling": "ant",
+   "lemma": "parasvant",
+   "lemma_id": 18683,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "कीर्तिमन्त्",
+   "ant_form": "kīrtimant",
+   "at_devanagari": "कीर्तिमत्",
+   "at_form": "kīrtimat",
+   "dcsSpelling": "ant",
+   "lemma": "kīrtimant",
+   "lemma_id": 23623,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 16,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "कुमुद्वन्त्",
+   "ant_form": "kumudvant",
+   "at_devanagari": "कुमुद्वत्",
+   "at_form": "kumudvat",
+   "dcsSpelling": "ant",
+   "lemma": "kumudvant",
+   "lemma_id": 24572,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "भूमन्त्",
+   "ant_form": "bhūmant",
+   "at_devanagari": "भूमत्",
+   "at_form": "bhūmat",
+   "dcsSpelling": "ant",
+   "lemma": "bhūmant",
+   "lemma_id": 25156,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "भोगवन्त्",
+   "ant_form": "bhogavant",
+   "at_devanagari": "भोगवत्",
+   "at_form": "bhogavat",
+   "dcsSpelling": "ant",
+   "lemma": "bhogavant",
+   "lemma_id": 26069,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मकरकेतुमन्त्",
+   "ant_form": "makaraketumant",
+   "at_devanagari": "मकरकेतुमत्",
+   "at_form": "makaraketumat",
+   "dcsSpelling": "ant",
+   "lemma": "makaraketumant",
+   "lemma_id": 26482,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मणिमन्त्",
+   "ant_form": "maṇimant",
+   "at_devanagari": "मणिमत्",
+   "at_form": "maṇimat",
+   "dcsSpelling": "ant",
+   "lemma": "maṇimant",
+   "lemma_id": 26981,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 17,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "निवन्त्",
+   "ant_form": "nivant",
+   "at_devanagari": "निवत्",
+   "at_form": "nivat",
+   "dcsSpelling": "at",
+   "lemma": "nivat",
+   "lemma_id": 27998,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 16,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अभ्यासवन्त्",
+   "ant_form": "abhyāsavant",
+   "at_devanagari": "अभ्यासवत्",
+   "at_form": "abhyāsavat",
+   "dcsSpelling": "ant",
+   "lemma": "abhyāsavant",
+   "lemma_id": 31390,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मधुमन्त्",
+   "ant_form": "madhumant",
+   "at_devanagari": "मधुमत्",
+   "at_form": "madhumat",
+   "dcsSpelling": "ant",
+   "lemma": "madhumant",
+   "lemma_id": 35579,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मतिमन्त्",
+   "ant_form": "matimant",
+   "at_devanagari": "मतिमत्",
+   "at_form": "matimat",
+   "dcsSpelling": "ant",
+   "lemma": "matimant",
+   "lemma_id": 36034,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मन्युमन्त्",
+   "ant_form": "manyumant",
+   "at_devanagari": "मन्युमत्",
+   "at_form": "manyumat",
+   "dcsSpelling": "ant",
+   "lemma": "manyumant",
+   "lemma_id": 36536,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मरीचिमन्त्",
+   "ant_form": "marīcimant",
+   "at_devanagari": "मरीचिमत्",
+   "at_form": "marīcimat",
+   "dcsSpelling": "ant",
+   "lemma": "marīcimant",
+   "lemma_id": 36956,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मरुत्वन्त्",
+   "ant_form": "marutvant",
+   "at_devanagari": "मरुत्वत्",
+   "at_form": "marutvat",
+   "dcsSpelling": "ant",
+   "lemma": "marutvant",
+   "lemma_id": 37032,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 36,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "महन्त्",
+   "ant_form": "mahant",
+   "at_devanagari": "महत्",
+   "at_form": "mahat",
+   "dcsSpelling": "ant",
+   "lemma": "mahant",
+   "lemma_id": 37545,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 179,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "उशन्त्",
+   "ant_form": "uśant",
+   "at_devanagari": "उशत्",
+   "at_form": "uśat",
+   "dcsSpelling": "ant",
+   "lemma": "uśant",
+   "lemma_id": 38170,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "उषन्त्",
+   "ant_form": "uṣant",
+   "at_devanagari": "उषत्",
+   "at_form": "uṣat",
+   "dcsSpelling": "ant",
+   "lemma": "uṣant",
+   "lemma_id": 38197,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ऊर्मिमन्त्",
+   "ant_form": "ūrmimant",
+   "at_devanagari": "ऊर्मिमत्",
+   "at_form": "ūrmimat",
+   "dcsSpelling": "ant",
+   "lemma": "ūrmimant",
+   "lemma_id": 38597,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ऋक्षवन्त्",
+   "ant_form": "ṛkṣavant",
+   "at_devanagari": "ऋक्षवत्",
+   "at_form": "ṛkṣavat",
+   "dcsSpelling": "ant",
+   "lemma": "ṛkṣavant",
+   "lemma_id": 38811,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 13,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "एकपञ्चाशन्त्",
+   "ant_form": "ekapañcāśant",
+   "at_devanagari": "एकपञ्चाशत्",
+   "at_form": "ekapañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "ekapañcāśat",
+   "lemma_id": 39243,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 5,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "ओघवन्त्",
+   "ant_form": "oghavant",
+   "at_devanagari": "ओघवत्",
+   "at_form": "oghavat",
+   "dcsSpelling": "ant",
+   "lemma": "oghavant",
+   "lemma_id": 40056,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "श्रीमन्त्",
+   "ant_form": "śrīmant",
+   "at_devanagari": "श्रीमत्",
+   "at_form": "śrīmat",
+   "dcsSpelling": "ant",
+   "lemma": "śrīmant",
+   "lemma_id": 40730,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 8,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "श्रुतवन्त्",
+   "ant_form": "śrutavant",
+   "at_devanagari": "श्रुतवत्",
+   "at_form": "śrutavat",
+   "dcsSpelling": "ant",
+   "lemma": "śrutavant",
+   "lemma_id": 40800,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "श्ववन्त्",
+   "ant_form": "śvavant",
+   "at_devanagari": "श्ववत्",
+   "at_form": "śvavat",
+   "dcsSpelling": "ant",
+   "lemma": "śvavant",
+   "lemma_id": 41284,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "षट्पञ्चाशन्त्",
+   "ant_form": "ṣaṭpañcāśant",
+   "at_devanagari": "षट्पञ्चाशत्",
+   "at_form": "ṣaṭpañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "ṣaṭpañcāśat",
+   "lemma_id": 41741,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 7,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "संयन्त्",
+   "ant_form": "saṃyant",
+   "at_devanagari": "संयत्",
+   "at_form": "saṃyat",
+   "dcsSpelling": "at",
+   "lemma": "saṃyat",
+   "lemma_id": 42131,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 25,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "संवन्त्",
+   "ant_form": "saṃvant",
+   "at_devanagari": "संवत्",
+   "at_form": "saṃvat",
+   "dcsSpelling": "at",
+   "lemma": "saṃvat",
+   "lemma_id": 42263,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 18,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "संवन्त्",
+   "ant_form": "saṃvant",
+   "at_devanagari": "संवत्",
+   "at_form": "saṃvat",
+   "dcsSpelling": "ant",
+   "lemma": "saṃvant",
+   "lemma_id": 42311,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "धीमन्त्",
+   "ant_form": "dhīmant",
+   "at_devanagari": "धीमत्",
+   "at_form": "dhīmat",
+   "dcsSpelling": "ant",
+   "lemma": "dhīmant",
+   "lemma_id": 42668,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 6,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "धुन्धुमन्त्",
+   "ant_form": "dhundhumant",
+   "at_devanagari": "धुन्धुमत्",
+   "at_form": "dhundhumat",
+   "dcsSpelling": "ant",
+   "lemma": "dhundhumant",
+   "lemma_id": 42752,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "धृतिमन्त्",
+   "ant_form": "dhṛtimant",
+   "at_devanagari": "धृतिमत्",
+   "at_form": "dhṛtimat",
+   "dcsSpelling": "ant",
+   "lemma": "dhṛtimant",
+   "lemma_id": 43025,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 14,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "नरिष्यन्त्",
+   "ant_form": "nariṣyant",
+   "at_devanagari": "नरिष्यत्",
+   "at_form": "nariṣyat",
+   "dcsSpelling": "ant",
+   "lemma": "nariṣyant",
+   "lemma_id": 43457,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "नभस्वन्त्",
+   "ant_form": "nabhasvant",
+   "at_devanagari": "नभस्वत्",
+   "at_form": "nabhasvat",
+   "dcsSpelling": "ant",
+   "lemma": "nabhasvant",
+   "lemma_id": 44083,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 22,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "उपचारुमन्त्",
+   "ant_form": "upacārumant",
+   "at_devanagari": "उपचारुमत्",
+   "at_form": "upacārumat",
+   "dcsSpelling": "ant",
+   "lemma": "upacārumant",
+   "lemma_id": 44934,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "उपतपन्त्",
+   "ant_form": "upatapant",
+   "at_devanagari": "उपतपत्",
+   "at_form": "upatapat",
+   "dcsSpelling": "ant",
+   "lemma": "upatapant",
+   "lemma_id": 45005,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 6,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "उपस्वावन्त्",
+   "ant_form": "upasvāvant",
+   "at_devanagari": "उपस्वावत्",
+   "at_form": "upasvāvat",
+   "dcsSpelling": "ant",
+   "lemma": "upasvāvant",
+   "lemma_id": 45880,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "उपेषन्त्",
+   "ant_form": "upeṣant",
+   "at_devanagari": "उपेषत्",
+   "at_form": "upeṣat",
+   "dcsSpelling": "ant",
+   "lemma": "upeṣant",
+   "lemma_id": 46157,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "विरुक्मन्त्",
+   "ant_form": "virukmant",
+   "at_devanagari": "विरुक्मत्",
+   "at_form": "virukmat",
+   "dcsSpelling": "ant",
+   "lemma": "virukmant",
+   "lemma_id": 47554,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "भगवन्त्",
+   "ant_form": "bhagavant",
+   "at_devanagari": "भगवत्",
+   "at_form": "bhagavat",
+   "dcsSpelling": "ant",
+   "lemma": "bhagavant",
+   "lemma_id": 48483,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4941,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "भानुमन्त्",
+   "ant_form": "bhānumant",
+   "at_devanagari": "भानुमत्",
+   "at_form": "bhānumat",
+   "dcsSpelling": "ant",
+   "lemma": "bhānumant",
+   "lemma_id": 49456,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 42,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "भास्वन्त्",
+   "ant_form": "bhāsvant",
+   "at_devanagari": "भास्वत्",
+   "at_form": "bhāsvat",
+   "dcsSpelling": "ant",
+   "lemma": "bhāsvant",
+   "lemma_id": 50045,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 35,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "चर्मवन्त्",
+   "ant_form": "carmavant",
+   "at_devanagari": "चर्मवत्",
+   "at_form": "carmavat",
+   "dcsSpelling": "ant",
+   "lemma": "carmavant",
+   "lemma_id": 50687,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "चारुमन्त्",
+   "ant_form": "cārumant",
+   "at_devanagari": "चारुमत्",
+   "at_form": "cārumat",
+   "dcsSpelling": "ant",
+   "lemma": "cārumant",
+   "lemma_id": 51151,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 6,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अर्चिष्मन्त्",
+   "ant_form": "arciṣmant",
+   "at_devanagari": "अर्चिष्मत्",
+   "at_form": "arciṣmat",
+   "dcsSpelling": "ant",
+   "lemma": "arciṣmant",
+   "lemma_id": 53068,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अर्थवन्त्",
+   "ant_form": "arthavant",
+   "at_devanagari": "अर्थवत्",
+   "at_form": "arthavat",
+   "dcsSpelling": "ant",
+   "lemma": "arthavant",
+   "lemma_id": 53219,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अर्धपञ्चाशन्त्",
+   "ant_form": "ardhapañcāśant",
+   "at_devanagari": "अर्धपञ्चाशत्",
+   "at_form": "ardhapañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "ardhapañcāśat",
+   "lemma_id": 53383,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अर्वन्त्",
+   "ant_form": "arvant",
+   "at_devanagari": "अर्वत्",
+   "at_form": "arvat",
+   "dcsSpelling": "ant",
+   "lemma": "arvant",
+   "lemma_id": 53553,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 124,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अर्हन्त्",
+   "ant_form": "arhant",
+   "at_devanagari": "अर्हत्",
+   "at_form": "arhat",
+   "dcsSpelling": "ant",
+   "lemma": "arhant",
+   "lemma_id": 53600,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 378,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अवीचिमन्त्",
+   "ant_form": "avīcimant",
+   "at_devanagari": "अवीचिमत्",
+   "at_form": "avīcimat",
+   "dcsSpelling": "ant",
+   "lemma": "avīcimant",
+   "lemma_id": 55231,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "उदन्वन्त्",
+   "ant_form": "udanvant",
+   "at_devanagari": "उदन्वत्",
+   "at_form": "udanvat",
+   "dcsSpelling": "ant",
+   "lemma": "udanvant",
+   "lemma_id": 56301,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 13,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "उद्यन्त्",
+   "ant_form": "udyant",
+   "at_devanagari": "उद्यत्",
+   "at_form": "udyat",
+   "dcsSpelling": "ant",
+   "lemma": "udyant",
+   "lemma_id": 56879,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ह्रीमन्त्",
+   "ant_form": "hrīmant",
+   "at_devanagari": "ह्रीमत्",
+   "at_form": "hrīmat",
+   "dcsSpelling": "ant",
+   "lemma": "hrīmant",
+   "lemma_id": 57324,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "आयतनवन्त्",
+   "ant_form": "āyatanavant",
+   "at_devanagari": "आयतनवत्",
+   "at_form": "āyatanavat",
+   "dcsSpelling": "ant",
+   "lemma": "āyatanavant",
+   "lemma_id": 59140,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "आयुष्मन्त्",
+   "ant_form": "āyuṣmant",
+   "at_devanagari": "आयुष्मत्",
+   "at_form": "āyuṣmat",
+   "dcsSpelling": "ant",
+   "lemma": "āyuṣmant",
+   "lemma_id": 59227,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "आर्तिमन्त्",
+   "ant_form": "ārtimant",
+   "at_devanagari": "आर्तिमत्",
+   "at_form": "ārtimat",
+   "dcsSpelling": "ant",
+   "lemma": "ārtimant",
+   "lemma_id": 59282,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अष्टपञ्चाशन्त्",
+   "ant_form": "aṣṭapañcāśant",
+   "at_devanagari": "अष्टपञ्चाशत्",
+   "at_form": "aṣṭapañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "aṣṭapañcāśat",
+   "lemma_id": 60462,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अष्टापञ्चाशन्त्",
+   "ant_form": "aṣṭāpañcāśant",
+   "at_devanagari": "अष्टापञ्चाशत्",
+   "at_form": "aṣṭāpañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "aṣṭāpañcāśat",
+   "lemma_id": 60523,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 5,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अष्ठीवन्त्",
+   "ant_form": "aṣṭhīvant",
+   "at_devanagari": "अष्ठीवत्",
+   "at_form": "aṣṭhīvat",
+   "dcsSpelling": "ant",
+   "lemma": "aṣṭhīvant",
+   "lemma_id": 60571,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 25,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "असन्त्",
+   "ant_form": "asant",
+   "at_devanagari": "असत्",
+   "at_form": "asat",
+   "dcsSpelling": "ant",
+   "lemma": "asant",
+   "lemma_id": 60697,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "आलिखन्त्",
+   "ant_form": "ālikhant",
+   "at_devanagari": "आलिखत्",
+   "at_form": "ālikhat",
+   "dcsSpelling": "ant",
+   "lemma": "ālikhant",
+   "lemma_id": 62301,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "इन्दुमन्त्",
+   "ant_form": "indumant",
+   "at_devanagari": "इन्दुमत्",
+   "at_form": "indumat",
+   "dcsSpelling": "ant",
+   "lemma": "indumant",
+   "lemma_id": 63440,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 6,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "इरावन्त्",
+   "ant_form": "irāvant",
+   "at_devanagari": "इरावत्",
+   "at_form": "irāvat",
+   "dcsSpelling": "ant",
+   "lemma": "irāvant",
+   "lemma_id": 63759,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 39,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "इहवन्त्",
+   "ant_form": "ihavant",
+   "at_devanagari": "इहवत्",
+   "at_form": "ihavat",
+   "dcsSpelling": "ant",
+   "lemma": "ihavant",
+   "lemma_id": 63968,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "रत्नवन्त्",
+   "ant_form": "ratnavant",
+   "at_devanagari": "रत्नवत्",
+   "at_form": "ratnavat",
+   "dcsSpelling": "ant",
+   "lemma": "ratnavant",
+   "lemma_id": 66264,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वत्सवन्त्",
+   "ant_form": "vatsavant",
+   "at_devanagari": "वत्सवत्",
+   "at_form": "vatsavat",
+   "dcsSpelling": "ant",
+   "lemma": "vatsavant",
+   "lemma_id": 68305,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वपुष्मन्त्",
+   "ant_form": "vapuṣmant",
+   "at_devanagari": "वपुष्मत्",
+   "at_form": "vapuṣmat",
+   "dcsSpelling": "ant",
+   "lemma": "vapuṣmant",
+   "lemma_id": 68897,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 14,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "रश्मिमन्त्",
+   "ant_form": "raśmimant",
+   "at_devanagari": "रश्मिमत्",
+   "at_form": "raśmimat",
+   "dcsSpelling": "ant",
+   "lemma": "raśmimant",
+   "lemma_id": 69553,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 11,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "रश्मिवन्त्",
+   "ant_form": "raśmivant",
+   "at_devanagari": "रश्मिवत्",
+   "at_form": "raśmivat",
+   "dcsSpelling": "ant",
+   "lemma": "raśmivant",
+   "lemma_id": 69560,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 7,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "राजवन्त्",
+   "ant_form": "rājavant",
+   "at_devanagari": "राजवत्",
+   "at_form": "rājavat",
+   "dcsSpelling": "ant",
+   "lemma": "rājavant",
+   "lemma_id": 70306,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "राजिमन्त्",
+   "ant_form": "rājimant",
+   "at_devanagari": "राजिमत्",
+   "at_form": "rājimat",
+   "dcsSpelling": "ant",
+   "lemma": "rājimant",
+   "lemma_id": 70566,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 13,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "रुक्मवन्त्",
+   "ant_form": "rukmavant",
+   "at_devanagari": "रुक्मवत्",
+   "at_form": "rukmavat",
+   "dcsSpelling": "ant",
+   "lemma": "rukmavant",
+   "lemma_id": 71435,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "रुमण्वन्त्",
+   "ant_form": "rumaṇvant",
+   "at_devanagari": "रुमण्वत्",
+   "at_form": "rumaṇvat",
+   "dcsSpelling": "ant",
+   "lemma": "rumaṇvant",
+   "lemma_id": 71808,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 47,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वसुमन्त्",
+   "ant_form": "vasumant",
+   "at_devanagari": "वसुमत्",
+   "at_form": "vasumat",
+   "dcsSpelling": "ant",
+   "lemma": "vasumant",
+   "lemma_id": 75400,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 17,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वाघन्त्",
+   "ant_form": "vāghant",
+   "at_devanagari": "वाघत्",
+   "at_form": "vāghat",
+   "dcsSpelling": "ant",
+   "lemma": "vāghant",
+   "lemma_id": 76015,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 38,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "महिमन्त्",
+   "ant_form": "mahimant",
+   "at_devanagari": "महिमत्",
+   "at_form": "mahimat",
+   "dcsSpelling": "ant",
+   "lemma": "mahimant",
+   "lemma_id": 78003,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "महिमावन्त्",
+   "ant_form": "mahimāvant",
+   "at_devanagari": "महिमावत्",
+   "at_form": "mahimāvat",
+   "dcsSpelling": "ant",
+   "lemma": "mahimāvant",
+   "lemma_id": 78030,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "महिष्मन्त्",
+   "ant_form": "mahiṣmant",
+   "at_devanagari": "महिष्मत्",
+   "at_form": "mahiṣmat",
+   "dcsSpelling": "ant",
+   "lemma": "mahiṣmant",
+   "lemma_id": 78069,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 7,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "माल्यवन्त्",
+   "ant_form": "mālyavant",
+   "at_devanagari": "माल्यवत्",
+   "at_form": "mālyavat",
+   "dcsSpelling": "ant",
+   "lemma": "mālyavant",
+   "lemma_id": 79524,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 62,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "लक्ष्मीवन्त्",
+   "ant_form": "lakṣmīvant",
+   "at_devanagari": "लक्ष्मीवत्",
+   "at_form": "lakṣmīvat",
+   "dcsSpelling": "ant",
+   "lemma": "lakṣmīvant",
+   "lemma_id": 80393,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "तुष्टिमन्त्",
+   "ant_form": "tuṣṭimant",
+   "at_devanagari": "तुष्टिमत्",
+   "at_form": "tuṣṭimat",
+   "dcsSpelling": "ant",
+   "lemma": "tuṣṭimant",
+   "lemma_id": 83013,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "त्रयीधामवन्त्",
+   "ant_form": "trayīdhāmavant",
+   "at_devanagari": "त्रयीधामवत्",
+   "at_form": "trayīdhāmavat",
+   "dcsSpelling": "ant",
+   "lemma": "trayīdhāmavant",
+   "lemma_id": 83797,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "त्रिजगन्त्",
+   "ant_form": "trijagant",
+   "at_devanagari": "त्रिजगत्",
+   "at_form": "trijagat",
+   "dcsSpelling": "ant",
+   "lemma": "trijagant",
+   "lemma_id": 83930,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 16,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "त्रिपञ्चाशन्त्",
+   "ant_form": "tripañcāśant",
+   "at_devanagari": "त्रिपञ्चाशत्",
+   "at_form": "tripañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "tripañcāśat",
+   "lemma_id": 84012,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "दीधितिमन्त्",
+   "ant_form": "dīdhitimant",
+   "at_devanagari": "दीधितिमत्",
+   "at_form": "dīdhitimat",
+   "dcsSpelling": "ant",
+   "lemma": "dīdhitimant",
+   "lemma_id": 84669,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "दीप्तिमन्त्",
+   "ant_form": "dīptimant",
+   "at_devanagari": "दीप्तिमत्",
+   "at_form": "dīptimat",
+   "dcsSpelling": "ant",
+   "lemma": "dīptimant",
+   "lemma_id": 84776,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 6,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "दृषद्वन्त्",
+   "ant_form": "dṛṣadvant",
+   "at_devanagari": "दृषद्वत्",
+   "at_form": "dṛṣadvat",
+   "dcsSpelling": "ant",
+   "lemma": "dṛṣadvant",
+   "lemma_id": 86546,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "देववन्त्",
+   "ant_form": "devavant",
+   "at_devanagari": "देववत्",
+   "at_form": "devavat",
+   "dcsSpelling": "ant",
+   "lemma": "devavant",
+   "lemma_id": 86878,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 17,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "जाम्बवन्त्",
+   "ant_form": "jāmbavant",
+   "at_devanagari": "जाम्बवत्",
+   "at_form": "jāmbavat",
+   "dcsSpelling": "ant",
+   "lemma": "jāmbavant",
+   "lemma_id": 88779,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 87,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "देहवन्त्",
+   "ant_form": "dehavant",
+   "at_devanagari": "देहवत्",
+   "at_form": "dehavat",
+   "dcsSpelling": "ant",
+   "lemma": "dehavant",
+   "lemma_id": 89807,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "द्युमन्त्",
+   "ant_form": "dyumant",
+   "at_devanagari": "द्युमत्",
+   "at_form": "dyumat",
+   "dcsSpelling": "ant",
+   "lemma": "dyumant",
+   "lemma_id": 90278,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "द्युमन्त्",
+   "ant_form": "dyumant",
+   "at_devanagari": "द्युमत्",
+   "at_form": "dyumat",
+   "dcsSpelling": "ant",
+   "lemma": "dyumant",
+   "lemma_id": 90279,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "द्युतिमन्त्",
+   "ant_form": "dyutimant",
+   "at_devanagari": "द्युतिमत्",
+   "at_form": "dyutimat",
+   "dcsSpelling": "ant",
+   "lemma": "dyutimant",
+   "lemma_id": 90335,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 29,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "द्वापञ्चाशन्त्",
+   "ant_form": "dvāpañcāśant",
+   "at_devanagari": "द्वापञ्चाशत्",
+   "at_form": "dvāpañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "dvāpañcāśat",
+   "lemma_id": 90806,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "द्विगन्त्",
+   "ant_form": "dvigant",
+   "at_devanagari": "द्विगत्",
+   "at_form": "dvigat",
+   "dcsSpelling": "ant",
+   "lemma": "dvigant",
+   "lemma_id": 90990,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "द्विपञ्चाशन्त्",
+   "ant_form": "dvipañcāśant",
+   "at_devanagari": "द्विपञ्चाशत्",
+   "at_form": "dvipañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "dvipañcāśat",
+   "lemma_id": 91067,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पित्सन्त्",
+   "ant_form": "pitsant",
+   "at_devanagari": "पित्सत्",
+   "at_form": "pitsat",
+   "dcsSpelling": "ant",
+   "lemma": "pitsant",
+   "lemma_id": 95075,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ज्योतिष्मन्त्",
+   "ant_form": "jyotiṣmant",
+   "at_devanagari": "ज्योतिष्मत्",
+   "at_form": "jyotiṣmat",
+   "dcsSpelling": "ant",
+   "lemma": "jyotiṣmant",
+   "lemma_id": 95352,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 28,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ज्योतिषीमन्त्",
+   "ant_form": "jyotiṣīmant",
+   "at_devanagari": "ज्योतिषीमत्",
+   "at_form": "jyotiṣīmat",
+   "dcsSpelling": "ant",
+   "lemma": "jyotiṣīmant",
+   "lemma_id": 95365,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "तडित्वन्त्",
+   "ant_form": "taḍitvant",
+   "at_devanagari": "तडित्वत्",
+   "at_form": "taḍitvat",
+   "dcsSpelling": "ant",
+   "lemma": "taḍitvant",
+   "lemma_id": 95871,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "तत्रभवन्त्",
+   "ant_form": "tatrabhavant",
+   "at_devanagari": "तत्रभवत्",
+   "at_form": "tatrabhavat",
+   "dcsSpelling": "ant",
+   "lemma": "tatrabhavant",
+   "lemma_id": 95982,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 12,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सूर्यवन्त्",
+   "ant_form": "sūryavant",
+   "at_devanagari": "सूर्यवत्",
+   "at_form": "sūryavat",
+   "dcsSpelling": "ant",
+   "lemma": "sūryavant",
+   "lemma_id": 99424,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "स्त्रीमन्त्",
+   "ant_form": "strīmant",
+   "at_devanagari": "स्त्रीमत्",
+   "at_form": "strīmat",
+   "dcsSpelling": "ant",
+   "lemma": "strīmant",
+   "lemma_id": 102639,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "स्थविमन्त्",
+   "ant_form": "sthavimant",
+   "at_devanagari": "स्थविमत्",
+   "at_form": "sthavimat",
+   "dcsSpelling": "ant",
+   "lemma": "sthavimant",
+   "lemma_id": 103123,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 14,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "सरस्वन्त्",
+   "ant_form": "sarasvant",
+   "at_devanagari": "सरस्वत्",
+   "at_form": "sarasvat",
+   "dcsSpelling": "ant",
+   "lemma": "sarasvant",
+   "lemma_id": 104110,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 33,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सहस्वन्त्",
+   "ant_form": "sahasvant",
+   "at_devanagari": "सहस्वत्",
+   "at_form": "sahasvat",
+   "dcsSpelling": "ant",
+   "lemma": "sahasvant",
+   "lemma_id": 105714,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सुतवन्त्",
+   "ant_form": "sutavant",
+   "at_devanagari": "सुतवत्",
+   "at_form": "sutavat",
+   "dcsSpelling": "ant",
+   "lemma": "sutavant",
+   "lemma_id": 106603,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सुन्वन्त्",
+   "ant_form": "sunvant",
+   "at_devanagari": "सुन्वत्",
+   "at_form": "sunvat",
+   "dcsSpelling": "ant",
+   "lemma": "sunvant",
+   "lemma_id": 106620,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सुदन्त्",
+   "ant_form": "sudant",
+   "at_devanagari": "सुदत्",
+   "at_form": "sudat",
+   "dcsSpelling": "ant",
+   "lemma": "sudant",
+   "lemma_id": 107375,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "हरिमन्त्",
+   "ant_form": "harimant",
+   "at_devanagari": "हरिमत्",
+   "at_form": "harimat",
+   "dcsSpelling": "ant",
+   "lemma": "harimant",
+   "lemma_id": 108838,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "हविष्मन्त्",
+   "ant_form": "haviṣmant",
+   "at_devanagari": "हविष्मत्",
+   "at_form": "haviṣmat",
+   "dcsSpelling": "ant",
+   "lemma": "haviṣmant",
+   "lemma_id": 109375,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 22,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "हिमवन्त्",
+   "ant_form": "himavant",
+   "at_devanagari": "हिमवत्",
+   "at_form": "himavat",
+   "dcsSpelling": "ant",
+   "lemma": "himavant",
+   "lemma_id": 110100,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 317,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "हिरण्यदन्त्",
+   "ant_form": "hiraṇyadant",
+   "at_devanagari": "हिरण्यदत्",
+   "at_form": "hiraṇyadat",
+   "dcsSpelling": "ant",
+   "lemma": "hiraṇyadant",
+   "lemma_id": 110242,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "हिरण्वन्त्",
+   "ant_form": "hiraṇvant",
+   "at_devanagari": "हिरण्वत्",
+   "at_form": "hiraṇvat",
+   "dcsSpelling": "ant",
+   "lemma": "hiraṇvant",
+   "lemma_id": 110348,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सात्वन्त्",
+   "ant_form": "sātvant",
+   "at_devanagari": "सात्वत्",
+   "at_form": "sātvat",
+   "dcsSpelling": "ant",
+   "lemma": "sātvant",
+   "lemma_id": 112098,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 29,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सानुमन्त्",
+   "ant_form": "sānumant",
+   "at_devanagari": "सानुमत्",
+   "at_form": "sānumat",
+   "dcsSpelling": "ant",
+   "lemma": "sānumant",
+   "lemma_id": 112338,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 8,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "शर्यणावन्त्",
+   "ant_form": "śaryaṇāvant",
+   "at_devanagari": "शर्यणावत्",
+   "at_form": "śaryaṇāvat",
+   "dcsSpelling": "ant",
+   "lemma": "śaryaṇāvant",
+   "lemma_id": 116062,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 7,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "शरद्वन्त्",
+   "ant_form": "śaradvant",
+   "at_devanagari": "शरद्वत्",
+   "at_form": "śaradvat",
+   "dcsSpelling": "ant",
+   "lemma": "śaradvant",
+   "lemma_id": 116848,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 21,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "शरीरवन्त्",
+   "ant_form": "śarīravant",
+   "at_devanagari": "शरीरवत्",
+   "at_form": "śarīravat",
+   "dcsSpelling": "ant",
+   "lemma": "śarīravant",
+   "lemma_id": 116868,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "स्वधावन्त्",
+   "ant_form": "svadhāvant",
+   "at_devanagari": "स्वधावत्",
+   "at_form": "svadhāvat",
+   "dcsSpelling": "ant",
+   "lemma": "svadhāvant",
+   "lemma_id": 120267,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "हनुमन्त्",
+   "ant_form": "hanumant",
+   "at_devanagari": "हनुमत्",
+   "at_form": "hanumat",
+   "dcsSpelling": "ant",
+   "lemma": "hanumant",
+   "lemma_id": 120808,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 511,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "विदन्वन्त्",
+   "ant_form": "vidanvant",
+   "at_devanagari": "विदन्वत्",
+   "at_form": "vidanvat",
+   "dcsSpelling": "ant",
+   "lemma": "vidanvant",
+   "lemma_id": 121408,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "विन्ध्यवन्त्",
+   "ant_form": "vindhyavant",
+   "at_devanagari": "विन्ध्यवत्",
+   "at_form": "vindhyavat",
+   "dcsSpelling": "ant",
+   "lemma": "vindhyavant",
+   "lemma_id": 122250,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "विद्युत्वन्त्",
+   "ant_form": "vidyutvant",
+   "at_devanagari": "विद्युत्वत्",
+   "at_form": "vidyutvat",
+   "dcsSpelling": "ant",
+   "lemma": "vidyutvant",
+   "lemma_id": 122797,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वियन्त्",
+   "ant_form": "viyant",
+   "at_devanagari": "वियत्",
+   "at_form": "viyat",
+   "dcsSpelling": "ant",
+   "lemma": "viyant",
+   "lemma_id": 123160,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 67,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "गृहवन्त्",
+   "ant_form": "gṛhavant",
+   "at_devanagari": "गृहवत्",
+   "at_form": "gṛhavat",
+   "dcsSpelling": "ant",
+   "lemma": "gṛhavant",
+   "lemma_id": 124310,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 7,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "गोमन्त्",
+   "ant_form": "gomant",
+   "at_devanagari": "गोमत्",
+   "at_form": "gomat",
+   "dcsSpelling": "ant",
+   "lemma": "gomant",
+   "lemma_id": 125385,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ग्रन्थिमन्त्",
+   "ant_form": "granthimant",
+   "at_devanagari": "ग्रन्थिमत्",
+   "at_form": "granthimat",
+   "dcsSpelling": "ant",
+   "lemma": "granthimant",
+   "lemma_id": 125563,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "शुक्तिमन्त्",
+   "ant_form": "śuktimant",
+   "at_devanagari": "शुक्तिमत्",
+   "at_form": "śuktimat",
+   "dcsSpelling": "ant",
+   "lemma": "śuktimant",
+   "lemma_id": 126267,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 7,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "शृङ्गवन्त्",
+   "ant_form": "śṛṅgavant",
+   "at_devanagari": "शृङ्गवत्",
+   "at_form": "śṛṅgavat",
+   "dcsSpelling": "ant",
+   "lemma": "śṛṅgavant",
+   "lemma_id": 127275,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 23,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "गभस्तिमन्त्",
+   "ant_form": "gabhastimant",
+   "at_devanagari": "गभस्तिमत्",
+   "at_form": "gabhastimat",
+   "dcsSpelling": "ant",
+   "lemma": "gabhastimant",
+   "lemma_id": 130079,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 6,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "गभस्तिमन्त्",
+   "ant_form": "gabhastimant",
+   "at_devanagari": "गभस्तिमत्",
+   "at_form": "gabhastimat",
+   "dcsSpelling": "ant",
+   "lemma": "gabhastimant",
+   "lemma_id": 130080,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "गरुत्मन्त्",
+   "ant_form": "garutmant",
+   "at_devanagari": "गरुत्मत्",
+   "at_form": "garutmat",
+   "dcsSpelling": "ant",
+   "lemma": "garutmant",
+   "lemma_id": 130130,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 98,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "शिल्पवन्त्",
+   "ant_form": "śilpavant",
+   "at_devanagari": "शिल्पवत्",
+   "at_form": "śilpavat",
+   "dcsSpelling": "ant",
+   "lemma": "śilpavant",
+   "lemma_id": 131998,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 7,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "शिखावन्त्",
+   "ant_form": "śikhāvant",
+   "at_devanagari": "शिखावत्",
+   "at_form": "śikhāvat",
+   "dcsSpelling": "ant",
+   "lemma": "śikhāvant",
+   "lemma_id": 132558,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "क्षपावन्त्",
+   "ant_form": "kṣapāvant",
+   "at_devanagari": "क्षपावत्",
+   "at_form": "kṣapāvat",
+   "dcsSpelling": "ant",
+   "lemma": "kṣapāvant",
+   "lemma_id": 134433,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "क्षीरोदन्वन्त्",
+   "ant_form": "kṣīrodanvant",
+   "at_devanagari": "क्षीरोदन्वत्",
+   "at_form": "kṣīrodanvat",
+   "dcsSpelling": "ant",
+   "lemma": "kṣīrodanvant",
+   "lemma_id": 134882,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "क्षेमवन्त्",
+   "ant_form": "kṣemavant",
+   "at_devanagari": "क्षेमवत्",
+   "at_form": "kṣemavat",
+   "dcsSpelling": "ant",
+   "lemma": "kṣemavant",
+   "lemma_id": 135617,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मित्रवन्त्",
+   "ant_form": "mitravant",
+   "at_devanagari": "मित्रवत्",
+   "at_form": "mitravat",
+   "dcsSpelling": "ant",
+   "lemma": "mitravant",
+   "lemma_id": 135856,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मूजवन्त्",
+   "ant_form": "mūjavant",
+   "at_devanagari": "मूजवत्",
+   "at_form": "mūjavat",
+   "dcsSpelling": "ant",
+   "lemma": "mūjavant",
+   "lemma_id": 136405,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 20,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मुञ्जवन्त्",
+   "ant_form": "muñjavant",
+   "at_devanagari": "मुञ्जवत्",
+   "at_form": "muñjavat",
+   "dcsSpelling": "ant",
+   "lemma": "muñjavant",
+   "lemma_id": 137387,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 10,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मूलवन्त्",
+   "ant_form": "mūlavant",
+   "at_devanagari": "मूलवत्",
+   "at_form": "mūlavat",
+   "dcsSpelling": "ant",
+   "lemma": "mūlavant",
+   "lemma_id": 137562,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मेघवन्त्",
+   "ant_form": "meghavant",
+   "at_devanagari": "मेघवत्",
+   "at_form": "meghavat",
+   "dcsSpelling": "ant",
+   "lemma": "meghavant",
+   "lemma_id": 137771,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "विश्वमहन्त्",
+   "ant_form": "viśvamahant",
+   "at_devanagari": "विश्वमहत्",
+   "at_form": "viśvamahat",
+   "dcsSpelling": "ant",
+   "lemma": "viśvamahant",
+   "lemma_id": 138557,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "विवस्वन्त्",
+   "ant_form": "vivasvant",
+   "at_devanagari": "विवस्वत्",
+   "at_form": "vivasvat",
+   "dcsSpelling": "ant",
+   "lemma": "vivasvant",
+   "lemma_id": 138665,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 229,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "विषुवन्त्",
+   "ant_form": "viṣuvant",
+   "at_devanagari": "विषुवत्",
+   "at_form": "viṣuvat",
+   "dcsSpelling": "ant",
+   "lemma": "viṣuvant",
+   "lemma_id": 139503,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 100,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "प्रतीकवन्त्",
+   "ant_form": "pratīkavant",
+   "at_devanagari": "प्रतीकवत्",
+   "at_form": "pratīkavat",
+   "dcsSpelling": "ant",
+   "lemma": "pratīkavant",
+   "lemma_id": 140380,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वृक्षवन्त्",
+   "ant_form": "vṛkṣavant",
+   "at_devanagari": "वृक्षवत्",
+   "at_form": "vṛkṣavat",
+   "dcsSpelling": "ant",
+   "lemma": "vṛkṣavant",
+   "lemma_id": 141710,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "वृचीवन्त्",
+   "ant_form": "vṛcīvant",
+   "at_devanagari": "वृचीवत्",
+   "at_form": "vṛcīvat",
+   "dcsSpelling": "ant",
+   "lemma": "vṛcīvant",
+   "lemma_id": 141747,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वृजिनीवन्त्",
+   "ant_form": "vṛjinīvant",
+   "at_devanagari": "वृजिनीवत्",
+   "at_form": "vṛjinīvat",
+   "dcsSpelling": "ant",
+   "lemma": "vṛjinīvant",
+   "lemma_id": 141753,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 5,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वीरवन्त्",
+   "ant_form": "vīravant",
+   "at_devanagari": "वीरवत्",
+   "at_form": "vīravat",
+   "dcsSpelling": "ant",
+   "lemma": "vīravant",
+   "lemma_id": 142122,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वृष्णिमन्त्",
+   "ant_form": "vṛṣṇimant",
+   "at_devanagari": "वृष्णिमत्",
+   "at_form": "vṛṣṇimat",
+   "dcsSpelling": "ant",
+   "lemma": "vṛṣṇimant",
+   "lemma_id": 142228,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वेगवन्त्",
+   "ant_form": "vegavant",
+   "at_devanagari": "वेगवत्",
+   "at_form": "vegavat",
+   "dcsSpelling": "ant",
+   "lemma": "vegavant",
+   "lemma_id": 142918,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 29,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वेणुमन्त्",
+   "ant_form": "veṇumant",
+   "at_devanagari": "वेणुमत्",
+   "at_form": "veṇumat",
+   "dcsSpelling": "ant",
+   "lemma": "veṇumant",
+   "lemma_id": 142958,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 8,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "पुरुद्वन्त्",
+   "ant_form": "purudvant",
+   "at_devanagari": "पुरुद्वत्",
+   "at_form": "purudvat",
+   "dcsSpelling": "ant",
+   "lemma": "purudvant",
+   "lemma_id": 144076,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पुलीतन्त्",
+   "ant_form": "pulītant",
+   "at_devanagari": "पुलीतत्",
+   "at_form": "pulītat",
+   "dcsSpelling": "ant",
+   "lemma": "pulītant",
+   "lemma_id": 144177,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पुण्डरीकवन्त्",
+   "ant_form": "puṇḍarīkavant",
+   "at_devanagari": "पुण्डरीकवत्",
+   "at_form": "puṇḍarīkavat",
+   "dcsSpelling": "ant",
+   "lemma": "puṇḍarīkavant",
+   "lemma_id": 144428,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पुष्टिमन्त्",
+   "ant_form": "puṣṭimant",
+   "at_devanagari": "पुष्टिमत्",
+   "at_form": "puṣṭimat",
+   "dcsSpelling": "ant",
+   "lemma": "puṣṭimant",
+   "lemma_id": 145428,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "पुष्पवन्त्",
+   "ant_form": "puṣpavant",
+   "at_devanagari": "पुष्पवत्",
+   "at_form": "puṣpavat",
+   "dcsSpelling": "ant",
+   "lemma": "puṣpavant",
+   "lemma_id": 145462,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 10,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "बृहन्त्",
+   "ant_form": "bṛhant",
+   "at_devanagari": "बृहत्",
+   "at_form": "bṛhat",
+   "dcsSpelling": "ant",
+   "lemma": "bṛhant",
+   "lemma_id": 149086,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "बृहन्त्",
+   "ant_form": "bṛhant",
+   "at_devanagari": "बृहत्",
+   "at_form": "bṛhat",
+   "dcsSpelling": "ant",
+   "lemma": "bṛhant",
+   "lemma_id": 149087,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 352,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "पृषन्त्",
+   "ant_form": "pṛṣant",
+   "at_devanagari": "पृषत्",
+   "at_form": "pṛṣat",
+   "dcsSpelling": "ant",
+   "lemma": "pṛṣant",
+   "lemma_id": 150077,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "प्रचिन्वन्त्",
+   "ant_form": "pracinvant",
+   "at_devanagari": "प्रचिन्वत्",
+   "at_form": "pracinvat",
+   "dcsSpelling": "ant",
+   "lemma": "pracinvant",
+   "lemma_id": 151246,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "फणावन्त्",
+   "ant_form": "phaṇāvant",
+   "at_devanagari": "फणावत्",
+   "at_form": "phaṇāvat",
+   "dcsSpelling": "ant",
+   "lemma": "phaṇāvant",
+   "lemma_id": 152836,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "बर्हिष्मन्त्",
+   "ant_form": "barhiṣmant",
+   "at_devanagari": "बर्हिष्मत्",
+   "at_form": "barhiṣmat",
+   "dcsSpelling": "ant",
+   "lemma": "barhiṣmant",
+   "lemma_id": 154302,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "बलवन्त्",
+   "ant_form": "balavant",
+   "at_devanagari": "बलवत्",
+   "at_form": "balavat",
+   "dcsSpelling": "ant",
+   "lemma": "balavant",
+   "lemma_id": 154336,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "प्राचिन्वन्त्",
+   "ant_form": "prācinvant",
+   "at_devanagari": "प्राचिन्वत्",
+   "at_form": "prācinvat",
+   "dcsSpelling": "ant",
+   "lemma": "prācinvant",
+   "lemma_id": 155182,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "प्रवन्त्",
+   "ant_form": "pravant",
+   "at_devanagari": "प्रवत्",
+   "at_form": "pravat",
+   "dcsSpelling": "at",
+   "lemma": "pravat",
+   "lemma_id": 155544,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 59,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "चक्रवन्त्",
+   "ant_form": "cakravant",
+   "at_devanagari": "चक्रवत्",
+   "at_form": "cakravat",
+   "dcsSpelling": "ant",
+   "lemma": "cakravant",
+   "lemma_id": 161750,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "चक्रीवन्त्",
+   "ant_form": "cakrīvant",
+   "at_devanagari": "चक्रीवत्",
+   "at_form": "cakrīvat",
+   "dcsSpelling": "ant",
+   "lemma": "cakrīvant",
+   "lemma_id": 161785,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "जगन्त्",
+   "ant_form": "jagant",
+   "at_devanagari": "जगत्",
+   "at_form": "jagat",
+   "dcsSpelling": "ant",
+   "lemma": "jagant",
+   "lemma_id": 164188,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 1826,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "चतुष्पञ्चाशन्त्",
+   "ant_form": "catuṣpañcāśant",
+   "at_devanagari": "चतुष्पञ्चाशत्",
+   "at_form": "catuṣpañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "catuṣpañcāśat",
+   "lemma_id": 164272,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 4,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "रुद्रवन्त्",
+   "ant_form": "rudravant",
+   "at_devanagari": "रुद्रवत्",
+   "at_form": "rudravat",
+   "dcsSpelling": "ant",
+   "lemma": "rudravant",
+   "lemma_id": 167102,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "जाग्रन्त्",
+   "ant_form": "jāgrant",
+   "at_devanagari": "जाग्रत्",
+   "at_form": "jāgrat",
+   "dcsSpelling": "ant",
+   "lemma": "jāgrant",
+   "lemma_id": 167413,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 15,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "राजीमन्त्",
+   "ant_form": "rājīmant",
+   "at_devanagari": "राजीमत्",
+   "at_form": "rājīmat",
+   "dcsSpelling": "ant",
+   "lemma": "rājīmant",
+   "lemma_id": 168874,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ऊषवन्त्",
+   "ant_form": "ūṣavant",
+   "at_devanagari": "ऊषवत्",
+   "at_form": "ūṣavat",
+   "dcsSpelling": "ant",
+   "lemma": "ūṣavant",
+   "lemma_id": 169521,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "आवन्त्",
+   "ant_form": "āvant",
+   "at_devanagari": "आवत्",
+   "at_form": "āvat",
+   "dcsSpelling": "at",
+   "lemma": "āvat",
+   "lemma_id": 170016,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 8,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "परावन्त्",
+   "ant_form": "parāvant",
+   "at_devanagari": "परावत्",
+   "at_form": "parāvat",
+   "dcsSpelling": "at",
+   "lemma": "parāvat",
+   "lemma_id": 170017,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 154,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "घटिकावन्त्",
+   "ant_form": "ghaṭikāvant",
+   "at_devanagari": "घटिकावत्",
+   "at_form": "ghaṭikāvat",
+   "dcsSpelling": "ant",
+   "lemma": "ghaṭikāvant",
+   "lemma_id": 173228,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "सुरीमन्त्",
+   "ant_form": "surīmant",
+   "at_devanagari": "सुरीमत्",
+   "at_form": "surīmat",
+   "dcsSpelling": "ant",
+   "lemma": "surīmant",
+   "lemma_id": 174792,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "पिच्छन्त्",
+   "ant_form": "picchant",
+   "at_devanagari": "पिच्छत्",
+   "at_form": "picchat",
+   "dcsSpelling": "ant",
+   "lemma": "picchant",
+   "lemma_id": 174821,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "प्रतानवन्त्",
+   "ant_form": "pratānavant",
+   "at_devanagari": "प्रतानवत्",
+   "at_form": "pratānavat",
+   "dcsSpelling": "ant",
+   "lemma": "pratānavant",
+   "lemma_id": 175362,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "वित्तवन्त्",
+   "ant_form": "vittavant",
+   "at_devanagari": "वित्तवत्",
+   "at_form": "vittavat",
+   "dcsSpelling": "ant",
+   "lemma": "vittavant",
+   "lemma_id": 175567,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "रसवन्त्",
+   "ant_form": "rasavant",
+   "at_devanagari": "रसवत्",
+   "at_form": "rasavat",
+   "dcsSpelling": "ant",
+   "lemma": "rasavant",
+   "lemma_id": 176566,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "काक्षीवन्त्",
+   "ant_form": "kākṣīvant",
+   "at_devanagari": "काक्षीवत्",
+   "at_form": "kākṣīvat",
+   "dcsSpelling": "ant",
+   "lemma": "kākṣīvant",
+   "lemma_id": 176583,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 6,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "संनतिमन्त्",
+   "ant_form": "saṃnatimant",
+   "at_devanagari": "संनतिमत्",
+   "at_form": "saṃnatimat",
+   "dcsSpelling": "ant",
+   "lemma": "saṃnatimant",
+   "lemma_id": 176624,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "ant_only"
+   },
+   "tokens": 7,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "पुण्यवन्त्",
+   "ant_form": "puṇyavant",
+   "at_devanagari": "पुण्यवत्",
+   "at_form": "puṇyavat",
+   "dcsSpelling": "ant",
+   "lemma": "puṇyavant",
+   "lemma_id": 176632,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "राक्षसवक्त्रवन्त्",
+   "ant_form": "rākṣasavaktravant",
+   "at_devanagari": "राक्षसवक्त्रवत्",
+   "at_form": "rākṣasavaktravat",
+   "dcsSpelling": "ant",
+   "lemma": "rākṣasavaktravant",
+   "lemma_id": 177150,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "वीर्यवन्त्",
+   "ant_form": "vīryavant",
+   "at_devanagari": "वीर्यवत्",
+   "at_form": "vīryavat",
+   "dcsSpelling": "ant",
+   "lemma": "vīryavant",
+   "lemma_id": 200136,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "पत्त्रवन्त्",
+   "ant_form": "pattravant",
+   "at_devanagari": "पत्त्रवत्",
+   "at_form": "pattravat",
+   "dcsSpelling": "ant",
+   "lemma": "pattravant",
+   "lemma_id": 200197,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "श्रेणिमन्त्",
+   "ant_form": "śreṇimant",
+   "at_devanagari": "श्रेणिमत्",
+   "at_form": "śreṇimat",
+   "dcsSpelling": "ant",
+   "lemma": "śreṇimant",
+   "lemma_id": 200214,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 13,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अश्ववन्त्",
+   "ant_form": "aśvavant",
+   "at_devanagari": "अश्ववत्",
+   "at_form": "aśvavat",
+   "dcsSpelling": "ant",
+   "lemma": "aśvavant",
+   "lemma_id": 200310,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अभिष्वन्त्",
+   "ant_form": "abhiṣvant",
+   "at_devanagari": "अभिष्वत्",
+   "at_form": "abhiṣvat",
+   "dcsSpelling": "ant",
+   "lemma": "abhiṣvant",
+   "lemma_id": 200311,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "कुरुमन्त्",
+   "ant_form": "kurumant",
+   "at_devanagari": "कुरुमत्",
+   "at_form": "kurumat",
+   "dcsSpelling": "ant",
+   "lemma": "kurumant",
+   "lemma_id": 200768,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "व्याघ्रवन्त्",
+   "ant_form": "vyāghravant",
+   "at_devanagari": "व्याघ्रवत्",
+   "at_form": "vyāghravat",
+   "dcsSpelling": "ant",
+   "lemma": "vyāghravant",
+   "lemma_id": 201060,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "विलिखन्त्",
+   "ant_form": "vilikhant",
+   "at_devanagari": "विलिखत्",
+   "at_form": "vilikhat",
+   "dcsSpelling": "ant",
+   "lemma": "vilikhant",
+   "lemma_id": 201816,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "अनिमिषन्त्",
+   "ant_form": "animiṣant",
+   "at_devanagari": "अनिमिषत्",
+   "at_form": "animiṣat",
+   "dcsSpelling": "ant",
+   "lemma": "animiṣant",
+   "lemma_id": 201817,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "पाणिमन्त्",
+   "ant_form": "pāṇimant",
+   "at_devanagari": "पाणिमत्",
+   "at_form": "pāṇimat",
+   "dcsSpelling": "ant",
+   "lemma": "pāṇimant",
+   "lemma_id": 202078,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "एकोनपञ्चाशन्त्",
+   "ant_form": "ekonapañcāśant",
+   "at_devanagari": "एकोनपञ्चाशत्",
+   "at_form": "ekonapañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "ekonapañcāśat",
+   "lemma_id": 205601,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 10,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "पञ्चपञ्चाशन्त्",
+   "ant_form": "pañcapañcāśant",
+   "at_devanagari": "पञ्चपञ्चाशत्",
+   "at_form": "pañcapañcāśat",
+   "dcsSpelling": "at",
+   "lemma": "pañcapañcāśat",
+   "lemma_id": 206187,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 6,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "राजीमन्त्",
+   "ant_form": "rājīmant",
+   "at_devanagari": "राजीमत्",
+   "at_form": "rājīmat",
+   "dcsSpelling": "ant",
+   "lemma": "rājīmant",
+   "lemma_id": 206679,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "महामुखवन्त्",
+   "ant_form": "mahāmukhavant",
+   "at_devanagari": "महामुखवत्",
+   "at_form": "mahāmukhavat",
+   "dcsSpelling": "ant",
+   "lemma": "mahāmukhavant",
+   "lemma_id": 206734,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "धृतिमन्त्",
+   "ant_form": "dhṛtimant",
+   "at_devanagari": "धृतिमत्",
+   "at_form": "dhṛtimat",
+   "dcsSpelling": "ant",
+   "lemma": "dhṛtimant",
+   "lemma_id": 208551,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "हिरण्मन्त्",
+   "ant_form": "hiraṇmant",
+   "at_devanagari": "हिरण्मत्",
+   "at_form": "hiraṇmat",
+   "dcsSpelling": "ant",
+   "lemma": "hiraṇmant",
+   "lemma_id": 208561,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "त्रिशृङ्गवन्त्",
+   "ant_form": "triśṛṅgavant",
+   "at_devanagari": "त्रिशृङ्गवत्",
+   "at_form": "triśṛṅgavat",
+   "dcsSpelling": "ant",
+   "lemma": "triśṛṅgavant",
+   "lemma_id": 208596,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "त्विषिमन्त्",
+   "ant_form": "tviṣimant",
+   "at_devanagari": "त्विषिमत्",
+   "at_form": "tviṣimat",
+   "dcsSpelling": "ant",
+   "lemma": "tviṣimant",
+   "lemma_id": 208646,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "श्मशानवन्त्",
+   "ant_form": "śmaśānavant",
+   "at_devanagari": "श्मशानवत्",
+   "at_form": "śmaśānavat",
+   "dcsSpelling": "ant",
+   "lemma": "śmaśānavant",
+   "lemma_id": 208698,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "पुरुत्वन्त्",
+   "ant_form": "purutvant",
+   "at_devanagari": "पुरुत्वत्",
+   "at_form": "purutvat",
+   "dcsSpelling": "ant",
+   "lemma": "purutvant",
+   "lemma_id": 208723,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "अजगन्त्",
+   "ant_form": "ajagant",
+   "at_devanagari": "अजगत्",
+   "at_form": "ajagat",
+   "dcsSpelling": "ant",
+   "lemma": "ajagant",
+   "lemma_id": 210053,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "हेतुमन्त्",
+   "ant_form": "hetumant",
+   "at_devanagari": "हेतुमत्",
+   "at_form": "hetumat",
+   "dcsSpelling": "ant",
+   "lemma": "hetumant",
+   "lemma_id": 212939,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "यन्त्",
+   "ant_form": "yant",
+   "at_devanagari": "यत्",
+   "at_form": "yat",
+   "dcsSpelling": "at",
+   "lemma": "yat",
+   "lemma_id": 213701,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 33,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ण्यन्त्",
+   "ant_form": "ṇyant",
+   "at_devanagari": "ण्यत्",
+   "at_form": "ṇyat",
+   "dcsSpelling": "at",
+   "lemma": "ṇyat",
+   "lemma_id": 213706,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 4,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "अन्त्",
+   "ant_form": "ant",
+   "at_devanagari": "अत्",
+   "at_form": "at",
+   "dcsSpelling": "at",
+   "lemma": "at",
+   "lemma_id": 214543,
+   "perDictionary": {
+    "mw": "one_lexeme_two_spellings",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 4,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "काष्ठवन्त्",
+   "ant_form": "kāṣṭhavant",
+   "at_devanagari": "काष्ठवत्",
+   "at_form": "kāṣṭhavat",
+   "dcsSpelling": "ant",
+   "lemma": "kāṣṭhavant",
+   "lemma_id": 214682,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "कन्त्",
+   "ant_form": "kant",
+   "at_devanagari": "कत्",
+   "at_form": "kat",
+   "dcsSpelling": "at",
+   "lemma": "kat",
+   "lemma_id": 214744,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पन्त्",
+   "ant_form": "pant",
+   "at_devanagari": "पत्",
+   "at_form": "pat",
+   "dcsSpelling": "at",
+   "lemma": "pat",
+   "lemma_id": 215001,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "सन्त्",
+   "ant_form": "sant",
+   "at_devanagari": "सत्",
+   "at_form": "sat",
+   "dcsSpelling": "at",
+   "lemma": "sat",
+   "lemma_id": 215208,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "अमावस्यन्त्",
+   "ant_form": "amāvasyant",
+   "at_devanagari": "अमावस्यत्",
+   "at_form": "amāvasyat",
+   "dcsSpelling": "at",
+   "lemma": "amāvasyat",
+   "lemma_id": 215356,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "शश्वन्त्",
+   "ant_form": "śaśvant",
+   "at_devanagari": "शश्वत्",
+   "at_form": "śaśvat",
+   "dcsSpelling": "at",
+   "lemma": "śaśvat",
+   "lemma_id": 215477,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 2,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "व्यन्त्",
+   "ant_form": "vyant",
+   "at_devanagari": "व्यत्",
+   "at_form": "vyat",
+   "dcsSpelling": "at",
+   "lemma": "vyat",
+   "lemma_id": 215703,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "दन्त्",
+   "ant_form": "dant",
+   "at_devanagari": "दत्",
+   "at_form": "dat",
+   "dcsSpelling": "at",
+   "lemma": "dat",
+   "lemma_id": 215971,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 65,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "एकवन्त्",
+   "ant_form": "ekavant",
+   "at_devanagari": "एकवत्",
+   "at_form": "ekavat",
+   "dcsSpelling": "at",
+   "lemma": "ekavat",
+   "lemma_id": 216301,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "दविध्वन्त्",
+   "ant_form": "davidhvant",
+   "at_devanagari": "दविध्वत्",
+   "at_form": "davidhvat",
+   "dcsSpelling": "at",
+   "lemma": "davidhvat",
+   "lemma_id": 216603,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "तरित्रन्त्",
+   "ant_form": "taritrant",
+   "at_devanagari": "तरित्रत्",
+   "at_form": "taritrat",
+   "dcsSpelling": "at",
+   "lemma": "taritrat",
+   "lemma_id": 216606,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "आसन्दीवन्त्",
+   "ant_form": "āsandīvant",
+   "at_devanagari": "आसन्दीवत्",
+   "at_form": "āsandīvat",
+   "dcsSpelling": "ant",
+   "lemma": "āsandīvant",
+   "lemma_id": 216677,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "पुरीतन्त्",
+   "ant_form": "purītant",
+   "at_devanagari": "पुरीतत्",
+   "at_form": "purītat",
+   "dcsSpelling": "at",
+   "lemma": "purītat",
+   "lemma_id": 216783,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 14,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "कुक्षिमन्त्",
+   "ant_form": "kukṣimant",
+   "at_devanagari": "कुक्षिमत्",
+   "at_form": "kukṣimat",
+   "dcsSpelling": "ant",
+   "lemma": "kukṣimant",
+   "lemma_id": 217251,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "जीह्वावन्त्",
+   "ant_form": "jīhvāvant",
+   "at_devanagari": "जीह्वावत्",
+   "at_form": "jīhvāvat",
+   "dcsSpelling": "ant",
+   "lemma": "jīhvāvant",
+   "lemma_id": 217417,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "चार्वरीवन्त्",
+   "ant_form": "cārvarīvant",
+   "at_devanagari": "चार्वरीवत्",
+   "at_form": "cārvarīvat",
+   "dcsSpelling": "ant",
+   "lemma": "cārvarīvant",
+   "lemma_id": 217695,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "सत्यमन्त्",
+   "ant_form": "satyamant",
+   "at_devanagari": "सत्यमत्",
+   "at_form": "satyamat",
+   "dcsSpelling": "ant",
+   "lemma": "satyamant",
+   "lemma_id": 218171,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "बन्धुमन्त्",
+   "ant_form": "bandhumant",
+   "at_devanagari": "बन्धुमत्",
+   "at_form": "bandhumat",
+   "dcsSpelling": "ant",
+   "lemma": "bandhumant",
+   "lemma_id": 218833,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 20,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "ध्वजिनीवन्त्",
+   "ant_form": "dhvajinīvant",
+   "at_devanagari": "ध्वजिनीवत्",
+   "at_form": "dhvajinīvat",
+   "dcsSpelling": "ant",
+   "lemma": "dhvajinīvant",
+   "lemma_id": 218958,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "अलिमन्त्",
+   "ant_form": "alimant",
+   "at_devanagari": "अलिमत्",
+   "at_form": "alimat",
+   "dcsSpelling": "ant",
+   "lemma": "alimant",
+   "lemma_id": 219095,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "उद्वन्त्",
+   "ant_form": "udvant",
+   "at_devanagari": "उद्वत्",
+   "at_form": "udvat",
+   "dcsSpelling": "at",
+   "lemma": "udvat",
+   "lemma_id": 219163,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 15,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "वहन्त्",
+   "ant_form": "vahant",
+   "at_devanagari": "वहत्",
+   "at_form": "vahat",
+   "dcsSpelling": "at",
+   "lemma": "vahat",
+   "lemma_id": 219509,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अर्वावन्त्",
+   "ant_form": "arvāvant",
+   "at_devanagari": "अर्वावत्",
+   "at_form": "arvāvat",
+   "dcsSpelling": "at",
+   "lemma": "arvāvat",
+   "lemma_id": 219568,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 13,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "स्रवन्त्",
+   "ant_form": "sravant",
+   "at_devanagari": "स्रवत्",
+   "at_form": "sravat",
+   "dcsSpelling": "at",
+   "lemma": "sravat",
+   "lemma_id": 219585,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 9,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "वरिमन्त्",
+   "ant_form": "varimant",
+   "at_devanagari": "वरिमत्",
+   "at_form": "varimat",
+   "dcsSpelling": "ant",
+   "lemma": "varimant",
+   "lemma_id": 219624,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "प्रतापवन्त्",
+   "ant_form": "pratāpavant",
+   "at_devanagari": "प्रतापवत्",
+   "at_form": "pratāpavat",
+   "dcsSpelling": "ant",
+   "lemma": "pratāpavant",
+   "lemma_id": 220185,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "मेरुमन्त्",
+   "ant_form": "merumant",
+   "at_devanagari": "मेरुमत्",
+   "at_form": "merumat",
+   "dcsSpelling": "ant",
+   "lemma": "merumant",
+   "lemma_id": 220186,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "खनुमन्त्",
+   "ant_form": "khanumant",
+   "at_devanagari": "खनुमत्",
+   "at_form": "khanumat",
+   "dcsSpelling": "ant",
+   "lemma": "khanumant",
+   "lemma_id": 220213,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "प्रस्थवन्त्",
+   "ant_form": "prasthavant",
+   "at_devanagari": "प्रस्थवत्",
+   "at_form": "prasthavat",
+   "dcsSpelling": "ant",
+   "lemma": "prasthavant",
+   "lemma_id": 221292,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "वेहन्त्",
+   "ant_form": "vehant",
+   "at_devanagari": "वेहत्",
+   "at_form": "vehat",
+   "dcsSpelling": "at",
+   "lemma": "vehat",
+   "lemma_id": 222197,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 25,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "इटन्त्",
+   "ant_form": "iṭant",
+   "at_devanagari": "इटत्",
+   "at_form": "iṭat",
+   "dcsSpelling": "ant",
+   "lemma": "iṭant",
+   "lemma_id": 222688,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 1,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "सरन्त्",
+   "ant_form": "sarant",
+   "at_devanagari": "सरत्",
+   "at_form": "sarat",
+   "dcsSpelling": "at",
+   "lemma": "sarat",
+   "lemma_id": 223115,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "सत्ववन्त्",
+   "ant_form": "satvavant",
+   "at_devanagari": "सत्ववत्",
+   "at_form": "satvavat",
+   "dcsSpelling": "ant",
+   "lemma": "satvavant",
+   "lemma_id": 223639,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "अणिमन्त्",
+   "ant_form": "aṇimant",
+   "at_devanagari": "अणिमत्",
+   "at_form": "aṇimat",
+   "dcsSpelling": "ant",
+   "lemma": "aṇimant",
+   "lemma_id": 223662,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 10,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "योनोर्वन्त्",
+   "ant_form": "yonorvant",
+   "at_devanagari": "योनोर्वत्",
+   "at_form": "yonorvat",
+   "dcsSpelling": "ant",
+   "lemma": "yonorvant",
+   "lemma_id": 223712,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "वाणवन्त्",
+   "ant_form": "vāṇavant",
+   "at_devanagari": "वाणवत्",
+   "at_form": "vāṇavat",
+   "dcsSpelling": "ant",
+   "lemma": "vāṇavant",
+   "lemma_id": 224257,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "आमयन्त्",
+   "ant_form": "āmayant",
+   "at_devanagari": "आमयत्",
+   "at_form": "āmayat",
+   "dcsSpelling": "ant",
+   "lemma": "āmayant",
+   "lemma_id": 224820,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "ant_only"
+   },
+   "tokens": 1,
+   "verdict": "ant_only"
+  },
+  {
+   "ant_devanagari": "अयस्मन्त्",
+   "ant_form": "ayasmant",
+   "at_devanagari": "अयस्मत्",
+   "at_form": "ayasmat",
+   "dcsSpelling": "ant",
+   "lemma": "ayasmant",
+   "lemma_id": 225355,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "वरीवन्त्",
+   "ant_form": "varīvant",
+   "at_devanagari": "वरीवत्",
+   "at_form": "varīvat",
+   "dcsSpelling": "ant",
+   "lemma": "varīvant",
+   "lemma_id": 225374,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "अवरीवन्त्",
+   "ant_form": "avarīvant",
+   "at_devanagari": "अवरीवत्",
+   "at_form": "avarīvat",
+   "dcsSpelling": "ant",
+   "lemma": "avarīvant",
+   "lemma_id": 225375,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "वत्सावन्त्",
+   "ant_form": "vatsāvant",
+   "at_devanagari": "वत्सावत्",
+   "at_form": "vatsāvat",
+   "dcsSpelling": "ant",
+   "lemma": "vatsāvant",
+   "lemma_id": 225493,
+   "perDictionary": {
+    "mw": "silent",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "unresolved"
+  },
+  {
+   "ant_devanagari": "अनश्नन्त्",
+   "ant_form": "anaśnant",
+   "at_devanagari": "अनश्नत्",
+   "at_form": "anaśnat",
+   "dcsSpelling": "ant",
+   "lemma": "anaśnant",
+   "lemma_id": 225702,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "one_lexeme_two_spellings"
+   },
+   "tokens": 3,
+   "verdict": "one_lexeme_two_spellings"
+  },
+  {
+   "ant_devanagari": "निपन्त्",
+   "ant_form": "nipant",
+   "at_devanagari": "निपत्",
+   "at_form": "nipat",
+   "dcsSpelling": "at",
+   "lemma": "nipat",
+   "lemma_id": 225734,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  }
+ ],
+ "pinnedPair": {
+  "inNounUniverse": [
+   {
+    "lemma": "bhagavant",
+    "lemma_id": 48483,
+    "tokens": 4941
+   }
+  ],
+  "mwIds": {
+   "ant": [],
+   "at": [
+    "162249",
+    "162473",
+    "162474",
+    "162493",
+    "162494",
+    "162495",
+    "162496",
+    "162497",
+    "162498"
+   ]
+  },
+  "note": "the DCS `bhagavat` lemma_id is tagged ADJ and is therefore outside G2's NOUN universe; the dictionary verdict below stands regardless",
+  "perDictionary": {
+   "mw": "at_only",
+   "pwg": "one_lexeme_two_spellings"
+  },
+  "pwgIds": {
+   "ant": [
+    "53806",
+    "80057"
+   ],
+   "at": [
+    "53806",
+    "80057"
+   ]
+  },
+  "stem": "bhagavat / bhagavant",
+  "verdict": "one_lexeme_two_spellings"
+ },
+ "reconciles": true,
+ "reconciliation": [
+  {
+   "check": "ī pool, NOUN token count vs G2",
+   "got": 64668,
+   "ok": true,
+   "want": 64668
+  },
+  {
+   "check": "ī pool, subclasses sum to the pool",
+   "got": 64668,
+   "ok": true,
+   "want": 64668
+  },
+  {
+   "check": "ī pool, subclass lemma_ids sum to the pool",
+   "got": 4494,
+   "ok": true,
+   "want": 4494
+  },
+  {
+   "check": "-ant pool, NOUN token count vs G2",
+   "got": 11306,
+   "ok": true,
+   "want": 11306
+  },
+  {
+   "check": "-ant pool, verdicts sum to the pool",
+   "got": 11306,
+   "ok": true,
+   "want": 11306
+  },
+  {
+   "check": "-ant pool, verdict lemma_ids sum to the pool",
+   "got": 279,
+   "ok": true,
+   "want": 279
+  }
+ ],
+ "schemaVersion": "1.0.0",
+ "signals": {
+  "ant": {
+   "kind": "dictionary headword-index entry-id comparison",
+   "rule": "the -at and -ant Devanagari spellings of one stem are looked up in the MW and PWG headword indexes and their ENTRY-ID SETS are compared: shared ids = the dictionary declares one lexeme under two spellings; disjoint ids = two headwords; one spelling only = that spelling is the dictionary's citation form",
+   "source": {
+    "mw": "https://raw.githubusercontent.com/sanskrit-lexicon/csl-json/main/ashtadhyayi.com/mw.json",
+    "mwHeadwords": 195313,
+    "pwg": "https://raw.githubusercontent.com/sanskrit-lexicon/csl-json/main/ashtadhyayi.com/pwg.json",
+    "pwgHeadwords": 108952
+   }
+  },
+  "ii": {
+   "kind": "transliteration-aware syllable count",
+   "rule": "IAST vowel-nucleus count over the citation form; ai/au are one nucleus",
+   "source": "phonological property of the citation form (no dictionary lookup)"
+  }
+ },
+ "substrate": {
+  "adjNotSplit": true,
+  "file": "SanskritGrammar/sangram/data/declension_cell_coverage/lemma_cell_coverage.csv",
+  "universe": "upos='NOUN', unfloored, lemma_id-keyed (Sangram G2, H1048)"
+ },
+ "unreached": {
+  "ant_adj_tokens": 36768,
+  "ii_adj_tokens": 664,
+  "reason": "G2's universe is upos='NOUN'; the ADJ surplus has no per-lemma inventory outside dcs_full.sqlite, which is not present on this box"
+ },
+ "unresolved": [
+  {
+   "lemma": "ekonapañcāśat",
+   "lemma_id": 205601,
+   "tokens": 10
+  },
+  {
+   "lemma": "aṇimant",
+   "lemma_id": 223662,
+   "tokens": 10
+  },
+  {
+   "lemma": "ṇyat",
+   "lemma_id": 213706,
+   "tokens": 4
+  },
+  {
+   "lemma": "rākṣasavaktravant",
+   "lemma_id": 177150,
+   "tokens": 3
+  },
+  {
+   "lemma": "purutvant",
+   "lemma_id": 208723,
+   "tokens": 3
+  },
+  {
+   "lemma": "cārvarīvant",
+   "lemma_id": 217695,
+   "tokens": 3
+  },
+  {
+   "lemma": "yonorvant",
+   "lemma_id": 223712,
+   "tokens": 3
+  },
+  {
+   "lemma": "abhiṣvant",
+   "lemma_id": 200311,
+   "tokens": 2
+  },
+  {
+   "lemma": "vilikhant",
+   "lemma_id": 201816,
+   "tokens": 2
+  },
+  {
+   "lemma": "hiraṇmant",
+   "lemma_id": 208561,
+   "tokens": 2
+  },
+  {
+   "lemma": "jīhvāvant",
+   "lemma_id": 217417,
+   "tokens": 2
+  },
+  {
+   "lemma": "satvavant",
+   "lemma_id": 223639,
+   "tokens": 2
+  },
+  {
+   "lemma": "katarat",
+   "lemma_id": 1262,
+   "tokens": 1
+  },
+  {
+   "lemma": "ghaṭikāvant",
+   "lemma_id": 173228,
+   "tokens": 1
+  },
+  {
+   "lemma": "surīmant",
+   "lemma_id": 174792,
+   "tokens": 1
+  },
+  {
+   "lemma": "picchant",
+   "lemma_id": 174821,
+   "tokens": 1
+  },
+  {
+   "lemma": "pattravant",
+   "lemma_id": 200197,
+   "tokens": 1
+  },
+  {
+   "lemma": "kurumant",
+   "lemma_id": 200768,
+   "tokens": 1
+  },
+  {
+   "lemma": "vyāghravant",
+   "lemma_id": 201060,
+   "tokens": 1
+  },
+  {
+   "lemma": "mahāmukhavant",
+   "lemma_id": 206734,
+   "tokens": 1
+  },
+  {
+   "lemma": "triśṛṅgavant",
+   "lemma_id": 208596,
+   "tokens": 1
+  },
+  {
+   "lemma": "śmaśānavant",
+   "lemma_id": 208698,
+   "tokens": 1
+  },
+  {
+   "lemma": "ajagant",
+   "lemma_id": 210053,
+   "tokens": 1
+  },
+  {
+   "lemma": "amāvasyat",
+   "lemma_id": 215356,
+   "tokens": 1
+  },
+  {
+   "lemma": "vyat",
+   "lemma_id": 215703,
+   "tokens": 1
+  },
+  {
+   "lemma": "davidhvat",
+   "lemma_id": 216603,
+   "tokens": 1
+  },
+  {
+   "lemma": "taritrat",
+   "lemma_id": 216606,
+   "tokens": 1
+  },
+  {
+   "lemma": "kukṣimant",
+   "lemma_id": 217251,
+   "tokens": 1
+  },
+  {
+   "lemma": "satyamant",
+   "lemma_id": 218171,
+   "tokens": 1
+  },
+  {
+   "lemma": "dhvajinīvant",
+   "lemma_id": 218958,
+   "tokens": 1
+  },
+  {
+   "lemma": "merumant",
+   "lemma_id": 220186,
+   "tokens": 1
+  },
+  {
+   "lemma": "khanumant",
+   "lemma_id": 220213,
+   "tokens": 1
+  },
+  {
+   "lemma": "ayasmant",
+   "lemma_id": 225355,
+   "tokens": 1
+  },
+  {
+   "lemma": "varīvant",
+   "lemma_id": 225374,
+   "tokens": 1
+  },
+  {
+   "lemma": "avarīvant",
+   "lemma_id": 225375,
+   "tokens": 1
+  },
+  {
+   "lemma": "vatsāvant",
+   "lemma_id": 225493,
+   "tokens": 1
+  }
+ ],
+ "variantCitations": [
+  {
+   "ant_devanagari": "जगन्त्",
+   "ant_form": "jagant",
+   "at_devanagari": "जगत्",
+   "at_form": "jagat",
+   "dcsSpelling": "ant",
+   "lemma": "jagant",
+   "lemma_id": 164188,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 1826,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अर्वन्त्",
+   "ant_form": "arvant",
+   "at_devanagari": "अर्वत्",
+   "at_form": "arvat",
+   "dcsSpelling": "ant",
+   "lemma": "arvant",
+   "lemma_id": 53553,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 124,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "वाघन्त्",
+   "ant_form": "vāghant",
+   "at_devanagari": "वाघत्",
+   "at_form": "vāghat",
+   "dcsSpelling": "ant",
+   "lemma": "vāghant",
+   "lemma_id": 76015,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 38,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "त्रिजगन्त्",
+   "ant_form": "trijagant",
+   "at_devanagari": "त्रिजगत्",
+   "at_form": "trijagat",
+   "dcsSpelling": "ant",
+   "lemma": "trijagant",
+   "lemma_id": 83930,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 16,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "जाग्रन्त्",
+   "ant_form": "jāgrant",
+   "at_devanagari": "जाग्रत्",
+   "at_form": "jāgrat",
+   "dcsSpelling": "ant",
+   "lemma": "jāgrant",
+   "lemma_id": 167413,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 15,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "स्थविमन्त्",
+   "ant_form": "sthavimant",
+   "at_devanagari": "स्थविमत्",
+   "at_form": "sthavimat",
+   "dcsSpelling": "ant",
+   "lemma": "sthavimant",
+   "lemma_id": 103123,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 14,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "सश्चन्त्",
+   "ant_form": "saścant",
+   "at_devanagari": "सश्चत्",
+   "at_form": "saścat",
+   "dcsSpelling": "ant",
+   "lemma": "saścant",
+   "lemma_id": 9162,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 4,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "उपचारुमन्त्",
+   "ant_form": "upacārumant",
+   "at_devanagari": "उपचारुमत्",
+   "at_form": "upacārumat",
+   "dcsSpelling": "ant",
+   "lemma": "upacārumant",
+   "lemma_id": 44934,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "वृक्षवन्त्",
+   "ant_form": "vṛkṣavant",
+   "at_devanagari": "वृक्षवत्",
+   "at_form": "vṛkṣavat",
+   "dcsSpelling": "ant",
+   "lemma": "vṛkṣavant",
+   "lemma_id": 141710,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पुण्डरीकवन्त्",
+   "ant_form": "puṇḍarīkavant",
+   "at_devanagari": "पुण्डरीकवत्",
+   "at_form": "puṇḍarīkavat",
+   "dcsSpelling": "ant",
+   "lemma": "puṇḍarīkavant",
+   "lemma_id": 144428,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 3,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "कन्यावन्त्",
+   "ant_form": "kanyāvant",
+   "at_devanagari": "कन्यावत्",
+   "at_form": "kanyāvat",
+   "dcsSpelling": "ant",
+   "lemma": "kanyāvant",
+   "lemma_id": 1592,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "धुन्धुमन्त्",
+   "ant_form": "dhundhumant",
+   "at_devanagari": "धुन्धुमत्",
+   "at_form": "dhundhumat",
+   "dcsSpelling": "ant",
+   "lemma": "dhundhumant",
+   "lemma_id": 42752,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पुरुद्वन्त्",
+   "ant_form": "purudvant",
+   "at_devanagari": "पुरुद्वत्",
+   "at_form": "purudvat",
+   "dcsSpelling": "ant",
+   "lemma": "purudvant",
+   "lemma_id": 144076,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "वरिमन्त्",
+   "ant_form": "varimant",
+   "at_devanagari": "वरिमत्",
+   "at_form": "varimat",
+   "dcsSpelling": "ant",
+   "lemma": "varimant",
+   "lemma_id": 219624,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 2,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "नौचक्रीवन्त्",
+   "ant_form": "naucakrīvant",
+   "at_devanagari": "नौचक्रीवत्",
+   "at_form": "naucakrīvat",
+   "dcsSpelling": "ant",
+   "lemma": "naucakrīvant",
+   "lemma_id": 14384,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "उशन्त्",
+   "ant_form": "uśant",
+   "at_devanagari": "उशत्",
+   "at_form": "uśat",
+   "dcsSpelling": "ant",
+   "lemma": "uśant",
+   "lemma_id": 38170,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "उपेषन्त्",
+   "ant_form": "upeṣant",
+   "at_devanagari": "उपेषत्",
+   "at_form": "upeṣat",
+   "dcsSpelling": "ant",
+   "lemma": "upeṣant",
+   "lemma_id": 46157,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "अवीचिमन्त्",
+   "ant_form": "avīcimant",
+   "at_devanagari": "अवीचिमत्",
+   "at_form": "avīcimat",
+   "dcsSpelling": "ant",
+   "lemma": "avīcimant",
+   "lemma_id": 55231,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "त्रयीधामवन्त्",
+   "ant_form": "trayīdhāmavant",
+   "at_devanagari": "त्रयीधामवत्",
+   "at_form": "trayīdhāmavat",
+   "dcsSpelling": "ant",
+   "lemma": "trayīdhāmavant",
+   "lemma_id": 83797,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "द्विगन्त्",
+   "ant_form": "dvigant",
+   "at_devanagari": "द्विगत्",
+   "at_form": "dvigat",
+   "dcsSpelling": "ant",
+   "lemma": "dvigant",
+   "lemma_id": 90990,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "at_only"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "क्षीरोदन्वन्त्",
+   "ant_form": "kṣīrodanvant",
+   "at_devanagari": "क्षीरोदन्वत्",
+   "at_form": "kṣīrodanvat",
+   "dcsSpelling": "ant",
+   "lemma": "kṣīrodanvant",
+   "lemma_id": 134882,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "विश्वमहन्त्",
+   "ant_form": "viśvamahant",
+   "at_devanagari": "विश्वमहत्",
+   "at_form": "viśvamahat",
+   "dcsSpelling": "ant",
+   "lemma": "viśvamahant",
+   "lemma_id": 138557,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "पुलीतन्त्",
+   "ant_form": "pulītant",
+   "at_devanagari": "पुलीतत्",
+   "at_form": "pulītat",
+   "dcsSpelling": "ant",
+   "lemma": "pulītant",
+   "lemma_id": 144177,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "काष्ठवन्त्",
+   "ant_form": "kāṣṭhavant",
+   "at_devanagari": "काष्ठवत्",
+   "at_form": "kāṣṭhavat",
+   "dcsSpelling": "ant",
+   "lemma": "kāṣṭhavant",
+   "lemma_id": 214682,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "प्रस्थवन्त्",
+   "ant_form": "prasthavant",
+   "at_devanagari": "प्रस्थवत्",
+   "at_form": "prasthavat",
+   "dcsSpelling": "ant",
+   "lemma": "prasthavant",
+   "lemma_id": 221292,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  },
+  {
+   "ant_devanagari": "वाणवन्त्",
+   "ant_form": "vāṇavant",
+   "at_devanagari": "वाणवत्",
+   "at_form": "vāṇavat",
+   "dcsSpelling": "ant",
+   "lemma": "vāṇavant",
+   "lemma_id": 224257,
+   "perDictionary": {
+    "mw": "at_only",
+    "pwg": "silent"
+   },
+   "tokens": 1,
+   "verdict": "at_only"
+  }
+ ]
+}
