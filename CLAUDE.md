@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 15-05-2026 · Last updated: 02-09-2026_
+_Created: 15-05-2026 · Last updated: 03-09-2026_
 
 **VisualDCS** is standalone HTML frequency dashboards for the
 [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/).
@@ -100,6 +100,16 @@ hits Gītagovinda / Aṣṭāvakragīta. Match `chapter.ref`, never just `text.n
   reconciliation (6,454 match / 0 disagree).
 - Do not weaken `assert_evidence_degenerate()`. `STEM_TAGS` is SanskritGrammar
   Sangram G2's list — change both sides or the G2 reconciliation fails.
+- **The pooled-class split is a side-car, never a re-bucketing of `paradigm_nominal.json`**
+  (H3984). [`split_pooled_nominal_classes.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/split_pooled_nominal_classes.py)
+  reads G2 + the MW/PWG csl-json headword indexes and writes
+  `visual/paradigm_nominal_class_split.json`. Sync rule: if you touch the `ii`/`ant`
+  membership test or the class tags in `gen_paradigm_nominal.py`, re-run the splitter in the
+  same PR and ship the refreshed
+  [`reports/nominal_g2_reconciliation_split.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_g2_reconciliation_split.md)
+  — a `reconciles: false` or a moved G2 total is a build failure, not a diff to accept.
+  Never split a stem on a character rule: the signal must come from outside the corpus
+  (FINDINGS §630).
 
 ## Where the rest lives
 
