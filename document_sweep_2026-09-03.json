@@ -1,0 +1,215 @@
+{
+  "tool": "tools/document_check.py",
+  "skill": "/document",
+  "legacy_name": "/artifact-propagate",
+  "generated": "2026-09-03 14:08:17",
+  "artifacts": [
+    {
+      "artifact": "/Users/mac/Documents/GitHub/VisualDCS-h3984-doc/visual/paradigm_nominal_class_split.json",
+      "repo": "/Users/mac/Documents/GitHub/VisualDCS-h3984-doc",
+      "kind": "dataset",
+      "surfaces": [
+        {
+          "id": "readme",
+          "phase": 1,
+          "label": "README.md",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "/Users/mac/Documents/GitHub/VisualDCS-h3984-doc/README.md:277: (`reconciles: true`, no G2 total moves), payload `visual/paradigm_nominal_class_split.json`."
+        },
+        {
+          "id": "claude_md",
+          "phase": 1,
+          "label": "CLAUDE.md",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "/Users/mac/Documents/GitHub/VisualDCS-h3984-doc/CLAUDE.md:106: `visual/paradigm_nominal_class_split.json`. Sync rule: if you touch the `ii`/`ant`"
+        },
+        {
+          "id": "cold_start",
+          "phase": 1,
+          "label": "Cold-start doc (GEMINI.md / equivalent)",
+          "scope": "repo",
+          "status": "n/a",
+          "evidence": "VisualDCS has no GEMINI.md/AGENTS.md; CLAUDE.md is the cold-start doc and carries the new side-car sync rule (merged, VisualDCS#124)."
+        },
+        {
+          "id": "sibling_domain_docs",
+          "phase": 1,
+          "label": "Sibling domain docs (manual/roadmap/method docs)",
+          "scope": "repo",
+          "status": "n/a",
+          "evidence": "The two reports (reports/nominal_pooled_class_split.md, reports/nominal_g2_reconciliation_split.md) ARE the sibling domain docs and shipped with the payload in VisualDCS#123; no other manual/roadmap in VisualDCS owns declension classes."
+        },
+        {
+          "id": "metadoc",
+          "phase": 1,
+          "label": "Metadoc (<name>.meta.md)",
+          "scope": "repo",
+          "status": "n/a",
+          "evidence": "Side-car payload rebuilt by one committed builder, not a long-lived governing manual; its contract lives in CLAUDE.md (sync rule) and the two reports. No metadoc owed."
+        },
+        {
+          "id": "changelog",
+          "phase": 1,
+          "label": "CHANGELOG.md -> release (/cut-release)",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "/Users/mac/Documents/GitHub/VisualDCS-h3984-doc/CHANGELOG.md:26: [`visual/paradigm_nominal_class_split.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_nominal_class_split.json)."
+        },
+        {
+          "id": "ai_state",
+          "phase": 1,
+          "label": ".ai_state.md",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "/Users/mac/Documents/GitHub/VisualDCS-h3984-doc/.ai_state.md:39: [`visual/paradigm_nominal_class_split.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_nominal_class_split.json)"
+        },
+        {
+          "id": "issues",
+          "phase": 1,
+          "label": "Issues (per-person task issues)",
+          "scope": "repo",
+          "status": "n/a",
+          "evidence": "No open issue tracks GAPS 14; the epistemic residue is registered as FINDINGS 630 + the GAPS 14 partial graduation (SanskritLexicography#2062, merged) instead."
+        },
+        {
+          "id": "gtd",
+          "phase": 2,
+          "label": "Uprava/GTD_NEXT_ACTIONS.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "No human action created or closed: the remaining ADJ residual is agent work gated on the box that has dcs_full.sqlite, and it is tracked in GAPS 14, not as a human DO/WAITING row."
+        },
+        {
+          "id": "handoffs_registry",
+          "phase": 2,
+          "label": "Uprava/handoffs/README.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "Closed: H3984's terminal row is in handoffs/REGISTRY_ARCHIVE.md (handoff_close.py, 2 hits on origin/main) and the file is archived. The cell reads only handoffs/README.md and greps for the artifact path, which a registry row never carries -- script defect filed as Uprava#2386 (FINDINGS 562 split-registry trap)."
+        },
+        {
+          "id": "features_index",
+          "phase": 2,
+          "label": "SanskritLexicography/FEATURES_INDEX.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "Closed in this sweep: FEATURES_INDEX E51 refreshed with the seven split rows -- SanskritLexicography#2065. The script reads the stale main checkout, not the worktree."
+        },
+        {
+          "id": "kosha_manifest",
+          "phase": 2,
+          "label": "kosha/data/manifest/datasets.json",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "Closed in this sweep: dcs-nominal-class-split added to kosha data/manifest/datasets.json and directory rebuilt -- kosha#505. The script reads the stale main checkout."
+        },
+        {
+          "id": "data_layers_census",
+          "phase": 2,
+          "label": "Uprava/DATA_LAYERS_CENSUS.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "Closed in this sweep: the DCS computed-statistics cell closed with the measured split -- pushed to Uprava main 97e66afab. The script reads the stale main checkout."
+        },
+        {
+          "id": "project_interlinks",
+          "phase": 2,
+          "label": "Uprava/PROJECT_INTERLINKS.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "Closed in this sweep: new csl-json MW/PWG -> VisualDCS edge added -- pushed to Uprava main 97e66afab. The script reads the stale main checkout."
+        },
+        {
+          "id": "skills_index",
+          "phase": 2,
+          "label": "root SKILLS_INDEX.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "artifact is not itself a skill/command"
+        },
+        {
+          "id": "articles",
+          "phase": 2,
+          "label": "Uprava/ARTICLES.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "artifact is not a paper (delegate to /articles-update when it is)"
+        },
+        {
+          "id": "danger_facts",
+          "phase": 2,
+          "label": "Uprava/DANGER_FACTS.md + context_facts.yaml",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "No destructive-risk fact surfaced; the dcs_full.sqlite read-only rule already stands in DANGER_FACTS from H848."
+        },
+        {
+          "id": "questions_log",
+          "phase": 2,
+          "label": "Uprava/QUESTIONS_LOG.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "No logged question answered and no repeated question pattern; the sweep raised no new asks."
+        },
+        {
+          "id": "megabook",
+          "phase": 2,
+          "label": "Uprava/MEGABOOK.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "Operational measurement of an existing capability, not a thesis refinement -- MEGABOOK is explicitly not for status."
+        },
+        {
+          "id": "skills_manual_ru",
+          "phase": 2,
+          "label": "Uprava/SKILLS_MANUAL_RU.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "no skill/tool contract changed"
+        },
+        {
+          "id": "hooks_index",
+          "phase": 2,
+          "label": "claude-config HOOKS_INDEX.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "No enforcement changed; no hook added, retired or rescoped."
+        },
+        {
+          "id": "repo_status_rollup",
+          "phase": 2,
+          "label": "Uprava/REPO_STATUS_ROLLUP.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "Closed in this sweep: VisualDCS Done line for 03-09-2026 -- pushed to Uprava main 97e66afab. The script reads the stale main checkout."
+        },
+        {
+          "id": "hub_manifest",
+          "phase": 2,
+          "label": "Uprava/tools/hub_manifest.json",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "The payload is a dataset, not a new long-lived hub/registry; staleness tracking not applicable."
+        },
+        {
+          "id": "auto_derived_views",
+          "phase": 2,
+          "label": "Auto-derived views (NEXT_UP/BOTTLENECKS/kanban/dashboards/HUB_STALENESS_REPORT)",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "auto -- never hand-edit; verify their SOURCES carry the change instead"
+        },
+        {
+          "id": "epistemic_registries",
+          "phase": 2,
+          "label": "FINDINGS x2 + 7 epistemic registries (ASSUMPTIONS/CONTRADICTIONS/GAPS/DEAD_ENDS/RECIPES/STALENESS/GLOSSARY, Uprava + SanskritLexicography)",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "Closed, not missing: FINDINGS 630 and the GAPS 14 partial graduation are live on SanskritLexicography origin/master (SanskritLexicography#2062). The script reads the stale main checkout -- verified with git grep against origin/master (FINDINGS 132 stale-checkout class)."
+        }
+      ]
+    }
+  ]
+}
