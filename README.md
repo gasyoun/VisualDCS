@@ -1,6 +1,6 @@
 # VisualDCS
 
-_Created: 20-04-2026 · Last updated: 02-09-2026_
+_Created: 20-04-2026 · Last updated: 03-09-2026_
 
 Interactive frequency dashboards for the [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/), built from corpus frequency data and rendered as standalone HTML files — no build step, no server, open directly in a browser.
 
@@ -265,6 +265,19 @@ from the pinned 2026 DCS master; render-tested headlessly by
   monosyllabic `śrī`/`strī` type; `-an` pools `-an`/`-man`/`-van`; `-ant` pools
   `-ant`/`-vant`/`-mant` with the master's own `-at`/`-vat`/`-mat` citations of the same
   stems; `other consonant` is a residue bucket, not a class.
+- **Two of those conflations are now split (H3984)** on an external lexical signal, not a
+  character rule: `-ī` by IAST vowel-nucleus count (17 lemma_ids / 6,373 tokens monosyllabic
+  vs 4,477 / 58,295 polysyllabic), `-ant` by MW+PWG csl-json headword **entry-id sets**
+  (191 / 8,851 one-lexeme-two-spellings, 0 two-headwords, 36 / 70 left pooled with no
+  dictionary witness). NOUN universe only — the ADJ mass is declared unreached, not
+  estimated. Builder
+  [`src/DCS-data-2026/split_pooled_nominal_classes.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/split_pooled_nominal_classes.py),
+  reports [`reports/nominal_pooled_class_split.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_pooled_class_split.md)
+  + [`reports/nominal_g2_reconciliation_split.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_g2_reconciliation_split.md)
+  (`reconciles: true`, no G2 total moves), payload `visual/paradigm_nominal_class_split.json`.
+  The `paradigm_nominal.json` buckets themselves are unchanged — the split is an additive
+  side-car. See [GAPS §14](https://github.com/gasyoun/SanskritLexicography/blob/master/GAPS.md)
+  and [FINDINGS §630](https://github.com/gasyoun/SanskritLexicography/blob/master/FINDINGS.md).
 
 Full report:
 [`reports/paradigm_nominal_build.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_nominal_build.md);
@@ -356,6 +369,7 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/paradigm_attested.json` / `paradigm_attested_data.js` | H1299: 7,689 roots × attested finite/non-finite cells (top-100 full tier + long tail), consumed by `sanskrit_paradigm_trainer.html` |
 | `visual/paradigm_nominal.json` / `paradigm_nominal_data.js` | H1472: 14 declension classes × token gender × 24 case·number cells — counts, surface endings, top forms, corpus examples; consumed by `sanskrit_nominal_dashboard.html` |
 | `visual/paradigm_nominal_lemmas.json` / `paradigm_nominal_lemmas_data.js` | H2321: 31,753 NOUN lemmas × G2-attested cells + top forms; coverage from G2, forms from pin; consumed by `sanskrit_nominal_trainer.html` |
+| `visual/paradigm_nominal_class_split.json` | H3984: the `-ī` and `-ant` pools re-bucketed on an external lexical signal (syllable count; MW/PWG entry-id sets) with per-lemma verdicts and the G2 reconciliation totals; additive side-car to `paradigm_nominal.json`, no dashboard consumer yet |
 | `visual/corpus_stats_widget.json` | Summary morpho-statistics for widgets |
 | `visual/anki_compact.json` | 200 Anki flashcards |
 | `visual/conc_totals.json` | 6,423 forms → total occurrences in corpus |
