@@ -8,6 +8,23 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+### Added
+- **The two pooled declension classes split with an external lexical signal
+  ([H3984](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H3984-Opus_SanskritLexicography_nominal-i-ant-stem-class-split_03.09.26.md),
+  GAPS 14, Opus 5 `claude-opus-5`).**
+  [`split_pooled_nominal_classes.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/split_pooled_nominal_classes.py)
+  splits the long-`ī` bucket by IAST vowel-nucleus count (monosyllabic śrī/strī/dhī type
+  **17 lemma_ids / 6,373 tokens** vs polysyllabic devī/nadī type **4,477 / 58,295**) and
+  adjudicates the `-ant` bucket against the **MW and PWG headword-index entry ids** in
+  [`csl-json/ashtadhyayi.com`](https://github.com/sanskrit-lexicon/csl-json)
+  (`one_lexeme_two_spellings` 191 / 8,851 · `at_only` 51 / 2,384 · `ant_only` 1 / 1 ·
+  `two_headwords` 0 · `unresolved` 36 / 70 — reach **243 of 279**, 87.1 %). Both totals
+  reconcile against Sangram G2 exactly; 36 lemmas with no dictionary witness stay pooled
+  rather than take a guessed character rule. Outputs
+  [`reports/nominal_pooled_class_split.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_pooled_class_split.md),
+  [`reports/nominal_g2_reconciliation_split.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_g2_reconciliation_split.md),
+  [`visual/paradigm_nominal_class_split.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_nominal_class_split.json).
+
 ## [2026-09-03] — H973 LSC pilot kill-gate evaluated PASS; human-gate vote sheet published
 
 ### Added
