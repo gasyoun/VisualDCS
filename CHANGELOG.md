@@ -8,6 +8,23 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+## [2026-09-03] — H973 LSC pilot kill-gate evaluated PASS; human-gate vote sheet published
+
+### Added
+- **Kill-gate evaluation section in
+  [`derived-lsc/README.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/README.md)
+  (H973, OxAlpha `z-ai/glm-5.3-flash`).** Coverage (3,049 lemmas; primary pair Vedic→Epic
+  1,258 at ≥50 tokens/slot; all 5 slots ≥380k), embeddings (deterministic PPMI — instability
+  n/a by construction), control (Spearman ρ = −0.013 vs frequency-shift, unchanged) —
+  **PASS** on all three; both committed builders' `--selftest` re-run green in a fresh
+  worktree off `origin/main` the same day.
+- **Human-gate vote sheet for MG**
+  ([`visualdcs_lsc_pilot_gate_h973.html`](https://gasyoun.github.io/vote/sheets/visualdcs_lsc_pilot_gate_h973.html);
+  regen `python tools/_gen_h973_lsc_gate_sheet.py` in Uprava): pilot verdict · A57 narrowed
+  claim (post-H2400) · gold-annotation next step (n=30). The positive finding is not claimed
+  until this gate votes — the honest-negative branch is the sheet's reject path. A57's venue
+  is deliberately not carded (ruled INDEP 29-07-2026).
+
 ## [2026-09-02] — H3878 non-indicative past moods: formation is absent upstream (NO-GO)
 
 ### Added
