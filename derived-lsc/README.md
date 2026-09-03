@@ -1,6 +1,6 @@
 # Sanskrit lexical semantic change pilot (LSC) — eval protocol + scores
 
-_Created: 11-07-2026 · Last updated: 10-08-2026_
+_Created: 11-07-2026 · Last updated: 03-09-2026_
 
 First **lexical-semantic**-change derivation for Sanskrit. The gap claim was originally
 recorded as "the ACL Anthology's 81-paper LSC family contains no Sanskrit work" (11-07-2026,
@@ -114,6 +114,27 @@ changed):
   narrative vs śāstra); genre confounds semantic-change signal — flag any per-lemma claim
   against the top context words before publishing it.
 
+## Kill-gate evaluation (H973, 03-09-2026) — PASS
+
+[H973](https://github.com/gasyoun/Uprava/blob/main/handoffs/H973-OxAlpha_VisualDCS_sanskrit-lsc-pilot_15.07.26.md)
+(OxAlpha `z-ai/glm-5.3-flash` via opencode) evaluated the pilot's kill-gate (insufficient
+diachronic coverage / unstable embeddings) and re-verified reproducibility in a fresh
+worktree off `origin/main` — both committed builders' `--selftest` green on 03-09-2026:
+
+| Kill-gate criterion | Verdict | Evidence |
+|---|---|---|
+| Insufficient diachronic coverage | **PASS** (coverage sufficient) | 3,049 lemmas scoredable on ≥1 slot pair; primary pair Vedic→Epic 1,258 lemmas at ≥50 tokens/slot; all 5 slots ≥380k tokens |
+| Unstable embeddings | **PASS** (n/a by construction) | deterministic count-based PPMI+cosine, no neural component; reproducibility proven by selftest re-run |
+| Signal ≠ frequency drift | **PASS** (control) | Spearman ρ = −0.013 between graded score and frequency-shift baseline (unchanged from the 11-07 build) |
+
+The candidate result therefore proceeds **to the human review gate** (this pilot is
+novel-method, human-gated per the H728/H973 lane): MG's verdict sheet
+[`visualdcs_lsc_pilot_gate_h973.html`](https://gasyoun.github.io/vote/sheets/visualdcs_lsc_pilot_gate_h973.html)
+(pilot verdict · A57 claim scope · gold-annotation next step; regen
+`python tools/_gen_h973_lsc_gate_sheet.py` in Uprava). Nothing is claimed as a positive
+finding until that gate votes; the honest-negative branch stays open as the sheet's
+reject path.
+
 ## Human-gold annotation schema (H2399, 09-08-2026)
 
 ### Sampling design
@@ -148,6 +169,9 @@ changed):
 
 ## Next steps
 
+- **Gate first (H973):** MG votes on
+  [`visualdcs_lsc_pilot_gate_h973.html`](https://gasyoun.github.io/vote/sheets/visualdcs_lsc_pilot_gate_h973.html)
+  — pilot verdict, A57 claim scope, and whether the gold annotation below starts.
 - **Annotate [`lsc_human_gold_sample.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_human_gold_sample.tsv)** (n=30) following the protocol above; target inter-annotator κ ≥ 0.6.
 - Once gold is complete: compute κ, recalibrate the binary threshold, expand to all 60 target lemmas.
 - **Read the full text of [Hariharan & Mortensen 2026](https://aclanthology.org/2026.lrec-1.81/)**
