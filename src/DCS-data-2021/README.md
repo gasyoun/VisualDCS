@@ -24,7 +24,7 @@ and the JSON assets in `visual/`.
 - **Format & vintage:** this is the **older relational-database export** of the DCS (raw SQL `INSERT`
   tuples and table CSVs). The largest source files carry **August 2021** timestamps, so treat this as a
   **~2021 snapshot**. The DCS is *today* distributed as **CoNLL-U** files at
-  [`OliverHellwig/sanskrit/dcs/data/conllu`](https://github.com/OliverHellwig/sanskrit/tree/master/dcs/data/conllu);
+  `OliverHellwig/sanskrit/dcs/data/conllu`;
   if you need a current or cleaner copy, prefer that (or the sanitized
   [`ambuda-org/dcs`](https://github.com/ambuda-org/dcs)) over this snapshot.
 - **Encoding:** Sanskrit is in **IAST** (Unicode, e.g. `praṇipatya`, `karoti`). Several derived files

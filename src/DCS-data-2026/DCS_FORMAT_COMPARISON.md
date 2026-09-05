@@ -9,7 +9,7 @@ compares them, grounded in a **same-text** example and verified by
 
 | | **Relational-DB export** (`../DCS-data-2021/`) | **CoNLL-U** (current) |
 |---|---|---|
-| Where | `../DCS-data-2021/` (`0.csv`, `10.csv`, `_8.csv`, `12/15.csv`, …) | [`OliverHellwig/sanskrit` → `dcs/data/conllu`](https://github.com/OliverHellwig/sanskrit/tree/master/dcs/data/conllu) |
+| Where | `../DCS-data-2021/` (`0.csv`, `10.csv`, `_8.csv`, `12/15.csv`, …) | `OliverHellwig/sanskrit` → `dcs/data/conllu` |
 | Vintage | ~2021 snapshot | actively maintained |
 | Shape | normalised **tables joined by integer IDs** | one **file per text/chapter**, one **token per line**, 10 TSV columns |
 | Morphology | DCS-internal **numeric codes** in separate tables | **Universal-Dependencies** `UPOS` + `FEATS` strings |
