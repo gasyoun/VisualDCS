@@ -1,40 +1,40 @@
 # non-derived/vedaweb — VedaWeb 2.0 Rig-Veda bulk export
 
-_Created: 08-07-2026 · Last updated: 11-07-2026_
+_Created: 08-07-2026 · Last updated: 05-09-2026_
 
 **Typed-link dataset (D2b, H540):**
-[`typed_link_translation_witness.tsv`](typed_link_translation_witness.tsv) — the
+[`typed_link_translation_witness.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/typed_link_translation_witness.tsv) — the
 `gra_vedaweb_crosswalk.tsv` × `grassmann_de_1876_1877.json` join re-emitted in the
 canonical `TYPE_D_RECORD_FIELDS` shape per
 [`TYPED_LINK_ID_GRAMMAR.md`](https://github.com/gasyoun/Uprava/blob/main/TYPED_LINK_ID_GRAMMAR.md)
 §4a (`link_type=translation-witness`, `match_method=id-link`), built by
-[`emit_typed_link_translation_witness.py`](emit_typed_link_translation_witness.py)
+[`emit_typed_link_translation_witness.py`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/emit_typed_link_translation_witness.py)
 (regenerable, not hand-written) and validated 0-error against
 [`kosha/scripts/typed_link_lint.py`](https://github.com/gasyoun/kosha/blob/main/scripts/typed_link_lint.py).
 Registered per-repo per spec §5 (D2b) — **not** added to the kosha manifest until
 the Q2.1 unified concordance release. Per D2b, this dataset stays in VisualDCS
 (not kosha) until then. Supersedes the pre-spec prototype
-[`build_type_d_id_join.py`](build_type_d_id_join.py) /
-[`type_d_id_join.tsv`](type_d_id_join.tsv) (Q4.0, H522), whose ad-hoc schema
+[`build_type_d_id_join.py`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/build_type_d_id_join.py) /
+[`type_d_id_join.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/type_d_id_join.tsv) (Q4.0, H522), whose ad-hoc schema
 (`grammar_id`/`nongrammar_locus`, no `anchor_key_slp1`/`confidence`/`evidence_count`)
 predates and is incompatible with the canonical H539 grammar — kept only as a
 historical artifact, do not consume it for new work.
 
-**Consumer witness:** [`elizarenkova_ru_1989_1999.json`](elizarenkova_ru_1989_1999.json) —
+**Consumer witness:** [`elizarenkova_ru_1989_1999.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/elizarenkova_ru_1989_1999.json) —
 Elizarenkova's Russian Rig-Veda translation, landed
 [H361](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H361-Sonnet_SanskritLexicography_vedaweb_elizarenkova_ru_witness_08.07.26.md)
 as a citation/context witness for
 [RussianTranslation](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation).
 
 **Derived crosswalks:**
-- [`gra_vedaweb_crosswalk.tsv`](gra_vedaweb_crosswalk.tsv) + report
-  [`GRA_CROSSWALK.md`](GRA_CROSSWALK.md) — Grassmann `<L>` entries → attested RV occurrence
+- [`gra_vedaweb_crosswalk.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/gra_vedaweb_crosswalk.tsv) + report
+  [`GRA_CROSSWALK.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/GRA_CROSSWALK.md) — Grassmann `<L>` entries → attested RV occurrence
   counts, built from this feed's `lemmatization.json` (H097).
-- [`pwg_vedaweb_gloss_crosswalk.tsv`](pwg_vedaweb_gloss_crosswalk.tsv) + report
-  [`PWG_VEDAWEB_GLOSS_CROSSWALK.md`](PWG_VEDAWEB_GLOSS_CROSSWALK.md) — PWG `<L>` entries →
+- [`pwg_vedaweb_gloss_crosswalk.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/pwg_vedaweb_gloss_crosswalk.tsv) + report
+  [`PWG_VEDAWEB_GLOSS_CROSSWALK.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/PWG_VEDAWEB_GLOSS_CROSSWALK.md) — PWG `<L>` entries →
   attested RV occurrences, paired with Geldner/Grassmann full-sentence translations
-  ([`geldner_de_1951_1957.json`](geldner_de_1951_1957.json),
-  [`grassmann_de_1876_1877.json`](grassmann_de_1876_1877.json)) as a gloss-validation
+  ([`geldner_de_1951_1957.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/geldner_de_1951_1957.json),
+  [`grassmann_de_1876_1877.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/grassmann_de_1876_1877.json)) as a gloss-validation
   witness, built from `lemmatization.json`'s `id_pwg` field (H362).
 
 Registered feed for [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
@@ -70,14 +70,14 @@ instead of re-hitting the API.
 | file | resource ID | layer | rows (stanzas) | bytes (raw) | sha256 |
 |---|---|---|---|---|---|
 | `catalog.json` | — | full resource-listing catalog (36 resources) | 36 | 175,068 | `6b8834ea0e8cff80d4788ca3735ba38335b328e09edad0dddfbbd5fe68dae6e8` |
-| [`casaretto_accented_wordsplit.json.gz`](casaretto_accented_wordsplit.json.gz) | `66695e4a14f6d337f7788740` | Casaretto et al. (2025) udātta-marked, position-aligned word-split + morphology | 10,552 | 105,669,318 (raw) / 8,069,363 (gz) | raw `0f64cf6bfe6d7cb4c46947a1f9303c20529b714c00b280f7fc1b6c6b0f014116` · gz `33c193af7d477f3f8e0cd5d041da86986f11b86ee6b9ba6d4c674961ac91ac89` |
-| [`lemmatization.json`](lemmatization.json) | `679b7da2d5b833a67f64b3f7` | lemmatization + dictionary-entry cross-references (same positions) | 10,552 | 40,975,485 | `fc7ac8a419f66881ed1b9e9556adf13b2ebce4df8395ba7a6db1ec54b6a96cf3` |
-| [`accented_text_scarlata_widmer_lubotsky.json`](accented_text_scarlata_widmer_lubotsky.json) | `66695c4b14f6d337f778873f` | accented saṁhitā text (Zurich version, Scarlata & Widmer 2017, after Lubotsky) | 10,552 | 2,520,899 | `02a3cf443ffb1f746abe3ca068732de247ae0f3715c527d67bd8a81588bbe7cd` |
-| [`padapatha_lubotsky.json`](padapatha_lubotsky.json) | `668ba4460b5942c9849a8684` | Lubotsky (1997) padapāṭha | 10,552 | 2,414,660 | `87b95d2dc5c25a591ab6be638725813fcf96c5f5df9ec1cf766357a9551040f4` |
-| [`elizarenkova_ru_1989_1999.json`](elizarenkova_ru_1989_1999.json) | `668be38c1e18769f3d9b0251` | Elizarenkova (1989-1999) Russian Rig-Veda translation | 10,552 | 4,066,118 | `34016bd2c18a607ef5daf4e9d26b6cfde0703837afaf04005d4d155713731905` |
-| [`metrical_data_2024.json`](metrical_data_2024.json) | `67615e6bb20f4c1a9fb8a040` | Metrical Data, Kiss & Kölligan (2024) — computer-generated scansion + meter-type label, based on Van Nooten & Holland (1994) | 10,551 | 3,192,567 | `662fe3e1c3df72b8bfea62ee47a01218cbed4bd042cf8e2a3facfc1e4eaaba77` |
-| [`geldner_de_1951_1957.json`](geldner_de_1951_1957.json) | `668bb0671e18769f3d9a8689` | Geldner (1951-57) German RV translation | 10,548 | 2,880,341 | `3cecd154bc9b5c6626771aa573fe827030e8a3415bdd8110f9765c556a7105b3` |
-| [`grassmann_de_1876_1877.json`](grassmann_de_1876_1877.json) | `668bbf5c1e18769f3d9aafc3` | Grassmann (1876-77) German RV translation | 10,552 | 2,660,969 | `9c4da98b28913f69e42a8344cfcb1e3587322feb23a1bad5c60ab693bef0ce75` |
+| [`casaretto_accented_wordsplit.json.gz`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/casaretto_accented_wordsplit.json.gz) | `66695e4a14f6d337f7788740` | Casaretto et al. (2025) udātta-marked, position-aligned word-split + morphology | 10,552 | 105,669,318 (raw) / 8,069,363 (gz) | raw `0f64cf6bfe6d7cb4c46947a1f9303c20529b714c00b280f7fc1b6c6b0f014116` · gz `33c193af7d477f3f8e0cd5d041da86986f11b86ee6b9ba6d4c674961ac91ac89` |
+| [`lemmatization.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/lemmatization.json) | `679b7da2d5b833a67f64b3f7` | lemmatization + dictionary-entry cross-references (same positions) | 10,552 | 40,975,485 | `fc7ac8a419f66881ed1b9e9556adf13b2ebce4df8395ba7a6db1ec54b6a96cf3` |
+| [`accented_text_scarlata_widmer_lubotsky.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/accented_text_scarlata_widmer_lubotsky.json) | `66695c4b14f6d337f778873f` | accented saṁhitā text (Zurich version, Scarlata & Widmer 2017, after Lubotsky) | 10,552 | 2,520,899 | `02a3cf443ffb1f746abe3ca068732de247ae0f3715c527d67bd8a81588bbe7cd` |
+| [`padapatha_lubotsky.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/padapatha_lubotsky.json) | `668ba4460b5942c9849a8684` | Lubotsky (1997) padapāṭha | 10,552 | 2,414,660 | `87b95d2dc5c25a591ab6be638725813fcf96c5f5df9ec1cf766357a9551040f4` |
+| [`elizarenkova_ru_1989_1999.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/elizarenkova_ru_1989_1999.json) | `668be38c1e18769f3d9b0251` | Elizarenkova (1989-1999) Russian Rig-Veda translation | 10,552 | 4,066,118 | `34016bd2c18a607ef5daf4e9d26b6cfde0703837afaf04005d4d155713731905` |
+| [`metrical_data_2024.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/metrical_data_2024.json) | `67615e6bb20f4c1a9fb8a040` | Metrical Data, Kiss & Kölligan (2024) — computer-generated scansion + meter-type label, based on Van Nooten & Holland (1994) | 10,551 | 3,192,567 | `662fe3e1c3df72b8bfea62ee47a01218cbed4bd042cf8e2a3facfc1e4eaaba77` |
+| [`geldner_de_1951_1957.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/geldner_de_1951_1957.json) | `668bb0671e18769f3d9a8689` | Geldner (1951-57) German RV translation | 10,548 | 2,880,341 | `3cecd154bc9b5c6626771aa573fe827030e8a3415bdd8110f9765c556a7105b3` |
+| [`grassmann_de_1876_1877.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/grassmann_de_1876_1877.json) | `668bbf5c1e18769f3d9aafc3` | Grassmann (1876-77) German RV translation | 10,552 | 2,660,969 | `9c4da98b28913f69e42a8344cfcb1e3587322feb23a1bad5c60ab693bef0ce75` |
 
 All core exports cover the same Rig-Veda stanza/verse positions (RV maṇḍalas 1–10, per
 `location`-keyed `contents[]` entries), position-aligned across files (Metrical Data is
@@ -155,7 +155,7 @@ confirmed, [ROADMAP_VEDAWEB_REUSE.md](https://github.com/gasyoun/SanskritLexicog
   08-07-2026 by Prof. Daniel Kölligan (also for Prof. Uta Reinöhl) in reply to org
   rights outreach — see
   [`OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md`](https://github.com/gasyoun/Uprava/blob/main/handoffs/outreach/OUTREACH_2026-07-08_vedaweb_kolligan_reinohl_rights.md)
-  and [`LAYERS_TRIAGE.md`](LAYERS_TRIAGE.md) row #20. **This is a distinct rights
+  and [`LAYERS_TRIAGE.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/LAYERS_TRIAGE.md) row #20. **This is a distinct rights
   posture from the same translator's text already present in
   [SamudraManthanam](https://github.com/gasyoun/SamudraManthanam)'s parallel corpus**
   (grey-rights, no public redistribution, per that repo's `README.md` and

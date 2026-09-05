@@ -1,6 +1,6 @@
 # LAYERS_TRIAGE.md — VedaWeb 2.0 meter + translation layers, GO/NO-GO triage
 
-_Created: 08-07-2026 · Last updated: 08-07-2026_
+_Created: 08-07-2026 · Last updated: 05-09-2026_
 
 ## ✅ Update 08-07-2026: rights confirmed — the 4 DECIDE-tier candidates are now GO
 
@@ -28,7 +28,7 @@ not ask about — Renou, Van Nooten & Holland, etc.) remain open, unconfirmed.
 deliverable — Phase 4 of
 [ROADMAP_VEDAWEB_REUSE.md](https://github.com/gasyoun/SanskritLexicography/blob/master/ROADMAP_VEDAWEB_REUSE.md).
 Gated on the [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
-catalog ([`catalog.json`](catalog.json), 36 resources, retrieved 08-07-2026). This is a
+catalog ([`catalog.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/catalog.json), 36 resources, retrieved 08-07-2026). This is a
 **triage, not a bulk import** — every claim below is checked against the live catalog and,
 for the two headline candidates, a real sample export. Nothing new was bulk-landed; see
 § Sample exports for the two files that were fetched, sampled, and discarded (not
@@ -138,7 +138,7 @@ a maintainer email is more likely to yield a quick GO than the in-copyright rows
 |---|---|---|---|
 | Metrical Data (VedaWeb 2024) (#6) | [SanskritKaraoke](https://github.com/gasyoun/SanskritKaraoke) RV verse seeds | **GO — landed 08-07-2026** ([H360](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H360-Sonnet_SanskritKaraoke_vedaweb_metrical_verse_seeds_08.07.26.md), `metrical_data_2024.json` here + `rv_verse_seeds.json` seed table in SanskritKaraoke, 10,551/10,551 stanzas joined) | done |
 | Elizarenkova RU (#20) | [RussianTranslation](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation) context/citation witness | **DECIDE, in-copyright — do not use in bulk without explicit rights clearance from VedaWeb/Nauka publisher**; short scholarly-quotation excerpts (a line or two per citation, not bulk incorporation) are a materially different, likely-fine use, but that's an editorial call each time, not a feed | 0d until cleared; if cleared, ~0.5d export+land |
-| Geldner de (#14), Grassmann de (#15) | PWG German gloss cross-check witness | **GO — landed 08-07-2026** ([H362](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H362-Sonnet_VisualDCS_vedaweb_geldner_grassmann_pwg_gloss_08.07.26.md), [`PWG_VEDAWEB_GLOSS_CROSSWALK.md`](PWG_VEDAWEB_GLOSS_CROSSWALK.md), 10,182/123,366 PWG entries attested) | done |
+| Geldner de (#14), Grassmann de (#15) | PWG German gloss cross-check witness | **GO — landed 08-07-2026** ([H362](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H362-Sonnet_VisualDCS_vedaweb_geldner_grassmann_pwg_gloss_08.07.26.md), [`PWG_VEDAWEB_GLOSS_CROSSWALK.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/PWG_VEDAWEB_GLOSS_CROSSWALK.md), 10,182/123,366 PWG entries attested) | done |
 | Casaretto et al. (2026) annotations (#28) | glossary-adjudication pool (SCL pilot 3 pattern) | DECIDE, same rationale as the already-landed #22 — worth a single combined rights confirmation covering both | ~0.5d if cleared |
 
 **Originally: no GO items in the meter/translation/gloss/morphology scope this triage was

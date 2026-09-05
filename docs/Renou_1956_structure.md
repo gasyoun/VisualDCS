@@ -1,8 +1,10 @@
+_Created: 25-06-2026 · Last updated: 05-09-2026_
+
 # Renou 1956 — *Histoire de la langue sanskrite* — chapter & subsection structure
 
 Faithful transcription of the **Table des matières** of Louis Renou, *Histoire de
 la langue sanskrite* (Lyon: IAC, 1956), read from the scanned source
-[`Histoire_de_la_langue_sanskrite_Renou_Louis.pdf`](Histoire_de_la_langue_sanskrite_Renou_Louis.pdf)
+[`Histoire_de_la_langue_sanskrite_Renou_Louis.pdf`](https://github.com/gasyoun/VisualDCS/blob/main/docs/Histoire_de_la_langue_sanskrite_Renou_Louis.pdf)
 (PDF pp. 253–254 = the *Table des matières*). Page numbers below are Renou's **print**
 pages. This is the ground-truth reference for the Renou language-state tagging in
 `SanskritLexicography/RussianTranslation` (see that repo's `RENOU.md`).
@@ -94,3 +96,5 @@ or kāvya base text — so "commentary" is arguably an **orthogonal discourse-ty
 not strictly a child of IV. Renou files it under IV at index level; whether we model it
 as `IV.bhasya` (hierarchical) or as an independent `register=bhasya` tag is the first
 decision in the plan.
+
+_Dr. Mārcis Gasūns_

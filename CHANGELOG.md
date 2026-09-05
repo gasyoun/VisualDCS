@@ -1,9 +1,11 @@
+_Created: 06-06-2026 · Last updated: 05-09-2026_
+
 # Changelog
 
 All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-Day-to-day session state lives in [`.ai_state.md`](.ai_state.md); this file records
+Day-to-day session state lives in [`.ai_state.md`](https://github.com/gasyoun/VisualDCS/blob/main/.ai_state.md); this file records
 durable, user-facing milestones.
 
 ## [Unreleased]
@@ -561,7 +563,7 @@ durable, user-facing milestones.
 
 ### Added
 - **Drift interpretation + replication supplement** to the H686 delta report:
-  [`derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md`](derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md)
+  [`derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md)
   (+ `delta_supplement.py`, 3 CSVs, generated tables) — what the delta *means*: the +24.3%
   growth is a coherent Vedic composition shift (iti/vai/agni/etad up, ca/tu/api/vac down);
   the 1,761 only-2021 lemmas are mostly a-privative **lemmatization-policy drift**, not lost
@@ -574,7 +576,7 @@ durable, user-facing milestones.
 
 ### Added
 - **Type-D translation-witness typed-link retrofit** ([PR #36](https://github.com/gasyoun/VisualDCS/pull/36),
-  H540): [`non-derived/vedaweb/typed_link_translation_witness.tsv`](non-derived/vedaweb/typed_link_translation_witness.tsv)
+  H540): [`non-derived/vedaweb/typed_link_translation_witness.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/typed_link_translation_witness.tsv)
   (9,945 rows, regenerable via `emit_typed_link_translation_witness.py`) — the
   `gra_vedaweb_crosswalk.tsv` × `grassmann_de_1876_1877.json` join re-emitted in the canonical
   `TYPE_D_RECORD_FIELDS` shape per [`TYPED_LINK_ID_GRAMMAR.md`](https://github.com/gasyoun/Uprava/blob/main/TYPED_LINK_ID_GRAMMAR.md)
@@ -582,12 +584,12 @@ durable, user-facing milestones.
   `build_type_d_id_join.py` / `type_d_id_join.tsv` prototype (Q4.0, H522) — kept in-repo,
   marked superseded, not deleted.
 - **DCS 2021→2026 corpus delta report** ([PR #37](https://github.com/gasyoun/VisualDCS/pull/37),
-  H686): [`derived-data/Corpus-Delta-2021-2026/`](derived-data/Corpus-Delta-2021-2026/REPORT.md)
+  H686): [`derived-data/Corpus-Delta-2021-2026/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/REPORT.md)
   — texts 246→270 (+9.8%), tokens 4,577,461→5,688,416 (+24.3%), lemma IDs 91,406→98,606,
   POS-bucket shift + top-200 lemma frequency-drift table. **Verdict: `DCS-data-2021/` is
   NOT superseded** (6 texts + 1,761 lemma IDs are 2021-only) — report only, no deletion.
 - **DCS 2026 hapax census** ([PR #38](https://github.com/gasyoun/VisualDCS/pull/38), H762):
-  [`derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/`](derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/README.md)
+  [`derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/README.md)
   — 39,987 hapax lemmas (41.9% of the 95,457-lemma vocabulary) over the full 5,688,416-token
   corpus, split single-morpheme (57.7%) vs compound (42.3%) via direct stem-concat
   segmentation; 3 TSVs + deterministic generator + a 5-limitation method README.
@@ -731,3 +733,5 @@ relational dump, as a queryable, validated SQLite master. The 2021 dashboards ar
 ### Removed
 - 8 redundant `.txt` files that were byte-for-byte identical to their `.csv` twin
   (`All`, `capters`, `cpx`, `forms`, `forms10`, `gra`, `topics`, `Files`) — kept the `.csv`.
+
+_Dr. Mārcis Gasūns_

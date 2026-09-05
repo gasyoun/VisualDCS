@@ -1,6 +1,6 @@
 # Imennye-formy — именные формы, окончания основ и словообразование
 
-_Created: 05-07-2026 · Last updated: 05-07-2026_
+_Created: 05-07-2026 · Last updated: 05-09-2026_
 
 ## Что внутри
 
@@ -9,8 +9,8 @@ _Created: 05-07-2026 · Last updated: 05-07-2026_
 
 | Файл/папка | Содержимое |
 |---|---|
-| [`Epicigma 1.xlsx`](Epicigma 1.xlsx) | эпиграфический/эпический материал (неточно по названию) |
-| [`vish.ods`](vish.ods) | данные, вероятно связанные с именем Vishnu |
+| [`Epicigma 1.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Imennye-formy/Epicigma 1.xlsx) | эпиграфический/эпический материал (неточно по названию) |
+| [`vish.ods`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Imennye-formy/vish.ods) | данные, вероятно связанные с именем Vishnu |
 | [`Анализ Корпуса.xlsx`](Анализ Корпуса.xlsx) | общий анализ корпуса |
 | [`База данных по окончаниям основ имен.xlsx`](База данных по окончаниям основ имен.xlsx) | БД окончаний именных основ |
 | [`Значения 1.xlsx`](Значения 1.xlsx) | значения (семантика) |
@@ -19,7 +19,7 @@ _Created: 05-07-2026 · Last updated: 05-07-2026_
 | [`Распределение родов по падежам 1.xlsx`](Распределение родов по падежам 1.xlsx) | распределение грамматического рода по падежам |
 | [`Статистика по производным.txt`](Статистика по производным.txt) | сводная текстовая статистика (см. пример ниже) |
 | [`Частотные ранги имен Вишну.xlsx`](Частотные ранги имен Вишну.xlsx) | частотные ранги эпитетов/имен Вишну |
-| [`некоторые синонимические ряды для имен.xlsx`](некоторые синонимические ряды для имен.xlsx) | синонимические ряды имен (пересекается по теме с [Sinonimy](../Sinonimy/README.md)) |
+| [`некоторые синонимические ряды для имен.xlsx`](некоторые синонимические ряды для имен.xlsx) | синонимические ряды имен (пересекается по теме с [Sinonimy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Sinonimy/README.md)) |
 | [`Works-Share-Endings/`](Works-Share-Endings) | рабочие материалы по окончаниям |
 | [`Works-Share-NAMES/`](Works-Share-NAMES) | рабочие материалы по именам |
 | [`Works-Share-POSIT/`](Works-Share-POSIT) | рабочие материалы (POSIT — вероятно, позиционный анализ) |
@@ -68,7 +68,7 @@ df = pd.read_excel("derived-data/Imennye-formy/База данных по око
 
 ## Происхождение
 
-Не найдено — нет ссылок на `Imennye-formy` в [INDEX.md](../INDEX.md) или в
+Не найдено — нет ссылок на `Imennye-formy` в [INDEX.md](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) или в
 скриптах репозитория за пределами самой папки.
 
 ---

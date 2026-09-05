@@ -1,9 +1,11 @@
+_Created: 06-06-2026 · Last updated: 05-09-2026_
+
 # DCS distributions compared: relational-DB export vs. CoNLL-U
 
 The Digital Corpus of Sanskrit (DCS) is published in two serialisations: the older **relational-DB
 export** in [`../DCS-data-2021/`](../DCS-data-2021/) and the current **CoNLL-U** distribution. This note
 compares them, grounded in a **same-text** example and verified by
-[`compare_dcs_formats.py`](compare_dcs_formats.py).
+[`compare_dcs_formats.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/compare_dcs_formats.py).
 
 | | **Relational-DB export** (`../DCS-data-2021/`) | **CoNLL-U** (current) |
 |---|---|---|
@@ -128,7 +130,7 @@ Sample = the one bundled chapter (`Abhidhānacintāmaṇi`, AbhCint 1): **154 se
    `NOUN=698, ADJ=104, CONJ=54, PART=45, ADV=45, VERB=39, NUM=25, PRON=23, ADP=1`.
 6. **Encoding.** Both are IAST/Unicode, but **anusvāra differs**: `0.csv` uses `ṁ` (U+1E41), CoNLL-U
    uses `ṃ` (U+1E43). Normalise before matching strings across the two. (The relational side also has
-   the mojibake / mislabeled-`.xls` issues noted in [`README.md`](../DCS-data-2021/README.md).)
+   the mojibake / mislabeled-`.xls` issues noted in [`README.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2021/README.md).)
 7. **Coverage / recency.** CoNLL-U covers **270** texts vs the relational dump's **246**, and is the
    maintained version — prefer it for anything current.
 8. **Tooling.** CoNLL-U parses with standard UD libraries; the relational export needs bespoke code
@@ -149,9 +151,11 @@ Sample = the one bundled chapter (`Abhidhānacintāmaṇi`, AbhCint 1): **154 se
 ## Provenance & reproducibility
 
 - Both distributions are © Oliver Hellwig, **Digital Corpus of Sanskrit**, **CC BY** (see
-  [`README.md`](../DCS-data-2021/README.md) for citation/license).
+  [`README.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2021/README.md) for citation/license).
 - [`sample_conllu/Abhidhanacintamani-AbhCint-1.conllu`](sample_conllu/) is one **unmodified** DCS
-  CoNLL-U file, included so [`compare_dcs_formats.py`](compare_dcs_formats.py) runs offline. Get the
+  CoNLL-U file, included so [`compare_dcs_formats.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/compare_dcs_formats.py) runs offline. Get the
   full set by cloning [`OliverHellwig/sanskrit`](https://github.com/OliverHellwig/sanskrit) and reading
   `dcs/data/conllu/files/`.
 - Generated 2026-06-06 from the script output; re-run `python compare_dcs_formats.py` to refresh.
+
+_Dr. Mārcis Gasūns_

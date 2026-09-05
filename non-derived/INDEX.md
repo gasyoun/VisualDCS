@@ -1,10 +1,10 @@
 # non-derived — index
 
-_Created: 02-07-2026 · Last updated: 08-07-2026_
+_Created: 02-07-2026 · Last updated: 05-09-2026_
 
 Catalogue of `VisualDCS/non-derived/` — the **non-DCS** half of a two-repo-root split.
 The **DCS-corpus** half (frequency/statistics data computed from the Digital Corpus of
-Sanskrit) lives at the sibling [`../derived-data/`](../derived-data/INDEX.md) folder.
+Sanskrit) lives at the sibling [`../derived-data/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) folder.
 This directory is **tracked in git and pushed to GitHub** (since 02-07-2026) with one
 exclusion: `Zalizniak/GH/` — independent nested git repos with their own remotes,
 intentionally gitignored. Files over ~95MB are stored as 7-Zip split volumes — see
@@ -16,7 +16,7 @@ This folder was originally the `Non-DCS/` bucket inside `derived-data/`, created
 02-07-2026 by classifying every folder there as DCS-corpus-derived (statistical
 analysis of corpus text) or not. It was then promoted out to repo root as
 `non-derived/` so the two provenance buckets sit as peers rather than nested — see
-[`../derived-data/INDEX.md`](../derived-data/INDEX.md) "History" section for the full
+[`../derived-data/INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) "History" section for the full
 three-pass account (Cyrillic→Latin rename, `Works/Share` merge, DCS/non-DCS split,
 this promotion). Folder names here are already Latin-transliterated from that first
 pass; files were left untouched throughout.
@@ -29,10 +29,10 @@ Current total: **1,239 files, 3.75GB** (18 folders + 2 loose root files), of whi
 628 files are git-tracked — the remaining 611 (1.5GB) are the nested `Zalizniak/GH/`
 repos, gitignored here because each has its own GitHub history/remote. Oversize
 binaries were replaced by tracked 7-Zip split volumes during the 02-07-2026 backup
-(see [`../derived-data/INDEX.md`](../derived-data/INDEX.md) "History" pass 5). `vedaweb`
+(see [`../derived-data/INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) "History" pass 5). `vedaweb`
 (added 08-07-2026, [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md))
 is an **external-corpus feed**, not a folder classified during the original
-Cyrillic→Latin rename pass — see its own [README.md](vedaweb/README.md) for
+Cyrillic→Latin rename pass — see its own [README.md](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/README.md) for
 retrieval/license provenance.
 
 ## Folders (18) — dictionaries, catalogs, reference material, external tools
@@ -57,7 +57,7 @@ retrieval/license provenance.
 | `CHANDAH` | 1MB | 5 | Chandas (Sanskrit meter/prosody) references + `Works-Share-CHANDAS` |
 | `ALANKARA` | 1MB | 1 | Alaṅkāra (rhetoric/figures of speech) reference HTML |
 | `Rigveda` | 0.4MB | 3 | Rigveda introduction/hymn-164 article/parallels drafts |
-| [`vedaweb`](vedaweb/README.md) | 65MB | 13 | VedaWeb 2.0 (Uni Köln) Rig-Veda bulk export — catalog + 4 core annotation layers (Casaretto et al. accented word-split/morphology, gzipped; lemmatization+dictionary refs; Scarlata & Widmer accented text; Lubotsky padapāṭha), 10,552 stanzas each, plus Elizarenkova (1989-1999) Russian RV translation (CC BY 4.0, confirmed 08-07-2026, H361) → [RussianTranslation](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation) citation/context witness, Metrical Data (Kiss & Kölligan 2024, 10,551 stanzas, meter label + scansion, H360), and Geldner + Grassmann German RV translations (CC BY 4.0, confirmed 08-07-2026, H362); GRA crosswalk (H097); PWG gloss cross-check crosswalk (H362); [`type_d_id_join.tsv`](vedaweb/type_d_id_join.tsv) (H522, 11-07-2026) — Type-D `id_gra`↔VedaWeb-stanza concordance, 29,808 rows, joining `gra_vedaweb_crosswalk.tsv`'s example locations against the metrical/Geldner/Grassmann exports (5,164/5,164/5,160/5,164 unique locations matched); [`LAYERS_TRIAGE.md`](vedaweb/LAYERS_TRIAGE.md) (H098, updated H360/H361/H362) — GO/DECIDE triage of the remaining catalog layers, rights-honesty finding (only 2/36 resources carry an explicit machine-readable license), 4 of the original DECIDE layers since confirmed GO by H359 |
+| [`vedaweb`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/README.md) | 65MB | 13 | VedaWeb 2.0 (Uni Köln) Rig-Veda bulk export — catalog + 4 core annotation layers (Casaretto et al. accented word-split/morphology, gzipped; lemmatization+dictionary refs; Scarlata & Widmer accented text; Lubotsky padapāṭha), 10,552 stanzas each, plus Elizarenkova (1989-1999) Russian RV translation (CC BY 4.0, confirmed 08-07-2026, H361) → [RussianTranslation](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation) citation/context witness, Metrical Data (Kiss & Kölligan 2024, 10,551 stanzas, meter label + scansion, H360), and Geldner + Grassmann German RV translations (CC BY 4.0, confirmed 08-07-2026, H362); GRA crosswalk (H097); PWG gloss cross-check crosswalk (H362); [`type_d_id_join.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/type_d_id_join.tsv) (H522, 11-07-2026) — Type-D `id_gra`↔VedaWeb-stanza concordance, 29,808 rows, joining `gra_vedaweb_crosswalk.tsv`'s example locations against the metrical/Geldner/Grassmann exports (5,164/5,164/5,160/5,164 unique locations matched); [`LAYERS_TRIAGE.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/LAYERS_TRIAGE.md) (H098, updated H360/H361/H362) — GO/DECIDE triage of the remaining catalog layers, rights-honesty finding (only 2/36 resources carry an explicit machine-readable license), 4 of the original DECIDE layers since confirmed GO by H359 |
 
 ## Loose root files
 

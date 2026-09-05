@@ -1,3 +1,5 @@
+_Created: 26-06-2026 · Last updated: 05-09-2026_
+
 ---
 paper_id: A38
 title: "The Digital Corpus of Sanskrit 2026: An Open Treebank-and-Morphology SQLite Release with a Validated 2021→2026 Cross-Walk"

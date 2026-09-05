@@ -1,12 +1,12 @@
 # derived-data
 
-_Created: 02-07-2026 · Last updated: 05-07-2026_
+_Created: 02-07-2026 · Last updated: 05-09-2026_
 
 
 
 This folder is the **DCS-corpus** half of a personal Sanskrit-linguistics research
-archive that lives alongside the [VisualDCS](../README.md) dashboards project. For the
-folder-by-folder table with sizes and file counts, see [`INDEX.md`](INDEX.md) — this
+archive that lives alongside the [VisualDCS](https://github.com/gasyoun/VisualDCS/blob/main/README.md) dashboards project. For the
+folder-by-folder table with sizes and file counts, see [`INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) — this
 README covers the *why* and *how to work with it* instead.
 
 ## What this is
@@ -22,11 +22,11 @@ which has the most-frequent-word / core-vocabulary tables) and collaborators, sp
 verb forms, nominal forms,
 compounds, pronouns, particles, phonetics, synonymy, and stem collocability.
 
-Its sibling, [`../non-derived/`](../non-derived/README.md), holds everything from the
+Its sibling, [`../non-derived/`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/README.md), holds everything from the
 same archive that is *not* corpus-statistics — dictionaries, manuscript catalogs,
 lecture/conference material, translations, and cloned external tools. The two folders
 used to be one (`derived-data/DCS-Corpus/` + `derived-data/Non-DCS/`) before being
-promoted to peer directories at the repo root; see "History" in [`INDEX.md`](INDEX.md)
+promoted to peer directories at the repo root; see "History" in [`INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md)
 for the full three-pass account of how the archive got here.
 
 ## How it's organized
@@ -53,26 +53,26 @@ whose Veda/Mahābhārata/Rāmāyaṇa philological-parallels material went to
 `non-derived/` instead (see below). It was deduplicated on 02-07-2026, and its bulky
 `PARA/VSE/PART/` full stop-word run (11.7GB) was deliberately deleted by M.G. the same
 day — see the "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" section in
-[`INDEX.md`](INDEX.md) for the current internal structure and what was consolidated.
+[`INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) for the current internal structure and what was consolidated.
 
 ## README coverage
 
 Every topic folder now has its own `README.md` (added 05-07-2026): data schema,
 a usage snippet, verified caveats, and provenance where a generating script
-could be found — [Chasticy](Chasticy/README.md), [DCS_FILES](DCS_FILES/README.md),
-[Fonetika](Fonetika/README.md), [Glagolnye-formy](Glagolnye-formy/README.md),
-[Imennye-formy](Imennye-formy/README.md), [Kompozity](Kompozity/README.md),
-[Korrelyacii](Korrelyacii/README.md), [Leksicheskie-issledovaniya](Leksicheskie-issledovaniya/README.md),
-[Lexical-Cores](Lexical-Cores/README.md), [Mestoimeniya](Mestoimeniya/README.md),
-[Paralleli-v-tekstah-korpusa-SRC](Paralleli-v-tekstah-korpusa-SRC/README.md),
-[QL](QL/README.md), [Ramayana](Ramayana/README.md), [Sinonimy](Sinonimy/README.md),
-[Sochetaemost-sanskritskih-osnov](Sochetaemost-sanskritskih-osnov/README.md).
+could be found — [Chasticy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Chasticy/README.md), [DCS_FILES](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/DCS_FILES/README.md),
+[Fonetika](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Fonetika/README.md), [Glagolnye-formy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Glagolnye-formy/README.md),
+[Imennye-formy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Imennye-formy/README.md), [Kompozity](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/README.md),
+[Korrelyacii](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Korrelyacii/README.md), [Leksicheskie-issledovaniya](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/README.md),
+[Lexical-Cores](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md), [Mestoimeniya](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Mestoimeniya/README.md),
+[Paralleli-v-tekstah-korpusa-SRC](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Paralleli-v-tekstah-korpusa-SRC/README.md),
+[QL](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/QL/README.md), [Ramayana](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Ramayana/README.md), [Sinonimy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Sinonimy/README.md),
+[Sochetaemost-sanskritskih-osnov](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Sochetaemost-sanskritskih-osnov/README.md).
 Most files in these folders are legacy binary `.xls`/`.xlsx`/`.doc(x)` — schemas
 were confirmed where a readable sample existed (`.txt`/`.csv`) and inferred from
 filenames/sheet names otherwise; treat any unconfirmed schema claim in a
 subfolder README as a starting hypothesis, not a verified fact. A repo-wide
 generating script was found for only one folder
-([Sochetaemost-sanskritskih-osnov](Sochetaemost-sanskritskih-osnov/README.md),
+([Sochetaemost-sanskritskih-osnov](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Sochetaemost-sanskritskih-osnov/README.md),
 via its `Ishodnye-dannye/SINTAGMA.7z` unpack) — the rest predate any tracked
 pipeline code and are best treated as hand-curated research archives.
 
@@ -92,7 +92,7 @@ pipeline code and are best treated as hand-curated research archives.
   DCS-vs-non-DCS calls at classification time (filename/content inspection, not every
   spreadsheet opened) — confirmed by M.G. (02-07-2026) as correctly placed here.
 - **Adding new data.** Drop it into the matching topic folder (or a new one if it's a
-  genuinely new topic), then update the table in [`INDEX.md`](INDEX.md) — folder name,
+  genuinely new topic), then update the table in [`INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) — folder name,
   size, file count, one-line description. If the new folder is dictionaries/catalogs/
   reference material rather than corpus statistics, it likely belongs in
   `../non-derived/` instead.
@@ -104,7 +104,7 @@ pipeline code and are best treated as hand-curated research archives.
 
 This archive is **not** wired into the VisualDCS dashboards' data pipeline — that
 pipeline runs on `../src/DCS-data-2021/` and `../src/DCS-data-2026/` (see the project
-root [`CLAUDE.md`](../CLAUDE.md) / [`README.md`](../README.md)). `derived-data/` is
+root [`CLAUDE.md`](https://github.com/gasyoun/VisualDCS/blob/main/CLAUDE.md) / [`README.md`](https://github.com/gasyoun/VisualDCS/blob/main/README.md)). `derived-data/` is
 older, broader, hand-curated research material from a different (though related)
 corpus-analysis effort; treat it as a reference archive to mine for ideas or figures,
 not as a live input to the shipped `.html` dashboards.

@@ -1,3 +1,5 @@
+_Created: 06-06-2026 · Last updated: 05-09-2026_
+
 # `src/DCS-data-2021/` — Digital Corpus of Sanskrit (DCS) relational-DB export (2021)
 
 This folder holds a **dump of the [Digital Corpus of Sanskrit (DCS)](https://github.com/OliverHellwig/sanskrit)**
@@ -8,8 +10,8 @@ and the JSON assets in `visual/`.
 > **Companion docs.** This is the **2021 relational export**; the current **CoNLL-U** version lives in
 > the sibling [`../DCS-data-2026/`](../DCS-data-2026/). This README explains *what the data is and where
 > it came from*. For *how the oversized files are split / stored* (Git LFS, `*.part###`, `rejoin.bat`,
-> MD5 checks) see [`DCS-data-CLEANUP.md`](DCS-data-CLEANUP.md); for how the two versions differ see
-> [`../DCS-data-2026/DCS_FORMAT_COMPARISON.md`](../DCS-data-2026/DCS_FORMAT_COMPARISON.md).
+> MD5 checks) see [`DCS-data-CLEANUP.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2021/DCS-data-CLEANUP.md); for how the two versions differ see
+> [`../DCS-data-2026/DCS_FORMAT_COMPARISON.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_FORMAT_COMPARISON.md).
 
 ---
 
@@ -52,7 +54,7 @@ For the segmentation/annotation method, additionally cite Hellwig & Nehrdich (20
 
 > **Scope note.** The CC BY terms above cover the **DCS-derived data** in this folder. The **derived
 > statistical summaries and the Free Pascal / Lazarus tools** (see below) are VisualDCS's own work and
-> fall under the repository's [Apache-2.0 license](../../LICENSE) — but they are *built from* the DCS and
+> fall under the repository's [Apache-2.0 license](https://github.com/gasyoun/VisualDCS/blob/main/LICENSE) — but they are *built from* the DCS and
 > so inherit the attribution requirement.
 
 ---
@@ -90,7 +92,7 @@ These appear to be direct exports of DCS database tables (some as bare CSV, some
 
 > `10.csv` and `10.txt` are the **same table in two formats**, not duplicates — both are kept. They are
 > git-ignored at full size and committed as `10.*.part###`; rebuild with `rejoin.bat`
-> (see [`DCS-data-CLEANUP.md`](DCS-data-CLEANUP.md)).
+> (see [`DCS-data-CLEANUP.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2021/DCS-data-CLEANUP.md)).
 
 ---
 
@@ -136,10 +138,10 @@ The DCS is now distributed as **CoNLL-U**, not this relational dump. The full co
 demonstration that both are the *same data* (the integer IDs in `0.csv` are the CoNLL-U `LemmaId`s) —
 now lives in the **2026** folder:
 
-- [`../DCS-data-2026/DCS_FORMAT_COMPARISON.md`](../DCS-data-2026/DCS_FORMAT_COMPARISON.md) — the findings.
-- [`../DCS-data-2026/compare_dcs_formats.py`](../DCS-data-2026/compare_dcs_formats.py) — the script
+- [`../DCS-data-2026/DCS_FORMAT_COMPARISON.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_FORMAT_COMPARISON.md) — the findings.
+- [`../DCS-data-2026/compare_dcs_formats.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/compare_dcs_formats.py) — the script
   (`python compare_dcs_formats.py`), with a bundled CoNLL-U sample.
-- [`../DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md`](../DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md) — the plan to
+- [`../DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md) — the plan to
   import the CoNLL-U updates into this export.
 
 ---
@@ -150,6 +152,8 @@ now lives in the **2026** folder:
   right separator or columns will collapse.
 - **Mislabeled binaries:** `Verbal forms finite.csv` and `Чистота…csv` are actually `.xls`; `texttop.csv`
   is cp1251-mojibake. Don't trust the extension blindly.
-- **Big files need Git LFS** + reassembly — see [`DCS-data-CLEANUP.md`](DCS-data-CLEANUP.md).
-- For project-wide context, see the repo-root [`README.md`](../../README.md) and
-  [`CLAUDE.md`](../../CLAUDE.md).
+- **Big files need Git LFS** + reassembly — see [`DCS-data-CLEANUP.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2021/DCS-data-CLEANUP.md).
+- For project-wide context, see the repo-root [`README.md`](https://github.com/gasyoun/VisualDCS/blob/main/README.md) and
+  [`CLAUDE.md`](https://github.com/gasyoun/VisualDCS/blob/main/CLAUDE.md).
+
+_Dr. Mārcis Gasūns_

@@ -1,10 +1,10 @@
 # derived-data — index
 
-_Created: 02-07-2026 · Last updated: 12-07-2026_
+_Created: 02-07-2026 · Last updated: 05-09-2026_
 
 Catalogue of `VisualDCS/derived-data/` — the **DCS-corpus** half of a two-repo-root
 split. The **non-DCS** half (dictionaries, manuscript catalogs, reference/lecture
-material, external tool clones) lives at the sibling [`../non-derived/`](../non-derived/INDEX.md)
+material, external tool clones) lives at the sibling [`../non-derived/`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/INDEX.md)
 folder, moved out to repo root so the two provenance buckets sit as peers rather than
 nested. Both directories are **tracked in git and pushed to GitHub** (since 02-07-2026,
 pass 5 below): files over ~95MB are stored as 7-Zip split volumes — see
@@ -20,7 +20,7 @@ with their own remotes).
    match); junk removed (`install.exe`, an empty placeholder folder, 3 empty
    `Works/Share` subfolders).
 2. **02-07-2026, pass 2** — all topic folders split into `DCS-Corpus/` vs `Non-DCS/`
-   by data provenance (per project [README.md](../README.md), "DCS" = Digital Corpus
+   by data provenance (per project [README.md](https://github.com/gasyoun/VisualDCS/blob/main/README.md), "DCS" = Digital Corpus
    of Sanskrit — the corpus this repo's dashboards visualize). A folder went to
    `DCS-Corpus/` if its files are computed by statistically analyzing corpus text
    (frequency counts, distributions, collocations — many explicitly labeled "Анализ
@@ -74,7 +74,7 @@ Current total: **849 files, 3.5GB — all tracked in git.** (The drop from pass-
 | `Korrelyacii` | <0.1MB | 1 | yad/tad correlative-form correlation table |
 | `Fonetika` | 1MB | 6 | Phonetics: ligature tables, historical alphabet frequency + `Works-Share-Lig` |
 | `Ramayana` | 187MB | 9 | Rāmāyaṇa most-frequent-words study, dictionary Pareto analysis, highlighted-names dictionary |
-| `Paralleli-v-tekstah-korpusa-SRC` | 1.5GB | 606 | Corpus-wide parallel-passage search — **still the largest folder here**; split out of `Paralleli-v-sanskritskih-tekstah` (see [`../non-derived/INDEX.md`](../non-derived/INDEX.md) for its philological counterpart). See "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" below for its internal structure |
+| `Paralleli-v-tekstah-korpusa-SRC` | 1.5GB | 606 | Corpus-wide parallel-passage search — **still the largest folder here**; split out of `Paralleli-v-sanskritskih-tekstah` (see [`../non-derived/INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/INDEX.md) for its philological counterpart). See "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" below for its internal structure |
 | [`Corpus-Delta-2021-2026`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/REPORT.md) | 0.1MB | 8 | H686: `DCS-data-2021/` vs `DCS-data-2026/dcs_full.sqlite` delta stats (corpus growth, POS-bucket shift, top-200 lemma frequency drift) + verdict — 2021 is **not** superseded, keep it (for corpus *statistics* it IS superseded — never compute a current number from it). Plus the [`DRIFT_INTERPRETATION.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md) supplement: what the drift means (the corpus went Vedic), per-10k rate-drift CSV, all-texts token-delta CSV, shared-lexicon POS shift, a-privative lemmatization-drift diagnosis |
 
 ## Contents of `Paralleli-v-tekstah-korpusa-SRC/`

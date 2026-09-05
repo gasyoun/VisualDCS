@@ -1,6 +1,6 @@
 # DCS_FILES — сырые архивы Digital Corpus of Sanskrit
 
-_Created: 05-07-2026 · Last updated: 05-07-2026_
+_Created: 05-07-2026 · Last updated: 05-09-2026_
 
 ## Что внутри
 
@@ -9,9 +9,9 @@ _Created: 05-07-2026 · Last updated: 05-07-2026_
 
 | Файл/папка | Содержимое |
 |---|---|
-| [`lex.7z.7z.001-003`](lex.7z.7z.001) | многотомный архив лексики DCS (сплит на части — собирается через `7z x lex.7z.7z.001`) |
-| [`lex2.7z.7z.001-005`](lex2.7z.7z.001) | вторая/расширенная версия лексического архива |
-| [`sdm4arc.7z.7z.001-004`](sdm4arc.7z.7z.001) | архив данных (вероятно, экспорт из DCS-инфраструктуры `sdm4`) |
+| [`lex.7z.7z.001-003`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/DCS_FILES/lex.7z.7z.001) | многотомный архив лексики DCS (сплит на части — собирается через `7z x lex.7z.7z.001`) |
+| [`lex2.7z.7z.001-005`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/DCS_FILES/lex2.7z.7z.001) | вторая/расширенная версия лексического архива |
+| [`sdm4arc.7z.7z.001-004`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/DCS_FILES/sdm4arc.7z.7z.001) | архив данных (вероятно, экспорт из DCS-инфраструктуры `sdm4`) |
 | [`spp/`](spp) | распакованная папка (не сэмплирована подробно) |
 | [`Handled/`](Handled) | папка с уже обработанными/использованными файлами |
 | [`Works-Share-DCS/`](Works-Share-DCS) | рабочие материалы, относящиеся к DCS |

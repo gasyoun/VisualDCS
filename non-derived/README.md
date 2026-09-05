@@ -1,10 +1,10 @@
 # non-derived
 
-_Created: 02-07-2026 · Last updated: 02-07-2026_
+_Created: 02-07-2026 · Last updated: 05-09-2026_
 
 This folder is the **non-DCS** half of a personal Sanskrit-linguistics research
-archive that lives alongside the [VisualDCS](../README.md) dashboards project. For the
-folder-by-folder table with sizes and file counts, see [`INDEX.md`](INDEX.md) — this
+archive that lives alongside the [VisualDCS](https://github.com/gasyoun/VisualDCS/blob/main/README.md) dashboards project. For the
+folder-by-folder table with sizes and file counts, see [`INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/INDEX.md) — this
 README covers the *why* and *how to work with it* instead.
 
 ## What this is
@@ -33,10 +33,10 @@ counts, distributions, or collocations computed from corpus text. Concretely, th
   internals were never touched by any rename/move pass in this archive, so those
   repos remain functional as normal git checkouts.
 
-Its sibling, [`../derived-data/`](../derived-data/README.md), holds the corpus-
+Its sibling, [`../derived-data/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/README.md), holds the corpus-
 statistics half of the same archive. The two folders used to be one
 (`derived-data/DCS-Corpus/` + `derived-data/Non-DCS/`) before being promoted to peer
-directories at the repo root; see "History" in [`../derived-data/INDEX.md`](../derived-data/INDEX.md)
+directories at the repo root; see "History" in [`../derived-data/INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md)
 for the full three-pass account of how the archive got here.
 
 ## How it's organized
@@ -61,7 +61,7 @@ grouped by their original tag.
   (bulk rename, bulk delete, archive/zip) that would walk into and mutate their
   `.git/` internals — treat each as its own repo when you need to touch it.
 - **Adding new data.** Drop it into the matching topic folder (or a new one if it's a
-  genuinely new topic), then update the table in [`INDEX.md`](INDEX.md). If the new
+  genuinely new topic), then update the table in [`INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/INDEX.md). If the new
   material is corpus-frequency/statistics data rather than a dictionary, catalog, or
   reference/lecture item, it likely belongs in `../derived-data/` instead.
 - **Renaming.** Folder names here are already Latin — don't reintroduce Cyrillic
@@ -71,7 +71,7 @@ grouped by their original tag.
 
 Like `derived-data/`, this archive is **not** wired into the VisualDCS dashboards'
 data pipeline (`../src/DCS-data-2021/`, `../src/DCS-data-2026/` — see the project root
-[`CLAUDE.md`](../CLAUDE.md)). It's older, hand-curated reference and dictionary
+[`CLAUDE.md`](https://github.com/gasyoun/VisualDCS/blob/main/CLAUDE.md)). It's older, hand-curated reference and dictionary
 material from a related but separate research effort — useful to consult, not a live
 input to the shipped `.html` dashboards.
 
