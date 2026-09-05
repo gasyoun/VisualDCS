@@ -1,3 +1,5 @@
+_Created: 08-05-2026 · Last updated: 05-09-2026_
+
 # Sanskrit Verb Forms — Corpus Frequency List
 > Generated from corpus of 781,616 verb occurrences.  
 > Whitney Roots: https://samskrtam.ru/whitney-roots/roots.html
@@ -1697,3 +1699,4 @@
 
 ---
 
+_Dr. Mārcis Gasūns_

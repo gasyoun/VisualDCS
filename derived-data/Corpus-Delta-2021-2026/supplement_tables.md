@@ -1,3 +1,5 @@
+_Created: 12-07-2026 · Last updated: 05-09-2026_
+
 ### Corpus growth
 
 | | 2021 (relational export) | 2026 (CoNLL-U master) | delta |
@@ -112,3 +114,4 @@
 - Khādiragṛhyasūtrarudraskandavyākhyā (172 tokens)
 - Nāḍīvijñāna (0 tokens)
 
+_Dr. Mārcis Gasūns_

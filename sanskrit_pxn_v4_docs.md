@@ -1,3 +1,5 @@
+_Created: 08-05-2026 · Last updated: 05-09-2026_
+
 # sanskrit_pxn_v4.html — документация
 
 ## Источник данных
@@ -137,3 +139,5 @@
 - **Данные встроены:** FCTX (контексты), RD (парадигмы), ALL (87 ячеек), FID (DCS IDs)
 - **DCS IDs:** 69 форм имеют прямые ссылки на `IDVerbalform`; остальные → лемма
 - **Concordance:** примеры из `conc_part1/2/3.json` (621 109 строф DCS 7.txt)
+
+_Dr. Mārcis Gasūns_

@@ -1,3 +1,5 @@
+_Created: 05-06-2026 · Last updated: 05-09-2026_
+
 # DCS-data cleanup & large-file handling
 
 Date: 2026-06-05
@@ -159,3 +161,5 @@ delete+recreate or Support purge to clear the already-stored objects.
 - `rejoin.bat` — rebuilds the originals from the parts.
 - `DCS-data-CLEANUP.md` — this document.
 - `../../.gitattributes` (repo root) — Git LFS tracking rules for the large files.
+
+_Dr. Mārcis Gasūns_

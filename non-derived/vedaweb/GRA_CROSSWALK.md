@@ -1,11 +1,11 @@
 # GRA ↔ VedaWeb 2.0 crosswalk — Grassmann entries → attested Rigveda occurrences
 
-_Created: 08-07-2026 · Last updated: 08-07-2026_
+_Created: 08-07-2026 · Last updated: 05-09-2026_
 
 Built for [H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md),
 consuming the [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
-feed in [`lemmatization.json`](lemmatization.json). Data file:
-[`gra_vedaweb_crosswalk.tsv`](gra_vedaweb_crosswalk.tsv).
+feed in [`lemmatization.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/lemmatization.json). Data file:
+[`gra_vedaweb_crosswalk.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/gra_vedaweb_crosswalk.tsv).
 
 ## Prior art — VedaWeb already links Grassmann entries; we don't re-match text
 
@@ -45,7 +45,7 @@ for the bulk of the work (only the two-ID confirmation probe hit the network).
    [`GRA-unique-key1-11108.txt`](https://github.com/gasyoun/SanskritLexicography/blob/master/HeadwordLists/now-2026/GRA-unique-key1-11108.txt)
    exactly — a useful independent sanity check that the local `<L>` parse is complete).
 4. Joined `id_gra` → `<L>` entry → `key1`/`key2`/`hom` → wrote
-   [`gra_vedaweb_crosswalk.tsv`](gra_vedaweb_crosswalk.tsv) (9,945 matched rows), one row
+   [`gra_vedaweb_crosswalk.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/gra_vedaweb_crosswalk.tsv) (9,945 matched rows), one row
    per Grassmann entry with its RV occurrence count and one example VedaWeb token.
 
 Reused the existing `csl-orig` line-format parser convention (no new transcoder — the join
@@ -94,11 +94,11 @@ curated dictionary-linking layer," not as an exhaustive RV frequency count.
 
 | File | Rows | Description |
 |---|---:|---|
-| [`gra_vedaweb_crosswalk.tsv`](gra_vedaweb_crosswalk.tsv) | 9,945 | `gra_L · gra_key1 · gra_key2 · gra_hom · gra_pc · rv_occurrence_count · vedaweb_example_form · vedaweb_example_lemma · vedaweb_example_location · match_method` — `match_method` is `vedaweb-id-link` throughout (VedaWeb's own curated ID linkage, not a text-similarity match). Sorted by occurrence count descending. |
+| [`gra_vedaweb_crosswalk.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/gra_vedaweb_crosswalk.tsv) | 9,945 | `gra_L · gra_key1 · gra_key2 · gra_hom · gra_pc · rv_occurrence_count · vedaweb_example_form · vedaweb_example_lemma · vedaweb_example_location · match_method` — `match_method` is `vedaweb-id-link` throughout (VedaWeb's own curated ID linkage, not a text-similarity match). Sorted by occurrence count descending. |
 
 ## Advisory-only
 
-Per the org's standing rule (see the [feed README](README.md) § Advisory-only): this
+Per the org's standing rule (see the [feed README](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/README.md) § Advisory-only): this
 crosswalk is read-only against both `csl-orig/v02/gra/gra.txt` and the VedaWeb export.
 Nothing here is written into reviewed dictionary data — it is a reference layer for a
 future Dictionary-to-Book enhancement on [sanskrit-lexicon/GRA](https://github.com/sanskrit-lexicon/GRA).

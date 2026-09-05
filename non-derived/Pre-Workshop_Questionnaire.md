@@ -1,3 +1,5 @@
+_Created: 02-07-2026 · Last updated: 05-09-2026_
+
 DharmaMitra Workshop — Pre-Workshop Questionnaire
 Thank you for signing up for "Translation in the Age of AI: DharmaMitra for Translator Workflows." To help us make the best out of the session, we'd love to learn a little about how you work with DharmaMitra and other AI tools. This should take about 5 minutes.
 gasyoun@gmail.com Switch accounts
@@ -80,3 +82,5 @@ Would you like to bring a short passage or translation sample to work on togethe
 Yes, I'd like to bring a passage
 Maybe / not sure yet
 No, I'd prefer to observe
+
+_Dr. Mārcis Gasūns_

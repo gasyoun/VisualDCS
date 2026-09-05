@@ -1,6 +1,6 @@
 # VisualDCS
 
-_Created: 20-04-2026 · Last updated: 03-09-2026_
+_Created: 20-04-2026 · Last updated: 05-09-2026_
 
 Interactive frequency dashboards for the [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/), built from corpus frequency data and rendered as standalone HTML files — no build step, no server, open directly in a browser.
 
@@ -26,12 +26,12 @@ runtime dashboards.
 
 ## Research Archive (`derived-data/`, `non-derived/`) — tracked, not part of the dashboards
 
-Two large folders sit alongside this repo's code: [`derived-data/`](derived-data/README.md)
-and [`non-derived/`](non-derived/README.md), together ~7.2GB / ~2,080 files. They're a personal
+Two large folders sit alongside this repo's code: [`derived-data/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/README.md)
+and [`non-derived/`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/README.md), together ~7.2GB / ~2,080 files. They're a personal
 Sanskrit-linguistics research archive (much of it V.V. Leonchenko's "Цифровой корпус санскрита"
 corpus-statistics work and related material) that predates and is broader than this repo's shipped
 dashboards. Both are **git-tracked and pushed since 02-07-2026** (files >95MB as 7-Zip split
-volumes, see [RESTORE_SPLIT_FILES.md](RESTORE_SPLIT_FILES.md); only the nested `Zalizniak/GH/`
+volumes, see [RESTORE_SPLIT_FILES.md](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md); only the nested `Zalizniak/GH/`
 git repos are excluded), but **neither feeds the dashboard pipeline**, which runs solely on
 `src/DCS-data-2021/` and `src/DCS-data-2026/` below. Treat them as a reference archive to mine
 for ideas or figures, not as live dashboard input.
@@ -81,7 +81,7 @@ imported into a queryable SQLite master by a documented, validated pipeline. The
 ([`dcs-full-2026-03-05`](https://github.com/gasyoun/VisualDCS/releases/tag/dcs-full-2026-03-05), 287 MB gz).
 Pipeline: `parse_conllu` → `import_dcs_conllu` → `coverage_diff` → `export_master` → `validate` →
 `regen_widgets`, validated end-to-end (cross-walk 0 mismatches; CI re-runs the suite on push). See
-[`DCS_CONLLU_IMPORT_PLAN.md`](src/DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md) and `src/DCS-data-2026/reports/`
+[`DCS_CONLLU_IMPORT_PLAN.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md) and `src/DCS-data-2026/reports/`
 for the pipeline, the verb tense/mood **code map**, and the 2021→2026 deltas.
 
 ### Cross-repo consumer asset — `dcs_lemma_summary.json`

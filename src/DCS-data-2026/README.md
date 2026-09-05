@@ -1,3 +1,5 @@
+_Created: 06-06-2026 · Last updated: 05-09-2026_
+
 # `src/DCS-data-2026/` — Digital Corpus of Sanskrit (DCS), CoNLL-U (2026 snapshot)
 
 This folder is the **2026 CoNLL-U side** of the DCS in VisualDCS. The older **2021 relational-DB
@@ -25,15 +27,15 @@ lets us hold both versions side by side and document exactly how the corpus chan
 |---|---|
 | `conllu/` | **Submodule** → the full pinned CoNLL-U corpus (`files/` + `lookup/` incl. `dictionary.csv` = `LemmaId → lemma`). Fetch with `git submodule update --init`. |
 | `sample_conllu/` | One unmodified CoNLL-U file (Abhidhānacintāmaṇi 1) so the scripts run without the submodule. |
-| [`DCS_FORMAT_COMPARISON.md`](DCS_FORMAT_COMPARISON.md) | **The differences in detail** — verified, same-text. |
-| [`compare_dcs_formats.py`](compare_dcs_formats.py) | Reproduces the comparison (`python compare_dcs_formats.py`). |
-| [`DCS_CONLLU_IMPORT_PLAN.md`](DCS_CONLLU_IMPORT_PLAN.md) | Plan + roadmap to import the 2026 updates into the 2021 export. |
-| [`check_conllu_updates.py`](check_conllu_updates.py) | Flags upstream CoNLL-U commits after the `04e0778` pin. |
+| [`DCS_FORMAT_COMPARISON.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_FORMAT_COMPARISON.md) | **The differences in detail** — verified, same-text. |
+| [`compare_dcs_formats.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/compare_dcs_formats.py) | Reproduces the comparison (`python compare_dcs_formats.py`). |
+| [`DCS_CONLLU_IMPORT_PLAN.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_CONLLU_IMPORT_PLAN.md) | Plan + roadmap to import the 2026 updates into the 2021 export. |
+| [`check_conllu_updates.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/check_conllu_updates.py) | Flags upstream CoNLL-U commits after the `04e0778` pin. |
 
 ## The differences, in detail
 
 Full verified write-up (with counts, same-verse example, field mapping) is in
-[`DCS_FORMAT_COMPARISON.md`](DCS_FORMAT_COMPARISON.md). In brief — **same underlying data, different
+[`DCS_FORMAT_COMPARISON.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_FORMAT_COMPARISON.md). In brief — **same underlying data, different
 serialisation**: the integer IDs the 2021 `0.csv` stores per sentence are *exactly* the CoNLL-U
 `LemmaId` values, so the two are joinable on `LemmaId`. The substantive differences:
 
@@ -56,3 +58,5 @@ serialisation**: the integer IDs the 2021 `0.csv` stores per sentence are *exact
 
 The CoNLL-U data is **CC BY 4.0** (Oliver Hellwig); see [`conllu/PROVENANCE.md`](conllu) and the
 upstream `conllu/readme.md`. Cite: *Hellwig, Oliver. The Digital Corpus of Sanskrit (DCS). 2010–2024.*
+
+_Dr. Mārcis Gasūns_

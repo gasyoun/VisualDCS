@@ -1,3 +1,5 @@
+_Created: 04-06-2026 · Last updated: 05-09-2026_
+
 # DCS Corpus Ingestion Plan
 
 Date: 2026-05-29
@@ -46,7 +48,7 @@ Before any ingestion script:
 
 Write this up (e.g. extend this file or a `DCS_SCHEMA.md`) before writing a parser. This is the corpus equivalent of "inspect MW markup before classifying."
 
-> **Done (2026-05-30):** see [`docs/DCS_SCHEMA.md`](DCS_SCHEMA.md). Key finding: the local `../DCS/` export is **reference data** (a 184/189-text abbreviation list, a bibliography, and a 78k word→grammar-category list), **not** passage-level occurrences. So the `CorpusOccurrence` model and genre/period dashboards below are **not buildable from this export**; what is built (`npm run build-dcs-corpus`) is the text inventory + grammar-category profile. Dictionary↔corpus lemma coverage is deferred (needs IAST→SLP1 and ~71% of CSV words carry a `?` diacritic-loss artifact). The passage-level sections of this plan await the full corpus.
+> **Done (2026-05-30):** see [`docs/DCS_SCHEMA.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/csl-atlas-migration/DCS_SCHEMA.md). Key finding: the local `../DCS/` export is **reference data** (a 184/189-text abbreviation list, a bibliography, and a 78k word→grammar-category list), **not** passage-level occurrences. So the `CorpusOccurrence` model and genre/period dashboards below are **not buildable from this export**; what is built (`npm run build-dcs-corpus`) is the text inventory + grammar-category profile. Dictionary↔corpus lemma coverage is deferred (needs IAST→SLP1 and ~71% of CSV words carry a `?` diacritic-loss artifact). The passage-level sections of this plan await the full corpus.
 
 ## Corpus Metadata Model
 
@@ -156,3 +158,5 @@ Validation should fail if: the manifest is missing required metadata; a period l
 - `docs/REVIEW_REPORTS.md` — the corpus-lemma mismatch queue.
 - `docs/EVIDENCE_LABELS.md` — labeling derived/inferred period layers.
 - `docs/USE_CASES.md` — UC-CG-01 through UC-CG-17, UC-RD-14, UC-DEV-06.
+
+_Dr. Mārcis Gasūns_

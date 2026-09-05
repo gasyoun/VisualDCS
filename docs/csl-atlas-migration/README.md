@@ -1,3 +1,5 @@
+_Created: 04-06-2026 · Last updated: 05-09-2026_
+
 # CSL Atlas DCS Migration
 
 Date: 2026-06-03
@@ -24,3 +26,5 @@ VisualDCS runtime or build.
 If a copied file still says "atlas", read that as historical context from the
 source repository. Active DCS/corpus ownership is here, in VisualDCS, and any
 future implementation should first rewrite the plan in VisualDCS terms.
+
+_Dr. Mārcis Gasūns_

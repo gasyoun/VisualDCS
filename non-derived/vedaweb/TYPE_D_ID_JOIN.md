@@ -1,13 +1,13 @@
 # Type-D `id_gra` ↔ VedaWeb-stanza concordance
 
-_Created: 11-07-2026 · Last updated: 11-07-2026_
+_Created: 11-07-2026 · Last updated: 05-09-2026_
 
 Built for [H522](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H522-Sonnet_VisualDCS_type_d_grammar_nongrammar_id_join_10.07.26.md)
 (Q4.0 of the
 [Concordance roadmap](https://github.com/gasyoun/Uprava/blob/main/CONCORDANCE_ROADMAP_GRAMMAR_NONGRAMMAR_2026_2027.md)),
 consuming the D2 schema and the [H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md)
-crosswalk. Data file: [`type_d_id_join.tsv`](type_d_id_join.tsv). Build script:
-[`build_type_d_id_join.py`](build_type_d_id_join.py).
+crosswalk. Data file: [`type_d_id_join.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/type_d_id_join.tsv). Build script:
+[`build_type_d_id_join.py`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/build_type_d_id_join.py).
 
 ## Schema (D2, fixed — not redesigned here)
 
@@ -27,9 +27,9 @@ No fuzzy matching was needed. `gra_vedaweb_crosswalk.tsv` (H097) already carries
 `vedaweb_example_location` column: one attested RV stanza per Grassmann `<L>` headword,
 in the same `Book.Hymn.Verse` format (`1.1.6`) VedaWeb uses in every export's per-stanza
 `location` field. All three translation-layer exports
-([`metrical_data_2024.json`](metrical_data_2024.json),
-[`geldner_de_1951_1957.json`](geldner_de_1951_1957.json),
-[`grassmann_de_1876_1877.json`](grassmann_de_1876_1877.json)) already stamp `location`
+([`metrical_data_2024.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/metrical_data_2024.json),
+[`geldner_de_1951_1957.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/geldner_de_1951_1957.json),
+[`grassmann_de_1876_1877.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/grassmann_de_1876_1877.json)) already stamp `location`
 per stanza — confirmed by direct inspection before writing any join logic (per-stanza
 keys, not free text). The join is therefore a direct lookup: for every crosswalk row,
 check whether its `vedaweb_example_location` is present in an export's location set, and
@@ -55,7 +55,7 @@ defect — the 4 missing locations were checked and are simply absent from
 The handoff's context line assumed the Elizarenkova (1989–1999) Russian RV translation
 landed in
 [`SanskritLexicography/RussianTranslation`](https://github.com/gasyoun/SanskritLexicography/tree/master/RussianTranslation).
-On inspection, [`elizarenkova_ru_1989_1999.json`](elizarenkova_ru_1989_1999.json) actually
+On inspection, [`elizarenkova_ru_1989_1999.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/elizarenkova_ru_1989_1999.json) actually
 already sits in this same `VisualDCS/non-derived/vedaweb/` directory (landed by H361,
 08-07-2026), with the identical `location`-keyed schema (10,552 stanzas, resource ID
 `668be38c1e18769f3d9b0251`). It would join against the same crosswalk with the same

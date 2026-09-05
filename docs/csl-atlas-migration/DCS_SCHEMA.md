@@ -1,3 +1,5 @@
+_Created: 04-06-2026 · Last updated: 05-09-2026_
+
 # DCS Export — Schema As Found (Phase 3a)
 
 > ⚠️ **DEPRECATED (26-07-2026, H1407).** This document describes a **superseded export** — the
@@ -99,3 +101,5 @@ Free text; entries of the form `Title Year — (= CODE) full citation.` Only a h
 
 - `docs/DCS_CORPUS_INGESTION_PLAN.md` — the original Phase 3 plan (its passage-level assumptions are revised here).
 - `ARCHITECTURE.md` — corpus metadata requirements and the conservative diachronic scale.
+
+_Dr. Mārcis Gasūns_

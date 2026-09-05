@@ -1,3 +1,5 @@
+_Created: 06-06-2026 · Last updated: 05-09-2026_
+
 # Plan: import DCS CoNLL-U updates into the relational export
 
 **Status:** proposal — awaiting go-ahead. Date: 2026-06-06.
@@ -70,7 +72,7 @@ locations (`dcs.sqlite`, `exports/`) and only *regenerates* the legacy CSVs when
 | `provenance` | `source_repo`, `source_commit`, `imported_at`, `n_texts`, `n_tokens` | reproducibility record |
 
 `lemma_id` is the **shared join key** to the 2021 export (proven in
-[`DCS_FORMAT_COMPARISON.md`](DCS_FORMAT_COMPARISON.md)).
+[`DCS_FORMAT_COMPARISON.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/DCS_FORMAT_COMPARISON.md)).
 
 ---
 
@@ -265,3 +267,5 @@ Pilot-first, data-layer-before-dashboards. Each milestone has an acceptance gate
 
 > Stop-anywhere value: after **M5** you already have a clean, queryable, current DCS DB for the pilot
 > texts, even if M6–M8 wait.
+
+_Dr. Mārcis Gasūns_

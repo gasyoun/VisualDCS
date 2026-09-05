@@ -1,19 +1,19 @@
 # PWG ↔ VedaWeb 2.0 gloss cross-check — Geldner + Grassmann German translations
 
-_Created: 08-07-2026 · Last updated: 08-07-2026_
+_Created: 08-07-2026 · Last updated: 05-09-2026_
 
 Built for [H362](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H362-Sonnet_VisualDCS_vedaweb_geldner_grassmann_pwg_gloss_08.07.26.md),
 consuming the [H096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H096-Sonnet_VisualDCS_vedaweb_feed_export_03.07.26.md)
-feed's [`lemmatization.json`](lemmatization.json) `id_pwg` field (the same generalization
+feed's [`lemmatization.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/lemmatization.json) `id_pwg` field (the same generalization
 [H097](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H097-Sonnet_VisualDCS_gra_vedaweb_crosswalk_03.07.26.md)
 found for `id_gra`, noted at [FINDINGS.md §63](https://github.com/gasyoun/SanskritLexicography/blob/master/FINDINGS.md))
 plus two newly-landed translation exports:
-[`geldner_de_1951_1957.json`](geldner_de_1951_1957.json) and
-[`grassmann_de_1876_1877.json`](grassmann_de_1876_1877.json). Data file:
-[`pwg_vedaweb_gloss_crosswalk.tsv`](pwg_vedaweb_gloss_crosswalk.tsv).
+[`geldner_de_1951_1957.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/geldner_de_1951_1957.json) and
+[`grassmann_de_1876_1877.json`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/grassmann_de_1876_1877.json). Data file:
+[`pwg_vedaweb_gloss_crosswalk.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/pwg_vedaweb_gloss_crosswalk.tsv).
 
 Rights: both translations were unconfirmed ("DECIDE") at
-[LAYERS_TRIAGE.md](LAYERS_TRIAGE.md) rows #14/#15 until
+[LAYERS_TRIAGE.md](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/LAYERS_TRIAGE.md) rows #14/#15 until
 [H359](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H359-Sonnet_Uprava_vedaweb_rights_outreach_send_08.07.26.md)'s
 outreach got an explicit written reply (Prof. Daniel Kölligan, 08-07-2026) confirming both
 as **CC BY 4.0** — see
@@ -38,7 +38,7 @@ Mission item 2 asked this explicitly before building anything. **No — the two 
 resources serve different roles and are not redundant:**
 
 - **GRA the *dictionary*** (`sanskrit-lexicon/GRA`, already crosswalked via `id_gra` in
-  [`GRA_CROSSWALK.md`](GRA_CROSSWALK.md)/H097) gives Grassmann's German **dictionary
+  [`GRA_CROSSWALK.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/GRA_CROSSWALK.md)/H097) gives Grassmann's German **dictionary
   gloss** per headword — a lexicographic definition, the same kind of unit PWG provides.
 - **This Grassmann *translation* layer** (`grassmann_de_1876_1877.json`, his 1876-77 RV
   metrical translation) gives a **full-sentence rendering of the whole stanza** in context
@@ -68,7 +68,7 @@ the repo, each serving its own crosswalk (`GRA_CROSSWALK.md` for GRA↔attestati
 4. Joined `id_pwg` → `<L>` entry → `key1`/`key2`/`hom`/gloss-snippet, then for one example
    attested RV location per entry, pulled the matching Geldner and Grassmann full-sentence
    translations from the two newly-landed exports. Wrote
-   [`pwg_vedaweb_gloss_crosswalk.tsv`](pwg_vedaweb_gloss_crosswalk.tsv) (10,182 matched
+   [`pwg_vedaweb_gloss_crosswalk.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/pwg_vedaweb_gloss_crosswalk.tsv) (10,182 matched
    rows), sorted by RV occurrence count descending.
 
 Reused the `csl-orig` `<L>`-header parser convention from `GRA_CROSSWALK.md` (a plain ID
@@ -104,11 +104,11 @@ VedaWeb's curated dictionary-linking layer," not an exhaustive RV frequency coun
 
 | File | Rows | Description |
 |---|---:|---|
-| [`pwg_vedaweb_gloss_crosswalk.tsv`](pwg_vedaweb_gloss_crosswalk.tsv) | 10,182 | `pwg_L · pwg_key1 · pwg_key2 · pwg_hom · pwg_pc · pwg_gloss_snippet · rv_occurrence_count · example_location · example_form · example_lemma · geldner_text · grassmann_text` — one row per PWG entry attested in the RV, with a worked example location and both translators' full-sentence rendering at that location for eyeball comparison against PWG's own gloss. |
+| [`pwg_vedaweb_gloss_crosswalk.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/pwg_vedaweb_gloss_crosswalk.tsv) | 10,182 | `pwg_L · pwg_key1 · pwg_key2 · pwg_hom · pwg_pc · pwg_gloss_snippet · rv_occurrence_count · example_location · example_form · example_lemma · geldner_text · grassmann_text` — one row per PWG entry attested in the RV, with a worked example location and both translators' full-sentence rendering at that location for eyeball comparison against PWG's own gloss. |
 
 ## Advisory-only, validation-only
 
-Per the org's standing rule (see the [feed README](README.md) § Advisory-only) and this
+Per the org's standing rule (see the [feed README](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/vedaweb/README.md) § Advisory-only) and this
 handoff's own guardrail: this crosswalk is **read-only** against both `csl-orig/v02/pwg/pwg.txt`
 and the VedaWeb exports. **Nothing here is ever written into reviewed PWG dictionary data.**
 The joined table is a validation witness for a human (or a future targeted pass) to spot-check
