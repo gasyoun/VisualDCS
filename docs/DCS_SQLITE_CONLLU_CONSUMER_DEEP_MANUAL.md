@@ -154,7 +154,7 @@ per-sample tag claims as sample-scoped; enumerate `upos` values from the DB when
 The frequency numbers circulating downstream (kosha
 [`lemma_frequency.tsv`](https://github.com/gasyoun/kosha/blob/main/data/frequency/README.md),
 csl-guides
-[`corpus-attestation.mdx`](https://github.com/gasyoun/csl-guides/blob/main/docs/dictionaries/corpus-attestation.mdx))
+[`corpus-attestation.mdx`](https://github.com/sanskrit-lexicon/csl-guides/blob/main/docs/dictionaries/corpus-attestation.mdx))
 come from the **M9 archive** (`period_freq`, Leonchenko-era exports), *not* from this sqlite.
 Live demonstration of the mismatch — same lemma, both "DCS counts":
 
@@ -312,7 +312,7 @@ the **M9 `archive.sqlite`**, not `dcs_full` — see §4.3 before comparing count
 
 ### 6.4 csl-guides — downstream of kosha, top-2,000 slice
 
-[`corpus-attestation.mdx`](https://github.com/gasyoun/csl-guides/blob/main/docs/dictionaries/corpus-attestation.mdx)
+[`corpus-attestation.mdx`](https://github.com/sanskrit-lexicon/csl-guides/blob/main/docs/dictionaries/corpus-attestation.mdx)
 renders `src/data/corpus-frequency.json` = the top 2,000 of kosha's `lemma_frequency.tsv`
 (SLP1-keyed, joins onto `dcs_cdsl_xref.tsv` via `slp1`/`normkey`; the xref links 15,902 DCS lemma
 ids to CDSL headwords, **81.4% linked** — FINDINGS §12 — and is itself the "never re-derive this
@@ -324,7 +324,7 @@ csl-guides rendering. Its quoted corpus totals (4,550,704 tokens / 59,282 lemmas
 
 csl-atlas consumes the *banded* `data/dcs/dcs_lemma_summary.json` (DCS-2021 vintage, bands only —
 recorded in csl-guides'
-[`NON_COLOGNE_SOURCES.md`](https://github.com/gasyoun/csl-guides/blob/main/src/data/NON_COLOGNE_SOURCES.md)).
+[`NON_COLOGNE_SOURCES.md`](https://github.com/sanskrit-lexicon/csl-guides/blob/main/src/data/NON_COLOGNE_SOURCES.md)).
 Its migration-era schema notes in this repo are superseded — see the deprecation banner on
 [`docs/csl-atlas-migration/DCS_SCHEMA.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/csl-atlas-migration/DCS_SCHEMA.md),
 which describes a three-file reference export (78,761-row grammar-tag stats, abbreviation list,
