@@ -278,6 +278,19 @@ from the pinned 2026 DCS master; render-tested headlessly by
   The `paradigm_nominal.json` buckets themselves are unchanged — the split is an additive
   side-car. See [GAPS §14](https://github.com/gasyoun/SanskritLexicography/blob/master/GAPS.md)
   and [FINDINGS §630](https://github.com/gasyoun/SanskritLexicography/blob/master/FINDINGS.md).
+- **The `-ant` pool's ADJ half is now measured too (H4011)** — the surplus H3984 declared
+  unreached. Sourced per-lemma from the DCS master (read-only) instead of the NOUN-only G2
+  CSV: **36,768 ADJ tokens over 1,880 lemma_ids**, adjudicated by the same MW+PWG entry-id
+  signal into **34,809 / 1,015 one-lexeme-two-spellings, 0 two-headwords, 661 / 193
+  `at_only`, 95 / 13 `ant_only`, 1,203 / 659 left pooled**. The pinned `bhagavat`
+  (lemma_id 48482, ADJ, 3,238 tokens) is finally classified: **one lexeme, two spellings**.
+  The `-ī` class's 664 ADJ tokens / 54 lemma_ids are split by the same syllable count
+  (31 / 3 monosyllabic vs 633 / 51 polysyllabic). With both halves in, the `-ant` pool is
+  **100 % inventoried** and **97.4 % of its token mass carries a verdict**; every NOUN and
+  Sangram G2 total is re-derived and unmoved. Builder
+  [`src/DCS-data-2026/split_pooled_nominal_classes_adj.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/split_pooled_nominal_classes_adj.py),
+  report [`reports/nominal_pooled_class_split_adj.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_pooled_class_split_adj.md),
+  payload `visual/paradigm_nominal_class_split_adj.json` — a sibling, not an overwrite.
 
 Full report:
 [`reports/paradigm_nominal_build.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/paradigm_nominal_build.md);
@@ -370,6 +383,7 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/paradigm_nominal.json` / `paradigm_nominal_data.js` | H1472: 14 declension classes × token gender × 24 case·number cells — counts, surface endings, top forms, corpus examples; consumed by `sanskrit_nominal_dashboard.html` |
 | `visual/paradigm_nominal_lemmas.json` / `paradigm_nominal_lemmas_data.js` | H2321: 31,753 NOUN lemmas × G2-attested cells + top forms; coverage from G2, forms from pin; consumed by `sanskrit_nominal_trainer.html` |
 | `visual/paradigm_nominal_class_split.json` | H3984: the `-ī` and `-ant` pools re-bucketed on an external lexical signal (syllable count; MW/PWG entry-id sets) with per-lemma verdicts and the G2 reconciliation totals; additive side-car to `paradigm_nominal.json`, no dashboard consumer yet |
+| `visual/paradigm_nominal_class_split_adj.json` | H4011: the `-ant` pool's **ADJ half** (36,768 tokens / 1,880 lemma_ids) inventoried per-lemma from `dcs_full.sqlite` and adjudicated on the same MW/PWG entry-id signal, plus the `-ī` class's non-NOUN residue; sibling of the H3984 payload, which it does not modify |
 | `visual/corpus_stats_widget.json` | Summary morpho-statistics for widgets |
 | `visual/anki_compact.json` | 200 Anki flashcards |
 | `visual/conc_totals.json` | 6,423 forms → total occurrences in corpus |

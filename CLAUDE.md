@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 15-05-2026 · Last updated: 03-09-2026_
+_Created: 15-05-2026 · Last updated: 06-09-2026_
 
 **VisualDCS** is standalone HTML frequency dashboards for the
 [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/).
@@ -110,6 +110,17 @@ hits Gītagovinda / Aṣṭāvakragīta. Match `chapter.ref`, never just `text.n
   — a `reconciles: false` or a moved G2 total is a build failure, not a diff to accept.
   Never split a stem on a character rule: the signal must come from outside the corpus
   (FINDINGS §630).
+- **The ADJ half is a SECOND side-car, not an edit of the first** (H4011).
+  [`split_pooled_nominal_classes_adj.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/split_pooled_nominal_classes_adj.py)
+  imports its membership test, dictionary loader, adjudicator and syllable counter from
+  `split_pooled_nominal_classes.py` — never re-implement them, or the two halves of GAPS 14
+  drift. It reads the **DCS master** directly (the G2 CSV is NOUN-only) and writes
+  `visual/paradigm_nominal_class_split_adj.json` +
+  [`reports/nominal_pooled_class_split_adj.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_pooled_class_split_adj.md).
+  Run it with `--check`: a `reconciles: false`, a moved NOUN/G2 total, or a pinned
+  `bhagavat`/`bhagavant` verdict other than `one_lexeme_two_spellings` is a build failure.
+  It stats the DB and refuses under 900 MB — the H848 decoy must never be mistaken for the
+  master.
 
 ## Where the rest lives
 
