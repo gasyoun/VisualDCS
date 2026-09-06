@@ -1,4 +1,4 @@
-_Created: 26-06-2026 · Last updated: 05-09-2026_
+_Created: 26-06-2026 · Last updated: 06-09-2026_
 
 ---
 paper_id: A38
@@ -12,7 +12,7 @@ data_source: "src/DCS-data-2026/ (master built M0–M8; figures verified against
 
 # The Digital Corpus of Sanskrit 2026: An Open Treebank-and-Morphology SQLite Release with a Validated 2021→2026 Cross-Walk
 
-_Created: 26-06-2026 · Last updated: 04-08-2026_
+_Created: 26-06-2026 · Last updated: 06-09-2026_
 
 > **Draft status (2026-07-04, readiness 3/5).** Manuscript built directly on the completed
 > data work in [`src/DCS-data-2026/`](https://github.com/gasyoun/VisualDCS/tree/main/src/DCS-data-2026)
@@ -43,6 +43,7 @@ _Created: 26-06-2026 · Last updated: 04-08-2026_
 > [`A38_release_checklist.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md),
 > to start after the current coding pass); (2) verify the exact bibliographic details of the
 > remaining §2 references against the published versions.
+> author-voice pass 06-09-2026 ([SIGNOFF_A38_author_pass.md](https://github.com/gasyoun/VisualDCS/blob/main/papers/SIGNOFF_A38_author_pass.md)).
 
 ## Abstract
 
@@ -50,32 +51,33 @@ The Digital Corpus of Sanskrit (DCS) is the central morphologically annotated co
 Sanskrit, but it circulates in two incompatible serialisations: an older relational-database
 export (the basis of most downstream tools, including this project's frequency dashboards) and
 the current Universal-Dependencies CoNLL-U distribution, which crossed a format redesign in
-2022 and is the maintained source of truth. We present a FAIR, DOI-minted *data descriptor* for
+2022 and is the maintained source of truth. I present a FAIR, DOI-minted *data descriptor* for
 **DCS-2026**: a queryable SQLite master and a set of tidy CSV exports derived losslessly from
 the CoNLL-U distribution at a single pinned upstream commit. The master covers **270 texts,
 5,688,416 tokens, 754,726 sentences, and 98,606 distinct attested lemmas**, of which **74 texts
-carry dependency (treebank) annotation**; the remainder are morphological only. We document the
+carry dependency (treebank) annotation**; the remainder are morphological only. I document the
 normalized schema, a validated lemma-keyed cross-walk between the 2021 and 2026 vintages (89.3%
 Jaccard overlap of attested lemmas), and a learned map from the 2021 DCS-internal verb codes to
 UD features. Validation passes at scale: cross-walk (0 mismatches over 754,726 sentences),
 referential integrity (0 orphans), and full-token spot checks (200 verses, 0 mismatches); the
 pilot pipeline runs CI-gated and additionally confirms idempotency (identical data hash on
-re-build). We are deliberately explicit about two annotation
-caveats that any reuse must respect: (i) UD `Tense` has no Aorist/Perfect value, so both collapse
+re-build). I state explicitly two annotation caveats that any reuse must
+respect: (i) UD `Tense` has no Aorist/Perfect value, so both collapse
 into a single `Tense=Past` bucket; and (ii) the corpus's own occurrence and sentence identifiers
-(`OccId`, `sent_id`) are non-unique, forcing synthetic primary keys. The contribution is not new
-corpus annotation — that is Hellwig's — but a validated, reproducible, query-ready packaging of
-the current DCS together with an honest mapping back to the established 2021 ecosystem.
+(`OccId`, `sent_id`) are non-unique, forcing synthetic primary keys. The contribution is a
+validated, reproducible, query-ready packaging of the current DCS together with an honest
+mapping back to the established 2021 ecosystem; the corpus annotation itself is Hellwig's, and
+none of it is new here.
 
 ## 1. Introduction
 
-The Digital Corpus of Sanskrit (DCS; Oliver Hellwig, 2010–present) is the de-facto reference
+The Digital Corpus of Sanskrit (DCS; Oliver Hellwig, 2010–present) is the de facto reference
 corpus for quantitative Sanskrit philology. Almost every downstream resource that reports DCS
 frequencies — including this project's verb-form and paradigm dashboards — was built against the
-corpus's **relational-database export**, a set of normalized CSV/SQL tables joined by integer
+corpus's relational-database export, a set of normalized CSV/SQL tables joined by integer
 IDs (a sentence row in `0.csv` is a lemma-ID sequence plus a sandhied surface string; per-token
 morphology lives in separate tables encoded as DCS-internal numeric codes). Since then the DCS
-has migrated to a **Universal-Dependencies CoNLL-U** distribution — one self-contained token per
+has migrated to a Universal-Dependencies CoNLL-U distribution — one self-contained token per
 line, with readable UD part-of-speech and feature strings, explicit sandhi/compound splitting,
 unsandhied forms, stable DCS identifiers, and dependency trees for a subset of texts. Per
 upstream, the CoNLL-U format "changed in the 2022-08-09 release to comply with the UD standard,"
@@ -84,19 +86,19 @@ so the gap between the two vintages is not merely *more data* but a format redes
 This creates a concrete reuse problem. The maintained, broader, UD-standard distribution is the
 right basis for new work, but it is a directory of ~15,900 plain-text files, not a queryable
 database, and it shares no obvious key with the relational export that the existing tooling
-expects. We close this gap. We build a single **queryable SQLite master** plus tidy CSV exports
-directly from the CoNLL-U distribution, pinned to one upstream commit for reproducibility; we
-prove and use a **lemma-keyed cross-walk** to the 2021 vintage so that old and new can be joined;
-and we validate the result under CI. This paper is the *data descriptor* for that release.
+expects. I close this gap. I build a single queryable SQLite master plus tidy CSV exports
+directly from the CoNLL-U distribution, pinned to one upstream commit for reproducibility; I
+prove and use a lemma-keyed cross-walk to the 2021 vintage so that old and new can be joined;
+and I validate the result under CI. This paper is the *data descriptor* for that release.
 
-Our claims are modest and data-oriented:
+The claims are modest and data-oriented:
 
 1. **A query-ready, validated DCS-2026 master exists and is reproducible** from one pinned
    upstream commit, with a published artifact and (on acceptance) a minted DOI.
 2. **The 2021 and 2026 vintages are joinable on `LemmaId`**, verified token-for-token, with a
    measured coverage diff (texts and lemmas added/removed) and a learned 2021-code→UD-feature map
    for verbs.
-3. **The release is honest about UD's limits for Sanskrit** — the aorist/perfect collapse and the
+3. **The release is honest about UD's limits for Sanskrit.** The aorist/perfect collapse and the
    non-unique corpus IDs are documented as first-class caveats, not hidden behind clean totals.
 
 **Division of labor (companion papers).** This descriptor is deliberately narrow: it publishes
@@ -112,19 +114,19 @@ denominator once, here, is what makes those measurements reproducible rather tha
 ## 2. Related work
 
 **The annotation this release packages.** The DCS's own annotation pipeline is documented across a
-line of NLP papers we cite for accuracy, not because we reuse their methods (§2.1 is explicit about
+line of NLP papers I cite for accuracy, not because I reuse their methods (§2.1 is explicit about
 that boundary). Hellwig, Scarlata, Ackermann & Widmer (2020), *The Treebank of Vedic Sanskrit* (LREC
 2020, [2020.lrec-1.632](https://aclanthology.org/2020.lrec-1.632/)), introduce the first dependency
 treebank for Vedic Sanskrit (Universal-Dependencies scheme) — this is the direct upstream source of
-the 74 dependency-annotated texts in our `text` table's `has_dependencies` flag. Hellwig & Nehrdich
+the 74 dependency-annotated texts in the `text` table's `has_dependencies` flag. Hellwig & Nehrdich
 (2018), *Sanskrit Word Segmentation Using Character-level Recurrent and Convolutional Neural
 Networks* (EMNLP 2018, [D18-1295](https://aclanthology.org/D18-1295/)), present the neural
 sandhi-and-compound segmenter that underlies the sandhi/compound-split surface forms already
-present in the CoNLL-U tokens we ingest. Nehrdich, Hellwig & Keutzer (2024), *ByT5-Sanskrit*
+present in the CoNLL-U tokens I ingest. Nehrdich, Hellwig & Keutzer (2024), *ByT5-Sanskrit*
 (Findings of EMNLP 2024, [2024.findings-emnlp.805](https://aclanthology.org/2024.findings-emnlp.805/)),
 introduce a unified byte-level model spanning segmentation, lemmatization, dependency parsing, and
 OCR post-correction — the current state of the art for the annotation tasks that produced the
-corpus we packaged. **We could not independently verify a specific quantitative claim sometimes
+corpus I packaged. **I could not independently verify a specific quantitative claim sometimes
 attributed to the segmentation literature (an rcNN-with-shortcuts model training in ~2h vs. ~55h
 for a prior baseline, matching a sentencepiece-based Transformer) against either paper's published
 abstract; that comparison is not repeated here and should not be cited to this manuscript.** The
@@ -139,24 +141,24 @@ linguistic decision in the data is upstream's.
 ### 2.1 Method boundary — this is a packaging layer, not a re-annotation
 
 **This release does not use, reproduce, or benchmark against ByT5-Sanskrit, the rcNN sandhi/compound
-segmenter, or the treebank's neural syntactic labeler.** Our pipeline (§3.2) is a lossless
+segmenter, or the treebank's neural syntactic labeler.** My pipeline (§3.2) is a lossless
 CoNLL-U→SQLite import, a lemma-keyed cross-walk, and CI validation — it consumes the *already
 produced* annotation from those upstream systems and does not re-derive, re-train, or re-score any
 of it. Citing the segmentation/parsing/ByT5 line establishes where the annotation *in* the corpus
-came from; it is not evidence of methodological continuity with our own contribution, which is
+came from; it is not evidence of methodological continuity with my own contribution, which is
 purely a data-engineering layer (schema, provenance, validated cross-walk) over annotation that
-remains entirely Hellwig et al.'s. The **novelty claim** is not new annotation but the *validated,
-reproducible, query-ready packaging* of the current DCS plus the documented, tested 2021→2026
-cross-walk that lets the large installed base of relational-export tooling migrate.
+remains entirely Hellwig et al.'s. The novelty claim is the *validated, reproducible, query-ready
+packaging* of the current DCS plus the documented, tested 2021→2026 cross-walk that lets the
+large installed base of relational-export tooling migrate; new annotation is not claimed.
 
 **The format target.** The 2026 distribution follows Universal Dependencies (Nivre et al. 2016;
 Nivre et al. 2020 for UD v2), with DCS-specific extensions in FEATS/MISC (e.g. `Formation`,
-`LemmaId`, `OccId`, `Unsandhied`, `WordSem`). One finding of our packaging work is that the
+`LemmaId`, `OccId`, `Unsandhied`, `WordSem`). One finding of the packaging work is that the
 distribution's UPOS inventory retains pre-v2 values (`CONJ`, `PART` rather than `CCONJ`/`SCONJ`)
 and a non-standard `Case=Cpd` for compound members (§6) — exactly the kind of detail a data
 descriptor exists to put on record.
 
-**The genre.** We follow the conventions of language-resource *data descriptors* (LREC resource
+**The genre.** I follow the conventions of language-resource *data descriptors* (LREC resource
 papers; *Research Data Journal for the Humanities and Social Sciences*; *Journal of Open
 Humanities Data*): what is documented is provenance, schema, validation, licence, and access,
 with the novelty claim confined to the packaging. Comparable precedents are the published
@@ -168,7 +170,7 @@ cross-linking into the Cologne Digital Sanskrit Dictionaries (CDSL) ecosystem. �
 concrete consumers of the present release. The cross-walk section (§3.4) exists precisely
 because this installed base cannot be rewritten wholesale.
 
-A descriptor's related work is orientation, not a survey; we keep it at that.
+A descriptor's related work is orientation, not a survey; I keep it at that.
 
 ## 3. Data and method
 
@@ -231,7 +233,7 @@ regenerate from the master.
 The integer lemma IDs the 2021 `0.csv` stores per sentence are *exactly* the CoNLL-U `LemmaId`
 values, verified token-for-token on a shared verse: the 13-ID sequence of the first
 Abhidhānacintāmaṇi line is IDENTICAL across both serialisations. `LemmaId` is therefore the
-primary join key between vintages. For verbs we additionally **learned** a map from the 2021
+primary join key between vintages. For verbs I additionally **learned** a map from the 2021
 `15.csv` numeric tense/mood codes (named in `timws.csv`) to observed UD `Tense|Voice|Mood`
 combinations on the same forms (M4; transcribed from
 [`reports/m4_exports.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/m4_exports.md)).
@@ -249,7 +251,7 @@ The high-frequency codes resolve exactly; 31 of 33 attested codes resolve overal
 | 10–13 | Aorist Active/Medium | 701 | `Tense=Past\|Mood=Ind` |
 | 24 | Present Passive | 1,809 | `Tense=Pres\|Voice=Pass\|Mood=Ind` |
 
-The Perfect and Aorist rows landing in the *same* UD bucket is not a mapping error — it is the
+That the Perfect and Aorist rows land in the *same* UD bucket is no mapping error: it is the
 UD `Tense=Past` collapse documented in §6, and the map is the concrete evidence for it. The map
 resolves that collapse only as far as the *UD* feature set goes: DCS's own `feat_formation`
 re-separates the two inside the finite past indicative, which is why §6 now reports the collapse
@@ -362,10 +364,10 @@ bespoke joins across several relational-export tables (decoding DCS numeric code
 SQL queries over readable UD features; the `has_dependencies` flag lets a consumer restrict to the
 74-text treebank subset for syntactic work; and the `LemmaId` cross-walk means the large installed
 base of tools built on the 2021 export can be migrated rather than rewritten. Because the import is
-pinned and idempotent, every reported number is reproducible from one command and one SHA — the
-property that distinguishes a data *descriptor* from a one-off dump. The release is intentionally a
-*layer over* the DCS, not a re-annotation: it adds queryability, validation, provenance, and a
-documented bridge, and changes none of Hellwig's annotation decisions.
+pinned and idempotent, every reported number is reproducible from one command and one SHA, which
+is the property that distinguishes a data *descriptor* from a one-off dump. The release is
+intentionally a *layer over* the DCS, not a re-annotation: it adds queryability, validation,
+provenance, and a documented bridge, and changes none of Hellwig's annotation decisions.
 
 ### 5.1 Uptake: live consumers
 
@@ -388,7 +390,7 @@ The *companion* research-archive release (§6.1) — a separate artifact, outsid
 validation claims — already feeds two further pipelines of its own: a lexicographic frequency
 sidecar of 83,277 rows
 ([`kosha/lemma_frequency.tsv`](https://github.com/gasyoun/kosha/blob/main/data/frequency/lemma_frequency.tsv))
-and, through it, the corpus-payoff ordering of a PWG→Russian translation worklist. We list these
+and, through it, the corpus-payoff ordering of a PWG→Russian translation worklist. I list these
 separately, not as uptake of the master.
 
 ## 6. Limitations
