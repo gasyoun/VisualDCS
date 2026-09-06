@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 05-09-2026_
+_Created: 06-06-2026 · Last updated: 06-09-2026_
 
 # Changelog
 
@@ -11,6 +11,26 @@ durable, user-facing milestones.
 ## [Unreleased]
 
 ### Added
+- **The `-ant` pool's ADJ half measured from the DCS master
+  ([H4011](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4011-Opus_SanskritLexicography_nominal-ant-adj-half-dcs-master_03.09.26.md),
+  GAPS 14, Opus 5 `claude-opus-5`).**
+  [`split_pooled_nominal_classes_adj.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/split_pooled_nominal_classes_adj.py)
+  closes the residual H3984 left open. Sangram G2's universe is `upos='NOUN'`, which reached
+  only 23.5 % of the `-ant` class; this pass takes the per-lemma inventory straight from
+  `dcs_full.sqlite` (read-only, never copied) and **counts** the surplus rather than
+  estimating it: **36,768 ADJ tokens over 1,880 lemma_ids**, adjudicated on the same MW+PWG
+  headword **entry-id sets** into **34,809 / 1,015 `one_lexeme_two_spellings`,
+  0 `two_headwords`, 661 / 193 `at_only`, 95 / 13 `ant_only`, 1,203 / 659 left pooled**.
+  The pair GAPS 14 pins by name is finally classified from the inventory side as well as the
+  dictionary side: DCS `bhagavat` (lemma_id 48482) is **ADJ**, which is exactly why it sat
+  outside G2 — PWG indexes भगवत् and भगवन्त् under the identical id pair `53806,80057`, so it
+  is **one lexeme under two spellings**. Across 1,880 ADJ lemma_ids **not one** comes out
+  `two_headwords`, where a presence-only test would have inverted the pinned case. The `-ī`
+  class's 664 ADJ tokens / 54 lemma_ids are split by the same syllable count (31 / 3
+  monosyllabic vs 633 / 51 polysyllabic). All 11 reconciliation rows pass and every NOUN and
+  G2 total is unmoved. Sibling payload `visual/paradigm_nominal_class_split_adj.json` and
+  report [`reports/nominal_pooled_class_split_adj.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/nominal_pooled_class_split_adj.md);
+  the H3984 payload is untouched.
 - **The two pooled declension classes split with an external lexical signal
   ([H3984](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H3984-Opus_SanskritLexicography_nominal-i-ant-stem-class-split_03.09.26.md),
   GAPS 14, Opus 5 `claude-opus-5`).**
