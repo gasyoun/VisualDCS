@@ -33,7 +33,7 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
 - **[`Композиты 4+.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Композиты%204%2B.xlsx)**,
   **[`Композиты.xlsx.7z.001`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Композиты.xlsx.7z.001)**
   (split archive — see [`../../RESTORE_SPLIT_FILES.md`](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)),
-  **[`Сложные слова с разбиением на основы (испр).ods`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Сложные%20слова%20с%20разбиением%20на%20основы%20(испр).ods>)**,
+  **`Сложные слова с разбиением на основы (испр).ods`.ods>)**,
   **[`категории композитов.ods`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/категории%20композитов.ods)**
   — binary spreadsheets (not opened in this pass): "Compounds 4+" (compounds of 4+ members),
   "compound words split into stems (corrected)", and "compound categories" respectively —

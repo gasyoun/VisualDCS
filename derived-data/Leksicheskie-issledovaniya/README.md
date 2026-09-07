@@ -13,7 +13,7 @@ size/file-count table (11MB / 17 files).
 ## Data schema
 
 - **[`sarvached.txt`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/sarvached.txt)**
-  and **[`Sarvached (Все датированные).txt`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Sarvached%20(Все%20датированные).txt>)**
+  and **`Sarvached (Все датированные).txt`.txt>)**
   ("all dated [texts]") — plain word lists, one IAST-transliterated headword per line (e.g.
   `kṛ`, `vac`, `bhū`, `mahat`), no frequency data visible in the first column alone in the
   sample checked — actually 3 semicolon/tab-separated fields per line in `sarvached.txt`:
@@ -22,18 +22,18 @@ size/file-count table (11MB / 17 files).
   weighted frequency across dated sub-corpora, given the ".75/.25/.63" fractional values —
   not verified further).
 - **[`Омоформы.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Омоформы.xlsx)**,
-  **[`Омоформы глаголов и имен.xlsx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Омоформы%20глаголов%20и%20имен.xlsx>)**,
-  **[`Омоформы имен и глаголов по частотам.xlsx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Омоформы%20имен%20и%20глаголов%20по%20частотам.xlsx>)**
+  **`Омоформы глаголов и имен.xlsx`**,
+  **`Омоформы имен и глаголов по частотам.xlsx`**
   — "homoforms [of verbs and nouns / by frequency]" — binary spreadsheets, not opened; likely
   tables of surface forms ambiguous between verbal and nominal analyses, per the filenames.
 - **[`Двухсимвольные лигатуры.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Двухсимвольные%20лигатуры.xlsx)**
   — "two-character ligatures" — not opened; likely a Devanagari ligature-frequency table (cf.
   the phonetics folder `Fonetika/` which has a similar ligature table).
-- **[`Распределение Лемм по окончаниям.xlsx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Распределение%20Лемм%20по%20окончаниям.xlsx>)**,
-  **[`Распределение основ fmn по окончаниям.xlsx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Распределение%20основ%20fmn%20по%20окончаниям.xlsx>)**
+- **`Распределение Лемм по окончаниям.xlsx`**,
+  **`Распределение основ fmn по окончаниям.xlsx`**
   — "distribution of lemmas / f/m/n stems by ending" — not opened; likely cross-tabulations of
   lemma or stem-gender vs. inflectional ending.
-- **[`Распределение ядерной лексики по периодам.xlsx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Распределение%20ядерной%20лексики%20по%20периодам.xlsx>)**,
+- **`Распределение ядерной лексики по периодам.xlsx`**,
   **[`исходные данные для диаграммы по распределению лексики.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/исходные%20данные%20для%20диаграммы%20по%20распределению%20лексики.xlsx)**
   — "distribution of core vocabulary by period" / "source data for the vocabulary-distribution
   chart" — likely feeder data related to the [`../Lexical-Cores/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md)
