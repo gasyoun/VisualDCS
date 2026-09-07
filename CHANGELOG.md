@@ -11,6 +11,22 @@ durable, user-facing milestones.
 ## [Unreleased]
 
 ### Added
+- **Release-envelope-v1 adopted for the `learner-contracts-v1-2026-08-09` release
+  ([H4258](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4258-OxAlpha_VisualDCS_release-envelope-adapt_06.09.26.md),
+  OxAlpha `z-ai/glm-5.3-flash`).**
+  [`visual/contracts/envelopes/learner-contracts-v1-2026-08-09.envelope.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/envelopes/learner-contracts-v1-2026-08-09.envelope.json)
+  pins the four release artifacts (contract manifest + three payloads) and the four
+  build-input source pins by sha256 recomputed from git blob bytes at tag `6d19eed1`
+  (lf-canonical; blobs LF-only), with code revision, config, upstream DCS-2026 pin
+  (`04e0778d`, 2026-03-05, recorded not fabricated), licence (Apache-2.0 code / CC BY 4.0
+  data), checks, review provenance (H2481 dual-run build, H2499 adjudication), citation and
+  publication state (Zenodo mint pending, recorded honestly).
+  [`scripts/envelope_check.py`](https://github.com/gasyoun/VisualDCS/blob/main/scripts/envelope_check.py)
+  re-derives every declared digest and exits 0 only on all-pass: **17 pass / 1 recorded /
+  0 fail** on the authored envelope; negative control (doctored digest + commit) fails
+  loudly with exit 1. Spec: Uprava
+  [`docs/SPEC_RELEASE_ENVELOPE_V6_PORTFOLIO_2026.md`](https://github.com/gasyoun/Uprava/blob/main/docs/SPEC_RELEASE_ENVELOPE_V6_PORTFOLIO_2026.md);
+  kosha H4239 pilot as reference. Additive only — canonical stores untouched.
 - **The `-ant` pool's ADJ half measured from the DCS master
   ([H4011](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4011-Opus_SanskritLexicography_nominal-ant-adj-half-dcs-master_03.09.26.md),
   GAPS 14, Opus 5 `claude-opus-5`).**
