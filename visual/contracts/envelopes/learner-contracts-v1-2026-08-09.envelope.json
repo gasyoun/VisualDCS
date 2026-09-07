@@ -1,0 +1,217 @@
+{
+  "schema": "release-envelope-v1",
+  "envelope_id": "VisualDCS/learner-contracts-v1-2026-08-09",
+  "hub": "VisualDCS — the DCS-2026 validated morphology hub (learner contracts, paradigms, concordance)",
+  "release_kind": "data",
+  "release_tag": "learner-contracts-v1-2026-08-09",
+  "created": "2026-09-07",
+  "authored_by": "H4258 (OxAlpha, opencode/z-ai/glm-5.3-flash) — release-envelope-v1 adoption for VisualDCS per Uprava docs/SPEC_RELEASE_ENVELOPE_V6_PORTFOLIO_2026.md; kosha pilot H4239 as reference implementation",
+  "code_revision": {
+    "repo_url": "https://github.com/gasyoun/VisualDCS",
+    "tag": "learner-contracts-v1-2026-08-09",
+    "commit": "6d19eed11a75076c3639cfb2f9e6f5ff9c6648cf"
+  },
+  "pinned_artifacts": [
+    {
+      "path": "visual/contracts/v1/manifest.json",
+      "role": "contract checksum manifest — per-payload sha256, byte sizes, record counts, source pins, compatibility policy (releaseId vdcs-learner-v1-20260809)",
+      "sha256": "2782ef35c784c8ebc0e523fa8532f2ef4470736d8f8f87b625ac8fee1d6a3eeb",
+      "sha256_form": "lf-canonical"
+    },
+    {
+      "path": "visual/contracts/v1/verb-trainer.json",
+      "role": "v1 verb-trainer contract payload — 7,689 verb roots (stable ids vdcs:v1:verb:)",
+      "sha256": "5276b7d04ee409c58c8fe7426b26efdabc2cbc1d3d4d05082f5ed1d593f2d4f6",
+      "sha256_form": "lf-canonical"
+    },
+    {
+      "path": "visual/contracts/v1/nominal-trainer.json",
+      "role": "v1 nominal-trainer contract payload — 31,753 nominal lemmas (stable ids vdcs:v1:nominal:)",
+      "sha256": "13b5a16f5b45e886744f56f3464e8122730d60e1a677323f5b67024684de6663",
+      "sha256_form": "lf-canonical"
+    },
+    {
+      "path": "visual/contracts/v1/concordance-passage.json",
+      "role": "v1 concordance-passage contract payload — 40 passages, 22 link-reachable, 18 named zero-link gaps (stable ids vdcs:v1:passage:)",
+      "sha256": "b1d676e358e20d12eee85817c9fc9c32e735dfb050019ecece88d08f1912a08d",
+      "sha256_form": "lf-canonical"
+    }
+  ],
+  "source_pins": [
+    {
+      "dataset": "paradigm-attested",
+      "source_repo": "https://github.com/gasyoun/VisualDCS",
+      "source_path": "visual/paradigm_attested.json",
+      "pin_commit": "6d19eed11a75076c3639cfb2f9e6f5ff9c6648cf",
+      "pin_rule": "the release tag commit itself (source lives in this repo; re-derived via git cat-file blob <tag>:<path>)",
+      "sha256": "e69972e6784b99628cb386572e6d2306c034b050aae63d3980ed093d03e63424",
+      "sha256_form": "lf-canonical"
+    },
+    {
+      "dataset": "paradigm-nominal-lemmas",
+      "source_repo": "https://github.com/gasyoun/VisualDCS",
+      "source_path": "visual/paradigm_nominal_lemmas.json",
+      "pin_commit": "6d19eed11a75076c3639cfb2f9e6f5ff9c6648cf",
+      "pin_rule": "the release tag commit itself (source lives in this repo; re-derived via git cat-file blob <tag>:<path>)",
+      "sha256": "30027b5f90cf79310f6f0cad4717183226d9f23a5e6adb5764dcb6cadc9e6384",
+      "sha256_form": "lf-canonical"
+    },
+    {
+      "dataset": "concordance-data",
+      "source_repo": "https://github.com/gasyoun/VisualDCS",
+      "source_path": "visual/conc_data.js",
+      "pin_commit": "6d19eed11a75076c3639cfb2f9e6f5ff9c6648cf",
+      "pin_rule": "the release tag commit itself (source lives in this repo; re-derived via git cat-file blob <tag>:<path>)",
+      "sha256": "172a3c7355d9418caebfea4b4bffb1a46a815a3674bf22298bac34fbe08f1ad3",
+      "sha256_form": "lf-canonical"
+    },
+    {
+      "dataset": "passage-library",
+      "source_repo": "https://github.com/gasyoun/VisualDCS",
+      "source_path": "passage_library.json",
+      "pin_commit": "6d19eed11a75076c3639cfb2f9e6f5ff9c6648cf",
+      "pin_rule": "the release tag commit itself (source lives in this repo; re-derived via git cat-file blob <tag>:<path>)",
+      "sha256": "9389e6dd02e283046d6757423ef5c5c9975a04c77808a3f9a23b28287909b4d3",
+      "sha256_form": "lf-canonical"
+    }
+  ],
+  "output_digests": {
+    "carried_in": "visual/contracts/v1/manifest.json",
+    "note": "For this release the payloads are the release assets and the contract manifest restates their digests; the envelope restates both so a consumer verifies without trusting the manifest beyond its own pin digest. rows = record count (verb roots / nominal lemmas / passages) as recorded in the contract manifest.",
+    "datasets": {
+      "verb-trainer": {
+        "release_asset": "visual/contracts/v1/verb-trainer.json",
+        "sha256": "5276b7d04ee409c58c8fe7426b26efdabc2cbc1d3d4d05082f5ed1d593f2d4f6",
+        "rows": 7689,
+        "size_bytes": 11219452
+      },
+      "nominal-trainer": {
+        "release_asset": "visual/contracts/v1/nominal-trainer.json",
+        "sha256": "13b5a16f5b45e886744f56f3464e8122730d60e1a677323f5b67024684de6663",
+        "rows": 31753,
+        "size_bytes": 15591893
+      },
+      "concordance-passage": {
+        "release_asset": "visual/contracts/v1/concordance-passage.json",
+        "sha256": "b1d676e358e20d12eee85817c9fc9c32e735dfb050019ecece88d08f1912a08d",
+        "rows": 40,
+        "size_bytes": 45833
+      }
+    }
+  },
+  "config": {
+    "source_manifest": "visual/contracts/v1/manifest.json",
+    "source_manifest_version": "1.0.0",
+    "release_id": "vdcs-learner-v1-20260809",
+    "manifest_generated_at": "2026-08-09T11:19:22.997038+00:00",
+    "selection_rule": "the three v1 contract payloads listed in the contract manifest's files[] plus the four JSON Schemas in schemas[]",
+    "build_script": "src/DCS-data-2026/build_learner_contracts.py at code_revision.commit",
+    "deterministic_rebuild": "two sequential builds byte-identical (src/DCS-data-2026/reports/BUILD_REPORT_LEARNER_CONTRACTS_V1_20260809.md)",
+    "digest_form": "sha256 over the LF-canonical form (CRLF normalised); every pinned blob is LF-only, so lf-canonical equals raw blob bytes — verified byte-identical at authoring",
+    "upstream_corpus": {
+      "repo": "https://github.com/OliverHellwig/sanskrit",
+      "pin_commit": "04e0778d3dc971030229179e25eea043d06ff397",
+      "pin_date": "2026-03-05",
+      "note": "DCS-2026 upstream release pinned in CITATION.cff; the SQLite master is an upstream release asset, not a tracked file in this repo, so no file-level digest is recomputable at this tag — recorded, never fabricated. A post-release master digest is recorded on main as src/DCS-data-2026/dcs_full.sqlite.sha256 (8f3b06bd6ef0e47a9ccf81d147e73d5d240d64e0c12f6d789262eb422ebb23bc)."
+    },
+    "concordance_linking": "citation prefix-match strategy (strip trailing ': N'): 26,701 citations scanned, 60 resolved, 26,641 unresolved retained verbatim — never fuzzy-linked; 22/40 passages link-reachable, 18 named zero-link gaps carried with linkedFormCount 0",
+    "schema_validation": "Draft-07 (jsonschema 4.26.0 at build time); 22-check acceptance suite in the build report"
+  },
+  "tool_versions": {
+    "builder": "src/DCS-data-2026/build_learner_contracts.py at code_revision.commit",
+    "envelope_checker": "scripts/envelope_check.py — stdlib-only, Python >= 3.9",
+    "model_note": "contract payloads were model-assisted builds (H2481: Grok 4.5 minted, executed by Claude Sonnet 5 claude-sonnet-5 under dual-run override, adjudicated by H2499); every number in this envelope is recomputed by scripts/envelope_check.py from git blob bytes, not copied from prose"
+  },
+  "licence": {
+    "code": "Apache License 2.0 (LICENSE)",
+    "data": "CC BY 4.0 (CITATION.cff license field; includes upstream DCS content — Hellwig, The Digital Corpus of Sanskrit, 2010-2024, CC BY 4.0)",
+    "per_artifact": {
+      "visual/contracts/v1/verb-trainer.json": "CC BY 4.0",
+      "visual/contracts/v1/nominal-trainer.json": "CC BY 4.0",
+      "visual/contracts/v1/concordance-passage.json": "CC BY 4.0"
+    },
+    "restricted_rows": "none excluded; unresolved citations are retained verbatim inside concordance-passage.json rather than dropped"
+  },
+  "checks": [
+    {
+      "id": "CHK-1-schema",
+      "desc": "envelope carries every release-envelope-v1 required field with a non-empty value (citation DOIs exempt while unminted)",
+      "result": "pass",
+      "ran_at": "2026-09-07",
+      "evidence": "scripts/envelope_check.py CHK-1"
+    },
+    {
+      "id": "CHK-2-code-revision",
+      "desc": "code_revision.tag resolves to code_revision.commit in this repo",
+      "result": "pass",
+      "ran_at": "2026-09-07",
+      "evidence": "scripts/envelope_check.py CHK-2 (git rev-parse learner-contracts-v1-2026-08-09^{commit})"
+    },
+    {
+      "id": "CHK-3-pinned-artifacts",
+      "desc": "every pinned artifact digest recomputes from git blob bytes at the tag per its sha256_form",
+      "result": "pass",
+      "ran_at": "2026-09-07",
+      "evidence": "scripts/envelope_check.py CHK-3 (4/4)"
+    },
+    {
+      "id": "CHK-4-manifest-parity",
+      "desc": "per-payload sha256/size/rows in output_digests match the pinned contract manifest exactly",
+      "result": "pass",
+      "ran_at": "2026-09-07",
+      "evidence": "scripts/envelope_check.py CHK-4 (3/3 payloads)"
+    },
+    {
+      "id": "CHK-5-source-pins",
+      "desc": "each in-repo source pin re-derives via git cat-file blob at the tag and digests to the recorded sha256",
+      "result": "pass",
+      "ran_at": "2026-09-07",
+      "evidence": "scripts/envelope_check.py CHK-5 (4/4 resolved, 4/4 match); skipped-not-failed when the clone is absent on the checking box"
+    },
+    {
+      "id": "CHK-6-upstream-pin",
+      "desc": "DCS-2026 upstream corpus commit recorded (CITATION.cff, 04e0778d, 2026-03-05); master SQLite is an upstream release asset — file-level digest recorded post-release on main, not recomputable at this tag",
+      "result": "recorded",
+      "ran_at": "2026-09-07",
+      "evidence": "CITATION.cff references block; src/DCS-data-2026/dcs_full.sqlite.sha256 on main"
+    },
+    {
+      "id": "CHK-7-rerun-tolerance",
+      "desc": "independent rerun reproduces declared outputs or explains deterministic tolerances (V6 verification)",
+      "result": "pass",
+      "ran_at": "2026-09-07",
+      "evidence": "all digests are deterministic LF-canonical sha256 over committed blobs; no tolerance declared — rerun must match exactly; byte-identical rebuild already confirmed by the build report"
+    }
+  ],
+  "review": [
+    {
+      "reviewer": "H2481 build (Grok 4.5 minted; executed by Claude Sonnet 5 claude-sonnet-5 under dual-run override)",
+      "verdict": "v1 learner contracts built; Draft-07 schema validation and 22-check acceptance suite pass; deterministic rebuild confirmed",
+      "date": "2026-08-09"
+    },
+    {
+      "reviewer": "H2499 dual-run compare (Grok 4.5)",
+      "verdict": "independent rebuild adjudicated; PR #110 contracts kept as the release",
+      "date": "2026-08-15"
+    },
+    {
+      "reviewer": "H4258 envelope authoring (OxAlpha, opencode/z-ai/glm-5.3-flash)",
+      "verdict": "envelope authored from git blob bytes at the release tag; every digest recomputed mechanically, not copied from prose",
+      "date": "2026-09-07"
+    }
+  ],
+  "citation": {
+    "concept_doi": null,
+    "version_doi": null,
+    "doi_note": "Zenodo DOI mint pending per papers/A38_release_checklist.md; CITATION.cff carries the doi field commented out until mint",
+    "cff": "CITATION.cff",
+    "policy": "papers/A38_release_checklist.md",
+    "github_release": "https://github.com/gasyoun/VisualDCS/releases/tag/learner-contracts-v1-2026-08-09"
+  },
+  "publication_state": {
+    "state": "published",
+    "zenodo_archived": false,
+    "github_release": "https://github.com/gasyoun/VisualDCS/releases/tag/learner-contracts-v1-2026-08-09",
+    "note": "GitHub release published 2026-08-09; Zenodo archival pending the A38 mint — recorded honestly rather than claimed"
+  }
+}
