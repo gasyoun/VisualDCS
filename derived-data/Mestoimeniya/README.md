@@ -19,10 +19,10 @@ size/file-count table (12MB / 8 files).
   raw corpus occurrence counts per form. The file also embeds a stray chat-log line
   (`Виктор Кочергин, [11.05.2024 21:26]`) partway through — evidence this was pasted from a
   Telegram conversation rather than exported programmatically.
-- **[`Комбинации местоимений по падежам.xlsx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Mestoimeniya/Комбинации%20местоимений%20по%20падежам.xlsx>)**
+- **`Комбинации местоимений по падежам.xlsx`**
   — "pronoun combinations by case" — not opened (binary); likely a cross-tabulation of which
   pronoun pairs co-occur per grammatical case.
-- **[`Общие сведения о комбинациях местоимений 1.xlsx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Mestoimeniya/Общие%20сведения%20о%20комбинациях%20местоимений%201.xlsx>)**
+- **`Общие сведения о комбинациях местоимений 1.xlsx`**
   — "general data on pronoun combinations" — not opened; likely a summary/overview workbook
   companion to the above.
 - **[`распределение 1.xltx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Mestoimeniya/распределение%201.xltx)**

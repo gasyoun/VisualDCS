@@ -27,12 +27,12 @@ that table, only summarizes it.
     export, kept for comparison, not canonical.
 - **Root-level files** (not opened in this pass, per the read budget for this oversize
   folder):
-  - [`Содержание папок и структура файлов.rtf`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Paralleli-v-tekstah-korpusa-SRC/Содержание%20папок%20и%20структура%20файлов.rtf>)
+  - `Содержание папок и структура файлов.rtf`
     ("folder contents and file structure") — the folder's own documentation RTF, referenced as
     the authoritative source for schema below.
-  - [`Распределение точных параллелей по частотам и длинам.xltx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Paralleli-v-tekstah-korpusa-SRC/Распределение%20точных%20параллелей%20по%20частотам%20и%20длинам.xltx>)
+  - `Распределение точных параллелей по частотам и длинам.xltx`
     ("distribution of exact parallels by frequency and length") — Excel template.
-  - [`Словарь точных полных параллелей.xlsx`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Paralleli-v-tekstah-korpusa-SRC/Словарь%20точных%20полных%20параллелей.xlsx>)
+  - `Словарь точных полных параллелей.xlsx`
     ("dictionary of exact full parallels") — summary workbook.
 
 ## Data schema

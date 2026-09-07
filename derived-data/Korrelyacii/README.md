@@ -11,7 +11,7 @@ size/file-count table.
 
 ## Contents
 
-- **[`Корреляции yad tad в одинаковых формах.xls`](<https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Korrelyacii/Корреляции%20yad%20tad%20в%20одинаковых%20формах.xls>)**
+- **`Корреляции yad tad в одинаковых формах.xls`**
   ("Correlations of *yad*/*tad* in matching forms") — a legacy Excel 97 binary workbook. Not
   opened in this pass (binary format, out of scope for the read budget); the title indicates a
   table of the Sanskrit relative/correlative pronoun pair **yad … tad** ("which … that")
