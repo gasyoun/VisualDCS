@@ -1,0 +1,127 @@
+# -*- coding: utf-8 -*-
+"""build_mw_h3_parent_compounds.py -- H4480.
+
+Parse MG's "MW H3 compounds" table (yadisk: Сложные слова (samāsa) в
+санскрите (2)/Алгоримы обработки сложных слов (для искуственного интеллекта)/
+compounds.txt, committed here as compounds.txt) into a machine-usable TSV and
+cross-check its coverage against the DCS corpus compound universe (cmps.csv).
+
+The source table is PARENT-KEYED (pūrvapada axis): 12,609 MW H1/H2 headwords
+with their H3 compound children from the Cologne MW 1899 digitization. The
+existing uttarapada_dict_vs_corpus.tsv (H1328) is FINAL-MEMBER-keyed -- this
+is the complementary first-member view, not a duplicate.
+
+Child token shapes in the source:
+  +Y        -> child key2 is 'X-Y', shortened to '+Y' (rejoin with parent)
+  plain Z   -> alternate full spelling already present (may contain '@' join
+               marker or '-' internal hyphen)
+
+Folds (H1328 conventions, okey()):
+  '@' join marker removed; leading avagraha "'" = elided initial a;
+  anusvara m-dot-below (U+1E43, MW style) -> m-dot-above (U+1E41, DCS style).
+No other folding: vowel-length / junction-sandhi differences stay as-is.
+
+Usage:
+  python build_mw_h3_parent_compounds.py
+  python build_mw_h3_parent_compounds.py --src compounds.txt --cmps cmps.csv
+"""
+import sys, os, argparse, unicodedata
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.stdout.reconfigure(encoding="utf-8")
+
+OUT_TSV = os.path.join(HERE, "mw_h3_parent_compounds.tsv")
+
+ANUS_ABOVE, ANUS_BELOW = "\u1e41", "\u1e43"  # m-dot-above (DCS), m-dot-below (MW)
+
+
+def nfc(s):
+    return unicodedata.normalize("NFC", s.strip())
+
+
+def fold_child(tok, parent):
+    """Return the DCS-style surface/child form for one source token."""
+    if tok.startswith("+"):
+        form = parent + tok[1:]
+    else:
+        form = tok
+    form = form.replace("@", "")
+    if form.startswith("'"):
+        form = "a" + form[1:]
+    return nfc(form.replace(ANUS_BELOW, ANUS_ABOVE))
+
+
+def parse_source(path):
+    """Yield (parent, [folded_children]) per source row; count rows."""
+    rows = []
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("<"):
+                continue
+            head, _, rest = line.partition(":")
+            if not rest:  # not a data row
+                continue
+            parts = rest.split(":", 1)
+            if len(parts) != 2:
+                continue
+            parent, children_str = parts
+            parent = nfc(parent.replace(ANUS_BELOW, ANUS_ABOVE))
+            children = [fold_child(t, parent) for t in children_str.split() if t]
+            if children:
+                rows.append((parent, children))
+    return rows
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--src", default=os.path.join(HERE, "compounds.txt"))
+    ap.add_argument("--cmps", default=os.path.join(HERE, "cmps.csv"))
+    args = ap.parse_args()
+
+    rows = parse_source(args.src)
+    n_child_tokens = sum(len(c) for _, c in rows)
+    distinct_children = {c for _, cs in rows for c in cs}
+
+    # corpus universe (no header, semicolon-delimited):
+    #   col1 = sandhied, often inflected surface  -> direct surface match
+    #   col2 = stem split ("ambikā pati")         -> spaces removed = stem
+    #          concatenation, the honest match for MW stem-form children
+    corpus_surf, corpus_stem = set(), set()
+    with open(args.cmps, encoding="utf-8") as f:
+        for line in f:
+            parts = line.rstrip("\n").split(";", 1)
+            if not parts or not parts[0].strip():
+                continue
+            surf = nfc(parts[0].strip().replace(ANUS_BELOW, ANUS_ABOVE))
+            corpus_surf.add(surf)
+            if len(parts) > 1:
+                stems = nfc(parts[1].replace(ANUS_BELOW, ANUS_ABOVE))
+                corpus_stem.add(stems.replace(" ", ""))
+
+    att_surf = distinct_children & corpus_surf
+    att_stem = distinct_children & corpus_stem
+    attested = att_surf | att_stem
+    pct = 100.0 * len(attested) / max(1, len(distinct_children))
+    pct_surf = 100.0 * len(att_surf) / max(1, len(distinct_children))
+    pct_stem = 100.0 * len(att_stem) / max(1, len(distinct_children))
+
+    with open(OUT_TSV, "w", encoding="utf-8") as out:
+        out.write("parent\tn_children\tchildren\n")
+        for parent, children in rows:
+            out.write(f"{parent}\t{len(children)}\t{' '.join(children)}\n")
+
+    print(f"source rows (parent occurrences): {len(rows)}")
+    print(f"distinct parents:                {len({p for p, _ in rows})}")
+    print(f"child tokens:                    {n_child_tokens}")
+    print(f"distinct children (folded):      {len(distinct_children)}")
+    print(f"corpus universe (cmps.csv):      {len(corpus_surf)} surfaces / {len(corpus_stem)} stem-concats")
+    print(f"children attested (surface):     {len(att_surf)} ({pct_surf:.1f}%)")
+    print(f"children attested (stem-concat): {len(att_stem)} ({pct_stem:.1f}%)")
+    print(f"children attested (any key):     {len(attested)} ({pct:.1f}%)")
+    print(f"children dictionary-only:        {len(distinct_children) - len(attested)} (lower bound)")
+    print(f"wrote {OUT_TSV}")
+
+
+if __name__ == "__main__":
+    main()
