@@ -10,6 +10,7 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- Added a root `AGENTS.md` agent-entrypoint stub (H4634): names itself the agent entrypoint, links [CLAUDE.md](CLAUDE.md), points at the [Uprava org standard](https://github.com/gasyoun/Uprava/blob/main/AGENTS.md).
 ### Added
 - **Release-envelope-v1 adopted for the `learner-contracts-v1-2026-08-09` release
   ([H4258](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4258-OxAlpha_VisualDCS_release-envelope-adapt_06.09.26.md),
