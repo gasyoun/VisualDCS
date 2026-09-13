@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 06-09-2026_
+_Created: 06-06-2026 · Last updated: 13-09-2026_
 
 # Changelog
 
@@ -11,6 +11,21 @@ durable, user-facing milestones.
 ## [Unreleased]
 
 ### Added
+- **MW H3 parent-keyed compounds table landed ([H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md),
+  OxAlpha `z-ai/glm-5.3-flash`).**
+  [`derived-data/Kompozity/mw_h3_parent_compounds.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/mw_h3_parent_compounds.tsv)
+  (12,609 parent occurrences / 12,326 distinct MW H1/H2 headwords × H3 compound
+  children) plus parser
+  [`build_mw_h3_parent_compounds.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/build_mw_h3_parent_compounds.py)
+  (H1328 fold conventions, no sandhi manufacture) and source table
+  `compounds.txt` committed for reproducibility. Fills the missing
+  pūrvapada/parent axis beside H1328's final-member-keyed view; coverage vs the
+  Kompozity corpus: 11.6% children attested (any key), 88.4% dictionary-only
+  lower bound with elision/sandhi/kosa residuals deliberately NOT collapsed.
+  The yadisk `kRtam/Композиты` 266 MB CSV set is **superseded** — byte-identical
+  to the already-ingested local copies modulo CRLF. Verdict + schema tables:
+  [`reports/h4480_samasa_algorithms_verdict.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/h4480_samasa_algorithms_verdict.md);
+  shipped as [PR #130](https://github.com/gasyoun/VisualDCS/pull/130).
 - **Release-envelope-v1 adopted for the `learner-contracts-v1-2026-08-09` release
   ([H4258](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4258-OxAlpha_VisualDCS_release-envelope-adapt_06.09.26.md),
   OxAlpha `z-ai/glm-5.3-flash`).**
