@@ -43,3 +43,10 @@ non-derived/.claude/
 /non-derived/Zalizniak/Vyskazyvaniya/adj/10.!
 /non-derived/Slovari/Synonyms.htm
 /non-derived/Astronomiya/zenmusicorg_audiokniga_-_Kalevala_62586031.mp3
+
+# H4631 sandbox/credential baseline (13-09-2026): real env files are never
+# committed — house convention keeps secrets in ~/.secrets/;
+# .env.example stays tracked.
+.env
+.env.*
+!.env.example
