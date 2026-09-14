@@ -1,6 +1,6 @@
 # Kompozity
 
-_Created: 05-07-2026 · Last updated: 05-07-2026_
+_Created: 05-07-2026 · Last updated: 13-09-2026_
 
 Compound-word (samāsa) datasets derived from the DCS corpus — headword lists, per-compound
 stem splits, and part-of-speech-specific compound-frequency tables broken down by historical
@@ -30,6 +30,17 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
 - **[`pronx.txt`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/pronx.txt)**
   — not sampled in this pass; by naming convention likely the pronoun-compound counterpart to
   `verbx.csv`.
+- **[`compounds.txt`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/compounds.txt)**
+  + **[`mw_h3_parent_compounds.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/mw_h3_parent_compounds.tsv)**
+  + **[`build_mw_h3_parent_compounds.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/build_mw_h3_parent_compounds.py)**
+  (H4480, 13-09-2026) — the "MW H3 compounds" table (yadisk, Сложные слова (samāsa)/Алгоримы
+  обработки…): 12,609 parent occurrences / 12,326 distinct MW H1/H2 headwords × H3 compound
+  children, Cologne MW 1899 digitization. **Parent-(pūrvapada)-keyed** — the complementary axis
+  to H1328's final-member-keyed `uttarapada_dict_vs_corpus.tsv`. TSV shape:
+  `parent<TAB>n_children<TAB>children(space-sep)`; children folded per H1328 conventions
+  (`@` join, avagraha, anusvara U+1E43→U+1E41). Coverage vs DCS `cmps.csv`: 11.6% attested
+  (any key), 88.4% dictionary-only (lower bound; elision/sandhi/kosa residuals NOT collapsed).
+  Rationale + numbers: [`../../reports/h4480_samasa_algorithms_verdict.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/h4480_samasa_algorithms_verdict.md).
 - **[`Композиты 4+.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Композиты%204%2B.xlsx)**,
   **[`Композиты.xlsx.7z.001`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Композиты.xlsx.7z.001)**
   (split archive — see [`../../RESTORE_SPLIT_FILES.md`](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)),
