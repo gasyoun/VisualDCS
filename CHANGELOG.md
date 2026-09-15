@@ -21,6 +21,9 @@ durable, user-facing milestones.
   (11 textbook-clean sandhi/compound splits, 1 debatable morphemic split
   recorded); 0.44% partial-coverage tail characterized as upstream ground-truth
   gap. Row-level layer emits only behind `--emit-layer` outside the repo.
+  [PR #133](https://github.com/gasyoun/VisualDCS/pull/133) (merged); DeepSeek
+  verifier pass; hand-check prose corrected to cite only tabulated sample rows
+  ([PR #134](https://github.com/gasyoun/VisualDCS/pull/134)).
 
 - Added a root `AGENTS.md` agent-entrypoint stub (H4634): names itself the agent entrypoint, links [CLAUDE.md](CLAUDE.md), points at the [Uprava org standard](https://github.com/gasyoun/Uprava/blob/main/AGENTS.md).
 ### Added
