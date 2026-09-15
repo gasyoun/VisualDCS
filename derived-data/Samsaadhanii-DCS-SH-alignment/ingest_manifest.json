@@ -1,0 +1,31 @@
+{
+  "handoff": "H4739",
+  "generated": "2026-09-16T00:35:18",
+  "mode": "VALIDATION-ONLY (no upstream LICENSE file; aggregates only)",
+  "upstream": {
+    "repo": "https://github.com/samsaadhanii/datasets",
+    "path": "dcs_sh_alignment/parallel_corpus/parallel_data_iast.tsv",
+    "sha256_12": "4adc8776b9c0",
+    "license_note": "repo has no LICENSE file; parallel_corpus README states CC BY 4.0 for parent research work (Krishnan/Kulkarni/Huet 2022) — provenance note only"
+  },
+  "source_file": "dcs_sh_alignment/parallel_corpus/parallel_data_iast.tsv",
+  "gates": {
+    "g1_rows_parity": true,
+    "g2_structure": true
+  },
+  "counts_only": {
+    "sentences": 130270,
+    "unique_ids": 130270,
+    "id_min": 6,
+    "id_max": 621364,
+    "sentence_chunks": 595258,
+    "segmentation_chunks": 689745,
+    "segmentation_segments": 864903,
+    "compound_chunks": 127977,
+    "ratio_mean": 0.9486,
+    "ratio_ge_095": 75723,
+    "ratio_ge_085": 126852,
+    "ratio_lt_070": 569
+  },
+  "emitted_layer": "not emitted (VALIDATION-ONLY; --emit-layer writes OUTSIDE the repo only)"
+}
