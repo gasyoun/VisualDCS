@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 15-05-2026 · Last updated: 06-09-2026_
+_Created: 15-05-2026 · Last updated: 15-09-2026_
 
 **VisualDCS** is standalone HTML frequency dashboards for the
 [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/).
@@ -134,5 +134,9 @@ hits Gītagovinda / Aṣṭāvakragīta. Match `chapter.ref`, never just `text.n
 New dashboard: write JSON under `visual/`, add a standalone `.html`, update
 README, commit both. JS is inline; Chart.js 4.4.1 from cdnjs; colors
 `#3266ad` / `#e24b4a` / `#1d9e75`. UTF-8 JSON only.
+
+## Memory store
+
+This repo keeps a committed memory store at [`.claude/projects/VisualDCS/memory/`](https://github.com/gasyoun/VisualDCS/tree/main/.claude/projects/VisualDCS/memory) per the org Memory-routing rule ([`/danger-memory`](https://github.com/gasyoun/claude-config/blob/main/commands/danger-memory.md)) — write dangerous/durable facts there and index each in its `MEMORY.md` (H4547).
 
 _Dr. Mārcis Gasūns_
