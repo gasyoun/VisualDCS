@@ -228,19 +228,20 @@ Structural defect sample (first 10, truncated):
 |---|---|---|
 {sample_rows}
 
-Hand-check verdicts (executor-read, {date.today().isoformat()}, 12/12 rows read):
-11 of 12 sampled chunk pairs decompose into textbook-clean sandhi/compound
-analyses — `ghaṭasthayogam` → `ghaṭa-stha-yogam`, `yogeśa` → `yoga-īśa`
-(a+ī→e), `nāsti` → `na asti` (a+a→ā), `pāśo` → `pāśaḥ` (visarga→o before
-voiced), `hariddaṇḍam` → `harit-daṇḍam` (t+d→dd), `kuṣṭhairmṛtyurhinasti` →
-`kuṣṭhaiḥ mṛtyuḥ hinasti`, `nāradastvatha` → `nāradaḥ tu atha` (aḥ+t→s t),
-`tathaiva` → `tathā eva` (ā+a→e), `ihoktena` → `iha uktena` (a+u→o),
+Hand-check verdicts (executor-read, {date.today().isoformat()}, 12/12 tabulated rows
+read): 11 of 12 decompose into textbook-clean sandhi/compound analyses —
+`ghaṭasthayogam` → `ghaṭa-stha-yogam`, `yogeśa` → `yoga-īśa` (a+ī→e),
+`nāsti` → `na asti` (a+a→ā), `pāśo` → `pāśaḥ` (visarga→o before voiced),
+`kuṣṭhairmṛtyurhinasti` → `kuṣṭhaiḥ mṛtyuḥ hinasti` (visarga→r before h),
+`nāradastvatha` → `nāradaḥ tu atha` (aḥ+t→s t), `dīptārciḥ` →
+`dīpta-arciḥ` (a+a→ā), `mukhe hyagniḥ` → `mukhe hi agniḥ` (i+a→ya variant),
 `śrīsiddhayogīśvarīmate` → `śrī-siddha-yogi-īśvarī-mate` (i+ī→ī),
 `tāpasāraṇyam` → `tāpasa-araṇyam` (a+ā→ā); the two sentence-final rows
 (621353, 621364) are no-sandhi identities. ONE caveat: id 151164 splits
 `samanvitaḥ` as `sa-manu-itaḥ` — a debatable morphemic split with char drift
-(v↔u); recorded, not fabricated, and the ratio metric surfaces it (this row's
-ratio < 1.0). No invented segments observed.
+(v↔u; standard analysis `sam-anv-itaḥ`); recorded, not fabricated, and the
+ratio metric surfaces it (this row's ratio < 1.0). No invented segments
+observed.
 
 ## Low-ratio tail (honest characterization)
 
