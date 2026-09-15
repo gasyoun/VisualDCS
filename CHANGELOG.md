@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 13-09-2026_
+_Created: 06-06-2026 · Last updated: 16-09-2026_
 
 # Changelog
 
@@ -9,6 +9,18 @@ Day-to-day session state lives in [`.ai_state.md`](https://github.com/gasyoun/Vi
 durable, user-facing milestones.
 
 ## [Unreleased]
+
+- **Samsaadhanii DCS × Heritage alignment ingest landed ([H4739](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4739-OxAlpha_VisualDCS_xwalk-s5b-samsaadhanii-dcs-heritage_14.09.26.md),
+  OxAlpha `z-ai/glm-5.3-flash`).** VALIDATION-ONLY (upstream
+  [samsaadhanii/datasets](https://github.com/samsaadhanii/datasets) carries no
+  LICENSE file): parity report + counts-only manifest for the 130,270-sentence
+  DCS × Heritage Segmenter ground-truth alignment in
+  [`derived-data/Samsaadhanii-DCS-SH-alignment/`](derived-data/Samsaadhanii-DCS-SH-alignment/)
+  — G1 row parity 130,270 == 130,270 == expected, G2 structure clean (0
+  malformed columns / 0 duplicate ids); 12-row deterministic sample hand-checked
+  (11 textbook-clean sandhi/compound splits, 1 debatable morphemic split
+  recorded); 0.44% partial-coverage tail characterized as upstream ground-truth
+  gap. Row-level layer emits only behind `--emit-layer` outside the repo.
 
 - Added a root `AGENTS.md` agent-entrypoint stub (H4634): names itself the agent entrypoint, links [CLAUDE.md](CLAUDE.md), points at the [Uprava org standard](https://github.com/gasyoun/Uprava/blob/main/AGENTS.md).
 ### Added
