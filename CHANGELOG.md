@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 16-09-2026_
+_Created: 06-06-2026 · Last updated: 17-09-2026_
 
 # Changelog
 
@@ -10,6 +10,21 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- **Yandex-Disk samāsa bundle censused — superseded, nothing landed
+  ([H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md),
+  OxAlpha tier, executed by Opus 5 (claude-opus-5[1m])).**
+  [`reports/yadisk_samasa_algorithms_kompozity_census.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/yadisk_samasa_algorithms_kompozity_census.md)
+  records the parity table for all 12 objects of `yadisk:kRtam/Композиты/` (266,097,580 B)
+  against [`derived-data/Kompozity/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/README.md)
+  — six text files identical up to CRLF→LF (each size delta = its exact line count), and the
+  `Распределение композитов по текстам.7z` payload identical to the repo's
+  `Композиты.xlsx.7z.001` by stored CRC32 `1EBB24F6` — plus a census of the eight
+  «Алгоритмы обработки сложных слов» objects (published Krishna 2016 / Sandhan 2019 /
+  Kulkarni–Kumar / Anil Kumar 2012 compound-type-identification work, and a byte-identical
+  copy of `MWderivations/compounds/compounds.txt`) and the dedupe verdict against
+  `dcs-compound-dictionary`, `kompozity-names-compound-splits`, `uttarapada-dict-vs-corpus`
+  and `samasa-trainer`. No new dataset row, no payload, no schema change; the trainer's
+  DV/KD gold deficit stays open, with the papers logged as method prior art.
 - **Samsaadhanii DCS × Heritage alignment ingest landed ([H4739](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4739-OxAlpha_VisualDCS_xwalk-s5b-samsaadhanii-dcs-heritage_14.09.26.md),
   OxAlpha `z-ai/glm-5.3-flash`).** VALIDATION-ONLY (upstream
   [samsaadhanii/datasets](https://github.com/samsaadhanii/datasets) carries no

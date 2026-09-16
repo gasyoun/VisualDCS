@@ -92,4 +92,14 @@ the DCS-corpus half of a personal Sanskrit-linguistics research archive. **Not**
 the VisualDCS dashboard pipeline (`../src/DCS-data-2021/`, `../src/DCS-data-2026/`) — treat as
 reference material to mine for ideas or figures.
 
+**Upstream origin confirmed (17-09-2026, [H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md)):**
+this folder is the landed copy of MG's Yandex-Disk `kRtam/Композиты/` (12 objects,
+266,097,580 B). All twelve are present here: the six text files byte-for-byte with CRLF→LF
+normalisation (each size delta equals its exact line count), the two >95 MB payloads as 7-Zip
+split volumes — including `Композиты.xlsx.7z.001`, whose payload carries the same stored CRC32
+`1EBB24F6` as the remote `Распределение композитов по текстам.7z`. **Nothing on the remote is
+novel; do not re-pull it.** Parity tables, the companion «Алгоритмы обработки сложных слов»
+literature census and the dedupe verdict against the four estate compound datasets:
+[`../../reports/yadisk_samasa_algorithms_kompozity_census.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/yadisk_samasa_algorithms_kompozity_census.md).
+
 _Dr. Mārcis Gasūns_
