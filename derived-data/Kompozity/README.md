@@ -1,6 +1,6 @@
 # Kompozity
 
-_Created: 05-07-2026 · Last updated: 13-09-2026_
+_Created: 05-07-2026 · Last updated: 17-09-2026_
 
 Compound-word (samāsa) datasets derived from the DCS corpus — headword lists, per-compound
 stem splits, and part-of-speech-specific compound-frequency tables broken down by historical
@@ -37,10 +37,21 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
   обработки…): 12,609 parent occurrences / 12,326 distinct MW H1/H2 headwords × H3 compound
   children, Cologne MW 1899 digitization. **Parent-(pūrvapada)-keyed** — the complementary axis
   to H1328's final-member-keyed `uttarapada_dict_vs_corpus.tsv`. TSV shape:
-  `parent<TAB>n_children<TAB>children(space-sep)`; children folded per H1328 conventions
+  `parent<TAB>n_children<TAB>children('|'-sep)` — the children field is joined by `|`,
+  not by a space (H5064): 1,247 source parents contain a literal space (`ad VERB`,
+  `cur VERB`, …), so a space-joined field cannot round-trip; a hard assertion in the
+  builder re-reads the file and requires the children field to tokenize back to exactly
+  `n_children` tokens on every row (12,609/12,609 PASS). Children folded per H1328 conventions
   (`@` join, avagraha, anusvara U+1E43→U+1E41). Coverage vs DCS `cmps.csv`: 11.6% attested
   (any key), 88.4% dictionary-only (lower bound; elision/sandhi/kosa residuals NOT collapsed).
   Rationale + numbers: [`../../reports/h4480_samasa_algorithms_verdict.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/h4480_samasa_algorithms_verdict.md).
+  **Upstream count-column advisory (17-09-2026, H5064):** the leading count field of each
+  upstream row (`<count>:<parent>:<children>`) disagrees with the actual token count on 19 of
+  12,609 rows (line 7710 declares 34, holds 35; line 8101 declares 1073, holds 1075) — treat
+  that column as **advisory only**: MG's source file is **not** edited, the parser re-counts
+  tokens and uses `n_children` from the count it derives (the upstream yadisk copy md5
+  `f94d9e0a86e6b0ba57b10ddfd3087071` is the CRLF-normalised form of the committed
+  `compounds.txt`, whose raw LF md5 is `77ede288d9171b667a3f514457356e1d`).
 - **[`Композиты 4+.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Композиты%204%2B.xlsx)**,
   **[`Композиты.xlsx.7z.001`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Композиты.xlsx.7z.001)**
   (split archive — see [`../../RESTORE_SPLIT_FILES.md`](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)),
