@@ -54,7 +54,7 @@ source + 1 MB derived, no 266 MB movement):
 
 - `derived-data/Kompozity/compounds.txt` — source table, committed for reproducibility
 - [`derived-data/Kompozity/build_mw_h3_parent_compounds.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/build_mw_h3_parent_compounds.py) — parser + coverage cross-check (H1328 fold conventions: `@` join, avagraha, anusvara U+1E43→U+1E41; no sandhi manufacture)
-- `derived-data/Kompozity/mw_h3_parent_compounds.tsv` — 12,609 rows × `parent<TAB>n_children<TAB>children`
+- `derived-data/Kompozity/mw_h3_parent_compounds.tsv` — 12,609 rows × `parent<TAB>n_children<TAB>children('|'-sep)`; since H5064 (17-09-2026) the children field is `|`-joined — 1,228 distinct source parents carry a literal space, and a space-joined field could not round-trip on the 5 rows that also carry a `+` child — and the builder re-reads the written file asserting `children` tokens == `n_children` on every row (12,609/12,609 PASS)
 
 ### Own-data parity / coverage numbers (13-09-2026 run)
 
