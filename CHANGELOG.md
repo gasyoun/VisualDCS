@@ -10,6 +10,23 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- **Kompozity `mw_h3_parent_compounds.tsv` round-trip fixed — children serialized with a
+  non-space separator, hard round-trip assertion added
+  ([H5064](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5064-OxAlpha_VisualDCS_kompozity-tsv-roundtrip-advisory_17.09.26.md),
+  OxAlpha tier, executed by GLM (`zai-coding-plan/glm-5.3-flash`)).**
+  Five rows (TSV lines 191, 3497, 3969, 4203, 5999 — parents `ad VERB`, `cur VERB`,
+  `tan VERB`, `turaṇya VERB`, `parī VERB`) lost round-trip fidelity because 1,247 source
+  parents contain a literal space and a `+` child rejoins onto its parent, so a space-joined
+  children field over-tokenized against `n_children`.
+  [`derived-data/Kompozity/build_mw_h3_parent_compounds.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/build_mw_h3_parent_compounds.py)
+  now joins children with `|` and re-reads the written file, requiring the children field to
+  tokenize back to exactly `n_children` tokens on every row (12,609/12,609 PASS, `parent` and
+  `n_children` values unchanged);
+  [`derived-data/Kompozity/README.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/README.md)
+  documents the new separator plus the upstream count-column advisory — the leading count field
+  of the source row disagrees with the actual token count on 19 of 12,609 rows (line 7710: 34/35,
+  line 8101: 1073/1075); the column is advisory, the source is not edited, the parser re-counts.
+
 - **Yandex-Disk samāsa bundle censused — superseded, nothing landed
   ([H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md),
   OxAlpha tier, executed by Opus 5 (claude-opus-5[1m])).**
