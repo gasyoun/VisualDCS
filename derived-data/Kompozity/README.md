@@ -38,8 +38,9 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
   children, Cologne MW 1899 digitization. **Parent-(pūrvapada)-keyed** — the complementary axis
   to H1328's final-member-keyed `uttarapada_dict_vs_corpus.tsv`. TSV shape:
   `parent<TAB>n_children<TAB>children('|'-sep)` — the children field is joined by `|`,
-  not by a space (H5064): 1,247 source parents contain a literal space (`ad VERB`,
-  `cur VERB`, …), so a space-joined field cannot round-trip; a hard assertion in the
+  not by a space (H5064): 1,228 distinct source parents (1,247 rows) contain a literal
+  space (`ad VERB`, `cur VERB`, …), and in the 5 rows that also carry a `+` child rejoining
+  onto such a parent a space-joined field could not round-trip; a hard assertion in the
   builder re-reads the file and requires the children field to tokenize back to exactly
   `n_children` tokens on every row (12,609/12,609 PASS). Children folded per H1328 conventions
   (`@` join, avagraha, anusvara U+1E43→U+1E41). Coverage vs DCS `cmps.csv`: 11.6% attested

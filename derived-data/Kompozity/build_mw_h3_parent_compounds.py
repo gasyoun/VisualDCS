@@ -37,10 +37,11 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 OUT_TSV = os.path.join(HERE, "mw_h3_parent_compounds.tsv")
 
-# Children serialization separator (H5064). 1,247 source parents contain a literal
-# space ('ad VERB', 'cur VERB', 'tan VERB', ...) and a '+' child rejoins onto its
-# parent, so a space-joined children field cannot round-trip: a whitespace split
-# returns more tokens than n_children declares (5 rows did exactly that).
+# Children serialization separator (H5064). 1,228 distinct source parents (1,247 rows)
+# contain a literal space ('ad VERB', 'cur VERB', 'tan VERB', ...) and a '+' child
+# rejoins onto its parent, so a space-joined children field cannot round-trip: a
+# whitespace split returns more tokens than n_children declares -- exactly the 5 rows
+# that combine a space-bearing parent with a '+' child did that.
 # '|' occurs in no child token over all 12,609 rows -- preserve that invariant; the
 # builder refuses to write if the separator reappears inside a child.
 CHILD_SEP = "|"
