@@ -15,9 +15,9 @@ durable, user-facing milestones.
   ([H5064](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5064-OxAlpha_VisualDCS_kompozity-tsv-roundtrip-advisory_17.09.26.md),
   OxAlpha tier, executed by GLM (`zai-coding-plan/glm-5.3-flash`)).**
   Five rows (TSV lines 191, 3497, 3969, 4203, 5999 — parents `ad VERB`, `cur VERB`,
-  `tan VERB`, `turaṇya VERB`, `parī VERB`) lost round-trip fidelity because 1,247 source
-  parents contain a literal space and a `+` child rejoins onto its parent, so a space-joined
-  children field over-tokenized against `n_children`.
+  `tan VERB`, `turaṇya VERB`, `parī VERB`) lost round-trip fidelity because 1,228 distinct
+  source parents (1,247 rows) contain a literal space and in those 5 rows a `+` child rejoins
+  onto its parent, so a space-joined children field over-tokenized against `n_children`.
   [`derived-data/Kompozity/build_mw_h3_parent_compounds.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/build_mw_h3_parent_compounds.py)
   now joins children with `|` and re-reads the written file, requiring the children field to
   tokenize back to exactly `n_children` tokens on every row (12,609/12,609 PASS, `parent` and
