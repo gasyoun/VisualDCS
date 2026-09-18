@@ -50,3 +50,6 @@ non-derived/.claude/
 .env
 .env.*
 !.env.example
+
+# SA-IS concordance index (H5153) — ~487 MB, regenerate via concordance_sa.py build
+/derived-data/concordance_sa/
