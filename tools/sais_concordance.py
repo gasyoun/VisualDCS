@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""concordance_sa.py — H5153: compiled SA-IS concordance layer over the DCS 2026 master.
+"""sais_concordance.py — H5153: compiled SA-IS concordance layer over the DCS 2026 master.
 
 Corpus: src/DCS-data-2026/dcs_full.sqlite (~878 MB, gitignored, read-only URI mode
 per CLAUDE.md / docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md). The text is the
@@ -30,7 +30,7 @@ multi-word phrase queries work. Sub-word matches (inside a form) are legitimate
 concordance hits and are attributed to the token containing the match start.
 
 Run from the VisualDCS repo root:
-    python3 concordance_sa.py selftest
+    python tools/sais_concordance.py selftest
 Index artifacts land in derived-data/concordance_sa/ (gitignored): T.bin, sa.npy,
 lcp.npy, tok_start.npy, tok_sent.npy, sent_chap.npy, sent_no.npy, sent_sid.json.gz,
 chapters.json, texts.json, meta.json.
@@ -45,7 +45,7 @@ import sys
 import time
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent
+REPO = Path(__file__).resolve().parent.parent  # tools/ -> repo root
 DEFAULT_DB_CANDIDATES = [
     REPO / "src" / "DCS-data-2026" / "dcs_full.sqlite",      # main clone
     REPO.parent / "VisualDCS" / "src" / "DCS-data-2026" / "dcs_full.sqlite",  # worktree
@@ -588,6 +588,11 @@ def _pattern_bytes(s: str) -> bytes:
 
 
 def main(argv=None):
+    # Windows consoles default to a legacy codepage (cp1251/cp437) that cannot
+    # encode Sanskrit diacritics; force UTF-8 so every subcommand prints cleanly.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--db", help="path to dcs_full.sqlite (read-only)")
     ap.add_argument("--out", default=str(DEFAULT_OUT), help="index directory")
