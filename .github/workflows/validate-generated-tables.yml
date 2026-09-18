@@ -1,0 +1,57 @@
+name: Validate generated tables
+
+# H5096 -- shared round-trip + determinism contract for generated TSV/CSV
+# artifacts (scripts/generated_table_contract.py). Validates the COMMITTED
+# artifacts only, so it needs no DCS corpus DB / sibling-repo inputs; the
+# two-build determinism gate (--rebuild) and the planted-mutation RED gate
+# (--mutate) run locally where those inputs exist.
+
+on:
+  push:
+    paths:
+      - 'scripts/generated_table_contract.py'
+      - 'derived-data/Kompozity/build_mw_h3_parent_compounds.py'
+      - 'derived-data/Kompozity/mw_h3_parent_compounds.tsv'
+      - 'derived-data/Kompozity/build_uttarapada_dict_vs_corpus.py'
+      - 'derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv'
+      - 'derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/gen_dcs_hapax.py'
+      - 'derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_all.tsv'
+      - 'derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_single_morpheme.tsv'
+      - 'derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_compound.tsv'
+      - 'derived-data/Corpus-Delta-2021-2026/delta_supplement.py'
+      - 'derived-data/Corpus-Delta-2021-2026/per_text_token_delta.csv'
+      - '.github/workflows/validate-generated-tables.yml'
+  pull_request:
+    paths:
+      - 'scripts/generated_table_contract.py'
+      - 'derived-data/Kompozity/build_mw_h3_parent_compounds.py'
+      - 'derived-data/Kompozity/mw_h3_parent_compounds.tsv'
+      - 'derived-data/Kompozity/build_uttarapada_dict_vs_corpus.py'
+      - 'derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv'
+      - 'derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/gen_dcs_hapax.py'
+      - 'derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_all.tsv'
+      - 'derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_single_morpheme.tsv'
+      - 'derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_compound.tsv'
+      - 'derived-data/Corpus-Delta-2021-2026/delta_supplement.py'
+      - 'derived-data/Corpus-Delta-2021-2026/per_text_token_delta.csv'
+      - '.github/workflows/validate-generated-tables.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    name: Round-trip / count / LF contract
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Selftest (synthetic fixtures, happy + failing)
+        run: python scripts/generated_table_contract.py --selftest
+      - name: Validate committed generated tables
+        run: python scripts/generated_table_contract.py --check
+      - name: Plant mutations in temp copies, require RED
+        run: python scripts/generated_table_contract.py --mutate
