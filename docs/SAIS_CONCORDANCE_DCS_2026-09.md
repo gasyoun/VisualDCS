@@ -13,7 +13,7 @@ _Handoff: [H5153](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5153-OxA
 
 A compiled suffix-array concordance over the full DCS 2026 master: the concatenated
 `token.form` stream of all 5,688,416 tokens, indexed with a linear-time SA-IS suffix
-array ([`concordance_sa.py`](https://github.com/gasyoun/VisualDCS/blob/main/concordance_sa.py)),
+array ([`tools/sais_concordance.py`](https://github.com/gasyoun/VisualDCS/blob/main/tools/sais_concordance.py)),
 a Kasai LCP array, and color arrays that map every text position back to its token,
 sentence, chapter and text through the canonical spine join
 ([`docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md) §3).
@@ -34,13 +34,13 @@ The index artifacts are **not** committed — `derived-data/concordance_sa/` is
 gitignored; regenerate locally (≈13 s wall, ≈1 GB peak RSS) with the compiled wheel:
 
 ```sh
-python3 -m venv .venv-sa && .venv-sa/bin/pip install pydivsufsort numpy
-.venv-sa/bin/python concordance_sa.py build     # → derived-data/concordance_sa/
-.venv-sa/bin/python concordance_sa.py selftest  # 5 patterns vs naive scan, 1M-token slice
-.venv-sa/bin/python concordance_sa.py find 'dharmakṣetre'
-.venv-sa/bin/python concordance_sa.py count-text 'dharma'
-.venv-sa/bin/python concordance_sa.py repeats --top 20
-.venv-sa/bin/python concordance_sa.py table
+py -3.12 -m pip install pydivsufsort numpy     # any Python ≥3.9 with the wheel; py -3.12 on Windows
+py -3.12 tools/sais_concordance.py build     # → derived-data/concordance_sa/
+py -3.12 tools/sais_concordance.py selftest  # 5 patterns vs naive scan, 1M-token slice
+py -3.12 tools/sais_concordance.py find 'dharmakṣetre'
+py -3.12 tools/sais_concordance.py count-text 'dharma'
+py -3.12 tools/sais_concordance.py repeats --top 20
+py -3.12 tools/sais_concordance.py table
 ```
 
 Without the wheel the SA falls back to a system `libdivsufsort` via ctypes, and the
@@ -50,11 +50,14 @@ LCP (gap between SA entries `i` and `i+1`) and is reindexed to the textbook conv
 here; LCP-interval bounds are `[start-1, i-1]` on pop, not `[start, i]` — the offline
 toy-corpus test caught the off-by-one that shifted every repeat frequency.
 
-## Measured (build 18-09-2026, macOS, Python 3.13.15, pydivsufsort 0.0.20)
+## Measured
 
 Corpus: **48,167,032 bytes · 5,688,416 tokens · 754,726 sentences · 270 texts ·
 269 text boundaries** — all four counts match the deep manual's live-verified row
-counts, i.e. the spine join is lossless.
+counts, i.e. the spine join is lossless. Corpus stats and artifact sizes are
+byte-identical across both build boxes below.
+
+### macOS (18-09-2026, Python 3.13.15, pydivsufsort 0.0.20)
 
 | stage | time |
 |---|---|
@@ -63,6 +66,24 @@ counts, i.e. the spine join is lossless.
 | SA-IS (`pydivsufsort.divsufsort`) | 1.90 s |
 | Kasai LCP (`pydivsufsort.kasai`) | 1.25 s |
 | **total wall** | **≈13 s** |
+
+### Windows (18-09-2026, Python 3.12.0, pydivsufsort 0.0.20 — independent verification pass)
+
+| stage | time |
+|---|---|
+| spine (text/chapter/sentence maps) | 1.89 s |
+| extract + token join | 28.29 s |
+| SA-IS (`pydivsufsort.divsufsort`) | 3.36 s |
+| Kasai LCP (`pydivsufsort.kasai`) | 3.80 s |
+| **total wall** | **≈37 s** |
+
+Selftest on the Windows box: **5/5 patterns exact vs naive scan** on the 1M-token
+slice (8,493,339 B · 57 text boundaries), compiled backends engaged. Hand-checked
+hits: the `dharmakṣetre` occurrence verified byte-level in `T.bin` at offset
+37,550,420 (`… sa prabhuḥ \ndharmakṣetre kurukṣetre`) and through SQL joins
+(sentence 7 of `SkPur (Rkh), Revākhaṇḍa, 143`, sent_id 416558); `count-text 'dharma'`
+is substring-semantics by design — e.g. Mahābhārata 5,510 occurrences vs 2,660
+exact-form tokens in plain SQL — the documented stem-query behaviour.
 
 | artifact | bytes |
 |---|---|
@@ -81,11 +102,22 @@ Halving is possible (LCP could be compressed, the SA is irreducible at 32-bit fo
 48 MB text); a whole-index reduction needs an FM-index/BWT, which the L18 lecture
 covers but this handoff scoped out.
 
+Index artifact digests (Windows verification build, `derived-data/concordance_sa/`,
+SHA256 — regenerate locally; nothing large is committed):
+
+| artifact | SHA256 |
+|---|---|
+| `T.bin` | `2557b35b4c783f47cbe99a8cded607da8dff5f4375e00c6b6baa023160895cde` |
+| `sa.npy` | `774c7769ed1662064ef9bbd1b9f437812b55bde447b5683ad6f59d241878f8ca` |
+| `lcp.npy` | `03ff36c33f93b4880ecb1d09ea133b6da1b49dce2096dcd5325305a4f3d0ffb1` |
+
 ## Findings the queries produced
 
-- `find 'dharmakṣetre'` → **1 occurrence**: `SkPur (Rkh), Revākhaṇḍa, 143`. The famous
-  Gītā 1.1 form is not a DCS token there — a real corpus-shape fact worth a follow-up,
-  not an index defect (the naive-scan oracle agrees on the same text).
+- `find 'dharmakṣetre'` → **1 occurrence**: `SkPur (Rkh), Revākhaṇḍa, 143`, sent 7 —
+  byte-level and SQL-verified, this IS the famous Gītā 1.1 dyad opening
+  (`dharmakṣetre kurukṣetre`), quoted inside the Skandapurāṇa (Revākhaṇḍa); DCS holds
+  exactly one token instance in the whole 5.69M-token master (the naive-scan oracle
+  agrees on the same text).
 - `count-text 'dharma'` → 12,361 occurrences; top: Mahābhārata 5,510 · Rāmāyaṇa 847 ·
   Saddharmapuṇḍarīkasūtra 475 · Matsyapurāṇa 314 · Aṣṭasāhasrikā 292 · Lalitavistara 277.
 - `repeats` → the top maximal repeats are **Buddhist sūtra stock passages**: a 4,132-char
