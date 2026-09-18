@@ -239,7 +239,7 @@ def _int_or_empty(v):
 # ---------------------------------------------------------------- specs
 class Spec:
     def __init__(self, path, dialect, columns, row_rules=(), table_rules=(),
-                 rebuild=None, rebuild_inputs=()):
+                 rebuild=None, rebuild_inputs=(), expect_rows=None):
         self.path = path              # repo-relative
         self.dialect = dialect        # 'tsv' | 'csv'
         self.columns = columns
@@ -247,6 +247,12 @@ class Spec:
         self.table_rules = table_rules  # fn(path, rows)
         self.rebuild = rebuild        # shell command run from repo root
         self.rebuild_inputs = rebuild_inputs  # repo-relative input files
+        # Pinned absolute row count (verifier residual 18-09-2026): WITHOUT a
+        # pin, a builder change that silently drops whole rows while
+        # preserving keys/arithmetic/partition would stay GREEN. A legitimate
+        # data refresh bumps the pin in the same PR -- a declared-count
+        # contract, same discipline as the computed-table gates.
+        self.expect_rows = expect_rows
 
 
 SPECS = {
@@ -258,6 +264,7 @@ SPECS = {
     # the byte round-trip pins the exact multiset.
     "derived-data/Kompozity/mw_h3_parent_compounds.tsv": Spec(
         path="derived-data/Kompozity/mw_h3_parent_compounds.tsv",
+        expect_rows=12609,
         dialect="tsv",
         columns=["parent", "n_children", "children"],
         row_rules=(rule_int("n_children"),),
@@ -269,6 +276,7 @@ SPECS = {
     # --- pilot 2: hapax trio (free text + cross-artifact count identity) --
     "derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_all.tsv": Spec(
         path="derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_all.tsv",
+        expect_rows=39987,
         dialect="tsv",
         columns=["lemma_id", "lemma", "upos", "grammar", "meaning"],
         row_rules=(rule_int("lemma_id"),),
@@ -278,21 +286,28 @@ SPECS = {
     ),
     "derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_single_morpheme.tsv": Spec(
         path="derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_single_morpheme.tsv",
+        expect_rows=23067,
         dialect="tsv",
         columns=["lemma_id", "lemma", "upos", "grammar", "meaning"],
         row_rules=(rule_int("lemma_id"),),
         table_rules=(rule_unique(["lemma_id"]),),
+        rebuild="{py} derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/gen_dcs_hapax.py",
+        rebuild_inputs=("src/DCS-data-2026/dcs_full.sqlite",),
     ),
     "derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_compound.tsv": Spec(
         path="derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/dcs2026_hapax_compound.tsv",
+        expect_rows=16920,
         dialect="tsv",
         columns=["lemma_id", "lemma", "upos", "grammar", "meaning"],
         row_rules=(rule_int("lemma_id"),),
         table_rules=(rule_unique(["lemma_id"]),),
+        rebuild="{py} derived-data/Leksicheskie-issledovaniya/Gapaksy-DCS-2026/gen_dcs_hapax.py",
+        rebuild_inputs=("src/DCS-data-2026/dcs_full.sqlite",),
     ),
     # --- pilot 3: comma-CSV with arithmetic reconciliation ---------------
     "derived-data/Corpus-Delta-2021-2026/per_text_token_delta.csv": Spec(
         path="derived-data/Corpus-Delta-2021-2026/per_text_token_delta.csv",
+        expect_rows=276,
         dialect="csv",
         columns=["text_2021", "text_2026", "sent_2021", "sent_2026",
                  "tok_2021", "tok_2026", "tok_delta"],
@@ -311,6 +326,7 @@ SPECS = {
     # --- pilot 4: csv.DictWriter path, enum + numeric columns ------------
     "derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv": Spec(
         path="derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv",
+        expect_rows=19177,
         dialect="tsv",
         columns=["final_member", "mw_class", "mw_first_members",
                  "corpus_compounds", "corpus_tokens", "corpus_first_members",
@@ -379,6 +395,10 @@ def validate_spec(root, spec):
     rows, canonical = parse_table(raw, spec.path, spec.dialect, spec.columns)
     if raw != canonical:
         _fail(spec.path, "round-trip", "byte mismatch")
+    if spec.expect_rows is not None and len(rows) != spec.expect_rows:
+        _fail(spec.path, "row-count-pin",
+              f"{len(rows)} rows, spec pins {spec.expect_rows} -- if this "
+              f"data change is intentional, bump expect_rows in the same PR")
     for lineno, row in enumerate(rows, start=2):
         for rule in spec.row_rules:
             rule(spec.path, row, lineno)
@@ -547,6 +567,14 @@ def build_mutations():
     muts.append(("per_text_delta: tok_delta no longer == tok_2026-tok_2021 "
                  "(reconciliation break)",
                  {ptx: _edit_data_line(ptx_raw, flip_delta)}))
+
+    def drop_first_data_row(raw):
+        lines = raw.split(b"\n")
+        del lines[1]  # whole row vanishes; keys/arith of survivors intact
+        return b"\n".join(lines)
+    muts.append(("per_text_delta: whole row silently dropped "
+                 "(row-count-pin break)",
+                 {ptx: drop_first_data_row(ptx_raw)}))
 
     def unquoted_comma(line):
         f = line.split(b",")

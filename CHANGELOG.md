@@ -25,8 +25,10 @@ durable, user-facing milestones.
   ([`validate-generated-tables.yml`](https://github.com/gasyoun/VisualDCS/blob/main/.github/workflows/validate-generated-tables.yml)).
   Evidence ([receipts](https://github.com/gasyoun/VisualDCS/blob/main/reports/h5096_generated_table_contract.md)):
   full-corpus GREEN over 7 artifacts (12,609 + 39,987 + 23,067 + 16,920 + 276
-  + 19,177 rows), 2-run determinism == committed blobs, 7/7 planted
-  information-loss mutations RED, 16/16 selftest fixtures. The gate
+  + 19,177 rows, each pinned by `expect_rows`), 2-run determinism == committed
+  blobs, 8/8 planted information-loss mutations RED, 16/16 selftest fixtures;
+  adversarial verifier (DeepSeek V4.1 Flash) PASS with both mechanical
+  residuals fixed in the same PR. The gate
   immediately caught three latent CRLF builder defects
   (`build_uttarapada_dict_vs_corpus.py`, `gen_dcs_hapax.py`,
   `delta_supplement.py` — csv-module default `\r\n` lineterminator meant a
