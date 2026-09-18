@@ -16,9 +16,9 @@ from pathlib import Path
 import pytest
 
 REPO = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO))
+sys.path.insert(0, str(REPO / "tools"))
 
-import concordance_sa as cs  # noqa: E402
+import sais_concordance as cs  # noqa: E402
 
 
 CORPUS = b"banana bandana bananarama\nsecond sentence here\x00third text starts"
