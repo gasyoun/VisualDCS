@@ -10,6 +10,27 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- **SA-IS concordance layer over the DCS 2026 master — compiled suffix array + LCP +
+  color arrays, 5,688,416 tokens, four query modes
+  ([H5153](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5153-OxAlpha_VisualDCS_sais-concordance-dcs-master_18.09.26.md),
+  OxAlpha tier, executed by GLM (`zai-coding-plan/glm-5.3-flash`)).**
+  [`concordance_sa.py`](https://github.com/gasyoun/VisualDCS/blob/main/concordance_sa.py)
+  builds a linear-time SA-IS suffix array (`pydivsufsort.divsufsort`, system
+  `libdivsufsort` via ctypes as fallback), a Kasai LCP, and color arrays mapping every
+  position to token/sentence/chapter/text through the canonical spine join; the CLI
+  answers `find` (all occurrences with refs), `count-text`, `repeats` (top-k maximal
+  repeats, LCP-interval + left-diversity), `table` and a `selftest` that checks five
+  patterns against a naive scan (5/5 exact on a 1M-token slice; all four corpus counts
+  match the deep manual: 48,167,032 B · 5,688,416 tokens · 754,726 sentences · 270 texts).
+  Measured build 13 s wall; index 487 MB = 10.11× raw text — ~4.9× over the H5137
+  ~100 MB estimate, dominated by SA+LCP at 4 bytes/text-byte each. The `repeats` query
+  immediately surfaced Buddhist sūtra stock-passage duplicates (a 4,132-char passage ×2;
+  the Lalitavistara litany ×3–6). Index artifacts are gitignored
+  (`/derived-data/concordance_sa/`); offline unit tests in
+  [`src/DCS-data-2026/test_concordance_sa.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/test_concordance_sa.py)
+  (8 tests, synthetic corpus, no DB); measured table, findings and limits in
+  [`docs/CONCORDANCE_SA_DCS_MASTER_2026-09.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/CONCORDANCE_SA_DCS_MASTER_2026-09.md).
+
 - **Kompozity `mw_h3_parent_compounds.tsv` round-trip fixed — children serialized with a
   non-space separator, hard round-trip assertion added
   ([H5064](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5064-OxAlpha_VisualDCS_kompozity-tsv-roundtrip-advisory_17.09.26.md),
