@@ -34,7 +34,7 @@ One stdlib-only module, four modes:
 ```
 python3 scripts/generated_table_contract.py --selftest   # 16 synthetic fixtures, happy + failing
 python3 scripts/generated_table_contract.py --check      # all 7 committed artifacts + group identity (CI-safe)
-python3 scripts/generated_table_contract.py --mutate     # 7 planted mutations in TEMP copies, require 7/7 RED
+python3 scripts/generated_table_contract.py --mutate     # 8 planted mutations in TEMP copies, require 8/8 RED
 python3 scripts/generated_table_contract.py --rebuild <artifact>   # two-build determinism == committed blob
 ```
 
@@ -86,7 +86,7 @@ runs selftest + `--check` + `--mutate` on the committed bytes only.
 No generated artifact changed in this PR — the LF fixes below made every
 builder reproduce the committed bytes exactly.
 
-**Planted-mutation RED** (`--mutate`, 7/7 CAUGHT, committed files
+**Planted-mutation RED** (`--mutate`, 8/8 CAUGHT, committed files
 hash-verified untouched):
 
 | Planted information loss | Diagnosis that fired |
@@ -97,7 +97,26 @@ hash-verified untouched):
 | hapax trio: row deleted from `_all` | group count (39,986 ≠ 23,067 + 16,920) |
 | per_text: `tok_delta` no longer reconciles | count-reconcile (−233 ≠ −240) |
 | per_text: unquoted comma in text name | delimiter-safety (8 fields ≠ 7) |
+| per_text: whole row silently dropped | row-count-pin (275 rows, spec pins 276) |
 | uttarapada: `corpus_status` outside enum | enum domain |
+
+## 4. Independent verification + hardening commit
+
+The delivery was adversarially verified pre-close by **DeepSeek V4.1 Flash
+(openrouter/deepseek/deepseek-v4.1-flash)** — static re-derivation of every
+DoD axis against the code, row counts re-counted from the artifacts, VERDICT:
+**pass**. Its two mechanical residuals were fixed in the same PR:
+
+1. **Whole-row-drop hole** — `--check` had no pinned absolute row count, so a
+   builder silently dropping rows stayed GREEN. Fixed: every spec now pins
+   `expect_rows` (12,609 / 39,987 / 23,067 / 16,920 / 276 / 19,177); a
+   legitimate data refresh bumps the pin in the same PR. New planted mutation
+   (whole row dropped from per_text) is RED via the pin — 8/8.
+2. **Hapax siblings outside the rebuild family** — `single_morpheme` /
+   `compound` specs carried no rebuild command, so `--rebuild` did not
+   hash-compare them. Fixed: all three hapax specs share the builder command;
+   the gate now prints DETERMINISTIC lines for all three (verified against
+   the copied master DB).
 
 ## 4. Real defects the gate caught on first live contact
 
