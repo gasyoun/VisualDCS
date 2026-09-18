@@ -200,10 +200,21 @@ def main():
     cols = ["final_member", "mw_class", "mw_first_members", "corpus_compounds",
             "corpus_tokens", "corpus_first_members", "overlap_first",
             "mw_only_first", "corpus_only_first", "corpus_status"]
+    # lineterminator="\n": the committed TSV is LF-normalised (H5096 contract
+    # enforces LF-only); csv.DictWriter's default is CRLF, which would churn
+    # the blob and fail the shared round-trip check on every rebuild.
     with open(args.out, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=cols, delimiter="\t")
+        w = csv.DictWriter(f, fieldnames=cols, delimiter="\t",
+                           lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
+
+    # H5096: shared generated-table contract -- round-trip, key uniqueness,
+    # enum domain, non-negative int columns, LF policy.
+    _repo = os.path.abspath(os.path.join(HERE, "..", ".."))
+    sys.path.insert(0, os.path.join(_repo, "scripts"))
+    import generated_table_contract as _gtc
+    _gtc.enforce(args.out, _repo)
 
     # ---------------------------------------------------------- diagnostics
     print(f"MW-kept final members (okey-merged): {len(mw)}")

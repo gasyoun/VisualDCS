@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 17-09-2026_
+_Created: 06-06-2026 · Last updated: 18-09-2026_
 
 # Changelog
 
@@ -9,6 +9,31 @@ Day-to-day session state lives in [`.ai_state.md`](https://github.com/gasyoun/Vi
 durable, user-facing milestones.
 
 ## [Unreleased]
+
+- **Reusable round-trip + determinism contract for generated TSV/CSV artifacts —
+  the PR #136 Kompozity defense generalized to four pilot builders
+  ([H5096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5096-OxAlpha_VisualDCS_generated-table-roundtrip-contract_18.09.26.md),
+  OxAlpha tier, executed by GLM (`zai-coding-plan/glm-5.3-flash`)).**
+  [`scripts/generated_table_contract.py`](https://github.com/gasyoun/VisualDCS/blob/main/scripts/generated_table_contract.py)
+  enforces byte hygiene (UTF-8, no BOM, LF-only), delimiter safety, byte-exact
+  encode/decode round-trip, row/key preservation, declared-count
+  reconciliation (`n_children`, `tok_delta`, hapax `all == single ⊎
+  compound`), and two-build determinism, with per-artifact specs and
+  `--selftest` / `--check` / `--mutate` / `--rebuild` modes. Wired post-write
+  into all four pilot builders (Kompozity mw_h3 anchor + uttarapada, hapax
+  trio, per-text delta) and to CI
+  ([`validate-generated-tables.yml`](https://github.com/gasyoun/VisualDCS/blob/main/.github/workflows/validate-generated-tables.yml)).
+  Evidence ([receipts](https://github.com/gasyoun/VisualDCS/blob/main/reports/h5096_generated_table_contract.md)):
+  full-corpus GREEN over 7 artifacts (12,609 + 39,987 + 23,067 + 16,920 + 276
+  + 19,177 rows, each pinned by `expect_rows`), 2-run determinism == committed
+  blobs, 8/8 planted information-loss mutations RED, 16/16 selftest fixtures;
+  adversarial verifier (DeepSeek V4.1 Flash) PASS with both mechanical
+  residuals fixed in the same PR. The gate
+  immediately caught three latent CRLF builder defects
+  (`build_uttarapada_dict_vs_corpus.py`, `gen_dcs_hapax.py`,
+  `delta_supplement.py` — csv-module default `\r\n` lineterminator meant a
+  rebuild could never reproduce the committed LF blobs); fixed, no generated
+  artifact changed.
 
 - **Kompozity `mw_h3_parent_compounds.tsv` round-trip fixed — children serialized with a
   non-space separator, hard round-trip assertion added
