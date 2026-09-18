@@ -178,7 +178,8 @@ def main():
         })
     with open(os.path.join(HERE, "lemma_freq_drift_top200.csv"), "w",
               encoding="utf-8", newline="") as fh:
-        wr = csv.DictWriter(fh, fieldnames=list(drift_rows[0].keys()))
+        wr = csv.DictWriter(fh, fieldnames=list(drift_rows[0].keys()),
+                            lineterminator="\n")  # LF policy (H5096)
         wr.writeheader()
         wr.writerows(drift_rows)
 
@@ -204,7 +205,8 @@ def main():
         })
     with open(os.path.join(HERE, "pos_distribution_shift.csv"), "w",
               encoding="utf-8", newline="") as fh:
-        wr = csv.DictWriter(fh, fieldnames=list(pos_rows[0].keys()))
+        wr = csv.DictWriter(fh, fieldnames=list(pos_rows[0].keys()),
+                            lineterminator="\n")  # LF policy (H5096)
         wr.writeheader()
         wr.writerows(pos_rows)
 
@@ -229,9 +231,17 @@ def main():
                           "tok_delta": ""})
     with open(os.path.join(HERE, "per_text_token_delta.csv"), "w",
               encoding="utf-8", newline="") as fh:
-        wr = csv.DictWriter(fh, fieldnames=list(text_rows[0].keys()))
+        wr = csv.DictWriter(fh, fieldnames=list(text_rows[0].keys()),
+                            lineterminator="\n")  # LF policy (H5096)
         wr.writeheader()
         wr.writerows(text_rows)
+
+    # H5096: shared generated-table contract -- CSV quoting round-trip,
+    # tok_delta == tok_2026 - tok_2021 reconciliation, key uniqueness.
+    _repo = os.path.abspath(os.path.join(HERE, "..", ".."))
+    sys.path.insert(0, os.path.join(_repo, "scripts"))
+    import generated_table_contract as _gtc
+    _gtc.enforce(os.path.join(HERE, "per_text_token_delta.csv"), _repo)
 
     shrunk = [r for r in text_rows if r["tok_delta"] != "" and r["tok_delta"] < 0]
 
