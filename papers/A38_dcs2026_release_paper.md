@@ -476,10 +476,11 @@ identifiers do not fit Sanskrit cleanly.
   recorded in the `provenance` table.
 - **Reproduce the headline.** `python src/DCS-data-2026/validate.py --all` regenerates the M6
   figures against the master.
-- **DOI.** _(TODO: mint via Zenodo↔GitHub on the VisualDCS repo — MG action, to start after the
-  current coding pass; steps in
-  [`A38_release_checklist.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md);
-  insert the DOI here before submission.)_
+- **DOI.** Minted on Zenodo 2026-09-20 (H5170, legacy deposit API): concept DOI
+  [`10.5281/zenodo.22853985`](https://doi.org/10.5281/zenodo.22853985) (preferred citation),
+  version DOI [`10.5281/zenodo.22854185`](https://doi.org/10.5281/zenodo.22854185) for
+  v2026.03.05 — the `dcs-full-2026-03-05` asset `dcs_full.sqlite.gz`
+  (SHA-256-verified upload) plus both SHA-256 sidecars; record live-verified logged-out.
 - **Licence.** Upstream DCS CoNLL-U is **CC BY 4.0** (Oliver Hellwig; per the distribution's
   provenance and readme). The derived master + exports are released under **CC BY 4.0** with
   attribution to Hellwig for the annotation and to this project for the packaging. **Explicit
