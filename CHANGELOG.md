@@ -10,6 +10,17 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- **DCS-2026 dataset DOI minted on Zenodo (H5170)** — the `dcs-full-2026-03-05` release
+  asset `dcs_full.sqlite.gz` (SHA-256-verified) + SHA-256 sidecars are now archived and
+  citable: concept DOI
+  [10.5281/zenodo.22853985](https://doi.org/10.5281/zenodo.22853985), version DOI
+  [10.5281/zenodo.22854185](https://doi.org/10.5281/zenodo.22854185) (v2026.03.05,
+  2026-09-20; legacy deposit API, per-file MD5 enforced, record live-verified logged-out).
+  Wired into [`CITATION.cff`](https://github.com/gasyoun/VisualDCS/blob/main/CITATION.cff)
+  (`doi:` + identifiers), the release notes, and
+  [`papers/A38_dcs2026_release_paper.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_dcs2026_release_paper.md)
+  §8 (Data and reproducibility) + the
+  [checklist](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md) §4.
 - **SA-IS concordance layer over the DCS 2026 master — compiled suffix array + LCP +
   color arrays, 5,688,416 tokens, four query modes
   ([H5153](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5153-OxAlpha_VisualDCS_sais-concordance-dcs-master_18.09.26.md),
