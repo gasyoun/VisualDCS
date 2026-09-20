@@ -46,22 +46,31 @@ Zenodo account) and is mirrored in the Uprava GTD hub.
 - [x] Asset integrity pinned in the paper: `dcs_full.sqlite.gz` = 287,713,306 bytes, SHA256
   `b9b76218f7145776e6014f885dee5dd74d6a8f80b9eddc11c82a51c4ad4a86b5`.
 
-## 4. Zenodo push + DOI mint (MG @DO — do not automate credentials)
+## 4. Zenodo push + DOI mint — ✅ EXECUTED 20-09-2026 (H5170 agent lane, per MG ruling «mint via Zenodo API ourselves»; legacy deposit API per Uprava FINDINGS §594)
 
-1. Wait for / confirm the Hellwig rights gate (§1).
-2. On [zenodo.org](https://zenodo.org) (logged in via GitHub): **GitHub** integration page →
-   flip the toggle for `gasyoun/VisualDCS`.
-3. Zenodo archives only *tagged releases created after the toggle* — so either create a fresh
-   tag (e.g. `dcs-full-2026-03-05.1`, same asset re-attached) or upload `dcs_full.sqlite.gz`
-   manually as a Zenodo deposit (287.7 MB ≪ the 50 GB cap; manual upload gives cleaner metadata
-   control and is the recommended path here).
-4. Deposit metadata: type *Dataset*; title = the paper's title; creator Gasūns (ORCID
-   0000-0003-4513-884X); license **CC BY 4.0**; related identifier *isDerivedFrom* → the
-   upstream DCS (`https://github.com/OliverHellwig/sanskrit`, commit `04e0778d…`); description
-   from the paper abstract.
-5. Publish → copy the **version DOI** (not just the concept DOI).
-6. Paste the DOI into: paper §8 (Data and reproducibility), `CITATION.cff` (`doi:` field),
-   and the Release notes of `dcs-full-2026-03-05`.
-7. Update `Uprava/ARTICLES.md` (A38 → readiness 4/5 candidate) and close the GTD @DO.
+1. [x] Hellwig rights gate confirmed — written CC-BY sign-off by email 2026-07-09 (see paper §8).
+2. [x] Executed via the Zenodo **API with a personal token** (not the GitHub-integration
+   toggle — the manual-upload path this checklist recommended): `dcs_full.sqlite.gz`
+   (287,713,306 B, SHA-256 `b9b76218…` verified before and after upload, per-file MD5
+   enforced by the mint script) + both SHA-256 sidecars.
+3. [x] Metadata: type *Dataset*; title = the paper's title; creator Gasūns, Mārcis (ORCID
+   0000-0003-4513-884X); license **CC BY 4.0**; related identifiers *isDerivedFrom* →
+   `https://github.com/OliverHellwig/sanskrit/commit/04e0778d3dc971030229179e25eea043d06ff397`
+   (commit existence verified live) + *isSupplementTo* → `gasyoun/VisualDCS`; attribution
+   note "Derived from Oliver Hellwig: Digital Corpus of Sanskrit (DCS)" + release version in
+   both `notes` and the description.
+4. [x] **Concept DOI [10.5281/zenodo.22853985](https://doi.org/10.5281/zenodo.22853985)** ·
+   **version DOI [10.5281/zenodo.22854185](https://doi.org/10.5281/zenodo.22854185)**
+   (v2026.03.05). Incident note: a first publish (record 22853986) shipped one mis-uploaded
+   sidecar (`dcs_full.sqlite.gz.sha256` carrying .gz bytes); remediated the same hour by a
+   corrected **new version** under the same concept (record 22854185, file set verified);
+   the concept DOI is unaffected. Version history keeps the defective v1 — standard Zenodo
+   immutability.
+5. [x] Record live-verified **logged-out** (HTTP 200; title/creator/file sizes match) before
+   any DOI was wired.
+6. [x] DOI pasted into: paper §8, `CITATION.cff` (`doi:` + identifiers), and the
+   `dcs-full-2026-03-05` release notes.
+7. [ ] `Uprava/ARTICLES.md` (A38 → readiness) — venue-gated editorial update, left to the
+   articles lane.
 
 _Dr. Mārcis Gasūns_
