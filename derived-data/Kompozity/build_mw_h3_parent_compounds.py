@@ -185,6 +185,12 @@ def main():
     print(f"round-trip assertion:            {n_verified}/{len(rows)} rows OK (children tokenizes to n_children)")
     print(f"wrote {OUT_TSV} (children separator {CHILD_SEP!r})")
 
+    # H5096: shared generated-table contract (round-trip, delimiter safety,
+    # declared counts, LF policy) -- generalizes the assertion above.
+    sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..", "..", "scripts")))
+    import generated_table_contract as _gtc
+    _gtc.enforce(OUT_TSV, os.path.abspath(os.path.join(HERE, "..", "..")))
+
 
 if __name__ == "__main__":
     main()

@@ -77,7 +77,9 @@ def make_is_compound(DICT):
 
 def write_tsv(path, items, meta):
     with open(path, 'w', encoding='utf-8', newline='') as f:
-        w = csv.writer(f, delimiter='\t')
+        # lineterminator="\n": the committed TSVs are LF-normalised (H5096
+        # contract enforces LF-only); csv.writer's default is CRLF.
+        w = csv.writer(f, delimiter='\t', lineterminator='\n')
         w.writerow(['lemma_id', 'lemma', 'upos', 'grammar', 'meaning'])
         for lid, lem, up in sorted(items, key=lambda r: r[1]):
             g, m = meta.get(lid, ('', ''))
@@ -104,6 +106,16 @@ def main():
               single, meta)
     write_tsv(os.path.join(HERE, "dcs2026_hapax_compound.tsv"),
               compound, meta)
+
+    # H5096: shared generated-table contract -- delimiter safety (the meaning
+    # field is free text smuggled straight out of sqlite), key uniqueness, and
+    # the cross-artifact partition all == single + compound.
+    _repo = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
+    sys.path.insert(0, os.path.join(_repo, "scripts"))
+    import generated_table_contract as _gtc
+    for _name in ("dcs2026_hapax_all.tsv", "dcs2026_hapax_single_morpheme.tsv",
+                  "dcs2026_hapax_compound.tsv"):
+        _gtc.enforce(os.path.join(HERE, _name), _repo)
 
     print(f"vocabulary (distinct lemma_id) : {vocab:,}")
     print(f"hapax lemmas (freq == 1)       : {len(hapax):,} "
