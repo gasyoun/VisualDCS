@@ -1,0 +1,40 @@
+{
+  "title": "VisualDCS: DCS-2026 — The Digital Corpus of Sanskrit as a validated, query-ready SQLite master with a 2021-2026 cross-walk",
+  "description": "Interactive frequency dashboards and a validated, query-ready SQLite packaging of the Digital Corpus of Sanskrit (DCS), pinned to a fixed upstream commit with a 2021-2026 cross-walk. Cite the underlying corpus annotation separately (Hellwig, Oliver. The Digital Corpus of Sanskrit (DCS). 2010-2024. CC BY 4.0).",
+  "upload_type": "dataset",
+  "version": "learner-contracts-v1-2026-08-09",
+  "license": "CC-BY-4.0",
+  "access_right": "open",
+  "creators": [
+    { "name": "Gasūns, Mārcis", "orcid": "0000-0003-4513-884X" }
+  ],
+  "keywords": [
+    "Sanskrit",
+    "Digital Corpus of Sanskrit",
+    "treebank",
+    "Universal Dependencies",
+    "morphology",
+    "SQLite",
+    "language resource"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/gasyoun/VisualDCS",
+      "relation": "isSupplementTo",
+      "resource_type": "dataset",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/OliverHellwig/sanskrit",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.22853985",
+      "relation": "isIdenticalTo",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ]
+}
