@@ -10,6 +10,7 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- **A02: `.zenodo.json` added for GitHub-Zenodo archive metadata.** Closes the VisualDCS half of the FAIR-sprint gap noted in [SanskritLexicography's roadmap](https://github.com/gasyoun/SanskritLexicography/blob/master/ROADMAP_ATLAS_FAIR_PUBLICATIONS_2026_2027.md) — `CITATION.cff` already carried a real Zenodo DOI (`10.5281/zenodo.22853985`), but no `.zenodo.json` had ever been committed, so a fresh GitHub release would not repopulate the archive's Zenodo metadata automatically.
 - **Contract assets get a live regen trigger (Uprava H5423, E016 wave 5)** — new
   [`.github/workflows/figures-regen.yml`](https://github.com/gasyoun/VisualDCS/blob/main/.github/workflows/figures-regen.yml)
   regenerates `dcs_published_figures.json` (`regen_widgets.py --figures-only`) and
