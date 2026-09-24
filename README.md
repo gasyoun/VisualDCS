@@ -1,6 +1,6 @@
 # VisualDCS
 
-_Created: 20-04-2026 · Last updated: 05-09-2026_
+_Created: 20-04-2026 · Last updated: 24-09-2026_
 
 Interactive frequency dashboards for the [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/), built from corpus frequency data and rendered as standalone HTML files — no build step, no server, open directly in a browser.
 
@@ -64,6 +64,15 @@ Sanskrit verb forms across the DCS corpus. It powers the verb-form frequency das
 | Total examples | 781,616 |
 | Unique lemmas | 55,032 |
 | Tense/mood categories | 38 |
+
+The two figures above are the **Excel headline** — what the dashboard HTML renders. The tracked
+CSV twin [`src/DCS-data-2021/timws.csv`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2021/timws.csv)
+is the machine-readable source and yields **42 category codes** summing **781,618** examples: the
+H1486/H2294 `Aorist` · `Periphrastic Perfect` · `Perfect` re-split turned pre-split buckets into
+separate codes, and the 2-unit gap to the Excel headline is the documented ±10 reconciliation (see
+CHANGELOG and `.ai_state.md`). Both numbers are correct for their own source; neither is hand-typed
+any more — [`scripts/verb_total_check.py`](https://github.com/gasyoun/VisualDCS/blob/main/scripts/verb_total_check.py)
+re-derives the CSV pair from bytes on disk and fails if this README drifts from it.
 
 **2. `src/DCS-data-2021/`** — a raw dump of the DCS corpus (CSV/txt: `10.csv` ≈ 4.57M annotated tokens,
 `7.txt`, `_8.csv`, `cs.csv`, …). It is the source for the paradigm browser and the derived
@@ -361,7 +370,9 @@ open it.
 
 > The two verb dashboards report different headline totals (781,616 vs 745,394) because they use
 > different aggregations of the corpus — the Excel's 38 tense/mood categories vs the browser's
-> 87 person×number / non-finite cells.
+> 87 person×number / non-finite cells. A third figure exists and is not a contradiction: the
+> tracked CSV twin `timws.csv` carries 42 category codes summing 781,618 (post-re-split, ±2 of the
+> Excel headline) — checked by `scripts/verb_total_check.py`.
 
 ---
 
