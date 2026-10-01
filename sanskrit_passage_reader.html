@@ -27,6 +27,8 @@ a.d{color:inherit;text-decoration:underline;text-decoration-color:rgba(100,130,1
 .p-desc{font-size:12px;color:#777;margin-bottom:8px}
 .p-text{font-size:15px;line-height:1.9;font-family:"Noto Serif",Georgia,serif}
 .vf{border-radius:3px;padding:0 2px;cursor:help}
+.fm{outline:2px solid #e24b4a;outline-offset:0;border-radius:3px}
+#form-note{display:none;background:#f0f5ff;border:0.5px solid #3266ad55;border-radius:8px;padding:8px 14px;margin-bottom:14px;font-size:12px;color:#2a3f5f;line-height:1.5}
 #count-note{font-size:11px;color:#aaa}
 </style>
 </head><body>
@@ -41,6 +43,8 @@ a.d{color:inherit;text-decoration:underline;text-decoration-color:rgba(100,130,1
   токенизации и сопоставления сандхи, который должен принять человек. Это остаётся частью
   карточки D3 «Анализатор текстов», ещё не построенной.
 </div>
+
+<div id="form-note"></div>
 
 <div class="filter-row">
   <span class="filter-label">Жанр:</span>
@@ -113,14 +117,60 @@ const WORD_RE = /[A-Za-zāĀīĪūŪṛṚṝṜḷḶḹḸṃṂḥḤśŚṣ�
 function highlightVerbs(text){
   return escapeHtml(text).replace(WORD_RE, w => {
     const v = VF[w.toLowerCase()];
-    if(!v) return w;
-    const [n, root, tense] = v;
-    const bg = cellColor(n, VF_MAX);
-    return `<span class="vf" style="background:${bg}" title="√${root} · ${tense} · ${n.toLocaleString()} употреблений в корпусе">${w}</span>`;
+    const isMatch = matchForm && w.toLowerCase() === matchForm.toLowerCase();
+    if(!v && !isMatch) return w;
+    if(v){
+      const [n, root, tense] = v;
+      const bg = cellColor(n, VF_MAX);
+      return `<span class="vf${isMatch?' fm':''}" style="background:${bg}" title="√${root} · ${tense} · ${n.toLocaleString()} употреблений в корпусе">${w}</span>`;
+    }
+    return `<span class="fm">${w}</span>`;
   });
 }
 
 let curGenre = 'all', curDiff = 'all';
+
+// --- deep link from the paradigm contexts panel (?form=IAST-form) -------------
+// Same match policy as the verb highlight: exact word-form equality, case-insensitive,
+// no sandhi splitting. A fused form (gacchantīti) is deliberately NOT found.
+function parseFormParam(search){
+  if(!search) return null;
+  const m = /[?&]form=([^&]*)/.exec(search);
+  if(!m) return null;
+  let v;
+  try { v = decodeURIComponent(m[1]); } catch(e) { v = m[1]; }
+  v = String(v || '').trim();
+  return v || null;
+}
+
+let matchForm = null;
+
+function formMatches(p){
+  if(!matchForm) return true;
+  const f = matchForm.toLowerCase();
+  const tokens = p.txt.toLowerCase().match(WORD_RE) || [];
+  return tokens.indexOf(f) !== -1;
+}
+
+function applyFormFilter(form){
+  matchForm = form;
+  const note = document.getElementById('form-note');
+  const n = filtered().length;
+  note.innerHTML = `<strong>📖 Открыто из парадигм-браузера: пассажи со словоформой «${escapeHtml(matchForm)}»</strong> — ` +
+    `найдено ${n} из ${PASSAGES.length}. ` +
+    `<span style="color:#7a6a2a">Точное совпадение словоформы (регистр не важен); сандхи-слитые формы не находятся.</span> ` +
+    `<button class="rb" onclick="clearFormFilter()">✕ сбросить</button>`;
+  note.style.display = 'block';
+  render();
+}
+
+function clearFormFilter(){
+  matchForm = null;
+  const note = document.getElementById('form-note');
+  note.style.display = 'none';
+  note.innerHTML = '';
+  render();
+}
 
 function initHeader(){
   const el = document.getElementById('hdrnote');
@@ -130,7 +180,7 @@ function initHeader(){
 }
 
 function filtered(){
-  return PASSAGES.filter(p => (curGenre==='all'||p.genre===curGenre) && (curDiff==='all'||p.diff===curDiff));
+  return PASSAGES.filter(p => (curGenre==='all'||p.genre===curGenre) && (curDiff==='all'||p.diff===curDiff) && formMatches(p));
 }
 
 function render(){
@@ -164,6 +214,15 @@ function setDiff(d, btn){
 }
 
 initHeader();
-render();
+// Deep link from sanskrit_pxn_v4.html's context panel (?form=…): reset genre/diff so the
+// form filter is not silently narrowed further, then apply it. No ?form= → plain render.
+const deepForm = parseFormParam(window.location && window.location.search);
+if(deepForm){
+  curGenre = 'all';
+  curDiff = 'all';
+  applyFormFilter(deepForm);
+} else {
+  render();
+}
 </script>
 </body></html>

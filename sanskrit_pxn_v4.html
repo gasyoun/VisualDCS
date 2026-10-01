@@ -483,7 +483,8 @@ function showCtxPanel(k){
     var form=item.form,voice=item.voice;
     var d=CTX[form];var n=d?d[0]:0;
     var cntStr=n?(n.toLocaleString()+' уп.'):'—';
-    html+='<div style="margin-bottom:5px"><span style="font-weight:500;font-style:italic">'+voice+' '+form+'</span> <span style="color:#aaa;font-size:11px">'+cntStr+' в корпусе</span></div>';
+    var pUrl='sanskrit_passage_reader.html?form='+encodeURIComponent(form);
+    html+='<div style="margin-bottom:8px"><div style="margin-bottom:5px"><span style="font-weight:500;font-style:italic">'+voice+' '+form+'</span> <span style="color:#aaa;font-size:11px">'+cntStr+' в корпусе</span></div>';
     if(d&&d[1]&&d[1].length){
       d[1].slice(0,3).forEach(function(ex){
         var src=ex[0],txt=ex[1];
@@ -491,6 +492,7 @@ function showCtxPanel(k){
         html+='<div style="margin:0 0 5px 10px;font-size:11px;border-left:2px solid #3266ad55;padding-left:6px"><span style="color:#aaa;font-size:10px">'+src+'</span><br>'+hl+'</div>';
       });
     }
+    html+='<a class="d" href="'+pUrl+'" target="_blank" style="font-size:11px;margin-left:10px;text-decoration:none">📖 найти пассаж с этой формой →</a></div>';
   });
   if(!html)html='<span style="color:#aaa;font-size:12px">Примеры не найдены</span>';
   document.getElementById('ctx-examples').innerHTML=html;
