@@ -10,6 +10,38 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- **Карточки landing page стали отдельными файлами: «Парадигм-строитель» и «Коллокации»
+  построены, «Whitney Roots» связан с живым приложением** (roadmap drain A27, пункт
+  «часть карточек — всё ещё задуманные виджеты, не отдельные файлы»). Из четырёх
+  `type:'widget'`-карточек три теперь открывают настоящий инструмент:
+  - [`sanskrit_paradigm_builder.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_builder.html)
+    — хитмапа 25 глагольных категорий по корпусной доле (вместе 99.1% из 781k) и сетки
+    sg/du/pl × 1/2/3 с top-5 аттестованных окончаний и счётчиками по каждой ячейке, плюс
+    сравнение двух категорий бок-о-бок. Данные — дословная встройка опубликованного
+    `visual/paradigm_endings.json`, сверяется тестом с JSON-двойником.
+  - [`sanskrit_collocations.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_collocations.html)
+    — навигатор по 800 частотным леммам (n ≥ 317) и их коллокатам из тех же строк корпуса,
+    разбитым по частям речи; клик по подсвеченному коллокату ведёт в его карточку, если он
+    сам в топ-800 (кнопка «назад» помнит путь). Данные — скрипт-двойник
+    [`visual/coll_data.js`](https://github.com/gasyoun/VisualDCS/blob/main/visual/coll_data.js),
+    упакованный из опубликованного `visual/coll_compact.json` новым
+    [`gen_collocations_data.py`](https://github.com/gasyoun/VisualDCS/blob/main/gen_collocations_data.py)
+    (сам мастер SQLite не нужен).
+  - Карточка «Whitney Roots» больше не виджет: она ведёт на живое приложение
+    [gasyoun.github.io/WhitneyRoots](https://gasyoun.github.io/WhitneyRoots/) (кроссволк
+    930 корней Whitney × MW × Apte × DCS, 713 аттестованы; 6 корней = 25% аттестованных
+    токенов, 19 = 50%, 68 = 75% — числа сняты с `crosswalk/roots.csv` того репозитория).
+    Дублировать приложение внутри VisualDCS не нужно.
+  - Единственная оставшаяся виджет-карточка — «TANS: 193 текста»: жанрово-датированных
+    данных по текстам TANS в репозитории нет (только список имён в недокументированном
+    `src/DCS-data-2021/TA.csv`, и его 410 строк не сходятся с обещанными 193), поэтому
+    честнее оставить её запланированной — residual помечен на самой карточке и в roadmap.
+  - Тесты: [`tests/test_paradigm_builder.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_paradigm_builder.js)
+    и [`tests/test_collocations.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_collocations.js)
+    (headless-рендер по образцу `test_morphostatistics.js` / `test_concordance.js`); оба
+    новых файла проверены и живым браузером. На landing page поправлены устаревшие числа:
+    «14 инструментов» вместо 11, факт-строка коллокаций снята с опубликованных данных
+    (dharma↔artha 698, а не 845).
 - **Панель контекстов → пассаж в D3 — цикл «форма → корпус → текст» замкнут** (roadmap, раздел
   «Связка»). Клик по ячейке парадигмы в
   [`sanskrit_pxn_v4.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_pxn_v4.html)

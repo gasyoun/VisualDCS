@@ -163,8 +163,10 @@ Four standalone HTML tools, best entered via the landing page.
 
 The recommended starting point. A single page that lays out a **Stage 1 → 4 learning path**
 (which roots and forms to study first for the fastest corpus coverage) and a filterable grid of
-tool cards. It advertises 11 planned tools; the three below are the ones currently built as
-standalone files — the rest are described widgets, not yet shipped.
+tool cards. It advertises 14 tools; 13 of the cards open real widgets — 12 standalone files in
+this repo plus the live [WhitneyRoots](https://gasyoun.github.io/WhitneyRoots/) app — and one
+card (*TANS: 193 текста*) remains a planned widget: no genre/date dataset for those texts
+exists in the repo yet.
 
 ### [`sanskrit_verb_form_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_verb_form_dashboard.html) — verb-form frequency
 
@@ -359,6 +361,42 @@ double-clicked `file://` page); render-tested headlessly by
 [`tests/test_concordance.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_concordance.js)
 (`node tests/test_concordance.js`). The landing page's "Конкорданс" card now opens it directly.
 
+### [`sanskrit_paradigm_builder.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_paradigm_builder.html) — paradigm-ending heat map (A27)
+
+The landing page's *Парадигм-строитель* card, previously a described widget only: a heat map of
+the 25 tense/mood categories by corpus share (99.1% of the 781k verbal examples together) and,
+per category, the person × number grid (sg/du/pl × 1/2/3) of the **top-5 attested endings** with
+occurrence counts, plus a side-by-side A-vs-B comparison of any two categories. Data is a
+verbatim embedded copy of the published
+[`visual/paradigm_endings.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_endings.json)
+(2021 DCS dump instrument; where segmentation is impossible the surface form itself is
+published as the "ending") — the embedded copy is checked against the JSON twin by
+[`tests/test_paradigm_builder.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_paradigm_builder.js)
+(`node tests/test_paradigm_builder.js`). Self-contained; no companion file needed.
+
+### [`sanskrit_collocations.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_collocations.html) — collocation navigator (A27)
+
+The landing page's *Коллокации* card, previously a described widget only: a searchable,
+POS-filterable list of the **800 most frequent lemmas** (n ≥ 317), each with its collocates
+(same-sentence lemma co-occurrence) grouped by part of speech — verbs, nouns, adjectives,
+other. Clicking a highlighted collocate navigates to its own card when that lemma is itself in
+the top-800 (with a back button); dimmed chips are outside the list. Data ships as
+[`visual/coll_data.js`](https://github.com/gasyoun/VisualDCS/blob/main/visual/coll_data.js), a
+`window.COLL_DATA` script twin of the published
+[`visual/coll_compact.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/coll_compact.json)
+packed by [`gen_collocations_data.py`](https://github.com/gasyoun/VisualDCS/blob/main/gen_collocations_data.py)
+(no `fetch()`, no server — keep both files together); render-tested by
+[`tests/test_collocations.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_collocations.js)
+(`node tests/test_collocations.js`).
+
+### Whitney Roots — external live app ([gasyoun/WhitneyRoots](https://github.com/gasyoun/WhitneyRoots))
+
+The landing page's *Whitney Roots* card links out to the live app at
+[gasyoun.github.io/WhitneyRoots](https://gasyoun.github.io/WhitneyRoots/): a crosswalk of
+Whitney's **930 roots** (Whitney × Monier-Williams × Apte × DCS frequency/PPP) — 713 of them
+DCS-attested — built and maintained in its own repo; the top-6 roots already cover 25% of the
+attested root-token mass (19 → 50%, 68 → 75%). Not duplicated inside VisualDCS.
+
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
 **DCS Corpus Statistics** (Russian UI). A single page summarising the corpus by text and genre,
@@ -388,8 +426,8 @@ The repository also tracks a set of derived JSON and reference files used to pow
 | `visual/dcs_genres.json` | 18 genre profiles — 17 named families + `Other` (weighted averages) |
 | `visual/dcs_scatter.json` | 170 data points for diachronic charts |
 | `visual/form_lookup.json` | 7,873 verb forms → root / tense / rank |
-| `visual/coll_compact.json` | 800 lemmas × collocates by part of speech |
-| `visual/paradigm_endings.json` | 25 tenses × attested endings from the corpus |
+| `visual/coll_compact.json` / `coll_data.js` | 800 lemmas × collocates by part of speech; `coll_data.js` is the packed `window.COLL_DATA` twin consumed by `sanskrit_collocations.html` (A27) |
+| `visual/paradigm_endings.json` | 25 tenses × attested endings from the corpus; embedded verbatim by `sanskrit_paradigm_builder.html` (A27) |
 | `visual/paradigm_attested.json` / `paradigm_attested_data.js` | H1299: 7,689 roots × attested finite/non-finite cells (top-100 full tier + long tail), consumed by `sanskrit_paradigm_trainer.html` |
 | `visual/paradigm_nominal.json` / `paradigm_nominal_data.js` | H1472: 14 declension classes × token gender × 24 case·number cells — counts, surface endings, top forms, corpus examples; consumed by `sanskrit_nominal_dashboard.html` |
 | `visual/paradigm_nominal_lemmas.json` / `paradigm_nominal_lemmas_data.js` | H2321: 31,753 NOUN lemmas × G2-attested cells + top forms; coverage from G2, forms from pin; consumed by `sanskrit_nominal_trainer.html` |

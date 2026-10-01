@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Коллокации — сеть слов (DCS)</title>
+<style>
+:root{
+  --blue:#3266ad; --red:#e24b4a; --teal:#1d9e75;
+  --bg:#fdfdfc; --fg:#1c1c1a; --muted:#6b6b66; --line:#dedcd6; --panel:#fff;
+  --warn-bg:#fdf6e3; --warn-line:#e0d4a8; --warn-fg:#6b5a20;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#16161a; --fg:#e8e8e4; --muted:#9a9a94; --line:#33333a; --panel:#1e1e24;
+        --warn-bg:#2a2416; --warn-line:#4d4326; --warn-fg:#d8c890;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 18px 80px}
+h1{font-size:1.6rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 20px;font-size:.95rem}
+a{color:var(--blue)}
+code,.mono{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.9em}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+  padding:10px 14px;min-width:150px;flex:1 1 150px}
+.stat b{display:block;font-size:1.25rem;color:var(--blue)}
+.stat span{color:var(--muted);font-size:.8rem}
+
+.note{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-fg);
+  border-radius:8px;padding:11px 14px;margin:14px 0;font-size:.88rem}
+.err{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-fg);
+  padding:14px 16px;border-radius:8px}
+
+.cols{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.listpane{flex:0 0 320px;max-width:320px}
+.detailpane{flex:1 1 460px;min-width:320px}
+
+.searchrow{display:flex;gap:8px;margin-bottom:10px}
+.searchrow input{flex:1;padding:8px 10px;border:1px solid var(--line);border-radius:8px;
+  background:var(--panel);color:var(--fg);font:inherit}
+.posrow{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
+.posbtn{padding:4px 10px;border-radius:14px;font-size:.8rem;cursor:pointer;
+  border:1px solid var(--line);background:var(--panel);color:var(--muted)}
+.posbtn.on{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.lemmallist{border:1px solid var(--line);border-radius:8px;overflow:auto;
+  max-height:560px;background:var(--panel)}
+.lemmarow{display:flex;align-items:baseline;gap:8px;padding:6px 10px;cursor:pointer;
+  border-bottom:1px solid var(--line);font-size:.92rem}
+.lemmarow:last-child{border-bottom:none}
+.lemmarow:hover{background:color-mix(in srgb,var(--blue) 8%,transparent)}
+.lemmarow.sel{background:color-mix(in srgb,var(--blue) 14%,transparent)}
+.lemmarow .lm{font-weight:600}
+.lemmarow .lp{font-size:.7rem;color:var(--muted);text-transform:uppercase}
+.lemmarow .ln{margin-left:auto;color:var(--muted);font-size:.78rem;font-variant-numeric:tabular-nums}
+
+.detailhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.detailhead .big{font-size:1.5rem;font-weight:700}
+.backbtn{padding:3px 10px;border-radius:6px;border:1px solid var(--line);
+  background:var(--panel);color:var(--muted);cursor:pointer;font-size:.8rem}
+.backbtn[disabled]{opacity:.4;cursor:default}
+.collgrp{margin:14px 0 0}
+.collgrp h3{font-size:.85rem;margin:0 0 8px;text-transform:uppercase;
+  letter-spacing:.05em;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:baseline;gap:6px;padding:4px 10px;border-radius:14px;
+  font-size:.88rem;border:1px solid var(--line);background:var(--panel)}
+.chip b{font-weight:600}
+.chip .w{font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip.nav{cursor:pointer;border-color:color-mix(in srgb,var(--teal) 45%,var(--line))}
+.chip.nav:hover{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 8%,transparent)}
+.chip.dead{opacity:.55}
+.track{height:4px;border-radius:2px;background:var(--teal);margin-top:3px}
+
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Коллокации: сеть слов</h1>
+<p class="sub">800 частотных лемм корпуса <a href="http://www.sanskrit-linguistics.org/dcs/">DCS</a>
+× их коллокаты (та же строка корпуса), разбитые по частям речи: глаголы, существительные,
+прилагательные, прочее. Клик по подсвеченному коллокату — переход к его карточке, если он
+тоже входит в топ-800. Карта всех инструментов — <a href="sanskrit_index.html">sanskrit_index.html</a>.</p>
+
+<div id="app"><p class="err">Загрузка…</p></div>
+
+<footer>Данные: <code>visual/coll_data.js</code> — скрипт-двойник опубликованного
+<code>visual/coll_compact.json</code> (пересобирается <code>regen_widgets.py</code>; упаковщик —
+<code>gen_collocations_data.py</code>). Файлы нужно хранить рядом. Без сервера —
+открывается двойным кликом.</footer>
+
+</div>
+
+<script src="visual/coll_data.js"></script>
+<script>
+'use strict';
+// --- Коллокации (roadmap drain A27) ---------------------------------------------
+// Consumes window.COLL_DATA (packed by gen_collocations_data.py from the published
+// visual/coll_compact.json): 800 lemmas, each {n, pos: verb|noun|adj, v, nn, a, o}
+// where v/nn/a/o are [collocate, count] pairs — same-sentence lemma co-occurrence.
+
+var POS_LABEL = {verb:'Глаголы', noun:'Существительные', adj:'Прилагательные', other:'Прочее'};
+var POS_FILTERS = [['all','Все'],['verb','Глаголы'],['noun','Существительные'],['adj','Прилагательные']];
+var COLL_KEYS = ['v','nn','a','o'];
+
+function stripDiacritics(s){
+  return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+}
+
+var state = {pos:'all', q:'', sel:null, history:[]};
+
+function normText(t){ return (t && t.n ? t.n : 0).toLocaleString('ru-RU'); }
+
+function renderList(){
+  var el = document.getElementById('lemmallist');
+  if(!el) return;
+  var q = stripDiacritics(state.q);
+  var rows = [];
+  var keys = Object.keys(DATA.lemmas);
+  for(var i=0;i<keys.length;i++){
+    var k = keys[i], e = DATA.lemmas[k];
+    if(state.pos!=='all' && e.pos!==state.pos) continue;
+    if(q && stripDiacritics(k).indexOf(q)===-1) continue;
+    rows.push('<div class="lemmarow'+(state.sel===k?' sel':'')+'" onclick="selectLemma(\''+encodeURIComponent(k)+'\')">'
+      +'<span class="lm">'+k+'</span><span class="lp">'+(e.pos)+'</span>'
+      +'<span class="ln">'+normText(e)+'</span></div>');
+  }
+  el.innerHTML = rows.length ? rows.join('')
+    : '<div style="padding:12px;color:var(--muted)">Ничего не найдено.</div>';
+}
+
+function chipHtml(name, weight, max){
+  var nav = !!DATA.lemmas[name];
+  var w = Math.max(2, Math.round(100*weight/(max||1)));
+  return '<span class="chip '+(nav?'nav':'dead')+'" '+(nav
+      ? 'title="перейти: есть в топ-800" onclick="selectLemma(\''+encodeURIComponent(name)+'\')"'
+      : 'title="нет в топ-800 — переход невозможен"')
+    +'><b>'+name+'</b><span class="w">'+weight.toLocaleString('ru-RU')+'</span>'
+    +'<span class="track" style="display:block;width:'+w+'px"></span></span>';
+}
+
+function renderDetail(){
+  var el = document.getElementById('detail');
+  if(!el) return;
+  if(!state.sel){ el.innerHTML = '<p class="err">Лемма не выбрана.</p>'; return; }
+  var e = DATA.lemmas[state.sel];
+  if(!e){ el.innerHTML = '<p class="err">Лемма не найдена: '+state.sel+'</p>'; return; }
+  var groups = [];
+  for(var gi=0; gi<COLL_KEYS.length; gi++){
+    var key = COLL_KEYS[gi];
+    var label = key==='v' ? POS_LABEL.verb : key==='nn' ? POS_LABEL.noun
+              : key==='a' ? POS_LABEL.adj : POS_LABEL.other;
+    var pairs = e[key] || [];
+    if(!pairs.length) continue;
+    var max = 1;
+    for(var pi=0;pi<pairs.length;pi++) if(pairs[pi][1]>max) max = pairs[pi][1];
+    var chips = [];
+    for(var ci=0;ci<pairs.length;ci++) chips.push(chipHtml(pairs[ci][0], pairs[ci][1], max));
+    groups.push('<div class="collgrp"><h3>'+label+' · '+pairs.length+'</h3>'
+      +'<div class="chips">'+chips.join('')+'</div></div>');
+  }
+  var back = '<button class="backbtn" id="backbtn" onclick="goBack()"'
+    +(state.history.length?'':' disabled')+'>← назад</button>';
+  el.innerHTML = '<div class="detailhead">'+back
+    +'<span class="big">'+state.sel+'</span>'
+    +'<span class="lp" style="font-size:.75rem;color:var(--muted);text-transform:uppercase">'+e.pos+'</span>'
+    +'<span style="color:var(--muted);font-size:.85rem">n = '+normText(e)
+    +' · коллокатов: '+(e.v.length+e.nn.length+e.a.length+e.o.length)+'</span></div>'
+    +(groups.length ? groups.join('') : '<p class="err">Коллокатов нет.</p>');
+}
+
+function selectLemma(encoded){
+  var name = decodeURIComponent(encoded);
+  if(!DATA.lemmas[name]) return;
+  if(state.sel && state.sel!==name) state.history.push(state.sel);
+  if(state.history.length>50) state.history.shift();
+  state.sel = name;
+  renderList();
+  renderDetail();
+}
+
+function goBack(){
+  if(!state.history.length) return;
+  state.sel = state.history.pop();
+  renderList();
+  renderDetail();
+}
+
+function setPos(p){
+  state.pos = p;
+  var btns = document.querySelectorAll ? document.querySelectorAll('.posbtn') : [];
+  for(var i=0;i<btns.length;i++){
+    var v = btns[i].getAttribute('data-pos');
+    btns[i].className = 'posbtn'+(v===p?' on':'');
+  }
+  renderList();
+}
+
+function setSearch(v){ state.q = v; renderList(); }
+
+function renderApp(){
+  var app = document.getElementById('app');
+  var posbtns = POS_FILTERS.map(function(f){
+    return '<button class="posbtn'+(f[0]==='all'?' on':'')+'" data-pos="'+f[0]
+      +'" onclick="setPos(\''+f[0]+'\')">'+f[1]+'</button>';
+  }).join('');
+  app.innerHTML = ''
+    +'<div class="stats">'
+    +'<div class="stat"><b>'+DATA.lemmaCount.toLocaleString('ru-RU')+'</b><span>лемм (n ≥ '+DATA.minFreq.toLocaleString('ru-RU')+')</span></div>'
+    +'<div class="stat"><b>'+DATA.collocateRefs.toLocaleString('ru-RU')+'</b><span>коллокационных связей</span></div>'
+    +'<div class="stat"><b>4</b><span>группы по частям речи</span></div>'
+    +'</div>'
+    +'<div class="note">Коллокат = другая значимая лемма в той же строке корпуса (same-sentence '
+    +'co-occurrence из пайплайна <code>regen_widgets.py</code>). Подсвеченные чипы кликабельны — '
+    +'переход к коллокату, если он сам входит в топ-800; тусклые — лемма вне списка.</div>'
+    +'<div class="cols">'
+    +'<div class="listpane">'
+    +'<div class="searchrow"><input id="q" type="text" placeholder="поиск леммы (asju → aṣ…)" '
+    +'oninput="setSearch(this.value)"></div>'
+    +'<div class="posrow">'+posbtns+'</div>'
+    +'<div class="lemmallist" id="lemmallist"></div>'
+    +'</div>'
+    +'<div class="detailpane" id="detail"></div>'
+    +'</div>';
+  renderList();
+  renderDetail();
+}
+
+var DATA = (typeof window!=='undefined' && window.COLL_DATA) ? window.COLL_DATA : null;
+if(!DATA || !DATA.lemmas || !Object.keys(DATA.lemmas).length){
+  var appEl = document.getElementById('app');
+  appEl.innerHTML = '<p class="err"><strong>visual/coll_data.js не найден или пуст.</strong> '
+    +'Запустите gen_collocations_data.py и положите visual/coll_data.js рядом с этим файлом.</p>';
+}else{
+  renderApp();
+  if(!state.sel) selectLemma(encodeURIComponent(Object.keys(DATA.lemmas)[0]));
+}
+</script>
+</body>
+</html>

@@ -79,7 +79,7 @@ a{color:inherit;text-decoration:none}
 <div class="hdr">
   <div class="hdr-title">Sanskrit Corpus Linguistics</div>
   <div class="hdr-sub">Oliver Hellwig · DCS · 4.58M токенов · 492 текста</div>
-  <div class="hdr-badge">11 инструментов</div>
+  <div class="hdr-badge">14 инструментов</div>
 </div>
 
 <!-- KEY STATS -->
@@ -133,7 +133,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- STAGE EXPLAINERS -->
 <div class="stage-info on" id="si-all">
-  Показаны все 11 инструментов. Выберите этап обучения чтобы увидеть рекомендованные для него.
+  Показаны все 14 инструментов. Выберите этап обучения чтобы увидеть рекомендованные для него.
 </div>
 <div class="stage-info" id="si-1">
   <b>Stage 1</b> — 4 корня, ~70% корпуса. Начните с <b>Парадигмы</b> (√kṛ, √bhū, √as), затем <b>Читатель пассажей</b> (Hitopadeśa ★), затем <b>Anki-деки</b> для повторения.
@@ -208,11 +208,12 @@ const TOOLS = [
     note:'Автономный HTML-файл (данные встроены, ≈ 22 KB) — не требует дополнительных файлов.'
   },
   {
-    id:'D1', icon:'🔢', name:'Парадигм-строитель',
-    desc:'10 корней × 6 времён в виде тепловой карты корпусной частоты. Реальные окончания из verx.csv. Сравнение paradigm endings.',
-    fact:'Данные из DCS verx.csv: 781k глагольных токенов.',
-    tags:['парадигма','частоты','хитмап'],
-    stages:['1','2'], type:'widget'
+    id:'D1', icon:'🔢', name:'Парадигм-строитель', file:'sanskrit_paradigm_builder.html', open:true,
+    desc:'Хитмапа 25 глагольных категорий по корпусной частоте; реальные аттестованные окончания в каждой ячейке sg/du/pl × 1/2/3 (top-5 на ячейку). Сравнение двух категорий бок-о-бок.',
+    fact:'25 категорий покрывают 99.1% из 781k глагольных употреблений.',
+    tags:['парадигма','частоты','окончания'],
+    stages:['1','2'], type:'file',
+    note:'Автономный HTML-файл (данные встроены из visual/paradigm_endings.json) — не требует дополнительных файлов.'
   },
   {
     id:'conc', icon:'🔍', name:'Конкорданс', file:'sanskrit_concordance.html',
@@ -223,18 +224,20 @@ const TOOLS = [
     note:'Автономный HTML-файл + visual/conc_data.js (≈ 5.3 MB) — сохрани обе рядом с sanskrit_concordance.html'
   },
   {
-    id:'coll', icon:'🔗', name:'Коллокации',
-    desc:'800 лемм (n≥100) × коллокаты из DCS 111.csv, разбитые по частям речи. Кликабельная навигация по сети слов.',
-    fact:'dharma↔artha(845)↔kāma(625)↔mokṣa(512) — пурушартха в корпусе.',
+    id:'coll', icon:'🔗', name:'Коллокации', file:'sanskrit_collocations.html', open:true,
+    desc:'800 лемм (n ≥ 317) × коллокаты из тех же строк корпуса (same-sentence co-occurrence, DCS), разбитые по частям речи. Кликабельная навигация по сети слов.',
+    fact:'dharma↔artha 698 · artha↔kāma 402 · dharma↔kāma 223 — пурушартха в корпусе.',
     tags:['коллокации','семантика','DCS'],
-    stages:['3','4'], type:'widget'
+    stages:['3','4'], type:'file',
+    note:'HTML-файл + visual/coll_data.js (≈ 242 KB) — сохрани обе рядом (двойник visual/coll_compact.json от regen_widgets.py).'
   },
   {
-    id:'B', icon:'🌱', name:'Whitney Roots',
-    desc:'309 корней с корпусными данными + 550 «мёртвых» (не засвидетельствованных). Оценка сложности, семантические поля.',
-    fact:'8 корней = 25% корпуса · 52 = 50% · 238 = 75%.',
+    id:'B', icon:'🌱', name:'Whitney Roots', file:'https://gasyoun.github.io/WhitneyRoots/', open:true,
+    desc:'Кроссволк 930 корней Уитни (Whitney × MW × Apte × DCS-частота, PPP) и живое веб-приложение — отдельный репозиторий gasyoun/WhitneyRoots.',
+    fact:'713 из 930 корней аттестованы в DCS · 6 корней = 25% аттестованных токенов · 19 = 50% · 68 = 75%.',
     tags:['корни','Whitney','частотность'],
-    stages:['1','2'], type:'widget'
+    stages:['1','2'], type:'file',
+    note:'Внешняя ссылка: gasyoun.github.io/WhitneyRoots — приложение и данные живут в своём репозитории.'
   },
   {
     id:'morph', icon:'📐', name:'Морфостатистика', file:'sanskrit_morphostatistics.html', open:true,
@@ -263,7 +266,8 @@ const TOOLS = [
     desc:'Жанровый тепловой map, диахронический scatter, радар-сравнение, отклонение от базовой линии.',
     fact:'193 текста · Упанишады → Тантра · те же 17 жанров.',
     tags:['жанры','TANS','диахрония'],
-    stages:['ref','4'], type:'widget'
+    stages:['ref','4'], type:'widget',
+    note:'Остаётся запланированным: жанрово-датированных данных по текстам TANS в репозитории нет — residual roadmap (02-10-2026).'
   },
 ];
 
