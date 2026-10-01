@@ -10,6 +10,20 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- **Панель контекстов → пассаж в D3 — цикл «форма → корпус → текст» замкнут** (roadmap, раздел
+  «Связка»). Клик по ячейке парадигмы в
+  [`sanskrit_pxn_v4.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_pxn_v4.html)
+  открывает панель с примерами из DCS как раньше, но теперь под каждым блоком примеров стоит
+  ссылка «📖 найти пассаж с этой формой →» — она ведёт в
+  [`sanskrit_passage_reader.html?form=<IAST>`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_passage_reader.html),
+  где читатель пассажей сужает 40 куратированных пассажей до содержащих эту словоформу,
+  показывает баннер с числом находок и обводит совпадения поверх частотной раскраски
+  (`sanskrit_passage_reader.html` научился читать `?form=`). Политика совпадения честная и
+  одинаковая с подсветкой глаголов: точное совпадение словоформы без учёта регистра,
+  сандхи-слитые формы не находятся — это сказано прямо в баннере. Тесты:
+  [`tests/test_passage_reader.js`](https://github.com/gasyoun/VisualDCS/blob/main/tests/test_passage_reader.js)
+  (5 новых проверок: парсинг параметра, сужение списка, обводка глагольной и неглагольной
+  формы, сброс, плюс seam-проверка, что парадигм-браузер действительно эмитит `?form=`).
 - **A02: `.zenodo.json` added for GitHub-Zenodo archive metadata.** Closes the VisualDCS half of the FAIR-sprint gap noted in [SanskritLexicography's roadmap](https://github.com/gasyoun/SanskritLexicography/blob/master/ROADMAP_ATLAS_FAIR_PUBLICATIONS_2026_2027.md) — `CITATION.cff` already carried a real Zenodo DOI (`10.5281/zenodo.22853985`), but no `.zenodo.json` had ever been committed, so a fresh GitHub release would not repopulate the archive's Zenodo metadata automatically.
 - **Contract assets get a live regen trigger (Uprava H5423, E016 wave 5)** — new
   [`.github/workflows/figures-regen.yml`](https://github.com/gasyoun/VisualDCS/blob/main/.github/workflows/figures-regen.yml)
