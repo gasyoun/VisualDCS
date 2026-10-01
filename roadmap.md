@@ -1,6 +1,15 @@
 # VisualDCS — русская дорожная карта (документ фактического состояния)
 
-_Created: 08-05-2026 · Last updated: 08-08-2026_
+_Created: 08-05-2026 · Last updated: 01-10-2026_
+
+> **Вердикт 01-10-2026 ([H5574](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5574-OxAlpha_SanskritSpellCheck_roadmap-verdict-w2-spack-afanasiy-visualdcs_01.10.26.md), wave 2) — REFRESH.**
+> Дорожная карта живая: открыты два неминтированных пункта (связка «панель контекстов →
+> пассаж в D3»; landing-карточки без отдельных файлов виджетов) и активно направление
+> 2026H2 «learner-контракты» (план — [docs/PLAN_VISUALDCS_SYSTEMA_LEARNER_CONTRACTS_2026H2.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/PLAN_VISUALDCS_SYSTEMA_LEARNER_CONTRACTS_2026H2.md),
+> интеграционная дорожная карта — [docs/ROADMAP_VISUALDCS_PRODUCT_INTEGRATION_2026H2.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/ROADMAP_VISUALDCS_PRODUCT_INTEGRATION_2026H2.md)).
+> Раздел «Что остаётся открытым» ниже переведён в чекбоксы с гейтами по правилу 9/10
+> [GRILL_ROADMAP_CLOSEOUT_OXALPHA_MASS_MINT_21-09-2026.md](https://github.com/gasyoun/Uprava/blob/main/docs/GRILL_ROADMAP_CLOSEOUT_OXALPHA_MASS_MINT_21-09-2026.md).
+> Остальное содержание не менялось; доказательства перепроверены по `origin/main` 01-10-2026.
 
 > **Статус на 04-08-2026 (H1855, Fable 5 `claude-fable-5`).** Исходно этот файл был мозговым
 > штурмом мая 2026 года. Переписан как документ фактического состояния: всё реализованное
@@ -107,14 +116,17 @@ Stage 1 → 2 → 3 → 4 и прямыми ссылками. Это не нов
    Ctrl+P печатает только текущую таблицу парадигмы, без управляющих элементов, одной
    страницей).
 
-## Что остаётся открытым
+## Что остаётся открытым (гейты на 01-10-2026)
 
-- Переход «панель контекстов → пассаж в D3» (раздел «Связка» выше).
+- [ ] Переход «панель контекстов → пассаж в D3» (раздел «Связка» выше): клик из панели
+  контекстов открывает соответствующий текст в D3 — gate: none (agent-doable, кандидат
+  в следующую волну).
 - ✅ **Пер-леммный именной дрилл-даун сделан 07-08-2026 (H2321, Grok 4.5)** —
   [`sanskrit_nominal_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_trainer.html)
   потребляет готовое Sangram G2 покрытие; 31 753 NOUN-леммы, частотно-взвешенная тренировка,
   без пересчёта G2.
-- Часть карточек на landing page — всё ещё задуманные виджеты, не отдельные файлы.
+- [ ] Часть карточек на landing page — всё ещё задуманные виджеты, не отдельные файлы —
+  gate: none (agent-doable, кандидат в следующую волну).
 
 ## Новое направление 2026H2 — из исследовательских виджетов в кабинет
 
