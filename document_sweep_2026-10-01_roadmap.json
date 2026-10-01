@@ -1,0 +1,229 @@
+{
+  "tool": "tools/document_check.py",
+  "skill": "/document",
+  "legacy_name": "/artifact-propagate",
+  "generated": "2026-10-01 20:28:38",
+  "artifacts": [
+    {
+      "artifact": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\VisualDCS\\roadmap.md",
+      "repo": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\VisualDCS",
+      "kind": "doc",
+      "surfaces": [
+        {
+          "id": "readme",
+          "phase": 1,
+          "label": "README.md",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\VisualDCS\\README.md:241: The nominal twin of the verb paradigm browser, and the tool `roadmap.md` had been calling"
+        },
+        {
+          "id": "claude_md",
+          "phase": 1,
+          "label": "CLAUDE.md",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\VisualDCS\\CLAUDE.md:131: | Shipped vs pending | [roadmap.md](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md) · [CHANGELOG.md](https://github.com/gasyoun/VisualDCS/blob/main/C"
+        },
+        {
+          "id": "cold_start",
+          "phase": 1,
+          "label": "Cold-start doc (GEMINI.md / equivalent)",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\VisualDCS\\AGENTS.md:14: - Planning: [roadmap.md](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md) — the live Russian roadmap (wave-2 verdict 01-10-2026: REFRESH, [H5574](http"
+        },
+        {
+          "id": "sibling_domain_docs",
+          "phase": 1,
+          "label": "Sibling domain docs (manual/roadmap/method docs)",
+          "scope": "repo",
+          "status": "n/a",
+          "evidence": "roadmap.md is the single planning doc; README Roadmap + AGENTS.md entrypoint carry the pointers"
+        },
+        {
+          "id": "metadoc",
+          "phase": 1,
+          "label": "Metadoc (<name>.meta.md)",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\VisualDCS\\roadmap.meta.md:1: # roadmap.meta.md — metadoc for `roadmap.md`"
+        },
+        {
+          "id": "changelog",
+          "phase": 1,
+          "label": "CHANGELOG.md -> release (/cut-release)",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\VisualDCS\\CHANGELOG.md:13: - **Панель контекстов → пассаж в D3 — цикл «форма → корпус → текст» замкнут** (roadmap, раздел"
+        },
+        {
+          "id": "ai_state",
+          "phase": 1,
+          "label": ".ai_state.md",
+          "scope": "repo",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\VisualDCS\\.ai_state.md:22: - **2026-10-01 — roadmap drain A22: «панель контекстов → пассаж в D3» closed (OxAlpha tier,"
+        },
+        {
+          "id": "issues",
+          "phase": 1,
+          "label": "Issues (per-person task issues)",
+          "scope": "repo",
+          "status": "n/a",
+          "evidence": "no per-person task issues on this workstream; external-facing issue comments need standing; human gates already parked as GTD rows"
+        },
+        {
+          "id": "gtd",
+          "phase": 2,
+          "label": "Uprava/GTD_NEXT_ACTIONS.md",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\Uprava\\GTD_NEXT_ACTIONS.md:4: ## Roadmap verdict wave-2 gates registered 01-10-2026 (H5574/H5575/H5576, ZCode GLM-5.3-Flash — human + artifact gates mirrored from the What-is-left checklists"
+        },
+        {
+          "id": "handoffs_registry",
+          "phase": 2,
+          "label": "Uprava/handoffs/README.md",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\Uprava\\handoffs\\README.md:130: | H008 | — | [SanskritSpellCheck/H008-Opus_SanskritSpellCheck_NEXT_23.06.26](https://github.com/gasyoun/SanskritSpellCheck/blob/main/H008-Opus_SanskritSpellChec"
+        },
+        {
+          "id": "features_index",
+          "phase": 2,
+          "label": "SanskritLexicography/FEATURES_INDEX.md",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\SanskritLexicography\\FEATURES_INDEX.md:5: _Created: 04-07-2026 · Last updated: 24-09-2026 (H4796: F48 extended — sa-ru-glossary joined as the RU third witness of the defgen eval, 287-headword three-witn"
+        },
+        {
+          "id": "reuse_index",
+          "phase": 2,
+          "label": "Uprava/REUSE_INDEX.md (reusable assets)",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\Uprava\\REUSE_INDEX.md:82: > Plan: [`DATA_HUB_ROADMAP.md`](https://github.com/gasyoun/kosha/blob/main/DATA_HUB_ROADMAP.md)."
+        },
+        {
+          "id": "kosha_manifest",
+          "phase": 2,
+          "label": "kosha/data/manifest/datasets.json",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "not a derived dataset"
+        },
+        {
+          "id": "data_layers_census",
+          "phase": 2,
+          "label": "Uprava/DATA_LAYERS_CENSUS.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "not large/local-only data (risk) and no open statistics cell to close"
+        },
+        {
+          "id": "project_interlinks",
+          "phase": 2,
+          "label": "Uprava/PROJECT_INTERLINKS.md",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\Uprava\\PROJECT_INTERLINKS.md:3: _Created: 23-06-2026 · Last updated: 25-09-2026 (roadmap Q4.4: edge SanskritGrammar->VisualDCS,SanskritGrammar->kosha registered — Whitney-no x DCS lemma x vidy"
+        },
+        {
+          "id": "skills_index",
+          "phase": 2,
+          "label": "root SKILLS_INDEX.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "artifact is not itself a skill/command"
+        },
+        {
+          "id": "articles",
+          "phase": 2,
+          "label": "Uprava/ARTICLES.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "artifact is not a paper (delegate to /articles-update when it is)"
+        },
+        {
+          "id": "danger_facts",
+          "phase": 2,
+          "label": "Uprava/DANGER_FACTS.md + context_facts.yaml",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\Uprava\\DANGER_FACTS.md:234: | **The §685/H3880 unauthorized-override trap recurred within the SAME 13-handoff `/drain` batch, on a DIFFERENT close subagent — one incident is not a fluke, i"
+        },
+        {
+          "id": "questions_log",
+          "phase": 2,
+          "label": "Uprava/QUESTIONS_LOG.md",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\Uprava\\QUESTIONS_LOG.md:11: e.g. inside `/paper-referee` or `/roadmap-interview`), **[R]** formal research"
+        },
+        {
+          "id": "megabook",
+          "phase": 2,
+          "label": "Uprava/MEGABOOK.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "operational status only; MEGABOOK carries theses, never operational status"
+        },
+        {
+          "id": "skills_manual_ru",
+          "phase": 2,
+          "label": "Uprava/SKILLS_MANUAL_RU.md",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "no skill/tool contract changed"
+        },
+        {
+          "id": "hooks_index",
+          "phase": 2,
+          "label": "claude-config HOOKS_INDEX.md",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\claude-config\\HOOKS_INDEX.md:151: | [stop_dirty_tree_bypass_check.py](https://github.com/gasyoun/claude-config/blob/main/hooks/stop_dirty_tree_bypass_check.py) | 🔁 session ran `git status` acros"
+        },
+        {
+          "id": "repo_status_rollup",
+          "phase": 2,
+          "label": "Uprava/REPO_STATUS_ROLLUP.md",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\Uprava\\REPO_STATUS_ROLLUP.md:114: **Yet to do:** Phase 1 IA-upload (blocked on Potapova rights); Phase 3 remainder (Leonov Wikidata item, Zenodo DOI); annual Zenodo snapshot; Q3–Q4 roadmap (Leon"
+        },
+        {
+          "id": "hub_manifest",
+          "phase": 2,
+          "label": "Uprava/tools/hub_manifest.json",
+          "scope": "org",
+          "status": "present",
+          "evidence": "C:\\Users\\user\\Documents\\GitHub-worktrees\\h5583-hubs\\Uprava\\tools\\hub_manifest.json:68: \"id\": \"roadmap-index\","
+        },
+        {
+          "id": "auto_derived_views",
+          "phase": 2,
+          "label": "Auto-derived views (NEXT_UP/BOTTLENECKS/kanban/dashboards/HUB_STALENESS_REPORT)",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "auto -- never hand-edit; verify their SOURCES carry the change instead"
+        },
+        {
+          "id": "epistemic_registries",
+          "phase": 2,
+          "label": "FINDINGS x2 + 7 epistemic registries (ASSUMPTIONS/CONTRADICTIONS/GAPS/DEAD_ENDS/RECIPES/STALENESS/GLOSSARY, Uprava + SanskritLexicography)",
+          "scope": "org",
+          "status": "n/a",
+          "evidence": "verdict epistemic residue already recorded by the wave-2 handoffs (H5574-H5577); the sweep adds no new premise or known-unknown"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "host": "WIN-NJTORH3267V",
+    "git_head": "043a5f5201a1c9d10f672438337ea80c63a0ce47",
+    "git_branch": "h5583-doc-VisualDCS-808135",
+    "handoff": "H5583"
+  }
+}
