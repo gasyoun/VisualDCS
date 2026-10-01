@@ -26,7 +26,7 @@ function check(name, fn) {
 // --- minimal DOM stub -------------------------------------------------------------
 function makeEl(tag) {
   return {
-    tagName: tag, innerHTML: '', textContent: '', value: '', disabled: false, _attrs: {}, classList: {
+    tagName: tag, innerHTML: '', textContent: '', value: '', disabled: false, style: {}, _attrs: {}, classList: {
       _set: new Set(),
       add(c) { this._set.add(c); }, remove(c) { this._set.delete(c); }, contains(c) { return this._set.has(c); },
     },
@@ -109,6 +109,66 @@ check('genre and difficulty filters combine (AND, not OR)', () => {
 
 check('the in-page note excludes freeform IAST input as unbuilt', () => {
   assert.ok(/произвольного[\s\S]*IAST/.test(html), 'freeform-IAST-unbuilt note not found in page');
+});
+
+// --- deep link from the paradigm contexts panel (roadmap «панель контекстов → пассаж в D3») ---
+// Independent oracle: exact word-form token match (same policy the page documents).
+const TOKEN_RE = /[A-Za-zāĀīĪūŪṛṚṝṜḷḶḹḸṃṂḥḤśŚṣṢṭṬḍḌṇṆñÑṅṄ']+/g;
+function passagesWith(form) {
+  const f = form.toLowerCase();
+  return PASSAGES.filter(p => (p.txt.toLowerCase().match(TOKEN_RE) || []).indexOf(f) !== -1);
+}
+function cardCount() {
+  return (els.list.innerHTML.match(/class="card"/g) || []).length;
+}
+
+check('seam: sanskrit_pxn_v4.html context panel links to this page with ?form=', () => {
+  const pxn = fs.readFileSync(path.join(REPO, 'sanskrit_pxn_v4.html'), 'utf8');
+  assert.ok(pxn.includes('sanskrit_passage_reader.html?form='), 'pxn_v4 context panel emits no ?form= deep link');
+  assert.ok(pxn.includes("encodeURIComponent(form)"), 'pxn_v4 deep link does not URL-encode the form');
+});
+
+check('parseFormParam reads ?form= and tolerates junk', () => {
+  assert.strictEqual(sandbox.parseFormParam('?form=kuru'), 'kuru');
+  assert.strictEqual(sandbox.parseFormParam('?form=%C4%81sa'), 'āsa');
+  assert.strictEqual(sandbox.parseFormParam('?genre=Epic&form=kuru'), 'kuru');
+  assert.strictEqual(sandbox.parseFormParam(''), null, 'empty search must not deep-link');
+  assert.strictEqual(sandbox.parseFormParam('?x=1'), null, 'no form param must not deep-link');
+  assert.strictEqual(sandbox.parseFormParam('?form='), null, 'empty form value must not deep-link');
+});
+
+check('applyFormFilter narrows to passages containing the form and marks matches', () => {
+  sandbox.applyFormFilter('kuru');
+  const expected = passagesWith('kuru').length;
+  assert.ok(expected > 0 && expected < PASSAGES.length, 'kuru oracle count is degenerate — fix the oracle');
+  assert.strictEqual(cardCount(), expected, 'form filter did not narrow to matching passages');
+  assert.ok(els['form-note'].innerHTML.includes('kuru'), 'form note does not name the form');
+  assert.ok(els['form-note'].innerHTML.includes(`${expected} из ${PASSAGES.length}`), 'form note count wrong');
+  assert.ok(/class="vf fm"/.test(els.list.innerHTML), 'matched verb form not outlined (vf fm)');
+});
+
+check('a matched non-verb form is outlined without a frequency tooltip', () => {
+  // first token present in some passage but not a VF-keyed verb form
+  let probe = null;
+  for (const p of PASSAGES) {
+    for (const t of (p.txt.toLowerCase().match(TOKEN_RE) || [])) {
+      if (!VF[t] && !passagesWith(t).length) continue;
+      if (!VF[t] && t.length > 4) { probe = t; break; }
+    }
+    if (probe) break;
+  }
+  assert.ok(probe, 'no non-verb passage token found for the probe');
+  sandbox.applyFormFilter(probe);
+  const expected = passagesWith(probe).length;
+  assert.strictEqual(cardCount(), expected, 'non-verb form filter did not narrow correctly');
+  assert.ok(/class="fm"/.test(els.list.innerHTML), 'non-verb matched form not outlined');
+});
+
+check('clearFormFilter restores the full unfiltered list', () => {
+  sandbox.clearFormFilter();
+  assert.strictEqual(cardCount(), PASSAGES.length, 'reset did not restore all 40 passages');
+  assert.strictEqual(els['form-note'].style.display, 'none', 'form note still visible after reset');
+  assert.ok(!els.list.innerHTML.includes('class="fm"'), 'match outline leaked after reset');
 });
 
 console.log(failures ? `\n${failures} check(s) FAILED` : '\nall checks passed');
