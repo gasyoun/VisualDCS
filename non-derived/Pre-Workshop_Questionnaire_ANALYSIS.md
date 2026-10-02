@@ -27,7 +27,7 @@ No existing tool in the form's list (DharmaMitra included) offers this combinati
 
 The form's *"biggest problems with AI / machine translation"* options are a field-tested error typology: terminology inconsistency · grammar/syntax · context loss across sentences · passage-level incoherence · technical-term handling · register · **hallucinated content** · **polysemy**. Plus a breakdown-level scale (word → sentence → paragraph → whole document) and a post-editing-burden scale.
 
-This maps almost 1:1 onto the PWG→RU/EN judging rubric (the S7 Fable judge's failure class was "addition", i.e. hallucinated content, incl. one MW translation-memory leak). Adopting DharmaMitra's category names as the shared vocabulary in [`FU1_PLAN.md`](https://github.com/gasyoun/RussianTranslation) methods/provenance sections makes our evaluation legible to the wider field — we measure the same failure classes they ask about.
+This maps almost 1:1 onto the PWG→RU/EN judging rubric (the S7 Fable judge's failure class was "addition", i.e. hallucinated content, incl. one MW translation-memory leak). Adopting DharmaMitra's category names as the shared vocabulary in [`FU1_PLAN.md`](https://github.com/gasyoun/SanskritLexicography/blob/master/RussianTranslation/FU1_PLAN.md) methods/provenance sections makes our evaluation legible to the wider field — we measure the same failure classes they ask about.
 
 ### 4. DharmaMitra is a potential consumer of Cologne data, not just a competitor
 

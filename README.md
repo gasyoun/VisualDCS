@@ -99,7 +99,7 @@ for the pipeline, the verb tense/mood **code map**, and the 2021→2026 deltas.
 (**83,239 lemmas**) is the canonical DCS lemma-frequency summary that other repos in the org are
 meant to consume directly instead of re-parsing the CoNLL-U corpus — VisualDCS is registered as
 the org's DCS corpus/morphology ingest owner (family 8 in
-[`SHARED_CODE.md`](https://github.com/gasyoun/SanskritLexicography/blob/master/SHARED_CODE.md)).
+[`SHARED_CODE.md`](https://github.com/gasyoun/github-spine/blob/main/SHARED_CODE.md)).
 It is produced by [`gen_dcs_lemma_summary.py`](https://github.com/gasyoun/VisualDCS/blob/main/gen_dcs_lemma_summary.py)
 from the DCS-2026 master and checked by
 [`validate_dcs_lemma_summary.py`](https://github.com/gasyoun/VisualDCS/blob/main/validate_dcs_lemma_summary.py)
