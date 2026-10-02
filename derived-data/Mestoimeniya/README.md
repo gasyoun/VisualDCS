@@ -4,7 +4,7 @@ _Created: 05-07-2026 · Last updated: 05-07-2026_
 
 "Pronouns" — corpus data on Sanskrit pronoun forms: case/number combinations, cross-pronoun
 combination frequencies, and a study of the indefinite pronoun **kaścit** (from
-[Wiktionary-style](https://en.wiktionary.org/wiki/kaścit) *ka-* + *-cit*) across gender/case/
+[Wiktionary-style](https://en.wiktionary.org/wiki/कश्चित्) *ka-* + *-cit*) across gender/case/
 number. See the parent [`../README.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/README.md)
 for how this folder fits into the wider research archive, and
 [`../INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) for the
