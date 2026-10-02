@@ -20,7 +20,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 1. √kṛ  
 **do, make** · Class 2 · Stage 1  
 **32,143** examples (5.14%) · cumulative: 5.1%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_k_r.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -38,7 +38,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 2. √vac  
 **speak, say** · Class 2 · Stage 1  
 **30,692** examples (4.91%) · cumulative: 10.0%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_vac.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -56,7 +56,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 3. √bhū  
 **be, become** · Class 1 · Stage 1  
 **29,925** examples (4.79%) · cumulative: 14.8%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_bhuu.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -92,7 +92,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 5. √gam  
 **go, come** · Class 6 · Stage 2  
 **15,309** examples (2.45%) · cumulative: 21.2%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_gam.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -110,7 +110,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 6. √dṛś  
 **see, behold** · Class 6 · Stage 2  
 **14,006** examples (2.24%) · cumulative: 23.4%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_d_rz.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -128,7 +128,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 7. √dā  
 **give** · Class 1 · Stage 2  
 **9,299** examples (1.49%) · cumulative: 24.9%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_daa.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -146,7 +146,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 8. √śru  
 **hear, listen** · Class 4 · Stage 2  
 **9,005** examples (1.44%) · cumulative: 26.3%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_zru.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -164,7 +164,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 9. √brū  
 **say, tell** · Class 2 · Stage 2  
 **7,810** examples (1.25%) · cumulative: 27.6%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_bruu.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -181,7 +181,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 10. √sthā  
 **stand, stay** · Class 1 · Stage 2  
 **7,481** examples (1.20%) · cumulative: 28.8%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_sthaa.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -199,7 +199,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 11. √jan  
 **be born, produce** · Class 4 · Stage 3  
 **7,033** examples (1.12%) · cumulative: 29.9%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_jan.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -217,7 +217,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 12. √han  
 **strike, kill** · Class 6 · Stage 3  
 **6,939** examples (1.11%) · cumulative: 31.0%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_han.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -235,7 +235,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 13. √vid  
 **know, find** · Class 6 · Stage 3  
 **6,911** examples (1.11%) · cumulative: 32.1%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_vid.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -253,7 +253,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 14. √ah  
 **say (perf only)** · Class 1 · Stage 2  
 **5,988** examples (0.96%) · cumulative: 33.1%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_ah.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -264,7 +264,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 15. √prāp  
 **reach, obtain** · Class 1 · Stage 3  
 **5,082** examples (0.81%) · cumulative: 33.9%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_praap.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -282,7 +282,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 16. √yā  
 **go** · Class 2 · Stage 3  
 **4,779** examples (0.76%) · cumulative: 34.6%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_yaa.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -300,7 +300,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 17. √yuj  
 **join, yoke** · Class 6 · Stage 3  
 **4,762** examples (0.76%) · cumulative: 35.4%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_yuj.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -318,7 +318,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 18. √jñā  
 **know, understand** · Class 4 · Stage 3  
 **4,225** examples (0.68%) · cumulative: 36.1%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_j_naa.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -354,7 +354,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 20. √man  
 **think, consider** · Class 8 · Stage 3  
 **3,881** examples (0.62%) · cumulative: 37.3%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_man.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -372,7 +372,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 21. √grah  
 **seize, take** · Class 6 · Stage 3  
 **3,881** examples (0.62%) · cumulative: 38.0%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_grah.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -390,7 +390,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 22. √smṛ  
 **remember** · Class 1 · Stage 3  
 **3,766** examples (0.60%) · cumulative: 38.6%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_sm_r.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -475,7 +475,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 27. √ji  
 **conquer** · Class 9 · Stage 4  
 **2,887** examples (0.46%) · cumulative: 41.2%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_ji.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -493,7 +493,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 28. √labh  
 **obtain, get** · Class 1 · Stage 3  
 **2,838** examples (0.45%) · cumulative: 41.6%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_labh.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -511,7 +511,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 29. √paś  
 **see (suppletive)** · Class 4 · Stage 3  
 **2,837** examples (0.45%) · cumulative: 42.1%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_paz.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -528,7 +528,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 30. √muc  
 **release, free** · Class 6 · Stage 3  
 **2,821** examples (0.45%) · cumulative: 42.5%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_muc.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -546,7 +546,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 31. √car  
 **move, wander** · Class 1 · Stage 3  
 **2,798** examples (0.45%) · cumulative: 43.0%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_car.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -581,7 +581,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 33. √vad  
 **speak, say** · Class 1 · Stage 4  
 **2,729** examples (0.44%) · cumulative: 43.8%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_vad.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -599,7 +599,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 34. √pat  
 **fall, fly** · Class 1 · Stage 4  
 **2,525** examples (0.40%) · cumulative: 44.2%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_pat.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -617,7 +617,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 35. √hā  
 **leave, abandon** · Class 1 · Stage 4  
 **2,367** examples (0.38%) · cumulative: 44.6%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_haa.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -703,7 +703,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 40. √arh  
 **deserve, be able** · Class 1 · Stage 4  
 **2,119** examples (0.34%) · cumulative: 46.4%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_arh.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -715,7 +715,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 41. √tyaj  
 **abandon, leave** · Class 1 · Stage 4  
 **2,062** examples (0.33%) · cumulative: 46.7%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_tyaj.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -782,7 +782,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 45. √vṛt  
 **turn, exist** · Class 3 · Stage 4  
 **2,032** examples (0.32%) · cumulative: 48.0%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_v_rt.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -1001,7 +1001,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 58. √dhā  
 **place, put** · Class 1 · Stage 4  
 **1,628** examples (0.26%) · cumulative: 51.7%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_dhaa.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -1100,7 +1100,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 64. √nī  
 **lead, carry** · Class 2 · Stage 4  
 **1,427** examples (0.23%) · cumulative: 53.1%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_nii.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -1147,7 +1147,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 67. √sṛj  
 **create, emit** · Class 2 · Stage 4  
 **1,387** examples (0.22%) · cumulative: 53.8%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_s_rj.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -1198,7 +1198,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 70. √rakṣ  
 **protect, guard** · Class 4 · Stage 4  
 **1,370** examples (0.22%) · cumulative: 54.5%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_rak_s.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -1297,7 +1297,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 76. √tap  
 **be hot; practice austerity** · Class 4 · Stage 4  
 **1,301** examples (0.21%) · cumulative: 55.7%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_tap.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -1315,7 +1315,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 77. √śak  
 **be able, can** · Class 4 · Stage 4  
 **1,288** examples (0.21%) · cumulative: 55.9%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_zak.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|
@@ -1650,7 +1650,7 @@ _Created: 08-05-2026 · Last updated: 05-09-2026_
 ### 98. √naś  
 **perish, be lost** · Class 1 · Stage 4  
 **1,025** examples (0.16%) · cumulative: 59.8%  
-[Whitney →](https://samskrtam.ru/whitney-roots/root_naz.html)  
+[Whitney →](https://samskrtam.ru/whitney-roots/roots.html)  
 
 | Tense/Mood | Examples | Key form |
 |---|---|---|

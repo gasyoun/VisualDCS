@@ -114,7 +114,7 @@ and the VedaWeb exports. **Nothing here is ever written into reviewed PWG dictio
 The joined table is a validation witness for a human (or a future targeted pass) to spot-check
 — surfacing candidate gloss/translation divergences for review, not an automated corrector.
 Any text-correction proposal that comes out of eyeballing this table follows the normal
-[`csl-orig` correction workflow](../../../csl-corrections/docs/correction-workflow.md)
+[`csl-orig` correction workflow](https://github.com/sanskrit-lexicon/csl-corrections/blob/main/docs/correction-workflow.md)
 (registry check → queue → monthly batch PR), never a direct edit.
 
 _Dr. Mārcis Gasūns_
