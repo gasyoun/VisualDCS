@@ -6,6 +6,12 @@ name: Link check
 # node:lts-alpine from Docker Hub on every run and failed the whole branch outright on
 # a registry timeout — continue-on-error did not catch that, since the failure was in
 # the action's own Docker image build step, not the check itself.
+#
+# Excludes (2026-10-02): gasyoun/{Uprava,claude-config,github-spine} are PRIVATE
+# repos — their blob URLs always answer 404 to an unauthenticated check and can
+# only be verified by local tooling; doi.org answers 403 to bots (Zenodo blocks
+# link checkers) while the DOIs resolve in browsers; kosh.uni-koeln.de is a
+# REST API root that answers 400 to a bare GET.
 
 on:
   schedule:
@@ -28,6 +34,9 @@ jobs:
             --no-progress
             --accept "200..=299, 429"
             --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            --exclude "https://github\.com/gasyoun/(Uprava|claude-config|github-spine)/.*"
+            --exclude "https://doi\.org/.*"
+            --exclude "https://kosh\.uni-koeln\.de/.*"
             "./**/*.md"
           fail: true
         env:
