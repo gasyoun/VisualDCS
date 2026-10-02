@@ -97,7 +97,7 @@ which is why the registered keep-verdict stands (see §4).
 §1–5 read the 2021→2026 delta purely at token/lemma/POS level — deliberately (§5). But
 the 2026 CoNLL-U carries **three annotation layers** in its `HEAD`/`DEPREL` columns and
 `MISC` field that token-counting is blind to (definitions in
-[`src/DCS-data-2026/conllu/readme.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/conllu/readme.md)).
+[`src/DCS-data-2026/conllu/readme.md`](https://github.com/gasyoun/dcs-conllu/blob/main/readme.md) (conllu is a submodule; the file lives in the dcs-conllu repo)).
 Census over all 270 text folders
 ([`delta_annotation_layers.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/delta_annotation_layers.py),
 per-text counts in
