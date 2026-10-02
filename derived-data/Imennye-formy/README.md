@@ -9,7 +9,7 @@ _Created: 05-07-2026 · Last updated: 05-09-2026_
 
 | Файл/папка | Содержимое |
 |---|---|
-| [`Epicigma 1.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Imennye-formy/Epicigma 1.xlsx) | эпиграфический/эпический материал (неточно по названию) |
+| [`Epicigma 1.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Imennye-formy/Epicigma%201.xlsx) | эпиграфический/эпический материал (неточно по названию) |
 | [`vish.ods`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Imennye-formy/vish.ods) | данные, вероятно связанные с именем Vishnu |
 | [`Анализ Корпуса.xlsx`](Анализ Корпуса.xlsx) | общий анализ корпуса |
 | [`База данных по окончаниям основ имен.xlsx`](База данных по окончаниям основ имен.xlsx) | БД окончаний именных основ |
