@@ -62,6 +62,28 @@ td.zero:hover{outline:none}
 .legend{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--muted);margin:6px 0 0}
 .legend i{display:inline-block;width:26px;height:12px;border:1px solid var(--line)}
 
+/* H5741 class-split panel */
+.bars{margin:14px 0}
+.barrow{display:grid;grid-template-columns:minmax(220px,340px) 1fr 130px;gap:10px;
+  align-items:center;padding:4px 0;font-size:.92rem}
+.barrow .lbl{text-align:right;color:var(--fg)}
+.barrow .lbl small{display:block;color:var(--muted)}
+.bar{height:18px;background:var(--panel);border:1px solid var(--line);border-radius:4px;
+  overflow:hidden}
+.bar i{display:block;height:100%;background:var(--blue)}
+.barrow:nth-child(2) .bar i{background:var(--teal)}
+.barrow:nth-child(5) .bar i{background:var(--red)}
+.barrow .num{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:var(--teal);font-weight:600}
+.bad{color:var(--red);font-weight:600}
+input[type=search]{font:inherit;padding:7px 10px;border:1px solid var(--line);
+  border-radius:6px;background:var(--panel);color:var(--fg);width:min(420px,100%)}
+table.split{border-collapse:collapse;width:100%;font-size:.88rem}
+table.split th,table.split td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left}
+table.split th{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;
+  position:sticky;top:0;background:var(--panel)}
+table.split td.n{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+
 .detail{background:var(--panel);border:1px solid var(--line);border-radius:8px;
   padding:16px 18px;margin:18px 0;min-height:120px}
 .detail h3{margin:0 0 4px;font-size:1.05rem}
@@ -102,7 +124,15 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 
 <div id="app"><p class="err">Загрузка данных…</p></div>
 
+<h2 id="classsplit">Расщепление именного пула: -ат / -ант</h2>
+<p class="sub">Как корпусные написания на <code>-ат</code> и <code>-ант</code> соотносятся с заголовочными
+словами словарей: вердикты эвристики H4011 по 1&nbsp;880 леммам пула прилагательных.
+Потребитель сайдкара <code>visual/paradigm_nominal_class_split_adj.json</code> — данные вшиты при сборке
+(<code>tools/build_nominal_classsplit_panel.py</code>), запросов по сети страница не делает.</p>
+<div id="classsplitApp"><p class="err">Загрузка данных…</p></div>
+
 <script src="visual/paradigm_nominal_data.js"></script>
+<script src="visual/paradigm_nominal_class_split_adj_data.js"></script>
 <script>
 (function(){
   var D = window.PARADIGM_NOMINAL;
@@ -369,6 +399,153 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
     '<a href="reports/paradigm_nominal_build.md">reports/paradigm_nominal_build.md</a>, '+
     'сверка с Sangram G2 — <a href="reports/nominal_g2_reconciliation.md">reports/nominal_g2_reconciliation.md</a>.';
   document.querySelector('.wrap').appendChild(f);
+})();
+</script>
+<script>
+/* H5741 — класс-сплит панель: потребитель сайдкара
+   visual/paradigm_nominal_class_split_adj.json (H4011). Данные вшиты сборщиком
+   в window.NOMINAL_CLASS_SPLIT_ADJ при билде; никаких fetch() в рантайме. */
+(function(){
+  var S = window.NOMINAL_CLASS_SPLIT_ADJ;
+  var app = document.getElementById('classsplitApp');
+  if(!S){
+    app.innerHTML = '<p class="err"><b>Данные не загрузились.</b> Ожидается файл '+
+      '<code>visual/paradigm_nominal_class_split_adj_data.js</code> рядом с этой страницей. '+
+      'Пересобрать: <code>python tools/build_nominal_classsplit_panel.py</code>.</p>';
+    return;
+  }
+  var m = S.meta;
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function fmt(n){ return (n||0).toLocaleString('ru-RU').replace(/\u00a0/g,' '); }
+  function pct(n,d){ return d ? (100*n/d).toFixed(1)+'%' : '0%'; }
+
+  var h = [];
+
+  // --- trust block --------------------------------------------------------
+  var recOk = S.reconciliation && S.reconciliation.length &&
+              S.reconciliation.every(function(c){ return c.ok; });
+  h.push('<div class="classnote"><b>Доверие к данным.</b> Источник: '+
+    '<a href="https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_nominal_class_split_adj.json">'+
+    '<code>visual/paradigm_nominal_class_split_adj.json</code></a> — сайдкар разбора '+
+    '<code>'+esc(m.generatedBy)+'</code>. Дата данных: <b>'+esc(m.dataDate)+'</b>. '+
+    'n = <b>'+fmt(m.nLemmas)+'</b> лемм, '+fmt(m.nTokensAntPool)+' токенов пула -ант. '+
+    'Сверка: '+(recOk ? '<span class="ok">✓ '+S.reconciliation.length+' проверок сходятся</span>'
+                      : '<span class="bad">✗ есть расхождения</span>')+
+    (m.pinnedPairOk ? ', контрольная пара bhagavat/bhagavant ✓' : ', контрольная пара ✗')+
+    '. Прародитель: <code>'+esc(m.predecessor)+'</code>.</div>');
+
+  // --- headline stats -----------------------------------------------------
+  var pool = S.antPool || {};
+  h.push('<div class="stats">');
+  h.push('<div class="stat"><b>'+fmt(pool.tokens)+'</b><span>токенов в пуле -ант</span></div>');
+  h.push('<div class="stat"><b>'+(pool.adjShareOfTokens!=null ? pool.adjShareOfTokens+'%' : '—')+
+         '</b><span>доля прилагательных (по UPOS)</span></div>');
+  h.push('<div class="stat"><b>'+fmt(pool.lemmaIds)+'</b><span>лемм в пуле</span></div>');
+  h.push('<div class="stat"><b>'+fmt((pool.byUpos||{}).NOUN)+'</b><span>токенов с UPOS=NOUN</span></div>');
+  h.push('</div>');
+
+  // --- verdict bars -------------------------------------------------------
+  var keys = Object.keys(S.verdicts).sort(function(a,b){
+    return S.verdicts[b].tokens - S.verdicts[a].tokens; });
+  var maxTok = Math.max.apply(null, keys.map(function(k){ return S.verdicts[k].tokens; })) || 1;
+  h.push('<div class="bars">');
+  keys.forEach(function(k){
+    var v = S.verdicts[k];
+    var w = Math.max(0.6, 100*v.tokens/maxTok).toFixed(1);
+    h.push('<div class="barrow"><div class="lbl">'+esc(v.label)+
+           '<small>'+v.exemplars.slice(0,3).map(esc).join(' · ')+
+           (v.exemplars.length>3?' …':'')+'</small></div>'+
+           '<div class="bar"><i style="width:'+w+'%"></i></div>'+
+           '<div class="num">'+fmt(v.tokens)+' ток. · '+fmt(v.lemmaIds)+' лемм ('+
+           pct(v.tokens,m.nTokensAntPool)+')</div></div>');
+  });
+  h.push('</div>');
+
+  // --- pinned pair + ii block ---------------------------------------------
+  var pp = S.pinnedPair || {};
+  if(pp.lemma){
+    h.push('<p class="sub"><b>Контрольная пара:</b> <i>'+esc(pp.lemma)+'</i> — '+
+           esc(pp.at_form)+' ('+esc(pp.at_devanagari)+') / '+esc(pp.ant_form)+
+           ' ('+esc(pp.ant_devanagari)+'), '+fmt(pp.adjTokens)+' токенов -ат-написания, '+
+           'DCS spelling: <code>'+esc(pp.dcsSpelling)+'</code>.</p>');
+  }
+  var ii = S.iiNonNoun || {};
+  if(ii.adjTokens != null){
+    h.push('<p class="sub"><b>II класс (не-существительные):</b> '+fmt(ii.adjTokens)+
+           ' токенов-прилагательных в '+fmt(ii.lemmaIds)+' леммах; односложные — '+
+           fmt((ii.monosyllabic||{}).adjTokens)+', многосложные — '+
+           fmt((ii.polysyllabic||{}).adjTokens)+'.</p>');
+  }
+
+  // --- table fallback + CSV ----------------------------------------------
+  h.push('<p style="margin:18px 0 8px"><input type="search" id="splitFilter" '+
+         'placeholder="фильтр по лемме / вердикту…" aria-label="Фильтр лемм"> '+
+         '<button id="splitCsv" type="button">Скачать CSV (все '+fmt(m.nLemmas)+' лемм)</button> '+
+         '<span class="sub" id="splitCount"></span></p>');
+  h.push('<div class="gridwrap" style="max-height:520px;overflow-y:auto"><table class="split">'+
+         '<thead><tr><th>лемма</th><th>lemma_id</th><th>-ат</th><th>-ант</th>'+
+         '<th>вердикт</th><th>-ат ток.</th><th>сущ. ток.</th><th>словари</th></tr></thead>'+
+         '<tbody id="splitBody"></tbody></table></div>');
+
+  app.innerHTML = h.join('');
+
+  var VERDICT_RU = {};
+  Object.keys(S.verdicts).forEach(function(k){ VERDICT_RU[k] = S.verdicts[k].label; });
+  // perDictionary — объект вида {"mw":"at_only","pwg":"silent"} → "mw: at_only · pwg: silent"
+  function dictCell(pd){
+    if(pd == null) return '';
+    if(typeof pd === 'string') return esc(pd);
+    return esc(Object.keys(pd).map(function(k){ return k+': '+pd[k]; }).join(' · '));
+  }
+  var tbody = document.getElementById('splitBody');
+  var flt = document.getElementById('splitFilter');
+  var cnt = document.getElementById('splitCount');
+  var RENDER_CAP = 300;
+
+  function rows(){
+    var q = (flt.value||'').trim().toLowerCase();
+    var out = S.perLemma;
+    if(q){
+      out = out.filter(function(r){
+        return (r.lemma+' '+(r.verdict||'')+' '+(VERDICT_RU[r.verdict]||'')).toLowerCase().indexOf(q) !== -1;
+      });
+    }
+    return out;
+  }
+  function drawTable(){
+    var rs = rows();
+    var html = rs.slice(0, RENDER_CAP).map(function(r){
+      return '<tr><td><i>'+esc(r.lemma)+'</i></td><td class="n">'+esc(r.lemma_id)+'</td>'+
+        '<td>'+esc(r.at_form||'')+'</td><td>'+esc(r.ant_form||'')+'</td>'+
+        '<td>'+esc(VERDICT_RU[r.verdict]||r.verdict||'')+'</td>'+
+        '<td class="n">'+fmt(r.adjTokens)+'</td><td class="n">'+fmt(r.nounTokens)+'</td>'+
+        '<td>'+dictCell(r.perDictionary)+'</td></tr>';
+    }).join('');
+    tbody.innerHTML = html || '<tr><td colspan="8">ничего не найдено</td></tr>';
+    cnt.textContent = 'показано '+Math.min(rs.length, RENDER_CAP)+' из '+fmt(rs.length);
+  }
+  flt.addEventListener('input', drawTable);
+
+  document.getElementById('splitCsv').addEventListener('click', function(){
+    var head = 'lemma,lemma_id,at_form,ant_form,verdict,adjTokens,nounTokens,perDictionary,dcsSpelling';
+    var lines = S.perLemma.map(function(r){
+      return [r.lemma, r.lemma_id, r.at_form, r.ant_form, r.verdict, r.adjTokens,
+              r.nounTokens, r.perDictionary, r.dcsSpelling].map(function(v){
+                v = v==null?'':String(v);
+                return /[",\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v;
+              }).join(',');
+    });
+    // Blob-экспорт из вшитых данных — не сетевой запрос.
+    var blob = new Blob(['\ufeff'+head+'\n'+lines.join('\n')], {type:'text/csv;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'paradigm_nominal_class_split_adj.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 5000);
+  });
+
+  drawTable();
 })();
 </script>
 </div>
