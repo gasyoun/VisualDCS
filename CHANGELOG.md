@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 24-09-2026_
+_Created: 06-06-2026 · Last updated: 04-10-2026_
 
 # Changelog
 
@@ -9,6 +9,24 @@ Day-to-day session state lives in [`.ai_state.md`](https://github.com/gasyoun/Vi
 durable, user-facing milestones.
 
 ## [Unreleased]
+
+- **Тяжёлый derived-data перестал быть в git, история переписана `git filter-repo` (H5884)** —
+  pack `.git` ужался 3.59 → 1.90 GiB, локальные копии остались на диске untracked-игнорируемыми.
+  В трекинге сохранён keep-set потребителей: CI-контракт
+  [`validate-generated-tables.yml`](https://github.com/gasyoun/VisualDCS/blob/main/.github/workflows/validate-generated-tables.yml)
+  (Kompozity tsv + builders, Gapaksy tsv + gen_dcs_hapax.py, Corpus-Delta), навигационные
+  [`INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md) /
+  [`README.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/README.md),
+  цитируемые [`kompozity_dict_vs_corpus.html`](https://github.com/gasyoun/VisualDCS/blob/main/visual/kompozity_dict_vs_corpus.html)
+  источники (`cmps.csv`, `Kompozity/README.md`) и маленькие деревья
+  [`Leksicheskie-issledovaniya/`](https://github.com/gasyoun/VisualDCS/tree/main/derived-data/Leksicheskie-issledovaniya) /
+  [`Corpus-Delta-2021-2026/`](https://github.com/gasyoun/VisualDCS/tree/main/derived-data/Corpus-Delta-2021-2026)
+  целиком. Вычищены из истории: Paralleli (1.4G), DCS_FILES (1.1G), Ramayana, Sinonimy,
+  Glagolnye-formy, Sochetaemost, Lexical-Cores, Imennye-formy, Mestoimeniya, QL, Fonetika,
+  Chasticy, Samsaadhanii-alignment, Korrelyacii и не-keep файлы Kompozity (names.csv 86M,
+  7z-архивы, ods/xlsx). Прежняя история целиком жива на
+  [`backup/pre-filter-repo-H5884-2026-10-04`](https://github.com/gasyoun/VisualDCS/tree/backup/pre-filter-repo-H5884-2026-10-04)
+  — снести ветку можно после контрольного периода.
 
 - **Карточки landing page стали отдельными файлами: «Парадигм-строитель» и «Коллокации»
   построены, «Whitney Roots» связан с живым приложением** (roadmap drain A27, пункт

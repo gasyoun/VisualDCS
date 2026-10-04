@@ -53,3 +53,30 @@ non-derived/.claude/
 
 # SA-IS concordance index (H5153) — ~487 MB, regenerate via tools/sais_concordance.py build
 /derived-data/concordance_sa/
+
+# H5884 (04-10-2026): heavy derived-data stopped being tracked; history rewritten
+# with git-filter-repo (.git pack 3.59 -> 1.90 GiB). Local copies stay on disk
+# untracked; the consumer keep-set below stays tracked: CI contract of
+# validate-generated-tables.yml, derived-data/INDEX.md, page-cited Kompozity
+# sources, Leksicheskie-issledovaniya/ and Corpus-Delta-2021-2026/ (small, tracked).
+/derived-data/Paralleli-v-tekstah-korpusa-SRC/
+/derived-data/DCS_FILES/
+/derived-data/Ramayana/
+/derived-data/Sinonimy/
+/derived-data/Glagolnye-formy/
+/derived-data/Sochetaemost-sanskritskih-osnov/
+/derived-data/Lexical-Cores/
+/derived-data/Imennye-formy/
+/derived-data/Mestoimeniya/
+/derived-data/QL/
+/derived-data/Fonetika/
+/derived-data/Chasticy/
+/derived-data/Samsaadhanii-DCS-SH-alignment/
+/derived-data/Korrelyacii/
+/derived-data/Kompozity/*
+!/derived-data/Kompozity/README.md
+!/derived-data/Kompozity/build_mw_h3_parent_compounds.py
+!/derived-data/Kompozity/build_uttarapada_dict_vs_corpus.py
+!/derived-data/Kompozity/cmps.csv
+!/derived-data/Kompozity/mw_h3_parent_compounds.tsv
+!/derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv
