@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 15-05-2026 · Last updated: 15-09-2026_
+_Created: 15-05-2026 · Last updated: 04-10-2026_
 
 **VisualDCS** is standalone HTML frequency dashboards for the
 [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/).
@@ -134,6 +134,19 @@ hits Gītagovinda / Aṣṭāvakragīta. Match `chapter.ref`, never just `text.n
 New dashboard: write JSON under `visual/`, add a standalone `.html`, update
 README, commit both. JS is inline; Chart.js 4.4.1 from cdnjs; colors
 `#3266ad` / `#e24b4a` / `#1d9e75`. UTF-8 JSON only.
+
+## Derived data & guards (verified 04-10-2026)
+
+- Heavy derived data is **untracked** since H5884 (history rewritten with
+  filter-repo, pack 3.59→1.90 GiB; consumer keep-set retained). A fresh clone
+  carries only the keep-set — regenerate derived bulk locally, never commit it
+  back.
+- Lint baseline is `ruff` **0 in scope** (H5797, [#157](https://github.com/gasyoun/VisualDCS/pull/157)).
+  The node suite runs 5/7 on a clean main — the 2 failures are the pre-existing
+  baseline, not a regression to fix; the Python suite is 4 pass / 4 skip.
+- The paper-priv tier-2 guard lands here ([#158](https://github.com/gasyoun/VisualDCS/pull/158)):
+  nightly sweep with a positive-control canary (H5908) and an allowlist
+  interlock — **never delete the canary paths**.
 
 ## Memory store
 
