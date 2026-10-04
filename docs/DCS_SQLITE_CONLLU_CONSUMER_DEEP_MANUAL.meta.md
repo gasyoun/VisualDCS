@@ -1,22 +1,28 @@
 # Metadoc — DCS_SQLITE_CONLLU_CONSUMER_DEEP_MANUAL.md
 
-_Created: 26-07-2026 · Last updated: 27-07-2026_
+_Created: 26-07-2026 · Last updated: 04-10-2026_
 
 ## Staleness block
 
-LAST_VERIFIED: 26-07-2026
-VERIFIED_BY: Fable 5 (`claude-fable-5`), H1407
-COMMANDS_SPOT_RUN: 64
+LAST_VERIFIED: 04-10-2026
+VERIFIED_BY: GLM 5.3 Flash (zai-start-plan/GLM-5.3-Flash), H5991
+COMMANDS_SPOT_RUN: 23
 
-(64 = every query in the two read-only recon/join scripts executed against the live
-920,883,200-byte `dcs_full.sqlite`; all recorded numbers in the manual come from that run.)
+H5991 refresh 04-10-2026: 23 read-only SQL queries against the live 920,883,200-byte
+`dcs_full.sqlite` (provenance + all 7 §2 row counts + treebank-text count, spine join,
+orphan/NULL-lemma checks, §4.3 ca/tad/na triple, §5.2 sena/senā lemma_ids and token
+counts, VERB total, Cpd total, G1 BhaGī token count, SCONJ total, lemma-table
+sena/senā rows) — every recorded number reproduced exactly. **The DB was re-imported
+03-10-2026 (`imported_at` 2026-06-06 → 2026-10-03, same `source_commit` 04e0778d…):
+per the manual's own §9 policy the §1 provenance row was updated; zero numeric deltas
+observed, so no other number moved.**
 
 ## Purpose
 
 Doc-of-record for the org's DCS corpus data layer: the as-built schema of
 `src/DCS-data-2026/dcs_full.sqlite`, the 2021↔2026↔M9 generational boundaries, the
 fold vs DO-NOT-fold encoding rule, one executed join recipe per consumer repo, and the
-G1–G21 gotcha registry. Written so a fresh session (or external consumer) can join
+G1–G22 gotcha registry. Written so a fresh session (or external consumer) can join
 against the corpus without rediscovering any of the recorded traps.
 
 ## Audience
@@ -82,5 +88,6 @@ IAST; assumes nothing about DCS internals.
 |---|---|---|
 | 26-07-2026 | Created with the manual (H1407, Wave 4) | Fable 5 (`claude-fable-5`) |
 | 27-07-2026 | H1472 nominal layer: §6.1 gains the NOUN/ADJ join recipe with live totals (2,996,410 = 2,263,192 grid + 724,676 `Cpd` + 8,542 untagged) and the `lemma.grammar` vs `feat_gender` distinction; gotcha registry extended G18→**G21** (G19 `Cpd` is not a case · G20 the NULL-complement trap that silently dropped 8,542 tokens · G21 token gender ≠ lexical gender) | Opus 5 (`claude-opus-5[1m]`) |
+| 04-10-2026 | H5991 monthly refresh: 23 queries re-run live, every recorded number exact; DB re-imported 03-10-2026 with the same `source_commit` — §1 `imported_at` row updated per the manual's §9 policy, zero numeric deltas (GLM 5.3 Flash) | GLM 5.3 Flash (`zai-start-plan/GLM-5.3-Flash`) |
 
 _Dr. Mārcis Gasūns_

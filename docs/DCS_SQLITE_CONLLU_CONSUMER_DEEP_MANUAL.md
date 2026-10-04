@@ -1,6 +1,6 @@
 # DCS `dcs_full.sqlite` / CoNLL-U consumer deep manual — the org data layer, as built
 
-_Created: 26-07-2026 · Last updated: 02-09-2026_
+_Created: 26-07-2026 · Last updated: 04-10-2026_
 
 **Doc-of-record for the DCS corpus data layer.** Every schema claim and join recipe below was
 executed live against the real database on 26-07-2026 (Fable 5, `claude-fable-5`, H1407); the
@@ -24,7 +24,7 @@ from the pinned CoNLL-U submodule. Its `provenance` table, verbatim:
 |---|---|
 | `source_repo` | `gasyoun/dcs-conllu (OliverHellwig/sanskrit)` |
 | `source_commit` | `04e0778d3dc971030229179e25eea043d06ff397` |
-| `imported_at` | `2026-06-06T16:22:57+00:00` |
+| `imported_at` | `2026-10-03T11:18:38+00:00` |
 | `n_texts` | `270` |
 | `n_tokens` | `5688416` |
 | `schema` | `flatten-all; lemma<-dictionary.csv` |
