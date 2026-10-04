@@ -42,7 +42,7 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from export_master import learn_code_map                  # noqa: E402  (M4 code map)
+from export_master import learn_code_map  # noqa: E402  (M4 code map)
 
 OUT = os.path.join(HERE, "widgets")
 REPORT = os.path.join(HERE, "reports", "m7_widgets.md")
@@ -166,8 +166,8 @@ def verb_forms(conn):
     ud_rows = conn.execute(
         "SELECT feat_verbform, feat_tense, feat_mood, feat_voice, feat_formation, COUNT(*) "
         "FROM token WHERE upos='VERB' GROUP BY 1,2,3,4,5 ORDER BY 6 DESC").fetchall()
-    ud_pairs = [(f"VerbForm={vf or '-'}|Tense={te or '-'}|Mood={mo or '-'}|Voice={vo or '-'}"
-                 f"|Formation={fm or '-'}", c)
+    ud_pairs = [((f"VerbForm={vf or '-'}|Tense={te or '-'}|Mood={mo or '-'}|Voice={vo or '-'}"
+                 f"|Formation={fm or '-'}"), c)
                 for vf, te, mo, vo, fm, c in ud_rows]
     ud_pareto, ud_total = pareto(ud_pairs)
 
@@ -240,8 +240,7 @@ def collocations(conn, top_lemmas=400, per=20):
     top = [r[0] for r in conn.execute(
         "SELECT lemma_id FROM token WHERE lemma_id IS NOT NULL AND upos IN ('NOUN','VERB','ADJ') "
         "GROUP BY lemma_id ORDER BY COUNT(*) DESC LIMIT ?", (top_lemmas,))]
-    names = dict(conn.execute("SELECT lemma_id, lemma FROM lemma WHERE lemma_id IN (%s)"
-                              % ",".join("?" * len(top)), top))
+    names = dict(conn.execute("SELECT lemma_id, lemma FROM lemma WHERE lemma_id IN ({})".format(",".join("?" * len(top))), top))
     topset = set(top)
     co = defaultdict(Counter)
     # stream tokens grouped by sentence
@@ -502,16 +501,16 @@ def main():
           "- `corpus_stats.json`, `verb_forms_ud.json`, `verb_forms_38cat.json`, `morph_pn.json`, "
           "`tense_case.json`, `conc_totals.json`" + ("" if args.no_coll else ", `coll_compact.json`"),
           "\n## NOT regenerable from the master (need external inputs)\n",
-          "- `dcs_genres.json` / `dcs_scatter.json` — need per-text **genre + date** metadata (the "
-          "CoNLL-U carries neither). Source these from the DCS text catalogue or the 2021 `texts.csv`.",
+          ("- `dcs_genres.json` / `dcs_scatter.json` — need per-text **genre + date** metadata (the "
+          "CoNLL-U carries neither). Source these from the DCS text catalogue or the 2021 `texts.csv`."),
           "- `anki_compact.json` / `passage_library.json` — **hand-curated**; not derivable.",
-          "- `form_lookup.json` / `paradigm_endings.json` — derivable but tied to the paradigm browser's "
-          "exact schema; deferred to the dashboard-wiring pass (no HTML touched in M7).\n",
+          ("- `form_lookup.json` / `paradigm_endings.json` — derivable but tied to the paradigm browser's "
+          "exact schema; deferred to the dashboard-wiring pass (no HTML touched in M7).\n"),
           "## Caveats — the 38-category map is best-effort; `verb_forms_ud.json` is the faithful view\n",
-          "- **Corpus growth:** 2026 totals exceed 2021's — the corpus grew (5.69M tokens, +Vedic) and "
+          ("- **Corpus growth:** 2026 totals exceed 2021's — the corpus grew (5.69M tokens, +Vedic) and "
           "2026 counts every UPOS=VERB token directly, vs 2021's category-binned extract. Δ = growth + "
-          "methodology, not error.",
-          "- **UD past-tense conflation — re-split, with bounds (H1486):** UD `Tense` has no "
+          "methodology, not error."),
+          ("- **UD past-tense conflation — re-split, with bounds (H1486):** UD `Tense` has no "
           "Aorist/Perfect value; both surface as `Tense=Past`, distinct only from `Tense=Impf` "
           "(47k). DCS's own `feat_formation` does carry the past-stem formation, so the bucket is "
           "no longer reported merged: the seven Whitney aorist formations (root/them/red/s/is/sis/"
@@ -520,10 +519,10 @@ def main():
           "of the finite past indicative — the superseded '<2% of verbs, too sparse' claim divided "
           "by ALL verbs (1.60%) instead of by the bucket it has to split. **Both classes are "
           "bounds, not exact counts:** Aorist is a lower bound and Perfect an upper bound. See "
-          "`reports/past_tense_resplit_validation.md` for the measured error bars.",
-          "- **Participles:** present participles carry `Tense=Pres`; the no-Tense bucket is split by a "
+          "`reports/past_tense_resplit_validation.md` for the measured error bars."),
+          ("- **Participles:** present participles carry `Tense=Pres`; the no-Tense bucket is split by a "
           "form-ending heuristic (-ta/-na → PPP, -māna/-māṇa/-ant → present). ~58k compound-member "
-          "participles whose surface form lacks a clean ending fall to *Participle (unclassified)*.\n"]
+          "participles whose surface form lacks a clean ending fall to *Participle (unclassified)*.\n")]
     os.makedirs(os.path.dirname(REPORT), exist_ok=True)
     with open(REPORT, "w", encoding="utf-8") as fh:
         fh.write("\n".join(L) + "\n")

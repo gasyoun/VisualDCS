@@ -38,8 +38,8 @@ except Exception:
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from parse_conllu import parse_text                       # noqa: E402
-from import_dcs_conllu import PILOT, DEFAULT_DB           # noqa: E402
+from import_dcs_conllu import DEFAULT_DB, PILOT  # noqa: E402
+from parse_conllu import parse_text  # noqa: E402
 
 CONLLU_ROOT = os.path.join(HERE, "conllu", "files")
 
@@ -243,8 +243,8 @@ def main():
     if not args.all and idem.get("hashes"):
         L.append(f"\nIdempotency data hash: `{idem['hashes'][0][:16]}…` (both runs).")
     L += ["\n## Notes\n",
-          "- **Cross-walk** is **position-based** (i-th sentence of each text) — the corpus reuses "
-          "`sent_id` even within a chapter, so it is not a key; the master keys sentences by a synthetic id.",
+          ("- **Cross-walk** is **position-based** (i-th sentence of each text) — the corpus reuses "
+          "`sent_id` even within a chapter, so it is not a key; the master keys sentences by a synthetic id."),
           "- **Spot checks** compare every token field (form, lemma_id, upos, head, deprel, all FEATS).",
           f"- Scope: {scope}.\n"]
     os.makedirs(os.path.dirname(report_path), exist_ok=True)

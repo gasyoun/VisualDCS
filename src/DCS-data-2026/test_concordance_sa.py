@@ -20,7 +20,6 @@ sys.path.insert(0, str(REPO / "tools"))
 
 import sais_concordance as cs  # noqa: E402
 
-
 CORPUS = b"banana bandana bananarama\nsecond sentence here\x00third text starts"
 
 

@@ -17,7 +17,10 @@ Reproduce:  python delta_annotation_layers.py
 Requires the full CoNLL-U corpus under ../../src/DCS-data-2026/conllu/files/
 (clone OliverHellwig/sanskrit if absent). Read-only over the corpus.
 """
-import sys, os, glob, csv
+import csv
+import glob
+import os
+import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")

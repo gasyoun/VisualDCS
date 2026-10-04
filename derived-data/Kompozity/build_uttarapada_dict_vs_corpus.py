@@ -38,8 +38,13 @@ Usage:
   python build_uttarapada_dict_vs_corpus.py            # writes TSV + prints diagnostics
   python build_uttarapada_dict_vs_corpus.py --mw-tsv <path> --cmps <path> --names <path>
 """
-import sys, os, csv, argparse, unicodedata
+import argparse
+import csv
+import os
+import sys
+import unicodedata
 from collections import Counter, defaultdict
+
 sys.stdout.reconfigure(encoding="utf-8")
 
 HERE = os.path.dirname(os.path.abspath(__file__))

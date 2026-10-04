@@ -30,7 +30,10 @@ Usage:
   python build_mw_h3_parent_compounds.py
   python build_mw_h3_parent_compounds.py --src compounds.txt --cmps cmps.csv
 """
-import sys, os, argparse, unicodedata
+import argparse
+import os
+import sys
+import unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.stdout.reconfigure(encoding="utf-8")

@@ -319,7 +319,8 @@ def _reassemble_split_csvs(folder, dest):
 
 
 def cmd_stopword(args):
-    import shutil, tempfile
+    import shutil
+    import tempfile
     if not os.path.isdir(STOPO):
         print(f"[D2] {STOPO} not present — skipping", file=sys.stderr)
         return

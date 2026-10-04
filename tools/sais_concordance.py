@@ -68,6 +68,7 @@ def _sa_via_pydivsufsort(data: bytes):
 def _sa_via_ctypes_libdivsufsort(data: bytes):
     import ctypes
     import ctypes.util
+
     import numpy as np
     name = ctypes.util.find_library("divsufsort") or "libdivsufsort.so.3"
     lib = ctypes.CDLL(name)
@@ -144,8 +145,9 @@ def extract_corpus(db_path: Path, token_cap: int | None = None):
     tok_start: int32 char offset of each token's form start; tok_sent: int32 sentence
     row ordinal per token; sent_chap: int32 chapter_id per sentence row; texts: id->name.
     """
-    import numpy as np
     import sqlite3
+
+    import numpy as np
 
     t0 = time.perf_counter()
     uri = f"file:{db_path}?mode=ro"
@@ -294,8 +296,9 @@ def occurrences_to_refs(occ_positions, tok_start, tok_sent, sent_chap, sent_no,
 
 
 def per_text_counts(occ_positions, tok_start, tok_sent, sent_chap, chap_text, texts):
-    import numpy as np
     from collections import Counter
+
+    import numpy as np
     starts = np.asarray(occ_positions, dtype=np.int64)
     tok = np.searchsorted(tok_start, starts, side="right") - 1
     srow = tok_sent[tok]
@@ -470,8 +473,9 @@ def cmd_find(args):
 def cmd_count_text(args):
     P = _pattern_bytes(args.pattern)
     T, sa, lcp, tok_start, tok_sent, sent_chap, sent_no, sent_sid, chap_ref, texts = load_index(Path(args.out))
-    import numpy as np
     import sqlite3
+
+    import numpy as np
     lo, hi = find_range(T, sa, P)
     print(f"[count-text] {args.pattern!r}: {hi - lo:,} occurrence(s) across texts:")
     chap_text = {}
