@@ -2,7 +2,7 @@
 
 _Created: 15-05-2026 · Last updated: 04-10-2026_
 
-**VisualDCS** is standalone HTML frequency dashboards for the
+**What this repo is:** **VisualDCS** is standalone HTML frequency dashboards for the
 [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/).
 No build step, no server — open the `.html` in a browser. Org spine still
 applies; this file is only repo-local always-on. Do **not** read it end-to-end.
@@ -11,7 +11,7 @@ applies; this file is only repo-local always-on. Do **not** read it end-to-end.
 
 **The corpus master is**
 [`src/DCS-data-2026/dcs_full.sqlite`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026)
-— ~921 MB, gitignored, regenerable from the pinned CoNLL-U submodule, CC BY 4.0.
+— ~878 MB, gitignored, regenerable from the pinned CoNLL-U submodule, CC BY 4.0.
 Open read-only and streaming; never load it with an editor/Read tool:
 
 `sqlite3.connect("file:.../DCS-data-2026/dcs_full.sqlite?mode=ro", uri=True)`
@@ -50,7 +50,30 @@ is **wrong** (H848; refuted H1407). The 18 adhyāyas sit inside Mahābhārata bo
 as `MBh, 6, BhaGī 1` … `BhaGī 18` (10,547 tokens). `text.name` LIKE `%gīt%` only
 hits Gītagovinda / Aṣṭāvakragīta. Match `chapter.ref`, never just `text.name`.
 
-## Run the app / tests
+## Data on disk (measured 04-10-2026, `du -sh -I .git`)
+
+Working tree ≈ **8.8 GB** excluding `.git`: `derived-data/` 3.4 GB · `src/` 3.0 GB
+(incl. the master above) · `non-derived/` 2.2 GB · `visual/` 63 MB · `docs/` 47 MB.
+Tracked content ≈ 4.5 GB (incl. the `src/DCS-data-2021` source inputs); the
+gitignored balance (~4.2 GB: the 878 MB master DB, `derived-data/DCS_FILES/`,
+`derived-data/concordance_sa/`) is regenerable, never commit it. Re-measure
+before quoting any size — the H5858 handoff's «6.9 ГБ» was already stale.
+
+## Windows lane — frozen since 03-10-2026
+
+The SAIS concordance lane
+([`tools/sais_concordance.py`](https://github.com/gasyoun/VisualDCS/blob/main/tools/sais_concordance.py),
+[docs/SAIS_CONCORDANCE_DCS_2026-09.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/SAIS_CONCORDANCE_DCS_2026-09.md))
+was last verified on the MSI Windows box (18-09-2026, Python 3.12.0 +
+pydivsufsort, 5/5 selftest, digest artifacts in `derived-data/concordance_sa/`;
+PR #141). That box died 03-10-2026 (thermal, 83 °C) and the estate backup leg
+moved to Mac/.92 (Uprava PR #4156). Until it revives there is **no Windows
+verification available**: the tool still runs on any Python ≥3.9, but a Mac run
+is not a Windows verification — label runs by host, do not claim the win-verified
+digests for new builds, and do not attempt Windows-lane revival work (MG ruling:
+nothing on the Windows lanes until the box revives).
+
+## How to run (app / tests)
 
 - **App:** open
   [`sanskrit_index.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_index.html)
