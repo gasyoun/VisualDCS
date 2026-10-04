@@ -170,7 +170,7 @@ def learn_code_map(conn):
     for code in sorted(code_n):
         top = code_ud[code].most_common(1)
         ud = top[0][0] if top else None
-        ud_s = ("Tense=%s|Voice=%s|Mood=%s" % ud) if ud else "(no pilot match)"
+        ud_s = ("Tense={}|Voice={}|Mood={}".format(*ud)) if ud else "(no pilot match)"
         rows.append((code, timws.get(code, "?"), code_n[code], len(code_ud[code]), ud_s))
     return rows, timws
 

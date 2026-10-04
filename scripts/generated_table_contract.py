@@ -524,16 +524,16 @@ def build_mutations():
         toks = f[2].split(b"|")
         f[2] = b"|".join(toks[:-1])  # lose one child, keep declared count
         return b"\t".join(f)
-    muts.append(("mw_h3: child token dropped, n_children stale "
-                 "(declared-count break)",
+    muts.append((("mw_h3: child token dropped, n_children stale "
+                 "(declared-count break)"),
                  {mw: _edit_data_line(mw_raw, drop_child)}))
 
     def tab_in_children(line):
         f = line.split(b"\t")
         f[2] += b"\tplanted"  # smuggle a literal TAB -> 4 fields on the row
         return b"\t".join(f)
-    muts.append(("mw_h3: literal TAB inside children field "
-                 "(delimiter break)",
+    muts.append((("mw_h3: literal TAB inside children field "
+                 "(delimiter break)"),
                  {mw: _edit_data_line(mw_raw, tab_in_children)}))
 
     hax = f"{HAPAX_DIR}/dcs2026_hapax_all.tsv"
@@ -543,16 +543,16 @@ def build_mutations():
         f = line.split(b"\t")
         f[4] += b"\tplanted"
         return b"\t".join(f)
-    muts.append(("hapax_all: TAB smuggled into meaning field "
-                 "(delimiter break)",
+    muts.append((("hapax_all: TAB smuggled into meaning field "
+                 "(delimiter break)"),
                  {hax: _edit_data_line(hax_raw, tab_in_meaning)}))
 
     def drop_row(raw):
         lines = raw.split(b"\n")
         del lines[1]  # one hapax vanishes -> trio identity breaks
         return b"\n".join(lines)
-    muts.append(("hapax trio: one row deleted from _all "
-                 "(cross-artifact count break)",
+    muts.append((("hapax trio: one row deleted from _all "
+                 "(cross-artifact count break)"),
                  {hax: drop_row(hax_raw),
                   f"{HAPAX_DIR}/dcs2026_hapax_single_morpheme.tsv": _read(f"{HAPAX_DIR}/dcs2026_hapax_single_morpheme.tsv"),
                   f"{HAPAX_DIR}/dcs2026_hapax_compound.tsv": _read(f"{HAPAX_DIR}/dcs2026_hapax_compound.tsv")}))
@@ -564,24 +564,24 @@ def build_mutations():
         f = line.split(b",")
         f[6] = str(int(f[6]) + 7).encode()  # arithmetic no longer reconciles
         return b",".join(f)
-    muts.append(("per_text_delta: tok_delta no longer == tok_2026-tok_2021 "
-                 "(reconciliation break)",
+    muts.append((("per_text_delta: tok_delta no longer == tok_2026-tok_2021 "
+                 "(reconciliation break)"),
                  {ptx: _edit_data_line(ptx_raw, flip_delta)}))
 
     def drop_first_data_row(raw):
         lines = raw.split(b"\n")
         del lines[1]  # whole row vanishes; keys/arith of survivors intact
         return b"\n".join(lines)
-    muts.append(("per_text_delta: whole row silently dropped "
-                 "(row-count-pin break)",
+    muts.append((("per_text_delta: whole row silently dropped "
+                 "(row-count-pin break)"),
                  {ptx: drop_first_data_row(ptx_raw)}))
 
     def unquoted_comma(line):
         f = line.split(b",")
         f[1] = b"Planted,Text"  # comma smuggled in unquoted -> 8 fields
         return b",".join(f)
-    muts.append(("per_text_delta: unquoted comma in text name "
-                 "(CSV delimiter break)",
+    muts.append((("per_text_delta: unquoted comma in text name "
+                 "(CSV delimiter break)"),
                  {ptx: _edit_data_line(ptx_raw, unquoted_comma)}))
 
     utt = "derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv"
@@ -591,8 +591,8 @@ def build_mutations():
         f = line.split(b"\t")
         f[9] = b"ghosted"  # corpus_status outside the domain
         return b"\t".join(f)
-    muts.append(("uttarapada: corpus_status outside enum domain "
-                 "(domain break)",
+    muts.append((("uttarapada: corpus_status outside enum domain "
+                 "(domain break)"),
                  {utt: _edit_data_line(utt_raw, bad_enum)}))
     return muts
 

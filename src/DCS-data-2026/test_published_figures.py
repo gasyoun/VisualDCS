@@ -31,7 +31,7 @@ except Exception:
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-import regen_widgets as rw                                   # noqa: E402
+import regen_widgets as rw  # noqa: E402
 
 REQUIRED = ("id", "label", "value", "unit", "basis", "tolerance",
             "source_file", "source_codes", "corpus_release", "generated_by")

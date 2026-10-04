@@ -28,9 +28,9 @@ the primary meaning has shifted. Frequency tercile and machine scores are
 provided for calibration only — do not let them anchor the judgment.
 """
 
-import sys
 import csv
 import pathlib
+import sys
 
 SRC = pathlib.Path(__file__).parent / "lsc_targets.tsv"
 OUT = pathlib.Path(__file__).parent / "lsc_human_gold_sample.tsv"

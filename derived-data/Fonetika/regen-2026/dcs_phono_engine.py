@@ -27,8 +27,8 @@ _SANSKRIT_UTIL_INIT = os.path.abspath(os.path.join(
 
 if not os.path.exists(_SANSKRIT_UTIL_INIT):
     raise ImportError(
-        "shared 'sanskrit-util' package not found at %s — restore the sibling repo "
-        "(GitHub-root layout required)." % _SANSKRIT_UTIL_INIT
+        "shared 'sanskrit-util' package not found at {} — restore the sibling repo "
+        "(GitHub-root layout required).".format(_SANSKRIT_UTIL_INIT)
     )
 
 _spec = _ilu.spec_from_file_location('_sanskrit_util_shared', _SANSKRIT_UTIL_INIT)

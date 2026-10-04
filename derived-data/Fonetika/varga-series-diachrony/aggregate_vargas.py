@@ -9,7 +9,10 @@ Fully deterministic; run: python aggregate_vargas.py
 Aggregation math lives in the shared `varga_engine.varga_shares()` (H926) —
 this file only supplies the EN varga membership/labels and CSV formatting.
 """
-import sys, csv, os
+import csv
+import os
+import sys
+
 sys.stdout.reconfigure(encoding='utf-8')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -17,7 +20,7 @@ SRC = os.path.join(HERE, "..", "regen-2026", "varna_freq.csv")
 OUT = os.path.join(HERE, "varga_share_by_period.csv")
 
 sys.path.insert(0, HERE)
-from varga_engine import varga_shares, SLOTS
+from varga_engine import SLOTS, varga_shares
 
 # SLP1 -> varga. The 25 sparśa (stops + class nasals) only; anusvāra M, visarga H,
 # semivowels y r l v, sibilants ś ṣ s h are separate classes, not vargas.

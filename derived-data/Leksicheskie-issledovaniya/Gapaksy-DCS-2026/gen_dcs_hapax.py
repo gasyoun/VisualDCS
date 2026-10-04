@@ -20,7 +20,11 @@ Compound heuristic (see README manifest for the honest limitation list):
 
 Model provenance: authored under Opus 4.8 (claude-opus-4-8), 12-07-2026.
 """
-import sqlite3, sys, os, csv
+import csv
+import os
+import sqlite3
+import sys
+
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stderr.reconfigure(encoding='utf-8')
 

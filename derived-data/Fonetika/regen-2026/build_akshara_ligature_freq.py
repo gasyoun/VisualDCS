@@ -20,14 +20,22 @@ Phoneme classes + slp1_words()/segment()/load_slots() live in the shared
 `dcs_phono_engine` module (H926), co-located in this directory — also
 consumed by SanskritGrammar's dcs_text_phonostats.py.
 """
-import sys, os, csv, json, unicodedata, collections, glob, time
+import collections
+import csv
+import glob
+import json
+import os
+import sys
+import time
+import unicodedata
+
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate as tr
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from dcs_phono_engine import VOWELS, MODIF, slp1_words, segment, load_slots
+from dcs_phono_engine import MODIF, VOWELS, load_slots, segment, slp1_words
 
 ROOT = r"C:/Users/user/Documents/GitHub/VisualDCS/src/DCS-data-2026/conllu"
 FILES = os.path.join(ROOT, "files")

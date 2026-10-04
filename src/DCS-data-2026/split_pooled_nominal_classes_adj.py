@@ -56,9 +56,14 @@ GITHUB = os.path.abspath(os.path.join(REPO, ".."))
 sys.path.insert(0, HERE)
 # H3984's module -- the single source of the membership test, the dictionary index
 # loader, the five-verdict adjudicator and the syllable counter.
-from split_pooled_nominal_classes import (          # noqa: E402
-    adjudicate, ant_pair, in_ant_bucket, iast_to_devanagari,
-    load_dict_index, load_g2, syllable_count,
+from split_pooled_nominal_classes import (  # noqa: E402
+    adjudicate,
+    ant_pair,
+    iast_to_devanagari,
+    in_ant_bucket,
+    load_dict_index,
+    load_g2,
+    syllable_count,
 )
 
 DEFAULT_DB = os.path.join(HERE, "dcs_full.sqlite")
@@ -425,7 +430,7 @@ def main():
 # ---------------------------------------------------------------- report
 
 def _ids(seq):
-    return "`%s`" % ",".join(sorted(seq)) if seq else "—"
+    return "`{}`".format(",".join(sorted(seq))) if seq else "—"
 
 
 def _pin_prose(pin, mw, pwg):
@@ -437,17 +442,14 @@ def _pin_prose(pin, mw, pwg):
     pwg_at = sorted(pwg.get(pin["at_devanagari"], ()))
     pwg_ant = sorted(pwg.get(pin["ant_devanagari"], ()))
     parts = [
-        "The DCS lemma_id **%d** (`%s`, %s tokens) is tagged **ADJ**, which is exactly why "
+        f"The DCS lemma_id **{pin['lemma_id']}** (`{pin['lemma']}`, {pin['adjTokens']:,} tokens) is tagged **ADJ**, which is exactly why "
         "it fell outside Sangram G2's `upos='NOUN'` universe and could not be classified by "
         "H3984. This pass reaches it."
-        % (pin["lemma_id"], pin["lemma"], f"{pin['adjTokens']:,}"),
-        "MW indexes %s under %s and %s under %s (verdict: `%s`)."
-        % (pin["at_devanagari"], _ids(mw_at), pin["ant_devanagari"], _ids(mw_ant),
+        "MW indexes {} under {} and {} under {} (verdict: `{}`).".format(pin["at_devanagari"], _ids(mw_at), pin["ant_devanagari"], _ids(mw_ant),
            pin["perDictionary"].get("mw")),
-        "PWG indexes %s under %s and %s under %s (verdict: `%s`)."
-        % (pin["at_devanagari"], _ids(pwg_at), pin["ant_devanagari"], _ids(pwg_ant),
+        "PWG indexes {} under {} and {} under {} (verdict: `{}`).".format(pin["at_devanagari"], _ids(pwg_at), pin["ant_devanagari"], _ids(pwg_ant),
            pin["perDictionary"].get("pwg")),
-        "Combined verdict: **`%s`**." % pin["verdict"],
+        "Combined verdict: **`{}`**.".format(pin["verdict"]),
     ]
     if pin["verdict"] == "one_lexeme_two_spellings":
         parts.append(
@@ -475,10 +477,9 @@ def write_report(payload, by_verdict, VERDICTS, recon, ok, ii_mono, ii_poly):
     A("## What this measures, and what it refuses to do")
     A("")
     A("H3984 split the `-ant` class over Sangram G2, whose universe is `upos='NOUN'`. That "
-      "reached **%s of the class's %s tokens (%.1f %%)** and declared the rest unreached ON "
+      "reached **{} of the class's {} tokens ({:.1f} %)** and declared the rest unreached ON "
       "PURPOSE. The remaining mass is ADJ, and no committed asset carries a per-lemma "
-      "inventory for it: `paradigm_nominal.json` caps `topLemmas` at 25."
-      % (f"{pool['byUpos'].get('NOUN', 0):,}", f"{pool['tokens']:,}",
+      "inventory for it: `paradigm_nominal.json` caps `topLemmas` at 25.".format(f"{pool['byUpos'].get('NOUN', 0):,}", f"{pool['tokens']:,}",
          100.0 - pool["adjShareOfTokens"]))
     A("")
     A("This pass **counts** that surplus from `dcs_full.sqlite`. Nothing here is estimated, "
@@ -516,7 +517,7 @@ def write_report(payload, by_verdict, VERDICTS, recon, ok, ii_mono, ii_poly):
     for v in VERDICTS:
         d = payload["antAdjByVerdict"][v]
         A(f"| `{v}` | {d['tokens']:,} | {d['lemmaIds']:,} | "
-          f"{', '.join('`%s`' % x for x in d['exemplars'][:8]) or '—'} |")
+          f"{', '.join('`{}`'.format(x) for x in d['exemplars'][:8]) or '—'} |")
     A("")
     A("### The pinned pair")
     A("")
@@ -553,7 +554,7 @@ def write_report(payload, by_verdict, VERDICTS, recon, ok, ii_mono, ii_poly):
     for label, rows in (("monosyllabic (śrī/strī/dhī type)", ii_mono),
                         ("polysyllabic (devī/nadī type)", ii_poly)):
         A(f"| {label} | {sum(r['adjTokens'] for r in rows):,} | {len(rows):,} | "
-          f"{', '.join('`%s`' % r['lemma'] for r in rows[:8]) or '—'} |")
+          f"{', '.join('`{}`'.format(r['lemma']) for r in rows[:8]) or '—'} |")
     A("")
     A("## 4 · Reconciliation")
     A("")

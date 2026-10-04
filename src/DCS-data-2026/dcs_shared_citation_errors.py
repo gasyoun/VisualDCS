@@ -27,7 +27,13 @@ out-of-range number is reported with its reason, not dropped.
 
 Paths default to the in-repo layout; override with env vars F4_DCS_DB / F4_CAND / F4_REPORTS.
 """
-import sqlite3, csv, json, re, sys, os, hashlib
+import csv
+import hashlib
+import json
+import os
+import re
+import sqlite3
+import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
@@ -167,15 +173,15 @@ def main():
             rec["reason"] = "text-absent-from-DCS-or-ambiguous-sigil"
             out.append(rec); continue
         if sig != skey:
-            rec["note"] = "recension marker '%s' dropped for lookup; DCS carries one recension only" % sig
+            rec["note"] = "recension marker '{}' dropped for lookup; DCS carries one recension only".format(sig)
         rec["dcs_text"], rec["dcs_text_id"] = fact["dcs_name"], fact["dcs_text_id"]
         if num is None:
             rec["reason"] = "reference-has-no-verse-number"
             out.append(rec); continue
         if fact["single_chapter_id"] is None:
             if num > (fact["total_verses"] or 0):
-                rec["reason"] = ("edition-mismatch: Petersburg continuous no. %d exceeds DCS "
-                                 "total verses %d (vulgate vs critical edition)" % (num, fact["total_verses"]))
+                rec["reason"] = (f"edition-mismatch: Petersburg continuous no. {num} exceeds DCS "
+                                 f"total verses {fact['total_verses']} (vulgate vs critical edition)")
             else:
                 rec["reason"] = ("edition-mismatch: multi-chapter DCS text uses per-chapter "
                                  "(ch,verse); no concordance from Petersburg continuous no.")
@@ -184,7 +190,7 @@ def main():
             rec["reason"] = "verse-number-out-of-range for single-chapter DCS text (recension gap?)"
             out.append(rec); continue
         lemmas_iast = verse_lemmas(q, fact["single_chapter_id"], num)
-        rec["dcs_locus"] = "%s v.%d" % (fact["dcs_name"], num)
+        rec["dcs_locus"] = f"{fact['dcs_name']} v.{num}"
         cand_iast = norm(rec["lemma_iast"])
         present = any(cand_iast == L or cand_iast in L or L in cand_iast for L in lemmas_iast if L)
         rec["lemma_present"] = "yes" if present else "no"
@@ -232,12 +238,10 @@ def main():
     with open(json_path, "w", encoding="utf-8") as fh:
         json.dump(summary, fh, ensure_ascii=False, indent=2)
 
-    print("F4-DCS shared-erroneous-citation test — DCS passage corpus (%s)" % os.path.basename(db))
-    print("candidates: %d   |   with a mappable DCS text: %d   |   locus-resolved: %d"
-          % (len(out), len(mapped), summary["candidates_locus_resolved"]))
+    print("F4-DCS shared-erroneous-citation test — DCS passage corpus ({})".format(os.path.basename(db)))
+    print(f"candidates: {len(out)}   |   with a mappable DCS text: {len(mapped)}   |   locus-resolved: {summary['candidates_locus_resolved']}")
     print("status:", dict(status_ct))
-    print("VERIFIED: %d   ERRONEOUS (need hand adjudication): %d"
-          % (status_ct.get("VERIFIED", 0), status_ct.get("ERRONEOUS", 0)))
+    print(f"VERIFIED: {status_ct.get('VERIFIED', 0)}   ERRONEOUS (need hand adjudication): {status_ct.get('ERRONEOUS', 0)}")
     print("reports:", csv_path, "|", json_path)
     con.close()
 

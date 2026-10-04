@@ -41,7 +41,7 @@ except Exception:
     pass
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from parse_conllu import parse_text, HERE          # reuse the M1 parser
+from parse_conllu import HERE, parse_text  # reuse the M1 parser
 
 DICT_PATH = os.path.join(HERE, "conllu", "lookup", "dictionary.csv")
 DEFAULT_DB = os.path.join(HERE, "dcs.sqlite")

@@ -31,7 +31,7 @@ SCHEMA_DIR = CONTRACTS_DIR / "schemas"
 REPORTS_DIR = HERE / "reports"
 
 sys.path.insert(0, str(HERE))
-from contract_ids import verb_cell_id, nominal_cell_id, passage_id  # noqa: E402
+from contract_ids import nominal_cell_id, passage_id, verb_cell_id  # noqa: E402
 
 CONTRACT_VERSION = "1.0.0"
 

@@ -47,9 +47,9 @@ def main():
             continue
         out_rows.append({
             "anchor_type": "id-gra",
-            "anchor_id": "gra:%s" % row["gra_L"],
+            "anchor_id": "gra:{}".format(row["gra_L"]),
             "anchor_key_slp1": row["gra_key1"],
-            "target_locus": "vedaweb:%s:%s" % (loc, resource_id),
+            "target_locus": "vedaweb:{}:{}".format(loc, resource_id),
             "link_type": "translation-witness",
             "source_dataset": "VisualDCS/non-derived/vedaweb/grassmann_de_1876_1877.json",
             "match_method": "id-link",
@@ -63,8 +63,7 @@ def main():
         writer.writeheader()
         writer.writerows(out_rows)
 
-    print("crosswalk rows: %d, emitted: %d, unmatched (no layer location): %d" % (
-        len(crosswalk_rows), len(out_rows), unmatched))
+    print(f"crosswalk rows: {len(crosswalk_rows)}, emitted: {len(out_rows)}, unmatched (no layer location): {unmatched}")
 
 
 if __name__ == "__main__":
