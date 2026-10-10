@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 04-10-2026_
+_Created: 06-06-2026 · Last updated: 10-10-2026_
 
 # Changelog
 
@@ -9,6 +9,21 @@ Day-to-day session state lives in [`.ai_state.md`](https://github.com/gasyoun/Vi
 durable, user-facing milestones.
 
 ## [Unreleased]
+
+- **Двухъярусный канон лигатур + реген-фикс Fonetika (H6391, MG ruling A1 10-10)** —
+  light keep-set `Fonetika` re-landed after the H5884 untrack:
+  [`regen-2026/`](https://github.com/gasyoun/VisualDCS/tree/main/derived-data/Fonetika/regen-2026)
+  (builders + CSVs, ~1 MB) is byte-deterministic now (sorted file walk, canonical
+  `-count, slp1` tie-break, LF-only; counts identical on every row to the 04-09 snapshot),
+  legacy `Все лигатуры.xlsx` cross-check documented **20/20 membership** (rank drift
+  `dy`↔`ddh` ruled); `--root`/`DCS_CONLLU_ROOT` replaces the hardcoded Windows corpus path;
+  cross-check moved pandas → openpyxl. NEW
+  [`ligature-canon/`](https://github.com/gasyoun/VisualDCS/tree/main/derived-data/Fonetika/ligature-canon):
+  union of four inventories — ustav-chat appendix 788 (measured; «~280» is the textbook's
+  nominal quote) · attested-807 789 distinct · Rigveda-460 · DCS-999 — 1082 rows with
+  source flags + DCS rank/count, plus `coverage_topn.tsv` (top-10 = 31.37 % of
+  3,265,549 ligature tokens; top-280 = 99.27 %); teaching order stays DCS-frequency.
+  kosha: `dcs-grapheme-frequency` regen mark FAIL → PASS, new `ligature-canon-union` row.
 
 - **Тяжёлый derived-data перестал быть в git, история переписана `git filter-repo` (H5884)** —
   pack `.git` ужался 3.59 → 1.90 GiB, локальные копии остались на диске untracked-игнорируемыми.

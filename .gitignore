@@ -69,7 +69,19 @@ non-derived/.claude/
 /derived-data/Imennye-formy/
 /derived-data/Mestoimeniya/
 /derived-data/QL/
-/derived-data/Fonetika/
+# Fonetika: heavy raw (Works-Share-Lig) stays untracked (H5884); the light
+# science keep-set is re-tracked per H6391 (regen-2026 builders+CSVs ~1 MB,
+# varga-series-diachrony, ligature-canon two-tier canon, README, small legacy
+# .xlsx cross-check inputs).
+/derived-data/Fonetika/*
+!/derived-data/Fonetika/README.md
+!/derived-data/Fonetika/regen-2026/
+!/derived-data/Fonetika/varga-series-diachrony/
+!/derived-data/Fonetika/ligature-canon/
+!/derived-data/Fonetika/Все лигатуры.xlsx
+!/derived-data/Fonetika/Двухсимвольные лигатуры.xlsx
+!/derived-data/Fonetika/Исходные данные алфавитов.xlsx
+!/derived-data/Fonetika/Частотные алфавиты Санскрита по периодам.xlsx
 /derived-data/Chasticy/
 /derived-data/Samsaadhanii-DCS-SH-alignment/
 /derived-data/Korrelyacii/
