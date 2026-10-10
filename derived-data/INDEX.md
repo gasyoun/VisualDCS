@@ -1,6 +1,6 @@
 # derived-data — index
 
-_Created: 02-07-2026 · Last updated: 05-09-2026_
+_Created: 02-07-2026 · Last updated: 10-10-2026_
 
 Catalogue of `VisualDCS/derived-data/` — the **DCS-corpus** half of a two-repo-root
 split. The **non-DCS** half (dictionaries, manuscript catalogs, reference/lecture
@@ -72,7 +72,7 @@ Current total: **849 files, 3.5GB — all tracked in git.** (The drop from pass-
 | `Mestoimeniya` | 12MB | 8 | Pronoun combination/case-distribution data + `Works-Share-PRON` |
 | `Chasticy` | 0.4MB | 1 | Particle-combination frequency table |
 | `Korrelyacii` | <0.1MB | 1 | yad/tad correlative-form correlation table |
-| `Fonetika` | 1MB | 6 | Phonetics: ligature tables, historical alphabet frequency + `Works-Share-Lig` |
+| `Fonetika` | 1MB+ | 6+ | Phonetics: ligature tables, historical alphabet frequency. Light keep-set **tracked** since H6391: [`regen-2026/`](https://github.com/gasyoun/VisualDCS/tree/main/derived-data/Fonetika/regen-2026) (byte-deterministic builders + CSVs), [`varga-series-diachrony/`](https://github.com/gasyoun/VisualDCS/tree/main/derived-data/Fonetika/varga-series-diachrony), [`ligature-canon/`](https://github.com/gasyoun/VisualDCS/tree/main/derived-data/Fonetika/ligature-canon) (two-tier canon, H6391) + small legacy `.xlsx` cross-check inputs; only `Works-Share-Lig` stays untracked |
 | `Ramayana` | 187MB | 9 | Rāmāyaṇa most-frequent-words study, dictionary Pareto analysis, highlighted-names dictionary |
 | `Paralleli-v-tekstah-korpusa-SRC` | 1.5GB | 606 | Corpus-wide parallel-passage search — **still the largest folder here**; split out of `Paralleli-v-sanskritskih-tekstah` (see [`../non-derived/INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/INDEX.md) for its philological counterpart). See "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" below for its internal structure |
 | [`Corpus-Delta-2021-2026`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/REPORT.md) | 0.1MB | 8 | H686: `DCS-data-2021/` vs `DCS-data-2026/dcs_full.sqlite` delta stats (corpus growth, POS-bucket shift, top-200 lemma frequency drift) + verdict — 2021 is **not** superseded, keep it (for corpus *statistics* it IS superseded — never compute a current number from it). Plus the [`DRIFT_INTERPRETATION.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Corpus-Delta-2021-2026/DRIFT_INTERPRETATION.md) supplement: what the drift means (the corpus went Vedic), per-10k rate-drift CSV, all-texts token-delta CSV, shared-lexicon POS shift, a-privative lemmatization-drift diagnosis |
