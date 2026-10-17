@@ -33,7 +33,7 @@ IAST; assumes nothing about DCS internals.
 
 ## Provenance
 
-- Handoff: [H1407](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1407-Fable_VisualDCS_deep-manual-dcs-corpus-data-layer-wave4_20.07.26.md)
+- Handoff: [H1407](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1407-Fable_VisualDCS_deep-manual-dcs-corpus-data-layer-wave4_20.07.26.md)
   (Wave 4 of the org deep-manuals programme; plan set indexed at
   [PLAN_ORG_DEEP_MANUALS_FABLE_WAVES_2026H2.md](https://github.com/gasyoun/Uprava/blob/main/docs/PLAN_ORG_DEEP_MANUALS_FABLE_WAVES_2026H2.md)).
 - Model: Fable 5 (`claude-fable-5`), 26-07-2026.

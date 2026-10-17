@@ -104,7 +104,7 @@ the DCS-corpus half of a personal Sanskrit-linguistics research archive. **Not**
 the VisualDCS dashboard pipeline (`../src/DCS-data-2021/`, `../src/DCS-data-2026/`) — treat as
 reference material to mine for ideas or figures.
 
-**Upstream origin confirmed (17-09-2026, [H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md)):**
+**Upstream origin confirmed (17-09-2026, [H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md)):**
 this folder is the landed copy of MG's Yandex-Disk `kRtam/Композиты/` (12 objects,
 266,097,580 B). All twelve are present here: the six text files byte-for-byte with CRLF→LF
 normalisation (each size delta equals its exact line count), the two >95 MB payloads as 7-Zip

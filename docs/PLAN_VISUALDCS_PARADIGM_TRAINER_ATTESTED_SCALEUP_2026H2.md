@@ -14,7 +14,7 @@ and the org-wide quantification flagged in
 Staged 19-07-2026 via [`/ask-batch`](https://github.com/gasyoun/claude-config/blob/main/commands/ask-batch.md)
 by Fable 5 (`claude-fable-5`); interview rulings in
 [`ASK_BATCH_STAGING_PEDAGOGY_2026-07.md`](https://github.com/gasyoun/Uprava/blob/main/ASK_BATCH_STAGING_PEDAGOGY_2026-07.md).
-Handoff: [H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md)
+Handoff: [H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md)
 (Sonnet 5 `claude-sonnet-5`, queued).
 
 ## Decisions taken (19-07-2026)
@@ -27,7 +27,7 @@ Handoff: [H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1299-Sonn
 | 4 | No new engine | Extend the existing static HTML/JS pattern (self-contained, double-click, no server) — the repo's house style; no framework |
 | 5 | Downstream | Export a trainer-consumable JSON so Systema/kosha can pull items later; registered in kosha's manifest when it ships |
 
-## Implementation steps ([H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md))
+## Implementation steps ([H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md))
 
 1. **Data build**: extend the generation path that produces
    [`visual/paradigm_endings.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_endings.json)

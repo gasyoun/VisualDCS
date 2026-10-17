@@ -2,7 +2,7 @@
 
 _Created: 08-05-2026 · Last updated: 01-10-2026 (A22)_
 
-> **Вердикт 01-10-2026 ([H5574](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5574-OxAlpha_SanskritSpellCheck_roadmap-verdict-w2-spack-afanasiy-visualdcs_01.10.26.md), wave 2) — REFRESH.**
+> **Вердикт 01-10-2026 ([H5574](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5574-OxAlpha_SanskritSpellCheck_roadmap-verdict-w2-spack-afanasiy-visualdcs_01.10.26.md), wave 2) — REFRESH.**
 > Дорожная карта живая: открыты два неминтированных пункта (связка «панель контекстов →
 > пассаж в D3»; landing-карточки без отдельных файлов виджетов) и активно направление
 > 2026H2 «learner-контракты» (план — [docs/PLAN_VISUALDCS_SYSTEMA_LEARNER_CONTRACTS_2026H2.md](https://github.com/gasyoun/VisualDCS/blob/main/docs/PLAN_VISUALDCS_SYSTEMA_LEARNER_CONTRACTS_2026H2.md),

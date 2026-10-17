@@ -9,7 +9,7 @@ standing "one metadoc per important document" convention (`~/.claude/CLAUDE.md`)
 
 ## Subject
 - **Document:** [roadmap.md](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md)
-- **Purpose:** Русская дорожная карта VisualDCS — документ фактического состояния (verb paradigm browser, context panel, corpus imports). Wave-2 verdict 01-10-2026 ([H5574](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5574-OxAlpha_SanskritSpellCheck_roadmap-verdict-w2-spack-afanasiy-visualdcs_01.10.26.md)): REFRESH — the roadmap is live, with two unminted items open (the context-panel → D3 passage deep link (`?form=`) chain; A22 landed as #149).
+- **Purpose:** Русская дорожная карта VisualDCS — документ фактического состояния (verb paradigm browser, context panel, corpus imports). Wave-2 verdict 01-10-2026 ([H5574](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5574-OxAlpha_SanskritSpellCheck_roadmap-verdict-w2-spack-afanasiy-visualdcs_01.10.26.md)): REFRESH — the roadmap is live, with two unminted items open (the context-panel → D3 passage deep link (`?form=`) chain; A22 landed as #149).
 - **Audience:** Agents extending VisualDCS surfaces (`/prior-art` first — the roadmap is the single planning doc), plus the human steering the D3 deep-link work.
 - **Format / contract:** «Документ фактического состояния» — statuses must be re-derived from the repo (issues, shipped tags), never aspirational; the README §Roadmap section links here as the canonical plan.
 

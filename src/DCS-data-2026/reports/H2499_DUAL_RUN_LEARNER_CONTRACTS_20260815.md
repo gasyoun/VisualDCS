@@ -6,7 +6,7 @@ _Created: 15-08-2026 · Last updated: 15-08-2026_
 
 **Source handoff:** [H2481 (Grok 4.5) — Publish versioned VisualDCS learner contracts](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H2481-Grok_VisualDCS_visualdcs-systema-learner-contract-release_08.08.26.md)
 
-**Residual:** [H2499 (Grok 4.6) — Dual-run compare for H2481 VisualDCS learner-contract release](https://github.com/gasyoun/Uprava/blob/main/handoffs/H2499-Grok_VisualDCS_h2481-grok-dual-run-compare_09.08.26.md)
+**Residual:** [H2499 (Grok 4.6) — Dual-run compare for H2481 VisualDCS learner-contract release](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H2499-Grok_VisualDCS_h2481-grok-dual-run-compare_09.08.26.md)
 
 **Verdict:** **keep #110.** Three payloads are byte-identical to the published release. Independent source-pin parity found zero drift. Manifest timestamps were not rewritten.
 

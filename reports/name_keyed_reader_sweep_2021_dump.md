@@ -5,7 +5,7 @@ _Created: 05-08-2026 · Last updated: 05-08-2026_
 Follow-up sweep recommended by [issue #70](https://github.com/gasyoun/VisualDCS/issues/70)
 (*"Worth sweeping the other `timws.csv` / `10.csv` readers in this repo and in sibling
 repos for the same name-keyed pattern"*), executed as
-[H2293](https://github.com/gasyoun/Uprava/blob/main/handoffs/H2293-Opus_VisualDCS_name-keyed-reader-sweep-issue-70_05.08.26.md)
+[H2293](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H2293-Opus_VisualDCS_name-keyed-reader-sweep-issue-70_05.08.26.md)
 on Opus 5 (`claude-opus-5`).
 
 ## The pattern being hunted

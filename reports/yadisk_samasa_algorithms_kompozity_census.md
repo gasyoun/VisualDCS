@@ -2,7 +2,7 @@
 
 _Created: 17-09-2026 · Last updated: 17-09-2026_
 
-[H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md)
+[H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md)
 (class `data`, OxAlpha lane). Scope: the two Yandex-Disk folders named in the mission —
 `yadisk:Сложные слова (samāsa) в санскрите (2)/Алгоримы обработки сложных слов (для искуственного интеллекта)/`
 (the *method* half, 8 objects) and `yadisk:kRtam/Композиты/` (the *data* half, 12 objects,

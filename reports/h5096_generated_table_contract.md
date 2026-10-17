@@ -2,7 +2,7 @@
 
 _Created: 18-09-2026 · Last updated: 18-09-2026_
 
-Executed under [H5096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5096-OxAlpha_VisualDCS_generated-table-roundtrip-contract_18.09.26.md) (OxAlpha tier, executed by GLM `zai-coding-plan/glm-5.3-flash`).
+Executed under [H5096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5096-OxAlpha_VisualDCS_generated-table-roundtrip-contract_18.09.26.md) (OxAlpha tier, executed by GLM `zai-coding-plan/glm-5.3-flash`).
 Generalizes the defensive method proven in PR #136 (`c01838f`, Kompozity
 `mw_h3_parent_compounds.tsv`: non-colliding child separator, LF-explicit
 write, re-read-and-assert round trip) into one shared validator:

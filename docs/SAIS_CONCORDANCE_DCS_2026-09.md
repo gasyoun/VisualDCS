@@ -2,8 +2,8 @@
 
 _Created: 18-09-2026 · Last updated: 18-09-2026_
 
-_Handoff: [H5153](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5153-OxAlpha_VisualDCS_sais-concordance-dcs-master_18.09.26.md)
-(OxAlpha `zai-coding-plan/glm-5.3-flash`) · predecessor: [H5137](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5137-OxAlpha_Uprava_6851-l16-suffix-array-doc-retrieval_18.09.26.md)
+_Handoff: [H5153](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5153-OxAlpha_VisualDCS_sais-concordance-dcs-master_18.09.26.md)
+(OxAlpha `zai-coding-plan/glm-5.3-flash`) · predecessor: [H5137](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5137-OxAlpha_Uprava_6851-l16-suffix-array-doc-retrieval_18.09.26.md)
 (MIT 6.851 L16 study, demo-scale prototype) · MIT 6.851 Spring'21
 [L16](https://courses.csail.mit.edu/6.851/spring21/lectures/L16.html) ·
 [L17](https://courses.csail.mit.edu/6.851/spring21/lectures/L17.html) ·

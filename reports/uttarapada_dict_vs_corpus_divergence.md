@@ -166,6 +166,6 @@ python derived-data/Kompozity/build_uttarapada_dict_vs_corpus.py
 Reads the MWderivations index as a sibling clone (`../MWderivations/issue15/…`, overridable with
 `--mw-tsv`) and the two Kompozity CSVs in place; writes the join TSV and prints every diagnostic table
 above. Planned in
-[H1328](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1328-Opus_VisualDCS_kompozity-mw-uttarapada-join-dict-vs-corpus_19.07.26.md).
+[H1328](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1328-Opus_VisualDCS_kompozity-mw-uttarapada-join-dict-vs-corpus_19.07.26.md).
 
 _Dr. Mārcis Gasūns_

@@ -8,7 +8,7 @@ _Created: 19-07-2026 · Last updated: 19-07-2026_
 
 Execution brief for scaling the 6-root paradigm browser to the whole attested verb
 space with a trainer mode. Audience: the Sonnet-tier agent executing
-[H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md).
+[H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md).
 
 ## Provenance
 

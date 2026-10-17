@@ -114,7 +114,7 @@ durable, user-facing milestones.
   [checklist](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md) §4.
 - **SA-IS concordance layer over the DCS 2026 master — compiled suffix array + LCP +
   color arrays, 5,688,416 tokens, four query modes
-  ([H5153](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5153-OxAlpha_VisualDCS_sais-concordance-dcs-master_18.09.26.md),
+  ([H5153](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5153-OxAlpha_VisualDCS_sais-concordance-dcs-master_18.09.26.md),
   OxAlpha tier, executed by GLM (`zai-coding-plan/glm-5.3-flash`)).**
   [`tools/sais_concordance.py`](https://github.com/gasyoun/VisualDCS/blob/main/tools/sais_concordance.py)
   builds a linear-time SA-IS suffix array (`pydivsufsort.divsufsort`, system
@@ -136,7 +136,7 @@ durable, user-facing milestones.
    [`docs/SAIS_CONCORDANCE_DCS_2026-09.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/SAIS_CONCORDANCE_DCS_2026-09.md).
 - **Reusable round-trip + determinism contract for generated TSV/CSV artifacts —
   the PR #136 Kompozity defense generalized to four pilot builders
-  ([H5096](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5096-OxAlpha_VisualDCS_generated-table-roundtrip-contract_18.09.26.md),
+  ([H5096](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5096-OxAlpha_VisualDCS_generated-table-roundtrip-contract_18.09.26.md),
   OxAlpha tier, executed by GLM (`zai-coding-plan/glm-5.3-flash`)).**
   [`scripts/generated_table_contract.py`](https://github.com/gasyoun/VisualDCS/blob/main/scripts/generated_table_contract.py)
   enforces byte hygiene (UTF-8, no BOM, LF-only), delimiter safety, byte-exact
@@ -161,7 +161,7 @@ durable, user-facing milestones.
 
 - **Kompozity `mw_h3_parent_compounds.tsv` round-trip fixed — children serialized with a
   non-space separator, hard round-trip assertion added
-  ([H5064](https://github.com/gasyoun/Uprava/blob/main/handoffs/H5064-OxAlpha_VisualDCS_kompozity-tsv-roundtrip-advisory_17.09.26.md),
+  ([H5064](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5064-OxAlpha_VisualDCS_kompozity-tsv-roundtrip-advisory_17.09.26.md),
   OxAlpha tier, executed by GLM (`zai-coding-plan/glm-5.3-flash`)).**
   Five rows (TSV lines 191, 3497, 3969, 4203, 5999 — parents `ad VERB`, `cur VERB`,
   `tan VERB`, `turaṇya VERB`, `parī VERB`) lost round-trip fidelity because 1,228 distinct
@@ -177,7 +177,7 @@ durable, user-facing milestones.
   line 8101: 1073/1075); the column is advisory, the source is not edited, the parser re-counts.
 
 - **Yandex-Disk samāsa bundle censused — superseded, nothing landed
-  ([H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md),
+  ([H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md),
   OxAlpha tier, executed by Opus 5 (claude-opus-5[1m])).**
   [`reports/yadisk_samasa_algorithms_kompozity_census.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/yadisk_samasa_algorithms_kompozity_census.md)
   records the parity table for all 12 objects of `yadisk:kRtam/Композиты/` (266,097,580 B)
@@ -191,7 +191,7 @@ durable, user-facing milestones.
   `dcs-compound-dictionary`, `kompozity-names-compound-splits`, `uttarapada-dict-vs-corpus`
   and `samasa-trainer`. No new dataset row, no payload, no schema change; the trainer's
   DV/KD gold deficit stays open, with the papers logged as method prior art.
-- **Samsaadhanii DCS × Heritage alignment ingest landed ([H4739](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4739-OxAlpha_VisualDCS_xwalk-s5b-samsaadhanii-dcs-heritage_14.09.26.md),
+- **Samsaadhanii DCS × Heritage alignment ingest landed ([H4739](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H4739-OxAlpha_VisualDCS_xwalk-s5b-samsaadhanii-dcs-heritage_14.09.26.md),
   OxAlpha `z-ai/glm-5.3-flash`).** VALIDATION-ONLY (upstream
   [samsaadhanii/datasets](https://github.com/samsaadhanii/datasets) carries no
   LICENSE file): parity report + counts-only manifest for the 130,270-sentence
@@ -208,7 +208,7 @@ durable, user-facing milestones.
 
 - Added a root `AGENTS.md` agent-entrypoint stub (H4634): names itself the agent entrypoint, links [CLAUDE.md](CLAUDE.md), points at the [Uprava org standard](https://github.com/gasyoun/Uprava/blob/main/AGENTS.md).
 ### Added
-- **MW H3 parent-keyed compounds table landed ([H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md),
+- **MW H3 parent-keyed compounds table landed ([H4480](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H4480-OxAlpha_VisualDCS_samasa-algorithms-enrich_09.09.26.md),
   OxAlpha `z-ai/glm-5.3-flash`).**
   [`derived-data/Kompozity/mw_h3_parent_compounds.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/mw_h3_parent_compounds.tsv)
   (12,609 parent occurrences / 12,326 distinct MW H1/H2 headwords × H3 compound
@@ -224,7 +224,7 @@ durable, user-facing milestones.
   [`reports/h4480_samasa_algorithms_verdict.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/h4480_samasa_algorithms_verdict.md);
   shipped as [PR #130](https://github.com/gasyoun/VisualDCS/pull/130).
 - **Release-envelope-v1 adopted for the `learner-contracts-v1-2026-08-09` release
-  ([H4258](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4258-OxAlpha_VisualDCS_release-envelope-adapt_06.09.26.md),
+  ([H4258](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H4258-OxAlpha_VisualDCS_release-envelope-adapt_06.09.26.md),
   OxAlpha `z-ai/glm-5.3-flash`).**
   [`visual/contracts/envelopes/learner-contracts-v1-2026-08-09.envelope.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/envelopes/learner-contracts-v1-2026-08-09.envelope.json)
   pins the four release artifacts (contract manifest + three payloads) and the four
@@ -240,7 +240,7 @@ durable, user-facing milestones.
   [`docs/SPEC_RELEASE_ENVELOPE_V6_PORTFOLIO_2026.md`](https://github.com/gasyoun/Uprava/blob/main/docs/SPEC_RELEASE_ENVELOPE_V6_PORTFOLIO_2026.md);
   kosha H4239 pilot as reference. Additive only — canonical stores untouched.
 - **The `-ant` pool's ADJ half measured from the DCS master
-  ([H4011](https://github.com/gasyoun/Uprava/blob/main/handoffs/H4011-Opus_SanskritLexicography_nominal-ant-adj-half-dcs-master_03.09.26.md),
+  ([H4011](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H4011-Opus_SanskritLexicography_nominal-ant-adj-half-dcs-master_03.09.26.md),
   GAPS 14, Opus 5 `claude-opus-5`).**
   [`split_pooled_nominal_classes_adj.py`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/split_pooled_nominal_classes_adj.py)
   closes the residual H3984 left open. Sangram G2's universe is `upos='NOUN'`, which reached
@@ -403,7 +403,7 @@ durable, user-facing milestones.
 ## [2026-08-09] — v1 versioned learner contracts (H2481)
 
 ### Added
-- **[`visual/contracts/v1/`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/) — versioned VisualDCS learner contracts, v1 ([H2481](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H2481-Grok_VisualDCS_visualdcs-systema-learner-contract-release_08.08.26.md) dual-run override: Claude Sonnet 5 `claude-sonnet-5`; [H2499](https://github.com/gasyoun/Uprava/blob/main/handoffs/H2499-Grok_VisualDCS_h2481-grok-dual-run-compare_09.08.26.md) Grok 4.6 `grok-4.6` confirmed keep #110 on 15-08-2026).** First producer-side data contract release: three JSON payloads ([`verb-trainer.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/verb-trainer.json) · [`nominal-trainer.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/nominal-trainer.json) · [`concordance-passage.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/concordance-passage.json)) plus a [`manifest.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/manifest.json) with SHA-256 checksums, source pins, and a compatibility policy. Stable opaque IDs (`vdcs:v1:verb:`, `vdcs:v1:nominal:`, `vdcs:v1:passage:`) version learning objects for Systema-Sanscriticum import without a repo clone. Includes four JSON Schemas (Draft-07), 22-check acceptance tests, a deterministic-rebuild check, and a [build report](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/BUILD_REPORT_LEARNER_CONTRACTS_V1_20260809.md). Consumer guide: [`visual/contracts/README.md`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/README.md). Coverage: 7,689 verb roots · 31,753 nominal lemmas · 40 curated passages (22 reachable, 18 documented zero-link gaps). [PR #110](https://github.com/gasyoun/VisualDCS/pull/110).
+- **[`visual/contracts/v1/`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/) — versioned VisualDCS learner contracts, v1 ([H2481](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H2481-Grok_VisualDCS_visualdcs-systema-learner-contract-release_08.08.26.md) dual-run override: Claude Sonnet 5 `claude-sonnet-5`; [H2499](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H2499-Grok_VisualDCS_h2481-grok-dual-run-compare_09.08.26.md) Grok 4.6 `grok-4.6` confirmed keep #110 on 15-08-2026).** First producer-side data contract release: three JSON payloads ([`verb-trainer.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/verb-trainer.json) · [`nominal-trainer.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/nominal-trainer.json) · [`concordance-passage.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/concordance-passage.json)) plus a [`manifest.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/v1/manifest.json) with SHA-256 checksums, source pins, and a compatibility policy. Stable opaque IDs (`vdcs:v1:verb:`, `vdcs:v1:nominal:`, `vdcs:v1:passage:`) version learning objects for Systema-Sanscriticum import without a repo clone. Includes four JSON Schemas (Draft-07), 22-check acceptance tests, a deterministic-rebuild check, and a [build report](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/BUILD_REPORT_LEARNER_CONTRACTS_V1_20260809.md). Consumer guide: [`visual/contracts/README.md`](https://github.com/gasyoun/VisualDCS/blob/main/visual/contracts/README.md). Coverage: 7,689 verb roots · 31,753 nominal lemmas · 40 curated passages (22 reachable, 18 documented zero-link gaps). [PR #110](https://github.com/gasyoun/VisualDCS/pull/110).
 
 ## [2026-08-09] — A57 stratified human-gold annotation sample, n=30 (H2399)
 
@@ -940,7 +940,7 @@ relational dump, as a queryable, validated SQLite master. The 2021 dashboards ar
   new [`docs/PLAN_VISUALDCS_PARADIGM_TRAINER_ATTESTED_SCALEUP_2026H2.md`](https://github.com/gasyoun/VisualDCS/blob/main/docs/PLAN_VISUALDCS_PARADIGM_TRAINER_ATTESTED_SCALEUP_2026H2.md)
   (+ metadoc) staging the 6-root [`sanskrit_pxn_v4.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_pxn_v4.html)
   browser's generalisation to the whole attested verb space with a trainer mode
-  ([H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md), Sonnet, queued).
+  ([H1299](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H1299-Sonnet_VisualDCS_paradigm-trainer-attested-scaleup_19.07.26.md), Sonnet, queued).
 - Documentation and tooling for the DCS data and its lineage:
   - `src/DCS-data-2021/README.md` — provenance of the 2021 relational-DB export (Oliver Hellwig's
     Digital Corpus of Sanskrit), license/citation, and an inventory of raw tables vs. derived

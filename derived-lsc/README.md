@@ -116,7 +116,7 @@ changed):
 
 ## Kill-gate evaluation (H973, 03-09-2026) — PASS
 
-[H973](https://github.com/gasyoun/Uprava/blob/main/handoffs/H973-OxAlpha_VisualDCS_sanskrit-lsc-pilot_15.07.26.md)
+[H973](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H973-OxAlpha_VisualDCS_sanskrit-lsc-pilot_15.07.26.md)
 (OxAlpha `z-ai/glm-5.3-flash` via opencode) evaluated the pilot's kill-gate (insufficient
 diachronic coverage / unstable embeddings) and re-verified reproducibility in a fresh
 worktree off `origin/main` — both committed builders' `--selftest` green on 03-09-2026:
