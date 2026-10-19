@@ -14,9 +14,11 @@ durable, user-facing milestones.
   bundled 2022 NCC desktop DB (`non-derived/NCC/files/ncc/ncc.rar`) carries **no**
   `स्क` / `Sk` headword in any of its seven title tables (literal *or*
   punctuation-insensitive match), while `Skandapur…` appears 1,275 times in entry
-  **bodies** as a bibliographic reference. The committed bodies export is a
-  complete, order-faithful serialization of that database — 152,526 records,
-  identical `vol_page_col_seq` **sets and order**, 0 rows either way — so the gap
+  **bodies** as a bibliographic reference. The committed bodies export carries
+  exactly the same records, titles and order as that database — 152,526 records,
+  identical `vol_page_col_seq` **sets and order**, 0 rows either way, **0** titles
+  differing (bodies differ in 26 records; the archive *truncates* some, so the
+  export is the fuller of the two) — so the gap
   in `SktNewCatalogus_Catalogorum_combined.txt` belongs to the 2022 database, not
   the export, and the fascicles are **not recoverable from what we hold**. Records
   run in strict catalogue order to vol 39 p. 378 (`सुहोदित · Suhodita`), so the
