@@ -49,6 +49,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import unicodedata
 from pathlib import Path
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -146,17 +147,35 @@ def structured_id(rec: dict) -> str:
 
 
 def lookup_key(text: str) -> str:
-    """Punctuation-insensitive look-up key: letters only, lowercased.
+    """Punctuation-insensitive IAST look-up key: letters/digits only, lowercased.
 
-    Deliberately aggressive. The NCC prints variant titles parenthetical-first
-    (`(Smṛti)_Ratnamañjūṣā`, `(स्मृति)_रत्नमञ्जूषा`), so a literal `^Sk` test on
-    the printed column cannot see them — and a probe that only tests literal
-    prefixes would overstate the gap. Keeping every letter and dropping
-    parentheses/underscores/punctuation reproduces the NCC's own `sys/2D.txt`
-    index key (`(Smṛti)_Ratnamañjūṣā` -> `smṛtiratnamañjūṣā`) while letting a
-    hypothetical `(स्कन्द)पुराण` surface as `skandapurāṇa`.
+    Deliberately aggressive for the LATIN column. The NCC prints variant titles
+    parenthetical-first (`(Smṛti)_Ratnamañjūṣā`), so a literal `^Sk` test on the
+    printed column cannot see them — and a probe that only tests literal prefixes
+    would overstate the gap. Dropping parentheses/underscores/punctuation
+    reproduces the NCC's own `sys/2D.txt` index key (`(Smṛti)_Ratnamañjūṣā` ->
+    `smṛtiratnamañjūṣā`).
+
+    NOT usable on Devanagari: `isalnum()` is False for the virama (U+094D) and
+    for every combining mark, so `स्क` would collapse to `सक` and no Devanagari
+    title could ever match a `स्क` prefix. Use :func:`devanagari_head` there.
     """
     return "".join(ch for ch in text if ch.isalnum()).lower()
+
+
+def devanagari_head(text: str) -> str:
+    """Devanagari title with punctuation/parentheses dropped, combining marks KEPT.
+
+    The Devanagari counterpart of :func:`lookup_key`, and the only correct way to
+    test a `स्क` prefix: letters are kept, matras/virama (Unicode category M*) are
+    kept, and bracketing punctuation is dropped — so a parenthetical-first
+    `(स्कन्द)पुराण` surfaces as `स्कन्दपुराण` and still matches `स्क`, instead of
+    silently hiding from both the literal and the look-up-key tests.
+    """
+    return "".join(
+        ch for ch in text
+        if ch.isalpha() or unicodedata.category(ch).startswith("M")
+    ).strip()
 
 
 def probe_archive(sysdir: Path, combined: Path | None) -> dict:
@@ -171,11 +190,14 @@ def probe_archive(sysdir: Path, combined: Path | None) -> dict:
     # --- the discriminating counts, on TITLE columns only -------------------
     dev_sk = [r for r in records if r["dev"].startswith(SK_DEV_PREFIX)]
     iast_sk = [r for r in records if r["iast"].startswith(SK_IAST_PREFIX)]
-    # Normalization-aware test: would a look-up key ever reach the Sk block?
+    # Normalization-aware test: would a punctuation-insensitive head ever reach
+    # the Sk block? IAST goes through lookup_key; Devanagari goes through
+    # devanagari_head, because lookup_key drops the virama and would make this
+    # branch unfalsifiable (it could never match `स्क` for any Devanagari input).
     norm_sk = [
         r for r in records
         if lookup_key(r["iast"]).startswith("sk")
-        or lookup_key(r["dev"]).startswith(SK_DEV_PREFIX)
+        or devanagari_head(r["dev"]).startswith(SK_DEV_PREFIX)
     ]
     near_misses = {}
     for p in NEAR_PREFIXES:
@@ -201,7 +223,8 @@ def probe_archive(sysdir: Path, combined: Path | None) -> dict:
             for line in fh:
                 if line.startswith(SK_DEV_PREFIX):
                     dev_hit += 1
-                if lookup_key(line).startswith("sk"):
+                if (lookup_key(line).startswith("sk")
+                        or devanagari_head(line).startswith(SK_DEV_PREFIX)):
                     norm_hit += 1
         table_hits[name] = {"dev_sk_prefix": dev_hit, "normalized_sk_prefix": norm_hit}
 
@@ -228,12 +251,38 @@ def probe_archive(sysdir: Path, combined: Path | None) -> dict:
     fidelity: dict = {"checked": False}
     if combined is not None and combined.exists():
         combined_ids = []
+        combined_titles: dict[str, tuple[str, str]] = {}
+        combined_bodies: dict[str, str] = {}
         with combined.open(encoding="utf-8", errors="replace") as fh:
             for line in fh:
                 cols = line.rstrip("\n").split("\t")
-                if len(cols) >= 3:
+                if len(cols) >= 5:
+                    combined_ids.append(cols[2])
+                    combined_titles[cols[2]] = (cols[0], cols[1])
+                    combined_bodies[cols[2]] = cols[4]
+                elif len(cols) >= 3:
                     combined_ids.append(cols[2])
         master_ids = [structured_id(r) for r in records]
+        # ID/title fidelity is what the absence claim rests on; body-level
+        # fidelity is a SEPARATE, weaker fact, so it is measured rather than
+        # assumed. A handful of records carry a body only in the export (the
+        # archive leaves the master body empty), so "identical" is true of ids
+        # and titles, NOT universally of bodies.
+        body_diffs = [
+            {"id": r_id, "master_len": len(records[i]["body"]),
+             "combined_len": len(combined_bodies[r_id])}
+            for i, r_id in enumerate(master_ids)
+            if r_id in combined_bodies
+            and records[i]["body"] != combined_bodies[r_id]
+        ]
+        title_diffs = [
+            {"id": r_id,
+             "master": [records[i]["dev"], records[i]["iast"]],
+             "combined": list(combined_titles[r_id])}
+            for i, r_id in enumerate(master_ids)
+            if r_id in combined_titles
+            and (records[i]["dev"], records[i]["iast"]) != combined_titles[r_id]
+        ]
         fidelity = {
             "checked": True,
             "master_records": len(master_ids),
@@ -242,6 +291,11 @@ def probe_archive(sysdir: Path, combined: Path | None) -> dict:
             "identical_order": master_ids == combined_ids,
             "only_in_master": len(set(master_ids) - set(combined_ids)),
             "only_in_combined": len(set(combined_ids) - set(master_ids)),
+            "titles_differ": len(title_diffs),
+            "title_diff_examples": title_diffs[:3],
+            "bodies_differ": len(body_diffs),
+            "body_diff_examples": body_diffs[:3],
+            "bodies_identical": not body_diffs,
         }
 
     present = bool(dev_sk) or bool(iast_sk) or bool(norm_sk) or any(
@@ -343,13 +397,20 @@ def render(report: dict, extractor: str, notes: list[str]) -> str:
         a(f"| {vol} | {slot['records']:,} | {slot['max_page']} |")
     a("")
     f = report["export_fidelity"]
-    a("## Export fidelity: is `combined.txt` a complete serialization?\n")
+    a("## Export fidelity: is `combined.txt` a faithful serialization?\n")
     if f.get("checked"):
         a(f"- master well-formed records: {f['master_records']:,}")
         a(f"- committed `combined.txt` rows: {f['combined_rows']:,}")
         a(f"- identical structured-ID sets: **{f['identical_sets']}**")
         a(f"- identical order: **{f['identical_order']}**")
         a(f"- only in master: {f['only_in_master']} · only in combined: {f['only_in_combined']}")
+        a(f"- TITLES differing: **{f['titles_differ']}** of {f['master_records']:,}")
+        a(f"- BODIES differing: **{f['bodies_differ']}** of {f['master_records']:,} "
+          f"(ids/titles/order are what the absence claim rests on; bodies are "
+          f"measured separately and are NOT identical)")
+        for ex in f["body_diff_examples"]:
+            a(f"  - `{ex['id']}`: master {ex['master_len']:,} chars vs "
+              f"export {ex['combined_len']:,}")
     else:
         a("- not checked (combined.txt absent)")
     a("")
