@@ -48,6 +48,18 @@ each of which is a parenthetical-first printed form, not a `स्क` headword:
 | `So` | `(सोसले)_रेवणाराध्य` | `(Sosale)_Revaṇārādhya` | `25_274_b_1832` |
 | `Sr` | `(स्री)सागरसेन` | `(Srī)Sāgarasena` | `38_227_a_2866` |
 
+### What a naive grep will show — and why it does not contradict this
+
+`स्क` occurs **inside** ordinary Sanskrit words, so a bare `grep 'स्क'` over the
+archive returns plenty of hits that have nothing to do with the block: **1,135**
+titles contain `स्क` internally (`भास्कर` *sun*, `संस्कार` *saṃskāra*) and the raw
+`sys/1D.txt` holds **1,139** such occurrences. The claim here is about **titles that
+begin with `स्क`** — the catalogue's `स्कन्द…` block, which is what a reader needs in
+order to find (say) the `Skandapurāṇa` — and that count is `0`. Likewise `1,275` is a
+**case-insensitive** body count: a case-sensitive `grep` returns 1,274 and looks like a
+discrepancy, but the 1,275th is a Harvard-Kyoto tag `iti skandapurANe…`. The probe
+counts case-insensitively, as its prose states.
+
 ## 1. The archive and its schema
 
 `ncc.rar` (35,357,671 B, tracked) is a 2022-vintage NCC desktop database. 18
