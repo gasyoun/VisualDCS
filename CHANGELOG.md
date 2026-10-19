@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 10-10-2026_
+_Created: 06-06-2026 · Last updated: 19-10-2026_
 
 # Changelog
 
@@ -9,6 +9,22 @@ Day-to-day session state lives in [`.ai_state.md`](https://github.com/gasyoun/Vi
 durable, user-facing milestones.
 
 ## [Unreleased]
+
+- **NCC `स्क` block ruled out of the 2022 database (H7078, gate 1 of H6995)** — the
+  bundled 2022 NCC desktop DB (`non-derived/NCC/files/ncc/ncc.rar`) carries **no**
+  `स्क` / `Sk` headword in any of its seven title tables (literal *or*
+  punctuation-insensitive match), while `Skandapur…` appears 1,275 times in entry
+  **bodies** as a bibliographic reference. The committed bodies export is a
+  complete, order-faithful serialization of that database — 152,526 records,
+  identical `vol_page_col_seq` **sets and order**, 0 rows either way — so the gap
+  in `SktNewCatalogus_Catalogorum_combined.txt` belongs to the 2022 database, not
+  the export, and the fascicles are **not recoverable from what we hold**. Records
+  run in strict catalogue order to vol 39 p. 378 (`सुहोदित · Suhodita`), so the
+  `स्क` block sits past the database's frontier. Evidence + reproduce:
+  [`reports/NCC_SK_BLOCK_COVERAGE_2026-10-19.md`](https://github.com/gasyoun/VisualDCS/blob/main/reports/NCC_SK_BLOCK_COVERAGE_2026-10-19.md)
+  via [`tools/ncc_sk_block_probe.py`](https://github.com/gasyoun/VisualDCS/blob/main/tools/ncc_sk_block_probe.py).
+  Downstream: the `Skandapurāṇa` MSS canary stays INCONCLUSIVE, now with a measured
+  reason; no census row count moves.
 
 - **Двухъярусный канон лигатур + реген-фикс Fonetika (H6391, MG ruling A1 10-10)** —
   light keep-set `Fonetika` re-landed after the H5884 untrack:
