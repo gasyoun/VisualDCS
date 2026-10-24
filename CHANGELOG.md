@@ -19,9 +19,14 @@ durable, user-facing milestones.
   as a script it exits 0 without testing anything) close the gap that kept the red test
   invisible for 21 days. `dcs_shared_citation_errors.py` drops the hardcoded `C:\Users\user\…`
   defaults for a sibling-`csl-atlas` path (`F4_CAND` override) and refuses a missing input with
-  exit 2; the full re-run is reproducible again (0.2 s, **598** candidates against the committed
-  report's 587 — that committed artifact is stale by 11 sibling rows and was deliberately not
-  regenerated). `regen_widgets.collocations()` now flushes the last sentence instead of losing
+  exit 2; the full re-run is reproducible again (0.2 s) and the stale F4 evidence is refreshed:
+  the candidate list was re-frozen upstream ([csl-atlas#467](https://github.com/sanskrit-lexicon/csl-atlas/pull/467)
+  / H5248, 63 added / 52 removed, 587 → **598**), so the CSV/JSON and the
+  [F4 verdict](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/F4_DCS_SHARED_CITATION_ERRORS_VERDICT.md)
+  are regenerated — the one `ERRONEOUS` row is unchanged and the verdict does not move
+  (**0 adjudicated**, A10 stays 3/5); the JSON now pins the repo blob's LF sha256 (the old digest
+  was a CRLF working copy) and records the runner through `F4_MODEL`.
+  `regen_widgets.collocations()` now flushes the last sentence instead of losing
   every pair from the corpus's final sentence.
 
 - **Bug hunt 24.10.2026 — release envelope red, fresh-clone DB decoy fixed (H1, H2)** —
