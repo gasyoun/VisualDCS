@@ -10,6 +10,20 @@ durable, user-facing milestones.
 
 ## [Unreleased]
 
+- **Bug hunt fix pass 24.10.2026 — the tests are enforced, the F4 tool runs anywhere** —
+  follow-up to the same-day hunt (three requested MEDIUMs). `tests/test_nominal_dashboard.js`
+  stops asserting "exactly one inline `<script>`" (H5741 added the class-split panel); it now
+  loads every local data script and runs every inline script in page order, asserting that
+  **both** panels render from their own data. New CI jobs `node-render-tests` (every
+  `tests/*.js`) and `python-tests` (the DB-free suite, plus the SA module under `pytest` — run
+  as a script it exits 0 without testing anything) close the gap that kept the red test
+  invisible for 21 days. `dcs_shared_citation_errors.py` drops the hardcoded `C:\Users\user\…`
+  defaults for a sibling-`csl-atlas` path (`F4_CAND` override) and refuses a missing input with
+  exit 2; the full re-run is reproducible again (0.2 s, **598** candidates against the committed
+  report's 587 — that committed artifact is stale by 11 sibling rows and was deliberately not
+  regenerated). `regen_widgets.collocations()` now flushes the last sentence instead of losing
+  every pair from the corpus's final sentence.
+
 - **Bug hunt 24.10.2026 — release envelope red, fresh-clone DB decoy fixed (H1, H2)** —
   day-mode `/bughunt` took the 03:00 slot that scored exit 4 (all providers cooled).
   Twelve findings in

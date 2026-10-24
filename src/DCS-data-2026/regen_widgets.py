@@ -243,19 +243,25 @@ def collocations(conn, top_lemmas=400, per=20):
     names = dict(conn.execute("SELECT lemma_id, lemma FROM lemma WHERE lemma_id IN ({})".format(",".join("?" * len(top))), top))
     topset = set(top)
     co = defaultdict(Counter)
+
+    def flush(bag):
+        uniq = set(bag)
+        for a in uniq & topset:
+            for b in uniq:
+                if a != b:
+                    co[a][b] += 1
+
     # stream tokens grouped by sentence
     cur_sid, bag = None, []
     for sid, lid in conn.execute(
             "SELECT sentence_id, lemma_id FROM token WHERE lemma_id IS NOT NULL "
             "AND upos IN ('NOUN','VERB','ADJ') ORDER BY sentence_id"):
         if sid != cur_sid:
-            uniq = set(bag)
-            for a in uniq & topset:
-                for b in uniq:
-                    if a != b:
-                        co[a][b] += 1
+            flush(bag)
             cur_sid, bag = sid, []
         bag.append(lid)
+    flush(bag)  # the loop only flushes on a sentence CHANGE; without this the last
+    #             sentence of the corpus would contribute no co-occurrence pair at all
     out = {}
     for lid in top:
         out[names.get(lid, str(lid))] = [

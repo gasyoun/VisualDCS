@@ -278,6 +278,31 @@ to carry the tag (keep SKIP only for explicitly foreign clones).
 - `sais_concordance.py` LCP/window handling — Windows lane frozen since 03-10-2026 and
   `pydivsufsort` is not installed here; needs a Windows re-verification, not a Mac run.
 
+## Addendum — fix pass, 24.10.2026
+
+The three offered MEDIUMs were requested and fixed in a follow-up PR:
+
+1. **M2 test restored.** `tests/test_nominal_dashboard.js` no longer asserts "exactly one inline
+   `<script>`"; it loads every local data `<script src>` and runs every inline script **in page
+   order**, then asserts both the grid and the H5741 class-split panel render from their own data
+   files. Green. Negative control: with the class-split data file removed the test fails (exit 1).
+2. **Tests are now enforced.** `.github/workflows/ci.yml` gains `node-render-tests` (every
+   `tests/*.js`) and `python-tests` (the DB-free suite plus the SA module under `pytest`). This is
+   what kept the red test invisible for 21 days.
+3. **M3 portable.** `dcs_shared_citation_errors.py` defaults the candidate list to the sibling
+   `csl-atlas` checkout (`F4_CAND` overrides), drops the dead `ABBR_LIST` constant, and refuses a
+   missing/empty input with exit 2 instead of a traceback. A full re-run now works and takes 0.2 s:
+   **598 candidates**, 567 mappable, 1 locus-resolved `ERRONEOUS`. That re-run also shows the
+   committed report is **stale** — it covers 587 candidates (2026-07-10), so 11 sibling rows have
+   never been adjudicated. The committed artifact was deliberately **not** regenerated here.
+4. **M1 fixed.** `regen_widgets.collocations()` flushes the final sentence; the toy repro now
+   yields `{2:1, 3:1, 4:1}`.
+
+**Correction to "What verified green".** `python3 test_concordance_sa.py` exits 0 **without running
+any test** — it is a `pytest` module with no `__main__`, so the earlier "PASS" was a false green.
+Under `python -m pytest` it is **4 passed / 4 skipped** (the compiled SA path skips, `pydivsufsort`
+absent). CI now runs it with `pytest`, not as a script.
+
 ## Reproduce
 
 ```bash

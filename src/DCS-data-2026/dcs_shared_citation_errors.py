@@ -25,7 +25,9 @@ Read-only against the DCS master; emits CSV + JSON reports with provenance and c
 denominators. Silent coverage caps are a defect, so every unmapped sigil/text and every
 out-of-range number is reported with its reason, not dropped.
 
-Paths default to the in-repo layout; override with env vars F4_DCS_DB / F4_CAND / F4_REPORTS.
+The master defaults to the in-repo layout; the candidate list defaults to the SIBLING
+`csl-atlas` checkout under the umbrella root. Override with env vars F4_DCS_DB / F4_CAND /
+F4_REPORTS; a missing input exits 2 with the path, never a traceback.
 """
 import csv
 import hashlib
@@ -40,10 +42,16 @@ sys.stderr.reconfigure(encoding="utf-8")
 from indic_transliteration import sanscript
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(os.path.dirname(HERE))          # …/VisualDCS
+GITHUB_ROOT = os.path.dirname(REPO_ROOT)                    # the umbrella checkout root
+
 DCS_FULL = os.environ.get("F4_DCS_DB") or os.path.join(HERE, "dcs_full.sqlite")
 DCS_CLEAN = os.path.join(HERE, "dcs.sqlite")
-CAND_CSV = os.environ.get("F4_CAND") or r"C:\Users\user\Documents\GitHub\csl-atlas\data\forensic\shared_rare_citations.csv"
-ABBR_LIST = r"C:\Users\user\Documents\GitHub\DCS\DCS-abbreviation-list.txt"
+# The candidate list lives in a SIBLING repo (csl-atlas), never in this one: default to the
+# umbrella layout (`<GitHub>/csl-atlas/…`) and override with F4_CAND. The old default was a
+# hardcoded `C:\Users\user\…` path, so the script could not start anywhere else.
+CAND_CSV = os.environ.get("F4_CAND") or os.path.join(
+    GITHUB_ROOT, "csl-atlas", "data", "forensic", "shared_rare_citations.csv")
 REPORTS = os.environ.get("F4_REPORTS") or os.path.join(HERE, "reports")
 
 # ---------------------------------------------------------------------------
@@ -125,9 +133,25 @@ def verse_lemmas(q, chapter_id, verse):
     return {norm(r[0]) for r in rows if r[0]}
 
 
+def _require_input(path, env_hint):
+    """Missing or empty input -> actionable error, never a traceback (and never a file)."""
+    if not os.path.isfile(path) or os.path.getsize(path) == 0:
+        print(f"ERROR: required input missing or empty: {path}", file=sys.stderr)
+        if env_hint:
+            print(f"       override with {env_hint}", file=sys.stderr)
+        return False
+    return True
+
+
 def main():
+    db = DCS_FULL if os.path.isfile(DCS_FULL) else DCS_CLEAN
+    if not (_require_input(db, "F4_DCS_DB") and _require_input(CAND_CSV, "F4_CAND")):
+        print("Nothing was read and no report was written.", file=sys.stderr)
+        return 2
+    if db == DCS_CLEAN:
+        print(f"NOTE: master not found, falling back to the pilot DB {os.path.basename(db)}",
+              file=sys.stderr)
     os.makedirs(REPORTS, exist_ok=True)
-    db = DCS_FULL if os.path.exists(DCS_FULL) else DCS_CLEAN
     con, q, prov, texts, chapters = load_dcs(db)
 
     text_facts = {}
@@ -247,4 +271,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

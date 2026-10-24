@@ -92,3 +92,47 @@ jobs:
         run: npm install
       - if: steps.check.outputs.has_pkg == 'true'
         run: npm test --if-present
+
+  # The repo's own render tests existed since H1472 but no workflow ran them — which is
+  # how test_nominal_dashboard.js stayed red from H5741 (03-10-2026) until the 24-10-2026
+  # bug hunt. Every tests/*.js is headless and needs no DB.
+  node-render-tests:
+    name: Node render tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+      - name: Run every tests/*.js
+        run: |
+          fail=0
+          for f in tests/*.js; do
+            echo "::group::$f"
+            node "$f" || fail=1
+            echo "::endgroup::"
+          done
+          exit $fail
+
+  # DB-free python tests. validate_past_tense_resplit.py needs the 878 MB master and is
+  # covered by dcs-validate.yml's DB build instead; test_concordance_sa.py is a pytest
+  # module with no __main__ (running it as a script exits 0 without testing anything).
+  python-tests:
+    name: Python contract tests (DB-free)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install test dependencies
+        run: pip install jsonschema numpy pytest
+      - name: Script tests
+        run: |
+          for t in test_paradigm_attested test_learner_contracts test_past_nonindicative_formation test_published_figures; do
+            echo "::group::$t"
+            python "src/DCS-data-2026/$t.py"
+            echo "::endgroup::"
+          done
+      - name: Pytest module (SA concordance, no DB, no network)
+        run: python -m pytest src/DCS-data-2026/test_concordance_sa.py -q
