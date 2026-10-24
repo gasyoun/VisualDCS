@@ -229,7 +229,10 @@ def main():
     sigil_ct = Counter(r["sigil"] for r in out)
     mapped = [r for r in out if r["dcs_text"]]
     summary = {
-        "handoff": "H203", "model": "Opus 4.8 (claude-opus-4-8)",
+        "handoff": "H203",
+        # Whoever RUNS this file is recorded, not the original handoff's model: a refresh must
+        # not inherit an attribution it did not earn (estate rule — model tier + exact version).
+        "model": os.environ.get("F4_MODEL") or "unrecorded — set F4_MODEL",
         "candidates_total": len(out),
         "status_counts": dict(status_ct),
         "unresolved_reasons": dict(reason_ct),

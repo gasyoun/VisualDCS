@@ -289,12 +289,19 @@ The three offered MEDIUMs were requested and fixed in a follow-up PR:
 2. **Tests are now enforced.** `.github/workflows/ci.yml` gains `node-render-tests` (every
    `tests/*.js`) and `python-tests` (the DB-free suite plus the SA module under `pytest`). This is
    what kept the red test invisible for 21 days.
-3. **M3 portable.** `dcs_shared_citation_errors.py` defaults the candidate list to the sibling
-   `csl-atlas` checkout (`F4_CAND` overrides), drops the dead `ABBR_LIST` constant, and refuses a
-   missing/empty input with exit 2 instead of a traceback. A full re-run now works and takes 0.2 s:
-   **598 candidates**, 567 mappable, 1 locus-resolved `ERRONEOUS`. That re-run also shows the
-   committed report is **stale** — it covers 587 candidates (2026-07-10), so 11 sibling rows have
-   never been adjudicated. The committed artifact was deliberately **not** regenerated here.
+3. **M3 portable, and the stale F4 evidence refreshed.** `dcs_shared_citation_errors.py` defaults
+   the candidate list to the sibling `csl-atlas` checkout (`F4_CAND` overrides), drops the dead
+   `ABBR_LIST` constant, and refuses a missing/empty input with exit 2 instead of a traceback. A
+   full re-run now works and takes 0.2 s: **598 candidates**, 567 mappable, 1 locus-resolved
+   `ERRONEOUS`. That re-run showed the committed report was **stale**: 587 candidates against the
+   current 598 — and not 11 appended rows but a *revised* list
+   ([csl-atlas#467](https://github.com/sanskrit-lexicon/csl-atlas/pull/467) / H5248: 63 added,
+   52 removed). The refresh landed in this pass: the CSV/JSON and
+   [`F4_DCS_SHARED_CITATION_ERRORS_VERDICT.md`](https://github.com/gasyoun/VisualDCS/blob/main/src/DCS-data-2026/reports/F4_DCS_SHARED_CITATION_ERRORS_VERDICT.md)
+   are regenerated against the re-frozen list; the one `ERRONEOUS` row is byte-identical and the
+   verdict does not move (**0 adjudicated**, A10 stays 3/5). The refresh also pins the repo blob's
+   LF sha256 — the old provenance had hashed a **CRLF** working copy of the 587-row list — and
+   records the runner model through `F4_MODEL` instead of inheriting the original handoff model.
 4. **M1 fixed.** `regen_widgets.collocations()` flushes the final sentence; the toy repro now
    yields `{2:1, 3:1, 4:1}`.
 
