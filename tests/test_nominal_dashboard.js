@@ -2,11 +2,16 @@
  * Headless render test for sanskrit_nominal_dashboard.html (H1472).
  *
  * The repo's dashboards are standalone, dependency-free pages with all JS inline, so
- * there is no bundler or test runner to hook into. This test extracts the page's own
- * inline <script> and executes it against a minimal DOM stub with the REAL generated
- * data (visual/paradigm_nominal_data.js), then asserts on the HTML it produces. It
- * catches what a JSON-schema check cannot: a runtime error in the render path, a field
- * the page reads but the generator never writes, and a silently empty grid.
+ * there is no bundler or test runner to hook into. This test loads the page's local
+ * data <script src> files and executes every inline <script> against a minimal DOM stub
+ * with the REAL generated data, then asserts on the HTML it produces. It catches what a
+ * JSON-schema check cannot: a runtime error in the render path, a field the page reads
+ * but the generator never writes, and a silently empty grid.
+ *
+ * H5741 (03-10-2026) added a SECOND inline <script> — the class-split panel — so the old
+ * "exactly one inline <script>" contract went red and stayed red because no workflow ran
+ * this file. Both panels are covered now: the test loads every local data script the page
+ * references and asserts the class-split panel renders from its own data file.
  *
  *   node tests/test_nominal_dashboard.js
  */
@@ -18,7 +23,6 @@ const assert = require('assert');
 
 const REPO = path.resolve(__dirname, '..');
 const HTML = path.join(REPO, 'sanskrit_nominal_dashboard.html');
-const DATA = path.join(REPO, 'visual', 'paradigm_nominal_data.js');
 
 let failures = 0;
 function check(name, fn) {
@@ -45,20 +49,46 @@ const document = {
 
 const sandbox = { window: {}, document, console };
 vm.createContext(sandbox);
-vm.runInContext(fs.readFileSync(DATA, 'utf8'), sandbox, { filename: 'paradigm_nominal_data.js' });
 
+// Load the page the way a browser does: its local data <script src> files in page
+// order, then every inline <script> in page order. Asserting on "exactly one inline
+// script" is what broke on H5741; the contract is "every panel renders", not the count.
 const html = fs.readFileSync(HTML, 'utf8');
-const scripts = [...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)].map(m => m[1]);
-assert.strictEqual(scripts.length, 1, 'expected exactly one inline <script> in the page');
+const localSrcs = [...html.matchAll(/<script[^>]*\bsrc="([^"]+)"/g)]
+  .map(m => m[1])
+  .filter(src => !/^(https?:)?\/\//.test(src));
+const inlineScripts = [...html.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)]
+  .map(m => m[1]);
+assert.ok(localSrcs.length >= 1, 'the page carries at least one local data script');
+assert.ok(inlineScripts.length >= 1, 'the page carries at least one inline <script>');
+for (const src of localSrcs) {
+  const p = path.join(REPO, src);
+  assert.ok(fs.existsSync(p), 'missing local data script: ' + src);
+  vm.runInContext(fs.readFileSync(p, 'utf8'), sandbox, { filename: src });
+}
 
 console.log('sanskrit_nominal_dashboard.html — headless render');
 
-check('the page\'s inline script runs without throwing', () => {
-  vm.runInContext(scripts[0], sandbox, { filename: 'sanskrit_nominal_dashboard.html' });
+check('every inline script runs without throwing', () => {
+  inlineScripts.forEach((code, i) =>
+    vm.runInContext(code, sandbox, { filename: 'inline#' + i }));
 });
 
 const out = els.app.innerHTML;
+const splitOut = els.classsplitApp ? els.classsplitApp.innerHTML : '';
 const D = sandbox.window.PARADIGM_NOMINAL;
+
+check('the class-split panel rendered from its own data file', () => {
+  assert.ok(sandbox.window.NOMINAL_CLASS_SPLIT_ADJ,
+    'visual/paradigm_nominal_class_split_adj_data.js did not run');
+  assert.ok(splitOut.length > 1000,
+    'class-split panel rendered only ' + splitOut.length + ' chars');
+  assert.ok(!/Данные не загрузились/.test(splitOut),
+    'class-split panel fell back to its no-data message');
+});
+check('the class-split trust block is present', () => {
+  assert.ok(/Доверие к данным/.test(splitOut), 'class-split trust block missing');
+});
 
 check('it rendered something substantial', () => {
   assert.ok(out.length > 5000, 'rendered only ' + out.length + ' chars');
