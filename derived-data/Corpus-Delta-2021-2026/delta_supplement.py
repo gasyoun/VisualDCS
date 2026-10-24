@@ -108,7 +108,28 @@ def read_2021_own_lexicon_pos():
     return dist
 
 
+def _require_input(path):
+    """Fail loud on a missing/empty input BEFORE anything is read (H848 decoy rule).
+
+    `sqlite3.connect()` on a nonexistent path silently CREATES a 0-byte file, and on
+    this repo that path is the gitignored master `src/DCS-data-2026/dcs_full.sqlite`.
+    On a fresh clone the old code therefore planted the exact 0-byte decoy H848 warns
+    about, then died with "no such table" — and a later consumer that only checks
+    `os.path.isfile()` (delta_stats.py does exactly that) reads it as an empty corpus.
+    """
+    if not os.path.isfile(path) or os.path.getsize(path) == 0:
+        print(f"ERROR: required input missing or empty: {path}", file=sys.stderr)
+        return False
+    return True
+
+
 def main():
+    for path in (CSV_2021, FREQ_2021, DB_2026):
+        if not _require_input(path):
+            print("Refusing to run: no input was read and no file was created.",
+                  file=sys.stderr)
+            return 2
+
     print("reading 2021 export (0.csv) ...")
     t21, occ21, rows21 = read_2021()
     tok21 = sum(occ21.values())
@@ -116,7 +137,8 @@ def main():
           f"{len(occ21):,} distinct lemmas")
 
     print("reading 2026 master (dcs_full.sqlite) ...")
-    db = sqlite3.connect(DB_2026)
+    # read-only URI: the master is an input, never a scratch DB (never create -wal/-shm)
+    db = sqlite3.connect(f"file:{os.path.abspath(DB_2026)}?mode=ro", uri=True)
     n_texts26, n_sent26, n_tok26 = db.execute(
         "SELECT (SELECT COUNT(*) FROM text), (SELECT COUNT(*) FROM sentence),"
         " (SELECT COUNT(*) FROM token)").fetchone()

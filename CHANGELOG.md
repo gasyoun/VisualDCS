@@ -1,4 +1,4 @@
-_Created: 06-06-2026 · Last updated: 19-10-2026_
+_Created: 06-06-2026 · Last updated: 24-10-2026_
 
 # Changelog
 
@@ -9,6 +9,23 @@ Day-to-day session state lives in [`.ai_state.md`](https://github.com/gasyoun/Vi
 durable, user-facing milestones.
 
 ## [Unreleased]
+
+- **Bug hunt 24.10.2026 — release envelope red, fresh-clone DB decoy fixed (H1, H2)** —
+  day-mode `/bughunt` took the 03:00 slot that scored exit 4 (all providers cooled).
+  Twelve findings in
+  [`BUGHUNT-FINDINGS-VisualDCS-24.10.2026.md`](https://github.com/gasyoun/VisualDCS/blob/main/BUGHUNT-FINDINGS-VisualDCS-24.10.2026.md).
+  **Fixed in this PR:** `delta_supplement.py` checked no input, so a bare
+  `sqlite3.connect` planted a 0-byte `src/DCS-data-2026/dcs_full.sqlite` — the exact
+  H848 decoy — on a fresh clone before dying; it now refuses with `exit 2` (nothing
+  created, empty files caught) and opens the master `mode=ro`; the three regenerated
+  CSVs are byte-identical to the committed ones. **Parked as @DO:** the H5884
+  `filter-repo` rewrite re-pointed tag `learner-contracts-v1-2026-08-09` to
+  `34109b3` while the envelope still records `6d19eed`, so
+  [`scripts/envelope_check.py`](https://github.com/gasyoun/VisualDCS/blob/main/scripts/envelope_check.py)
+  exits 1 on `main` — and no workflow runs it. Open MEDIUM: last-sentence drop in
+  `regen_widgets.collocations()`, a red `test_nominal_dashboard.js` that no workflow
+  runs, hardcoded `C:\` paths in the F4 citation tool, two tautological closure
+  checks, a 2 %-slack coverage gate, and a skip-all PASS in the envelope checker.
 
 - **NCC `स्क` block ruled out of the 2022 database (H7078, gate 1 of H6995)** — the
   bundled 2022 NCC desktop DB (`non-derived/NCC/files/ncc/ncc.rar`) carries **no**
