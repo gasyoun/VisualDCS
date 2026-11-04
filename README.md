@@ -1,6 +1,6 @@
 # VisualDCS
 
-_Created: 20-04-2026 · Last updated: 24-09-2026_
+_Created: 20-04-2026 · Last updated: 05-11-2026_
 
 Interactive frequency dashboards for the [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/), built from corpus frequency data and rendered as standalone HTML files — no build step, no server, open directly in a browser.
 
@@ -27,23 +27,30 @@ runtime dashboards.
 ## Research Archive (`derived-data/`, `non-derived/`) — tracked, not part of the dashboards
 
 Two large folders sit alongside this repo's code: [`derived-data/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/README.md)
-and [`non-derived/`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/README.md), together ~7.2GB / ~2,080 files. They're a personal
+and [`non-derived/`](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/README.md) — together ~5.6GB / ~1,550 files on disk, of which
+~715 files are git-tracked. They're a personal
 Sanskrit-linguistics research archive (much of it V.V. Leonchenko's "Цифровой корпус санскрита"
 corpus-statistics work and related material) that predates and is broader than this repo's shipped
-dashboards. Both are **git-tracked and pushed since 02-07-2026** (files >95MB as 7-Zip split
-volumes, see [RESTORE_SPLIT_FILES.md](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md); only the nested `Zalizniak/GH/`
-git repos are excluded), but **neither feeds the dashboard pipeline**, which runs solely on
-`src/DCS-data-2021/` and `src/DCS-data-2026/` below. Treat them as a reference archive to mine
+dashboards. `non-derived/` (643 files) is fully tracked and pushed since 02-07-2026; `derived-data/`
+is tracked only as a light keep-set (72 files: both `INDEX.md`s, `Fonetika/`, `Kompozity/`,
+`Leksicheskie-issledovaniya/`, `Corpus-Delta-2021-2026/`) — since H5884 (04-10-2026) the heavy
+derived-data half (Paralleli, DCS_FILES, Ramayana, Sinonimy, Glagolnye-formy, Sochetaemost,
+Lexical-Cores, Imennye-formy, Mestoimeniya, QL, Chasticy, Samsaadhanii-alignment, Korrelyacii) is
+**untracked, local copies on disk only** (history rewritten with git-filter-repo, pack 3.59 → 1.90 GiB;
+`.gitignore` carries the exact keep-set; oversize files remain 7-Zip split volumes per
+[RESTORE_SPLIT_FILES.md](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)), and the nested `Zalizniak/GH/` tool repos are
+excluded entirely. Neither folder feeds the dashboard pipeline, which runs solely on
+`src/DCS-data-2021/` and `src/DCS-data-2026/` below. Treat the archive as a reference to mine
 for ideas or figures, not as live dashboard input.
 
 - **`derived-data/`** — the DCS-corpus half: datasets computed by statistically analyzing corpus
   text (frequency counts, distributions, collocations, verb/nominal-form analysis, compounds,
   synonyms, and the large `Paralleli-v-tekstah-korpusa-SRC/` intra-corpus parallel-passage search).
   The most-frequent-Sanskrit-word / core-vocabulary lists specifically live in
-  [`derived-data/Lexical-Cores/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md).
+  `derived-data/Lexical-Cores/` — **on disk only since H5884** (untracked).
 - **`non-derived/`** — the non-DCS half: dictionaries (Kochergina, PWG/MW comparisons, the
-  Saudamani electronic dictionary), the NCC manuscript catalog, lecture/conference material,
-  translations, and cloned external tool repos under `Zalizniak/GH/`.
+  Saudamani electronic dictionary), the NCC manuscript catalog, Zaliznyak grammar materials,
+  lecture/conference material, and translations.
 
 Both were reorganized 02-07-2026 — folder names transliterated Cyrillic→Latin, a legacy
 `Works/Share/` export tree merged and deduplicated, and topics split DCS-vs-non-DCS. Each folder
@@ -85,8 +92,8 @@ for the full inventory and rationale.
 **3. `src/DCS-data-2026/`** — the **current** DCS distribution (CoNLL-U / Universal Dependencies, CC BY 4.0),
 imported into a queryable SQLite master by a documented, validated pipeline. The full corpus —
 **270 texts · 5,688,416 tokens · 754,726 sentences · 74 treebank texts** — is pinned to
-[`gasyoun/dcs-conllu`](https://github.com/gasyoun/dcs-conllu) `@ 04e0778` (a submodule at
-`src/DCS-data-2026/conllu`) and published as a SQLite **GitHub Release**
+[`gasyoun/dcs-conllu`](https://github.com/gasyoun/dcs-conllu) `@ 9310e7b` (a submodule at
+`src/DCS-data-2026/conllu` — the DCS CoNLL-U snapshot of OliverHellwig/sanskrit `@ 04e0778`, 2026-03-05) and published as a SQLite **GitHub Release**
 ([`dcs-full-2026-03-05`](https://github.com/gasyoun/VisualDCS/releases/tag/dcs-full-2026-03-05), 287 MB gz).
 Pipeline: `parse_conllu` → `import_dcs_conllu` → `coverage_diff` → `export_master` → `validate` →
 `regen_widgets`, validated end-to-end (cross-walk 0 mismatches; CI re-runs the suite on push). See
@@ -101,7 +108,7 @@ meant to consume directly instead of re-parsing the CoNLL-U corpus — VisualDCS
 the org's DCS corpus/morphology ingest owner (family 8 in
 [`SHARED_CODE.md`](https://github.com/gasyoun/github-spine/blob/main/SHARED_CODE.md)).
 It is produced by [`gen_dcs_lemma_summary.py`](https://github.com/gasyoun/VisualDCS/blob/main/gen_dcs_lemma_summary.py)
-from the DCS-2026 master and checked by
+from the DCS-2021 dump (`src/DCS-data-2021/_8.csv`) and checked by
 [`validate_dcs_lemma_summary.py`](https://github.com/gasyoun/VisualDCS/blob/main/validate_dcs_lemma_summary.py)
 (CI-gated via [`validate-lemma-summary.yml`](https://github.com/gasyoun/VisualDCS/blob/main/.github/workflows/validate-lemma-summary.yml)).
 It is the feed behind the `csl-atlas` DCS adapter.
@@ -340,7 +347,7 @@ Build report:
 A standalone flashcard viewer over the already-computed `visual/anki_compact.json` — **200
 cards across 4 learning stages** (Stage 1: √kṛ, √vac, √bhū, √as; Stage 2: √gam, √dṛś, √dā,
 √śru, √sthā, √brū, √ah; Stage 3 and 4 widen to the long tail). Data is embedded directly in
-the page (no `fetch()`, no companion file — the whole deck is ~16 KB of JSON), so the file
+the page (no `fetch()`, no companion file — the whole deck is ~18 KB of JSON), so the file
 is self-contained and opens directly from disk. Stage filter, click-to-flip cards, a
 **CSV export** in Anki's plain-text import format (`#separator:Comma` / `#html:true` /
 `#columns:Front,Back,Tags` header, HTML-formatted backs, per-card tags), and a **Markdown
@@ -394,8 +401,8 @@ packed by [`gen_collocations_data.py`](https://github.com/gasyoun/VisualDCS/blob
 The landing page's *Whitney Roots* card links out to the live app at
 [gasyoun.github.io/WhitneyRoots](https://gasyoun.github.io/WhitneyRoots/): a crosswalk of
 Whitney's **930 roots** (Whitney × Monier-Williams × Apte × DCS frequency/PPP) — 713 of them
-DCS-attested — built and maintained in its own repo; the top-6 roots already cover 25% of the
-attested root-token mass (19 → 50%, 68 → 75%). Not duplicated inside VisualDCS.
+DCS-attested — built and maintained in its own repo; the top-6 roots already cover ~28% of the
+attested root-token mass (19 → ~51%, 68 → ~75%). Not duplicated inside VisualDCS.
 
 ### [`dcs_corpus_dashboard.html`](https://github.com/gasyoun/VisualDCS/blob/main/dcs_corpus_dashboard.html) — corpus / genre statistics
 
@@ -452,14 +459,15 @@ The repository also tracks a set of derived JSON and reference files used to pow
 
 Beyond the dashboards, source data, and research archive, the repo also holds:
 
-- **[`papers/`](https://github.com/gasyoun/VisualDCS/tree/main/papers)** — the A38 data-descriptor
-  paper for the DCS-2026 SQLite release ([`A38_dcs2026_release_paper.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_dcs2026_release_paper.md))
-  and its [`A38_release_checklist.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md)
-  (Zenodo deposit + DOI-mint steps, still pending the upstream CC-BY sign-off).
+- **[`papers/`](https://github.com/gasyoun/VisualDCS/tree/main/papers)** — currently holds only the
+  [`CANARY_paper_priv.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/CANARY_paper_priv.md)
+  paper-priv positive control: the A38 data-descriptor paper for the DCS-2026 SQLite release and its
+  release checklist were migrated to private storage on 04-10-2026 (PAPER-PRIV policy) and no longer
+  live in this repo.
 - **[`derived-parametric-core/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-parametric-core/README.md)** —
   a dictionary-side **parametric core of Sanskrit** extracted from PWG (Voronezh-school
   parametric-lexicology method of V. T. Titov / A. A. Kretov), cross-checked against V. V.
-  Leonchenko's corpus core in [`derived-data/Lexical-Cores/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md).
+  Leonchenko's corpus core in `derived-data/Lexical-Cores/` (on disk only since H5884 — untracked).
   A separate, additive dataset — the Leonchenko sources in `derived-data/` are untouched.
 - **[`mockups/`](https://github.com/gasyoun/VisualDCS/tree/main/mockups)** — non-destructive dark
   data-app restyles of the three shipped dashboards (CSS-only; the dashboard scripts are
@@ -490,7 +498,7 @@ Example: (233,079 + 157,003) / 781,616 × 100 = 49.91%
 | ~95% | 11 forms |
 | 100% | 38 forms |
 
-The remaining 27 forms form a **long tail** — together they add only ~3.7% of coverage despite representing the majority of distinct categories.
+The remaining 27 forms form a **long tail** — together they add only ~5.1% of coverage despite representing the majority of distinct categories.
 
 For full methodology with term definitions, see [`pareto.md`](https://github.com/gasyoun/VisualDCS/blob/main/pareto.md).
 
@@ -541,10 +549,15 @@ For full methodology with term definitions, see [`pareto.md`](https://github.com
   [`sanskrit_nominal_trainer.html`](https://github.com/gasyoun/VisualDCS/blob/main/sanskrit_nominal_trainer.html)
   (31,753 NOUN lemmas, G2 coverage oracle, frequency-weighted trainer). See the section above.
 
+- **Split the `-ī` and `-ant` conflations (H3984 + H4011)** — done via
+  [`visual/paradigm_nominal_class_split.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_nominal_class_split.json)
+  + [`visual/paradigm_nominal_class_split_adj.json`](https://github.com/gasyoun/VisualDCS/blob/main/visual/paradigm_nominal_class_split_adj.json)
+  on the external lexical signals (IAST syllable count; MW/PWG entry-id sets); the `-ant` pool is
+  100% inventoried (see the nominal dashboard section above).
+
 **🔴 Still planned — high priority**
-- **Split the `-ī` and `-ant` conflations** — needs an external lexical signal (stem
-  syllable count / a dictionary class tag); DCS alone cannot separate `devī` from `śrī`,
-  and no guess is made in the current asset.
+- **TANS: 193 текста** — the genre/date dataset for those texts does not exist in the repo yet
+  (the landing page's one planned widget card; the `roadmap.md` residual).
 
 See [`roadmap.md`](https://github.com/gasyoun/VisualDCS/blob/main/roadmap.md) for the original discussion.
 
