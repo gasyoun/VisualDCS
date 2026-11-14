@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 15-05-2026 · Last updated: 30-10-2026_
+_Created: 15-05-2026 · Last updated: 14-11-2026 (YE4 truth refresh: node suite re-run 7/7, test inventory completed with collocations/paradigm_builder + 2 python tests)_
 
 **What this repo is:** **VisualDCS** is standalone HTML frequency dashboards for the
 [Digital Corpus of Sanskrit (DCS)](http://www.sanskrit-linguistics.org/dcs/).
@@ -83,9 +83,13 @@ nothing on the Windows lanes until the box revives).
   `node tests/test_nominal_dashboard.js` ·
   `node tests/test_nominal_trainer.js` ·
   `node tests/test_morphostatistics.js` ·
-  `node tests/test_passage_reader.js`
+  `node tests/test_passage_reader.js` ·
+  `node tests/test_collocations.js` ·
+  `node tests/test_paradigm_builder.js`
 - **Python:** `python src/DCS-data-2026/test_paradigm_attested.py` ·
   `python src/DCS-data-2026/test_learner_contracts.py` ·
+  `python src/DCS-data-2026/test_concordance_sa.py` ·
+  `python src/DCS-data-2026/test_published_figures.py` ·
   `python src/DCS-data-2026/validate.py` ·
   `python src/DCS-data-2026/validate_past_tense_resplit.py` ·
   `python src/DCS-data-2026/test_past_nonindicative_formation.py` ·
@@ -165,8 +169,10 @@ README, commit both. JS is inline; Chart.js 4.4.1 from cdnjs; colors
   carries only the keep-set — regenerate derived bulk locally, never commit it
   back.
 - Lint baseline is `ruff` **0 in scope** (H5797, [#157](https://github.com/gasyoun/VisualDCS/pull/157)).
-  The node suite runs 5/7 on a clean main — the 2 failures are the pre-existing
-  baseline, not a regression to fix; the Python suite is 4 pass / 4 skip.
+  Node suite **7/7** and the four `src/DCS-data-2026/test_*.py` files plus
+  `validate_dcs_lemma_summary.py` green, re-run 14-11-2026 — the 5/7-with-2-failures
+  baseline of 04-10 is obsolete (both failures fixed since); keep this baseline
+  honest at every refresh.
 - The paper-priv tier-2 guard lands here ([#158](https://github.com/gasyoun/VisualDCS/pull/158)):
   nightly sweep with a positive-control canary (H5908) and an allowlist
   interlock — **never delete the canary paths**.
