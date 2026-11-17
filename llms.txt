@@ -1,0 +1,10 @@
+# VisualDCS — Visualisation of sanskrit-linguistics.org/dcs
+
+> Visualisations and dataset companion pages for the Digital Corpus of Sanskrit (DCS), incl. the csl-atlas migration documentation.
+
+## Pages
+
+- [VisualDCS home](https://gasyoun.github.io/VisualDCS/)
+- [csl-atlas migration docs](https://gasyoun.github.io/VisualDCS/docs/csl-atlas-migration/)
+
+Upstream corpus: http://www.sanskrit-linguistics.org/dcs/ · Source: https://github.com/gasyoun/VisualDCS
