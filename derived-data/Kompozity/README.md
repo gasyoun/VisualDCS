@@ -11,14 +11,14 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
 
 ## Data schema
 
-- **[`CompDic.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/CompDic.csv)**
+- **`CompDic.csv`**
   — one column, one compound headword per line (IAST transliteration, e.g. `aṁśāvataraṇa`,
   `aṁśuhasta`). A plain compound dictionary/word list, no frequency or split data attached.
 - **[`parts.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/parts.csv)**,
-  **[`verbx.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/verbx.csv)**,
+  **`verbx.csv`**,
   **[`cmps.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmps.csv)**,
-  **[`cmp400000.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmp400000.csv)**,
-  **[`names.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/names.csv)**
+  **`cmp400000.csv`**,
+  **`names.csv`**
   — semicolon-delimited rows of the shape:
   `surfaceForm; splitIntoParts; partCount; totalFrequency; freq_period_1; freq_period_2; …`
   (observed in `parts.csv`/`verbx.csv`: e.g. `vāpi; vā api;2;1080;279;66;127;…` — the surface
@@ -27,7 +27,7 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
   frequency columns, mostly small counts with many zeros). `verbx.csv` looks to be the same
   schema restricted to verb-derived compounds (splits like `bandh bandh`, `puṣ bhid`, `vac
   vac`). Exact column count/period labels were not verified beyond the sample rows read.
-- **[`pronx.txt`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/pronx.txt)**
+- **`pronx.txt`**
   — not sampled in this pass; by naming convention likely the pronoun-compound counterpart to
   `verbx.csv`.
 - **[`compounds.txt`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/compounds.txt)**
@@ -63,7 +63,7 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
   titles are self-describing from the Russian filenames.
 - **[`good.txt.7z.001`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/good.txt.7z.001)**
   — split 7-Zip archive, contents not inspected.
-- **[`Works-Share-COMPOSITE/`](https://github.com/gasyoun/VisualDCS/tree/main/derived-data/Kompozity/Works-Share-COMPOSITE)**
+- **`Works-Share-COMPOSITE/`**
   — `data1.xlsx`, `data3.xlsx`, recovered from the legacy `Works/Share/COMPOSITE` export tree
   (generically named, no reliable signal for where they belong relative to the files above —
   see the org-level note in [`../INDEX.md`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/INDEX.md)).

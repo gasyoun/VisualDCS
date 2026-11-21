@@ -36,7 +36,7 @@ size/file-count table (11MB / 17 files).
 - **`Распределение ядерной лексики по периодам.xlsx`**,
   **[`исходные данные для диаграммы по распределению лексики.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/исходные%20данные%20для%20диаграммы%20по%20распределению%20лексики.xlsx)**
   — "distribution of core vocabulary by period" / "source data for the vocabulary-distribution
-  chart" — likely feeder data related to the [`../Lexical-Cores/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md)
+  chart" — likely feeder data related to the `../Lexical-Cores/`
   study's per-period core-vocabulary tables.
 - **[`Редчайшие слова в санскрите.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/Редчайшие%20слова%20в%20санскрите.xlsx)**
   — "rarest words in Sanskrit" — likely a hapax/low-frequency word list, the low-frequency

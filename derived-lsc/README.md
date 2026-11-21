@@ -13,7 +13,7 @@ per-lemma ranking released, no human sense-gold. The defensible claim is therefo
 and stated that way: first *lexical semantic change* (sense-level, SemEval-2020-Task-1-shaped)
 study of Sanskrit and first released per-lemma graded ranking over a dated Sanskrit corpus.
 Full comparison + 46 verified citations:
-[papers/A57_lsc_related_work.md](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md).
+`papers/A57_lsc_related_work.md`.
 Built by
 [H728](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H728-Fable_VisualDCS_sanskrit-lsc-pilot_11.07.26.md),
 Fable 5 (`claude-fable-5`). Task shape:
@@ -32,7 +32,7 @@ metric caveats per [Goworek & Dubossarsky 2026](https://aclanthology.org/2026.lc
 | [lsc_human_gold_sample.tsv](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/lsc_human_gold_sample.tsv) | n=30 human-annotation sheet — empty `gold_binary`, `gold_graded`, `change_type`, `annotator_notes` columns (H2399) |
 | [mine_lsc_related_work.py](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/mine_lsc_related_work.py) | LSC-family census + per-theme candidate harvest from `anthology.bib.gz`; `--query` searches the whole dump (H2400) |
 | [verify_related_work_citations.py](https://github.com/gasyoun/VisualDCS/blob/main/derived-lsc/verify_related_work_citations.py) | acceptance gate: every `aclanthology.org` URL in the draft must exist in the dump, else exit 1 (H2400) |
-| [../papers/A57_lsc_related_work.md](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md) | related-work section draft — 46 verified Anthology citations, 26 in-family (H2400) |
+| `../papers/A57_lsc_related_work.md` | related-work section draft — 46 verified Anthology citations, 26 in-family (H2400) |
 
 ## Data (all local, canonical — nothing re-derived)
 
@@ -177,7 +177,7 @@ reject path.
 - **Read the full text of [Hariharan & Mortensen 2026](https://aclanthology.org/2026.lrec-1.81/)**
   (ELRA PDF; the Anthology landing page does not name its corpus). If it is DCS-derived, the
   overlap discussion in
-  [papers/A57_lsc_related_work.md](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md)
+  `papers/A57_lsc_related_work.md`
   §Novelty needs strengthening before submission.
 - Venue: **LChange'27** (CfP expected ~Oct–Dec 2026, watched in
   [GTD](https://github.com/gasyoun/Uprava/blob/main/GTD_NEXT_ACTIONS.md)) or NLP4DH.
