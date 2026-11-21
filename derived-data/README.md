@@ -59,13 +59,13 @@ day — see the "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" section in
 
 Every topic folder now has its own `README.md` (added 05-07-2026): data schema,
 a usage snippet, verified caveats, and provenance where a generating script
-could be found — [Chasticy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Chasticy/README.md), `DCS_FILES`,
-[Fonetika](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Fonetika/README.md), [Glagolnye-formy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Glagolnye-formy/README.md),
+could be found — `Chasticy`, `DCS_FILES`,
+[Fonetika](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Fonetika/README.md), `Glagolnye-formy`,
 `Imennye-formy`, [Kompozity](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/README.md),
 `Korrelyacii`, [Leksicheskie-issledovaniya](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/README.md),
-`Lexical-Cores`, [Mestoimeniya](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Mestoimeniya/README.md),
+`Lexical-Cores`, `Mestoimeniya`,
 `Paralleli-v-tekstah-korpusa-SRC`,
-`QL`, [Ramayana](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Ramayana/README.md), `Sinonimy`,
+`QL`, `Ramayana`, `Sinonimy`,
 `Sochetaemost-sanskritskih-osnov`.
 Most files in these folders are legacy binary `.xls`/`.xlsx`/`.doc(x)` — schemas
 were confirmed where a readable sample existed (`.txt`/`.csv`) and inferred from
