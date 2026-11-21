@@ -38,8 +38,6 @@ jobs:
             --exclude "https://doi\.org/.*"
             --exclude "https://kosh\.uni-koeln\.de/.*"
             --exclude "https://vedaweb\.uni-koeln\.de/.*"
-            # sanskritwordnet.unipv.it down from runners AND outside (21-11-2026,
-            # twice TIMEOUT in a row with 0 dead links) — external outage, delink not wanted
             --exclude "https?://sanskritwordnet\.unipv\.it/.*"
             "./**/*.md"
           fail: true
