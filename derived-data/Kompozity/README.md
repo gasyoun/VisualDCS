@@ -14,7 +14,7 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
 - **`CompDic.csv`**
   — one column, one compound headword per line (IAST transliteration, e.g. `aṁśāvataraṇa`,
   `aṁśuhasta`). A plain compound dictionary/word list, no frequency or split data attached.
-- **[`parts.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/parts.csv)**,
+- **`parts.csv`**,
   **`verbx.csv`**,
   **[`cmps.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmps.csv)**,
   **`cmp400000.csv`**,
@@ -30,7 +30,7 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
 - **`pronx.txt`**
   — not sampled in this pass; by naming convention likely the pronoun-compound counterpart to
   `verbx.csv`.
-- **[`compounds.txt`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/compounds.txt)**
+- **`compounds.txt`**
   + **[`mw_h3_parent_compounds.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/mw_h3_parent_compounds.tsv)**
   + **[`build_mw_h3_parent_compounds.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/build_mw_h3_parent_compounds.py)**
   (H4480, 13-09-2026) — the "MW H3 compounds" table (yadisk, Сложные слова (samāsa)/Алгоримы
@@ -53,15 +53,15 @@ size/file-count table (732MB / 15 files — the largest folder here after `Paral
   tokens and uses `n_children` from the count it derives (the upstream yadisk copy md5
   `f94d9e0a86e6b0ba57b10ddfd3087071` is the CRLF-normalised form of the committed
   `compounds.txt`, whose raw LF md5 is `77ede288d9171b667a3f514457356e1d`).
-- **[`Композиты 4+.xlsx`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Композиты%204%2B.xlsx)**,
-  **[`Композиты.xlsx.7z.001`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/Композиты.xlsx.7z.001)**
+- **`Композиты 4+.xlsx`**,
+  **`Композиты.xlsx.7z.001`**
   (split archive — see [`../../RESTORE_SPLIT_FILES.md`](https://github.com/gasyoun/VisualDCS/blob/main/RESTORE_SPLIT_FILES.md)),
   **`Сложные слова с разбиением на основы (испр).ods`.ods>)**,
-  **[`категории композитов.ods`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/категории%20композитов.ods)**
+  **`категории композитов.ods`**
   — binary spreadsheets (not opened in this pass): "Compounds 4+" (compounds of 4+ members),
   "compound words split into stems (corrected)", and "compound categories" respectively —
   titles are self-describing from the Russian filenames.
-- **[`good.txt.7z.001`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/good.txt.7z.001)**
+- **`good.txt.7z.001`**
   — split 7-Zip archive, contents not inspected.
 - **`Works-Share-COMPOSITE/`**
   — `data1.xlsx`, `data3.xlsx`, recovered from the legacy `Works/Share/COMPOSITE` export tree

@@ -37,6 +37,7 @@ jobs:
             --exclude "https://github\.com/gasyoun/(Uprava|claude-config|github-spine)/.*"
             --exclude "https://doi\.org/.*"
             --exclude "https://kosh\.uni-koeln\.de/.*"
+            --exclude "https://vedaweb\.uni-koeln\.de/.*"
             "./**/*.md"
           fail: true
         env:
