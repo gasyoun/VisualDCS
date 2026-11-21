@@ -10,7 +10,7 @@ member** (uttarapada):
 | side | asset | what it knows |
 |---|---|---|
 | **dictionary** | [MWderivations `issue15/compounds_reverse_classified.tsv`](https://github.com/gasyoun/MWderivations/blob/master/issue15/compounds_reverse_classified.tsv) | how many distinct first members MW attests before each final member (the *productivity* MW's derivation markup records) |
-| **corpus** | [`derived-data/Kompozity/cmps.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmps.csv) × [`names.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/names.csv) | which compounds ending in each final member actually occur in the DCS corpus, and how often (the *attestation*) |
+| **corpus** | [`derived-data/Kompozity/cmps.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmps.csv) × `names.csv` | which compounds ending in each final member actually occur in the DCS corpus, and how often (the *attestation*) |
 
 The deliverable is the **divergence**, not the join. The join itself is
 [`derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/uttarapada_dict_vs_corpus.tsv)

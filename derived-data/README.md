@@ -17,7 +17,7 @@ same corpus VisualDCS's dashboards visualize. Nearly everything here is *derived
 frequency counts, distributions, collocations, and cross-tabulations computed from
 corpus text, not primary source material. Much of it comes from research by
 V.V. Leonchenko ("Цифровой корпус санскрита" / "Digital corpus of Sanskrit" — the study
-behind [`Lexical-Cores/`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md),
+behind `Lexical-Cores/`,
 which has the most-frequent-word / core-vocabulary tables) and collaborators, spanning
 verb forms, nominal forms,
 compounds, pronouns, particles, phonetics, synonymy, and stem collocability.
@@ -59,20 +59,20 @@ day — see the "Contents of `Paralleli-v-tekstah-korpusa-SRC/`" section in
 
 Every topic folder now has its own `README.md` (added 05-07-2026): data schema,
 a usage snippet, verified caveats, and provenance where a generating script
-could be found — [Chasticy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Chasticy/README.md), [DCS_FILES](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/DCS_FILES/README.md),
+could be found — [Chasticy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Chasticy/README.md), `DCS_FILES`,
 [Fonetika](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Fonetika/README.md), [Glagolnye-formy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Glagolnye-formy/README.md),
-[Imennye-formy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Imennye-formy/README.md), [Kompozity](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/README.md),
-[Korrelyacii](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Korrelyacii/README.md), [Leksicheskie-issledovaniya](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/README.md),
-[Lexical-Cores](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md), [Mestoimeniya](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Mestoimeniya/README.md),
-[Paralleli-v-tekstah-korpusa-SRC](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Paralleli-v-tekstah-korpusa-SRC/README.md),
-[QL](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/QL/README.md), [Ramayana](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Ramayana/README.md), [Sinonimy](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Sinonimy/README.md),
-[Sochetaemost-sanskritskih-osnov](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Sochetaemost-sanskritskih-osnov/README.md).
+`Imennye-formy`, [Kompozity](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/README.md),
+`Korrelyacii`, [Leksicheskie-issledovaniya](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Leksicheskie-issledovaniya/README.md),
+`Lexical-Cores`, [Mestoimeniya](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Mestoimeniya/README.md),
+`Paralleli-v-tekstah-korpusa-SRC`,
+`QL`, [Ramayana](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Ramayana/README.md), `Sinonimy`,
+`Sochetaemost-sanskritskih-osnov`.
 Most files in these folders are legacy binary `.xls`/`.xlsx`/`.doc(x)` — schemas
 were confirmed where a readable sample existed (`.txt`/`.csv`) and inferred from
 filenames/sheet names otherwise; treat any unconfirmed schema claim in a
 subfolder README as a starting hypothesis, not a verified fact. A repo-wide
 generating script was found for only one folder
-([Sochetaemost-sanskritskih-osnov](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Sochetaemost-sanskritskih-osnov/README.md),
+(`Sochetaemost-sanskritskih-osnov`,
 via its `Ishodnye-dannye/SINTAGMA.7z` unpack) — the rest predate any tracked
 pipeline code and are best treated as hand-curated research archives.
 

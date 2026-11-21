@@ -163,9 +163,9 @@ durable, user-facing milestones.
   2026-09-20; legacy deposit API, per-file MD5 enforced, record live-verified logged-out).
   Wired into [`CITATION.cff`](https://github.com/gasyoun/VisualDCS/blob/main/CITATION.cff)
   (`doi:` + identifiers), the release notes, and
-  [`papers/A38_dcs2026_release_paper.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_dcs2026_release_paper.md)
+  `papers/A38_dcs2026_release_paper.md`
   §8 (Data and reproducibility) + the
-  [checklist](https://github.com/gasyoun/VisualDCS/blob/main/papers/A38_release_checklist.md) §4.
+  `checklist` §4.
 - **SA-IS concordance layer over the DCS 2026 master — compiled suffix array + LCP +
   color arrays, 5,688,416 tokens, four query modes
   ([H5153](https://github.com/gasyoun/Uprava/blob/main/handoffs/archive/H5153-OxAlpha_VisualDCS_sais-concordance-dcs-master_18.09.26.md),
@@ -250,7 +250,7 @@ durable, user-facing milestones.
   [samsaadhanii/datasets](https://github.com/samsaadhanii/datasets) carries no
   LICENSE file): parity report + counts-only manifest for the 130,270-sentence
   DCS × Heritage Segmenter ground-truth alignment in
-  [`derived-data/Samsaadhanii-DCS-SH-alignment/`](derived-data/Samsaadhanii-DCS-SH-alignment/)
+  `derived-data/Samsaadhanii-DCS-SH-alignment/`
   — G1 row parity 130,270 == 130,270 == expected, G2 structure clean (0
   malformed columns / 0 duplicate ids); 12-row deterministic sample hand-checked
   (11 textbook-clean sandhi/compound splits, 1 debatable morphemic split
@@ -432,7 +432,7 @@ durable, user-facing milestones.
 ## [2026-08-10] — A57 LSC related-work draft, 46 verified Anthology citations (H2400)
 
 ### Added
-- **[`papers/A57_lsc_related_work.md`](https://github.com/gasyoun/VisualDCS/blob/main/papers/A57_lsc_related_work.md)
+- **`papers/A57_lsc_related_work.md`
   — A57 related-work section draft, 46 verified ACL Anthology citations (H2400).** Six themed
   sections (shared tasks · method precedents · annotated gold · metric critique · low-resource
   historical LSC · computational Sanskrit) built from the Anthology's own `anthology.bib.gz`
@@ -798,7 +798,7 @@ durable, user-facing milestones.
   [MWderivations issue15 reverse index](https://github.com/gasyoun/MWderivations/blob/master/issue15/compounds_reverse_classified.tsv)
   (dictionary side) to
   [`Kompozity/cmps.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmps.csv)
-  × [`names.csv`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/names.csv)
+  × `names.csv`
   (corpus side).
 - **[`derived-data/Kompozity/build_uttarapada_dict_vs_corpus.py`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/build_uttarapada_dict_vs_corpus.py)**
   — the reproducible build. Folds the two orthographic mismatches between the sides

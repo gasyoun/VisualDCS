@@ -63,7 +63,7 @@ Current total: **849 files, 3.5GB — all tracked in git.** (The drop from pass-
 | `DCS_FILES` | 1.1GB | 9 | Raw Digital Corpus of Sanskrit (DCS) export archives + quantitative-analysis workbook |
 | `Glagolnye-formy` | 112MB | 71 | Verb-form corpus analysis, verb classes/root lists by class + `Works-Share-Roots`, `Works-Share-VERBAL-FORMS`. Derived PPP extract: `Bazadannyh-glagolnyh-form-Korpusa/dcs_ppp_verified.tsv` (5,181 corpus-attested Past Passive Participle forms + counts; see its `.md`) |
 | `Imennye-formy` | 75MB | 38 | Nominal-form (declension/stem-ending) corpus analysis + `Works-Share-Endings`, `Works-Share-NAMES`, `Works-Share-POSIT` |
-| [`Lexical-Cores`](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Lexical-Cores/README.md) | 92MB | 24 | Leonchenko's "lexical cores" study — full appendix set (frequency dictionaries by period, core-vocabulary lists); own README has the word-count table |
+| `Lexical-Cores` | 92MB | 24 | Leonchenko's "lexical cores" study — full appendix set (frequency dictionaries by period, core-vocabulary lists); own README has the word-count table |
 | `Leksicheskie-issledovaniya` | 11MB | 17 | Lexical studies: homoforms, ligatures, rarest words, lemma-ending distributions + `Works-Share-DIF`, `Works-Share-LEX`, `Works-Share-OMOFORMS` |
 | `QL` | 11MB | 2 | Frequency dictionary of Sanskrit by period + `Works-Share-FRQ` |
 | `Kompozity` | 732MB | 15 | Compound-word (samāsa) datasets/CSVs and analysis workbooks + `Works-Share-COMPOSITE` |

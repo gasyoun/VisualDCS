@@ -26,13 +26,13 @@ normalisation; the two >95 MB payloads ship here as 7-Zip split volumes
 
 | Yandex-Disk object | Remote bytes | Local counterpart | Local bytes | Δ | Parity evidence |
 |---|---:|---|---:|---:|---|
-| `CompDic.csv` | 428,941 | [derived-data/Kompozity/CompDic.csv](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/CompDic.csv) | 391,608 | 37,333 | Δ = 37,333 lines (CRLF); head-3000 md5 MATCH |
+| `CompDic.csv` | 428,941 | `derived-data/Kompozity/CompDic.csv` | 391,608 | 37,333 | Δ = 37,333 lines (CRLF); head-3000 md5 MATCH |
 | `cmps.csv` | 15,632,161 | [derived-data/Kompozity/cmps.csv](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmps.csv) | 15,230,683 | 401,478 | Δ = 401,478 lines; head-3000 md5 MATCH |
-| `names.csv` | 90,664,029 | [derived-data/Kompozity/names.csv](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/names.csv) | 90,495,149 | 168,880 | Δ = 168,880 lines; head-3000 md5 MATCH |
+| `names.csv` | 90,664,029 | `derived-data/Kompozity/names.csv` | 90,495,149 | 168,880 | Δ = 168,880 lines; head-3000 md5 MATCH |
 | `parts.csv` | 1,392,926 | [derived-data/Kompozity/parts.csv](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/parts.csv) | 1,390,259 | 2,667 | Δ = 2,667 lines; head-3000 md5 MATCH |
-| `verbx.csv` | 1,800,700 | [derived-data/Kompozity/verbx.csv](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/verbx.csv) | 1,797,300 | 3,400 | Δ = 3,400 lines; head-3000 md5 MATCH |
-| `pronx.txt` | 796,022 | [derived-data/Kompozity/pronx.txt](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/pronx.txt) | 794,488 | 1,534 | Δ = 1,534 lines; head-3000 md5 MATCH |
-| `cmp400000.csv` | 0 | [derived-data/Kompozity/cmp400000.csv](https://github.com/gasyoun/VisualDCS/blob/main/derived-data/Kompozity/cmp400000.csv) | 0 | 0 | empty on both sides (a stub, not a loss) |
+| `verbx.csv` | 1,800,700 | `derived-data/Kompozity/verbx.csv` | 1,797,300 | 3,400 | Δ = 3,400 lines; head-3000 md5 MATCH |
+| `pronx.txt` | 796,022 | `derived-data/Kompozity/pronx.txt` | 794,488 | 1,534 | Δ = 1,534 lines; head-3000 md5 MATCH |
+| `cmp400000.csv` | 0 | `derived-data/Kompozity/cmp400000.csv` | 0 | 0 | empty on both sides (a stub, not a loss) |
 | `good.txt` | 119,975,069 | `good.txt.7z.001` → `good.txt` | 119,975,069 (payload) | 0 | archive listing: same uncompressed size |
 | `Распределение композитов по текстам.7z` | 17,210,482 | `Композиты.xlsx.7z.001` → `Композиты.xlsx` | 253,737,678 (payload) | 0 | **stored CRC32 `1EBB24F6` on both sides**, same mtime `2022-11-22 11:57:39` — different container (LZMA:24 vs LZMA2:18), identical payload |
 | `Композиты 4+.xlsx` | 2,064,580 | same name under `derived-data/Kompozity/` | 2,064,580 | 0 | size-exact |
