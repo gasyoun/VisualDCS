@@ -1,11 +1,4 @@
-# Rights-held source material: local-only, never commit.
-# Shvedova 1980 / Vinogradov / companion volumes are copyright-protected;
-# the public repo carries tooling + provenance only.
-raw/
-derived/
-*.rar
-*.doc
-*.DOC
-*.docx
-*.DOCX
-*.ttf
+# Source text is published (publisher rights confirmed by the repo owner,
+# 26-11-2026). Only transient Python artefacts stay out of git.
+__pycache__/
+*.pyc
