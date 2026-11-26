@@ -145,7 +145,12 @@ def main() -> int:
             parts = ["".join(n.itertext()) for n in body_nodes]
             text = "\n".join(p.replace("\xa0", " ").strip() for p in parts if p.strip())
             q = parse_qs(urlparse(url).query)
-            stem = "p" + q.get("p", ["0"])[0] + "_a" + q.get("0a0", ["0"])[0]
+            # Include a URL hash: distinct query variants of the same p/0a0
+            # otherwise overwrite each other (451 collisions in the first run).
+            stem = (
+                "p" + q.get("p", ["0"])[0] + "_a" + q.get("0a0", ["0"])[0]
+                + "_" + sha256_bytes(norm(url).encode("utf-8"))[:8]
+            )
             dest = text_dir / (stem + ".txt")
             payload = text.encode("utf-8")
             dest.write_bytes(payload)

@@ -1,23 +1,23 @@
 # Grammatika — slovari.ru Russian grammar harvest
 
-_Created: 26-11-2026_
+_Created: 26-11-2026 · rights ruling: 26-11-2026_
 
-Local-only harvest of the Russian-language grammar reference section at
+Harvest of the Russian-language grammar reference section at
 <https://slovari.ru/default.aspx?s=0&p=165>. It sits under `non-derived/Slovari/`
 because it is non-DCS reference material, alongside the existing Russian
 dictionary data (Frish, Slozhnye-slova-v-DCS, Tihvinsky).
 
-## Rights fence — read first
+## Rights
 
-The source works are **copyright-held** academic books (Shvedova 1980,
-Vinogradov, and the companion volumes). Therefore:
+The source works are academic books published by Nauka (Shvedova 1980,
+Vinogradov, and the companion volumes). **Publication in this repository was
+authorized by the repo owner on 26-11-2026 on the basis of publisher rights.**
+The original text, the RAR/DOC sources and the fonts are therefore tracked
+here, not held locally only. No licence document was attached to the ruling in
+this session — if one exists, it should be added to this folder.
 
-- `raw/` (downloaded RAR/DOC/TTF) and `derived/` (extracted page text) are
-  **gitignored** and stay on this machine only.
-- **Only tooling, the manifest, counts and SHA-256 hashes are committed.**
-- Do not publish the text, do not enable Pages on it, do not send it to an
-  external AI service. This follows the estate's `license-gated-ingest` /
-  `publish-safety-check` discipline.
+This reverses the initial local-only fence; that earlier decision is kept in
+PR #189 history for audit, not re-applied.
 
 ## What is on the source site
 
@@ -48,12 +48,17 @@ byte `0x98`. The spider decodes UTF-8 explicitly. Verified 26-11-2026.
 - `slovari_spider.py` — crawler (`requests` + `lxml`, already in the estate env;
   no Scrapy install needed). Seeds at `p=165`, follows only same-host links
   carrying `p=`, `0a0=` or `file_id=`, and stays in the grammar subtree by
-  requiring `ГРАММАТИКА` in the breadcrumb `#kroshki`.
-- `manifest.json` — committed provenance: retrieval time, page count, character
-  count, download count/bytes, and SHA-256 per page/file. No text.
-- `derived/pages.jsonl` + `derived/text/*.txt` — local-only harvest output.
-- `raw/downloads/*` — local-only binary downloads.
-- `.gitignore` — the rights fence.
+  requiring `ГРАММАТИКА` in the breadcrumb `#kroshki`. Output filenames carry a
+  short hash of the normalized URL so query variants cannot overwrite each other.
+- `manifest.json` — provenance: retrieval time, page count, character count,
+  download count/bytes, and SHA-256 per page/file.
+- `derived/pages.jsonl` + `derived/text/*.txt` — **1,790** chapter texts.
+- `derived/doc/*.txt` — 21 converted DOC files (both volumes).
+- `raw/downloads/*.rar`, `raw/doc/`, `raw/fonts/` — source archives, DOCs, fonts.
+- `convert_doc.py` — antiword-based DOC → text converter with replacement-char audit.
+- `repair_paths.py` — one-off historical fix for the first run's 451 colliding
+  filenames (888 renamed, 902 re-fetched on 26-11-2026); kept for audit, not
+  needed on a fresh harvest.
 
 ## Regenerate
 
@@ -62,11 +67,9 @@ python slovari_spider.py --delay 0.3
 ```
 
 The manifest is rewritten on each run; `retrieved_utc` and the hashes change
-with the source. Re-run `git status` before committing: only `manifest.json`
-and the tooling should be staged.
-
-Binary downloads are a separate pass (a first-position `file_id=` was initially
-missed by the URL filter — fixed; the filter now reads parsed query keys):
+with the source. Binary downloads are a separate pass (a first-position
+`file_id=` was initially missed by the URL filter — fixed; the filter now reads
+parsed query keys):
 
 ```bash
 python slovari_spider.py --files-only --seed "https://slovari.ru/default.aspx?s=0&p=2572" --delay 0.3
@@ -76,7 +79,7 @@ python slovari_spider.py --files-only --seed "https://slovari.ru/default.aspx?s=
 
 | Measure | Value |
 |---|---|
-| Grammar-section pages | **1,790** (40,766,363 chars) |
+| Grammar-section pages | **1,790** files / 40,766,363 chars |
 | Crawl errors | **0** (one `p=5332` read timeout recovered on retry) |
 | RAR downloads | **3** (5,252,834 bytes) — `file_id` 222 / 223 / 224 |
 | DOC files extracted | **21** (both volumes) |
@@ -84,18 +87,22 @@ python slovari_spider.py --files-only --seed "https://slovari.ru/default.aspx?s=
 
 The 9 replacement chars are glyph-level gaps in antiword's UTF-8 mapping, not
 a wholesale font-cmap failure: the Cyrillic body text is readable throughout.
-All text remains under `derived/` and `raw/` (gitignored).
+The fonts are custom (`file_id=223` ships them), so a future converter change
+must be checked against the 9-replacement-char baseline before it is trusted.
 
-## DOC → Markdown conversion (local only)
+## DOC → text conversion
 
 1. Extract the downloaded RARs with WinRAR:
-   `"/c/Program Files/WinRAR/WinRAR.exe" x -ibck -y raw/downloads/file_id_222.rar raw/doc/`
+   `"/c/Program Files/WinRAR/UnRAR.exe" x -y -o+ raw/downloads/file_id_222.rar raw/doc/`
    (same for `224`; `223` is fonts).
 2. Convert the old binary `.doc` files with `antiword`:
    `antiword -m UTF-8.txt raw/doc/<file>.doc > derived/doc/<stem>.txt`
    (`pandoc` handles `.docx`, not the legacy `.doc` format).
 3. `python convert_doc.py` runs all 21 files and reports the replacement-char
-   count per file. Keep every conversion product under `derived/`, never in git.
+   count per file.
 
-The fonts are custom (`file_id=223` ships them), so a future converter change
-must be checked against the 9-replacement-char baseline before it is trusted.
+## Attribution
+
+Академия наук СССР, Институт русского языка. *Русская грамматика.* М.: Наука,
+1980 (главный редактор Н. Ю. Шведова). Companion volumes and bibliographies as
+listed in the table above. Source: slovari.ru, ГРАММАТИКА, retrieved 26-11-2026.
