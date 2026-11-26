@@ -1,0 +1,11 @@
+# Rights-held source material: local-only, never commit.
+# Shvedova 1980 / Vinogradov / companion volumes are copyright-protected;
+# the public repo carries tooling + provenance only.
+raw/
+derived/
+*.rar
+*.doc
+*.DOC
+*.docx
+*.DOCX
+*.ttf

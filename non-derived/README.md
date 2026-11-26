@@ -15,7 +15,9 @@ counts, distributions, or collocations computed from corpus text. Concretely, th
 
 - **Dictionaries** — Kochergina (Sanskrit–Russian), PWG vs MW comparisons, the
   Saudamani electronic dictionary binaries (`Elektronnyj-slovar/`), general dictionary
-  comparison workbooks (`Slovari/`).
+  comparison workbooks (`Slovari/`), and `Slovari/Grammatika/` — a 26-11-2026
+  slovari.ru Russian-grammar harvest whose tooling + manifest are tracked while the
+  copyright-held text stays local-only ([README](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/Slovari/Grammatika/README.md)).
 - **A manuscript catalog** — `NCC/` (New Catalogus Catalogorum), commentary/family
   trees over manuscript records — a different data source entirely from corpus text,
   despite some filename similarity to "corpus"-adjacent material.

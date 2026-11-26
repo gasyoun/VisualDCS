@@ -43,7 +43,7 @@ retrieval/license provenance.
 | `Elektronnyj-slovar` | 1.3GB | 218 | Electronic dictionary binaries (Saudamani SDM4 + `bin/`, `SRC/`) + merged `Works-Share-catalogs` (`.sdm` catalog files) |
 | `NCC` | 297MB | 23 | New Catalogus Catalogorum (manuscript commentary trees/family trees) — a manuscript catalog, not corpus stats, despite the name similarity to other "corpus"-adjacent folders + `files/`, `Works-Share-NCC` |
 | `Astronomiya` | 210MB | 13 | Astronomy-in-Sanskrit-texts lecture notes/slides + related media |
-| `Slovari` | 230MB | 35 | General dictionary comparisons, compound words in DCS, frequency/length stats |
+| `Slovari` | 230MB | 35 | General dictionary comparisons, compound words in DCS, frequency/length stats. Subfolder `Grammatika/` added 26-11-2026: slovari.ru Russian-grammar harvest — tooling + provenance manifest only, rights-held text gitignored ([README](https://github.com/gasyoun/VisualDCS/blob/main/non-derived/Slovari/Grammatika/README.md)) |
 | `Sanskritskie-izrecheniya` | 78MB | 4 | Subhāṣita (Sanskrit sayings) datasets + `Works-Share-ELSE` (heterogeneous leftovers: a larger Subhāṣita workbook variant + an archived copy of the Rāmāyaṇa highlighted-names dictionary) |
 | `Dubyanskie-chteniya-20112021` | 75MB | 10 | Materials for the "Dubyanskie chteniya" 2011–2021 conference series (data/report/documents) |
 | `PWG_MW` | 30MB | 7 | PWG vs MW dictionary comparison + `Works-Share-dic` (dictionary-comparison leftovers, mapped here since most `dic` files were exact PWG_MW duplicates) |
