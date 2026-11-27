@@ -94,6 +94,25 @@ python build_html.py  # offline, reads manifest.json + toc.json
 `build_html.py` writes under `html/`; a link check over all generated pages
 found **0 broken relative links** (9,480 checked).
 
+## Fonts and Unicode
+
+The source site says fonts must be installed for the alphabets to display.
+Both shipped TTFs are ordinary Unicode fonts (Grammatica: 98 Cyrillic code
+points, 4 PUA glyphs; Times New Roman CyrAC: 94 Cyrillic, no PUA), so the
+encoding was already solvable by Unicode — see
+[`FONT_UNICODE_AUDIT.md`](FONT_UNICODE_AUDIT.md).
+
+- `make_webfonts.py` converts the TTFs to WOFF2 in `html/fonts/`. Only
+  Grammatica is applied (DOC pages); Times New Roman CyrAC is shipped but
+  **not applied**, because its vowels carry a built-in acute (`а`→`á`) and
+  would stress every vowel. Details in `FONT_UNICODE_AUDIT.md`.
+- `normalize_unicode.py` (one-off, already applied) repaired 34,434 cp1252
+  en dashes decoded as `U+0096`, 693 BEL separators and 9 truncated letters,
+  and recomputed all manifest hashes. Five ambiguous C1 characters remain
+  deliberately unguessed.
+- Chromium blocks `@font-face` from `file://`; serve over HTTP for exact
+  typography. Local `file://` viewing still renders all Cyrillic correctly.
+
 ## Regenerate
 
 ```bash

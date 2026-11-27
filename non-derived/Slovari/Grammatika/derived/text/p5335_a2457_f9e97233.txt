@@ -11,14 +11,14 @@ A, B, C, ... Z
 
 
 A dictionary of the English and Russian languages by J. Banks. Русско-английский словарь, составленный Яковом Банксом. Том первый. А-О. М., 1840 (рец.).  II, II,  2758
-Aschik W. Dictionnaire technologique français-russe ... Французско-русский технический словарь ... Вып. 12. Спб., 1877. II, I, 300а, 589
+Aschik W. Dictionnaire technologique français-russe ... Французско-русский технический словарь ... Вып. 1–2. Спб., 1877. II, I, 300а, 589
 Audi alteram partem. Восточный вопрос прошедшего и настоящего. Защита России. Сэра Т. Синклера. Перев. под редакцией В. Ф. Пуцыковича. Спб., 1878 (рец.). IV, II,  3449
 Chronologische und synchronistische Uebersicht der allgemeinen Weltgeschichte, von Kohlrausch... (Хронологическое и синхронистическое обозрение всемирной истории. Соч. Кольрауша. Переделанное в дополненное Е. Ольдекопом. Книга первая. Таблицы хронологические). Спб., 1833. [В конце подпись: N] (рец.). IV, II,  3450
 De l'origine de la nation russe, par M. Léonard Hegevald. (О происхождении русской нации. М. Леонарда Гегевальда). Спб., 1850. (рец.). II, II,  2249
 Deutsche Chrestomatie. Zum Gebrauch der Deutsche Hauptschule St. Petri. 2. Ausgabe. Спб., 1846. II, I,  590
 Die Lehre vom russischen Accent, mit Rucksicht auf die Accentua-tionssysteme verwandter Sprachen, bearbeitet von Kayssler. Berlin, 1866 (рец.). I, II,  445
 Die Prawda Russkaja (Правда Русская, древнейшая русская книга прав, по всем доныне открытым и собранным рукописям сличенная, объясненная и изложенная Д. П. Э. С. Тобиным (Е. S. Tobien). Ч. 1. Рукописи и издания, система и текст Русской Правды. Спб., 1844 (рец.). V, II,  2866
-Essai sur la litterature russe contenant une liste des gens de lettres russes qui se sont distingués depuis le règne de Pierre le Grand. Par un voyageur russe, imprimé à Livourne (en Toscane) en 1771. Reimprimé textuellement dans la Revue Etrangère, octobre 1851, tome 80-e, pages 115. S.-Petersbourg, 1851. (Опыт о русской литературе, содержащий реестр русских замечательных писателей с царствования Петра Великого. Сочинение одного русского путешественника, напечатанное в Ливорно 1771 г.) (рец.). IV, II,  1927,  1993,  2081; VII, II,  2688
+Essai sur la litterature russe contenant une liste des gens de lettres russes qui se sont distingués depuis le règne de Pierre le Grand. Par un voyageur russe, imprimé à Livourne (en Toscane) en 1771. Reimprimé textuellement dans la Revue Etrangère, octobre 1851, tome 80-e, pages 1–15. S.-Petersbourg, 1851. (Опыт о русской литературе, содержащий реестр русских замечательных писателей с царствования Петра Великого. Сочинение одного русского путешественника, напечатанное в Ливорно 1771 г.) (рец.). IV, II,  1927,  1993,  2081; VII, II,  2688
 Essais poétiques, par le prince N. B. Golitzin. (Поэтические опыты князя Н. Б. Голицына). Спб., 1849 (рец.). IV, II,  1776
 Etincelles et cendres, Poésies par mademoiselle Elise d'O... ff. Moscou, chez Sémen, 1842 (рец.). IV, II,  209,  700,  829,  1188,  1777
 Evangelia SIavice quibus olim in regum Francorum oleo sacro inungendorum solemnibus uti solebat Ecclesia Remensis vulgo Texte du Sacre ad exemplaris similitudinem descripsit et edidit I. B. Silvestre, Ord. S. Greg m. u. etc. Evangelia Latine vertit eandemque interpretationem Latinam e regione adjecit B. Kopitar, Aug. Austriae Imp. a biblioth. Palat. Custodia, etc. Париж, 1843 [В конце подпись: ZZ] (рец.). III, II,  1107
@@ -31,7 +31,7 @@ L. Sow (peц.) Latopis Nestora, stary tekst mnicha Lawrentego z XIV wieku, oddzi
 Le Jeune Géographe, ou Géographie Abrégée, en Français et en Russe, par Théodore Courtener. (Юный географ, или Краткая география). Moscou, 1838 (рец.). IV, II,  2732
 Le language des marins, par G. de la Landelle. Язык моряков. Исторические и критические исследования о морском словаре. Переносный смысл выражений моряков и собрание технических и картинных речений. Составил Ланделль. Париж, 1859 (рец.). II, II,  2660
 M. Joel's. Russische Sprachlehre nach Ollendorff's Methode. Dritte Auflage, vermehrt und verbessert von P. Fuchs. Frankfurt a. M., 1865 (peц.). I, II,  343
-Mémoires de l'Académie impériale des Sciences de St.-Pétersbourg. VI-me serie. Sciences naturelles. T. I, 1, 2 et 3 livraisons. Sciences Politiques, Histoire, Philologie. T. II, 4, 5 et 6 livraisons. (Записки имп. С.-Петербургской Академии наук. Отделение II. Науки естественные. Т. I, книжки 1, 2 и 3. Науки политические, история, филология. Т. II, книжки 4, 5 и 6). St.-Pétersbourg, 1834 (рец.). II, II, 1106
+Mémoires de l'Académie impériale des Sciences de St.-Pétersbourg. VI-me serie. Sciences naturelles. T. I, 1, 2 et 3 livraisons. –Sciences Politiques, Histoire, Philologie. T. II, 4, 5 et 6 livraisons. (Записки имп. С.-Петербургской Академии наук. Отделение II. Науки естественные. Т. I, книжки 1, 2 и 3. –Науки политические, история, филология. Т. II, книжки 4, 5 и 6). St.-Pétersbourg, 1834 (рец.). II, II, 1106
 Mikros. Logomachia. Adress do Kuryera Wilenskiego przeciw modow lingwistvcznym. I, II,  344;  IV, II,  3690
 Muchlinski A. O początku Rusi. II, II,  2253
 Nota bene. Автору "Первоначальной географии" и географам вообще. I, II,  760
@@ -43,5 +43,5 @@ Postęp i wstecznośé w dziedzienie kształcenia się języków słowianškich 
 Principes généraux et particuliers de Grammaire trançaise. Etymologie. Syntaxe. Gallicismes. Par A. Pascault. Ouvrage appliqué à l'enseignement du français en Russie. Moscou, 1857 (рец.) VII, II,  1379
 Rèčnik ilirskoga i nèmačkoga jezika. Sostavio ga i na izdao R. V. Veselič. Лексикон илирского и немецкого языков. Составил и издал Р. В. Веселич. Вена, две части; илиро-немецкая, 1853 г., и немецко-илирская, 1854 г. (рец.). II, II,  2661
 Rozbor staroczeské literatury czjtany we schùzkách králewské czeské spolecznosti nauk sekcj filologické, r. 1840 a 1841. Прага, 1842 (рец.). III, II,  1109
-Schmidt J. V. Mongolisch-deutsch-russisches Wörterbuch, nebst einem deutschen und einem russischen Wortregister. S.-Petersburg Leipzig, 1835. II, I,  591
+Schmidt J. V. Mongolisch-deutsch-russisches Wörterbuch, nebst einem deutschen und einem russischen Wortregister. S.-Petersburg –Leipzig, 1835. II, I,  591
 Sjögren M. Was bedeutet das in rassischen Chroniken unter dem Jahr 1024 vorkommende Wort луда? II, II,  1107
