@@ -1,7 +1,9 @@
 # Byte-faithful corpus: manifest.json records SHA-256 over these exact bytes.
 derived/** -text
+html/** -text
 raw/** -text
 manifest.json -text
+toc.json -text
 *.rar binary
 *.doc binary
 *.ttf binary
