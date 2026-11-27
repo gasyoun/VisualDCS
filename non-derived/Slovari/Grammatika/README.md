@@ -59,6 +59,40 @@ byte `0x98`. The spider decodes UTF-8 explicitly. Verified 26-11-2026.
 - `repair_paths.py` — one-off historical fix for the first run's 451 colliding
   filenames (888 renamed, 902 re-fetched on 26-11-2026); kept for audit, not
   needed on a fresh harvest.
+- `toc.json` + `fetch_toc.py` + `build_html.py` — the browsable HTML edition
+  (see below).
+
+## Browsable HTML edition
+
+Open [`html/index.html`](html/index.html) directly in a browser — no server,
+no build step. It lists all seven works; each work has its own `index.html`
+(the table of contents), one `section_*.html` per volume/issue, and one page
+per chapter with breadcrumb navigation and prev/next links. The 21 DOC texts
+of «Русская грамматика» also have their own pages, linked from that work's
+index together with the source RAR archives.
+
+| Work | HTML pages |
+|---|---:|
+| Русская грамматика (2 volumes) | 151 chapters + 21 DOC texts |
+| Краткая русская грамматика | 18 |
+| История слов | 834 |
+| Русский язык | 27 |
+| Библиографический указатель по языкознанию | 16 |
+| Библиографический указатель по русскому языкознанию (8 issues) | 259 |
+| Русская авторская лексикография | 26 |
+
+Chapter titles come from the source site's own tables of contents (`toc.json`,
+1,090 entries), not from the generic `h1` («тексты») of the harvest pages.
+
+Regenerate the edition offline:
+
+```bash
+python fetch_toc.py   # only if toc.json is stale; needs network
+python build_html.py  # offline, reads manifest.json + toc.json
+```
+
+`build_html.py` writes under `html/`; a link check over all generated pages
+found **0 broken relative links** (9,480 checked).
 
 ## Regenerate
 
